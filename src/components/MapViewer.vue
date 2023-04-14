@@ -28,7 +28,68 @@
       >
         <v-icon>mdi-minus</v-icon>
       </v-btn>
-
+      <div id="expandableCustomControl" fluid class="ml-2">
+        <v-menu
+          bottom
+          offset-y
+          nudge-bottom="10"
+          nudge-left="5"
+          content-class="white black--text"
+          :disabled="isAnimating"
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn color="primary" v-bind="attrs" v-on="on" x-small fab>
+              <v-icon>
+                {{
+                  attrs["aria-expanded"] === "true"
+                    ? "mdi-menu-up"
+                    : "mdi-menu-down"
+                }}
+              </v-icon>
+            </v-btn>
+          </template>
+          <v-container @click.stop>
+            <v-color-picker
+              dot-size="20"
+              mode="rgba"
+              swatches-max-height="100"
+              v-model="color"
+            ></v-color-picker>
+            <v-row cols="auto" class="d-flex justify-end">
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    icon
+                    @click="darkBasemapHandler(true)"
+                    color="primary"
+                    fab
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    <v-icon>mdi-spray</v-icon>
+                  </v-btn>
+                </template>
+                <span>{{ $t("ApplyColor") }}</span>
+              </v-tooltip>
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    icon
+                    @click="darkBasemapHandler(false)"
+                    color="primary"
+                    fab
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    <v-icon>mdi-undo</v-icon>
+                  </v-btn>
+                </template>
+                <span>{{ $t("RevertColor") }}</span>
+              </v-tooltip>
+            </v-row>
+          </v-container>
+        </v-menu>
+      </div>
       <div id="legendMapOverlay">
         <img
           id="mapLegend"
@@ -151,7 +212,8 @@
         <div class="text-primary text-caption">
           {{
             this.localeDateFormat(
-              this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex]
+              this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
+              this.getMapTimeSettings.Step
             )
           }}
         </div>
@@ -244,7 +306,10 @@ export default {
       this.map.updateSize();
     });
     this.$root.$on("darkModeOSM", this.darkModeOSMHandler);
-    this.$root.$on("darkModeMapEvent", this.darkBasemapHandler);
+    this.$root.$on("darkModeMapEvent", () => {
+      this.setColor();
+      this.darkBasemapHandler(true);
+    });
     this.$root.$on("changeStyle", this.changeStyleHandler);
     this.$root.$on("adjustMapTime", this.mapControls);
 
@@ -256,6 +321,9 @@ export default {
     });
     let zoomMinus = new Control({
       element: document.getElementById("customZoomMinus"),
+    });
+    let expandableCustomControl = new Control({
+      element: document.getElementById("expandableCustomControl"),
     });
     let attribution = new Attribution();
 
@@ -274,6 +342,7 @@ export default {
     this.map.addControl(attribution);
     this.map.addControl(zoomPlus);
     this.map.addControl(zoomMinus);
+    this.map.addControl(expandableCustomControl);
     this.map.addControl(legendMapOverlay);
 
     this.map.on("moveend", this.resizeRefreshExpired);
@@ -306,14 +375,14 @@ export default {
     goToExtentHandler(locExtent) {
       this.map.getView().fit(locExtent);
     },
-    async addLayerHandler(layer) {
+    async addLayerHandler(layer, wmsSource = null) {
       let addedLayer = null;
       let layerDateIndex = 0;
       if (layer.isTemporal) {
         addedLayer = new OLImage({
           source: new ImageWMS({
             format: "image/png",
-            url: "https://geo.weather.gc.ca/geomet/",
+            url: wmsSource === null ? this.getCurrentWmsSource : wmsSource,
             params: { LAYERS: layer.Name },
             transition: 0,
             crossOrigin: "Anonymous",
@@ -349,17 +418,17 @@ export default {
         });
         if (layerDateIndex < 0) {
           addedLayer.getSource().updateParams({
-            TIME:
-              addedLayer.get("layerDateArray")[0].toISOString().split(".")[0] +
-              "Z",
+            TIME: this.getProperDateString(
+              addedLayer.get("layerDateArray")[0],
+              addedLayer.get("layerTimeStep")
+            ),
           });
         } else {
           addedLayer.getSource().updateParams({
-            TIME:
-              addedLayer
-                .get("layerDateArray")
-                [layerDateIndex].toISOString()
-                .split(".")[0] + "Z",
+            TIME: this.getProperDateString(
+              addedLayer.get("layerDateArray")[layerDateIndex],
+              addedLayer.get("layerTimeStep")
+            ),
           });
           this.$root.$emit(
             "setCurrentTime",
@@ -371,7 +440,7 @@ export default {
         addedLayer = new OLImage({
           source: new ImageWMS({
             format: "image/png",
-            url: "https://geo.weather.gc.ca/geomet/",
+            url: wmsSource === null ? this.getCurrentWmsSource : wmsSource,
             params: { LAYERS: layer.Name },
             transition: 0,
             crossOrigin: "Anonymous",
@@ -397,6 +466,12 @@ export default {
           this.$store.dispatch("Layers/setMapLegendLayer", layer);
         }
       }
+
+      this.$store.commit("Layers/setLayerProperty", [
+        layer.Name,
+        "legendURL",
+        addedLayer.get("source")["url_"],
+      ]);
 
       addedLayer.getSource().on("imageloadstart", () => {
         this.loadingFlag = true;
@@ -450,6 +525,19 @@ export default {
         .filter((layer) => layer.get("layerName") === removedLayerName)
         .forEach((layer) => this.map.removeLayer(layer));
     },
+    getProperDateString(date, timestep) {
+      if (timestep === "P1Y") {
+        return `${date.getFullYear()}`;
+      } else if (timestep === "P1M") {
+        let month = date.getMonth() + 1;
+        if (month < 10) {
+          month = "0" + month;
+        }
+        let year = date.getFullYear();
+        return year + "-" + month;
+      }
+      return date.toISOString().split(".")[0] + "Z";
+    },
     async resizeRefreshExpired() {
       await new Promise((resolve) => this.map.once("rendercomplete", resolve));
       if (this.expiredTimestepList.length !== 0) {
@@ -462,7 +550,7 @@ export default {
       var layerData = null;
       let this_ = this;
       const api = axios.create({
-        baseURL: "https://geo.weather.gc.ca/geomet",
+        baseURL: this.getCurrentWmsSource,
         params: {
           service: "WMS",
           version: "1.3.0",
@@ -601,6 +689,11 @@ export default {
         this.mapWidth,
         this.mapHeight,
       ]);
+      let rgb = [];
+      if (this.isMapColored) {
+        rgb = [this.rgb.r, this.rgb.g, this.rgb.b];
+      }
+      this.$store.dispatch("Layers/setRGB", rgb);
     },
     async createMP4Handler() {
       this.cancelFlag = true;
@@ -619,7 +712,6 @@ export default {
       );
       mapDiv.style.resize = "none";
       this.map.getInteractions().forEach((x) => x.setActive(false));
-      this.$store.dispatch("Layers/setMP4Flag", true);
       const mapWidthConst = this.mapWidth;
       const widths = this.getTimeTitleWidths(mapWidthConst);
       let visibleLayers = this.map
@@ -792,11 +884,10 @@ export default {
         this.$store.dispatch("Layers/setMP4URL", mp4URL);
       }
       this.loadingFlag = false;
-      this.$store.dispatch("Layers/setMP4Flag", false);
       this.map.getInteractions().forEach((x) => x.setActive(true)); // Enables all map interactions such as drag or zoom
       mapDiv.style.resize = "both"; // Enables map div resizing
     },
-    async composeCanvas(timeStep, widths, encoder) {
+    async composeCanvas(date, widths, encoder) {
       this.map.updateSize();
       const mapCnv = this.getMapCanvas();
       if (this.getMapTimeSettings.MapLegendLayer !== null) {
@@ -811,7 +902,7 @@ export default {
             mapLegend.naturalHeight
           ); // drawImage(image, dx, dy, dWidth, dHeight)
       }
-      await this.updateInfoCanvas(timeStep, widths);
+      await this.updateInfoCanvas(date, widths);
       const composedCnv = await this.stitchCanvases(mapCnv);
       try {
         encoder.addFrameRgba(
@@ -969,9 +1060,9 @@ export default {
       });
     },
     async setDateTime(layer, date) {
-      layer
-        .getSource()
-        .updateParams({ TIME: date.toISOString().split(".")[0] + "Z" });
+      layer.getSource().updateParams({
+        TIME: this.getProperDateString(date, layer.get("layerTimeStep")),
+      });
     },
     setOpacityHandler(layerName, opacity) {
       this.map
@@ -1271,7 +1362,10 @@ export default {
 
         canvasTxt.fontSize = 14;
         canvasTxt.align = "left";
-        const dateLabel = this.localeDateFormat(newDate);
+        const dateLabel = this.localeDateFormat(
+          newDate,
+          this.getMapTimeSettings.Step
+        );
         ctx.font = canvasTxt.fontSize + "px sans-serif";
         var metrics = ctx.measureText(dateLabel);
 
@@ -1598,26 +1692,42 @@ export default {
     capitalize(word) {
       return word.charAt(0).toUpperCase() + word.slice(1);
     },
-    localeDateFormat(dateIn) {
-      if (this.getTimeFormat === false) {
-        return dateIn.toISOString().replace(":00.000", "");
-      }
-      if (this.getTimeFormat === true) {
-        const locale = this.$i18n.locale === "fr" ? "fr-ca" : this.$i18n.locale;
-        const luxonTest = this.capitalize(
-          DateTime.fromJSDate(dateIn)
+    localeDateFormat(dateIn, interval = null) {
+      if (interval === "P1Y") {
+        return this.getProperDateString(dateIn, interval);
+      } else if (interval === "P1M") {
+        if (this.getTimeFormat === false) {
+          return this.getProperDateString(dateIn, interval);
+        } else if (this.getTimeFormat === true) {
+          const locale =
+            this.$i18n.locale === "fr" ? "fr-CA" : this.$i18n.locale;
+          return DateTime.fromJSDate(dateIn)
             .setLocale(locale)
-            .toLocaleString(DateTime.DATETIME_FULL)
-        );
-        return luxonTest;
+            .toLocaleString({ year: "numeric", month: "long" });
+        }
+      } else {
+        if (this.getTimeFormat === false) {
+          return dateIn.toISOString().replace(":00.000", "");
+        } else if (this.getTimeFormat === true) {
+          const locale =
+            this.$i18n.locale === "fr" ? "fr-CA" : this.$i18n.locale;
+          return this.capitalize(
+            DateTime.fromJSDate(dateIn)
+              .setLocale(locale)
+              .toLocaleString(DateTime.DATETIME_FULL)
+          );
+        }
       }
     },
-    darkBasemapHandler() {
-      const flag = this.getDarkModeMap;
-      if (this.darkOSMCallback === null && flag === true) {
+    setColor() {
+      this.rgb = { r: this.getRGB[0], g: this.getRGB[1], b: this.getRGB[2] };
+    },
+    darkBasemapHandler(flag) {
+      if (this.darkOSMCallback === null) {
+        this.isMapColored = flag;
         this.darkOSMCallback = (evt) => {
           evt.context.globalCompositeOperation = "color";
-          evt.context.fillStyle = "rgba(0,0,0," + 1.0 + ")";
+          evt.context.fillStyle = "rgb(0,0,0)";
           evt.context.fillRect(
             0,
             0,
@@ -1625,7 +1735,7 @@ export default {
             evt.context.canvas.height
           );
           evt.context.globalCompositeOperation = "overlay";
-          evt.context.fillStyle = "rgb(" + [100, 100, 100].toString() + ")";
+          evt.context.fillStyle = "rgb(0,0,0)";
           evt.context.fillRect(
             0,
             0,
@@ -1633,7 +1743,15 @@ export default {
             evt.context.canvas.height
           );
           evt.context.globalCompositeOperation = "difference";
-          evt.context.fillStyle = "rgba(255,255,255," + 0.999 + ")";
+          evt.context.fillStyle =
+            "rgba(" +
+            [
+              255 - this.rgb.r,
+              255 - this.rgb.g,
+              255 - this.rgb.b,
+              1.0,
+            ].toString() +
+            ")";
           evt.context.fillRect(
             0,
             0,
@@ -1735,12 +1853,21 @@ export default {
       "isAnimating",
     ]),
     ...mapGetters("Layers", [
-      "getDarkModeMap",
+      "getCurrentWmsSource",
       "getLayerList",
       "getMapTimeSettings",
       "getOrderedLayers",
+      "getRGB",
       "getTimeFormat",
     ]),
+    color: {
+      get() {
+        return this.rgb;
+      },
+      set(v) {
+        this.rgb = v;
+      },
+    },
     mapHeight() {
       return this.map.getSize()[1];
     },
@@ -1772,7 +1899,7 @@ export default {
       if (this.getMapTimeSettings.MapLegendLayer === null) {
         return null;
       } else {
-        return `https://geo.weather.gc.ca/geomet?version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=${this.getMapTimeSettings.MapLegendLayer.Name}&format=image/png&STYLE=${this.getMapTimeSettings.MapLegendLayer.currentStyle}`;
+        return `${this.getMapTimeSettings.MapLegendLayer.legendURL}?version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=${this.getMapTimeSettings.MapLegendLayer.Name}&format=image/png&STYLE=${this.getMapTimeSettings.MapLegendLayer.currentStyle}`;
       }
     },
     displayMapLegend() {
@@ -1881,12 +2008,14 @@ export default {
     return {
       animationID: null,
       cancelFlag: false,
+      darkOSMCallback: null,
       expiredSnackBarMessage: this.$t("expiredExtentRefreshed"),
       expiredTimestepList: [],
-      darkOSMCallback: null,
+      hex: "#646464",
       infoCanvas: null,
       infoCanvasHeightPadding: 68,
       isLayerListShown: true,
+      isMapColored: false,
       loadingFlag: false,
       localeOptions: {
         weekday: "long",
@@ -1904,9 +2033,14 @@ export default {
       osm: new TileLayer({ source: new OSM() }),
       outputHeader: null,
       playPauseFlag: false,
-      xsltTime: `parse-xml($xml)//Layer[not(.//Layer)]!map 
+      rgb: {
+        r: 200,
+        g: 200,
+        b: 200,
+      },
+      xsltTime: `parse-xml($xml)//Layer[not(.//Layer)]!map
                     {
-                        'Dimension' : map 
+                        'Dimension' : map
                         {
                             'Dimension_time' : string(Dimension[@name = 'time']),
                             'Dimension_time_default' : string(Dimension[@name = 'time']/@default),
@@ -1964,5 +2098,12 @@ export default {
   max-height: 350px;
   width: 100%;
   height: auto;
+}
+#expandableCustomControl {
+  position: relative;
+  top: 90px;
+  max-width: 60px;
+  max-height: 400px;
+  margin: 0px;
 }
 </style>

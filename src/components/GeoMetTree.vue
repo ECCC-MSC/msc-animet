@@ -1,67 +1,85 @@
 <template>
-  <v-expansion-panels v-model="expandTreePanel">
-    <v-expansion-panel v-model="expandTreePanel">
-      <v-expansion-panel-header>
-        {{ $t("GeoMetTreeTitle") }}
-      </v-expansion-panel-header>
-      <v-expansion-panel-content>
-        <v-text-field
-          autofocus
-          v-model="searchGeoMet"
-          :label="$t('GeoMetTreeSearchLabel')"
-          clearable
-          dense
-          hide-details
-          @input="filterOnInput"
-        >
-        </v-text-field>
-        <v-treeview
-          :items="filteredTreeNodes"
-          item-key="Name"
-          dense
-          open-on-click
-          activatable
-          hoverable
-          ref="tree"
-        >
-          <template v-slot:prepend="{ item }">
-            <v-btn
-              v-if="!item.children"
-              x-large
-              color="white"
-              icon
-              :disabled="isAnimating"
-              @click="addLayerEvent(item)"
-            >
-              <v-icon color="primary">
-                {{ added.includes(item.Name) ? "mdi-minus" : "mdi-plus" }}
-              </v-icon>
-            </v-btn>
-          </template>
-          <template v-slot:label="{ item }">
-            <v-container
-              @click="isAnimating ? null : addLayerEvent(item)"
-              class="ma-0 pa-0"
-            >
-              <strong :title="item.Title">{{ item.Title }}</strong>
-            </v-container>
-          </template>
-          <template v-slot:append="{ item }">
-            <v-tooltip v-if="!item.children" right color="light-blue" top>
-              <template v-slot:activator="{ on, attrs }">
-                <span v-bind="attrs" v-on="on" class="grey--text"
-                  >({{ item.Name }})</span
-                >
-              </template>
-              <span>
+  <v-card>
+    <v-tabs fixed-tabs v-model="tab">
+      <v-tab
+        v-for="(wmsSource, index) in Object.keys(getGeoMetWmsSources)"
+        :key="index"
+        >{{ $t(wmsSource) }}</v-tab
+      >
+
+      <v-tab-item
+        v-for="(_, wmsSource, index) in getGeoMetWmsSources"
+        :key="index"
+        eager
+      >
+        <v-expansion-panels v-model="expandTreePanel">
+          <v-expansion-panel v-model="expandTreePanel">
+            <v-expansion-panel-header>
+              {{ $t("GeoMetWms").replace("{wmsSource}", $t(wmsSource)) }}
+            </v-expansion-panel-header>
+            <v-expansion-panel-content>
+              <v-text-field
+                autofocus
+                v-model="searchGeoMet[index]"
+                :label="
+                  $t('GeoMetSearchLabel').replace('{wmsSource}', $t(wmsSource))
+                "
+                clearable
+                dense
+                hide-details
+                @input="filterOnInput(index)"
+              >
+              </v-text-field>
+              <v-treeview
+                :items="filteredTreeNodes[index]"
+                item-key="Name"
+                dense
+                open-on-click
+                activatable
+                hoverable
+                :ref="wmsSource"
+              >
+                <template v-slot:prepend="{ item }">
+                  <v-btn
+                    v-if="!item.children"
+                    x-large
+                    color="white"
+                    icon
+                    :disabled="isAnimating"
+                    @click="addLayerEvent(item)"
+                  >
+                    <v-icon color="primary">
+                      {{ added.includes(item.Name) ? "mdi-minus" : "mdi-plus" }}
+                    </v-icon>
+                  </v-btn>
+                </template>
+                <template v-slot:label="{ item }">
+                  <v-container
+                    @click="isAnimating ? null : addLayerEvent(item)"
+                    class="ma-0 pa-0"
+                  >
+                    <strong :title="item.Title">{{ item.Title }}</strong>
+                  </v-container>
+                </template>
+                <template v-slot:append="{ item }">
+                  <v-tooltip v-if="!item.children" right color="light-blue" top>
+                    <template v-slot:activator="{ on, attrs }">
+                      <span v-bind="attrs" v-on="on" class="grey--text"
+                        >({{ item.Name }})</span
+                      >
+                    </template>
+                    <!-- <span>
                 <span v-if="!item.children">{{ item.Abstract[0] }}</span>
-              </span>
-            </v-tooltip>
-          </template>
-        </v-treeview>
-      </v-expansion-panel-content>
-    </v-expansion-panel>
-  </v-expansion-panels>
+              </span> -->
+                  </v-tooltip>
+                </template>
+              </v-treeview>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
+      </v-tab-item>
+    </v-tabs>
+  </v-card>
 </template>
 
 <script>
@@ -79,15 +97,32 @@ export default {
     });
   },
   mounted() {
-    this.filteredTreeNodes = this.getGeoMetTreeItems;
+    this.filteredTreeNodes.push(...this.getGeoMetTreeItems);
+    this.searchGeoMet = new Array(
+      Object.keys(this.getGeoMetWmsSources).length
+    ).fill(null);
     this.$root.$on("localeChange", this.resetSearchAndTree);
+  },
+  watch: {
+    tab(newTab, oldTab) {
+      this.$store.dispatch(
+        "Layers/setWmsSourceURL",
+        this.getGeoMetWmsSources[Object.keys(this.getGeoMetWmsSources)[newTab]][
+          "url"
+        ]
+      );
+      if (oldTab !== null) {
+        this.resetSearchAndTree();
+      }
+    },
   },
   data() {
     return {
       expandTreePanel: 0,
-      searchGeoMet: null,
+      searchGeoMet: [],
       openedLevels: [],
       filteredTreeNodes: [],
+      tab: null,
       xsltFull: `parse-xml($xml)//Layer[not(.//Layer)]!map 
                         {
                             'Name' : string(Name),
@@ -134,7 +169,7 @@ export default {
         var layerData = null;
         let this_ = this;
         const api = axios.create({
-          baseURL: "https://geo.weather.gc.ca/geomet",
+          baseURL: this.getCurrentWmsSource,
           params: {
             service: "WMS",
             version: "1.3.0",
@@ -265,38 +300,51 @@ export default {
         return r;
       }, []);
     },
-    filterOnInput() {
-      if (this.searchGeoMet !== null) {
-        if (this.searchGeoMet.length >= 3 && this.searchGeoMet !== "") {
-          this.filteredTreeNodes = this.filterCallbackFunction(
-            this.getGeoMetTreeItems,
+    filterOnInput(index) {
+      if (this.searchGeoMet[index] !== null) {
+        if (
+          this.searchGeoMet[index].length >= 3 &&
+          this.searchGeoMet[index] !== ""
+        ) {
+          this.filteredTreeNodes[index] = this.filterCallbackFunction(
+            this.getGeoMetTreeItems[index],
             (item) =>
               item["Title"]
                 .toLowerCase()
-                .indexOf(this.searchGeoMet.toLowerCase()) > -1 ||
+                .indexOf(this.searchGeoMet[index].toLowerCase()) > -1 ||
               item["Name"]
                 .toLowerCase()
-                .indexOf(this.searchGeoMet.toLowerCase()) > -1
+                .indexOf(this.searchGeoMet[index].toLowerCase()) > -1
           );
-          this.$refs.tree.updateAll(true);
+          this.$refs[Object.keys(this.getGeoMetWmsSources)[index]][0].updateAll(
+            true
+          );
         } else {
-          this.filteredTreeNodes = this.getGeoMetTreeItems;
-          this.$refs.tree.updateAll(false);
+          this.filteredTreeNodes[index] = this.getGeoMetTreeItems[index];
+          this.$refs[Object.keys(this.getGeoMetWmsSources)[index]][0].updateAll(
+            false
+          );
         }
       } else {
-        this.filteredTreeNodes = this.getGeoMetTreeItems;
-        this.$refs.tree.updateAll(false);
+        this.filteredTreeNodes[index] = this.getGeoMetTreeItems[index];
+        this.$refs[Object.keys(this.getGeoMetWmsSources)[index]][0].updateAll(
+          false
+        );
       }
     },
     resetSearchAndTree() {
-      this.searchGeoMet = null;
-      this.filterOnInput();
+      this.searchGeoMet.fill(null);
+      for (let i = 0; i < Object.keys(this.$refs).length; i++) {
+        this.filterOnInput(i);
+      }
     },
   },
   computed: {
     ...mapState("Layers", ["isAnimating"]),
     ...mapGetters("Layers", [
+      "getCurrentWmsSource",
       "getGeoMetTreeItems",
+      "getGeoMetWmsSources",
       "getLayerList",
       "getMapTimeSettings",
       "getOrderedLayers",

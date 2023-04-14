@@ -45,8 +45,11 @@
   "MP4CreateMap": "Carte",
   "MP4CreateLightMode": "Clair",
   "MP4CreateDarkMode": "Foncé",
-  "GeoMetTreeTitle": "Ajouter des couches GeoMet-Météo",
-  "GeoMetTreeSearchLabel": "Chercher les couches GeoMet-Météo",
+  "GeoMetWms": "Ajouter des couches {wmsSource}",
+  "GeoMetSearchLabel": "Chercher les couches {wmsSource}",
+  "climate": "GeoMet-Climat",
+  "weather": "GeoMet-Météo",
+  "cmd_wms": "CMD-WMS",
   "MapInteractionsToggle": "Interactions de la carte",
   "MapControls": "Contrôles de la carte",
   "MapGeolocate": "Géolocaliser",
@@ -56,7 +59,6 @@
   "LocationsSearchTitle": "Recherche et visite d'emplacements prédéfinis",
   "LocationsSearchLabel": "Rechercher un emplacement vers lequel accéder",
   "LocationSearchShort": "Rechercher un emplacement",
-  "MP4CreateDarkMap": "Utiliser une carte foncée",
   "MP4CreateTimeFormat": "Utiliser l'heure locale",
   "MP4CreateCustomTitle": "Titre de l'animation (optionnel)",
   "colon": " :",
@@ -81,5 +83,7 @@
   "userDoc": "Documentation utilisateur",
   "expiredExtentRefreshed": "Certains des pas de temps sélectionnés ne sont plus disponibles. La plage des dates sélectionnées a été ajustée.",
   "extentFullyOOB": "La plage complète des dates sélectionnées n'est plus disponible. La plage des dates sélectionnées a été réinitialisée.",
-  "expiredSecondaryLayer": "Des pas de temps pour certaines couches sélectionnées ne sont plus disponibles. Les informations temporelles ont été mises à jour."
+  "expiredSecondaryLayer": "Des pas de temps pour certaines couches sélectionnées ne sont plus disponibles. Les informations temporelles ont été mises à jour.",
+  "ApplyColor": "Appliquer la couleur au fond de carte",
+  "RevertColor": "Remettre la couleur originale"
 }

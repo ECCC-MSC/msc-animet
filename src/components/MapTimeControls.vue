@@ -172,6 +172,9 @@ export default {
         this.$store.commit("Layers/setDatetimeRangeSlider", [first, last]);
       }
     },
+    capitalize(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    },
     formatDuration(timestep) {
       const locale = this.$i18n.locale === "fr" ? "fr-ca" : this.$i18n.locale;
       let l = Duration.fromISO(timestep);
@@ -185,24 +188,50 @@ export default {
       } else if (index < 0) {
         index = 0;
       }
-      return this.localeDateFormat(this.getMapTimeSettings.Extent[index]);
+      return this.localeDateFormat(
+        this.getMapTimeSettings.Extent[index],
+        this.getMapTimeSettings.Step
+      );
     },
-    localeDateFormat(dateIn) {
-      if (this.getTimeFormat === false) {
-        return dateIn.toISOString().replace(":00.000", "");
-      }
-      if (this.getTimeFormat === true) {
-        const locale = this.$i18n.locale === "fr" ? "fr-ca" : this.$i18n.locale;
-        const dateFormatted = this.capitalize(
-          DateTime.fromJSDate(dateIn)
+    localeDateFormat(dateIn, interval = null) {
+      if (interval === "P1Y") {
+        return this.getProperDateString(dateIn, interval);
+      } else if (interval === "P1M") {
+        if (this.getTimeFormat === false) {
+          return this.getProperDateString(dateIn, interval);
+        } else if (this.getTimeFormat === true) {
+          const locale =
+            this.$i18n.locale === "fr" ? "fr-CA" : this.$i18n.locale;
+          return DateTime.fromJSDate(dateIn)
             .setLocale(locale)
-            .toLocaleString(DateTime.DATETIME_FULL)
-        );
-        return dateFormatted;
+            .toLocaleString({ year: "numeric", month: "long" });
+        }
+      } else {
+        if (this.getTimeFormat === false) {
+          return dateIn.toISOString().replace(":00.000", "");
+        } else if (this.getTimeFormat === true) {
+          const locale =
+            this.$i18n.locale === "fr" ? "fr-CA" : this.$i18n.locale;
+          return this.capitalize(
+            DateTime.fromJSDate(dateIn)
+              .setLocale(locale)
+              .toLocaleString(DateTime.DATETIME_FULL)
+          );
+        }
       }
     },
-    capitalize(word) {
-      return word.charAt(0).toUpperCase() + word.slice(1);
+    getProperDateString(date, timestep) {
+      if (timestep === "P1Y") {
+        return `${date.getFullYear()}`;
+      } else if (timestep === "P1M") {
+        let month = date.getMonth() + 1;
+        if (month < 10) {
+          month = "0" + month;
+        }
+        let year = date.getFullYear();
+        return year + "-" + month;
+      }
+      return date.toISOString().split(".")[0] + "Z";
     },
     findLayerIndex(date, layerDateArr, step) {
       let start = 0;

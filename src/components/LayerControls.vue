@@ -33,7 +33,7 @@ export default {
     };
   },
   methods: {
-    async addLayerHandler(layer) {
+    async addLayerHandler(layer, wmsSource = null) {
       if (!this.layerProperties.find((l) => l.Name === layer.Name)) {
         let addedLayer = null;
         if (layer.isTemporal) {
@@ -80,7 +80,7 @@ export default {
             }
           }
         }
-        this.$root.$emit("layerAdded", layer);
+        this.$root.$emit("layerAdded", layer, wmsSource);
       }
     },
   },

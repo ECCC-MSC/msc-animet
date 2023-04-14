@@ -74,27 +74,13 @@
             </v-text-field>
           </v-col>
           <v-col cols="5">
-            <v-row>
-              <v-col cols="6">
-                <v-switch
-                  :disabled="isAnimating"
-                  v-model="timeFormat"
-                  hide-details
-                  :label="$t('MP4CreateTimeFormat')"
-                >
-                </v-switch>
-              </v-col>
-              <v-col cols="6">
-                <v-switch
-                  :disabled="isAnimating"
-                  v-model="darkModeToggle"
-                  hide-details
-                  @change="darkModeChangeHandler"
-                  :label="$t('MP4CreateDarkMap')"
-                >
-                </v-switch>
-              </v-col>
-            </v-row>
+            <v-switch
+              :disabled="isAnimating"
+              v-model="timeFormat"
+              hide-details
+              :label="$t('MP4CreateTimeFormat')"
+            >
+            </v-switch>
           </v-col>
         </v-row>
       </v-expansion-panel-content>
@@ -185,9 +171,6 @@ export default {
       "setAnimationTitle",
       "setCustomTitle",
     ]),
-    darkModeChangeHandler() {
-      this.$root.$emit("darkModeMapEvent");
-    },
   },
   watch: {
     SnappedLayerChange(newSnappedLayer, oldSnappedLayer) {
@@ -207,7 +190,6 @@ export default {
   },
   computed: {
     ...mapGetters("Layers", [
-      "getDarkModeMap",
       "getLayerList",
       "getMapTimeSettings",
       "getTimeFormat",
@@ -256,14 +238,6 @@ export default {
       },
       set(flag) {
         this.$store.dispatch("Layers/setTimeFormat", flag);
-      },
-    },
-    darkModeToggle: {
-      get() {
-        return this.getDarkModeMap;
-      },
-      set(flag) {
-        this.$store.dispatch("Layers/setDarkModeMap", flag);
       },
     },
     SnappedLayerChange() {

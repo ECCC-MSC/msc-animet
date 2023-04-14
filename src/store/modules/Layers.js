@@ -1,23 +1,35 @@
-import axios from "axios";
-import SaxonJS from "saxon-js";
-import treeEn from "../../assets/trees/tree_en";
-import treeFr from "../../assets/trees/tree_fr";
+import treeEn_weather from "../../assets/trees/tree_en_weather";
+import treeFr_weather from "../../assets/trees/tree_fr_weather";
+import treeEn_climate from "../../assets/trees/tree_en_climate";
+import treeFr_climate from "../../assets/trees/tree_fr_climate";
 import locEn from "../../assets/locations/loc_en";
 import locFr from "../../assets/locations/loc_fr";
+import wmsSources from "../../../scripts/wms_sources_configs.json";
 import i18n from "../../plugins/i18n.js";
 
 const state = {
-  lang: "en",
-  navBarMiniFlag: true,
-  fetchAwaitFlag: false,
-  layerTreeItemsEn: treeEn.tree_en,
-  layerTreeItemsFr: treeFr.tree_fr,
-  layerList: [],
+  animationTitle: "",
+  currentWmsSource: "https://geo.weather.gc.ca/geomet",
+  darkModeFlag: false,
+  datetimeRangeSlider: [0, 1],
+  exportStyle: null,
+  extent: null,
+  framesPerSecond: 3,
   fullTimestepsList: [],
-  uniqueTimestepsList: [],
-  MP4URL: "null",
-  MP4InProgress: false,
-  MP4ProgressPercent: 0,
+  isAnimating: false,
+  isTitleCustom: false,
+  lang: "en",
+  layerList: [],
+  layerTreeItemsEn: [
+    treeEn_weather.tree_en_weather,
+    treeEn_climate.tree_en_climate,
+  ],
+  layerTreeItemsFr: [
+    treeFr_weather.tree_fr_weather,
+    treeFr_climate.tree_fr_climate,
+  ],
+  locationsEn: locEn.loc_en,
+  locationsFr: locFr.loc_fr,
   mapTimeSettings: {
     SnappedLayer: null,
     Step: null,
@@ -26,22 +38,21 @@ const state = {
     MapLegendLayer: null,
   },
   MP4CreateFlag: true,
-  locationsEn: locEn.loc_en,
-  locationsFr: locFr.loc_fr,
-  extent: null,
-  permalink: null,
-  outputDate: null,
-  exportStyle: null,
-  outputSize: null,
-  isAnimating: false,
-  outputMapWH: [],
-  timeFormat: true,
-  darkModeFlag: false,
+  MP4ProgressPercent: 0,
+  MP4URL: "null",
+  rgb: {
+    r: 200,
+    g: 200,
+    b: 200,
+  },
   orderedLayers: [],
-  framesPerSecond: 3,
-  datetimeRangeSlider: [0, 1],
-  animationTitle: "",
-  isTitleCustom: false,
+  outputDate: null,
+  outputMapWH: [],
+  outputSize: null,
+  permalink: null,
+  timeFormat: true,
+  uniqueTimestepsList: [],
+  wmsSources: wmsSources,
 };
 
 const getters = {
@@ -52,8 +63,8 @@ const getters = {
       return state.layerTreeItemsFr;
     }
   },
-  getFetchAwaitFlag: (state) => {
-    return state.fetchAwaitFlag;
+  getGeoMetWmsSources: (state) => {
+    return state.wmsSources;
   },
   getFullTimestepsList: (state) => {
     return state.fullTimestepsList;
@@ -64,14 +75,8 @@ const getters = {
   getLayerList: (state) => {
     return state.layerList;
   },
-  getNavBarMiniFlag: (state) => {
-    return state.navBarMiniFlag;
-  },
   getMP4URL: (state) => {
     return state.MP4URL;
-  },
-  getMP4Flag: (state) => {
-    return state.MP4InProgress;
   },
   getMapTimeSettings: (state) => {
     return state.mapTimeSettings;
@@ -104,11 +109,11 @@ const getters = {
   getOutputWH: (state) => {
     return state.outputMapWH;
   },
+  getRGB: (state) => {
+    return state.rgb;
+  },
   getTimeFormat: (state) => {
     return state.timeFormat;
-  },
-  getDarkModeMap: (state) => {
-    return state.darkModeFlag;
   },
   getOrderedLayers: (state) => {
     return state.orderedLayers;
@@ -119,26 +124,14 @@ const getters = {
   getAnimationTitle: (state) => {
     return state.animationTitle;
   },
+  getCurrentWmsSource: (state) => {
+    return state.currentWmsSource;
+  },
 };
 
 const mutations = {
   setLang: (state, lang) => {
     state.lang = lang;
-  },
-  setLayerTreeItemsEn: (state, items) => {
-    state.layerTreeItemsEn = items;
-  },
-  setLayerTreeRootEn: (state, root) => {
-    state.layerTreeRootEn = root;
-  },
-  setLayerTreeItemsFr: (state, items) => {
-    state.layerTreeItemsFr = items;
-  },
-  setLayerTreeRootFr: (state, root) => {
-    state.layerTreeRootFr = root;
-  },
-  setFetchAwaitFlag: (state, flag) => {
-    state.fetchAwaitFlag = flag;
   },
   addTimestep: (state, timestep) => {
     state.fullTimestepsList.push(timestep);
@@ -169,14 +162,8 @@ const mutations = {
   setLayerProperty: (state, [layerName, property, newVal]) => {
     state.layerList.find((l) => l.Name === layerName)[property] = newVal;
   },
-  setNavBarMiniFlag: (state, flag) => {
-    state.navBarMiniFlag = flag;
-  },
   setMP4URL: (state, URL) => {
     state.MP4URL = URL;
-  },
-  setMP4Flag: (state, flag) => {
-    state.MP4InProgress = flag;
   },
   setMP4Percent: (state, percent) => {
     state.MP4ProgressPercent = percent;
@@ -221,14 +208,17 @@ const mutations = {
   setOutputWH: (state, newWH) => {
     state.outputMapWH = newWH;
   },
+  setRGB: (state, newRGB) => {
+    state.rgb = newRGB;
+  },
   setTimeFormat: (state, newTimeFormat) => {
     state.timeFormat = newTimeFormat;
   },
-  setDarkModeMap: (state, newDarkModeMap) => {
-    state.darkModeFlag = newDarkModeMap;
-  },
   setOrderedLayers: (state, newOrderOfLists) => {
     state.orderedLayers = newOrderOfLists;
+  },
+  setWmsSourceURL: (state, newWmsSource) => {
+    state.currentWmsSource = newWmsSource;
   },
   setFramesPerSecond: (state, fps) => {
     state.framesPerSecond = fps;
@@ -298,14 +288,8 @@ const actions = {
   setLang({ commit }, payload) {
     commit("setLang", payload);
   },
-  setNavBarMiniFlag({ commit }, payload) {
-    commit("setNavBarMiniFlag", payload);
-  },
   setMP4URL({ commit }, payload) {
     commit("setMP4URL", payload);
-  },
-  setMP4Flag({ commit }, payload) {
-    commit("setMP4Flag", payload);
   },
   setMP4Percent({ commit }, payload) {
     commit("setMP4Percent", payload);
@@ -346,96 +330,17 @@ const actions = {
   setOutputWH({ commit }, payload) {
     commit("setOutputWH", payload);
   },
+  setRGB({ commit }, payload) {
+    commit("setRGB", payload);
+  },
   setTimeFormat({ commit }, payload) {
     commit("setTimeFormat", payload);
-  },
-  setDarkModeMap({ commit }, payload) {
-    commit("setDarkModeMap", payload);
   },
   setOrderedLayers: ({ commit }, payload) => {
     commit("setOrderedLayers", payload);
   },
-  async getCapabilities({ commit, dispatch }, payload) {
-    if (state.layerTreeItemsEn === null) {
-      const fullTree = await dispatch("fetchCapabilities", payload);
-      commit("setLayerTreeItemsEn", fullTree.children);
-      commit("setLayerTreeRootEn", fullTree.Title);
-    }
-    if (payload === "fr" && state.layerTreeItemsFr === null) {
-      const fullTree = await dispatch("fetchCapabilities", payload);
-      commit("setLayerTreeItemsFr", fullTree.children);
-      commit("setLayerTreeRootFr", fullTree.Title);
-    }
-  },
-  async fetchCapabilities({ state, commit }) {
-    commit("setFetchAwaitFlag", false);
-    let fetchedTree = null;
-    await axios
-      .get(
-        `https://geo.weather.gc.ca/geomet?lang=${state.lang}&service=WMS&version=1.3.0&request=GetCapabilities`
-      )
-      .then((response) => {
-        const xslt = `<xsl:stylesheet 
-            xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-            xmlns:mf="http://example.com/mf"
-            exclude-result-prefixes="#all"
-            xpath-default-namespace="http://www.opengis.net/wms"
-            xmlns="http://www.w3.org/2005/xpath-functions"
-            expand-text="yes"
-            version="3.0">
-
-            <xsl:strip-space elements="*"/>
-            
-            <xsl:mode on-no-match="shallow-skip"/>
-
-            <xsl:output method="json" build-tree="no" indent="yes"/>
-            
-            <xsl:template match="/WMS_Capabilities/Capability/Layer" priority="5">
-                <xsl:map>
-                <xsl:apply-templates/>
-                </xsl:map>
-            </xsl:template>
-            
-            <xsl:template match="Layer/Title[1] | Layer/Name[1] | Layer/Abstract[1] | Layer/Dimension[1]">
-                <xsl:map-entry key="local-name()" select="data()"/>
-            </xsl:template>
-            
-            <xsl:template match="Layer[1]">
-                <xsl:map-entry key="'children'">
-                <xsl:sequence select="array { ../Layer/mf:apply-templates(.) }"/>
-                </xsl:map-entry>
-            </xsl:template>
-            
-            <xsl:template match="Layer[position() > 1]"/>
-            
-            <xsl:function name="mf:apply-templates" as="item()*">
-                <xsl:param name="elements" as="element(*)*"/>
-                <xsl:map>
-                <xsl:apply-templates select="$elements/*"/>      
-                </xsl:map>
-            </xsl:function>
-            
-            </xsl:stylesheet>`;
-        const jsonResult = SaxonJS.XPath.evaluate(
-          `
-            transform(
-                map { 
-                'source-node' : parse-xml($xml), 
-                'stylesheet-text' : $xslt, 
-                'delivery-format' : 'raw' 
-                }
-                )?output`,
-          [],
-          { params: { xml: response.data, xslt: xslt } }
-        );
-        return jsonResult;
-      })
-      .then((response) => {
-        commit("setFetchAwaitFlag", true);
-        fetchedTree = response;
-      });
-    return fetchedTree;
+  setWmsSourceURL({ commit }, payload) {
+    commit("setWmsSourceURL", payload);
   },
 };
 

@@ -7,23 +7,23 @@
 </template>
 
 <script>
-import AppBar from './components/AppBar.vue'
-import AppFooter from './components/AppFooter.vue'
+import AppBar from "./components/AppBar.vue";
+import AppFooter from "./components/AppFooter.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     AppBar,
-    AppFooter
+    AppFooter,
   },
-  created () {
-    let locale = navigator.language.split('-')[0]
-    this.$store.dispatch('Layers/setLang', locale)
-    this.$i18n.locale = locale
-    this.$vuetify.current = locale
-    document.title = 'MSC AniMet'
-  }
-}
+  created() {
+    let locale = navigator.language.split("-")[0];
+    this.$store.dispatch("Layers/setLang", locale);
+    this.$i18n.locale = locale;
+    this.$vuetify.current = locale;
+    document.title = "MSC AniMet";
+  },
+};
 </script>
 
 <style lang="scss">

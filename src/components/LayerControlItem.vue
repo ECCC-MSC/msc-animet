@@ -52,15 +52,19 @@
               <v-container>
                 <v-row v-if="!item.layerIndexOOB && item.Visible">
                   {{ $t("LayerBarCurrentTooltip") }} :
-                  {{ localeDateFormat(item.currentTime) }}
+                  {{ localeDateFormat(item.currentTime, item.dateTriplet[2]) }}
                 </v-row>
                 <v-row>
                   {{ $t("LayerBarStartsTooltip") }} :
-                  {{ localeDateFormat(item.dateTriplet[0]) }}
+                  {{
+                    localeDateFormat(item.dateTriplet[0], item.dateTriplet[2])
+                  }}
                 </v-row>
                 <v-row>
                   {{ $t("LayerBarEndsTooltip") }} :
-                  {{ localeDateFormat(item.dateTriplet[1]) }}
+                  {{
+                    localeDateFormat(item.dateTriplet[1], item.dateTriplet[2])
+                  }}
                 </v-row>
                 <v-row>
                   {{ $t("LayerBarStepTooltip") }} :
@@ -135,11 +139,21 @@
                 </v-row>
                 <v-row>
                   {{ $t("LayerBarMapTime") }}
-                  {{ localeDateFormat(item.VisibilityMapTime) }}
+                  {{
+                    localeDateFormat(
+                      item.VisibilityMapTime,
+                      getMapTimeSettings.Step
+                    )
+                  }}
                 </v-row>
                 <v-row>
                   {{ $t("LayerBarClosestTime") }}
-                  {{ localeDateFormat(item.VisibilityLayerTime) }}
+                  {{
+                    localeDateFormat(
+                      item.VisibilityLayerTime,
+                      getMapTimeSettings.Step
+                    )
+                  }}
                 </v-row>
               </v-container>
             </v-tooltip>
@@ -344,6 +358,17 @@ export default {
             this.$root.$emit("rangeSliderAdjust", timestep);
           }
         }
+      } else {
+        if (this.getMapTimeSettings.MapLegendLayer.Name === removedLayer.Name) {
+          if (this.getLayerList.length === 0) {
+            this.$store.dispatch("Layers/setMapLegendLayer", "");
+          } else {
+            this.$store.dispatch(
+              "Layers/setMapLegendLayer",
+              this.getLayerList[0]
+            );
+          }
+        }
       }
       this.$root.$emit("removeLayer", removedLayer.Name);
       const newValue = [
@@ -398,19 +423,45 @@ export default {
     capitalize(word) {
       return word.charAt(0).toUpperCase() + word.slice(1);
     },
-    localeDateFormat(dateIn) {
-      if (this.getTimeFormat === false) {
-        return dateIn.toISOString().replace(":00.000", "");
-      }
-      if (this.getTimeFormat === true) {
-        const locale = this.$i18n.locale === "fr" ? "fr-ca" : this.$i18n.locale;
-        const dateFormatted = this.capitalize(
-          DateTime.fromJSDate(dateIn)
+    localeDateFormat(dateIn, interval = null) {
+      if (interval === "P1Y") {
+        return this.getProperDateString(dateIn, interval);
+      } else if (interval === "P1M") {
+        if (this.getTimeFormat === false) {
+          return this.getProperDateString(dateIn, interval);
+        } else if (this.getTimeFormat === true) {
+          const locale =
+            this.$i18n.locale === "fr" ? "fr-CA" : this.$i18n.locale;
+          return DateTime.fromJSDate(dateIn)
             .setLocale(locale)
-            .toLocaleString(DateTime.DATETIME_FULL)
-        );
-        return dateFormatted;
+            .toLocaleString({ year: "numeric", month: "long" });
+        }
+      } else {
+        if (this.getTimeFormat === false) {
+          return dateIn.toISOString().replace(":00.000", "");
+        } else if (this.getTimeFormat === true) {
+          const locale =
+            this.$i18n.locale === "fr" ? "fr-CA" : this.$i18n.locale;
+          return this.capitalize(
+            DateTime.fromJSDate(dateIn)
+              .setLocale(locale)
+              .toLocaleString(DateTime.DATETIME_FULL)
+          );
+        }
       }
+    },
+    getProperDateString(date, timestep) {
+      if (timestep === "P1Y") {
+        return `${date.getFullYear()}`;
+      } else if (timestep === "P1M") {
+        let month = date.getMonth() + 1;
+        if (month < 10) {
+          month = "0" + month;
+        }
+        let year = date.getFullYear();
+        return year + "-" + month;
+      }
+      return date.toISOString().split(".")[0] + "Z";
     },
     selectIcon(layer) {
       if (!layer.Visible) {

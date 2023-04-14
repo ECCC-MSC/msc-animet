@@ -13,7 +13,7 @@ python3 -m venv --system-site-packages $PYTHON_VENV
 . $PYTHON_VENV/bin/activate
 pip install owslib
 cd ./scripts
-echo "Generating latest layer tree_en|fr.js ..."
+echo "Generating latest layer tree_en|fr_weather|climate.js ..."
 python3 generate_trees_layers_list.py
 deactivate
 cd ..
