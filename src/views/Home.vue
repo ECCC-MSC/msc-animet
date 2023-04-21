@@ -36,11 +36,14 @@ import axios from "axios";
 import SaxonJS from "saxon-js";
 import parseDuration from "../assets/parseHelper";
 
+import climateJSON from "../locales/en/layers_climate.json";
+import weatherJSON from "../locales/en/layers_weather.json";
+
 export default {
   name: "Home",
-  props: ["layers", "extent", "width", "height"],
+  props: ["layers", "extent", "width", "height", "color"],
   async mounted() {
-    if (this.layers !== undefined && this.extent !== undefined) {
+    if (this.layers !== undefined) {
       const layersPassed = this.layers.split(",");
       if (layersPassed.length > 0) {
         this.$root.$emit("permalinkLayersFlag", true);
@@ -48,6 +51,8 @@ export default {
       layersPassed.forEach((layer, index) => {
         this.addLayerEvent(index, ...layer.split(";"));
       });
+    }
+    if (this.extent !== undefined) {
       let extentPassed = this.extent.split(",");
       let castedExtent = [];
       extentPassed.forEach((element) => {
@@ -61,6 +66,18 @@ export default {
         parseInt(this.height),
       ]);
     }
+    if (this.color !== undefined) {
+      var matchColor = /((\d{1,3}),(\d{1,3}),(\d{1,3}))/;
+      var match = matchColor.exec(this.color);
+      if (match !== null) {
+        this.$store.dispatch("Layers/setRGB", [
+          Number(match[2]),
+          Number(match[3]),
+          Number(match[4]),
+        ]);
+        this.$root.$emit("darkModeMapEvent");
+      }
+    }
   },
   methods: {
     async addLayerEvent(
@@ -72,15 +89,21 @@ export default {
       style
     ) {
       if (!this.added.includes(layerName)) {
+        var baseURL;
+        if (layerName in weatherJSON) {
+          baseURL = "https://geo.weather.gc.ca/geomet";
+        } else if (layerName in climateJSON) {
+          baseURL = "https://geo.weather.gc.ca/geomet-climate";
+        } else {
+          return;
+        }
         let layer = {};
         layer.Name = layerName;
-        layer.Opacity = parseFloat(opacity);
-        layer.Visible = isVisible === "1";
         layer.isLeaf = true;
         let layerData = null;
         let this_ = this;
         const api = axios.create({
-          baseURL: "https://geo.weather.gc.ca/geomet",
+          baseURL: baseURL,
           params: {
             service: "WMS",
             version: "1.3.0",
@@ -106,8 +129,18 @@ export default {
           layerData.Dimension.Dimension_time.split("/")[2] !== "PT0H";
         layer.Title = layerData.Title;
         layer.Style = layerData.Style;
-        layer.currentStyle = style === "0" ? layerData.Style[0].Name : style;
         layer.ZIndex = index;
+        let op = parseFloat(opacity);
+        layer.Opacity = isNaN(op) || op > 1 || op < 0 ? 0.75 : op;
+        layer.Visible = isVisible in ["0", "1"] ? isVisible === "1" : true;
+        if (!isNaN(parseFloat(style))) {
+          // Have to add this because "0" is indeed in layer.Style since it's an object
+          layer.currentStyle = layerData.Style[0].Name;
+        } else if (style in layer.Style) {
+          layer.currentStyle = style;
+        } else {
+          layer.currentStyle = layerData.Style[0].Name;
+        }
 
         if (layer.isTemporal) {
           const dateTriplet = this.getStartEndTime(
@@ -132,8 +165,9 @@ export default {
           }
         }
         if (
-          (layer.isTemporal && this.getMapTimeSettings.Step === null) ||
-          Number(isSnapped)
+          layer.isTemporal &&
+          (this.getMapTimeSettings.Step === null ||
+            (isSnapped in ["0", "1"] && Number(isSnapped)))
         ) {
           const mapTimeSettings = {
             SnappedLayer: layer,
@@ -153,7 +187,11 @@ export default {
           ]);
         }
         this.$store.dispatch("Layers/addLayer", layer);
-        this.$root.$emit("addLayer", layer);
+        if (baseURL !== "https://geo.weather.gc.ca/geomet") {
+          this.$root.$emit("addLayer", layer, baseURL);
+        } else {
+          this.$root.$emit("addLayer", layer);
+        }
       }
     },
     getStartEndTime(layerDimension) {
@@ -229,7 +267,6 @@ export default {
     ...mapGetters("Layers", [
       "getLayerList",
       "getMapTimeSettings",
-      "getMP4Flag",
       "getMP4URL",
       "getMP4CreateFlag",
     ]),

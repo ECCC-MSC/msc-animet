@@ -43,8 +43,11 @@
   "MP4CreateMap": "Map",
   "MP4CreateLightMode": "Light",
   "MP4CreateDarkMode": "Dark",
-  "GeoMetTreeTitle": "Add GeoMet-Weather layers",
-  "GeoMetTreeSearchLabel": "Search GeoMet-Weather layers",
+  "GeoMetWms": "Add {wmsSource} layers",
+  "GeoMetSearchLabel": "Search {wmsSource} layers",
+  "climate": "GeoMet-Climate",
+  "weather": "GeoMet-Weather",
+  "cmd_wms": "CMD-WMS",
   "MapInteractionsToggle": "Map interactions",
   "MapControls": "Map controls",
   "MapGeolocate": "Geolocate",
@@ -54,7 +57,6 @@
   "LocationsSearchTitle": "Preset locations search and visit",
   "LocationsSearchLabel": "Search for a location you want to jump to",
   "LocationSearchShort": "Search for a location",
-  "MP4CreateDarkMap": "Use dark basemap",
   "MP4CreateTimeFormat": "Use local time",
   "MP4CreateCustomTitle": "Animation title (optional)",
   "MP4CreateButtonLabel": "Create animation",
@@ -80,5 +82,7 @@
   "userDoc": "User documentation",
   "expiredExtentRefreshed": "Some of the selected timesteps are no longer available. The date range slider has been adjusted.",
   "extentFullyOOB": "The entire selected temporal extent is no longer available. The date range slider has been reset.",
-  "expiredSecondaryLayer": "Timesteps for certain layers are no longer available. Time values have been updated."
+  "expiredSecondaryLayer": "Timesteps for certain layers are no longer available. Time values have been updated.",
+  "ApplyColor": "Apply color to basemap",
+  "RevertColor": "Revert to original color"
 }

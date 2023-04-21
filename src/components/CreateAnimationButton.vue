@@ -68,11 +68,39 @@ export default {
       this.$root.$emit("createMP4");
       this.$store.dispatch(
         "Layers/setOutputDate",
-        this.getMapTimeSettings.Extent[this.datetimeRangeSlider[0]]
+        this.getAnimationDateTitle(this.getMapTimeSettings.Step)
       );
     },
     cancelAnimation() {
       this.$root.$emit("cancelAnimationCreation");
+    },
+    getAnimationDateTitle(interval) {
+      const firstDate =
+        this.getMapTimeSettings.Extent[this.datetimeRangeSlider[0]];
+      const lastDate =
+        this.getMapTimeSettings.Extent[this.datetimeRangeSlider[1]];
+      if (interval === "P1Y") {
+        return `${firstDate.getFullYear()}-${lastDate.getFullYear()}`;
+      } else if (interval === "P1M") {
+        let firstMonth = firstDate.getMonth() + 1;
+        let lastMonth = lastDate.getMonth() + 1;
+        if (firstMonth < 10) {
+          firstMonth = "0" + firstMonth;
+        }
+        if (lastMonth < 10) {
+          lastMonth = "0" + lastMonth;
+        }
+        let firstYear = firstDate.getFullYear();
+        let lastYear = lastDate.getFullYear();
+        return `${firstYear}${firstMonth}-${lastYear}${lastMonth}`;
+      }
+      return (
+        firstDate.toISOString().split(".")[0] +
+        "Z" +
+        "-" +
+        lastDate.toISOString().split(".")[0] +
+        "Z"
+      );
     },
   },
 };

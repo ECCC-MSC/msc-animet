@@ -62,10 +62,11 @@ export default {
     ...mapGetters("Layers", [
       "getExtent",
       "getLayerList",
-      "getOutputWH",
       "getMapTimeSettings",
       "getOrderedLayers",
+      "getOutputWH",
       "getPermalink",
+      "getRGB",
     ]),
   },
   methods: {
@@ -111,7 +112,6 @@ export default {
         if (layer.currentStyle !== layer.Style[0].Name) {
           layerStyle = layer.currentStyle;
         }
-
         permalinktemp +=
           layer.Name +
           ";" +
@@ -122,6 +122,7 @@ export default {
           isVisible +
           ";" +
           layerStyle;
+
         if (i < orderedLayerList.length - 1) {
           permalinktemp += ",";
         }
@@ -139,6 +140,12 @@ export default {
 
       const mapwh = this.getOutputWH;
       permalinktemp += "&width=" + mapwh[0] + "&height=" + mapwh[1];
+
+      let rgb = this.getRGB;
+      if (rgb.length !== 0) {
+        permalinktemp += `&color=${rgb}`;
+      }
+
       if (
         decodeURIComponent(
           this.$router.history.current.fullPath.split("?")[1]

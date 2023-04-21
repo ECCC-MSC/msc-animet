@@ -7,11 +7,13 @@ Vue.use(VueI18n);
 const messages = {
   en: {
     ...require("../locales/en/common.json"),
-    ...require("../locales/en/layers.json"),
+    ...require("../locales/en/layers_climate.json"),
+    ...require("../locales/en/layers_weather.json"),
   },
   fr: {
     ...require("../locales/fr/common.json"),
-    ...require("../locales/fr/layers.json"),
+    ...require("../locales/fr/layers_climate.json"),
+    ...require("../locales/fr/layers_weather.json"),
   },
 };
 

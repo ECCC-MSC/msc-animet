@@ -52,12 +52,12 @@ def generate_layer_dict(list_layer_metadata):
         }
         if layer_metadata.abstract:
             layer_dict["Abstract"] = (layer_metadata.abstract,)
-        if layer_metadata.children:
+        if layer_metadata.layers:
             layer_dict["isLeaf"] = False
             layer_dict["children"] = generate_layer_dict(
-                layer_metadata.children
+                layer_metadata.layers
             )
-        if len(layer_metadata.children) == 0:
+        if len(layer_metadata.layers) == 0:
             layer_dict["isLeaf"] = True
             if layer_metadata.timepositions:
                 layer_dict["isTemporal"] = True
@@ -66,44 +66,49 @@ def generate_layer_dict(list_layer_metadata):
         items.append(layer_dict)
     return items
 
+def findTopLevel(metadata):
+    if(metadata.parent == None):
+        return metadata.layers
+    else:
+        return findTopLevel(metadata.parent)
 
 langs = ["en", "fr"]
+with open("wms_sources_configs.json") as f:
+    wmsSources = json.load(f)
 
-for lang in langs:
+for name, params in wmsSources.items():
+    for lang in langs:
 
-    try:
-        wms = WebMapService(
-            f"https://geo.weather.gc.ca/geomet?lang={lang}", version="1.3.0"
-        )
-    except Exception as e:
-        raise SystemExit(e)
-
-    # get all top level layer metadata objects
-    top_level_items = [
-        metadata
-        for _, metadata in wms.items()
-        if metadata.parent.parent is None
-    ]
-
-    layers = []
-    # iterate through top level items and recursively generate children as needed
-    for layer_metadata in top_level_items:
-        layers += generate_layer_dict([layer_metadata])
-    layers_sorted = sorted(layers, key=lambda k: k["Title"])
-
-    with open(f"../src/assets/trees/tree_{lang}.js", "w+") as f:
-        f.write(
-            TREE_JS_TEMPLATE.format(
-                f"tree_{lang}", json.dumps(layers_sorted, indent=2)
+        try:
+            wms = WebMapService(
+                f"{params['url']}?lang={lang}", version=params["version"]
             )
-        )
+        except Exception as e:
+            raise SystemExit(e)
 
-    layers_dict = {}
-    for layer, metadata in wms.items():
-        if not metadata.children:
-            layers_dict[metadata.name] = metadata.title
-    layers_dict_sorted = dict(sorted(layers_dict.items()))
+        # get all top level layer metadata objects
+        _, metadata = wms.items()[0]
+        top_level_items = findTopLevel(metadata)
 
-    with open(f"../src/locales/{lang}/layers.json", "w+") as f:
-        # write layers_dict_sorted to json file
-        f.write(json.dumps(layers_dict_sorted, indent=2, ensure_ascii=False))
+        layers = []
+        # iterate through top level items and recursively generate children as needed
+        for layer_metadata in top_level_items:
+            layers += generate_layer_dict([layer_metadata])
+        layers_sorted = sorted(layers, key=lambda k: k["Title"])
+
+        with open(f"../src/assets/trees/tree_{lang}_{name}.js", "w+") as f:
+            f.write(
+                TREE_JS_TEMPLATE.format(
+                    f"tree_{lang}_{name}", json.dumps(layers_sorted, indent=2)
+                )
+            )
+
+        layers_dict = {}
+        for _, metadata in wms.items():
+            if not metadata.layers:
+                layers_dict[metadata.name] = metadata.title
+        layers_dict_sorted = dict(sorted(layers_dict.items()))
+
+        with open(f"../src/locales/{lang}/layers_{name}.json", "w+") as f:
+            # write layers_dict_sorted to json file
+            f.write(json.dumps(layers_dict_sorted, indent=2, ensure_ascii=False))

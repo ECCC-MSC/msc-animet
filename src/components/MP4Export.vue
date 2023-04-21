@@ -43,19 +43,6 @@ export default {
       "getOutputSize",
     ]),
     exportName() {
-      const dateIn = this.getOutputDate;
-      const yyyy = dateIn.getFullYear();
-      const mm = dateIn.getMonth() + 1; // getMonth() is zero-based
-      const dd = dateIn.getDate();
-      const hh = dateIn.getHours();
-      const mi = dateIn.getMinutes();
-      const finalMonth = (mm < 10 ? "0" : "") + mm;
-      const finalDays = (dd < 10 ? "0" : "") + dd;
-      const finalHours = (hh < 10 ? "0" : "") + hh;
-      const finalMinutes = (mi < 10 ? "0" : "") + mi;
-      const finalDate = String(
-        yyyy + finalMonth + finalDays + "T" + finalHours + finalMinutes
-      );
       let animationTitle = this.getAnimationTitle;
       if (animationTitle !== "") {
         animationTitle = animationTitle.replace("^", "");
@@ -68,7 +55,7 @@ export default {
         animationTitle = animationTitle.replace(/[^a-zA-Z0-9]$/, "");
         animationTitle = "_" + animationTitle;
       }
-      return "MSC-AniMet_" + finalDate + "Z" + animationTitle + ".mp4";
+      return "MSC-AniMet_" + this.getOutputDate + animationTitle + ".mp4";
     },
   },
   methods: {
