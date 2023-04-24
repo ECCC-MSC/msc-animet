@@ -269,6 +269,7 @@ export default {
       "getMapTimeSettings",
       "getMP4URL",
       "getMP4CreateFlag",
+      "getPossibleOverlays",
     ]),
     MP4CretedControlsFlag() {
       return this.getLayerList.length !== 0;

@@ -6,6 +6,7 @@
         :key="index"
         >{{ $t(wmsSource) }}</v-tab
       >
+      <v-tab>{{ $t("Overlays") }}</v-tab>
 
       <v-tab-item
         v-for="(_, wmsSource, index) in getGeoMetWmsSources"
@@ -68,15 +69,28 @@
                         >({{ item.Name }})</span
                       >
                     </template>
-                    <!-- <span>
-                <span v-if="!item.children">{{ item.Abstract[0] }}</span>
-              </span> -->
                   </v-tooltip>
                 </template>
               </v-treeview>
             </v-expansion-panel-content>
           </v-expansion-panel>
         </v-expansion-panels>
+      </v-tab-item>
+      <v-tab-item eager>
+        <v-card class="pt-3 pb-3">
+          <v-switch
+            v-for="(values, overlay, index) in getPossibleOverlays"
+            :key="index"
+            :disabled="isAnimating"
+            hide-details
+            class="pl-12 font-weight-bold"
+            @change="$root.$emit('specialLayerToggle', values, overlay)"
+          >
+            <template v-slot:label>
+              <span class="black--text">{{ $t(overlay) }}</span>
+            </template>
+          </v-switch>
+        </v-card>
       </v-tab-item>
     </v-tabs>
   </v-card>
@@ -105,14 +119,16 @@ export default {
   },
   watch: {
     tab(newTab, oldTab) {
-      this.$store.dispatch(
-        "Layers/setWmsSourceURL",
-        this.getGeoMetWmsSources[Object.keys(this.getGeoMetWmsSources)[newTab]][
-          "url"
-        ]
-      );
-      if (oldTab !== null) {
-        this.resetSearchAndTree();
+      if (newTab !== Object.keys(this.getGeoMetWmsSources).length) {
+        this.$store.dispatch(
+          "Layers/setWmsSourceURL",
+          this.getGeoMetWmsSources[
+            Object.keys(this.getGeoMetWmsSources)[newTab]
+          ]["url"]
+        );
+        if (oldTab !== null) {
+          this.resetSearchAndTree();
+        }
       }
     },
   },
@@ -348,6 +364,7 @@ export default {
       "getLayerList",
       "getMapTimeSettings",
       "getOrderedLayers",
+      "getPossibleOverlays",
       "getTimestepsList",
     ]),
     filter() {

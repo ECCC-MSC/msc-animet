@@ -279,7 +279,7 @@ import View from "ol/View";
 import "ol/ol.css";
 import { Control, Attribution } from "ol/control";
 import { DateTime } from "luxon";
-import { fromLonLat, transformExtent } from "ol/proj";
+import { fromLonLat } from "ol/proj";
 import { mapGetters } from "vuex";
 import { mapState } from "vuex";
 
@@ -290,6 +290,7 @@ export default {
     this.$root.$on("localeChange", this.getModelRuns);
     this.$root.$on("layerAdded", this.addLayerHandler);
     this.$root.$on("layerAdded", this.getModelRuns);
+    this.$root.$on("specialLayerToggle", this.addSpecialLayer);
     this.$root.$on("cancelAnimationCreation", this.cancelAnimationCreation);
     this.$root.$on("removeLayer", this.removeLayerHandler);
     this.$root.$on("removeLayer", this.getModelRuns);
@@ -1843,6 +1844,38 @@ export default {
         }
       }
       return configMap[maxKey];
+    },
+    async addSpecialLayer(layer, layerName) {
+      const layerFound = this.map
+        .getLayers()
+        .getArray()
+        .filter((l) => l.get("layerName") === layerName);
+      if (layerFound.length !== 0) {
+        this.map.removeLayer(layerFound[0]);
+      } else {
+        var special_layer = new OLImage({
+          source: new ImageWMS({
+            format: "image/png",
+            url: layer.url,
+            params: {
+              layers: layer.layers,
+            },
+            transition: 0,
+            crossOrigin: "Anonymous",
+            ratio: 1,
+          }),
+          maxZoom: 12.1,
+          minZoom: 0.9,
+          visible: true,
+          opacity: 1,
+          zIndex: layer.zIndex,
+        });
+        special_layer.setProperties({
+          layerName: layerName,
+        });
+        this.map.addLayer(special_layer);
+      }
+      this.$store.dispatch("Layers/setOverlayDisplayed", layerName);
     },
   },
   computed: {

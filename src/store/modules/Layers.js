@@ -49,6 +49,20 @@ const state = {
   outputDate: null,
   outputMapWH: [],
   outputSize: null,
+  overlays: {
+    Boundaries: {
+      layers: "boundaries",
+      url: "http://wms.ess-ws.nrcan.gc.ca/wms/toporama_en",
+      zIndex: 9998,
+      isShown: false,
+    },
+    Major_cities: {
+      layers: "places_small,places_mid,places_large",
+      url: "http://maps.geogratis.gc.ca/wms/canvec_en",
+      zIndex: 9999,
+      isShown: false,
+    },
+  },
   permalink: null,
   timeFormat: true,
   uniqueTimestepsList: [],
@@ -62,6 +76,9 @@ const getters = {
     } else {
       return state.layerTreeItemsFr;
     }
+  },
+  getPossibleOverlays: (state) => {
+    return state.overlays;
   },
   getGeoMetWmsSources: (state) => {
     return state.wmsSources;
@@ -196,6 +213,10 @@ const mutations = {
   setOutputDate: (state, newOutputDate) => {
     state.outputDate = newOutputDate;
   },
+  setOverlayDisplayed: (state, overlay) => {
+    return (state.overlays[overlay]["isShown"] =
+      !state.overlays[overlay]["isShown"]);
+  },
   setExportStyle: (state, styleUpdate) => {
     state.exportStyle = styleUpdate;
   },
@@ -317,6 +338,9 @@ const actions = {
   },
   setOutputDate({ commit }, payload) {
     commit("setOutputDate", payload);
+  },
+  setOverlayDisplayed({ commit }, payload) {
+    commit("setOverlayDisplayed", payload);
   },
   setExportStyle({ commit }, payload) {
     commit("setExportStyle", payload);
