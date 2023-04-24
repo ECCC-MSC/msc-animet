@@ -85,5 +85,8 @@
   "extentFullyOOB": "La plage complète des dates sélectionnées n'est plus disponible. La plage des dates sélectionnées a été réinitialisée.",
   "expiredSecondaryLayer": "Des pas de temps pour certaines couches sélectionnées ne sont plus disponibles. Les informations temporelles ont été mises à jour.",
   "ApplyColor": "Appliquer la couleur au fond de carte",
-  "RevertColor": "Remettre la couleur originale"
+  "RevertColor": "Remettre la couleur originale",
+  "Overlays": "Couches spéciales",
+  "Boundaries": "Superposer les limites de frontières géopolitiques",
+  "Major_cities": "Superposer les grandes villes"
 }
