@@ -85,7 +85,8 @@
   "expiredSecondaryLayer": "Timesteps for certain layers are no longer available. Time values have been updated.",
   "ApplyColor": "Apply color to basemap",
   "RevertColor": "Revert to original color",
-  "Overlays": "Special layers",
+  "Overlays": "Overlays",
   "Boundaries": "Add geopolitical boundaries overlay",
-  "Major_cities": "Add major cities overlay"
+  "Major_cities": "Add major cities overlay",
+  "Water_bodies": "Add water bodies overlay"
 }

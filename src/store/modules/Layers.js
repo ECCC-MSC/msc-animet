@@ -51,14 +51,21 @@ const state = {
   outputSize: null,
   overlays: {
     Boundaries: {
-      layers: "boundaries",
-      url: "http://wms.ess-ws.nrcan.gc.ca/wms/toporama_en",
+      layers:
+        "boundary_large_01,boundary_small,boundary_mid,boundary_large_02,boundary_large_03",
+      url: "https://maps.geogratis.gc.ca/wms/canvec_en",
       zIndex: 9998,
+      isShown: false,
+    },
+    Water_bodies: {
+      layers: "shoreline_small,shoreline_mid,shoreline_large",
+      url: "https://maps.geogratis.gc.ca/wms/canvec_en",
+      zIndex: 9997,
       isShown: false,
     },
     Major_cities: {
       layers: "places_small,places_mid,places_large",
-      url: "http://maps.geogratis.gc.ca/wms/canvec_en",
+      url: "https://maps.geogratis.gc.ca/wms/canvec_en",
       zIndex: 9999,
       isShown: false,
     },

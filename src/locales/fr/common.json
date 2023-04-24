@@ -86,7 +86,8 @@
   "expiredSecondaryLayer": "Des pas de temps pour certaines couches sélectionnées ne sont plus disponibles. Les informations temporelles ont été mises à jour.",
   "ApplyColor": "Appliquer la couleur au fond de carte",
   "RevertColor": "Remettre la couleur originale",
-  "Overlays": "Couches spéciales",
+  "Overlays": "Couches superposées",
   "Boundaries": "Superposer les limites de frontières géopolitiques",
-  "Major_cities": "Superposer les grandes villes"
+  "Major_cities": "Superposer les grandes villes",
+  "Water_bodies": "Superposer les délimitations des plans d'eau"
 }
