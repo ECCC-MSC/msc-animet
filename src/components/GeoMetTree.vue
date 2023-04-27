@@ -77,19 +77,22 @@
         </v-expansion-panels>
       </v-tab-item>
       <v-tab-item eager>
-        <v-card class="pt-3 pb-3">
-          <v-switch
+        <v-card class="pb-3">
+          <v-card-subtitle>
+            {{ $t("OverlaysTip") }}
+          </v-card-subtitle>
+          <v-checkbox
             v-for="(values, overlay, index) in getPossibleOverlays"
             :key="index"
             :disabled="isAnimating"
             hide-details
-            class="pl-12 font-weight-bold"
+            class="pl-12 font-weight-medium"
             @change="$root.$emit('specialLayerToggle', values, overlay)"
           >
             <template v-slot:label>
               <span class="black--text">{{ $t(overlay) }}</span>
             </template>
-          </v-switch>
+          </v-checkbox>
         </v-card>
       </v-tab-item>
     </v-tabs>
@@ -226,9 +229,21 @@ export default {
           );
           layer.dateTriplet = dateTriplet;
           layer.extentDateArray = extentDateArray;
-          layer.default_time = new Date(
-            layerData.Dimension.Dimension_time_default
-          );
+
+          if (dateTriplet[2] === "P1Y") {
+            layer.default_time = new Date(
+              layerData.Dimension.Dimension_time_default + "/01/01"
+            );
+          } else if (dateTriplet[2] === "P1M") {
+            layer.default_time = new Date(
+              layerData.Dimension.Dimension_time_default.replace("-", "/") +
+                "/01"
+            );
+          } else {
+            layer.default_time = new Date(
+              layerData.Dimension.Dimension_time_default
+            );
+          }
           this.$store.dispatch("Layers/addTimestep", layer.dateTriplet[2]);
           if (layerData.Dimension.Dimension_ref_time !== "") {
             layer.ReferenceTime = this.getStartEndTime(
@@ -259,29 +274,57 @@ export default {
           this.$root.$emit("addLayer", layer);
         }
       } else if (this.added.includes(layer.Name)) {
+        let layerObj = this.getLayerList.find((l) => l.Name === layer.Name);
         this.$root.$emit(
           "removeLayerControls",
-          layer,
+          layerObj,
           this.getOrderedLayers.indexOf(layer.Name)
         );
       }
     },
     getStartEndTime(layerDimension) {
       var data = layerDimension.split("/");
-      if (data.length === 1) {
-        return [null, new Date(data[0]), null];
+      if (data[2] === "P1Y") {
+        data[0] += "/01/01";
+        data[1] += "/01/01";
+        return [new Date(data[0]), new Date(data[1]), data[2]];
+      } else if (data[2] === "P1M") {
+        data[0] = data[0].replace("-", "/") + "/01";
+        data[1] = data[1].replace("-", "/") + "/01";
+        return [new Date(data[0]), new Date(data[1]), data[2]];
+      } else {
+        if (data.length === 1) {
+          return [null, new Date(data[0]), null];
+        } else {
+          return [new Date(data[0]), new Date(data[1]), data[2]];
+        }
       }
-      return [new Date(data[0]), new Date(data[1]), data[2]];
     },
     getDateArray(start, end, step) {
-      let tempDareArray = new Array();
-      let tempDate = start;
-      let nextDate = parseDuration(step).add;
-      while (tempDate <= end) {
-        tempDareArray.push(tempDate);
-        tempDate = nextDate(tempDate);
+      let tempDateArray = new Array();
+      let tempDate = new Date(start);
+      if (step === "P1Y") {
+        let currentDate = new Date(tempDate);
+        while (tempDate <= end) {
+          tempDateArray.push(currentDate);
+          currentDate = new Date(
+            tempDate.setFullYear(tempDate.getFullYear() + 1, 0, 1)
+          );
+        }
+      } else if (step === "P1M") {
+        let currentDate = new Date(tempDate);
+        while (tempDate <= end) {
+          tempDateArray.push(currentDate);
+          currentDate = new Date(tempDate.setMonth(tempDate.getMonth() + 1, 1));
+        }
+      } else {
+        let nextDate = parseDuration(step).add;
+        while (tempDate <= end) {
+          tempDateArray.push(tempDate);
+          tempDate = nextDate(tempDate);
+        }
       }
-      return tempDareArray;
+      return tempDateArray;
     },
     findLayerIndex(date, layerDateArr, step) {
       let start = 0;

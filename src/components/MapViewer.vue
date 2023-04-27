@@ -60,7 +60,7 @@
                 <template v-slot:activator="{ on, attrs }">
                   <v-btn
                     icon
-                    @click="darkBasemapHandler(true)"
+                    @click="applyColor"
                     color="primary"
                     fab
                     v-bind="attrs"
@@ -287,32 +287,34 @@ import * as HME from "h264-mp4-encoder";
 
 export default {
   async mounted() {
-    this.$root.$on("localeChange", this.getModelRuns);
+    this.$root.$on("adjustMapTime", this.mapControls);
+    this.$root.$on("cancelAnimationCreation", this.cancelAnimationCreation);
+    this.$root.$on("changeStyle", this.changeStyleHandler);
+    this.$root.$on("createMP4", this.createMP4Handler);
+    this.$root.$on("darkModeMapEvent", (flag) => {
+      if (flag) {
+        this.setColor();
+      }
+      this.darkBasemapHandler(flag);
+    });
+    this.$root.$on("darkModeOSM", this.darkModeOSMHandler);
+    this.$root.$on("generatePermaLink", this.permaLinkHandler);
+    this.$root.$on("getExtent", this.getExtent);
+    this.$root.$on("goToExtent", this.goToExtentHandler);
     this.$root.$on("layerAdded", this.addLayerHandler);
     this.$root.$on("layerAdded", this.getModelRuns);
-    this.$root.$on("specialLayerToggle", this.addSpecialLayer);
-    this.$root.$on("cancelAnimationCreation", this.cancelAnimationCreation);
-    this.$root.$on("removeLayer", this.removeLayerHandler);
+    this.$root.$on("localeChange", this.getModelRuns);
     this.$root.$on("removeLayer", this.getModelRuns);
-    this.$root.$on("setVisibility", this.setVisibleHandler);
-    this.$root.$on("setZIndex", this.setZIndexHandler);
-    this.$root.$on("setOpacity", this.setOpacityHandler);
-    this.$root.$on("createMP4", this.createMP4Handler);
-    this.$root.$on("generatePermaLink", this.permaLinkHandler);
-    this.$root.$on("goToExtent", this.goToExtentHandler);
-    this.$root.$on("getExtent", this.getExtent);
+    this.$root.$on("removeLayer", this.removeLayerHandler);
     this.$root.$on("setMapSize", (wh) => {
       document.getElementById("map").style.width = `${wh[0]}px`;
       document.getElementById("map").style.height = `${wh[1]}px`;
       this.map.updateSize();
     });
-    this.$root.$on("darkModeOSM", this.darkModeOSMHandler);
-    this.$root.$on("darkModeMapEvent", () => {
-      this.setColor();
-      this.darkBasemapHandler(true);
-    });
-    this.$root.$on("changeStyle", this.changeStyleHandler);
-    this.$root.$on("adjustMapTime", this.mapControls);
+    this.$root.$on("setOpacity", this.setOpacityHandler);
+    this.$root.$on("setVisibility", this.setVisibleHandler);
+    this.$root.$on("setZIndex", this.setZIndexHandler);
+    this.$root.$on("specialLayerToggle", this.addSpecialLayer);
 
     let legendMapOverlay = new Control({
       element: document.getElementById("legendMapOverlay"),
@@ -360,6 +362,10 @@ export default {
     window.removeEventListener("resize", this.cancelAnimationFromResize);
   },
   methods: {
+    applyColor() {
+      this.$root.$emit("darkBasemapSwichOff");
+      this.darkBasemapHandler(true);
+    },
     cancelAnimationFromResize() {
       if (this.isAnimating) {
         this.notifyCancelAnimateResize = true;
@@ -1555,16 +1561,47 @@ export default {
       }
     },
     findLayerIndex(date, layerDateArr, step) {
+      let dateArray = [];
+      var curDate;
+      if (step === "P1Y") {
+        for (let i = 0; i < layerDateArr.length; i++) {
+          dateArray.push(layerDateArr[i].getFullYear());
+        }
+        curDate = date.getFullYear();
+      } else if (step === "P1M") {
+        for (let i = 0; i < layerDateArr.length; i++) {
+          let month = layerDateArr[i].getMonth();
+          if (month < 10) {
+            month = "0" + month;
+          }
+          dateArray.push(`${layerDateArr[i].getFullYear()}${month}`);
+        }
+        let curMonth = date.getMonth();
+        if (curMonth < 10) {
+          curMonth = "0" + curMonth;
+        }
+        curDate = `${date.getFullYear()}${curMonth}`;
+      } else {
+        dateArray = layerDateArr;
+        curDate = date;
+      }
       let start = 0;
-      let end = layerDateArr.length - 1;
-      if (date <= layerDateArr[start]) {
-        if (date < layerDateArr[start]) {
+      let end = dateArray.length - 1;
+      if (curDate <= dateArray[start]) {
+        if (curDate < dateArray[start]) {
           return -1;
         } else {
           return 0;
         }
-      } else if (date >= layerDateArr[end]) {
-        if (date >= parseDuration(step).add(layerDateArr[end])) {
+      } else if (curDate >= dateArray[end]) {
+        let isOverOneInterval;
+        if (["P1M", "P1Y"].includes(step)) {
+          isOverOneInterval = curDate !== dateArray[end];
+        } else {
+          isOverOneInterval =
+            curDate >= parseDuration(step).add(dateArray[end]);
+        }
+        if (isOverOneInterval) {
           return -2;
         } else {
           return end;
@@ -1573,8 +1610,14 @@ export default {
       while (start <= end) {
         let mid = Math.floor((start + end) / 2);
         // If date is found
-        if (layerDateArr[mid].getTime() === date.getTime()) return mid;
-        else if (layerDateArr[mid] < date) start = mid + 1;
+        let isEqual;
+        if (["P1Y", "P1M"].includes(step)) {
+          isEqual = dateArray[mid] === curDate;
+        } else {
+          isEqual = dateArray[mid].getTime() === curDate.getTime();
+        }
+        if (isEqual) return mid;
+        else if (dateArray[mid] < curDate) start = mid + 1;
         else end = mid - 1;
       }
       return end;

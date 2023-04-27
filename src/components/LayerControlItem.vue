@@ -151,7 +151,7 @@
                   {{
                     localeDateFormat(
                       item.VisibilityLayerTime,
-                      getMapTimeSettings.Step
+                      item.dateTriplet[2]
                     )
                   }}
                 </v-row>

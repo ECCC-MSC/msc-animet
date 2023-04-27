@@ -43,8 +43,9 @@
   "MP4CreateCancelAnimationCreation": "Annuler",
   "Mp4Time": "Temps",
   "MP4CreateMap": "Carte",
-  "MP4CreateLightMode": "Clair",
-  "MP4CreateDarkMode": "Foncé",
+  "MP4CreateLightMode": "Mode clair",
+  "MP4CreateDarkMode": "Mode foncé",
+  "DarkBasemapSwitch": "Utiliser une carte foncée",
   "GeoMetWms": "Ajouter des couches {wmsSource}",
   "GeoMetSearchLabel": "Chercher les couches {wmsSource}",
   "climate": "GeoMet-Climat",
@@ -84,10 +85,11 @@
   "expiredExtentRefreshed": "Certains des pas de temps sélectionnés ne sont plus disponibles. La plage des dates sélectionnées a été ajustée.",
   "extentFullyOOB": "La plage complète des dates sélectionnées n'est plus disponible. La plage des dates sélectionnées a été réinitialisée.",
   "expiredSecondaryLayer": "Des pas de temps pour certaines couches sélectionnées ne sont plus disponibles. Les informations temporelles ont été mises à jour.",
-  "ApplyColor": "Appliquer la couleur au fond de carte",
+  "ApplyColor": "Appliquer la couleur à la carte",
   "RevertColor": "Remettre la couleur originale",
   "Overlays": "Couches superposées",
-  "Boundaries": "Superposer les limites de frontières géopolitiques",
-  "Major_cities": "Superposer les grandes villes",
-  "Water_bodies": "Superposer les délimitations des plans d'eau"
+  "OverlaysTip": "*Conseil: Les couches superposées peuvent être utiles lorsque la carte n'est plus visible.",
+  "Boundaries": "Limites de frontières géopolitiques",
+  "Major_cities": "Grandes villes",
+  "Water_bodies": "Délimitations des plans d'eau"
 }

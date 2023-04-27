@@ -66,8 +66,7 @@
             ? $t("MP4CreateLightMode")
             : $t("MP4CreateDarkMode")
         }}
-        Mode</span
-      >
+      </span>
     </v-tooltip>
 
     <v-btn icon @click="changeLang">
