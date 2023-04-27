@@ -35,10 +35,16 @@
           nudge-bottom="10"
           nudge-left="5"
           content-class="white black--text"
-          :disabled="isAnimating"
         >
           <template v-slot:activator="{ on, attrs }">
-            <v-btn color="primary" v-bind="attrs" v-on="on" x-small fab>
+            <v-btn
+              color="primary"
+              v-bind="attrs"
+              v-on="on"
+              x-small
+              fab
+              :disabled="isAnimating"
+            >
               <v-icon>
                 {{
                   attrs["aria-expanded"] === "true"
