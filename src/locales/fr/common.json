@@ -87,9 +87,9 @@
   "expiredSecondaryLayer": "Des pas de temps pour certaines couches sélectionnées ne sont plus disponibles. Les informations temporelles ont été mises à jour.",
   "ApplyColor": "Appliquer la couleur à la carte",
   "RevertColor": "Remettre la couleur originale",
-  "Overlays": "Couches superposées",
-  "OverlaysTip": "*Conseil: Les couches superposées peuvent être utiles lorsque la carte n'est plus visible.",
-  "Boundaries": "Limites de frontières géopolitiques",
-  "Major_cities": "Grandes villes",
-  "Water_bodies": "Délimitations des plans d'eau"
+  "Overlays": "Superpositions",
+  "OverlaysTip": "Les superpositions ajoutent de l'information au dessus des couches affichées.",
+  "Boundaries": "Limites de frontières géopolitiques canadiennes",
+  "Major_cities": "Grandes villes canadiennes",
+  "Water_bodies": "Délimitations des plans d'eau canadiens"
 }
