@@ -73,12 +73,22 @@
               </template>
             </v-text-field>
           </v-col>
-          <v-col cols="5">
+          <v-col cols="2">
             <v-switch
               :disabled="isAnimating"
               v-model="timeFormat"
               hide-details
               :label="$t('MP4CreateTimeFormat')"
+            >
+            </v-switch>
+          </v-col>
+          <v-col cols="2">
+            <v-switch
+              :disabled="isAnimating"
+              v-model="darkModeToggle"
+              hide-details
+              :label="$t('DarkBasemapSwitch')"
+              @change="toggleDarkMode"
             >
             </v-switch>
           </v-col>
@@ -94,12 +104,16 @@ import { mapGetters, mapState, mapMutations } from "vuex";
 export default {
   mounted() {
     this.$root.$on("adjustDefaultTitle", this.changeAnimationTitle);
+    this.$root.$on("darkBasemapSwichOff", () => {
+      this.darkModeToggle = false;
+    });
     this.$root.$on("localeChange", this.changeAnimationTitle);
     this.$root.$on("removeLayer", this.checkForChange);
   },
   data() {
     return {
       addAllLayersTitles: true,
+      darkModeToggle: false,
       MP4Quality: 30,
       selection: null,
     };
@@ -165,6 +179,14 @@ export default {
     resetTitle() {
       this.isTitleCustom(false);
       this.changeAnimationTitle();
+    },
+    toggleDarkMode() {
+      let rgb = [];
+      if (this.darkModeToggle) {
+        rgb = [0, 0, 0];
+      }
+      this.$store.dispatch("Layers/setRGB", rgb);
+      this.$root.$emit("darkModeMapEvent", this.darkModeToggle);
     },
     ...mapMutations("Layers", [
       "isTitleCustom",

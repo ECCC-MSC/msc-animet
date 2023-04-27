@@ -75,7 +75,7 @@ export default {
           Number(match[3]),
           Number(match[4]),
         ]);
-        this.$root.$emit("darkModeMapEvent");
+        this.$root.$emit("darkModeMapEvent", true);
       }
     }
   },
@@ -132,7 +132,7 @@ export default {
         layer.ZIndex = index;
         let op = parseFloat(opacity);
         layer.Opacity = isNaN(op) || op > 1 || op < 0 ? 0.75 : op;
-        layer.Visible = isVisible in ["0", "1"] ? isVisible === "1" : true;
+        layer.Visible = isVisible === "0" ? false : true;
         if (!isNaN(parseFloat(style))) {
           // Have to add this because "0" is indeed in layer.Style since it's an object
           layer.currentStyle = layerData.Style[0].Name;
@@ -154,9 +154,20 @@ export default {
           layer.dateTriplet = dateTriplet;
           layer.extentDateArray = extentDateArray;
           layer.extentLength = extentDateArray.length - 1;
-          layer.default_time = new Date(
-            layerData.Dimension.Dimension_time_default
-          );
+          if (dateTriplet[2] === "P1Y") {
+            layer.default_time = new Date(
+              layerData.Dimension.Dimension_time_default + "/01/01"
+            );
+          } else if (dateTriplet[2] === "P1M") {
+            layer.default_time = new Date(
+              layerData.Dimension.Dimension_time_default.replace("-", "/") +
+                "/01"
+            );
+          } else {
+            layer.default_time = new Date(
+              layerData.Dimension.Dimension_time_default
+            );
+          }
           this.$store.dispatch("Layers/addTimestep", layer.dateTriplet[2]);
           if (layerData.Dimension.Dimension_ref_time !== "") {
             layer.ReferenceTime = this.getStartEndTime(
@@ -166,8 +177,7 @@ export default {
         }
         if (
           layer.isTemporal &&
-          (this.getMapTimeSettings.Step === null ||
-            (isSnapped in ["0", "1"] && Number(isSnapped)))
+          (this.getMapTimeSettings.Step === null || isSnapped === "1")
         ) {
           const mapTimeSettings = {
             SnappedLayer: layer,
@@ -196,20 +206,46 @@ export default {
     },
     getStartEndTime(layerDimension) {
       let data = layerDimension.split("/");
-      if (data.length === 1) {
-        return [null, new Date(data[0]), null];
+      if (data[2] === "P1Y") {
+        data[0] += "/01/01";
+        data[1] += "/01/01";
+        return [new Date(data[0]), new Date(data[1]), data[2]];
+      } else if (data[2] === "P1M") {
+        data[0] = data[0].replace("-", "/") + "/01";
+        data[1] = data[1].replace("-", "/") + "/01";
+        return [new Date(data[0]), new Date(data[1]), data[2]];
+      } else {
+        if (data.length === 1) {
+          return [null, new Date(data[0]), null];
+        }
+        return [new Date(data[0]), new Date(data[1]), data[2]];
       }
-      return [new Date(data[0]), new Date(data[1]), data[2]];
     },
     getDateArray(start, end, step) {
-      let tempDareArray = new Array();
-      let tempDate = start;
-      let nextDate = parseDuration(step).add;
-      while (tempDate <= end) {
-        tempDareArray.push(tempDate);
-        tempDate = nextDate(tempDate);
+      let tempDateArray = new Array();
+      let tempDate = new Date(start);
+      if (step === "P1Y") {
+        let currentDate = new Date(tempDate);
+        while (tempDate <= end) {
+          tempDateArray.push(currentDate);
+          currentDate = new Date(
+            tempDate.setFullYear(tempDate.getFullYear() + 1, 0, 1)
+          );
+        }
+      } else if (step === "P1M") {
+        let currentDate = new Date(tempDate);
+        while (tempDate <= end) {
+          tempDateArray.push(currentDate);
+          currentDate = new Date(tempDate.setMonth(tempDate.getMonth() + 1, 1));
+        }
+      } else {
+        let nextDate = parseDuration(step).add;
+        while (tempDate <= end) {
+          tempDateArray.push(tempDate);
+          tempDate = nextDate(tempDate);
+        }
       }
-      return tempDareArray;
+      return tempDateArray;
     },
     findLayerIndex(date, layerDateArr, step) {
       let start = 0;

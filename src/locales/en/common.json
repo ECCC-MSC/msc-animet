@@ -41,8 +41,9 @@
   "MP4CreateCancelAnimationCreation": "Cancel",
   "Mp4Time": "Time",
   "MP4CreateMap": "Map",
-  "MP4CreateLightMode": "Light",
-  "MP4CreateDarkMode": "Dark",
+  "MP4CreateLightMode": "Light mode",
+  "MP4CreateDarkMode": "Dark mode",
+  "DarkBasemapSwitch": "Use dark basemap",
   "GeoMetWms": "Add {wmsSource} layers",
   "GeoMetSearchLabel": "Search {wmsSource} layers",
   "climate": "GeoMet-Climate",
@@ -86,7 +87,8 @@
   "ApplyColor": "Apply color to basemap",
   "RevertColor": "Revert to original color",
   "Overlays": "Overlays",
-  "Boundaries": "Add geopolitical boundaries overlay",
-  "Major_cities": "Add major cities overlay",
-  "Water_bodies": "Add water bodies overlay"
+  "OverlaysTip": "*Tip: Overlays can be useful when the basemap cannot be seen.",
+  "Boundaries": "Geopolitical boundaries",
+  "Major_cities": "Major cities",
+  "Water_bodies": "Water bodies"
 }
