@@ -87,8 +87,8 @@
   "ApplyColor": "Apply color to basemap",
   "RevertColor": "Revert to original color",
   "Overlays": "Overlays",
-  "OverlaysTip": "*Tip: Overlays can be useful when the basemap cannot be seen.",
-  "Boundaries": "Geopolitical boundaries",
-  "Major_cities": "Major cities",
-  "Water_bodies": "Water bodies"
+  "OverlaysTip": "Overlays add information on top of displayed layers.",
+  "Boundaries": "Canadian geopolitical boundaries",
+  "Major_cities": "Canadian cities",
+  "Water_bodies": "Canadian water bodies"
 }

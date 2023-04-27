@@ -57,16 +57,16 @@ const state = {
       zIndex: 9998,
       isShown: false,
     },
-    Water_bodies: {
-      layers: "shoreline_small,shoreline_mid,shoreline_large",
-      url: "https://maps.geogratis.gc.ca/wms/canvec_en",
-      zIndex: 9997,
-      isShown: false,
-    },
     Major_cities: {
       layers: "places_small,places_mid,places_large",
       url: "https://maps.geogratis.gc.ca/wms/canvec_en",
       zIndex: 9999,
+      isShown: false,
+    },
+    Water_bodies: {
+      layers: "shoreline_small,shoreline_mid,shoreline_large",
+      url: "https://maps.geogratis.gc.ca/wms/canvec_en",
+      zIndex: 9997,
       isShown: false,
     },
   },
