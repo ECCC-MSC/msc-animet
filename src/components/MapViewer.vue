@@ -1773,8 +1773,8 @@ export default {
       this.rgb = { r: this.getRGB[0], g: this.getRGB[1], b: this.getRGB[2] };
     },
     darkBasemapHandler(flag) {
+      this.isMapColored = flag;
       if (this.darkOSMCallback === null) {
-        this.isMapColored = flag;
         this.darkOSMCallback = (evt) => {
           evt.context.globalCompositeOperation = "color";
           evt.context.fillStyle = "rgb(0,0,0)";
