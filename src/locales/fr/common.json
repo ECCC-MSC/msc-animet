@@ -88,8 +88,8 @@
   "ApplyColor": "Appliquer la couleur à la carte",
   "RevertColor": "Remettre la couleur originale",
   "Overlays": "Superpositions",
-  "OverlaysTip": "Les superpositions ajoutent de l'information au dessus des couches affichées.",
-  "Boundaries": "Limites de frontières géopolitiques canadiennes",
+  "OverlaysTip": "Les superpositions ajoutent de l'information au-dessus des couches affichées.",
+  "Boundaries": "Frontières géopolitiques canadiennes",
   "Major_cities": "Villes canadiennes",
   "Water_bodies": "Délimitations des plans d'eau canadiens"
 }
