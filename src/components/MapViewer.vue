@@ -303,7 +303,6 @@ export default {
       }
       this.darkBasemapHandler(flag);
     });
-    this.$root.$on("darkModeOSM", this.darkModeOSMHandler);
     this.$root.$on("generatePermaLink", this.permaLinkHandler);
     this.$root.$on("getExtent", this.getExtent);
     this.$root.$on("goToExtent", this.goToExtentHandler);
@@ -1685,58 +1684,6 @@ export default {
             return true;
           }
         }
-      }
-    },
-    darkModeOSMHandler(flag) {
-      if (this.darkOSMCallback === null && flag === false) {
-        this.darkOSMCallback = (evt) => {
-          evt.context.globalCompositeOperation = "color";
-          evt.context.fillStyle = "rgba(0,0,0," + 1.0 + ")";
-          evt.context.fillRect(
-            0,
-            0,
-            evt.context.canvas.width,
-            evt.context.canvas.height
-          );
-          evt.context.globalCompositeOperation = "overlay";
-          evt.context.fillStyle = "rgb(" + [200, 200, 200].toString() + ")";
-          evt.context.fillRect(
-            0,
-            0,
-            evt.context.canvas.width,
-            evt.context.canvas.height
-          );
-          evt.context.globalCompositeOperation = "difference";
-          evt.context.fillStyle = "rgba(255,255,255," + 0.999 + ")";
-          evt.context.fillRect(
-            0,
-            0,
-            evt.context.canvas.width,
-            evt.context.canvas.height
-          );
-          evt.context.globalCompositeOperation = "source-over";
-        };
-        this.map
-          .getLayers()
-          .getArray()[0]
-          .on("postrender", this.darkOSMCallback);
-        this.map.updateSize();
-      }
-
-      if (flag === false) {
-        this.map
-          .getLayers()
-          .getArray()[0]
-          .on("postrender", this.darkOSMCallback);
-        this.map.updateSize();
-      }
-
-      if (flag === true) {
-        this.map
-          .getLayers()
-          .getArray()[0]
-          .un("postrender", this.darkOSMCallback);
-        this.map.updateSize();
       }
     },
     capitalize(word) {
