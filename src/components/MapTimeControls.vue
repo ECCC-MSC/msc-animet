@@ -16,29 +16,45 @@
         </template>
       </v-select>
     </v-col>
-    <v-col cols="10">
-      <v-row
-        justify="space-between"
-        v-if="this.getMapTimeSettings.Step !== null"
-      >
-        <v-col class="text-left">{{
-          formatDate(datetimeRangeSlider[0])
-        }}</v-col>
-        <v-col class="text-right">{{
-          formatDate(datetimeRangeSlider[1])
-        }}</v-col>
-      </v-row>
-      <v-row v-if="this.getMapTimeSettings.Step !== null">
+    <v-col cols="10" v-if="this.getMapTimeSettings.Step !== null">
+      <v-row justify="center">{{
+        localeDateFormat(
+          getMapTimeSettings.Extent[getMapTimeSettings.DateIndex],
+          getMapTimeSettings.Step
+        )
+      }}</v-row>
+      <v-col>
         <v-range-slider
+          class="range_slider"
           :disabled="isAnimating"
           :min="0"
           :max="getMapTimeSettings.Extent.length - 1"
           v-model="datetimeRangeSlider"
           :rules="[rangeValuesNotSame]"
           hide-details
-          ticks
           @end="changeDisplayedTime"
         ></v-range-slider>
+        <v-slider
+          class="mt-n8 image_slider"
+          :disabled="isAnimating"
+          :min="0"
+          :max="getMapTimeSettings.Extent.length - 1"
+          readonly
+          color="rgba(0, 0, 0, 0)"
+          track-color="rgba(0, 0, 0, 0)"
+          thumb-color="rgba(231, 116, 22, 0.5)"
+          :thumb-size="36"
+          hide-details
+          :value="getMapTimeSettings.DateIndex"
+        ></v-slider>
+      </v-col>
+      <v-row justify="space-between" class="mt-n6">
+        <v-col class="text-left">{{
+          formatDate(datetimeRangeSlider[0])
+        }}</v-col>
+        <v-col class="text-right">{{
+          formatDate(datetimeRangeSlider[1])
+        }}</v-col>
       </v-row>
     </v-col>
   </v-row>
@@ -287,7 +303,7 @@ export default {
     },
   },
   watch: {
-    getMapTimeSettings(newSettings, _) {
+    getMapTimeSettings(newSettings, oldSettings) {
       if (newSettings.Step !== null) {
         this.selection = newSettings.Step;
       }
@@ -310,6 +326,31 @@ export default {
         this.$store.commit("Layers/setDatetimeRangeSlider", dateRange);
       },
     },
+    timeSlider: {
+      get() {
+        return [
+          this.getDatetimeRangeSlider[0],
+          this.getMapTimeSettings.DateIndex,
+          this.getDatetimeRangeSlider[1],
+        ];
+      },
+      set(dateRange) {
+        this.$store.commit("Layers/setDatetimeRangeSlider", dateRange);
+      },
+    },
   },
 };
 </script>
+
+<style scope>
+.range_slider .v-slider__thumb:before {
+  left: -15px;
+  top: -6px;
+}
+.range_slider .v-slider__thumb {
+  width: 6px;
+  height: 24px;
+  left: -3px;
+  border-radius: 15px;
+}
+</style>

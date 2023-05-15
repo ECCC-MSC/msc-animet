@@ -102,7 +102,6 @@ export default {
   methods: {
     toggleThemeDarkMode() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-      // this.$root.$emit( 'darkModeOSM' , !this.$vuetify.theme.dark )
     },
     changeLang() {
       if (this.$i18n.locale === "en") {
