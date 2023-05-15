@@ -56,8 +56,9 @@ mkdir $NIGHTLYDIR && cd $NIGHTLYDIR
 git clone $GITREPO . -b main --depth=1
 
 echo "Stopping/building/starting Docker setup"
-docker compose -f docker-compose.yml build --no-cache
+# docker compose down first, otherwise docker compose up is called too soon
 docker compose -f docker-compose.yml down
+docker compose -f docker-compose.yml build --no-cache
 docker compose -f docker-compose.yml up -d
 
 cat > animet-nightly.conf <<EOF
