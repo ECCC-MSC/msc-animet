@@ -1,5 +1,9 @@
 # Release Notes
 
+## Version 1.1.2 (2023-05-17)
+
+### Bug Fixes
+- Added matomo analytics tracking of user clicks
 
 ## Version 1.1.1 (2023-05-01)
 
