@@ -19,6 +19,8 @@ deactivate
 cd ..
 echo "Done. Clearing Python virtual environment..."
 rm -rf $PYTHON_VENV
+echo "Use .env for gh-pages"
+cp ./deploy/gh-pages/.env ./.env
 echo "Building and bundling application files..."
 npm run build
 git --work-tree dist add --all

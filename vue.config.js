@@ -6,6 +6,14 @@ module.exports = defineConfig({
     ? process.env.BASE_URL
     : '/',
   transpileDependencies: true,
+  chainWebpack: config => {
+    // ensure index.html is not minified
+    config.plugin('html')
+      .tap(args => {
+        args[0].minify = false
+        return args
+      })
+  },
   configureWebpack: {
     plugins: [
       new NodePolyfillPlugin()
