@@ -4,7 +4,9 @@
       <v-row>
         <v-col class="text-no-wrap">
           <span class="text-caption text--primary">{{ $t("MSCAnimet") }}</span>
-          <v-chip small label outlined color="info" class="ml-1">{{ version }}</v-chip>
+          <v-chip small label outlined color="info" class="ml-1">{{
+            version
+          }}</v-chip>
         </v-col>
         <v-spacer />
         <v-col class="text-right">
@@ -21,10 +23,10 @@
 </template>
 
 <script>
-import { version } from "../../package.json";
+import { version } from "../../../package.json";
 export default {
   mounted() {
-    this.img = require(`../assets/eccc_c_${this.$i18n.locale}.${
+    this.img = require(`../../assets/eccc_c_${this.$i18n.locale}.${
       window.navigator.userAgent.indexOf("Firefox") != -1 ? "png" : "svg"
     }`);
   },

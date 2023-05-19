@@ -20,10 +20,10 @@ export default {
       return window.location.origin + window.location.pathname;
     },
     socialTitle() {
-      return this.$t("animationFrom");
+      return this.$t("AnimationFrom");
     },
     socialHashtags() {
-      var l = this.$t("socialWeatherHashtags");
+      var l = this.$t("SocialWeatherHashtags");
       return l;
     },
     socialUrl() {

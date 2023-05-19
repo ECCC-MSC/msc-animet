@@ -2,24 +2,19 @@ import treeEn_weather from "../../assets/trees/tree_en_weather";
 import treeFr_weather from "../../assets/trees/tree_fr_weather";
 import treeEn_climate from "../../assets/trees/tree_en_climate";
 import treeFr_climate from "../../assets/trees/tree_fr_climate";
-import locEn from "../../assets/locations/loc_en";
-import locFr from "../../assets/locations/loc_fr";
 import wmsSources from "../../../scripts/wms_sources_configs.json";
-import i18n from "../../plugins/i18n.js";
 
 const state = {
   animationTitle: "",
   currentWmsSource: "https://geo.weather.gc.ca/geomet",
-  darkModeFlag: false,
   datetimeRangeSlider: [0, 1],
   exportStyle: null,
   extent: null,
   framesPerSecond: 3,
   fullTimestepsList: [],
   isAnimating: false,
-  isTitleCustom: false,
   lang: "en",
-  layerList: [],
+  activeLegendsList: [],
   layerTreeItemsEn: [
     treeEn_weather.tree_en_weather,
     treeEn_climate.tree_en_climate,
@@ -28,24 +23,17 @@ const state = {
     treeFr_weather.tree_fr_weather,
     treeFr_climate.tree_fr_climate,
   ],
-  locationsEn: locEn.loc_en,
-  locationsFr: locFr.loc_fr,
   mapTimeSettings: {
     SnappedLayer: null,
     Step: null,
     DateIndex: null,
     Extent: null,
-    MapLegendLayer: null,
   },
   MP4CreateFlag: true,
   MP4ProgressPercent: 0,
   MP4URL: "null",
-  rgb: {
-    r: 200,
-    g: 200,
-    b: 200,
-  },
-  orderedLayers: [],
+  playState: "pause",
+  rgb: [],
   outputDate: null,
   outputMapWH: [],
   outputSize: null,
@@ -90,30 +78,17 @@ const getters = {
   getGeoMetWmsSources: (state) => {
     return state.wmsSources;
   },
-  getFullTimestepsList: (state) => {
-    return state.fullTimestepsList;
-  },
   getUniqueTimestepsList: (state) => {
     return state.uniqueTimestepsList;
   },
-  getLayerList: (state) => {
-    return state.layerList;
+  getActiveLegends: (state) => {
+    return state.activeLegendsList;
   },
   getMP4URL: (state) => {
     return state.MP4URL;
   },
   getMapTimeSettings: (state) => {
     return state.mapTimeSettings;
-  },
-  getMP4CreateFlag: (state) => {
-    return state.MP4CreateFlag;
-  },
-  getLocations: (state) => {
-    if (state.lang === "en") {
-      return state.locationsEn;
-    } else {
-      return state.locationsFr;
-    }
   },
   getExtent: (state) => {
     return state.extent;
@@ -138,9 +113,6 @@ const getters = {
   },
   getTimeFormat: (state) => {
     return state.timeFormat;
-  },
-  getOrderedLayers: (state) => {
-    return state.orderedLayers;
   },
   getDatetimeRangeSlider: (state) => {
     return state.datetimeRangeSlider;
@@ -175,16 +147,13 @@ const mutations = {
       );
     }
   },
-  addLayer: (state, layer) => {
-    state.layerList.push(layer);
+  addActiveLegend: (state, legend) => {
+    state.activeLegendsList.push(legend);
   },
-  removeLayer: (state, removedLayerName) => {
-    state.layerList = state.layerList.filter(
-      (l) => l.Name !== removedLayerName
+  removeActiveLegend: (state, legend) => {
+    state.activeLegendsList = state.activeLegendsList.filter(
+      (l) => l !== legend
     );
-  },
-  setLayerProperty: (state, [layerName, property, newVal]) => {
-    state.layerList.find((l) => l.Name === layerName)[property] = newVal;
   },
   setMP4URL: (state, URL) => {
     state.MP4URL = URL;
@@ -198,15 +167,8 @@ const mutations = {
   setMapTimeIndex: (state, index) => {
     state.mapTimeSettings.DateIndex = index;
   },
-  setMapSnappedLayer: (state, layer) => {
-    state.mapTimeSettings.SnappedLayer = layer;
-  },
-  setMapLegendLayer: (state, layer) => {
-    if (layer !== "") {
-      state.mapTimeSettings.MapLegendLayer = layer;
-    } else {
-      state.mapTimeSettings.MapLegendLayer = null;
-    }
+  setMapSnappedLayer: (state, layerName) => {
+    state.mapTimeSettings.SnappedLayer = layerName;
   },
   setMP4CreateFlag: (state, flag) => {
     state.MP4CreateFlag = flag;
@@ -242,8 +204,8 @@ const mutations = {
   setTimeFormat: (state, newTimeFormat) => {
     state.timeFormat = newTimeFormat;
   },
-  setOrderedLayers: (state, newOrderOfLists) => {
-    state.orderedLayers = newOrderOfLists;
+  setAnimationTitle: (state, title) => {
+    state.animationTitle = title;
   },
   setWmsSourceURL: (state, newWmsSource) => {
     state.currentWmsSource = newWmsSource;
@@ -254,49 +216,8 @@ const mutations = {
   setDatetimeRangeSlider: (state, range) => {
     state.datetimeRangeSlider = range;
   },
-  isTitleCustom: (state, isCustom) => {
-    state.isTitleCustom = isCustom;
-  },
-  setCustomTitle: (state, title) => {
-    state.animationTitle = title;
-  },
-  setAnimationTitle: (state, title) => {
-    if (!state.isTitleCustom) {
-      let titleLayer = state.layerList.filter((l) => i18n.t(l.Name) === title);
-      if (titleLayer.length !== 0) {
-        if (state.mapTimeSettings.SnappedLayer !== null) {
-          state.animationTitle = title;
-          state.mapTimeSettings.SnappedLayer.Title = state.animationTitle;
-          let snapped = state.layerList.find(
-            (l) => l.Name === state.mapTimeSettings.SnappedLayer.Name
-          );
-          snapped.Title = state.animationTitle;
-        } else {
-          state.animationTitle = title;
-          titleLayer[0].Title = state.animationTitle;
-        }
-      } else {
-        state.animationTitle = title;
-      }
-    }
-  },
-  setDefaultAnimationTitle: (state) => {
-    if (state.mapTimeSettings.SnappedLayer !== null) {
-      state.animationTitle = i18n.t(state.mapTimeSettings.SnappedLayer.Name);
-      state.mapTimeSettings.SnappedLayer.Title = state.animationTitle;
-      let titleLayer = state.layerList.filter((l) => i18n.t(l.Name) === title);
-      titleLayer[0].Title = state.animationTitle;
-      state.isTitleCustom = false;
-    } else {
-      let currentIntervalLayers = state.layerList.filter(
-        (l) => l.isTemporal && l.dateTriplet[2] === state.mapTimeSettings.Step
-      );
-      if (currentIntervalLayers.length === 1) {
-        state.animationTitle = i18n.t(currentIntervalLayers[0].Name);
-        currentIntervalLayers[0].Title = state.animationTitle;
-        state.isTitleCustom = false;
-      }
-    }
+  setPlayState: (state, playState) => {
+    state.playState = playState;
   },
 };
 
@@ -307,11 +228,11 @@ const actions = {
   removeTimestep({ commit }, payload) {
     commit("removeTimestep", payload);
   },
-  addLayer({ commit }, payload) {
-    commit("addLayer", payload);
+  addActiveLegend({ commit }, payload) {
+    commit("addActiveLegend", payload);
   },
-  removeLayer({ commit }, payload) {
-    commit("removeLayer", payload);
+  removeActiveLegend({ commit }, payload) {
+    commit("removeActiveLegend", payload);
   },
   setLang({ commit }, payload) {
     commit("setLang", payload);
@@ -330,9 +251,6 @@ const actions = {
   },
   setMapSnappedLayer({ commit }, payload) {
     commit("setMapSnappedLayer", payload);
-  },
-  setMapLegendLayer({ commit }, payload) {
-    commit("setMapLegendLayer", payload);
   },
   setMP4CreateFlag({ commit }, payload) {
     commit("setMP4CreateFlag", payload);
@@ -367,8 +285,8 @@ const actions = {
   setTimeFormat({ commit }, payload) {
     commit("setTimeFormat", payload);
   },
-  setOrderedLayers: ({ commit }, payload) => {
-    commit("setOrderedLayers", payload);
+  setAnimationTitle({ commit }, payload) {
+    commit("setAnimationTitle", payload);
   },
   setWmsSourceURL({ commit }, payload) {
     commit("setWmsSourceURL", payload);

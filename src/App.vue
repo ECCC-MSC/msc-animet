@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import AppBar from "./components/AppBar.vue";
-import AppFooter from "./components/AppFooter.vue";
+import AppBar from "./components/HeaderFooter/AppBar.vue";
+import AppFooter from "./components/HeaderFooter/AppFooter.vue";
 
 export default {
   name: "App",
