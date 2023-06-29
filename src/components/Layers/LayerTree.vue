@@ -47,16 +47,22 @@
                     color="white"
                     icon
                     :disabled="isAnimating"
-                    @click="addLayerEvent(item)"
+                    @click="requestLayerData(item)"
                   >
                     <v-icon color="primary">
-                      {{ added.includes(item.Name) ? "mdi-minus" : "mdi-plus" }}
+                      {{
+                        $mapLayers.arr.some(
+                          (l) => l.get("layerName") === item.Name
+                        )
+                          ? "mdi-minus"
+                          : "mdi-plus"
+                      }}
                     </v-icon>
                   </v-btn>
                 </template>
                 <template v-slot:label="{ item }">
                   <v-container
-                    @click="isAnimating ? null : addLayerEvent(item)"
+                    @click="isAnimating ? null : requestLayerData(item)"
                     class="ma-0 pa-0"
                   >
                     <strong :title="item.Title">{{ item.Title }}</strong>
@@ -87,7 +93,7 @@
             :disabled="isAnimating"
             hide-details
             class="pl-12 font-weight-medium"
-            @change="$root.$emit('specialLayerToggle', values, overlay)"
+            @change="$root.$emit('overlayToggle', values, overlay)"
           >
             <template v-slot:label>
               <span class="black--text">{{ $t(overlay) }}</span>
@@ -100,25 +106,23 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
 import axios from "axios";
 import SaxonJS from "saxon-js";
-import parseDuration from "../assets/parseHelper";
+import { mapGetters, mapState } from "vuex";
 
 export default {
-  created() {
-    this.$root.$on("permalinkLayersFlag", (flag) => {
-      if (flag === true) {
-        this.expandTreePanel = null;
-      }
-    });
-  },
   mounted() {
     this.filteredTreeNodes.push(...this.getGeoMetTreeItems);
     this.searchGeoMet = new Array(
       Object.keys(this.getGeoMetWmsSources).length
     ).fill(null);
+    this.$root.$on("layerRemoved", (layerName) => {
+      this.addedLayers = this.addedLayers.filter(
+        (added) => added !== layerName
+      );
+    });
     this.$root.$on("localeChange", this.resetSearchAndTree);
+    this.$root.$on("permaLinkLayer", this.requestLayerData);
   },
   watch: {
     tab(newTab, oldTab) {
@@ -137,10 +141,11 @@ export default {
   },
   data() {
     return {
+      addedLayers: [],
       expandTreePanel: 0,
-      searchGeoMet: [],
-      openedLevels: [],
       filteredTreeNodes: [],
+      openedLevels: [],
+      searchGeoMet: [],
       tab: null,
       xsltFull: `parse-xml($xml)//Layer[not(.//Layer)]!map 
                         {
@@ -183,12 +188,16 @@ export default {
     };
   },
   methods: {
-    async addLayerEvent(layer) {
-      if (!this.added.includes(layer.Name) && layer.isLeaf) {
+    async requestLayerData(layer) {
+      if (layer.isLeaf && !this.addedLayers.includes(layer.Name)) {
+        let source = Object.hasOwn(layer, "wmsSource")
+          ? layer.wmsSource
+          : this.getCurrentWmsSource;
+        this.addedLayers.push(layer.Name);
         var layerData = null;
         let this_ = this;
         const api = axios.create({
-          baseURL: this.getCurrentWmsSource,
+          baseURL: source,
           params: {
             service: "WMS",
             version: "1.3.0",
@@ -209,147 +218,14 @@ export default {
             },
           });
         });
-        layer.Title = layerData.Title;
-        layer.Style = layerData.Style;
-        layer.currentStyle = layer.Style[0].Name;
-        layer.Opacity = 0.75;
-        layer.Visible = true;
-        layer.ZIndex = null;
-        layer.isTemporal =
-          layer.isTemporal &&
-          layerData.Dimension.Dimension_time.split("/")[2] !== "PT0H";
-        if (layer.isTemporal) {
-          const dateTriplet = this.getStartEndTime(
-            layerData.Dimension.Dimension_time
-          );
-          const extentDateArray = this.getDateArray(
-            dateTriplet[0],
-            dateTriplet[1],
-            dateTriplet[2]
-          );
-          layer.dateTriplet = dateTriplet;
-          layer.extentDateArray = extentDateArray;
-
-          if (dateTriplet[2] === "P1Y") {
-            layer.default_time = new Date(
-              layerData.Dimension.Dimension_time_default + "/01/01"
-            );
-          } else if (dateTriplet[2] === "P1M") {
-            layer.default_time = new Date(
-              layerData.Dimension.Dimension_time_default.replace("-", "/") +
-                "/01"
-            );
-          } else {
-            layer.default_time = new Date(
-              layerData.Dimension.Dimension_time_default
-            );
-          }
-          this.$store.dispatch("Layers/addTimestep", layer.dateTriplet[2]);
-          if (layerData.Dimension.Dimension_ref_time !== "") {
-            layer.ReferenceTime = this.getStartEndTime(
-              layerData.Dimension.Dimension_ref_time
-            )[1];
-          }
-        }
-        if (!this.getLayerList.find((l) => l.Name === layer.Name)) {
-          if (layer.isTemporal && this.getMapTimeSettings.Step === null) {
-            const mapTimeSettings = {
-              SnappedLayer: layer,
-              Step: layer.dateTriplet[2],
-              DateIndex: this.findLayerIndex(
-                layer.default_time,
-                layer.extentDateArray,
-                layer.dateTriplet[2]
-              ),
-              Extent: layer.extentDateArray,
-              MapLegendLayer: layer,
-            };
-            this.$store.dispatch("Layers/setMapTimeSettings", mapTimeSettings);
-            this.$store.commit("Layers/setDatetimeRangeSlider", [
-              0,
-              layer.extentDateArray.length - 1,
-            ]);
-          }
-          this.$store.dispatch("Layers/addLayer", layer);
-          this.$root.$emit("addLayer", layer);
-        }
-      } else if (this.added.includes(layer.Name)) {
-        let layerObj = this.getLayerList.find((l) => l.Name === layer.Name);
-        this.$root.$emit(
-          "removeLayerControls",
-          layerObj,
-          this.getOrderedLayers.indexOf(layer.Name)
-        );
+        layerData = { ...layerData, ...layer };
+        layerData.isTemporal = layerData.Dimension.Dimension_time !== "";
+        this.$root.$emit("buildLayer", layerData, source);
+      } else if (
+        this.$mapLayers.arr.some((l) => l.get("layerName") === layer.Name)
+      ) {
+        this.$root.$emit("removeLayer", layer.Name);
       }
-    },
-    getStartEndTime(layerDimension) {
-      var data = layerDimension.split("/");
-      if (data[2] === "P1Y") {
-        data[0] += "/01/01";
-        data[1] += "/01/01";
-        return [new Date(data[0]), new Date(data[1]), data[2]];
-      } else if (data[2] === "P1M") {
-        data[0] = data[0].replace("-", "/") + "/01";
-        data[1] = data[1].replace("-", "/") + "/01";
-        return [new Date(data[0]), new Date(data[1]), data[2]];
-      } else {
-        if (data.length === 1) {
-          return [null, new Date(data[0]), null];
-        } else {
-          return [new Date(data[0]), new Date(data[1]), data[2]];
-        }
-      }
-    },
-    getDateArray(start, end, step) {
-      let tempDateArray = new Array();
-      let tempDate = new Date(start);
-      if (step === "P1Y") {
-        let currentDate = new Date(tempDate);
-        while (tempDate <= end) {
-          tempDateArray.push(currentDate);
-          currentDate = new Date(
-            tempDate.setFullYear(tempDate.getFullYear() + 1, 0, 1)
-          );
-        }
-      } else if (step === "P1M") {
-        let currentDate = new Date(tempDate);
-        while (tempDate <= end) {
-          tempDateArray.push(currentDate);
-          currentDate = new Date(tempDate.setMonth(tempDate.getMonth() + 1, 1));
-        }
-      } else {
-        let nextDate = parseDuration(step).add;
-        while (tempDate <= end) {
-          tempDateArray.push(tempDate);
-          tempDate = nextDate(tempDate);
-        }
-      }
-      return tempDateArray;
-    },
-    findLayerIndex(date, layerDateArr, step) {
-      let start = 0;
-      let end = layerDateArr.length - 1;
-      if (date <= layerDateArr[start]) {
-        if (date < layerDateArr[start]) {
-          return -1;
-        } else {
-          return 0;
-        }
-      } else if (date >= layerDateArr[end]) {
-        if (date >= parseDuration(step).add(layerDateArr[end])) {
-          return -2;
-        } else {
-          return end;
-        }
-      }
-      while (start <= end) {
-        let mid = Math.floor((start + end) / 2);
-        // If date is found
-        if (layerDateArr[mid].getTime() === date.getTime()) return mid;
-        else if (layerDateArr[mid] < date) start = mid + 1;
-        else end = mid - 1;
-      }
-      return end;
     },
     filterCallbackFunction(array, fn) {
       return array.reduce((r, o) => {
@@ -404,20 +280,8 @@ export default {
       "getCurrentWmsSource",
       "getGeoMetTreeItems",
       "getGeoMetWmsSources",
-      "getLayerList",
-      "getMapTimeSettings",
-      "getOrderedLayers",
       "getPossibleOverlays",
-      "getTimestepsList",
     ]),
-    filter() {
-      return (item, search) =>
-        item["Title"].toLowerCase().indexOf(search.toLowerCase()) > -1 ||
-        item["Name"].toLowerCase().indexOf(search.toLowerCase()) > -1;
-    },
-    added() {
-      return this.getLayerList.map((o) => o.Name);
-    },
   },
 };
 </script>

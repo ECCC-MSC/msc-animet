@@ -10,12 +10,12 @@
         height="32px"
       >
         <v-icon left> mdi-link-variant </v-icon>
-        {{ $t("share") }}
+        {{ $t("Share") }}
       </v-btn>
     </template>
     <v-card tile>
       <v-toolbar dark color="black">
-        <v-toolbar-title>{{ $t("share") }}</v-toolbar-title>
+        <v-toolbar-title>{{ $t("Share") }}</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn icon dark @click="dialog = false">
           <v-icon>mdi-close</v-icon>
@@ -61,12 +61,9 @@ export default {
   computed: {
     ...mapGetters("Layers", [
       "getExtent",
-      "getLayerList",
       "getMapTimeSettings",
-      "getOrderedLayers",
       "getOutputWH",
       "getPermalink",
-      "getPossibleOverlays",
       "getRGB",
     ]),
   },
@@ -85,36 +82,30 @@ export default {
     },
     createPermaLink() {
       let prefix = this.prefixLink();
-      if (this.getLayerList.length === 0) {
+      if (this.$mapLayers.arr.length === 0) {
         this.$store.dispatch("Layers/setPermalink", prefix);
         return prefix;
       }
       this.$root.$emit("getExtent");
-      this.$root.$emit("generatePermaLink");
 
-      const orderedLayerList = [
-        ...this.getOrderedLayers.toString().split(","),
-      ].reverse();
       let permalinktemp = prefix + "?layers=";
-      let isSnapped = "0";
-      for (let i = 0; i < this.getLayerList.length; i++) {
-        let layer = this.getLayerList.find(
-          (l) => l.Name === orderedLayerList[i]
-        );
-        let layerOpacity = layer.Opacity.toString();
-        if (this.getMapTimeSettings.SnappedLayer) {
-          isSnapped =
-            layer.Name === this.getMapTimeSettings.SnappedLayer.Name
-              ? "1"
-              : "0";
-        }
-        let isVisible = layer.Visible ? "1" : "0";
+      for (let i = 0; i < this.$mapLayers.arr.length; i++) {
+        let layerOpacity = this.$mapLayers.arr[i].get("opacity").toString();
+        let isSnapped =
+          this.$mapLayers.arr[i].get("layerName") ===
+          this.getMapTimeSettings.SnappedLayer
+            ? "1"
+            : "0";
+        let isVisible = this.$mapLayers.arr[i].get("visible") ? "1" : "0";
         let layerStyle = "0";
-        if (layer.currentStyle !== layer.Style[0].Name) {
-          layerStyle = layer.currentStyle;
+        if (
+          this.$mapLayers.arr[i].get("layerCurrentStyle") !==
+          this.$mapLayers.arr[i].get("layerStyles")[0].Name
+        ) {
+          layerStyle = this.$mapLayers.arr[i].get("layerCurrentStyle");
         }
         permalinktemp +=
-          layer.Name +
+          this.$mapLayers.arr[i].get("layerName") +
           ";" +
           layerOpacity +
           ";" +
@@ -124,7 +115,7 @@ export default {
           ";" +
           layerStyle;
 
-        if (i < orderedLayerList.length - 1) {
+        if (i < this.$mapLayers.arr.length - 1) {
           permalinktemp += ",";
         }
       }

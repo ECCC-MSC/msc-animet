@@ -78,21 +78,21 @@
         <v-btn
           v-bind="attrs"
           v-on="on"
-          :href="$t('documentationURL')"
+          :href="$t('DocumentationURL')"
           target="_blank"
           icon
         >
           <v-icon> mdi-information-outline </v-icon>
         </v-btn>
       </template>
-      <span>{{ $t("userDoc") }}</span>
+      <span>{{ $t("UserDoc") }}</span>
     </v-tooltip>
   </v-app-bar>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import PermaLink from "./PermaLink.vue";
+import PermaLink from "../Share/PermaLink.vue";
 
 export default {
   name: "AppBar",
