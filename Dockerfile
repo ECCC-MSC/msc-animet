@@ -1,6 +1,6 @@
 # develop stage
 FROM node:18-slim as develop-stage
-RUN apt-get update || : && apt-get install python3-all python3-pip -y
+RUN apt-get update || : && apt-get install python3-all python3-pip python3-owslib -y
 WORKDIR /app
 COPY package*.json ./
 RUN npm install -g @vue/cli
@@ -10,8 +10,6 @@ COPY . .
 FROM develop-stage as build-stage
 ## build layer name reference file
 WORKDIR /app/scripts
-ENV PYTHON_VENV=generate-tree-venv
-RUN pip3 install owslib
 RUN python3 generate_trees_layers_list.py
 ## build app
 WORKDIR /app
