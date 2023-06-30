@@ -49,7 +49,7 @@ export default {
       this.item.getSource().updateParams({
         DIM_REFERENCE_TIME: this.getProperDateString(
           this.currentMR,
-          this.item.get("layerTimeStep")
+          this.item.get("layerDateFormat")
         ),
       });
       this.item.setProperties({

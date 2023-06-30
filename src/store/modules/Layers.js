@@ -205,7 +205,7 @@ const mutations = {
     state.timeFormat = newTimeFormat;
   },
   setAnimationTitle: (state, title) => {
-    state.animationTitle = title;
+    state.animationTitle = title === null ? "" : title;
   },
   setWmsSourceURL: (state, newWmsSource) => {
     state.currentWmsSource = newWmsSource;

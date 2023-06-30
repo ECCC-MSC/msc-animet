@@ -96,7 +96,9 @@ export default {
           this.getMapTimeSettings.SnappedLayer
             ? "1"
             : "0";
-        let isVisible = this.$mapLayers.arr[i].get("visible") ? "1" : "0";
+        let isVisible = this.$mapLayers.arr[i].get("layerVisibilityOn")
+          ? "1"
+          : "0";
         let layerStyle = "0";
         if (
           this.$mapLayers.arr[i].get("layerCurrentStyle") !==

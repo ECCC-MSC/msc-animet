@@ -99,9 +99,13 @@ export default {
       let referenceTime =
         layerData.Dimension.Dimension_ref_time === ""
           ? null
-          : this.getDateArray(layerData.Dimension.Dimension_ref_time);
+          : this.getDateArray(layerData.Dimension.Dimension_ref_time)[0];
+      let [layerDateArray, dateFormat] = this.getDateArray(
+        layerData.Dimension.Dimension_time
+      );
       imageLayer.setProperties({
-        layerDateArray: this.getDateArray(layerData.Dimension.Dimension_time),
+        layerDateArray: layerDateArray,
+        layerDateFormat: dateFormat,
         layerDateIndex: 0,
         layerDefaultTime: new Date(layerData.Dimension.Dimension_time_default),
         layerIndexOOB: false,
@@ -119,25 +123,15 @@ export default {
         imageLayer.get("layerTimeStep")
       );
       if (this.getMapTimeSettings.Step === null || layerData.isSnapped) {
-        let layerDateIndex = this.findLayerIndex(
-          imageLayer.get("layerDefaultTime"),
-          imageLayer.get("layerDateArray"),
-          imageLayer.get("layerTimeStep")
-        );
-        imageLayer.setProperties({
-          layerDateIndex: layerDateIndex,
-        });
-        const mapTimeSettings = {
-          SnappedLayer: imageLayer.get("layerName"),
-          Step: imageLayer.get("layerTimeStep"),
-          DateIndex: layerDateIndex,
-          Extent: imageLayer.get("layerDateArray"),
-        };
-        this.$store.dispatch("Layers/setMapTimeSettings", mapTimeSettings);
-        this.$store.commit("Layers/setDatetimeRangeSlider", [
-          0,
-          imageLayer.get("layerDateArray").length - 1,
-        ]);
+        this.changeMapTime(imageLayer.get("layerTimeStep"), imageLayer);
+        // let layerDateIndex = this.findLayerIndex(
+        //   imageLayer.get("layerDefaultTime"),
+        //   this.getMapTimeSettings.Extent,
+        //   imageLayer.get("layerTimeStep")
+        // );
+        // imageLayer.setProperties({
+        //   layerDateIndex: layerDateIndex,
+        // });
       } else {
         let layerDateIndex = this.findLayerIndex(
           this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
@@ -149,6 +143,8 @@ export default {
         });
         if (this.getMapTimeSettings.Step === imageLayer.get("layerTimeStep")) {
           this.changeMapTime(imageLayer.get("layerTimeStep"));
+        } else if (layerDateIndex < 0) {
+          imageLayer.setVisible(false);
         }
       }
       this.$root.$emit("timeLayerAdded");
@@ -187,7 +183,7 @@ export default {
     },
     async setDateTime(layer, date) {
       layer.getSource().updateParams({
-        TIME: this.getProperDateString(date, layer.get("layerTimeStep")),
+        TIME: this.getProperDateString(date, layer.get("layerDateFormat")),
       });
     },
   },

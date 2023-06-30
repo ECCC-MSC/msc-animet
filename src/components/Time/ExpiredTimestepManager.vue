@@ -138,7 +138,7 @@ export default {
       let [start, end, step] = layerData.Dimension.Dimension_time.split("/");
       let extentDateArray = this.getDateArray(
         layerData.Dimension.Dimension_time
-      );
+      )[0];
       const newLayerIndex = this.findLayerIndex(
         this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
         extentDateArray,
@@ -151,7 +151,7 @@ export default {
         layerModelRuns:
           layerData.Dimension.Dimension_ref_time === ""
             ? null
-            : this.getDateArray(layerData.Dimension.Dimension_ref_time),
+            : this.getDateArray(layerData.Dimension.Dimension_ref_time)[0],
         layerStartTime: new Date(start),
         layerEndTime: new Date(end),
         layerTimeStep: step,
