@@ -21,11 +21,15 @@
       <v-col>
         <v-range-slider
           class="range_slider"
+          v-model="datetimeRangeSlider"
           :disabled="isAnimating"
           :min="0"
           :max="getMapTimeSettings.Extent.length - 1"
-          v-model="datetimeRangeSlider"
           :rules="[rangeValuesNotSame]"
+          :color="hideRangeSlider"
+          :thumb-color="hideRangeSlider"
+          :track-color="hideRangeSlider"
+          :track-fill-color="hideRangeSlider"
           hide-details
           @end="changeDisplayedTime"
         ></v-range-slider>
@@ -107,6 +111,14 @@ export default {
   computed: {
     ...mapGetters("Layers", ["getDatetimeRangeSlider", "getMapTimeSettings"]),
     ...mapState("Layers", ["isAnimating"]),
+    currentTime: {
+      get() {
+        return this.getMapTimeSettings.DateIndex;
+      },
+      set(newDateIndex) {
+        this.$store.dispatch("Layers/setMapTimeIndex", newDateIndex);
+      },
+    },
     datetimeRangeSlider: {
       get() {
         return this.getDatetimeRangeSlider;
@@ -115,13 +127,15 @@ export default {
         this.$store.commit("Layers/setDatetimeRangeSlider", dateRange);
       },
     },
-    currentTime: {
-      get() {
-        return this.getMapTimeSettings.DateIndex;
-      },
-      set(newDateIndex) {
-        this.$store.dispatch("Layers/setMapTimeIndex", newDateIndex);
-      },
+    hideRangeSlider() {
+      if (
+        this.getMapTimeSettings.Extent !== null &&
+        this.getMapTimeSettings.Extent.length === 1
+      ) {
+        return "rgba(0, 0, 0, 0)";
+      } else {
+        return undefined;
+      }
     },
   },
 };

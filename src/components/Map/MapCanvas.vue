@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { Attribution, Control } from "ol/control";
+import { Attribution, Control, ScaleLine } from "ol/control";
 import OLImage from "ol/layer/Image";
 import TileLayer from "ol/layer/Tile";
 import Map from "ol/Map";
@@ -72,6 +72,10 @@ export default {
       this.map.updateSize();
     });
 
+    const scaleControl = new ScaleLine({
+      units: "metric",
+    });
+
     this.map = new Map({
       target: this.$refs["map"],
       layers: [this.osm],
@@ -81,7 +85,7 @@ export default {
         maxZoom: 12,
       }),
       pixelRatio: 1,
-      controls: [], // defaultControls({ attribution: true }),
+      controls: [scaleControl],
     });
 
     let attribution = new Attribution();
@@ -242,7 +246,7 @@ export default {
       });
 
       imageLayer.getSource().updateParams({
-        STYLES: imageLayer.get("currentStyle"),
+        STYLES: imageLayer.get("layerCurrentStyle"),
       });
 
       if (this.getActiveLegends.length === 0) {

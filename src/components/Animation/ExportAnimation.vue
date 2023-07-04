@@ -45,8 +45,8 @@ export default {
     exportName() {
       let animationTitle = this.getAnimationTitle;
       if (animationTitle !== "") {
-        animationTitle = animationTitle.replace("^", "");
-        animationTitle = animationTitle.replace(",", ".");
+        animationTitle = animationTitle.replaceAll("^", "");
+        animationTitle = animationTitle.replaceAll(",", ".");
         animationTitle = animationTitle
           .normalize("NFD")
           .replace(/[\u0300-\u036f]/g, "");

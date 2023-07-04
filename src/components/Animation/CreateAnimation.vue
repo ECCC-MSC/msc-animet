@@ -168,10 +168,10 @@ export default {
         return `${firstDateSplit[0]}${firstDateSplit[1]}-${lastDateSplit[0]}${lastDateSplit[1]}`;
       } else {
         return (
-          firstDate.toISOString().split(".")[0].replace(" ", "") +
+          firstDate.toISOString().split(".")[0].replace(/[:-]/g, "") +
           "Z" +
           "-" +
-          lastDate.toISOString().split(".")[0].replace(" ", "") +
+          lastDate.toISOString().split(".")[0].replace(/[:-]/g, "") +
           "Z"
         );
       }

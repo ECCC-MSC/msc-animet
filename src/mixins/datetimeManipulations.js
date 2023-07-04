@@ -63,11 +63,19 @@ export default {
         }
       }
       if (dateIndex === null) {
-        dateIndex = this.findLayerIndex(
-          timeLayers[0].get("layerDefaultTime"),
-          timeLayers[0].get("layerDateArray"),
-          timeLayers[0].get("layerTimeStep")
-        );
+        if (snappedLayer !== null) {
+          dateIndex = this.findLayerIndex(
+            snappedLayer.get("layerDefaultTime"),
+            arrayCombine,
+            snappedLayer.get("layerTimeStep")
+          );
+        } else {
+          dateIndex = this.findLayerIndex(
+            timeLayers[0].get("layerDefaultTime"),
+            arrayCombine,
+            timeLayers[0].get("layerTimeStep")
+          );
+        }
         if (timestep === this.getMapTimeSettings.Step) {
           const currentDateIndex = this.findLayerIndex(
             this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
@@ -138,6 +146,14 @@ export default {
       let dateArray = new Array();
       if (dateRange.includes("/")) {
         var [startDateStr, endDateStr, interval] = dateRange.split("/");
+        var format;
+        if (/^\d{4}-([0]\d|1[0-2])$/.test(startDateStr)) {
+          format = "month";
+        } else if (/^\d{4}$/.test(startDateStr)) {
+          format = "year";
+        } else {
+          format = "ISO";
+        }
         let startDate = new Date(startDateStr);
         let endDate = new Date(endDateStr);
         let nextDate = parseDuration(interval).add;
@@ -154,12 +170,12 @@ export default {
           .split(",")
           .forEach((dateString) => dateArray.push(new Date(dateString)));
       }
-      return dateArray;
+      return [dateArray, format];
     },
-    getProperDateString(date, timestep) {
-      if (timestep === "P1Y") {
+    getProperDateString(date, dateFormat) {
+      if (dateFormat === "year") {
         return date.toISOString().split("-")[0];
-      } else if (timestep === "P1M") {
+      } else if (dateFormat === "month") {
         let dateSplit = date.toISOString().split("-");
         let year = dateSplit[0];
         let month = dateSplit[1];
