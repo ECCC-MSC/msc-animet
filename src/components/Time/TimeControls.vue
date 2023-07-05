@@ -124,14 +124,6 @@ export default {
       );
       if (this.getMapTimeSettings.Step === null || layerData.isSnapped) {
         this.changeMapTime(imageLayer.get("layerTimeStep"), imageLayer);
-        // let layerDateIndex = this.findLayerIndex(
-        //   imageLayer.get("layerDefaultTime"),
-        //   this.getMapTimeSettings.Extent,
-        //   imageLayer.get("layerTimeStep")
-        // );
-        // imageLayer.setProperties({
-        //   layerDateIndex: layerDateIndex,
-        // });
       } else {
         let layerDateIndex = this.findLayerIndex(
           this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],

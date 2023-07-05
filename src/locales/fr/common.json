@@ -57,6 +57,7 @@
   "MP4ExportTitle": "Visualiser et exporter",
   "MSCAnimet": "AniMet du SMC",
   "MSCAnimetEmail": "Animation météo créée à partir d'AniMet du SMC",
+  "NoTimeTooltip": "Cette couche ne dépend pas du temps",
   "Overlays": "Superpositions",
   "OverlaysTip": "Les superpositions ajoutent de l'information au-dessus des couches affichées.",
   "RevertColor": "Remettre la couleur originale",

@@ -57,6 +57,7 @@
   "MP4ExportTitle": "Visualize & export",
   "MSCAnimet": "MSC AniMet",
   "MSCAnimetEmail": "Weather animation made with MSC AniMet",
+  "NoTimeTooltip": "This layer is not time dependent",
   "Overlays": "Overlays",
   "OverlaysTip": "Overlays add information on top of displayed layers.",
   "RevertColor": "Revert to original color",
