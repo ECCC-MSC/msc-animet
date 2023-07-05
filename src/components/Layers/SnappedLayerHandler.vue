@@ -1,5 +1,5 @@
 <template>
-  <v-tooltip class="temporal-tooltip" bottom v-if="item.get('layerIsTemporal')">
+  <v-tooltip bottom v-if="item.get('layerIsTemporal')">
     <template v-slot:activator="{ on, attrs }">
       <v-btn
         x-large
@@ -60,11 +60,16 @@
       </v-row>
     </v-container>
   </v-tooltip>
-  <v-btn x-large icon disabled v-else>
-    <v-icon>
-      {{ "mdi-clock-remove" }}
-    </v-icon>
-  </v-btn>
+  <v-tooltip bottom v-else>
+    <template v-slot:activator="{ on, attrs }">
+      <v-btn x-large v-bind="attrs" v-on="on" icon color="rgb(235,235,228)">
+        <v-icon>
+          {{ "mdi-clock-remove" }}
+        </v-icon>
+      </v-btn>
+    </template>
+    {{ $t("NoTimeTooltip") }}
+  </v-tooltip>
 </template>
 
 <script>
