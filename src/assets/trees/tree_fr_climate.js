@@ -268,45 +268,6 @@ export default {
     ]
   },
   {
-    "Title": "Donn\u00e9es Climatiques Canadiennes Ajust\u00e9es et Homog\u00e9n\u00e9is\u00e9es (DCCAH)",
-    "Name": "Donn\u00e9es Climatiques Canadiennes Ajust\u00e9es et Homog\u00e9n\u00e9is\u00e9es (DCCAH)",
-    "isLeaf": false,
-    "children": [
-      {
-        "Title": "Stations DCCAH",
-        "Name": "AHCCD.STATIONS",
-        "isLeaf": true,
-        "isTemporal": false
-      }
-    ]
-  },
-  {
-    "Title": "Donn\u00e9es climatiques",
-    "Name": "Donn\u00e9es climatiques",
-    "isLeaf": false,
-    "children": [
-      {
-        "Title": "Stations climatiques",
-        "Name": "CLIMATE.STATIONS",
-        "isLeaf": true,
-        "isTemporal": false
-      }
-    ]
-  },
-  {
-    "Title": "Donn\u00e9es hydrom\u00e9triques",
-    "Name": "Donn\u00e9es hydrom\u00e9triques",
-    "isLeaf": false,
-    "children": [
-      {
-        "Title": "Stations hydrom\u00e9triques",
-        "Name": "HYDROMETRIC.STATIONS",
-        "isLeaf": true,
-        "isTemporal": false
-      }
-    ]
-  },
-  {
     "Title": "Indice de pr\u00e9cipitations et d\u2019\u00e9vapotranspiration normalis\u00e9 (IPEN)",
     "Name": "Indice de pr\u00e9cipitations et d\u2019\u00e9vapotranspiration normalis\u00e9 (IPEN)",
     "isLeaf": false,
@@ -30324,6 +30285,31 @@ export default {
             ]
           }
         ]
+      }
+    ]
+  },
+  {
+    "Title": "Stations",
+    "Name": "Stations",
+    "isLeaf": false,
+    "children": [
+      {
+        "Title": "Stations climatiques",
+        "Name": "CLIMATE.STATIONS",
+        "isLeaf": true,
+        "isTemporal": false
+      },
+      {
+        "Title": "Stations hydrom\u00e9triques",
+        "Name": "HYDROMETRIC.STATIONS",
+        "isLeaf": true,
+        "isTemporal": false
+      },
+      {
+        "Title": "Stations DCCAH",
+        "Name": "AHCCD.STATIONS",
+        "isLeaf": true,
+        "isTemporal": false
       }
     ]
   }

@@ -77,6 +77,7 @@ with open("wms_sources_configs.json") as f:
     wmsSources = json.load(f)
 
 for name, params in wmsSources.items():
+    name = name.lower()
     for lang in langs:
 
         try:
