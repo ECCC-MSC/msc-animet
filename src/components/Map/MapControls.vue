@@ -127,12 +127,12 @@ export default {
   methods: {
     applyColor(flag) {
       if (!flag) {
-        this.$root.$emit("darkBasemapSwich", false);
+        this.$root.$emit("darkBasemapSwitch", false);
       } else {
         if (!Object.values(this.rgb).every((value) => value === 0)) {
-          this.$root.$emit("darkBasemapSwich", false);
+          this.$root.$emit("darkBasemapSwitch", false);
         } else {
-          this.$root.$emit("darkBasemapSwich", true);
+          this.$root.$emit("darkBasemapSwitch", true);
         }
       }
       this.darkBasemapHandler(flag);

@@ -60,10 +60,12 @@ import { mapGetters, mapState } from "vuex";
 
 export default {
   mounted() {
-    this.$root.$on("darkBasemapSwich", (flag) => {
-      this.darkModeToggle = flag;
-    });
+    this.$root.$on("darkBasemapSwitch", this.handleDarkBasemapSwitch);
     this.$root.$on("setAnimationTitle", this.setAnimationTitle);
+  },
+  beforeDestroy() {
+    this.$root.$off("darkBasemapSwitch", this.handleDarkBasemapSwitch);
+    this.$root.$off("setAnimationTitle", this.setAnimationTitle);
   },
   data() {
     return {
@@ -72,6 +74,9 @@ export default {
     };
   },
   methods: {
+    handleDarkBasemapSwitch(flag) {
+      this.darkModeToggle = flag;
+    },
     toggleDarkMode() {
       let rgb = [];
       if (this.darkModeToggle) {

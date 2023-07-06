@@ -69,16 +69,8 @@ import datetimeManipulations from "../../mixins/datetimeManipulations";
 export default {
   mounted() {
     this.$root.$on("cancelAnimationCreation", this.cancelAnimationCreation);
-    this.$root.$on("cancelExpired", () => {
-      this.cancelExpired = true;
-    });
-    this.$root.$on("getExtent", () => {
-      this.getExtent();
-      this.$store.dispatch("Layers/setOutputWH", [
-        this.mapWidth,
-        this.mapHeight,
-      ]);
-    });
+    this.$root.$on("cancelExpired", this.handleCancelExpired);
+    this.$root.$on("getExtent", this.getExtentHandler);
     this.$root.$on("localeChange", this.getModelRuns);
     this.$root.$on("redoAnimation", this.createMP4Handler);
     this.$root.$on("restoreState", this.restoreState);
@@ -89,8 +81,17 @@ export default {
     window.addEventListener("resize", this.cancelAnimationFromResize);
   },
   unmounted() {
-    // cleanup
     window.removeEventListener("resize", this.cancelAnimationFromResize);
+  },
+  beforeDestroy() {
+    this.$root.$off("cancelAnimationCreation", this.cancelAnimationCreation);
+    this.$root.$off("cancelExpired", this.handleCancelExpired);
+    this.$root.$off("getExtent", this.getExtentHandler);
+    this.$root.$off("localeChange", this.getModelRuns);
+    this.$root.$off("redoAnimation", this.createMP4Handler);
+    this.$root.$off("restoreState", this.restoreState);
+    this.$root.$off("timeLayerAdded", this.getModelRuns);
+    this.$root.$off("timeLayerRemoved", this.getModelRuns);
   },
   mixins: [datetimeManipulations],
   props: ["map"],
@@ -103,6 +104,13 @@ export default {
         this.notifyCancelAnimateResize = true;
         this.cancelAnimationCreation();
       }
+    },
+    getExtentHandler() {
+      this.getExtent();
+      this.$store.dispatch("Layers/setOutputWH", [
+        this.mapWidth,
+        this.mapHeight,
+      ]);
     },
     getExtent() {
       const extent = this.map.getView().calculateExtent();
@@ -185,6 +193,7 @@ export default {
       );
     },
     async createMP4Handler() {
+      this.cancelExpired = false;
       this.$store.dispatch("Layers/setMP4URL", "null");
       this.$store.dispatch("Layers/setIsAnimating", true);
       this.generating = true;
@@ -242,6 +251,7 @@ export default {
           );
           if (this.cancelExpired) {
             this.cancelExpired = false;
+            this.generating = false;
             return;
           }
           await this.composeCanvas(
@@ -256,6 +266,9 @@ export default {
         }
       }
       this.restoreState(initialState);
+    },
+    handleCancelExpired() {
+      this.cancelExpired = true;
     },
     restoreState(initialState = null) {
       this.$store.dispatch(
@@ -273,7 +286,7 @@ export default {
       this.encoder.delete();
       this.$store.dispatch("Layers/setMP4CreateFlag", true);
       this.$store.dispatch("Layers/setIsAnimating", false);
-      if (this.generating === true) {
+      if (this.generating) {
         this.$store.dispatch("Layers/setMP4URL", mp4URL);
       }
       this.map.getInteractions().forEach((x) => x.setActive(true)); // Enables all map interactions such as drag or zoom
@@ -384,9 +397,9 @@ export default {
       const logo_canvas = document.getElementById("eccc_logo");
       let ratio = logo_canvas.naturalWidth / logo_canvas.naturalHeight;
       let width = null;
-      var fontSize = 26;
+      let fontSize = 26;
       ctx.font = fontSize + "px sans-serif";
-      var metrics = ctx.measureText(customTitle);
+      let metrics = ctx.measureText(customTitle);
       if (mapCanvasWidth > 1000) {
         width = 2 * widths[1];
         while (metrics.width > mapCanvasWidth - width && fontSize > 10) {
@@ -433,19 +446,23 @@ export default {
       let infoCanvas = document.createElement("canvas");
       let ctx = infoCanvas.getContext("2d");
       let ctx_w = mapCanvasWidth;
-      this.isLayerListShown = visibleLayers.length > 1 || customTitle !== "";
+      this.isLayerListShown = !(
+        visibleLayers.length === 1 &&
+        customTitle === this.$t(visibleLayers[0].get("layerName"))
+      );
       // Must be divisible by 2 otherwise encoder.initialize() will fail
       let ctx_h = 50;
 
       let fontArray = [];
+      let metrics;
       if (this.isLayerListShown) {
         const baseFont = 18;
         ctx_h = 0;
-        for (let i = 0; i < visibleLayers.length; i++) {
+        for (let i = visibleLayers.length - 1; i >= 0; i--) {
           let layerName = this.$t(visibleLayers[i].get("layerName"));
           let fontSize = baseFont;
           ctx.font = fontSize + "px sans-serif";
-          var metrics = ctx.measureText(layerName);
+          metrics = ctx.measureText(layerName);
           while (metrics.width > widths[0] && fontSize > 7) {
             fontSize -= 1;
             ctx.font = fontSize + "px sans-serif";
@@ -493,7 +510,7 @@ export default {
         canvasTxt.fontSize = 10;
         canvasTxt.align = "left";
         ctx.font = canvasTxt.fontSize + "px sans-serif";
-        let metrics = ctx.measureText(this.modelRunMessage[0]);
+        metrics = ctx.measureText(this.modelRunMessage[0]);
         for (let i = 1; i < this.modelRunMessage.length; i++) {
           let textLength = ctx.measureText(this.modelRunMessage[i]);
           if (textLength.width > metrics.width) {
@@ -568,7 +585,7 @@ export default {
           this.getMapTimeSettings.Step
         );
         ctx.font = canvasTxt.fontSize + "px sans-serif";
-        var metrics = ctx.measureText(dateLabel);
+        let metrics = ctx.measureText(dateLabel);
 
         let datePlacement =
           this.infoCanvas.width - metrics.width - 0.01 * this.infoCanvas.width;

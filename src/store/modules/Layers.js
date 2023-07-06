@@ -7,7 +7,7 @@ import wmsSources from "../../../scripts/wms_sources_configs.json";
 const state = {
   animationTitle: "",
   currentWmsSource: "https://geo.weather.gc.ca/geomet",
-  datetimeRangeSlider: [0, 1],
+  datetimeRangeSlider: [null, null],
   exportStyle: null,
   extent: null,
   framesPerSecond: 3,

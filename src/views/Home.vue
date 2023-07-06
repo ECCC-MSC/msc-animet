@@ -42,8 +42,8 @@ export default {
       ]);
     }
     if (this.color !== undefined) {
-      var matchColor = /((\d{1,3}),(\d{1,3}),(\d{1,3}))/;
-      var match = matchColor.exec(this.color);
+      let matchColor = /((\d{1,3}),(\d{1,3}),(\d{1,3}))/;
+      let match = matchColor.exec(this.color);
       if (match !== null) {
         this.$store.dispatch("Layers/setRGB", [
           Number(match[2]),

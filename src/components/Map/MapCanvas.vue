@@ -17,7 +17,7 @@
       </div>
     </div>
     <time-controls :map="map" />
-    <layer-tree class="my-4" />
+    <layer-tree id="geoMetTree" class="my-4" />
     <layer-configuration v-show="$mapLayers.arr.length !== 0" class="my-4" />
     <animation-configuration
       id="createMP4Controls"
@@ -64,6 +64,9 @@ export default {
   mounted() {
     this.$root.$on("goToExtent", this.goToExtentHandler);
     this.$root.$on("buildLayer", this.buildLayer);
+    this.$root.$on("loadingStop", () => {
+      this.loading = false;
+    });
     this.$root.$on("overlayToggle", this.manageOverlay);
     this.$root.$on("removeLayer", this.removeLayerHandler);
     this.$root.$on("setMapSize", (wh) => {
@@ -150,6 +153,9 @@ export default {
           )
         )
       );
+      if (this.loading) {
+        this.loading = false;
+      }
       if (layer.get("layerIsTemporal")) {
         this.$root.$emit("timeLayerRemoved", layer);
       }
@@ -158,8 +164,23 @@ export default {
     setLayerZIndex(layer) {
       if (!Number.isInteger(layer.get("zIndex"))) {
         layer.setZIndex(this.$mapLayers.arr.length);
+        this.$mapLayers.arr.splice(layer.get("zIndex"), 0, layer);
+      } else {
+        if (
+          this.$mapLayers.arr.length === 0 ||
+          layer.get("zIndex") >
+            this.$mapLayers.arr[this.$mapLayers.arr.length - 1].get("zIndex")
+        ) {
+          this.$mapLayers.arr.push(layer);
+        } else {
+          for (let i = 0; i < this.$mapLayers.arr.length; i++) {
+            if (layer.get("zIndex") < this.$mapLayers.arr[i].get("zIndex")) {
+              this.$mapLayers.arr.splice(i, 0, layer);
+              break;
+            }
+          }
+        }
       }
-      this.$mapLayers.arr.splice(layer.get("zIndex"), 0, layer);
     },
     async manageOverlay(layer, layerName) {
       const layerFound = this.map
@@ -169,7 +190,7 @@ export default {
       if (layerFound.length !== 0) {
         this.map.removeLayer(layerFound[0]);
       } else {
-        var special_layer = new OLImage({
+        let special_layer = new OLImage({
           source: new ImageWMS({
             format: "image/png",
             url: layer.url,
@@ -230,6 +251,12 @@ export default {
           ? layerData.visible
           : true,
       });
+      if (layerData.isTemporal) {
+        imageLayer.setProperties({
+          layerModelRuns: null,
+          layerCurrentMR: null,
+        });
+      }
 
       this.setLayerZIndex(imageLayer);
 
@@ -241,8 +268,8 @@ export default {
         this.loading = false;
       });
 
-      imageLayer.getSource().on("imageloaderror", () => {
-        this.$root.$emit("loadingError", imageLayer);
+      imageLayer.getSource().on("imageloaderror", (e) => {
+        this.$root.$emit("loadingError", imageLayer, e);
       });
 
       imageLayer.getSource().updateParams({

@@ -8,7 +8,7 @@
           x-large
           color="primary"
           :disabled="
-            getMapTimeSettings.DateIndex === datetimeRangeSlider[1] ||
+            getMapTimeSettings.DateIndex === getDatetimeRangeSlider[1] ||
             (isAnimating && playState !== 'play')
           "
           v-bind="attrs"
@@ -34,11 +34,14 @@ import { mapState } from "vuex";
 
 export default {
   mounted() {
-    this.$root.$on("play", this.play);
+    this.$root.$on("playAnimation", this.play);
+  },
+  beforeDestroy() {
+    this.$root.$off("playAnimation", this.play);
   },
   computed: {
-    ...mapGetters("Layers", ["getMapTimeSettings"]),
-    ...mapState("Layers", ["datetimeRangeSlider", "isAnimating", "playState"]),
+    ...mapGetters("Layers", ["getDatetimeRangeSlider", "getMapTimeSettings"]),
+    ...mapState("Layers", ["isAnimating", "playState"]),
   },
   methods: {
     playPause() {
@@ -52,7 +55,7 @@ export default {
       }
     },
     play() {
-      if (this.getMapTimeSettings.DateIndex < this.datetimeRangeSlider[1]) {
+      if (this.getMapTimeSettings.DateIndex < this.getDatetimeRangeSlider[1]) {
         this.$store.dispatch(
           "Layers/setMapTimeIndex",
           this.getMapTimeSettings.DateIndex + 1

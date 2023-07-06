@@ -116,6 +116,21 @@ export default {
         return this.getMapTimeSettings.DateIndex;
       },
       set(newDateIndex) {
+        if (this.getMapTimeSettings.DateIndex !== null) {
+          if (newDateIndex < this.datetimeRangeSlider[0]) {
+            this.$store.dispatch("Layers/setMapSnappedLayer", null);
+            this.$store.commit("Layers/setDatetimeRangeSlider", [
+              newDateIndex,
+              this.datetimeRangeSlider[1],
+            ]);
+          } else if (newDateIndex > this.datetimeRangeSlider[1]) {
+            this.$store.dispatch("Layers/setMapSnappedLayer", null);
+            this.$store.commit("Layers/setDatetimeRangeSlider", [
+              this.datetimeRangeSlider[0],
+              newDateIndex,
+            ]);
+          }
+        }
         this.$store.dispatch("Layers/setMapTimeIndex", newDateIndex);
       },
     },

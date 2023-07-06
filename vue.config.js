@@ -1,29 +1,25 @@
-const { defineConfig } = require('@vue/cli-service')
-const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
+const { defineConfig } = require("@vue/cli-service");
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 module.exports = defineConfig({
-  publicPath: process.env.NODE_ENV === 'production'
-    ? process.env.BASE_URL
-    : '/',
+  publicPath:
+    process.env.NODE_ENV === "production" ? process.env.BASE_URL : "/",
   transpileDependencies: true,
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     // ensure index.html is not minified
-    config.plugin('html')
-      .tap(args => {
-        args[0].minify = false
-        return args
-      })
+    config.plugin("html").tap((args) => {
+      args[0].minify = false;
+      return args;
+    });
   },
   configureWebpack: {
-    plugins: [
-      new NodePolyfillPlugin()
-    ],
+    plugins: [new NodePolyfillPlugin()],
     resolve: {
       fallback: {
-        "fs": false,
-        "os": false,
-        "path": false,
-      }
-    }
-  }
-})
+        fs: false,
+        os: false,
+        path: false,
+      },
+    },
+  },
+});

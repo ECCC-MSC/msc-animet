@@ -1,5 +1,5 @@
 <template>
-  <v-snackbar v-model="notifyExtentRebuilt" timeout="5000">
+  <v-snackbar v-model="notifyExtentRebuilt" timeout="8000">
     {{ expiredSnackBarMessage }}
     <template v-slot:action="{ attrs }">
       <v-btn
@@ -26,11 +26,17 @@ export default {
   mounted() {
     this.$root.$on("checkLoadingErrors", this.checkExpiredOnMapMoveOrResize);
     this.$root.$on("fixTimeExtent", this.fixTimeExtent);
-    this.$root.$on("loadingError", this.refreshExpired);
+    this.$root.$on("loadingError", this.errorDispatcher);
+  },
+  beforeDestroy() {
+    this.$root.$off("checkLoadingErrors", this.checkExpiredOnMapMoveOrResize);
+    this.$root.$off("fixTimeExtent", this.fixTimeExtent);
+    this.$root.$off("loadingError", this.errorDispatcher);
   },
   data() {
     return {
-      expiredSnackBarMessage: this.$t("ExpiredExtentRefreshed"),
+      errorLayersList: [],
+      expiredSnackBarMessage: this.$t("MissingTimesteps"),
       expiredTimestepList: [],
       notifyExtentRebuilt: false,
       xsltTime: `parse-xml($xml)//Layer[not(.//Layer)]!map
@@ -50,69 +56,139 @@ export default {
         this.fixTimeExtent();
       }
     },
-    fixTimeExtent() {
-      let noChangeFlag = true;
-      if (this.expiredTimestepList.includes(this.getMapTimeSettings.Step)) {
-        noChangeFlag = false;
-      }
-      this.expiredTimestepList = [];
-      if (noChangeFlag) {
-        this.expiredSnackBarMessage = this.$t("expiredSecondaryLayer");
-        this.notifyExtentRebuilt = true;
-        if (this.isAnimating) {
-          this.$root.$emit("redoAnimation");
-        } else {
-          this.$root.$emit("fixLayerTimes");
+    async fixTimeExtent() {
+      await new Promise((resolve) => {
+        let checkInterval = setInterval(() => {
+          if (this.errorLayersList.length === 0) {
+            clearInterval(checkInterval);
+            resolve();
+          }
+        }, 100); // Check every 100ms
+      });
+      if (this.expiredTimestepList.length !== 0) {
+        let noChangeFlag = true;
+        if (this.expiredTimestepList.includes(this.getMapTimeSettings.Step)) {
+          noChangeFlag = false;
         }
-      } else {
-        if (this.getMapTimeSettings.SnappedLayer !== null) {
-          this.changeMapTime(
-            this.getMapTimeSettings.Step,
-            this.$mapLayers.arr.find(
-              (l) => l.get("layerName") === this.getMapTimeSettings.SnappedLayer
-            ),
-            0
-          );
-          this.expiredSnackBarMessage = this.$t("ExpiredExtentRefreshed");
+        this.expiredTimestepList = [];
+        if (noChangeFlag) {
+          this.expiredSnackBarMessage = this.$t("MissingTimesteps");
           this.notifyExtentRebuilt = true;
           if (this.isAnimating) {
             this.$root.$emit("redoAnimation");
+          } else {
+            this.$root.$emit("fixLayerTimes");
           }
         } else {
-          const currentHighBoundDate =
-            this.getMapTimeSettings.Extent[this.datetimeRangeSlider[1]];
-          this.changeMapTime(this.getMapTimeSettings.Step, null, 0);
-          if (this.getMapTimeSettings.Extent[0] >= currentHighBoundDate) {
-            // Cancel animation
-            this.expiredSnackBarMessage = this.$t("extentFullyOOB");
+          if (this.getMapTimeSettings.SnappedLayer !== null) {
+            this.changeMapTime(
+              this.getMapTimeSettings.Step,
+              this.$mapLayers.arr.find(
+                (l) =>
+                  l.get("layerName") === this.getMapTimeSettings.SnappedLayer
+              )
+            );
+            this.expiredSnackBarMessage = this.$t("MissingTimesteps");
             this.notifyExtentRebuilt = true;
-            this.$store.commit("Layers/setDatetimeRangeSlider", [
-              0,
-              this.getMapTimeSettings.Extent.length - 1,
-            ]);
-            if (this.isAnimating) {
-              this.$root.$emit("restoreState");
-            }
-          } else {
-            const highBoundIndex =
-              this.datetimeRangeSlider[1] - this.datetimeRangeSlider[0];
-            this.expiredSnackBarMessage = this.$t("ExpiredExtentRefreshed");
-            this.notifyExtentRebuilt = true;
-            this.$store.commit("Layers/setDatetimeRangeSlider", [
-              0,
-              highBoundIndex,
-            ]);
             if (this.isAnimating) {
               this.$root.$emit("redoAnimation");
             }
+          } else {
+            const currentHighBoundDate =
+              this.getMapTimeSettings.Extent[this.getDatetimeRangeSlider[1]];
+            this.changeMapTime(this.getMapTimeSettings.Step);
+            if (this.getMapTimeSettings.Extent[0] >= currentHighBoundDate) {
+              // Cancel animation
+              this.expiredSnackBarMessage = this.$t("ExtentFullyOOB");
+              this.notifyExtentRebuilt = true;
+              if (this.isAnimating) {
+                this.$root.$emit("restoreState");
+              }
+            } else {
+              this.expiredSnackBarMessage = this.$t("MissingTimesteps");
+              this.notifyExtentRebuilt = true;
+              if (this.isAnimating) {
+                this.$root.$emit("redoAnimation");
+              }
+            }
           }
         }
+      }
+      this.$root.$emit("loadingStop");
+    },
+    async errorDispatcher(layer, e) {
+      try {
+        this.errorLayersList.push(layer.get("layerName"));
+        const response = await axios.get(e.image.src_);
+        const xmlDoc = new DOMParser().parseFromString(
+          response.data,
+          "text/xml"
+        );
+        const serviceException =
+          xmlDoc.getElementsByTagName("ogc:ServiceException")[0] ||
+          xmlDoc.getElementsByTagName("ServiceException")[0];
+        const attrs = serviceException.attributes;
+        if (
+          "code" in attrs &&
+          attrs["code"].nodeValue === "NoMatch" &&
+          attrs["locator"].nodeValue === "time"
+        ) {
+          this.refreshExpired(layer);
+        } else if (
+          serviceException.textContent.includes("Unable to access file")
+        ) {
+          this.$root.$emit("cancelExpired");
+          this.expiredTimestepList.push(layer.get("layerTimeStep"));
+          let newExtent = layer
+            .get("layerDateArray")
+            .toSpliced(layer.get("layerDateIndex"), 1);
+          let newDefaultTimeIndex = this.findLayerIndex(
+            layer.get("layerDefaultTime"),
+            newExtent,
+            layer.get("layerTimeStep")
+          );
+          layer.setProperties({
+            layerDateArray: newExtent,
+            layerDateIndex: this.findLayerIndex(
+              this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
+              newExtent,
+              layer.get("layerTimeStep")
+            ),
+            layerDefaultTime:
+              newDefaultTimeIndex > 0
+                ? newExtent[newDefaultTimeIndex]
+                : newExtent[0],
+            layerStartTime: newExtent[0],
+            layerEndTime: newExtent[newExtent.length - 1],
+          });
+          this.errorLayersList = this.errorLayersList.filter(
+            (l) => l !== layer.get("layerName")
+          );
+        } else {
+          this.$root.$emit("cancelExpired");
+          this.$root.$emit("removeLayer", layer.get("layerName"));
+          this.expiredSnackBarMessage = this.$t("UnhandledError");
+          console.log(e);
+          this.notifyExtentRebuilt = true;
+          this.errorLayersList = this.errorLayersList.filter(
+            (l) => l !== layer.get("layerName")
+          );
+        }
+      } catch (error) {
+        this.$root.$emit("cancelExpired");
+        this.$root.$emit("removeLayer", layer.get("layerName"));
+        this.expiredSnackBarMessage = this.$t("BrokenLayer");
+        this.notifyExtentRebuilt = true;
+        this.errorLayersList = this.errorLayersList.filter(
+          (l) => l !== layer.get("layerName")
+        );
       }
     },
     async refreshExpired(layer) {
       this.$root.$emit("cancelExpired");
       this.expiredTimestepList.push(layer.get("layerTimeStep"));
-      var layerData = null;
+      let layerData = null;
+      const currentMR = layer.get("layerCurrentMR");
       const api = axios.create({
         baseURL: layer.get("source")["url_"],
         params: {
@@ -138,36 +214,74 @@ export default {
       let extentDateArray = this.getDateArray(
         layerData.Dimension.Dimension_time
       )[0];
-      const newLayerIndex = this.findLayerIndex(
+      let newLayerIndex = this.findLayerIndex(
         this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
         extentDateArray,
         step
       );
+      let newMRs =
+        layerData.Dimension.Dimension_ref_time === ""
+          ? null
+          : this.getDateArray(layerData.Dimension.Dimension_ref_time)[0];
+      let sameMR = true;
+      // Check if the model run was the problem and not the timestep
+      if (currentMR !== null) {
+        sameMR = false;
+        for (let i = 0; i < newMRs.length; i++) {
+          if (newMRs[i].getTime() === currentMR.getTime()) {
+            sameMR = true;
+            break;
+          }
+        }
+      }
+      if (!sameMR) {
+        layer.getSource().updateParams({
+          DIM_REFERENCE_TIME: this.getProperDateString(
+            newMRs[newMRs.length - 1],
+            layer.get("layerDateFormat")
+          ),
+        });
+        if (newLayerIndex < 0) {
+          layer.getSource().updateParams({
+            TIME: this.getProperDateString(
+              extentDateArray[0],
+              layer.get("layerDateFormat")
+            ),
+          });
+        }
+      } else if (newLayerIndex >= 0 && sameMR) {
+        // If you find the time that failed again inside the time list,
+        // it means the getCapa is wrong. Manually remove the faulty
+        // timesteps until the index is no longer found.
+        do {
+          extentDateArray.splice(newLayerIndex, 1);
+          newLayerIndex = this.findLayerIndex(
+            this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
+            extentDateArray,
+            step
+          );
+        } while (newLayerIndex >= 0);
+      }
       layer.setProperties({
         layerDateArray: extentDateArray,
         layerDateIndex: newLayerIndex,
         layerDefaultTime: new Date(layerData.Dimension.Dimension_time_default),
-        layerModelRuns:
-          layerData.Dimension.Dimension_ref_time === ""
-            ? null
-            : this.getDateArray(layerData.Dimension.Dimension_ref_time)[0],
+        layerModelRuns: newMRs,
+        layerCurrentMR: sameMR
+          ? layer.get("layerCurrentMR")
+          : newMRs[newMRs.length - 1],
         layerStartTime: new Date(start),
         layerEndTime: new Date(end),
         layerTimeStep: step,
       });
+      this.errorLayersList = this.errorLayersList.filter(
+        (l) => l !== layer.get("layerName")
+      );
     },
   },
   computed: {
     ...mapGetters("Layers", ["getDatetimeRangeSlider", "getMapTimeSettings"]),
     ...mapState("Layers", ["isAnimating"]),
-    datetimeRangeSlider: {
-      get() {
-        return this.getDatetimeRangeSlider;
-      },
-      set(dateRange) {
-        this.$store.commit("Layers/setDatetimeRangeSlider", dateRange);
-      },
-    },
   },
 };
 </script>
