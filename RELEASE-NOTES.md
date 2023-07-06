@@ -1,5 +1,10 @@
 # Release Notes
 
+## Version 1.2.1 (2023-07-06)
+
+### Bug Fixes
+- Fixed generation script, layer tree collapse and null title 
+
 ## Version 1.2.0 (2023-07-06)
 
 ### New Features
