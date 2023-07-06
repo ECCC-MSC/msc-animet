@@ -123,6 +123,9 @@ export default {
     });
     this.$root.$on("localeChange", this.resetSearchAndTree);
     this.$root.$on("permaLinkLayer", this.requestLayerData);
+    this.$root.$on("collapseLayerTree", () => {
+      this.expandTreePanel = 1;
+    });
   },
   watch: {
     tab(newTab, oldTab) {

@@ -1,19 +1,6 @@
 export default {
   tree_en_climate : [
   {
-    "Title": "Adjusted and Homogenized Canadian Climate Data (AHCCD)",
-    "Name": "Adjusted and Homogenized Canadian Climate Data (AHCCD)",
-    "isLeaf": false,
-    "children": [
-      {
-        "Title": "AHCCD stations",
-        "Name": "AHCCD.STATIONS",
-        "isLeaf": true,
-        "isTemporal": false
-      }
-    ]
-  },
-  {
     "Title": "CMIP5-based climate scenarios (CMIP5)",
     "Name": "CMIP5-based climate scenarios (CMIP5)",
     "isLeaf": false,
@@ -17342,19 +17329,6 @@ export default {
     ]
   },
   {
-    "Title": "Climate Data",
-    "Name": "Climate Data",
-    "isLeaf": false,
-    "children": [
-      {
-        "Title": "Climate stations",
-        "Name": "CLIMATE.STATIONS",
-        "isLeaf": true,
-        "isTemporal": false
-      }
-    ]
-  },
-  {
     "Title": "Downscale climate scenarios (downscaled)",
     "Name": "Downscale climate scenarios (downscaled)",
     "isLeaf": false,
@@ -28586,19 +28560,6 @@ export default {
     ]
   },
   {
-    "Title": "Hydrometric Data",
-    "Name": "Hydrometric Data",
-    "isLeaf": false,
-    "children": [
-      {
-        "Title": "Hydrometric stations",
-        "Name": "HYDROMETRIC.STATIONS",
-        "isLeaf": true,
-        "isTemporal": false
-      }
-    ]
-  },
-  {
     "Title": "Standardized Precipitation Evapotranspiration Index (SPEI)",
     "Name": "Standardized Precipitation Evapotranspiration Index (SPEI)",
     "isLeaf": false,
@@ -29007,6 +28968,31 @@ export default {
             ]
           }
         ]
+      }
+    ]
+  },
+  {
+    "Title": "Stations",
+    "Name": "Stations",
+    "isLeaf": false,
+    "children": [
+      {
+        "Title": "Climate stations",
+        "Name": "CLIMATE.STATIONS",
+        "isLeaf": true,
+        "isTemporal": false
+      },
+      {
+        "Title": "Hydrometric stations",
+        "Name": "HYDROMETRIC.STATIONS",
+        "isLeaf": true,
+        "isTemporal": false
+      },
+      {
+        "Title": "AHCCD stations",
+        "Name": "AHCCD.STATIONS",
+        "isLeaf": true,
+        "isTemporal": false
       }
     ]
   },
