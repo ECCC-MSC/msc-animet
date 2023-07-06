@@ -71,6 +71,7 @@ export default {
       } else {
         return;
       }
+      this.$root.$emit("collapseLayerTree");
       let layer = {};
       layer.Name = layerName;
       layer.isLeaf = true;

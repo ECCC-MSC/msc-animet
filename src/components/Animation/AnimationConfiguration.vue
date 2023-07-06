@@ -81,7 +81,7 @@ export default {
       this.$root.$emit("darkModeMapEvent", this.darkModeToggle);
     },
     setAnimationTitle() {
-      if (this.animationTitle !== "") {
+      if (this.animationTitle !== "" && this.animationTitle !== null) {
         this.$store.dispatch("Layers/setAnimationTitle", this.animationTitle);
       } else {
         if (this.getMapTimeSettings.SnappedLayer !== null) {
