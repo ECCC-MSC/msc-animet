@@ -1,5 +1,11 @@
 # Release Notes
 
+
+## Version 1.2.2 (2023-07-11)
+
+### Bug Fixes
+- Remove use of LANG query when fetching dimensions from GetCapabilities
+
 ## Version 1.2.1 (2023-07-06)
 
 ### Bug Fixes
