@@ -202,7 +202,6 @@ export default {
             service: "WMS",
             version: "1.3.0",
             request: "GetCapabilities",
-            LANG: this_.$i18n.locale,
             LAYER: layer.Name,
             t: new Date().getTime(),
           },
