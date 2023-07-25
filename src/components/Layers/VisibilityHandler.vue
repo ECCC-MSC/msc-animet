@@ -76,6 +76,7 @@ export default {
       });
       if (!(layerDateIndex < 0)) {
         imageLayer.setVisible(true);
+        this.$root.$emit("fixLayerTimes");
       }
     },
     selectIcon(layer) {

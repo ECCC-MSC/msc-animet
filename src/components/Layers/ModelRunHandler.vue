@@ -11,7 +11,6 @@
     :label="$t('SelectMR')"
     :items="item.get('layerModelRuns')"
     :disabled="isAnimating"
-    @input="changeModelRun()"
   >
     <template v-slot:item="{ item }">
       {{ localeDateFormat(item) }}
@@ -30,16 +29,11 @@ import datetimeManipulations from "../../mixins/datetimeManipulations";
 export default {
   mixins: [datetimeManipulations],
   props: ["item"],
-  data() {
-    return {
-      currentMR: this.item.get("layerCurrentMR"),
-    };
-  },
   methods: {
-    changeModelRun() {
+    changeModelRun(newModelRun) {
       let newDateArray = [];
       let timeDiff =
-        this.currentMR.getTime() - this.item.get("layerCurrentMR").getTime();
+        newModelRun.getTime() - this.item.get("layerCurrentMR").getTime();
       this.item
         .get("layerDateArray")
         .forEach((date) =>
@@ -48,7 +42,7 @@ export default {
 
       this.item.getSource().updateParams({
         DIM_REFERENCE_TIME: this.getProperDateString(
-          this.currentMR,
+          newModelRun,
           this.item.get("layerDateFormat")
         ),
       });
@@ -57,19 +51,12 @@ export default {
         layerDefaultTime: new Date(
           this.item.get("layerDefaultTime").getTime() + timeDiff
         ),
-        layerCurrentMR: this.currentMR,
+        layerCurrentMR: newModelRun,
         layerStartTime: newDateArray[0],
         layerEndTime: newDateArray[newDateArray.length - 1],
       });
-      this.item.set;
       if (this.item.get("layerTimeStep") === this.getMapTimeSettings.Step) {
-        if (
-          this.item.get("layerName") === this.getMapTimeSettings.SnappedLayer
-        ) {
-          this.changeMapTime(this.item.get("layerTimeStep"), this.item);
-        } else {
-          this.changeMapTime(this.item.get("layerTimeStep"));
-        }
+        this.changeMapTime(this.item.get("layerTimeStep"));
       } else {
         const newLayerIndex = this.findLayerIndex(
           this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
@@ -86,6 +73,14 @@ export default {
   computed: {
     ...mapGetters("Layers", ["getMapTimeSettings"]),
     ...mapState("Layers", ["isAnimating"]),
+    currentMR: {
+      get() {
+        return this.item.get("layerCurrentMR");
+      },
+      set(mr) {
+        this.changeModelRun(mr);
+      },
+    },
   },
 };
 </script>

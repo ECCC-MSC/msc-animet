@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     downloadMP4: function () {
-      var MP4link = document.getElementById("MP4-download");
+      let MP4link = document.getElementById("MP4-download");
       MP4link.href = this.getMP4URL;
       MP4link.click();
     },
@@ -68,7 +68,7 @@ export default {
       if (bytes === 0) return "0 Bytes";
 
       const k = 1024;
-      var dm = decimals < 0 ? 0 : decimals;
+      let dm = decimals < 0 ? 0 : decimals;
       const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
 
       const i = Math.floor(Math.log(bytes) / Math.log(k));

@@ -23,8 +23,7 @@ export default {
       return this.$t("AnimationFrom");
     },
     socialHashtags() {
-      var l = this.$t("SocialWeatherHashtags");
-      return l;
+      return this.$t("SocialWeatherHashtags");
     },
     socialUrl() {
       return this.getPermalink ? this.getPermalink : this.prefixLink();

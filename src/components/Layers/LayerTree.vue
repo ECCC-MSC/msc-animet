@@ -150,19 +150,19 @@ export default {
       openedLevels: [],
       searchGeoMet: [],
       tab: null,
-      xsltFull: `parse-xml($xml)//Layer[not(.//Layer)]!map 
+      xsltFull: `parse-xml($xml)//Layer[not(.//Layer)]!map
                         {
                             'Name' : string(Name),
                             'Title' : string(Title),
                             'Abstract' : string(Abstract),
-                            'Dimension' : map 
+                            'Dimension' : map
                             {
                                 'Dimension_time' : string(Dimension[@name = 'time']),
                                 'Dimension_time_default' : string(Dimension[@name = 'time']/@default),
                                 'Dimension_ref_time' : string(Dimension[@name = 'reference_time'])
                             },
                             'Style' : array { Style !
-                                map 
+                                map
                                 {
                                     'Name' : string(Name),
                                     'Title' : string(Title),
@@ -172,13 +172,13 @@ export default {
                                 }
                             }
                         }`,
-      xsltStyle: `parse-xml($xml)//Layer[not(.//Layer)]!map 
+      xsltStyle: `parse-xml($xml)//Layer[not(.//Layer)]!map
                         {
                             'Name' : string(Name),
                             'Title' : string(Title),
                             'Abstract' : string(Abstract),
                             'Style' : array { Style !
-                                map 
+                                map
                                 {
                                     'Name' : string(Name),
                                     'Title' : string(Title),
@@ -197,8 +197,7 @@ export default {
           ? layer.wmsSource
           : this.getCurrentWmsSource;
         this.addedLayers.push(layer.Name);
-        var layerData = null;
-        let this_ = this;
+        let layerData = null;
         const api = axios.create({
           baseURL: source,
           params: {
@@ -231,7 +230,7 @@ export default {
     },
     filterCallbackFunction(array, fn) {
       return array.reduce((r, o) => {
-        var children = this.filterCallbackFunction(o.children || [], fn);
+        let children = this.filterCallbackFunction(o.children || [], fn);
         if (fn(o) || children.length)
           r.push(Object.assign({}, o, children.length && { children }));
         return r;

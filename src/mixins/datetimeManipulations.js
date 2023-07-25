@@ -7,9 +7,9 @@ export default {
     capitalize(word) {
       return word.charAt(0).toUpperCase() + word.slice(1);
     },
-    changeMapTime(timestep, snappedLayer = null, dateIndex = null) {
+    changeMapTime(timestep, snappedLayer = null) {
       const timeLayers = this.$mapLayers.arr.filter((l) => {
-        return l.get("layerTimeStep") === timestep && l.get("layerIsTemporal");
+        return l.get("layerIsTemporal") && l.get("layerTimeStep") === timestep;
       });
       let arrayCombine = timeLayers[0].get("layerDateArray");
       if (timeLayers.length > 1) {
@@ -62,29 +62,32 @@ export default {
           }
         }
       }
-      if (dateIndex === null) {
-        if (snappedLayer !== null) {
-          dateIndex = this.findLayerIndex(
-            snappedLayer.get("layerDefaultTime"),
-            arrayCombine,
-            snappedLayer.get("layerTimeStep")
-          );
-        } else {
-          dateIndex = this.findLayerIndex(
-            timeLayers[0].get("layerDefaultTime"),
-            arrayCombine,
-            timeLayers[0].get("layerTimeStep")
-          );
-        }
-        if (timestep === this.getMapTimeSettings.Step) {
-          const currentDateIndex = this.findLayerIndex(
-            this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
-            arrayCombine,
-            timestep
-          );
-          if (currentDateIndex >= 0) {
-            dateIndex = currentDateIndex;
-          }
+      let dateIndex;
+      if (snappedLayer !== null) {
+        dateIndex = this.findLayerIndex(
+          snappedLayer.get("layerDefaultTime"),
+          arrayCombine,
+          snappedLayer.get("layerTimeStep")
+        );
+      } else {
+        dateIndex = this.findLayerIndex(
+          timeLayers[0].get("layerDefaultTime"),
+          arrayCombine,
+          timeLayers[0].get("layerTimeStep")
+        );
+      }
+      if (timestep === this.getMapTimeSettings.Step) {
+        const currentDateIndex = this.findLayerIndex(
+          this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
+          arrayCombine,
+          timestep
+        );
+        if (currentDateIndex >= 0) {
+          dateIndex = currentDateIndex;
+        } else if (currentDateIndex === -1) {
+          dateIndex = 0;
+        } else if (currentDateIndex === -2) {
+          dateIndex = arrayCombine.length - 1;
         }
       }
       if (snappedLayer === null) {
@@ -103,19 +106,6 @@ export default {
         Extent: arrayCombine,
       };
       this.$store.dispatch("Layers/setMapTimeSettings", mapTimeSettings);
-      if (snappedLayer !== null) {
-        const first = this.findLayerIndex(
-          snappedLayer.get("layerStartTime"),
-          arrayCombine,
-          snappedLayer.get("layerTimeStep")
-        );
-        const last = this.findLayerIndex(
-          snappedLayer.get("layerEndTime"),
-          arrayCombine,
-          snappedLayer.get("layerTimeStep")
-        );
-        this.$store.commit("Layers/setDatetimeRangeSlider", [first, last]);
-      }
     },
     findLayerIndex(date, layerDateArr, step) {
       let start = 0;
@@ -144,15 +134,13 @@ export default {
     },
     getDateArray(dateRange) {
       let dateArray = new Array();
+      let format = "ISO";
       if (dateRange.includes("/")) {
-        var [startDateStr, endDateStr, interval] = dateRange.split("/");
-        var format;
+        let [startDateStr, endDateStr, interval] = dateRange.split("/");
         if (/^\d{4}-([0]\d|1[0-2])$/.test(startDateStr)) {
           format = "month";
         } else if (/^\d{4}$/.test(startDateStr)) {
           format = "year";
-        } else {
-          format = "ISO";
         }
         let startDate = new Date(startDateStr);
         let endDate = new Date(endDateStr);
@@ -166,9 +154,15 @@ export default {
         }
         dateArray.push(date);
       } else {
-        dateRange
-          .split(",")
-          .forEach((dateString) => dateArray.push(new Date(dateString)));
+        let stringDateArray = dateRange.split(",");
+        stringDateArray.forEach((dateString) =>
+          dateArray.push(new Date(dateString))
+        );
+        if (/^\d{4}-([0]\d|1[0-2])$/.test(stringDateArray[0])) {
+          format = "month";
+        } else if (/^\d{4}$/.test(stringDateArray[0])) {
+          format = "year";
+        }
       }
       return [dateArray, format];
     },
