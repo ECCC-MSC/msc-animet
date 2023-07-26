@@ -53,7 +53,10 @@ export default {
     ...mapGetters("Layers", ["getActiveLegends"]),
     ...mapState("Layers", ["isAnimating"]),
     getItemsList() {
-      return this.$mapLayers.arr.slice().map((l) => l.get("layerName"));
+      return this.$mapLayers.arr
+        .slice()
+        .filter((l) => l.get("layerStyles").length !== 0)
+        .map((l) => l.get("layerName"));
     },
   },
   methods: {

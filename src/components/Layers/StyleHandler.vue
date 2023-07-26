@@ -9,7 +9,7 @@
             v-bind="attrs"
             v-on="{ ...tooltip, ...menu }"
             icon
-            :disabled="isAnimating"
+            :disabled="isAnimating || item.get('layerStyles').length === 0"
             hide-details
             class="style-selector"
           >

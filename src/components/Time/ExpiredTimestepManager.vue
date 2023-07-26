@@ -39,7 +39,7 @@ export default {
       expiredSnackBarMessage: this.$t("MissingTimesteps"),
       expiredTimestepList: [],
       notifyExtentRebuilt: false,
-      xsltTime: `parse-xml($xml)//Layer[not(.//Layer)]!map
+      xsltTime: `parse-xml($xml)//Layer[not(.//Layer) and Name = 'REPLACE_WITH_LAYERNAME']!map
                       {
                           'Dimension' : map
                           {
@@ -164,6 +164,16 @@ export default {
           this.errorLayersList = this.errorLayersList.filter(
             (l) => l !== layer.get("layerName")
           );
+        } else if (
+          "code" in attrs &&
+          attrs["code"].nodeValue === "StyleNotDefined"
+        ) {
+          layer.getSource().updateParams({ STYLES: null });
+          this.expiredSnackBarMessage = this.$t("StyleError");
+          this.notifyExtentRebuilt = true;
+          this.errorLayersList = this.errorLayersList.filter(
+            (l) => l !== layer.get("layerName")
+          );
         } else {
           this.$root.$emit("cancelExpired");
           this.$root.$emit("removeLayer", layer.get("layerName"));
@@ -200,15 +210,19 @@ export default {
         },
       });
       await api.get().then((response) => {
-        layerData = SaxonJS.XPath.evaluate(this.xsltTime, null, {
-          xpathDefaultNamespace: "http://www.opengis.net/wms",
-          namespaceContext: {
-            xlink: "http://www.w3.org/1999/xlink",
-          },
-          params: {
-            xml: response.data,
-          },
-        });
+        layerData = SaxonJS.XPath.evaluate(
+          this.xsltTime.replace("REPLACE_WITH_LAYERNAME", layer.Name),
+          null,
+          {
+            xpathDefaultNamespace: "http://www.opengis.net/wms",
+            namespaceContext: {
+              xlink: "http://www.w3.org/1999/xlink",
+            },
+            params: {
+              xml: response.data,
+            },
+          }
+        );
       });
       let [start, end, step] = layerData.Dimension.Dimension_time.split("/");
       let extentDateArray = this.getDateArray(

@@ -1,7 +1,4 @@
-import treeEn_weather from "../../assets/trees/tree_en_weather";
-import treeFr_weather from "../../assets/trees/tree_fr_weather";
-import treeEn_climate from "../../assets/trees/tree_en_climate";
-import treeFr_climate from "../../assets/trees/tree_fr_climate";
+import { default as layerTrees } from "../../assets/trees";
 import wmsSources from "../../../scripts/wms_sources_configs.json";
 
 const state = {
@@ -15,14 +12,14 @@ const state = {
   isAnimating: false,
   lang: "en",
   activeLegendsList: [],
-  layerTreeItemsEn: [
-    treeEn_weather.tree_en_weather,
-    treeEn_climate.tree_en_climate,
-  ],
-  layerTreeItemsFr: [
-    treeFr_weather.tree_fr_weather,
-    treeFr_climate.tree_fr_climate,
-  ],
+  layerTreeItemsEn: Object.keys(wmsSources).map((key) => {
+    const treeName = "tree_en_" + key.toLowerCase();
+    return layerTrees[treeName][treeName];
+  }),
+  layerTreeItemsFr: Object.keys(wmsSources).map((key) => {
+    const treeName = "tree_fr_" + key.toLowerCase();
+    return layerTrees[treeName][treeName];
+  }),
   mapTimeSettings: {
     SnappedLayer: null,
     Step: null,

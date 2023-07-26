@@ -41,10 +41,13 @@ export default {
       let layer = this.$mapLayers.arr.find(
         (l) => l.get("layerName") === layerName
       );
-      const wmsSource = layer.get("source")["url_"];
-      const currentStyle = layer.get("layerCurrentStyle");
-      let r = `${wmsSource}?version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=${layerName}&format=image/png&STYLE=${currentStyle}`;
-      return r;
+      if (layer.get("layerStyles").length === 0) {
+        return null;
+      }
+      return layer
+        .get("layerStyles")
+        .find((style) => style.Name === layer.get("layerCurrentStyle"))
+        .LegendURL;
     },
     dragMouseDown: function (event) {
       if (this.isAnimating) {
@@ -90,6 +93,8 @@ export default {
   overflow: auto;
   top: 20px;
   left: 20px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .resizable img {

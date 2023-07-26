@@ -26,7 +26,9 @@
 # OTHER DEALINGS IN THE SOFTWARE.
 #
 # =================================================================
+import glob
 import json
+import os
 
 from owslib.wms import WebMapService
 
@@ -76,13 +78,25 @@ langs = ["en", "fr"]
 with open("wms_sources_configs.json") as f:
     wmsSources = json.load(f)
 
+trees_files = glob.glob("../src/assets/trees/tree_*.js")
+layers_en_files = glob.glob("../src/locales/en/layers_*.json")
+layers_fr_files = glob.glob("../src/locales/fr/layers_*.json")
+
+file_list = trees_files + layers_en_files + layers_fr_files
+
+for file_path in file_list:
+    os.remove(file_path)
+
 for name, params in wmsSources.items():
     name = name.lower()
     for lang in langs:
-
+        if "?" in params["url"]:
+            base_url = f"{params['url']}&lang={lang}"
+        else:
+            base_url = f"{params['url']}?lang={lang}"
         try:
             wms = WebMapService(
-                f"{params['url']}?lang={lang}", version=params["version"]
+                base_url, version=params["version"]
             )
         except Exception as e:
             raise SystemExit(e)

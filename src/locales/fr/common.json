@@ -66,6 +66,7 @@
   "SnapLayerToExtent": "Appliquer l'étendue temporelle et l'intervalle à l'animation.",
   "SnappedLayer": "Étendue temporelle et intervalle appliqués à l'animation.",
   "SocialWeatherHashtags": "meteo,donneesouvertes",
+  "StyleError": "La requête WMS n'a pas fonctionné en incluant le style dans la requête. Le style de la couche a donc été réinitialisé au style par défaut et peut ne pas correspondre à la légende affichée.",
   "TimestepsDropdown": "Pas de temps",
   "UnhandledError": "Une erreur non répertoriée a été rencontrée. La couche a dû être retirée.",
   "UserDoc": "Documentation utilisateur",
