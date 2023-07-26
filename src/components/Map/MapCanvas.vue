@@ -242,6 +242,8 @@ export default {
       imageLayer.setProperties({
         layerCurrentStyle: Object.hasOwn(layerData, "currentStyle")
           ? layerData.currentStyle
+          : layerData.Style.length === 0
+          ? null
           : layerData.Style[0].Name,
         layerDateIndex: 0,
         layerIsTemporal: layerData.isTemporal,

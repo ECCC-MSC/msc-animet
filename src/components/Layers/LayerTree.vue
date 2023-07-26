@@ -150,7 +150,7 @@ export default {
       openedLevels: [],
       searchGeoMet: [],
       tab: null,
-      xsltFull: `parse-xml($xml)//Layer[not(.//Layer)]!map
+      xsltFull: `parse-xml($xml)//Layer[not(.//Layer) and Name = 'REPLACE_WITH_LAYERNAME']!map
                         {
                             'Name' : string(Name),
                             'Title' : string(Title),
@@ -166,23 +166,7 @@ export default {
                                 {
                                     'Name' : string(Name),
                                     'Title' : string(Title),
-                                    'LegendWith' : string(LegendURL/@width),
-                                    'LegendHeight' : string(LegendURL/@height),
-                                    'LegendURL' : string(LegendURL/OnlineResource/@xlink:href)
-                                }
-                            }
-                        }`,
-      xsltStyle: `parse-xml($xml)//Layer[not(.//Layer)]!map
-                        {
-                            'Name' : string(Name),
-                            'Title' : string(Title),
-                            'Abstract' : string(Abstract),
-                            'Style' : array { Style !
-                                map
-                                {
-                                    'Name' : string(Name),
-                                    'Title' : string(Title),
-                                    'LegendWith' : string(LegendURL/@width),
+                                    'LegendWidth' : string(LegendURL/@width),
                                     'LegendHeight' : string(LegendURL/@height),
                                     'LegendURL' : string(LegendURL/OnlineResource/@xlink:href)
                                 }
@@ -209,15 +193,19 @@ export default {
           },
         });
         await api.get().then((response) => {
-          layerData = SaxonJS.XPath.evaluate(this.xsltFull, null, {
-            xpathDefaultNamespace: "http://www.opengis.net/wms",
-            namespaceContext: {
-              xlink: "http://www.w3.org/1999/xlink",
-            },
-            params: {
-              xml: response.data,
-            },
-          });
+          layerData = SaxonJS.XPath.evaluate(
+            this.xsltFull.replace("REPLACE_WITH_LAYERNAME", layer.Name),
+            null,
+            {
+              xpathDefaultNamespace: "http://www.opengis.net/wms",
+              namespaceContext: {
+                xlink: "http://www.w3.org/1999/xlink",
+              },
+              params: {
+                xml: response.data,
+              },
+            }
+          );
         });
         layerData = { ...layerData, ...layer };
         layerData.isTemporal = layerData.Dimension.Dimension_time !== "";
@@ -226,6 +214,10 @@ export default {
         this.$mapLayers.arr.some((l) => l.get("layerName") === layer.Name)
       ) {
         this.$root.$emit("removeLayer", layer.Name);
+      } else if (this.addedLayers.includes(layer.Name)) {
+        this.addedLayers = this.addedLayers.filter(
+          (added) => added !== layer.Name
+        );
       }
     },
     filterCallbackFunction(array, fn) {
