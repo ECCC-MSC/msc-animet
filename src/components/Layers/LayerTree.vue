@@ -185,10 +185,10 @@ export default {
         const api = axios.create({
           baseURL: source,
           params: {
-            service: "WMS",
-            version: "1.3.0",
-            request: "GetCapabilities",
-            LAYER: layer.Name,
+            SERVICE: "WMS",
+            VERSION: "1.3.0",
+            REQUEST: "GetCapabilities",
+            LAYERS: layer.Name,
             t: new Date().getTime(),
           },
         });

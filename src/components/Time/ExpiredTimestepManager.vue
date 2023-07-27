@@ -168,7 +168,7 @@ export default {
           "code" in attrs &&
           attrs["code"].nodeValue === "StyleNotDefined"
         ) {
-          layer.getSource().updateParams({ STYLE: null });
+          layer.getSource().updateParams({ STYLES: null });
           this.expiredSnackBarMessage = this.$t("StyleError");
           this.notifyExtentRebuilt = true;
           this.errorLayersList = this.errorLayersList.filter(
@@ -202,10 +202,10 @@ export default {
       const api = axios.create({
         baseURL: layer.get("source")["url_"],
         params: {
-          service: "WMS",
-          version: "1.3.0",
-          request: "GetCapabilities",
-          LAYER: layer.get("layerName"),
+          SERVICE: "WMS",
+          VERSION: "1.3.0",
+          REQUEST: "GetCapabilities",
+          LAYERS: layer.get("layerName"),
           t: new Date().getTime(),
         },
       });
