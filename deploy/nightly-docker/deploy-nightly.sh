@@ -30,6 +30,8 @@
 BASEDIR=/data/web/animet-nightly
 GITREPO=https://github.com/ECCC-MSC/msc-animet.git
 DAYSTOKEEP=7
+GEOMET_WEATHER_NIGHTLY_URL=https://geomet-dev-21-nightly.cmc.ec.gc.ca/geomet
+GEOMET_CLIMATE_NIGHTLY_URL=https://geomet-dev-21-nightly.cmc.ec.gc.ca/geomet-climate
 
 # you should be okay from here
 
@@ -54,6 +56,13 @@ echo "Generating AniMet nightly build for $TIMESTAMP"
 rm -fr latest
 mkdir $NIGHTLYDIR && cd $NIGHTLYDIR
 git clone $GITREPO . -b main --depth=1
+
+# point to GeoMet nightly WMS server
+if [-n $GEOMET_WEATHER_NIGHTLY_URL] && [-n $GEOMET_CLIMATE_NIGHTLY_URL]
+then
+  sed -i "s#https://geo.weather.gc.ca/geomet#$GEOMET_WEATHER_NIGHTLY_URL#g" scripts/wms_sources_configs.json
+  sed -i "s#https://geo.weather.gc.ca/geomet-climate#$GEOMET_CLIMATE_NIGHTLY_URL#g" scripts/wms_sources_configs.json
+fi
 
 echo "Stopping/building/starting Docker setup"
 docker compose -f docker-compose.yml build --no-cache
