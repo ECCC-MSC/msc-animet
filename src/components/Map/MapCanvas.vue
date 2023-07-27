@@ -275,7 +275,7 @@ export default {
       });
 
       imageLayer.getSource().updateParams({
-        STYLES: imageLayer.get("layerCurrentStyle"),
+        STYLE: imageLayer.get("layerCurrentStyle"),
       });
 
       if (this.getActiveLegends.length === 0) {
