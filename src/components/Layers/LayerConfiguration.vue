@@ -144,6 +144,7 @@ export default {
 }
 .content {
   min-height: 96px;
+  max-width: 100%;
 }
 .list-enter,
 .list-leave-to {
