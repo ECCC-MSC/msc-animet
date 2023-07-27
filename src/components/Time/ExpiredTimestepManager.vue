@@ -168,7 +168,7 @@ export default {
           "code" in attrs &&
           attrs["code"].nodeValue === "StyleNotDefined"
         ) {
-          layer.getSource().updateParams({ STYLES: null });
+          layer.getSource().updateParams({ STYLE: null });
           this.expiredSnackBarMessage = this.$t("StyleError");
           this.notifyExtentRebuilt = true;
           this.errorLayersList = this.errorLayersList.filter(

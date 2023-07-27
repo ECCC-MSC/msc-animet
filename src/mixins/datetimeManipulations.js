@@ -110,27 +110,40 @@ export default {
     findLayerIndex(date, layerDateArr, step) {
       let start = 0;
       let end = layerDateArr.length - 1;
-      if (date <= layerDateArr[start]) {
-        if (date < layerDateArr[start]) {
-          return -1;
-        } else {
-          return 0;
+      if (step === null || step === "PT0H") {
+        let newIndex = null;
+        while (start <= end) {
+          if (layerDateArr[start].getTime() === date.getTime()) {
+            newIndex = start;
+            break;
+          }
+          start += 1;
         }
-      } else if (date >= layerDateArr[end]) {
-        if (date >= parseDuration(step).add(layerDateArr[end])) {
-          return -2;
-        } else {
-          return end;
+        if (newIndex === null) return -2;
+        else return newIndex;
+      } else {
+        if (date <= layerDateArr[start]) {
+          if (date < layerDateArr[start]) {
+            return -1;
+          } else {
+            return 0;
+          }
+        } else if (date >= layerDateArr[end]) {
+          if (date >= parseDuration(step).add(layerDateArr[end])) {
+            return -2;
+          } else {
+            return end;
+          }
         }
+        while (start <= end) {
+          let mid = Math.floor((start + end) / 2);
+          // If date is found
+          if (layerDateArr[mid].getTime() === date.getTime()) return mid;
+          else if (layerDateArr[mid] < date) start = mid + 1;
+          else end = mid - 1;
+        }
+        return end;
       }
-      while (start <= end) {
-        let mid = Math.floor((start + end) / 2);
-        // If date is found
-        if (layerDateArr[mid].getTime() === date.getTime()) return mid;
-        else if (layerDateArr[mid] < date) start = mid + 1;
-        else end = mid - 1;
-      }
-      return end;
     },
     getDateArray(dateRange) {
       let dateArray = new Array();

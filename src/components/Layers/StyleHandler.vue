@@ -45,7 +45,7 @@ export default {
       layer.setProperties({
         layerCurrentStyle: styleName,
       });
-      layer.getSource().updateParams({ STYLES: styleName });
+      layer.getSource().updateParams({ STYLE: styleName });
     },
   },
   computed: {
