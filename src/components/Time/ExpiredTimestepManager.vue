@@ -176,7 +176,7 @@ export default {
           );
         } else {
           this.$root.$emit("cancelExpired");
-          this.$root.$emit("removeLayer", layer.get("layerName"));
+          this.$root.$emit("removeLayer", layer);
           this.expiredSnackBarMessage = this.$t("UnhandledError");
           console.log(e);
           this.notifyExtentRebuilt = true;
@@ -186,7 +186,7 @@ export default {
         }
       } catch (error) {
         this.$root.$emit("cancelExpired");
-        this.$root.$emit("removeLayer", layer.get("layerName"));
+        this.$root.$emit("removeLayer", layer);
         this.expiredSnackBarMessage = this.$t("BrokenLayer");
         this.notifyExtentRebuilt = true;
         this.errorLayersList = this.errorLayersList.filter(
@@ -211,7 +211,10 @@ export default {
       });
       await api.get().then((response) => {
         layerData = SaxonJS.XPath.evaluate(
-          this.xsltTime.replace("REPLACE_WITH_LAYERNAME", layer.Name),
+          this.xsltTime.replace(
+            "REPLACE_WITH_LAYERNAME",
+            layer.get("layerName")
+          ),
           null,
           {
             xpathDefaultNamespace: "http://www.opengis.net/wms",
@@ -224,19 +227,19 @@ export default {
           }
         );
       });
-      let [start, end, step] = layerData.Dimension.Dimension_time.split("/");
-      let extentDateArray = this.getDateArray(
+      const layerActiveConfig = layer.get("layerActiveConfig");
+      let configs = this.createTimeLayerConfigs(
         layerData.Dimension.Dimension_time
-      )[0];
+      );
       let newLayerIndex = this.findLayerIndex(
         this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
-        extentDateArray,
-        step
+        configs[layerActiveConfig].layerDateArray,
+        configs[layerActiveConfig].layerTimeStep
       );
       let newMRs =
         layerData.Dimension.Dimension_ref_time === ""
           ? null
-          : this.getDateArray(layerData.Dimension.Dimension_ref_time)[0];
+          : this.findFormat(layerData.Dimension.Dimension_ref_time)[0][0];
       let sameMR = true;
       // Check if the model run was the problem and not the timestep
       if (currentMR !== null) {
@@ -258,8 +261,8 @@ export default {
         if (newLayerIndex < 0) {
           layer.getSource().updateParams({
             TIME: this.getProperDateString(
-              extentDateArray[0],
-              layer.get("layerDateFormat")
+              configs[layerActiveConfig].layerDateArray[0],
+              configs[layerActiveConfig].dateFormat
             ),
           });
         }
@@ -268,25 +271,26 @@ export default {
         // it means the getCapa is wrong. Manually remove the faulty
         // timesteps until the index is no longer found.
         do {
-          extentDateArray.splice(newLayerIndex, 1);
+          configs[layerActiveConfig].layerDateArray.splice(newLayerIndex, 1);
           newLayerIndex = this.findLayerIndex(
             this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
-            extentDateArray,
-            step
+            configs[layerActiveConfig].layerDateArray,
+            configs[layerActiveConfig].layerTimeStep
           );
         } while (newLayerIndex >= 0);
       }
       layer.setProperties({
-        layerDateArray: extentDateArray,
+        layerDateArray: configs[layerActiveConfig].layerDateArray,
         layerDateIndex: newLayerIndex,
         layerDefaultTime: new Date(layerData.Dimension.Dimension_time_default),
         layerModelRuns: newMRs,
         layerCurrentMR: sameMR
           ? layer.get("layerCurrentMR")
           : newMRs[newMRs.length - 1],
-        layerStartTime: new Date(start),
-        layerEndTime: new Date(end),
-        layerTimeStep: step,
+        layerStartTime: new Date(configs[layerActiveConfig].layerStartTime),
+        layerEndTime: new Date(configs[layerActiveConfig].layerEndTime),
+        layerTimeStep: configs[layerActiveConfig].layerTimeStep,
+        layerTrueTimeStep: configs[layerActiveConfig].layerTrueTimeStep,
       });
       this.errorLayersList = this.errorLayersList.filter(
         (l) => l !== layer.get("layerName")

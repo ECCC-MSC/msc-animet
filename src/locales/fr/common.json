@@ -25,6 +25,7 @@
   "LayerBarEndsTooltip": "Fin",
   "LayerBarInvisibleTooltip": "Date la plus proche hors limites. Couche non-visible.",
   "LayerBarMapTime": "Date de la carte: ",
+  "LayerBarMissingTimestep": "La date de la carte se situe entre deux pas de temps disponibles de la couche.",
   "LayerBarOpacity": "Opacité",
   "LayerBarRemoveTooltip": "Retirer la couche",
   "LayerBarStartsTooltip": "Début",
@@ -71,5 +72,6 @@
   "UnhandledError": "Une erreur non répertoriée a été rencontrée. La couche a dû être retirée.",
   "UserDoc": "Documentation utilisateur",
   "Water_bodies": "Délimitations des plans d'eau canadiens",
-  "Weather": "GeoMet-Météo"
+  "Weather": "GeoMet-Météo",
+  "WrongTimeFormat": "Le format utilisé pour le temps n'est pas reconnu par l'application.\nLe standard WMS supporte 4 façons d'ajouter vos dates à l'intérieur d'un WMS, soit:\n\tUne seule date;\n\tPlusieurs dates séparées d'une virgule;\n\tDébut/Fin/Intervalle;\n\tDébut1/Fin1/Intervalle1,Début2/Fin2/Intervalle2,etc.\nSi vous souhaitez ajouter cette couche dans AniMet, veuillez faire les changements appropriés dans votre source WMS."
 }

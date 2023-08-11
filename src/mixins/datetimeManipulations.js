@@ -102,80 +102,151 @@ export default {
         SnappedLayer:
           snappedLayer !== null ? snappedLayer.get("layerName") : null,
         Step: timestep,
-        DateIndex: dateIndex,
+        DateIndex:
+          dateIndex >= 0
+            ? dateIndex
+            : dateIndex === -1
+            ? 0
+            : arrayCombine.length - 1,
         Extent: arrayCombine,
       };
       this.$store.dispatch("Layers/setMapTimeSettings", mapTimeSettings);
     },
+    createTimeLayerConfigs(Dimension_time) {
+      let [dateArrayFormat, Step] = this.findFormat(Dimension_time);
+      if (dateArrayFormat === null) {
+        return null;
+      }
+      let configs = [];
+      if (dateArrayFormat.every((element) => Array.isArray(element))) {
+        for (let i = 0; i < dateArrayFormat.length; i++) {
+          configs.push({
+            layerDateArray: dateArrayFormat[i][0],
+            layerDateFormat: dateArrayFormat[i][1],
+            layerStartTime: dateArrayFormat[i][0][0],
+            layerEndTime:
+              dateArrayFormat[i][0][dateArrayFormat[i][0].length - 1],
+            layerTimeStep: Step[i] === "PT0H" ? "PT1H" : Step[i],
+            layerTrueTimeStep: Step[i],
+          });
+        }
+      } else {
+        let trueInterval = null;
+        if (Step === null) {
+          if (dateArrayFormat[1] === "year") {
+            Step = "P1Y";
+          } else if (dateArrayFormat[1] === "month") {
+            Step = "P1M";
+          } else {
+            Step = "PT1H";
+          }
+        } else if (Step === "PT0H") {
+          trueInterval = "PT0H";
+          Step = "PT1H";
+        } else {
+          trueInterval = Step;
+        }
+        configs.push({
+          layerDateArray: dateArrayFormat[0],
+          layerDateFormat: dateArrayFormat[1],
+          layerStartTime: dateArrayFormat[0][0],
+          layerEndTime: dateArrayFormat[0][dateArrayFormat[0].length - 1],
+          layerTimeStep: Step,
+          layerTrueTimeStep: trueInterval,
+        });
+      }
+      return configs;
+    },
     findLayerIndex(date, layerDateArr, step) {
       let start = 0;
       let end = layerDateArr.length - 1;
-      if (step === null || step === "PT0H") {
-        let newIndex = null;
-        while (start <= end) {
-          if (layerDateArr[start].getTime() === date.getTime()) {
-            newIndex = start;
-            break;
-          }
-          start += 1;
+      if (date <= layerDateArr[start]) {
+        if (date < layerDateArr[start]) {
+          return -1;
+        } else {
+          return 0;
         }
-        if (newIndex === null) return -2;
-        else return newIndex;
-      } else {
-        if (date <= layerDateArr[start]) {
-          if (date < layerDateArr[start]) {
-            return -1;
-          } else {
-            return 0;
-          }
-        } else if (date >= layerDateArr[end]) {
-          if (date >= parseDuration(step).add(layerDateArr[end])) {
-            return -2;
-          } else {
-            return end;
-          }
+      } else if (date >= layerDateArr[end]) {
+        if (date >= parseDuration(step).add(layerDateArr[end])) {
+          return -2;
+        } else {
+          return end;
         }
-        while (start <= end) {
-          let mid = Math.floor((start + end) / 2);
-          // If date is found
-          if (layerDateArr[mid].getTime() === date.getTime()) return mid;
-          else if (layerDateArr[mid] < date) start = mid + 1;
-          else end = mid - 1;
+      }
+      while (start <= end) {
+        let mid = Math.floor((start + end) / 2);
+        let dateCeiling = parseDuration(step === "PT0H" ? "PT1H" : step).add(
+          layerDateArr[mid]
+        );
+        // If date is found
+        if (date >= layerDateArr[mid] && date < dateCeiling) return mid;
+        else if (date >= dateCeiling) start = mid + 1;
+        else end = mid - 1;
+      }
+      return -3;
+    },
+    findFormat(dateRange) {
+      // WMS standard says whitespaces are allowed, remove them
+      dateRange = dateRange.replace(/\s/g, "");
+      // only 1 case will return true, so switch with "true" will give the correct format
+      switch (true) {
+        case /^[^,/]*$/.test(dateRange):
+        case /^[^/]*,[^/]*$/.test(dateRange): {
+          return [this.getNullIntervalDateArray(dateRange.split(",")), null];
         }
-        return end;
+        case /^[^,]*\/[^,]*\/[^,]*$/.test(dateRange): {
+          let [startDateStr, endDateStr, interval] = dateRange.split("/");
+          return [
+            this.getDateArray(startDateStr, endDateStr, interval),
+            interval,
+          ];
+        }
+        case /^[^,]*\/[^,]*\/[^,]*(?:,[^,]*\/[^,]*\/[^,]*)*$/.test(dateRange): {
+          let dateArrays = [];
+          let intervals = [];
+          let dateRanges = dateRange.split(",");
+          for (let i = 0; i < dateRanges.length; i++) {
+            let [startDateStr, endDateStr, interval] = dateRanges[i].split("/");
+            dateArrays.push(
+              this.getDateArray(startDateStr, endDateStr, interval)
+            );
+            intervals.push(interval);
+          }
+          return [dateArrays, intervals];
+        }
+        default:
+          return [null, null];
       }
     },
-    getDateArray(dateRange) {
+    getDateArray(startDateStr, endDateStr, interval) {
       let dateArray = new Array();
       let format = "ISO";
-      if (dateRange.includes("/")) {
-        let [startDateStr, endDateStr, interval] = dateRange.split("/");
-        if (/^\d{4}-([0]\d|1[0-2])$/.test(startDateStr)) {
-          format = "month";
-        } else if (/^\d{4}$/.test(startDateStr)) {
-          format = "year";
-        }
-        let startDate = new Date(startDateStr);
-        let endDate = new Date(endDateStr);
-        let nextDate = parseDuration(interval).add;
+      if (/^\d{4}-([0]\d|1[0-2])$/.test(startDateStr)) {
+        format = "month";
+      } else if (/^\d{4}$/.test(startDateStr)) {
+        format = "year";
+      }
+      let startDate = new Date(startDateStr);
+      let endDate = new Date(endDateStr);
+      let nextDate = parseDuration(interval === "PT0H" ? "PT1H" : interval).add;
 
-        let date = new Date(startDate);
+      let date = new Date(startDate);
 
-        while (date < endDate) {
-          dateArray.push(date);
-          date = nextDate(date);
-        }
+      while (date < endDate) {
         dateArray.push(date);
-      } else {
-        let stringDateArray = dateRange.split(",");
-        stringDateArray.forEach((dateString) =>
-          dateArray.push(new Date(dateString))
-        );
-        if (/^\d{4}-([0]\d|1[0-2])$/.test(stringDateArray[0])) {
-          format = "month";
-        } else if (/^\d{4}$/.test(stringDateArray[0])) {
-          format = "year";
-        }
+        date = nextDate(date);
+      }
+      dateArray.push(date);
+      return [dateArray, format];
+    },
+    getNullIntervalDateArray(dateRange) {
+      let dateArray = new Array();
+      dateRange.forEach((dateString) => dateArray.push(new Date(dateString)));
+      let format = "ISO";
+      if (/^\d{4}-([0]\d|1[0-2])$/.test(dateRange[0])) {
+        format = "month";
+      } else if (/^\d{4}$/.test(dateRange[0])) {
+        format = "year";
       }
       return [dateArray, format];
     },

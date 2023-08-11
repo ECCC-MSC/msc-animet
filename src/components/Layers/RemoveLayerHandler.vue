@@ -7,7 +7,7 @@
         icon
         v-bind="attrs"
         v-on="on"
-        @click="removeLayerHandler(item.get('layerName'))"
+        @click="removeLayerHandler(item)"
         :disabled="isAnimating"
       >
         <v-icon> mdi-close </v-icon>
@@ -26,8 +26,8 @@ export default {
   mixins: [datetimeManipulations],
   props: ["item", "color"],
   methods: {
-    removeLayerHandler(removedLayerName) {
-      this.$root.$emit("removeLayer", removedLayerName);
+    removeLayerHandler(removedLayer) {
+      this.$root.$emit("removeLayer", removedLayer);
     },
   },
   computed: {

@@ -56,7 +56,7 @@
       </v-row>
       <v-row>
         {{ $t("LayerBarStepTooltip") }} :
-        {{ item.get("layerTimeStep") }}
+        {{ item.get("layerTrueTimeStep") }}
       </v-row>
     </v-container>
   </v-tooltip>
