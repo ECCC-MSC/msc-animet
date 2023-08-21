@@ -213,10 +213,9 @@ export default {
       } else if (
         this.$mapLayers.arr.some((l) => l.get("layerName") === layer.Name)
       ) {
-        this.$root.$emit("removeLayer", layer.Name);
-      } else if (this.addedLayers.includes(layer.Name)) {
-        this.addedLayers = this.addedLayers.filter(
-          (added) => added !== layer.Name
+        this.$root.$emit(
+          "removeLayer",
+          this.$mapLayers.arr.find((l) => l.get("layerName") === layer.Name)
         );
       }
     },

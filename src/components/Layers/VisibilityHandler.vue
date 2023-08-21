@@ -34,7 +34,10 @@
           )
         }}
       </v-row>
-      <v-row>
+      <v-row v-if="item.get('layerDateIndex') === -3">
+        {{ $t("LayerBarMissingTimestep") }}
+      </v-row>
+      <v-row v-else>
         {{ $t("LayerBarClosestTime") }}
         {{
           localeDateFormat(

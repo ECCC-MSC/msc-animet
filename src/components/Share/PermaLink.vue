@@ -101,8 +101,9 @@ export default {
           : "0";
         let layerStyle = "0";
         if (
+          this.$mapLayers.arr[i].get("layerCurrentStyle") &&
           this.$mapLayers.arr[i].get("layerCurrentStyle") !==
-          this.$mapLayers.arr[i].get("layerStyles")[0].Name
+            this.$mapLayers.arr[i].get("layerStyles")[0].Name
         ) {
           layerStyle = this.$mapLayers.arr[i].get("layerCurrentStyle");
         }

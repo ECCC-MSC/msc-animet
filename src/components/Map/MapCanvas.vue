@@ -135,17 +135,26 @@ export default {
     goToExtentHandler(locExtent) {
       this.map.getView().fit(locExtent);
     },
-    async removeLayerHandler(removedLayerName) {
-      if (this.getActiveLegends.includes(removedLayerName)) {
-        this.$store.dispatch("Layers/removeActiveLegend", removedLayerName);
+    async removeLayerHandler(removedLayer) {
+      if (this.getActiveLegends.includes(removedLayer.get("layerName"))) {
+        this.$store.dispatch(
+          "Layers/removeActiveLegend",
+          removedLayer.get("layerName")
+        );
       }
-      let layer = this.map
-        .getLayers()
-        .getArray()
-        .find((layer) => layer.get("layerName") === removedLayerName);
-      this.map.removeLayer(layer);
+      let layerFound = false;
+      if (
+        this.map
+          .getLayers()
+          .getArray()
+          .find((l) => l.get("layerName") === removedLayer.get("layerName")) !==
+        undefined
+      ) {
+        layerFound = true;
+        this.map.removeLayer(removedLayer);
+      }
 
-      this.$mapLayers.arr.splice(layer.get("zIndex"), 1);
+      this.$mapLayers.arr.splice(removedLayer.get("zIndex"), 1);
       this.$mapLayers.arr.forEach((elem) =>
         elem.setZIndex(
           this.$mapLayers.arr.findIndex(
@@ -156,10 +165,10 @@ export default {
       if (this.loading) {
         this.loading = false;
       }
-      if (layer.get("layerIsTemporal")) {
-        this.$root.$emit("timeLayerRemoved", layer);
+      if (removedLayer.get("layerIsTemporal") && layerFound) {
+        this.$root.$emit("timeLayerRemoved", removedLayer);
       }
-      this.$root.$emit("layerRemoved", removedLayerName);
+      this.$root.$emit("layerRemoved", removedLayer.get("layerName"));
     },
     setLayerZIndex(layer) {
       if (!Number.isInteger(layer.get("zIndex"))) {

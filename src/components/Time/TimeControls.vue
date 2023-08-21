@@ -1,10 +1,24 @@
 <template>
   <v-card class="my-4">
-    <v-row class="mr-3 ml-1" v-if="this.getMapTimeSettings.Step !== null">
+    <v-row class="mr-3 ml-1" v-if="getMapTimeSettings.Step !== null">
       <time-slider />
       <interval-locale-selector />
     </v-row>
     <expired-timestep-manager />
+    <v-snackbar v-model="notifyExtentRebuilt" timeout="-1">
+      <span style="white-space: pre-wrap">{{ $t("WrongTimeFormat") }}</span>
+
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="warning"
+          text
+          v-bind="attrs"
+          @click="notifyExtentRebuilt = false"
+        >
+          {{ $t("Close") }}
+        </v-btn>
+      </template>
+    </v-snackbar>
   </v-card>
 </template>
 
@@ -27,6 +41,7 @@ export default {
   data() {
     return {
       cancelExpired: false,
+      notifyExtentRebuilt: false,
     };
   },
   mounted() {
@@ -49,17 +64,23 @@ export default {
       this.cancelExpired = true;
     },
     layerTimeManager(imageLayer, layerData) {
-      let [start, end, step] = layerData.Dimension.Dimension_time.split("/");
       let referenceTime =
         layerData.Dimension.Dimension_ref_time === ""
           ? null
-          : this.getDateArray(layerData.Dimension.Dimension_ref_time)[0];
-      let [layerDateArray, dateFormat] = this.getDateArray(
+          : this.findFormat(layerData.Dimension.Dimension_ref_time)[0][0];
+      let configs = this.createTimeLayerConfigs(
         layerData.Dimension.Dimension_time
       );
+      if (configs === null) {
+        this.notifyExtentRebuilt = true;
+        this.$root.$emit("removeLayer", imageLayer);
+        return;
+      }
       imageLayer.setProperties({
-        layerDateArray: layerDateArray,
-        layerDateFormat: dateFormat,
+        layerActiveConfig: 0,
+        layerConfigs: configs,
+        layerDateArray: configs[0].layerDateArray,
+        layerDateFormat: configs[0].dateFormat,
         layerDateIndex: 0,
         layerDefaultTime: new Date(layerData.Dimension.Dimension_time_default),
         layerIndexOOB: false,
@@ -68,9 +89,10 @@ export default {
           referenceTime === null
             ? null
             : referenceTime[referenceTime.length - 1],
-        layerStartTime: new Date(start),
-        layerEndTime: new Date(end),
-        layerTimeStep: step,
+        layerStartTime: new Date(configs[0].layerStartTime),
+        layerEndTime: new Date(configs[0].layerEndTime),
+        layerTimeStep: configs[0].layerTimeStep,
+        layerTrueTimeStep: configs[0].layerTrueTimeStep,
       });
       this.$store.dispatch(
         "Layers/addTimestep",
@@ -230,11 +252,18 @@ export default {
         this.getMapTimeSettings.DateIndex < first ||
         this.getMapTimeSettings.DateIndex > last
       ) {
-        const newCurrent = this.findLayerIndex(
+        let newCurrent = this.findLayerIndex(
           newSnappedLayer.get("layerDefaultTime"),
           this.getMapTimeSettings.Extent,
           newSnappedLayer.get("layerTimeStep")
         );
+        if (newCurrent < 0) {
+          newCurrent = this.findLayerIndex(
+            newSnappedLayer.get("layerStartTime"),
+            this.getMapTimeSettings.Extent,
+            newSnappedLayer.get("layerTimeStep")
+          );
+        }
         this.$store.dispatch("Layers/setMapTimeIndex", newCurrent);
       }
       this.$store.commit("Layers/setDatetimeRangeSlider", [first, last]);

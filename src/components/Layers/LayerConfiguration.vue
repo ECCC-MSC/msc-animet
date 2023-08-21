@@ -39,7 +39,6 @@
                       :item="item"
                       :color="isSnapped(item.get('layerName'))"
                     />
-
                     <visibility-handler
                       :item="item"
                       :color="isSnapped(item.get('layerName'))"

@@ -25,6 +25,7 @@
   "LayerBarEndsTooltip": "End",
   "LayerBarInvisibleTooltip": "Closest date out of bounds. Layer not shown.",
   "LayerBarMapTime": "Current map time: ",
+  "LayerBarMissingTimestep": "The current map time is in-between this layer's available timesteps.",
   "LayerBarOpacity": "Opacity",
   "LayerBarRemoveTooltip": "Remove layer",
   "LayerBarStartsTooltip": "Start",
@@ -71,5 +72,6 @@
   "UnhandledError": "An unhandled error was encountered. The layer had to be removed.",
   "UserDoc": "User documentation",
   "Water_bodies": "Canadian water bodies",
-  "Weather": "GeoMet-Weather"
+  "Weather": "GeoMet-Weather",
+  "WrongTimeFormat": "The format used for time is not recognized by the application.\nThe WMS standard supports 4 ways of adding dates inside a WMS, which are:\n\tA single date;\n\tMultiple dates comma separated;\n\tStart/End/Interval;\n\tStart1/End1/Interval1,Start2/End2/Interval2,etc.\nIf you wish to add this layer to AniMet, you will need to update the WMS source accordingly."
 }

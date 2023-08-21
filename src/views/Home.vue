@@ -14,8 +14,7 @@ import MapCanvas from "../components/Map/MapCanvas.vue";
 import { mapGetters } from "vuex";
 import ExportAnimation from "../components/Animation/ExportAnimation.vue";
 
-import climateJSON from "../locales/en/layers_climate.json";
-import weatherJSON from "../locales/en/layers_weather.json";
+import localeData from "../locales/importLocaleFiles";
 
 export default {
   name: "Home",
@@ -64,10 +63,12 @@ export default {
       style
     ) {
       var baseURL;
-      if (layerName in weatherJSON) {
-        baseURL = this.getGeoMetWmsSources["Weather"]["url"];
-      } else if (layerName in climateJSON) {
-        baseURL = this.getGeoMetWmsSources["Climate"]["url"];
+      const sourceContainingLayerName = this.findKeyInLocaleFiles(layerName);
+      if (sourceContainingLayerName) {
+        const configName = Object.keys(this.getGeoMetWmsSources).find(
+          (key) => key.toLowerCase() === sourceContainingLayerName
+        );
+        baseURL = this.getGeoMetWmsSources[configName]["url"];
       } else {
         return;
       }
@@ -85,6 +86,14 @@ export default {
         layer.currentStyle = style;
       }
       this.$root.$emit("permaLinkLayer", layer);
+    },
+    findKeyInLocaleFiles(key) {
+      for (const sourceName in localeData) {
+        if (Object.hasOwn(localeData[sourceName], key)) {
+          return sourceName;
+        }
+      }
+      return null; // Key not found in any file
     },
   },
   computed: {
