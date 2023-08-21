@@ -12,6 +12,7 @@
   "Close": "Fermer",
   "CMD_WMS": "CMD-WMS",
   "Colon": " :",
+  "ColorBorder": "Afficher la bordure des légendes en couleur",
   "DarkBasemapSwitch": "Carte foncée",
   "DocumentationURL": "https://eccc-msc.github.io/open-data/msc-animet/readme_fr/",
   "ErrorNoTimeLayer": "Veuillez ajouter une couche temporelle",

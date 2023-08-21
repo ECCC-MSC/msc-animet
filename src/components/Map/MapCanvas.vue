@@ -261,7 +261,9 @@ export default {
         layerVisibilityOn: Object.hasOwn(layerData, "visible")
           ? layerData.visible
           : true,
+        legendColor: this.randomHSVtoRGB(),
       });
+
       if (layerData.isTemporal) {
         imageLayer.setProperties({
           layerModelRuns: null,
@@ -299,6 +301,42 @@ export default {
         this.map.addLayer(imageLayer);
       }
     },
+    randomHSVtoRGB() {
+      var r, g, b, i, f, p, q, t;
+      this.h += this.golden_ratio_conjugate;
+      this.h %= 1;
+
+      i = Math.floor(this.h * 6);
+      f = this.h * 6 - i;
+      p = this.v * (1 - this.s);
+      q = this.v * (1 - f * this.s);
+      t = this.v * (1 - (1 - f) * this.s);
+      switch (i % 6) {
+        case 0:
+          (r = this.v), (g = t), (b = p);
+          break;
+        case 1:
+          (r = q), (g = this.v), (b = p);
+          break;
+        case 2:
+          (r = p), (g = this.v), (b = t);
+          break;
+        case 3:
+          (r = p), (g = q), (b = this.v);
+          break;
+        case 4:
+          (r = t), (g = p), (b = this.v);
+          break;
+        case 5:
+          (r = this.v), (g = p), (b = q);
+          break;
+      }
+      return {
+        r: Math.round(r * 255),
+        g: Math.round(g * 255),
+        b: Math.round(b * 255),
+      };
+    },
   },
   computed: {
     ...mapState("Layers", ["isAnimating"]),
@@ -312,6 +350,10 @@ export default {
   },
   data() {
     return {
+      golden_ratio_conjugate: (1 + Math.sqrt(5)) / 2 - 1,
+      h: Math.random(),
+      s: 0.95,
+      v: 0.75,
       loading: false,
       osm: new TileLayer({ source: new OSM() }),
       map: null,

@@ -6,10 +6,12 @@
     v-if="getActiveLegends.length !== 0"
   >
     <img
-      :name="name"
       :id="name"
-      crossorigin="anonymous"
+      :name="name"
       :src="getMapLegendURL(name)"
+      :style="{ border: getStyle }"
+      :title="name"
+      crossorigin="anonymous"
     />
   </div>
 </template>
@@ -30,10 +32,22 @@ export default {
     };
   },
   computed: {
-    ...mapGetters("Layers", ["getActiveLegends"]),
+    ...mapGetters("Layers", ["getColorBorder", "getActiveLegends"]),
     ...mapState("Layers", ["isAnimating"]),
+    getStyle() {
+      if (this.getColorBorder) {
+        return `2px solid ${this.getLegendStyle()}`;
+      }
+      return "none";
+    },
   },
   methods: {
+    getLegendStyle() {
+      const legendRGB = this.$mapLayers.arr
+        .find((l) => l.get("layerName") === this.name)
+        .get("legendColor");
+      return `rgb(${legendRGB.r}, ${legendRGB.g}, ${legendRGB.b})`;
+    },
     getMapLegendURL(layerName) {
       if (layerName === null) {
         return null;

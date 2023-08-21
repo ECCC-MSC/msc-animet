@@ -296,7 +296,13 @@ export default {
       this.map.updateSize();
       const mapCnv = this.getMapCanvas();
       this.getActiveLegends.forEach((layerName) =>
-        this.addLegend(mapCnv, document.getElementById(layerName))
+        this.addLegend(
+          mapCnv,
+          document.getElementById(layerName),
+          this.$mapLayers.arr
+            .find((l) => l.get("layerName") === layerName)
+            .get("legendColor")
+        )
       );
       await this.updateInfoCanvas(date, widths);
       const composedCnv = await this.stitchCanvases(mapCnv);
@@ -314,16 +320,28 @@ export default {
       }
       await new Promise((resolve) => window.requestAnimationFrame(resolve));
     },
-    addLegend(mapCanvas, mapLegend) {
-      mapCanvas
-        .getContext("2d")
-        .drawImage(
-          mapLegend,
-          mapLegend.offsetParent.offsetLeft,
-          mapLegend.offsetParent.offsetTop,
-          mapLegend.clientWidth,
-          mapLegend.clientHeight
-        ); // drawImage(image, dx, dy, dWidth, dHeight)
+    addLegend(mapCanvas, mapLegend, rgbObject) {
+      const context = mapCanvas.getContext("2d");
+      context.drawImage(
+        mapLegend,
+        mapLegend.offsetParent.offsetLeft,
+        mapLegend.offsetParent.offsetTop,
+        mapLegend.clientWidth,
+        mapLegend.clientHeight
+      ); // drawImage(image, dx, dy, dWidth, dHeight)
+      if (this.getColorBorder) {
+        const borderWidth = 2;
+        const borderColor = `rgb(${rgbObject.r}, ${rgbObject.g}, ${rgbObject.b})`;
+        context.strokeStyle = borderColor;
+        context.lineWidth = borderWidth;
+
+        context.strokeRect(
+          mapLegend.offsetParent.offsetLeft - borderWidth / 2,
+          mapLegend.offsetParent.offsetTop - borderWidth / 2,
+          mapLegend.clientWidth + borderWidth,
+          mapLegend.clientHeight + borderWidth
+        );
+      }
     },
     async stitchCanvases(mapCanvas) {
       return new Promise((resolve) => {
@@ -459,19 +477,21 @@ export default {
         const baseFont = 18;
         ctx_h = 0;
         for (let i = visibleLayers.length - 1; i >= 0; i--) {
-          let layerName = this.$t(visibleLayers[i].get("layerName"));
+          let layerTitle = `• ${this.$t(visibleLayers[i].get("layerName"))}`;
           let fontSize = baseFont;
           ctx.font = fontSize + "px sans-serif";
-          metrics = ctx.measureText(layerName);
+          metrics = ctx.measureText(layerTitle);
           while (metrics.width > widths[0] && fontSize > 7) {
             fontSize -= 1;
             ctx.font = fontSize + "px sans-serif";
-            metrics = ctx.measureText(layerName);
+            metrics = ctx.measureText(layerTitle);
           }
           ctx_h += fontSize + 8;
           fontArray.push({
-            title: layerName,
+            name: visibleLayers[i].get("layerName"),
+            title: layerTitle,
             fontSize: fontSize,
+            color: visibleLayers[i].get("legendColor"),
           });
         }
         ctx_h += 10;
@@ -489,22 +509,42 @@ export default {
       ctx.fillStyle = "white";
       ctx.fillRect(0, 0, infoCanvas.width, infoCanvas.height);
       ctx.strokeStyle = "black";
-      ctx.fillStyle = "black";
 
       let hPos = 0;
       fontArray.forEach((timeLayer) => {
+        let offsetX = 0;
+        if (
+          this.getColorBorder &&
+          this.getActiveLegends.includes(timeLayer.name)
+        ) {
+          let color = `rgb(${timeLayer.color.r}, ${timeLayer.color.g}, ${timeLayer.color.b})`;
+          canvasTxt.fontSize = 40;
+          ctx.fillStyle = color;
+          canvasTxt.drawText(
+            ctx,
+            timeLayer.title.slice(0, 2),
+            0.01 * infoCanvas.width,
+            hPos - 4,
+            widths[0],
+            30
+          );
+          offsetX = ctx.measureText(timeLayer.title.slice(0, 2)).width;
+        }
         canvasTxt.fontSize = timeLayer.fontSize;
-
+        ctx.fillStyle = "black";
         canvasTxt.drawText(
           ctx,
-          timeLayer.title,
-          0.01 * infoCanvas.width,
+          timeLayer.title.slice(2),
+          0.01 * infoCanvas.width + offsetX,
           hPos,
           widths[0],
           30
         );
         hPos += timeLayer.fontSize + 8;
       });
+
+      ctx.strokeStyle = "black";
+      ctx.fillStyle = "black";
 
       if (this.displayReferenceTime) {
         canvasTxt.fontSize = 10;
@@ -642,6 +682,7 @@ export default {
     ]),
     ...mapGetters("Layers", [
       "getActiveLegends",
+      "getColorBorder",
       "getMapTimeSettings",
       "getTimeFormat",
     ]),

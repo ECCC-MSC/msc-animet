@@ -12,6 +12,7 @@
   "Close": "Close",
   "CMD_WMS": "CMD-WMS",
   "Colon": ":",
+  "ColorBorder": "Display legend color border",
   "DarkBasemapSwitch": "Dark basemap",
   "DocumentationURL": "https://eccc-msc.github.io/open-data/msc-animet/readme_en/",
   "ErrorNoTimeLayer": "Please add a temporal layer",
