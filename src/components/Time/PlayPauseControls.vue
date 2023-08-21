@@ -7,16 +7,15 @@
           icon
           x-large
           color="primary"
-          :disabled="
-            getMapTimeSettings.DateIndex === getDatetimeRangeSlider[1] ||
-            (isAnimating && playState !== 'play')
-          "
+          :disabled="isAnimating && playState !== 'play'"
           v-bind="attrs"
           v-on="on"
         >
           <v-icon>
             {{
-              playState === "play"
+              getMapTimeSettings.DateIndex === getDatetimeRangeSlider[1]
+                ? "mdi-replay"
+                : playState === "play"
                 ? "mdi-pause-circle-outline"
                 : "mdi-play-circle-outline"
             }}
@@ -39,19 +38,37 @@ export default {
   beforeDestroy() {
     this.$root.$off("playAnimation", this.play);
   },
+  data() {
+    return {
+      locked: false,
+    };
+  },
   computed: {
     ...mapGetters("Layers", ["getDatetimeRangeSlider", "getMapTimeSettings"]),
     ...mapState("Layers", ["isAnimating", "playState"]),
   },
   methods: {
     playPause() {
-      if (this.playState === "pause") {
-        this.$store.commit("Layers/setPlayState", "play");
-        this.$store.commit("Layers/setIsAnimating", true);
-        this.play();
-      } else {
-        this.$store.commit("Layers/setPlayState", "pause");
-        this.$store.commit("Layers/setIsAnimating", false);
+      if (!this.locked) {
+        this.locked = true;
+        setTimeout(this.unlock, 1000);
+        if (this.playState === "pause") {
+          if (
+            this.getMapTimeSettings.DateIndex !== this.getDatetimeRangeSlider[1]
+          ) {
+            this.$store.commit("Layers/setPlayState", "play");
+            this.$store.commit("Layers/setIsAnimating", true);
+            this.play();
+          } else {
+            this.$store.dispatch("Layers/setMapTimeIndex", -1);
+            this.$store.commit("Layers/setPlayState", "play");
+            this.$store.commit("Layers/setIsAnimating", true);
+            this.play();
+          }
+        } else {
+          this.$store.commit("Layers/setPlayState", "pause");
+          this.$store.commit("Layers/setIsAnimating", false);
+        }
       }
     },
     play() {
@@ -63,6 +80,9 @@ export default {
       } else {
         this.playPause();
       }
+    },
+    unlock() {
+      this.locked = false;
     },
   },
 };

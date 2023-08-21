@@ -3,6 +3,7 @@ import wmsSources from "../../../scripts/wms_sources_configs.json";
 
 const state = {
   animationTitle: "",
+  colorBorder: false,
   currentWmsSource: Object.values(wmsSources)[0]["url"],
   datetimeRangeSlider: [null, null],
   exportStyle: null,
@@ -62,6 +63,9 @@ const state = {
 };
 
 const getters = {
+  getColorBorder: (state) => {
+    return state.colorBorder;
+  },
   getGeoMetTreeItems: (state) => {
     if (state.lang === "en") {
       return state.layerTreeItemsEn;
@@ -152,6 +156,9 @@ const mutations = {
       (l) => l !== legend
     );
   },
+  setColorBorder: (state, newStatus) => {
+    state.colorBorder = newStatus;
+  },
   setMP4URL: (state, URL) => {
     state.MP4URL = URL;
   },
@@ -230,6 +237,9 @@ const actions = {
   },
   removeActiveLegend({ commit }, payload) {
     commit("removeActiveLegend", payload);
+  },
+  setColorBorder({ commit }, payload) {
+    commit("setColorBorder", payload);
   },
   setLang({ commit }, payload) {
     commit("setLang", payload);

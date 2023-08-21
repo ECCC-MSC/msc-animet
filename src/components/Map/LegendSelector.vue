@@ -2,7 +2,7 @@
   <v-menu
     top
     offset-y
-    nudge-bottom="10"
+    nudge-bottom="0"
     nudge-left="5"
     content-class="white black--text"
   >
@@ -22,6 +22,12 @@
     </template>
     <v-container @click.stop>
       {{ $t("LegendSelector") }}
+      <v-switch
+        hide-details
+        class="mt-0 pt-0"
+        :label="$t('ColorBorder')"
+        v-model="colorBorder"
+      ></v-switch>
       <v-checkbox
         v-for="(name, index) in getItemsList"
         :key="index"
@@ -29,6 +35,7 @@
         :input-value="getActiveLegends.includes(name)"
         hide-details
         class="pl-12 font-weight-medium"
+        :color="legendStyle(name)"
         @change="toggleLegends(name, $event)"
       >
         <template v-slot:label>
@@ -50,7 +57,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters("Layers", ["getActiveLegends"]),
+    ...mapGetters("Layers", ["getColorBorder", "getActiveLegends"]),
     ...mapState("Layers", ["isAnimating"]),
     getItemsList() {
       return this.$mapLayers.arr
@@ -58,8 +65,25 @@ export default {
         .filter((l) => l.get("layerStyles").length !== 0)
         .map((l) => l.get("layerName"));
     },
+    colorBorder: {
+      get() {
+        return this.getColorBorder;
+      },
+      set(state) {
+        this.$store.dispatch("Layers/setColorBorder", state);
+      },
+    },
   },
   methods: {
+    legendStyle(name) {
+      if (this.colorBorder) {
+        const legendRGB = this.$mapLayers.arr
+          .find((l) => l.get("layerName") === name)
+          .get("legendColor");
+        return `rgb(${legendRGB.r}, ${legendRGB.g}, ${legendRGB.b})`;
+      }
+      return undefined;
+    },
     toggleLegends(name, on) {
       if (on) {
         this.$store.dispatch("Layers/addActiveLegend", name);
