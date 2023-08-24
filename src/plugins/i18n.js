@@ -1,20 +1,21 @@
 import Vue from "vue";
 import VueI18n from "vue-i18n";
 
-Vue.use(VueI18n);
+import localeData from "../locales/importLocaleFiles";
 
+Vue.use(VueI18n);
+let en = { ...require("../locales/en/common.json") };
+for (const src in localeData["enLocaleData"]) {
+  Object.assign(en, localeData["enLocaleData"][src]);
+}
+let fr = { ...require("../locales/fr/common.json") };
+for (const src in localeData["frLocaleData"]) {
+  Object.assign(fr, localeData["frLocaleData"][src]);
+}
 // Translated messages/strings
 const messages = {
-  en: {
-    ...require("../locales/en/common.json"),
-    ...require("../locales/en/layers_climate.json"),
-    ...require("../locales/en/layers_weather.json"),
-  },
-  fr: {
-    ...require("../locales/fr/common.json"),
-    ...require("../locales/fr/layers_climate.json"),
-    ...require("../locales/fr/layers_weather.json"),
-  },
+  en: en,
+  fr: fr,
 };
 
 // Default locale based on brwoser settings
