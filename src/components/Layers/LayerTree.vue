@@ -4,8 +4,15 @@
       <v-tab
         v-for="(wmsSource, index) in Object.keys(getGeoMetWmsSources)"
         :key="index"
-        >{{ $t(wmsSource) }}</v-tab
-      >
+        >
+        {{ $t(wmsSource) }}
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-chip v-if="isNightly == 1" x-small color="info" class="ml-1" v-on="on" v-bind="attrs">Nightly</v-chip>
+          </template>
+          <span>{{ getGeoMetWmsSources[wmsSource].url }}</span>
+        </v-tooltip>
+      </v-tab>
       <v-tab>{{ $t("Overlays") }}</v-tab>
 
       <v-tab-item
@@ -144,6 +151,7 @@ export default {
   },
   data() {
     return {
+      isNightly: process.env.VUE_APP_IS_NIGHTLY,
       addedLayers: [],
       expandTreePanel: 0,
       filteredTreeNodes: [],
