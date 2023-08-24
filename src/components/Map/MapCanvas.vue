@@ -30,6 +30,7 @@
 
 <script>
 import { Attribution, Control, ScaleLine } from "ol/control";
+import Rotate from "ol/control/Rotate.js";
 import OLImage from "ol/layer/Image";
 import TileLayer from "ol/layer/Tile";
 import Map from "ol/Map";
@@ -66,6 +67,11 @@ export default {
     this.$root.$on("buildLayer", this.buildLayer);
     this.$root.$on("loadingStop", () => {
       this.loading = false;
+    });
+    this.$root.$on("localeChange", () => {
+      this.map.removeControl(this.rotateArrow);
+      this.rotateArrow = new Rotate({ tipLabel: this.$t("ResetRotation") });
+      this.map.addControl(this.rotateArrow);
     });
     this.$root.$on("overlayToggle", this.manageOverlay);
     this.$root.$on("removeLayer", this.removeLayerHandler);
@@ -110,6 +116,7 @@ export default {
     let legendMapSelector = new Control({
       element: document.getElementById("legendMapSelector"),
     });
+    this.rotateArrow = new Rotate({ tipLabel: this.$t("ResetRotation") });
 
     this.map.addControl(attribution);
     this.map.addControl(zoomPlus);
@@ -118,6 +125,7 @@ export default {
     this.map.addControl(progressBar);
     this.map.addControl(legendMapOverlay);
     this.map.addControl(legendMapSelector);
+    this.map.addControl(this.rotateArrow);
 
     this.map.on("moveend", () => {
       this.resizeRefreshExpired();
@@ -355,12 +363,19 @@ export default {
       s: 0.95,
       v: 0.75,
       loading: false,
-      osm: new TileLayer({ source: new OSM() }),
       map: null,
+      osm: new TileLayer({ source: new OSM() }),
+      rotateArrow: null,
     };
   },
 };
 </script>
+
+<style>
+.ol-rotate {
+  right: 50px;
+}
+</style>
 
 <style scoped>
 .map-container {

@@ -164,24 +164,13 @@ export default {
     getAnimationDateTitle(interval) {
       const firstDate =
         this.getMapTimeSettings.Extent[this.datetimeRangeSlider[0]];
-      const lastDate =
-        this.getMapTimeSettings.Extent[this.datetimeRangeSlider[1]];
       if (interval === "P1Y") {
-        return `${firstDate.toISOString().split("-")[0]}-${
-          lastDate.toISOString().split("-")[0]
-        }`;
+        return `${firstDate.toISOString().split("-")[0]}`;
       } else if (interval === "P1M") {
         let firstDateSplit = firstDate.toISOString().split("-");
-        let lastDateSplit = lastDate.toISOString().split("-");
-        return `${firstDateSplit[0]}${firstDateSplit[1]}-${lastDateSplit[0]}${lastDateSplit[1]}`;
+        return `${firstDateSplit[0]}${firstDateSplit[1]}`;
       } else {
-        return (
-          firstDate.toISOString().split(".")[0].replace(/[:-]/g, "") +
-          "Z" +
-          "-" +
-          lastDate.toISOString().split(".")[0].replace(/[:-]/g, "") +
-          "Z"
-        );
+        return firstDate.toISOString().split(".")[0].replace(/[:-]/g, "") + "Z";
       }
     },
     async createMP4() {

@@ -88,8 +88,8 @@ export default {
       this.$root.$emit("permaLinkLayer", layer);
     },
     findKeyInLocaleFiles(key) {
-      for (const sourceName in localeData) {
-        if (Object.hasOwn(localeData[sourceName], key)) {
+      for (const sourceName in localeData["enLocaleData"]) {
+        if (Object.hasOwn(localeData["enLocaleData"][sourceName], key)) {
           return sourceName;
         }
       }

@@ -7,7 +7,10 @@
           icon
           x-large
           color="primary"
-          :disabled="isAnimating && playState !== 'play'"
+          :disabled="
+            (isAnimating && playState !== 'play') ||
+            getMapTimeSettings.Extent.length < 2
+          "
           v-bind="attrs"
           v-on="on"
         >
