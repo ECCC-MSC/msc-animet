@@ -370,6 +370,8 @@ export default {
       mapCanvas.width = mapCanvasUI.offsetWidth; //size[0]
       mapCanvas.height = mapCanvasUI.offsetHeight; //size[1]
       let mapContext = mapCanvas.getContext("2d");
+      mapContext.fillStyle = "white";
+      mapContext.fillRect(0, 0, mapCanvas.width, mapCanvas.height);
       Array.prototype.forEach.call(
         document.querySelectorAll(".ol-layer canvas"),
         function (canvas) {
