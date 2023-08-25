@@ -99,8 +99,32 @@ export default {
   components: {
     PermaLink,
   },
+  mounted() {
+    const userChoice = this.getTheme();
+    if (userChoice === null) {
+      if (this.getMediaPreference()) {
+        this.toggleThemeDarkMode();
+      }
+    } else if (userChoice === "true") {
+      this.toggleThemeDarkMode();
+    }
+  },
   methods: {
+    getMediaPreference() {
+      const hasDarkPreference = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      if (hasDarkPreference) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    getTheme() {
+      return localStorage.getItem("user-theme");
+    },
     toggleThemeDarkMode() {
+      localStorage.setItem("user-theme", !this.$vuetify.theme.dark);
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     },
     changeLang() {
