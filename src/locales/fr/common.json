@@ -21,6 +21,7 @@
   "FramesPerSecond": "Images par seconde",
   "GeoMetSearchLabel": "Chercher les couches {wmsSource}",
   "GeoMetWms": "Ajouter des couches {wmsSource}",
+  "InvisibleBasemap": "Rendre la carte de fond invisible",
   "LayerBarClosestTime": "Date la plus proche: ",
   "LayerBarCurrentTooltip": "Actuel",
   "LayerBarEndsTooltip": "Fin",

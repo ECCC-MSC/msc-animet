@@ -11,6 +11,7 @@ const state = {
   framesPerSecond: 3,
   fullTimestepsList: [],
   isAnimating: false,
+  isBasemapVisible: true,
   lang: "en",
   activeLegendsList: [],
   layerTreeItemsEn: Object.keys(wmsSources).map((key) => {
@@ -199,6 +200,9 @@ const mutations = {
   setIsAnimating: (state, newStatus) => {
     state.isAnimating = newStatus;
   },
+  setIsBasemapVisible: (state, newStatus) => {
+    state.isBasemapVisible = newStatus;
+  },
   setOutputWH: (state, newWH) => {
     state.outputMapWH = newWH;
   },
@@ -282,6 +286,9 @@ const actions = {
   },
   setIsAnimating({ commit }, payload) {
     commit("setIsAnimating", payload);
+  },
+  setIsBasemapVisible({ commit }, payload) {
+    commit("setIsBasemapVisible", payload);
   },
   setOutputWH({ commit }, payload) {
     commit("setOutputWH", payload);

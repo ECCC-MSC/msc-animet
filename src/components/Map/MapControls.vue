@@ -67,6 +67,21 @@
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
                   icon
+                  @click="whiteBasemapHandler()"
+                  color="primary"
+                  fab
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  <v-icon>mdi-map-outline</v-icon>
+                </v-btn>
+              </template>
+              <span>{{ $t("InvisibleBasemap") }}</span>
+            </v-tooltip>
+            <v-tooltip bottom>
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                  icon
                   @click="applyColor(true)"
                   color="primary"
                   fab
@@ -109,7 +124,10 @@ export default {
       if (flag) {
         this.setColor();
       }
-      this.darkBasemapHandler(flag);
+      this.coloredBasemapHandler(flag);
+    });
+    this.$root.$on("invisibleBasemap", () => {
+      this.isMapColored = null;
     });
     this.$root.$on("permalinkColor", () => {
       this.isMapColored = true;
@@ -121,6 +139,9 @@ export default {
       if (oldVal === null && newVal !== null && this.isMapColored) {
         this.setColor();
         this.applyColor(true);
+      } else if (this.isMapColored === null) {
+        this.isMapColored = false;
+        this.whiteBasemapHandler();
       }
     },
   },
@@ -135,9 +156,12 @@ export default {
           this.$root.$emit("darkBasemapSwitch", true);
         }
       }
-      this.darkBasemapHandler(flag);
+      this.coloredBasemapHandler(flag);
     },
-    darkBasemapHandler(flag) {
+    coloredBasemapHandler(flag) {
+      if (!flag && !this.map.getLayers().getArray()[0].get("visible")) {
+        this.map.getLayers().getArray()[0].setVisible(true);
+      }
       this.isMapColored = flag;
       if (this.darkOSMCallback === null) {
         this.darkOSMCallback = (evt) => {
@@ -204,6 +228,11 @@ export default {
     setColor() {
       this.rgb = { r: this.getRGB[0], g: this.getRGB[1], b: this.getRGB[2] };
     },
+    whiteBasemapHandler() {
+      const visible = !this.map.getLayers().getArray()[0].get("visible");
+      this.map.getLayers().getArray()[0].setVisible(visible);
+      this.$store.commit("Layers/setIsBasemapVisible", visible);
+    },
     zoomIn() {
       let currentZoom = this.map.getView().getZoom();
       if (currentZoom < 20) {
@@ -219,7 +248,7 @@ export default {
   },
   computed: {
     ...mapState("Layers", ["isAnimating"]),
-    ...mapGetters("Layers", ["getRGB"]),
+    ...mapGetters("Layers", ["getRGB", "isBasemapVisible"]),
     color: {
       get() {
         return this.rgb;

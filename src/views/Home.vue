@@ -41,15 +41,19 @@ export default {
       ]);
     }
     if (this.color !== undefined) {
-      let matchColor = /((\d{1,3}),(\d{1,3}),(\d{1,3}))/;
-      let match = matchColor.exec(this.color);
-      if (match !== null) {
-        this.$store.dispatch("Layers/setRGB", [
-          Number(match[2]),
-          Number(match[3]),
-          Number(match[4]),
-        ]);
-        this.$root.$emit("permalinkColor", true);
+      if (this.color.match(/none/gi)) {
+        this.$root.$emit("invisibleBasemap");
+      } else {
+        let matchColor = /((\d{1,3}),(\d{1,3}),(\d{1,3}))/;
+        let match = matchColor.exec(this.color);
+        if (match !== null) {
+          this.$store.dispatch("Layers/setRGB", [
+            Number(match[2]),
+            Number(match[3]),
+            Number(match[4]),
+          ]);
+          this.$root.$emit("permalinkColor", true);
+        }
       }
     }
   },
