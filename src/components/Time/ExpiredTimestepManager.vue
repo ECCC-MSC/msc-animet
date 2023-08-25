@@ -142,6 +142,9 @@ export default {
           let newExtent = layer
             .get("layerDateArray")
             .toSpliced(layer.get("layerDateIndex"), 1);
+          if (newExtent.length === 0) {
+            throw new Error("All of the layer's timesteps are broken");
+          }
           let newDefaultTimeIndex = this.findLayerIndex(
             layer.get("layerDefaultTime"),
             newExtent,
