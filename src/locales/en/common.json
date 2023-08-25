@@ -21,6 +21,7 @@
   "FramesPerSecond": "Frames per second",
   "GeoMetSearchLabel": "Search {wmsSource} layers",
   "GeoMetWms": "Add {wmsSource} layers",
+  "InvisibleBasemap": "Make basemap invisible",
   "LayerBarClosestTime": "Closest time: ",
   "LayerBarCurrentTooltip": "Current",
   "LayerBarEndsTooltip": "End",

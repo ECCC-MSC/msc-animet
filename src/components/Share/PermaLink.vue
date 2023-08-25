@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapState } from "vuex";
 import ShareSocialLinks from "./ShareSocialLinks.vue";
 
 export default {
@@ -66,6 +66,7 @@ export default {
       "getPermalink",
       "getRGB",
     ]),
+    ...mapState("Layers", ["isBasemapVisible"]),
   },
   methods: {
     selectFieldValue(id) {
@@ -137,7 +138,9 @@ export default {
       permalinktemp += "&width=" + mapwh[0] + "&height=" + mapwh[1];
 
       let rgb = this.getRGB;
-      if (rgb.length !== 0) {
+      if (!this.isBasemapVisible) {
+        permalinktemp += `&color=None`;
+      } else if (rgb.length !== 0) {
         permalinktemp += `&color=${rgb}`;
       }
 
