@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="map-container">
-      <div ref="map" class="map" id="map" :disabled="isAnimating">
+      <div ref="map" class="white map" id="map" :disabled="isAnimating">
         <map-controls :map="map"></map-controls>
         <div fluid class="ma-2" id="legendMapSelector">
           <legend-selector />

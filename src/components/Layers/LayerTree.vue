@@ -4,11 +4,19 @@
       <v-tab
         v-for="(wmsSource, index) in Object.keys(getGeoMetWmsSources)"
         :key="index"
-        >
+      >
         {{ $t(wmsSource) }}
         <v-tooltip top>
           <template v-slot:activator="{ on, attrs }">
-            <v-chip v-if="isNightly == 1" x-small color="info" class="ml-1" v-on="on" v-bind="attrs">Nightly</v-chip>
+            <v-chip
+              v-if="isNightly == 1"
+              x-small
+              color="info"
+              class="ml-1"
+              v-on="on"
+              v-bind="attrs"
+              >Nightly</v-chip
+            >
           </template>
           <span>{{ getGeoMetWmsSources[wmsSource].url }}</span>
         </v-tooltip>
@@ -99,11 +107,17 @@
             :key="index"
             :disabled="isAnimating"
             hide-details
-            class="pl-12 font-weight-medium"
+            class="pl-12"
             @change="$root.$emit('overlayToggle', values, overlay)"
           >
             <template v-slot:label>
-              <span class="black--text">{{ $t(overlay) }}</span>
+              <span
+                :class="{
+                  'white--text': $vuetify.theme.dark,
+                  'black--text': !$vuetify.theme.dark,
+                }"
+                >{{ $t(overlay) }}</span
+              >
             </template>
           </v-checkbox>
         </v-card>
