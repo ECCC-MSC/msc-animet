@@ -80,7 +80,7 @@ export default {
         layerActiveConfig: 0,
         layerConfigs: configs,
         layerDateArray: configs[0].layerDateArray,
-        layerDateFormat: configs[0].dateFormat,
+        layerDateFormat: configs[0].layerDateFormat,
         layerDateIndex: 0,
         layerDefaultTime: new Date(layerData.Dimension.Dimension_time_default),
         layerIndexOOB: false,
