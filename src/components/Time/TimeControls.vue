@@ -6,7 +6,7 @@
     </v-row>
     <expired-timestep-manager />
     <v-snackbar v-model="notifyExtentRebuilt" timeout="-1">
-      <span style="white-space: pre-wrap">{{ $t("WrongTimeFormat") }}</span>
+      <span class="snackMessage">{{ $t("WrongTimeFormat") }}</span>
 
       <template v-slot:action="{ attrs }">
         <v-btn
@@ -374,3 +374,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.snackMessage {
+  white-space: pre-wrap;
+}
+</style>

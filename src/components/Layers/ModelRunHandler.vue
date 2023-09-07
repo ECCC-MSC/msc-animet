@@ -55,6 +55,7 @@ export default {
         layerStartTime: newDateArray[0],
         layerEndTime: newDateArray[newDateArray.length - 1],
       });
+      this.$root.$emit("modelRunChanged");
       if (this.item.get("layerTimeStep") === this.getMapTimeSettings.Step) {
         this.changeMapTime(this.item.get("layerTimeStep"));
       } else {

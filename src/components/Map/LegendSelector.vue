@@ -1,11 +1,5 @@
 <template>
-  <v-menu
-    top
-    offset-y
-    nudge-bottom="0"
-    nudge-left="5"
-    content-class="white black--text"
-  >
+  <v-menu top offset-y nudge-bottom="0" nudge-left="5">
     <template v-slot:activator="{ on, attrs }">
       <v-btn
         elevation="4"
@@ -20,7 +14,7 @@
         {{ $t("Legends") }}
       </v-btn>
     </template>
-    <v-container @click.stop>
+    <v-container @click.stop :class="getCurrentTheme">
       {{ $t("LegendSelector") }}
       <v-switch
         hide-details
@@ -39,7 +33,7 @@
         @change="toggleLegends(name, $event)"
       >
         <template v-slot:label>
-          <span class="black--text">{{ $t(name) }}</span>
+          <span :class="getCurrentTheme">{{ $t(name) }}</span>
         </template>
       </v-checkbox>
     </v-container>
@@ -59,6 +53,12 @@ export default {
   computed: {
     ...mapGetters("Layers", ["getColorBorder", "getActiveLegends"]),
     ...mapState("Layers", ["isAnimating"]),
+    getCurrentTheme() {
+      return {
+        "grey darken-4 white--text": this.$vuetify.theme.dark,
+        "white black--text": !this.$vuetify.theme.dark,
+      };
+    },
     getItemsList() {
       return this.$mapLayers.arr
         .slice()

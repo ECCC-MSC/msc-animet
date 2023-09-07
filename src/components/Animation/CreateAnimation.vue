@@ -72,6 +72,7 @@ export default {
     this.$root.$on("cancelExpired", this.handleCancelExpired);
     this.$root.$on("getExtent", this.getExtentHandler);
     this.$root.$on("localeChange", this.getModelRuns);
+    this.$root.$on("modelRunChanged", this.getModelRuns);
     this.$root.$on("redoAnimation", this.createMP4Handler);
     this.$root.$on("restoreState", this.restoreState);
     this.$root.$on("timeLayerAdded", this.getModelRuns);
@@ -88,6 +89,7 @@ export default {
     this.$root.$off("cancelExpired", this.handleCancelExpired);
     this.$root.$off("getExtent", this.getExtentHandler);
     this.$root.$off("localeChange", this.getModelRuns);
+    this.$root.$off("modelRunChanged", this.getModelRuns);
     this.$root.$off("redoAnimation", this.createMP4Handler);
     this.$root.$off("restoreState", this.restoreState);
     this.$root.$off("timeLayerAdded", this.getModelRuns);

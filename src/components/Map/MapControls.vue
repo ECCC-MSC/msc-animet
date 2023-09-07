@@ -55,12 +55,13 @@
             </v-icon>
           </v-btn>
         </template>
-        <v-container @click.stop>
+        <v-container @click.stop :class="getCurrentTheme">
           <v-color-picker
             dot-size="20"
             mode="rgba"
             swatches-max-height="100"
             v-model="color"
+            :class="getCurrentTheme"
           ></v-color-picker>
           <v-row cols="auto" class="d-flex justify-end">
             <v-tooltip bottom>
@@ -256,6 +257,12 @@ export default {
       set(v) {
         this.rgb = v;
       },
+    },
+    getCurrentTheme() {
+      return {
+        "grey darken-4 white--text": this.$vuetify.theme.dark,
+        "white black--text": !this.$vuetify.theme.dark,
+      };
     },
   },
   data() {
