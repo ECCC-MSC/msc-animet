@@ -175,8 +175,14 @@ export default {
         return firstDate.toISOString().split(".")[0].replace(/[:-]/g, "") + "Z";
       }
     },
+    trackCreateMP4() {
+      if (this.appIsProductionEnv === 'production') {
+        _paq.push(['trackEvent', 'Button', 'Click', 'Create animation']);
+      }
+    },
     async createMP4() {
       this.$root.$emit("setAnimationTitle");
+      this.trackCreateMP4();
       this.createMP4Handler();
       this.$store.dispatch(
         "Layers/setOutputDate",
@@ -706,6 +712,7 @@ export default {
       notifyCancelAnimateResize: false,
       outputHeader: null,
       cancelExpired: false,
+      appIsProductionEnv: process.env.NODE_ENV,
     };
   },
 };
