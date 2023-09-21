@@ -2,7 +2,7 @@
   <div>
     <div class="map-container">
       <div ref="map" class="white map" id="map" :disabled="isAnimating">
-        <map-controls :map="map"></map-controls>
+        <map-controls :map="map" />
         <div fluid class="ma-2" id="legendMapSelector">
           <legend-selector />
         </div>
@@ -15,6 +15,7 @@
         </div>
         <v-progress-linear :active="loading" indeterminate id="progressBar" />
       </div>
+      <get-feature-info />
     </div>
     <time-controls :map="map" />
     <layer-tree id="geoMetTree" class="my-4" />
@@ -44,17 +45,20 @@ import { mapGetters, mapState } from "vuex";
 
 import AnimationConfiguration from "../Animation/AnimationConfiguration.vue";
 import CreateAnimation from "../Animation/CreateAnimation.vue";
+import GetFeatureInfo from "./GetFeatureInfo.vue";
 import LayerConfiguration from "../Layers/LayerConfiguration.vue";
 import LayerTree from "../Layers/LayerTree.vue";
 import LegendControls from "./LegendControls.vue";
 import LegendSelector from "./LegendSelector.vue";
 import MapControls from "./MapControls.vue";
 import TimeControls from "../Time/TimeControls.vue";
+import { Overlay } from "ol";
 
 export default {
   components: {
     AnimationConfiguration,
     CreateAnimation,
+    GetFeatureInfo,
     LayerConfiguration,
     LayerTree,
     LegendControls,
@@ -97,26 +101,36 @@ export default {
       controls: [scaleControl],
     });
 
-    let attribution = new Attribution();
-    let zoomPlus = new Control({
+    const attribution = new Attribution();
+    const zoomPlus = new Control({
       element: document.getElementById("customZoomPlus"),
     });
-    let zoomMinus = new Control({
+    const zoomMinus = new Control({
       element: document.getElementById("customZoomMinus"),
     });
-    let expandableCustomControl = new Control({
+    const expandableCustomControl = new Control({
       element: document.getElementById("expandableCustomControl"),
     });
-    let progressBar = new Control({
+    const progressBar = new Control({
       element: document.getElementById("progressBar"),
     });
-    let legendMapOverlay = new Control({
+    const legendMapOverlay = new Control({
       element: document.getElementById("legendMapOverlay"),
     });
-    let legendMapSelector = new Control({
+    const legendMapSelector = new Control({
       element: document.getElementById("legendMapSelector"),
     });
     this.rotateArrow = new Rotate({ tipLabel: this.$t("ResetRotation") });
+
+    const popupGFI = new Overlay({
+      id: "popupGFI",
+      element: document.getElementById("popupGFI"),
+      autoPan: {
+        animation: {
+          duration: 250,
+        },
+      },
+    });
 
     this.map.addControl(attribution);
     this.map.addControl(zoomPlus);
@@ -127,8 +141,15 @@ export default {
     this.map.addControl(legendMapSelector);
     this.map.addControl(this.rotateArrow);
 
+    this.map.addOverlay(popupGFI);
+
     this.map.on("moveend", () => {
       this.resizeRefreshExpired();
+    });
+
+    const contentGFI = document.getElementById("popupGFI-content");
+    this.map.on("singleclick", (evt) => {
+      this.$root.$emit("onMapClicked", evt, contentGFI, popupGFI);
     });
 
     new ResizeObserver(() => {
