@@ -69,3 +69,37 @@ pip install owslib
 cd ./scripts
 python3 generate_trees_layers_list.py
 ```
+
+### Adding custom WMS sources
+
+If you'd like to have your own instance of AniMet with more/other WMS sources for the layer tree, it's also possible, although for it to work they need to comply with the [OpenGIS Web Map Service (WMS) Implementation Specification](https://www.ogc.org/standard/wms/). The steps are as follows:
+
+First, on the [AniMet GitHub page](https://github.com/ECCC-MSC/msc-animet), make yourself a [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo). Once that's done, inside a terminal(commands shown are for a linux terminal), we will do the usual installation steps, except we'll be using your newly created fork instead, so:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/msc-animet.git
+cd msc-animet
+npm i
+git remote add upstream https://github.com/ECCC-MSC/msc-animet.git
+```
+
+Afterwards, we'll be changing the configuration file to specify which WMS sources we wish to have. That file is located inside `scripts/wms_sources_configs.json` and this is where we'll be adding our new sources. This process is quite simple; you simple give it a name, the url to the wms and the version, which would look like:
+
+```JSON
+{
+  "Weather": {
+    "url": "https://geo.weather.gc.ca/geomet",
+    "version": "1.3.0"
+  },
+  "Climate": {
+    "url": "https://geo.weather.gc.ca/geomet-climate",
+    "version": "1.3.0"
+  },
+  "Test": {
+    "url": "https://my_beautiful_wms",
+    "version": "1.3.0"
+  }
+}
+```
+
+Once that's done and you've saved the file, inside the terminal, all we have left to do is to run the script to [update the layer tree](#updating-geomet-weather-layer-tree-names) and [run](#running) the application, it's that easy!
