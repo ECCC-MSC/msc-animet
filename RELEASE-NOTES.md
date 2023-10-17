@@ -1,5 +1,33 @@
 # Release Notes
 
+## Version 1.3.0 (2023-10-18)
+
+### New Features
+- Display raw values for displayed layers on map clicks
+
+### Enhancements
+- Add support for building AniMet using custom WMS sources
+  - Add instructions in the README on how to change WMS sources
+- Reduce filename length by keeping only the "begin" timestamp
+- Add option to display legends with a coloured border
+- Add a "Replay" button when at the last timestep
+- Add Matamo tracking to trace "Create animation" button clicks
+- Add option to switch basemap to a white (blank) background
+- Add a contributions and security guide
+- Add a tooltip on clock icon in the layers configuratiopn panel for non-time-enabled layers
+- Display north arrow if map is rotated
+- Remember light/dark mode setting in browser cache
+- Improved error handling for missing timesteps or bad requests
+
+### Bug Fixes
+- Non-default model runs to update correctly in output animation
+- Fixed a time formatting issue
+- Fixed various colour issues when changing to dark mode
+- Missing legend selection checkbox now displays when in dark mode
+- Spamming the play and pause button no longer causes unintended animation issues and timestep skips
+- Prevent a case of adding the same layer more than once
+- Long layer names in the layer configuration panel no longer cuts off the opacity, visibility and remove controls
+- Fixed an infinite loop case when a layer was broken or unavailable
 
 ## Version 1.2.2 (2023-07-11)
 
@@ -9,25 +37,25 @@
 ## Version 1.2.1 (2023-07-06)
 
 ### Bug Fixes
-- Fixed generation script, layer tree collapse and null title 
+- Fixed generation script, layer tree collapse and null title
 
 ## Version 1.2.0 (2023-07-06)
 
 ### New Features
 - Support for selecting NWP model runs
-  - Users can now select between all available NWP model runs for a given layer 
+  - Users can now select between all available NWP model runs for a given layer
 - New centralized temporal controller
   - Improved UI/UX of time slider
   - Centralizes time management for map and animation in a single place
 - Custom legend positioning
   - Click and drag legend on map to resize and reposition legend
   - Positioning and size on map is also applied on outputted animation
-  - Support displaying multiple legends in output animation 
+  - Support displaying multiple legends in output animation
 
 ### Enhancements
 - Scale line is now shown on the map
 - New tooltip for non-temporal clock icon
-- Major code cleanup and refactoring 
+- Major code cleanup and refactoring
 
 ### Bug Fixes
 - Permalinks now retain chosen WMS style/legend
@@ -36,7 +64,7 @@
 - GeoMet-Weather layers with monthly/yearly intervals now supported
 - Legend size now identical on map and output animation
 - Legend now removed when associated layer is removed
-- Whitespaces are now properly removed from animation title in output filename 
+- Whitespaces are now properly removed from animation title in output filename
 
 ## Version 1.1.2 (2023-05-17)
 
