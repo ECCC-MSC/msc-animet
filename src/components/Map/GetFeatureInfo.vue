@@ -6,27 +6,28 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
+      closer: null,
       overlay: null,
     };
   },
   mounted() {
     this.$root.$on("onMapClicked", this.onSingleClick);
+    this.$root.$on("modelRunChanged", () => {
+      if (this.overlay !== null && this.closer !== null) this.closePopup();
+    });
 
-    const closer = document.getElementById("popupGFI-closer");
-    const this_ = this;
-    closer.onclick = function () {
-      this_.overlay.setPosition(undefined);
-      closer.blur();
-      return false;
-    };
+    this.closer = document.getElementById("popupGFI-closer");
+    this.closer.onclick = this.closePopup;
   },
   beforeDestroy() {
     this.$root.$off("onMapClicked", onSingleClick);
   },
   computed: {
+    ...mapGetters("Layers", ["getMapTimeSettings"]),
     getCurrentTheme() {
       return {
         "grey darken-4 white--text": this.$vuetify.theme.dark,
@@ -40,6 +41,20 @@ export default {
           ? "#212121"
           : "white",
       };
+    },
+    maplayersLength() {
+      return this.$mapLayers.arr.length;
+    },
+  },
+  watch: {
+    getMapTimeSettings: {
+      deep: true,
+      handler() {
+        if (this.overlay !== null && this.closer !== null) this.closePopup();
+      },
+    },
+    maplayersLength() {
+      if (this.overlay !== null && this.closer !== null) this.closePopup();
     },
   },
   methods: {
@@ -97,6 +112,11 @@ export default {
           content.innerHTML = boxContent;
         }
       }
+    },
+    closePopup() {
+      this.overlay.setPosition(undefined);
+      this.closer.blur();
+      return false;
     },
   },
 };
