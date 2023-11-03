@@ -18,7 +18,7 @@ const messages = {
   fr: fr,
 };
 
-// Default locale based on brwoser settings
+// Default locale based on browser settings
 let locale = navigator.language.split("-")[0];
 
 export default new VueI18n({

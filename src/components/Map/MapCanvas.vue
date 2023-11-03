@@ -1,69 +1,71 @@
 <template>
   <div>
-    <div class="map-container">
-      <div ref="map" class="white map" id="map" :disabled="isAnimating">
-        <map-controls :map="map" />
-        <div fluid class="ma-2" id="legendMapSelector">
-          <legend-selector />
-        </div>
-        <div id="legendMapOverlay">
-          <legend-controls
-            v-for="name in getActiveLegends"
-            :key="name"
-            :name="name"
-          />
-        </div>
-        <v-progress-linear :active="loading" indeterminate id="progressBar" />
+    <animation-canvas v-if="isAnimating && playState !== 'play'" />
+    <div ref="map" class="white map" id="map" :disabled="isAnimating">
+      <animation-rectangle />
+      <custom-o-l-controls />
+      <global-configs />
+      <side-panel id="side_panel" />
+      <div id="legendMapOverlay">
+        <legend-controls
+          v-for="name in getActiveLegends"
+          :key="name"
+          :name="name"
+        />
       </div>
-      <get-feature-info />
+      <time-controls />
+      <v-progress-linear :active="loading" indeterminate id="progressBar" />
     </div>
-    <time-controls :map="map" />
-    <layer-tree id="geoMetTree" class="my-4" />
-    <layer-configuration v-show="$mapLayers.arr.length !== 0" class="my-4" />
-    <animation-configuration
-      id="createMP4Controls"
-      v-show="getMapTimeSettings.Step !== null"
-      class="my-4"
-    />
-    <create-animation :map="map" />
+    <get-feature-info />
+    <span
+      color="primary"
+      id="animet_version"
+      :class="
+        getMapTimeSettings.Step !== null
+          ? getCollapsedControls
+            ? 'animet-version-collapsed'
+            : 'animet-version-open'
+          : ''
+      "
+      >{{ `${$t("MSCAnimet")} ${version}` }}</span
+    >
   </div>
 </template>
 
 <script>
 import { Attribution, Control, ScaleLine } from "ol/control";
-import Rotate from "ol/control/Rotate.js";
-import OLImage from "ol/layer/Image";
-import TileLayer from "ol/layer/Tile";
-import Map from "ol/Map";
-import "ol/ol.css";
 import { fromLonLat } from "ol/proj";
 import ImageWMS from "ol/source/ImageWMS";
+import Map from "ol/Map";
+import "ol/ol.css";
+import OLImage from "ol/layer/Image";
 import OSM from "ol/source/OSM";
+import { Overlay } from "ol";
+import Rotate from "ol/control/Rotate.js";
+import TileLayer from "ol/layer/Tile";
 import View from "ol/View";
 
 import { mapGetters, mapState } from "vuex";
 
-import AnimationConfiguration from "../Animation/AnimationConfiguration.vue";
-import CreateAnimation from "../Animation/CreateAnimation.vue";
+import AnimationCanvas from "../Animation/AnimationCanvas.vue";
+import AnimationRectangle from "../Animation/AnimationRectangle.vue";
+import CustomOLControls from "./CustomOLControls.vue";
 import GetFeatureInfo from "./GetFeatureInfo.vue";
-import LayerConfiguration from "../Layers/LayerConfiguration.vue";
-import LayerTree from "../Layers/LayerTree.vue";
+import GlobalConfigs from "./GlobalConfigs.vue";
 import LegendControls from "./LegendControls.vue";
-import LegendSelector from "./LegendSelector.vue";
-import MapControls from "./MapControls.vue";
+import SidePanel from "./SidePanel.vue";
 import TimeControls from "../Time/TimeControls.vue";
-import { Overlay } from "ol";
+import { version } from "../../../package.json";
 
 export default {
   components: {
-    AnimationConfiguration,
-    CreateAnimation,
+    AnimationCanvas,
+    AnimationRectangle,
+    CustomOLControls,
     GetFeatureInfo,
-    LayerConfiguration,
-    LayerTree,
+    GlobalConfigs,
     LegendControls,
-    LegendSelector,
-    MapControls,
+    SidePanel,
     TimeControls,
   },
   mounted() {
@@ -73,23 +75,18 @@ export default {
       this.loading = false;
     });
     this.$root.$on("localeChange", () => {
-      this.map.removeControl(this.rotateArrow);
+      this.$mapCanvas.mapObj.removeControl(this.rotateArrow);
       this.rotateArrow = new Rotate({ tipLabel: this.$t("ResetRotation") });
-      this.map.addControl(this.rotateArrow);
+      this.$mapCanvas.mapObj.addControl(this.rotateArrow);
     });
     this.$root.$on("overlayToggle", this.manageOverlay);
     this.$root.$on("removeLayer", this.removeLayerHandler);
-    this.$root.$on("setMapSize", (wh) => {
-      document.getElementById("map").style.width = `${wh[0]}px`;
-      document.getElementById("map").style.height = `${wh[1]}px`;
-      this.map.updateSize();
-    });
 
     const scaleControl = new ScaleLine({
       units: "metric",
     });
 
-    this.map = new Map({
+    this.$mapCanvas.mapObj = new Map({
       target: this.$refs["map"],
       layers: [this.osm],
       view: new View({
@@ -102,25 +99,37 @@ export default {
     });
 
     const attribution = new Attribution();
-    const zoomPlus = new Control({
-      element: document.getElementById("customZoomPlus"),
-    });
-    const zoomMinus = new Control({
-      element: document.getElementById("customZoomMinus"),
-    });
-    const expandableCustomControl = new Control({
-      element: document.getElementById("expandableCustomControl"),
-    });
     const progressBar = new Control({
       element: document.getElementById("progressBar"),
     });
     const legendMapOverlay = new Control({
       element: document.getElementById("legendMapOverlay"),
     });
-    const legendMapSelector = new Control({
-      element: document.getElementById("legendMapSelector"),
+    const timeControls = new Control({
+      element: document.getElementById("time-controls"),
     });
     this.rotateArrow = new Rotate({ tipLabel: this.$t("ResetRotation") });
+    const sidePanel = new Control({
+      element: document.getElementById("side_panel"),
+    });
+    const globalConfigs = new Control({
+      element: document.getElementById("global_configs"),
+    });
+    const zoomPlus = new Control({
+      element: document.getElementById("customZoomPlus"),
+    });
+    const zoomMinus = new Control({
+      element: document.getElementById("customZoomMinus"),
+    });
+    const animetVersion = new Control({
+      element: document.getElementById("animet_version"),
+    });
+    const timeSnackbar = new Control({
+      element: document.getElementById("time-snackbar"),
+    });
+    const animationRect = new Control({
+      element: document.getElementById("animation-rect"),
+    });
 
     const popupGFI = new Overlay({
       id: "popupGFI",
@@ -132,37 +141,63 @@ export default {
       },
     });
 
-    this.map.addControl(attribution);
-    this.map.addControl(zoomPlus);
-    this.map.addControl(zoomMinus);
-    this.map.addControl(expandableCustomControl);
-    this.map.addControl(progressBar);
-    this.map.addControl(legendMapOverlay);
-    this.map.addControl(legendMapSelector);
-    this.map.addControl(this.rotateArrow);
+    this.$mapCanvas.mapObj.addControl(animationRect);
+    this.$mapCanvas.mapObj.addControl(animetVersion);
+    this.$mapCanvas.mapObj.addControl(attribution);
+    this.$mapCanvas.mapObj.addControl(globalConfigs);
+    this.$mapCanvas.mapObj.addControl(legendMapOverlay);
+    this.$mapCanvas.mapObj.addControl(progressBar);
+    this.$mapCanvas.mapObj.addControl(sidePanel);
+    this.$mapCanvas.mapObj.addControl(timeControls);
+    this.$mapCanvas.mapObj.addControl(timeSnackbar);
+    this.$mapCanvas.mapObj.addControl(zoomMinus);
+    this.$mapCanvas.mapObj.addControl(zoomPlus);
 
-    this.map.addOverlay(popupGFI);
+    this.$mapCanvas.mapObj.addControl(this.rotateArrow);
 
-    this.map.on("moveend", () => {
+    this.$mapCanvas.mapObj.addOverlay(popupGFI);
+
+    this.$mapCanvas.mapObj.on("moveend", () => {
+      const view = this.$mapCanvas.mapObj.getView();
+      const extent = view.calculateExtent(this.$mapCanvas.mapObj.getSize());
+      const rotation = view.getRotation();
+      this.$store.dispatch("Layers/setExtent", [extent, rotation]);
+      this.$root.$emit("updatePermalink");
       this.resizeRefreshExpired();
     });
 
-    const contentGFI = document.getElementById("popupGFI-content");
-    this.map.on("singleclick", (evt) => {
-      this.$root.$emit("onMapClicked", evt, contentGFI, popupGFI);
+    this.$mapCanvas.mapObj.on("singleclick", (evt) => {
+      this.$root.$emit("onMapClicked", evt, popupGFI);
     });
-
+    this.$mapCanvas.mapObj
+      .getViewport()
+      .addEventListener("pointerdown", (evt) => {
+        if (evt.target.tagName === "CANVAS" || evt.target.tagName === "IMG") {
+          this.$root.$emit("changeTab");
+        }
+      });
+    this.$mapCanvas.mapObj.on("movestart", (evt) => {
+      this.$root.$emit("changeTab");
+    });
     new ResizeObserver(() => {
-      this.map.updateSize();
+      this.$mapCanvas.mapObj.updateSize();
     }).observe(this.$refs.map);
   },
   methods: {
     async resizeRefreshExpired() {
-      await new Promise((resolve) => this.map.once("rendercomplete", resolve));
+      await new Promise((resolve) =>
+        this.$mapCanvas.mapObj.once("rendercomplete", resolve)
+      );
       this.$root.$emit("checkLoadingErrors");
     },
-    goToExtentHandler(locExtent) {
-      this.map.getView().fit(locExtent);
+    async goToExtentHandler(locExtent) {
+      let rotation = 0;
+      if (locExtent.length === 5) {
+        rotation = locExtent.pop();
+      }
+      const currentView = this.$mapCanvas.mapObj.getView();
+      currentView.setRotation(rotation);
+      currentView.fit(locExtent, { size: this.$mapCanvas.mapObj.getSize() });
     },
     async removeLayerHandler(removedLayer) {
       if (this.getActiveLegends.includes(removedLayer.get("layerName"))) {
@@ -173,14 +208,14 @@ export default {
       }
       let layerFound = false;
       if (
-        this.map
+        this.$mapCanvas.mapObj
           .getLayers()
           .getArray()
           .find((l) => l.get("layerName") === removedLayer.get("layerName")) !==
         undefined
       ) {
         layerFound = true;
-        this.map.removeLayer(removedLayer);
+        this.$mapCanvas.mapObj.removeLayer(removedLayer);
       }
 
       this.$mapLayers.arr.splice(removedLayer.get("zIndex"), 1);
@@ -221,12 +256,12 @@ export default {
       }
     },
     async manageOverlay(layer, layerName) {
-      const layerFound = this.map
+      const layerFound = this.$mapCanvas.mapObj
         .getLayers()
         .getArray()
         .filter((l) => l.get("layerName") === layerName);
       if (layerFound.length !== 0) {
-        this.map.removeLayer(layerFound[0]);
+        this.$mapCanvas.mapObj.removeLayer(layerFound[0]);
       } else {
         let special_layer = new OLImage({
           source: new ImageWMS({
@@ -256,7 +291,7 @@ export default {
         special_layer.getSource().on("imageloadend", () => {
           this.loading = false;
         });
-        this.map.addLayer(special_layer);
+        this.$mapCanvas.mapObj.addLayer(special_layer);
       }
       this.$store.dispatch("Layers/setOverlayDisplayed", layerName);
     },
@@ -311,6 +346,7 @@ export default {
       });
 
       imageLayer.getSource().on("imageloaderror", (e) => {
+        if (this.isAnimating && this.playState !== "play") return;
         this.$root.$emit("loadingError", imageLayer, e);
       });
 
@@ -318,7 +354,10 @@ export default {
         STYLES: imageLayer.get("layerCurrentStyle"),
       });
 
-      if (this.getActiveLegends.length === 0) {
+      if (
+        this.getActiveLegends.length === 0 &&
+        imageLayer.get("layerStyles").length !== 0
+      ) {
         this.$store.dispatch(
           "Layers/addActiveLegend",
           imageLayer.get("layerName")
@@ -327,7 +366,7 @@ export default {
       if (imageLayer.get("layerIsTemporal")) {
         this.$root.$emit("addTemporalLayer", imageLayer, layerData);
       } else {
-        this.map.addLayer(imageLayer);
+        this.$mapCanvas.mapObj.addLayer(imageLayer);
       }
     },
     randomHSVtoRGB() {
@@ -366,15 +405,95 @@ export default {
         b: Math.round(b * 255),
       };
     },
+    waitForElements() {
+      const selectors = [
+        ".ol-scale-line",
+        ".ol-attribution.ol-uncollapsible",
+        ".ol-rotate",
+      ];
+      let allExist = selectors.every(
+        (selector) => document.querySelector(selector) !== null
+      );
+
+      if (!allExist) {
+        setTimeout(waitForElements, 250);
+      } else {
+        return;
+      }
+    },
   },
   computed: {
-    ...mapState("Layers", ["isAnimating"]),
-    ...mapGetters("Layers", ["getActiveLegends", "getMapTimeSettings"]),
+    ...mapState("Layers", ["isAnimating", "playState"]),
+    ...mapGetters("Layers", [
+      "getActiveLegends",
+      "getCollapsedControls",
+      "getHoldExtent",
+      "getMapTimeSettings",
+    ]),
     mapHeight() {
-      return this.map.getSize()[1];
+      return this.$mapCanvas.mapObj.getSize()[1];
     },
     mapWidth() {
-      return this.map.getSize()[0];
+      return this.$mapCanvas.mapObj.getSize()[0];
+    },
+    timeStep() {
+      return this.getMapTimeSettings.Step;
+    },
+  },
+  watch: {
+    getCollapsedControls(collapsed) {
+      const scaleLineElement = document.querySelector(".ol-scale-line");
+      const attributionElement = document.querySelector(
+        ".ol-attribution.ol-uncollapsible"
+      );
+      const rotateElement = document.querySelector(".ol-rotate");
+      if (collapsed) {
+        attributionElement.classList.add("attribution-collapsed");
+        attributionElement.classList.remove("attribution-open");
+        rotateElement.classList.add("rotate-collapsed");
+        rotateElement.classList.remove("rotate-open");
+        scaleLineElement.classList.add("scale-line-collapsed");
+        scaleLineElement.classList.remove("scale-line-open");
+      } else {
+        attributionElement.classList.add("attribution-open");
+        attributionElement.classList.remove("attribution-collapsed");
+        rotateElement.classList.add("rotate-open");
+        rotateElement.classList.remove("rotate-collapsed");
+        scaleLineElement.classList.add("scale-line-open");
+        scaleLineElement.classList.remove("scale-line-collapsed");
+      }
+    },
+    timeStep(newStep, oldStep) {
+      this.waitForElements();
+      const scaleLineElement = document.querySelector(".ol-scale-line");
+      const attributionElement = document.querySelector(
+        ".ol-attribution.ol-uncollapsible"
+      );
+      const rotateElement = document.querySelector(".ol-rotate");
+      if (newStep !== null && oldStep === null) {
+        if (this.getCollapsedControls) {
+          attributionElement.classList.add("attribution-collapsed");
+          attributionElement.classList.remove("attribution-open");
+          rotateElement.classList.add("rotate-collapsed");
+          rotateElement.classList.remove("rotate-open");
+          scaleLineElement.classList.add("scale-line-collapsed");
+          scaleLineElement.classList.remove("scale-line-open");
+        } else {
+          attributionElement.classList.add("attribution-open");
+          attributionElement.classList.remove("attribution-collapsed");
+          rotateElement.classList.add("rotate-open");
+          rotateElement.classList.remove("rotate-collapsed");
+          scaleLineElement.classList.add("scale-line-open");
+          scaleLineElement.classList.remove("scale-line-collapsed");
+        }
+      } else if (newStep === null && oldStep !== null) {
+        scaleLineElement.classList.remove("scale-line-open");
+        rotateElement.classList.remove("rotate-open");
+        attributionElement.classList.remove("attribution-open");
+        scaleLineElement.classList.remove("scale-line-collapsed");
+        rotateElement.classList.remove("rotate-collapsed");
+        attributionElement.classList.remove("attribution-collapsed");
+      }
     },
   },
   data() {
@@ -384,48 +503,113 @@ export default {
       s: 0.95,
       v: 0.75,
       loading: false,
-      map: null,
       osm: new TileLayer({ source: new OSM() }),
       rotateArrow: null,
+      version: version,
     };
   },
 };
 </script>
 
 <style>
+.ol-attribution:not(.ol-collapsed) {
+  background: none;
+}
+.ol-attribution ul {
+  font-size: 10px;
+  padding: 0;
+}
+
+.ol-attribution.ol-uncollapsible {
+  bottom: 0;
+}
 .ol-rotate {
-  right: 50px;
+  left: 8px;
+  bottom: 45px;
+  right: auto;
+  top: auto;
+}
+.ol-scale-line {
+  bottom: 18px;
+}
+@media (max-width: 1120px) {
+  .scale-line-collapsed {
+    bottom: 41px;
+  }
+  .scale-line-open {
+    bottom: 132px;
+  }
+  .rotate-collapsed {
+    bottom: 68px;
+  }
+  .rotate-open {
+    bottom: 159px;
+  }
+  .attribution-collapsed {
+    bottom: 22px !important;
+  }
+  .attribution-open {
+    bottom: 114px !important;
+  }
+}
+@media (max-width: 565px) {
+  .scale-line-collapsed {
+    bottom: 41px;
+  }
+  .scale-line-open {
+    bottom: 186px;
+  }
+  .rotate-collapsed {
+    bottom: 68px;
+  }
+  .rotate-open {
+    bottom: 213px;
+  }
+  .attribution-collapsed {
+    bottom: 22px !important;
+  }
+  .attribution-open {
+    bottom: 168px !important;
+  }
 }
 </style>
 
 <style scoped>
-.map-container {
-  overflow-y: hidden;
-  overflow-x: auto;
-  padding-right: 12px;
-  width: 101%;
-}
 .map {
-  width: 100%;
-  min-width: 600px;
-  max-width: 4096px;
-  height: 600px;
-  min-height: 500px;
-  max-height: 2160px;
-  resize: both;
-  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   z-index: 0;
-  position: relative;
 }
-
+#animet_version {
+  position: absolute;
+  bottom: 2px;
+  left: 8px;
+  margin: 0;
+  color: black;
+  text-shadow: 0 0 2px #fff;
+  font-size: 10px;
+}
 #progressBar {
   position: absolute;
   bottom: 0;
 }
-
-#legendMapSelector {
-  position: absolute;
-  bottom: 24px;
-  right: 0;
+@media (max-width: 1120px) {
+  .animet-version-collapsed {
+    bottom: 25px !important;
+  }
+  .animet-version-open {
+    bottom: 116px !important;
+  }
+}
+@media (max-width: 565px) {
+  .animet-version-collapsed {
+    bottom: 25px !important;
+  }
+  .animet-version-open {
+    bottom: 170px !important;
+  }
 }
 </style>

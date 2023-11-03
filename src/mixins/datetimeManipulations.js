@@ -111,6 +111,7 @@ export default {
         Extent: arrayCombine,
       };
       this.$store.dispatch("Layers/setMapTimeSettings", mapTimeSettings);
+      this.$root.$emit("updatePermalink");
     },
     createTimeLayerConfigs(Dimension_time) {
       let [dateArrayFormat, Step] = this.findFormat(Dimension_time);
@@ -261,27 +262,105 @@ export default {
       }
       return date.toISOString().split(".")[0] + "Z";
     },
-    localeDateFormat(dateIn, interval = null) {
+    getCustomDateFormat(format) {
+      let customFormat = {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        weekday: "short",
+        hour: "numeric",
+        minute: "2-digit",
+        timeZoneName: "short",
+      };
+      if (this.getTimeFormat === false) {
+        customFormat.hourCycle = "h23";
+        delete customFormat.timeZoneName;
+      } else if (format === "DATETIME_SHORT") {
+        delete customFormat.timeZoneName;
+      }
+      if (format === "DATETIME_MED") {
+        customFormat.month = "short";
+      } else if (format === "DATETIME_SHORT") {
+        delete customFormat.weekday;
+        customFormat.month = "numeric";
+      }
+      return customFormat;
+    },
+    localeDateFormat(dateIn, interval = null, format = "DATETIME_FULL") {
       if (interval === "P1Y") {
         return dateIn.toISOString().split("-")[0];
       } else if (interval === "P1M") {
-        const locale = this.$i18n.locale === "fr" ? "fr-CA" : this.$i18n.locale;
         return DateTime.fromJSDate(dateIn)
           .toUTC()
-          .setLocale(locale)
+          .setLocale(`${this.$i18n.locale}-${this.$countryCode}`)
           .toLocaleString({ year: "numeric", month: "long" });
       } else {
+        const customFormat = this.getCustomDateFormat(format);
         if (this.getTimeFormat === false) {
-          return dateIn.toISOString().replace(":00.000", "");
+          if (format === "DATETIME_SHORT") {
+            return dateIn.toISOString().replace(":00.000", "");
+          } else {
+            return this.capitalize(
+              DateTime.fromJSDate(dateIn)
+                .toUTC()
+                .setLocale(`${this.$i18n.locale}-${this.$countryCode}`)
+                .toLocaleString(customFormat) + "Z"
+            ).replace(" h ", ":");
+          }
         } else if (this.getTimeFormat === true) {
-          const locale =
-            this.$i18n.locale === "fr" ? "fr-CA" : this.$i18n.locale;
           return this.capitalize(
             DateTime.fromJSDate(dateIn)
-              .setLocale(locale)
-              .toLocaleString(DateTime.DATETIME_FULL)
-          );
+              .setLocale(`${this.$i18n.locale}-${this.$countryCode}`)
+              .toLocaleString(customFormat)
+          ).replace(" h ", ":");
         }
+      }
+    },
+    localeDateFormatAnimation(dateIn) {
+      const customFormat = this.getCustomDateFormat("DATETIME_FULL");
+      let dateFormat = {
+        year: customFormat.year,
+        month: customFormat.month,
+        day: customFormat.day,
+      };
+      let timeFormat = {
+        hour: customFormat.hour,
+        minute: customFormat.minute,
+        timeZoneName: customFormat.timeZoneName,
+      };
+      if (customFormat.hasOwnProperty("hourCycle")) {
+        timeFormat.hourCycle = customFormat.hourCycle;
+      } else {
+        timeFormat.timeZoneName = customFormat.timeZoneName;
+      }
+      if (this.getTimeFormat === false) {
+        timeFormat.weekday = customFormat.weekday;
+        const date = this.capitalize(
+          DateTime.fromJSDate(dateIn)
+            .toUTC()
+            .setLocale(`${this.$i18n.locale}-${this.$countryCode}`)
+            .toLocaleString(dateFormat)
+        );
+        const time = this.capitalize(
+          DateTime.fromJSDate(dateIn)
+            .toUTC()
+            .setLocale(`${this.$i18n.locale}-${this.$countryCode}`)
+            .toLocaleString(timeFormat) + "Z"
+        ).replace(" h ", ":");
+        return [date, time];
+      } else if (this.getTimeFormat === true) {
+        dateFormat.weekday = customFormat.weekday;
+        const date = this.capitalize(
+          DateTime.fromJSDate(dateIn)
+            .setLocale(`${this.$i18n.locale}-${this.$countryCode}`)
+            .toLocaleString(dateFormat)
+        );
+        const time = this.capitalize(
+          DateTime.fromJSDate(dateIn)
+            .setLocale(`${this.$i18n.locale}-${this.$countryCode}`)
+            .toLocaleString(timeFormat)
+        ).replace(" h ", ":");
+        return [date, time];
       }
     },
   },

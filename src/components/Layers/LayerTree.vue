@@ -28,74 +28,67 @@
         :key="index"
         eager
       >
-        <v-expansion-panels v-model="expandTreePanel">
-          <v-expansion-panel v-model="expandTreePanel">
-            <v-expansion-panel-header>
-              {{ $t("GeoMetWms").replace("{wmsSource}", $t(wmsSource)) }}
-            </v-expansion-panel-header>
-            <v-expansion-panel-content>
-              <v-text-field
-                autofocus
-                v-model="searchGeoMet[index]"
-                :label="
-                  $t('GeoMetSearchLabel').replace('{wmsSource}', $t(wmsSource))
-                "
-                clearable
-                dense
-                hide-details
-                @input="filterOnInput(index)"
-              >
-              </v-text-field>
-              <v-treeview
-                :items="filteredTreeNodes[index]"
-                item-key="Name"
-                dense
-                open-on-click
-                activatable
-                hoverable
-                :ref="wmsSource"
-              >
-                <template v-slot:prepend="{ item }">
-                  <v-btn
-                    v-if="!item.children"
-                    x-large
-                    color="white"
-                    icon
-                    :disabled="isAnimating"
-                    @click="requestLayerData(item)"
+        <v-card flat>
+          <v-card-title class="pt-2 pb-0 pl-3 pr-2">
+            {{ $t("GeoMetWms").replace("{wmsSource}", $t(wmsSource)) }}
+          </v-card-title>
+          <v-card-text class="pt-2 pb-2 pl-3 pr-2">
+            <v-text-field
+              autofocus
+              v-model="searchGeoMet[index]"
+              :label="
+                $t('GeoMetSearchLabel').replace('{wmsSource}', $t(wmsSource))
+              "
+              clearable
+              dense
+              hide-details
+              @input="filterOnInput(index)"
+            >
+            </v-text-field>
+            <v-treeview
+              :items="filteredTreeNodes[index]"
+              item-key="Name"
+              dense
+              open-on-click
+              activatable
+              hoverable
+              :ref="wmsSource"
+              class="treeview pr-0"
+            >
+              <template v-slot:prepend="{ item }">
+                <v-btn
+                  v-if="!item.children"
+                  icon
+                  :disabled="isAnimating"
+                  @click="requestLayerData(item)"
+                >
+                  <v-icon color="primary">
+                    {{
+                      $mapLayers.arr.some(
+                        (l) => l.get("layerName") === item.Name
+                      )
+                        ? "mdi-minus"
+                        : "mdi-plus"
+                    }}
+                  </v-icon>
+                </v-btn>
+              </template>
+              <template v-slot:label="{ item }">
+                <v-container
+                  @click="isAnimating ? null : requestLayerData(item)"
+                  class="ma-0 pa-0 tree-item"
+                >
+                  <span :title="item.Title">{{ item.Title }}<br /></span>
+                  <span
+                    v-if="item.isLeaf"
+                    class="grey--text tree-item-layername"
+                    >{{ item.Name }}</span
                   >
-                    <v-icon color="primary">
-                      {{
-                        $mapLayers.arr.some(
-                          (l) => l.get("layerName") === item.Name
-                        )
-                          ? "mdi-minus"
-                          : "mdi-plus"
-                      }}
-                    </v-icon>
-                  </v-btn>
-                </template>
-                <template v-slot:label="{ item }">
-                  <v-container
-                    @click="isAnimating ? null : requestLayerData(item)"
-                    class="ma-0 pa-0"
-                  >
-                    <strong :title="item.Title">{{ item.Title }}</strong>
-                  </v-container>
-                </template>
-                <template v-slot:append="{ item }">
-                  <v-tooltip v-if="!item.children" right color="light-blue" top>
-                    <template v-slot:activator="{ on, attrs }">
-                      <span v-bind="attrs" v-on="on" class="grey--text"
-                        >({{ item.Name }})</span
-                      >
-                    </template>
-                  </v-tooltip>
-                </template>
-              </v-treeview>
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-        </v-expansion-panels>
+                </v-container>
+              </template>
+            </v-treeview>
+          </v-card-text>
+        </v-card>
       </v-tab-item>
       <v-tab-item eager>
         <v-card class="pb-3">
@@ -132,7 +125,7 @@ import SaxonJS from "saxon-js";
 import { mapGetters, mapState } from "vuex";
 
 export default {
-  mounted() {
+  created() {
     this.filteredTreeNodes.push(...this.getGeoMetTreeItems);
     this.searchGeoMet = new Array(
       Object.keys(this.getGeoMetWmsSources).length
@@ -144,9 +137,6 @@ export default {
     });
     this.$root.$on("localeChange", this.resetSearchAndTree);
     this.$root.$on("permaLinkLayer", this.requestLayerData);
-    this.$root.$on("collapseLayerTree", () => {
-      this.expandTreePanel = 1;
-    });
   },
   watch: {
     tab(newTab, oldTab) {
@@ -167,7 +157,6 @@ export default {
     return {
       isNightly: process.env.VUE_APP_IS_NIGHTLY,
       addedLayers: [],
-      expandTreePanel: 0,
       filteredTreeNodes: [],
       openedLevels: [],
       searchGeoMet: [],
@@ -299,3 +288,52 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.tree-item {
+  line-height: 1.2;
+}
+.tree-item-layername {
+  font-size: 0.8em;
+}
+.treeview {
+  font-size: 1.1em;
+  max-height: calc(100vh - (34px + 0.5em * 2) - 138px - 190px);
+  overflow-y: auto;
+}
+.treeview::v-deep .v-treeview-node__root {
+  min-height: 32px;
+  max-height: 42px;
+}
+.treeview::v-deep .v-treeview-node__level {
+  width: 16px;
+}
+.treeview::v-deep .v-treeview-node__content {
+  margin-left: -20px;
+}
+.treeview::v-deep .v-treeview-node__prepend {
+  margin-right: 0;
+}
+@media (max-width: 1265px) {
+  .treeview {
+    max-height: calc(100vh - (34px + 0.5em * 2) - 138px - 190px - 42px);
+  }
+}
+@media (max-width: 1120px) {
+  .treeview {
+    max-height: calc(100vh - (34px + 0.5em * 2) - 138px - 190px - 42px + 24px);
+  }
+}
+@media (max-width: 565px) {
+  .treeview {
+    max-height: calc(100vh - (34px + 0.5em * 2) - 158px - 190px - 42px - 10px);
+  }
+}
+.v-tabs:not(.v-tabs--vertical):not(.v-tabs--right)
+  >>> .v-slide-group--is-overflowing.v-tabs-bar--is-mobile:not(
+    .v-slide-group--has-affixes
+  )
+  .v-slide-group__prev {
+  display: none !important;
+}
+</style>

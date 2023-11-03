@@ -2,18 +2,30 @@ import { default as layerTrees } from "../../assets/trees";
 import wmsSources from "../../../scripts/wms_sources_configs.json";
 
 const state = {
+  activeLegendsList: [],
   animationTitle: "",
+  collapseControls: false,
   colorBorder: false,
+  currentAspect: {
+    name: "Widescreen",
+    "720p": {
+      height: 720,
+      width: 1280,
+    },
+    "1080p": {
+      height: 1080,
+      width: 1920,
+    },
+    aspect: "[16:9]",
+  },
   currentWmsSource: Object.values(wmsSources)[0]["url"],
   datetimeRangeSlider: [null, null],
-  exportStyle: null,
   extent: null,
   framesPerSecond: 3,
   fullTimestepsList: [],
   isAnimating: false,
   isBasemapVisible: true,
   lang: "en",
-  activeLegendsList: [],
   layerTreeItemsEn: Object.keys(wmsSources).map((key) => {
     const treeName = "tree_en_" + key.toLowerCase();
     return layerTrees[treeName][treeName];
@@ -28,13 +40,12 @@ const state = {
     DateIndex: null,
     Extent: null,
   },
+  menusOpen: 0,
+  modelRunMessages: null,
   MP4CreateFlag: true,
   MP4ProgressPercent: 0,
   MP4URL: "null",
-  playState: "pause",
-  rgb: [],
   outputDate: null,
-  outputMapWH: [],
   outputSize: null,
   overlays: {
     Boundaries: {
@@ -58,14 +69,41 @@ const state = {
     },
   },
   permalink: null,
+  playState: "pause",
+  resolution: "1080p",
+  rgb: [],
   timeFormat: true,
   uniqueTimestepsList: [],
   wmsSources: wmsSources,
 };
 
 const getters = {
+  getActiveLegends: (state) => {
+    return state.activeLegendsList;
+  },
+  getAnimationTitle: (state) => {
+    return state.animationTitle;
+  },
+  getCollapsedControls: (state) => {
+    return state.collapseControls;
+  },
   getColorBorder: (state) => {
     return state.colorBorder;
+  },
+  getCurrentAspect: (state) => {
+    return state.currentAspect;
+  },
+  getCurrentResolution: (state) => {
+    return state.resolution;
+  },
+  getCurrentWmsSource: (state) => {
+    return state.currentWmsSource;
+  },
+  getDatetimeRangeSlider: (state) => {
+    return state.datetimeRangeSlider;
+  },
+  getExtent: (state) => {
+    return state.extent;
   },
   getGeoMetTreeItems: (state) => {
     if (state.lang === "en") {
@@ -74,41 +112,32 @@ const getters = {
       return state.layerTreeItemsFr;
     }
   },
-  getPossibleOverlays: (state) => {
-    return state.overlays;
-  },
   getGeoMetWmsSources: (state) => {
     return state.wmsSources;
-  },
-  getUniqueTimestepsList: (state) => {
-    return state.uniqueTimestepsList;
-  },
-  getActiveLegends: (state) => {
-    return state.activeLegendsList;
-  },
-  getMP4URL: (state) => {
-    return state.MP4URL;
   },
   getMapTimeSettings: (state) => {
     return state.mapTimeSettings;
   },
-  getExtent: (state) => {
-    return state.extent;
+  getMenusOpen: (state) => {
+    return state.menusOpen;
   },
-  getPermalink: (state) => {
-    return state.permalink;
+  getModelRunMessages: (state) => {
+    return state.modelRunMessages;
+  },
+  getMP4URL: (state) => {
+    return state.MP4URL;
   },
   getOutputDate: (state) => {
     return state.outputDate;
   },
-  getExportStyle: (state) => {
-    return state.exportStyle;
-  },
   getOutputSize: (state) => {
     return state.outputSize;
   },
-  getOutputWH: (state) => {
-    return state.outputMapWH;
+  getPermalink: (state) => {
+    return state.permalink;
+  },
+  getPossibleOverlays: (state) => {
+    return state.overlays;
   },
   getRGB: (state) => {
     return state.rgb;
@@ -116,26 +145,25 @@ const getters = {
   getTimeFormat: (state) => {
     return state.timeFormat;
   },
-  getDatetimeRangeSlider: (state) => {
-    return state.datetimeRangeSlider;
-  },
-  getAnimationTitle: (state) => {
-    return state.animationTitle;
-  },
-  getCurrentWmsSource: (state) => {
-    return state.currentWmsSource;
+  getUniqueTimestepsList: (state) => {
+    return state.uniqueTimestepsList;
   },
 };
 
 const mutations = {
-  setLang: (state, lang) => {
-    state.lang = lang;
+  addActiveLegend: (state, legend) => {
+    state.activeLegendsList.push(legend);
   },
   addTimestep: (state, timestep) => {
     state.fullTimestepsList.push(timestep);
     if (state.uniqueTimestepsList.indexOf(timestep) === -1) {
       state.uniqueTimestepsList.push(timestep);
     }
+  },
+  removeActiveLegend: (state, legend) => {
+    state.activeLegendsList = state.activeLegendsList.filter(
+      (l) => l !== legend
+    );
   },
   removeTimestep: (state, timestep) => {
     state.fullTimestepsList.splice(
@@ -149,53 +177,32 @@ const mutations = {
       );
     }
   },
-  addActiveLegend: (state, legend) => {
-    state.activeLegendsList.push(legend);
+  setAnimationTitle: (state, title) => {
+    state.animationTitle = title === null ? "" : title;
   },
-  removeActiveLegend: (state, legend) => {
-    state.activeLegendsList = state.activeLegendsList.filter(
-      (l) => l !== legend
-    );
+  setCollapsedControls: (state, collapsed) => {
+    state.collapseControls = collapsed;
   },
   setColorBorder: (state, newStatus) => {
     state.colorBorder = newStatus;
   },
-  setMP4URL: (state, URL) => {
-    state.MP4URL = URL;
+  setCurrentAspect: (state, res) => {
+    state.currentAspect = res;
   },
-  setMP4Percent: (state, percent) => {
-    state.MP4ProgressPercent = percent;
+  setCurrentResolution: (state, opt) => {
+    state.resolution = opt;
   },
-  setMapTimeSettings: (state, settings) => {
-    state.mapTimeSettings = settings;
+  setDatetimeRangeSlider: (state, range) => {
+    state.datetimeRangeSlider = range;
   },
-  setMapTimeIndex: (state, index) => {
-    state.mapTimeSettings.DateIndex = index;
-  },
-  setMapSnappedLayer: (state, layerName) => {
-    state.mapTimeSettings.SnappedLayer = layerName;
-  },
-  setMP4CreateFlag: (state, flag) => {
-    state.MP4CreateFlag = flag;
-  },
-  setExtent: (state, extent) => {
+  setExtent: (state, [extent, rotation]) => {
+    if (rotation !== 0) {
+      extent.push(rotation);
+    }
     state.extent = extent;
   },
-  setPermalink: (state, permalink) => {
-    state.permalink = permalink;
-  },
-  setOutputDate: (state, newOutputDate) => {
-    state.outputDate = newOutputDate;
-  },
-  setOverlayDisplayed: (state, overlay) => {
-    return (state.overlays[overlay]["isShown"] =
-      !state.overlays[overlay]["isShown"]);
-  },
-  setExportStyle: (state, styleUpdate) => {
-    state.exportStyle = styleUpdate;
-  },
-  setOutputSize: (state, newSize) => {
-    state.outputSize = newSize;
+  setFramesPerSecond: (state, fps) => {
+    state.framesPerSecond = fps;
   },
   setIsAnimating: (state, newStatus) => {
     state.isAnimating = newStatus;
@@ -203,8 +210,52 @@ const mutations = {
   setIsBasemapVisible: (state, newStatus) => {
     state.isBasemapVisible = newStatus;
   },
-  setOutputWH: (state, newWH) => {
-    state.outputMapWH = newWH;
+  setLang: (state, lang) => {
+    state.lang = lang;
+  },
+  setMapSnappedLayer: (state, layerName) => {
+    state.mapTimeSettings.SnappedLayer = layerName;
+  },
+  setMapTimeIndex: (state, index) => {
+    state.mapTimeSettings.DateIndex = index;
+  },
+  setMapTimeSettings: (state, settings) => {
+    state.mapTimeSettings = settings;
+  },
+  setMenusOpen: (state, open) => {
+    if (open) {
+      state.menusOpen += 1;
+    } else {
+      state.menusOpen -= 1;
+    }
+  },
+  setModelRunMessages: (state, messages) => {
+    state.modelRunMessages = messages;
+  },
+  setMP4CreateFlag: (state, flag) => {
+    state.MP4CreateFlag = flag;
+  },
+  setMP4Percent: (state, percent) => {
+    state.MP4ProgressPercent = percent;
+  },
+  setMP4URL: (state, URL) => {
+    state.MP4URL = URL;
+  },
+  setOutputDate: (state, newOutputDate) => {
+    state.outputDate = newOutputDate;
+  },
+  setOutputSize: (state, newSize) => {
+    state.outputSize = newSize;
+  },
+  setOverlayDisplayed: (state, overlay) => {
+    return (state.overlays[overlay]["isShown"] =
+      !state.overlays[overlay]["isShown"]);
+  },
+  setPermalink: (state, permalink) => {
+    state.permalink = permalink;
+  },
+  setPlayState: (state, playState) => {
+    state.playState = playState;
   },
   setRGB: (state, newRGB) => {
     state.rgb = newRGB;
@@ -212,77 +263,41 @@ const mutations = {
   setTimeFormat: (state, newTimeFormat) => {
     state.timeFormat = newTimeFormat;
   },
-  setAnimationTitle: (state, title) => {
-    state.animationTitle = title === null ? "" : title;
-  },
   setWmsSourceURL: (state, newWmsSource) => {
     state.currentWmsSource = newWmsSource;
-  },
-  setFramesPerSecond: (state, fps) => {
-    state.framesPerSecond = fps;
-  },
-  setDatetimeRangeSlider: (state, range) => {
-    state.datetimeRangeSlider = range;
-  },
-  setPlayState: (state, playState) => {
-    state.playState = playState;
   },
 };
 
 const actions = {
-  addTimestep({ commit }, payload) {
-    commit("addTimestep", payload);
-  },
-  removeTimestep({ commit }, payload) {
-    commit("removeTimestep", payload);
-  },
   addActiveLegend({ commit }, payload) {
     commit("addActiveLegend", payload);
+  },
+  addTimestep({ commit }, payload) {
+    commit("addTimestep", payload);
   },
   removeActiveLegend({ commit }, payload) {
     commit("removeActiveLegend", payload);
   },
+  removeTimestep({ commit }, payload) {
+    commit("removeTimestep", payload);
+  },
+  setAnimationTitle({ commit }, payload) {
+    commit("setAnimationTitle", payload);
+  },
+  setCollapsedControls({ commit }, payload) {
+    commit("setCollapsedControls", payload);
+  },
   setColorBorder({ commit }, payload) {
     commit("setColorBorder", payload);
   },
-  setLang({ commit }, payload) {
-    commit("setLang", payload);
+  setCurrentAspect({ commit }, payload) {
+    commit("setCurrentAspect", payload);
   },
-  setMP4URL({ commit }, payload) {
-    commit("setMP4URL", payload);
-  },
-  setMP4Percent({ commit }, payload) {
-    commit("setMP4Percent", payload);
-  },
-  setMapTimeSettings({ commit }, payload) {
-    commit("setMapTimeSettings", payload);
-  },
-  setMapTimeIndex({ commit }, payload) {
-    commit("setMapTimeIndex", payload);
-  },
-  setMapSnappedLayer({ commit }, payload) {
-    commit("setMapSnappedLayer", payload);
-  },
-  setMP4CreateFlag({ commit }, payload) {
-    commit("setMP4CreateFlag", payload);
+  setCurrentResolution({ commit }, payload) {
+    commit("setCurrentResolution", payload);
   },
   setExtent({ commit }, payload) {
     commit("setExtent", payload);
-  },
-  setPermalink({ commit }, payload) {
-    commit("setPermalink", payload);
-  },
-  setOutputDate({ commit }, payload) {
-    commit("setOutputDate", payload);
-  },
-  setOverlayDisplayed({ commit }, payload) {
-    commit("setOverlayDisplayed", payload);
-  },
-  setExportStyle({ commit }, payload) {
-    commit("setExportStyle", payload);
-  },
-  setOutputSize({ commit }, payload) {
-    commit("setOutputSize", payload);
   },
   setIsAnimating({ commit }, payload) {
     commit("setIsAnimating", payload);
@@ -290,17 +305,52 @@ const actions = {
   setIsBasemapVisible({ commit }, payload) {
     commit("setIsBasemapVisible", payload);
   },
-  setOutputWH({ commit }, payload) {
-    commit("setOutputWH", payload);
+  setLang({ commit }, payload) {
+    commit("setLang", payload);
+  },
+  setMapSnappedLayer({ commit }, payload) {
+    commit("setMapSnappedLayer", payload);
+  },
+  setMapTimeIndex({ commit }, payload) {
+    commit("setMapTimeIndex", payload);
+  },
+  setMapTimeSettings({ commit }, payload) {
+    commit("setMapTimeSettings", payload);
+  },
+  setMenusOpen({ commit }, payload) {
+    setTimeout(() => {
+      commit("setMenusOpen", payload);
+    }, 1000);
+  },
+  setModelRunMessages({ commit }, payload) {
+    commit("setModelRunMessages", payload);
+  },
+  setMP4CreateFlag({ commit }, payload) {
+    commit("setMP4CreateFlag", payload);
+  },
+  setMP4Percent({ commit }, payload) {
+    commit("setMP4Percent", payload);
+  },
+  setMP4URL({ commit }, payload) {
+    commit("setMP4URL", payload);
+  },
+  setOutputDate({ commit }, payload) {
+    commit("setOutputDate", payload);
+  },
+  setOutputSize({ commit }, payload) {
+    commit("setOutputSize", payload);
+  },
+  setOverlayDisplayed({ commit }, payload) {
+    commit("setOverlayDisplayed", payload);
+  },
+  setPermalink({ commit }, payload) {
+    commit("setPermalink", payload);
   },
   setRGB({ commit }, payload) {
     commit("setRGB", payload);
   },
   setTimeFormat({ commit }, payload) {
     commit("setTimeFormat", payload);
-  },
-  setAnimationTitle({ commit }, payload) {
-    commit("setAnimationTitle", payload);
   },
   setWmsSourceURL({ commit }, payload) {
     commit("setWmsSourceURL", payload);

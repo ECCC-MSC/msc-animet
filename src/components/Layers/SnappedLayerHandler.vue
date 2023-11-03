@@ -1,5 +1,5 @@
 <template>
-  <v-tooltip bottom v-if="item.get('layerIsTemporal')">
+  <v-tooltip bottom v-if="item.get('layerIsTemporal')" v-model="showTooltip">
     <template v-slot:activator="{ on, attrs }">
       <v-btn
         x-large
@@ -9,6 +9,8 @@
         :color="color"
         :disabled="isAnimating"
         @click="snapLayerToAnimation(item)"
+        @touchstart="showTooltip = true"
+        @touchend="showTooltip = false"
       >
         <v-icon>
           {{ color !== "" ? "mdi-clock-check" : "mdi-clock" }}
@@ -80,6 +82,11 @@ import datetimeManipulations from "../../mixins/datetimeManipulations";
 export default {
   mixins: [datetimeManipulations],
   props: ["item", "color"],
+  data() {
+    return {
+      showTooltip: false,
+    };
+  },
   methods: {
     snapLayerToAnimation(layer) {
       if (layer.get("layerName") !== this.getMapTimeSettings.SnappedLayer) {
@@ -92,6 +99,7 @@ export default {
           this.changeMapTime(layer.get("layerTimeStep"), layer);
         }
       }
+      this.$root.$emit("updatePermalink");
     },
   },
   computed: {

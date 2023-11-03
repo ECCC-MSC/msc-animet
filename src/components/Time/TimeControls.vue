@@ -1,24 +1,52 @@
 <template>
-  <v-card class="my-4">
-    <v-row class="mr-3 ml-1" v-if="getMapTimeSettings.Step !== null">
-      <time-slider />
-      <interval-locale-selector />
-    </v-row>
-    <expired-timestep-manager />
-    <v-snackbar v-model="notifyExtentRebuilt" timeout="-1">
-      <span class="snackMessage">{{ $t("WrongTimeFormat") }}</span>
-
-      <template v-slot:action="{ attrs }">
+  <v-card
+    id="time-controls"
+    :class="getCollapsedControls ? 'time-controls-collapsed' : ''"
+  >
+    <div class="controller-padding" v-if="getMapTimeSettings.Step !== null">
+      <div v-if="screenWidth >= 565">
+        <v-row class="mr-1 ml-1 pt-2 pb-1 px-0" v-if="!getCollapsedControls">
+          <time-slider class="enable-events" />
+          <interval-locale-selector class="enable-events" />
+        </v-row>
         <v-btn
-          color="warning"
-          text
-          v-bind="attrs"
-          @click="notifyExtentRebuilt = false"
+          id="collapse-button"
+          class="enable-events"
+          :class="getCollapsedControls ? 'collapsed' : 'extended'"
+          small
+          @click="
+            $store.commit('Layers/setCollapsedControls', !getCollapsedControls)
+          "
         >
-          {{ $t("Close") }}
+          <v-icon id="collapse-icon" large>
+            {{ getCollapsedControls ? "mdi-chevron-up" : "mdi-chevron-down" }}
+          </v-icon>
         </v-btn>
-      </template>
-    </v-snackbar>
+      </div>
+      <v-col class="mr-1 pt-2 pb-2 px-0" v-else>
+        <time-slider
+          class="enable-events slider"
+          v-if="!getCollapsedControls"
+        />
+        <interval-locale-selector
+          class="enable-events"
+          v-if="!getCollapsedControls"
+        />
+        <v-btn
+          class="enable-events"
+          :class="getCollapsedControls ? 'collapsed' : 'extended'"
+          small
+          @click="
+            $store.commit('Layers/setCollapsedControls', !getCollapsedControls)
+          "
+        >
+          <v-icon large>
+            {{ getCollapsedControls ? "mdi-chevron-up" : "mdi-chevron-down" }}
+          </v-icon>
+        </v-btn>
+      </v-col>
+    </div>
+    <error-manager />
   </v-card>
 </template>
 
@@ -27,13 +55,13 @@ import { mapGetters, mapState } from "vuex";
 
 import datetimeManipulations from "../../mixins/datetimeManipulations";
 
-import ExpiredTimestepManager from "./ExpiredTimestepManager.vue";
+import ErrorManager from "./ErrorManager.vue";
 import IntervalLocaleSelector from "./IntervalLocaleSelector.vue";
 import TimeSlider from "./TimeSlider.vue";
 
 export default {
   components: {
-    ExpiredTimestepManager,
+    ErrorManager,
     IntervalLocaleSelector,
     TimeSlider,
   },
@@ -41,7 +69,7 @@ export default {
   data() {
     return {
       cancelExpired: false,
-      notifyExtentRebuilt: false,
+      screenWidth: window.innerWidth,
     };
   },
   mounted() {
@@ -49,12 +77,14 @@ export default {
     this.$root.$on("cancelExpired", this.handleCancelExpired);
     this.$root.$on("fixLayerTimes", this.mapControls);
     this.$root.$on("timeLayerRemoved", this.removedTimeLayerManager);
+    window.addEventListener("resize", this.updateScreenSize);
   },
   beforeDestroy() {
     this.$root.$off("addTemporalLayer", this.layerTimeManager);
     this.$root.$off("cancelExpired", this.handleCancelExpired);
     this.$root.$off("fixLayerTimes", this.mapControls);
     this.$root.$off("timeLayerRemoved", this.removedTimeLayerManager);
+    window.removeEventListener("resize", this.updateScreenSize);
   },
   methods: {
     delay(time) {
@@ -72,7 +102,7 @@ export default {
         layerData.Dimension.Dimension_time
       );
       if (configs === null) {
-        this.notifyExtentRebuilt = true;
+        this.$root.$emit("notifyWrongFormat");
         this.$root.$emit("removeLayer", imageLayer);
         return;
       }
@@ -116,7 +146,7 @@ export default {
         }
       }
       this.$root.$emit("timeLayerAdded");
-      this.map.addLayer(imageLayer);
+      this.$mapCanvas.mapObj.addLayer(imageLayer);
     },
     async mapControls() {
       this.cancelExpired = false;
@@ -150,7 +180,7 @@ export default {
         }
       }
       if (noChange) {
-        this.map.updateSize();
+        this.$mapCanvas.mapObj.updateSize();
         if (this.playState === "play") {
           this.$root.$emit("playAnimation");
         }
@@ -159,14 +189,19 @@ export default {
       // Count time it takes to finish render for play button,
       // if less than 1sec wait until it's been a second
       let r = await this.measurePromise(
-        () => new Promise((resolve) => this.map.once("rendercomplete", resolve))
+        () =>
+          new Promise((resolve) =>
+            this.$mapCanvas.mapObj.once("rendercomplete", resolve)
+          )
       );
       if (this.cancelExpired) {
         if (this.playState === "play") {
           this.$store.commit("Layers/setPlayState", "pause");
           this.$store.commit("Layers/setIsAnimating", false);
+          this.$root.$emit("fixTimeExtent");
+        } else if (!this.isAnimating) {
+          this.$root.$emit("fixTimeExtent");
         }
-        this.$root.$emit("fixTimeExtent");
       } else if (this.playState === "play") {
         if (r < 1000) {
           await this.delay(1000 - r);
@@ -216,10 +251,15 @@ export default {
             this.getMapTimeSettings.DateIndex < this.getDatetimeRangeSlider[0]
           ) {
             this.$store.dispatch("Layers/setMapSnappedLayer", null);
-            this.$store.commit("Layers/setDatetimeRangeSlider", [
-              this.getMapTimeSettings.DateIndex,
-              this.getDatetimeRangeSlider[1],
-            ]);
+            const first = this.getMapTimeSettings.DateIndex;
+            let last =
+              this.getDatetimeRangeSlider[1] -
+              this.getDatetimeRangeSlider[0] +
+              this.getMapTimeSettings.DateIndex;
+            if (last >= newExtent.length) {
+              last = newExtent.length - 1;
+            }
+            this.$store.commit("Layers/setDatetimeRangeSlider", [first, last]);
           } else if (
             this.getMapTimeSettings.DateIndex > this.getDatetimeRangeSlider[1]
           ) {
@@ -232,6 +272,7 @@ export default {
         } else {
           this.onSnappedLayerChanged(this.getMapTimeSettings.SnappedLayer);
         }
+        this.$root.$emit("updatePermalink");
       }
     },
     onSnappedLayerChanged(newSnappedLayerName) {
@@ -300,8 +341,10 @@ export default {
         TIME: this.getProperDateString(date, layer.get("layerDateFormat")),
       });
     },
+    updateScreenSize() {
+      this.screenWidth = window.innerWidth;
+    },
   },
-  props: ["map"],
   watch: {
     dateIndex: {
       deep: true,
@@ -349,6 +392,7 @@ export default {
       if (newLength !== oldLength && newLength === 0) {
         this.$store.commit("Layers/setDatetimeRangeSlider", [null, null]);
       }
+      this.$root.$emit("updatePermalink");
     },
     snappedLayer(newSnap, oldSnap) {
       if (newSnap !== null && newSnap !== oldSnap) {
@@ -357,8 +401,12 @@ export default {
     },
   },
   computed: {
-    ...mapGetters("Layers", ["getDatetimeRangeSlider", "getMapTimeSettings"]),
-    ...mapState("Layers", ["playState"]),
+    ...mapGetters("Layers", [
+      "getCollapsedControls",
+      "getDatetimeRangeSlider",
+      "getMapTimeSettings",
+    ]),
+    ...mapState("Layers", ["isAnimating", "playState"]),
     layerList() {
       return this.$mapLayers.arr.length;
     },
@@ -376,7 +424,89 @@ export default {
 </script>
 
 <style scoped>
-.snackMessage {
-  white-space: pre-wrap;
+.collapsed {
+  border-radius: 0;
+  box-shadow: none;
+  margin-top: 6px;
+  transform: translateY(-13px);
+  width: 100%;
+  height: 26px !important;
+}
+.controller-padding {
+  margin-bottom: -16px;
+  pointer-events: none;
+}
+.enable-events {
+  pointer-events: auto;
+}
+.extended {
+  background-color: transparent !important;
+  border-radius: 0;
+  box-shadow: none;
+  margin-top: 6px;
+  transform: translateY(-13px);
+  width: 100%;
+  height: 26px !important;
+}
+.slider {
+  padding-top: 2px;
+  padding-bottom: 0;
+}
+#collapse-button::v-deep .v-btn__content {
+  height: 20px;
+}
+#collapse-icon {
+  height: 20px;
+}
+#time-controls {
+  position: absolute;
+  bottom: 24px;
+  width: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  max-width: 1200px;
+}
+@media (min-width: 1051px) {
+  .collapsed {
+    pointer-events: auto;
+    border-radius: 4px 4px 0 0;
+    box-shadow: none;
+    margin-left: calc(50% - 25px);
+    transform: translateY(10px);
+    width: 30px;
+    height: 26px !important;
+  }
+  .time-controls-collapsed {
+    background-color: transparent;
+    box-shadow: none !important;
+    pointer-events: none !important;
+    padding-top: 0;
+  }
+}
+@media (max-width: 1120px) {
+  #time-controls {
+    width: 100%;
+    transform: none;
+    border-radius: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+@media (max-width: 565px) {
+  .collapsed {
+    margin-top: -8px;
+    transform: translateY(-4px);
+  }
+  .controller-padding {
+    pointer-events: auto;
+  }
+  .extended {
+    transform: translateY(-4px);
+  }
+  #time-controls {
+    padding-top: 0;
+  }
 }
 </style>

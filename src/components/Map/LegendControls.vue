@@ -3,6 +3,7 @@
     class="resizable draggable-container"
     ref="draggableContainer"
     @mousedown="dragMouseDown"
+    @touchstart="dragMouseDown"
     v-if="getActiveLegends.length !== 0"
   >
     <img
@@ -71,17 +72,35 @@ export default {
       if (event.target.classList.contains("resizable")) return;
       event.preventDefault();
       // get the mouse cursor position at startup:
-      this.positions.clientX = event.clientX;
-      this.positions.clientY = event.clientY;
-      document.onmousemove = this.elementDrag;
-      document.onmouseup = this.closeDragElement;
+      if (event.type === "touchstart") {
+        // Touch event
+        this.positions.clientX = event.touches[0].clientX;
+        this.positions.clientY = event.touches[0].clientY;
+        document.ontouchmove = this.elementDrag;
+        document.ontouchend = this.closeDragElement;
+      } else {
+        // Mouse event
+        this.positions.clientX = event.clientX;
+        this.positions.clientY = event.clientY;
+        document.onmousemove = this.elementDrag;
+        document.onmouseup = this.closeDragElement;
+      }
     },
     elementDrag: function (event) {
-      event.preventDefault();
-      this.positions.movementX = this.positions.clientX - event.clientX;
-      this.positions.movementY = this.positions.clientY - event.clientY;
-      this.positions.clientX = event.clientX;
-      this.positions.clientY = event.clientY;
+      if (event.type === "touchmove") {
+        this.positions.movementX =
+          this.positions.clientX - event.touches[0].clientX;
+        this.positions.movementY =
+          this.positions.clientY - event.touches[0].clientY;
+        this.positions.clientX = event.touches[0].clientX;
+        this.positions.clientY = event.touches[0].clientY;
+      } else {
+        event.preventDefault();
+        this.positions.movementX = this.positions.clientX - event.clientX;
+        this.positions.movementY = this.positions.clientY - event.clientY;
+        this.positions.clientX = event.clientX;
+        this.positions.clientY = event.clientY;
+      }
       // set the element's new position:
       this.$refs.draggableContainer.style.top =
         this.$refs.draggableContainer.offsetTop -
@@ -95,6 +114,8 @@ export default {
     closeDragElement() {
       document.onmouseup = null;
       document.onmousemove = null;
+      document.ontouchmove = null;
+      document.ontouchend = null;
     },
   },
 };
@@ -105,20 +126,24 @@ export default {
   display: inline-block;
   resize: horizontal;
   overflow: auto;
-  top: 20px;
-  left: 20px;
+  top: 50px;
+  left: 0.5em;
   max-width: 100%;
   max-height: 100%;
 }
-
 .resizable img {
   width: 100%;
   height: auto;
   object-fit: contain;
+  vertical-align: middle;
 }
-
 .draggable-container {
   cursor: move;
   position: absolute;
+}
+@media (max-width: 1265px) {
+  .resizable {
+    top: 100px;
+  }
 }
 </style>

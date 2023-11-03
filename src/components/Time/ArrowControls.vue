@@ -72,6 +72,7 @@ export default {
   },
   methods: {
     changeDateIndex(actionName) {
+      this.$root.$emit("changeTab");
       switch (actionName) {
         case "first":
           if (this.getMapTimeSettings.DateIndex > this.datetimeRangeSlider[0]) {

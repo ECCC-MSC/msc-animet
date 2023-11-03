@@ -95,6 +95,8 @@ export default {
       layer.setProperties({
         layerVisibilityOn: !layer.get("layerVisibilityOn"),
       });
+      this.$root.$emit("updatePermalink");
+      this.$root.$emit("calcFooterPreview");
       if (!layer.get("layerIsTemporal")) {
         layer.setVisible(!layer.get("visible"));
       } else {
