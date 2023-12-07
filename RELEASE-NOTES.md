@@ -1,5 +1,10 @@
 # Release Notes
 
+## Version 1.3.0 (2023-12-07)
+
+### Bug Fixes
+- Update GeoMet-Weather layer list
+
 ## Version 1.3.0 (2023-10-18)
 
 ### New Features
