@@ -130,7 +130,9 @@ export default {
         let firstDateSplit = firstDate.toISOString().split("-");
         return `${firstDateSplit[0]}${firstDateSplit[1]}`;
       } else {
-        return firstDate.toISOString().split(".")[0].replace(/[:-]/g, "") + "Z";
+        return (
+          firstDate.toISOString().split(":00.000")[0].replace(/[:-]/g, "") + "Z"
+        );
       }
     },
     trackCreateMP4() {

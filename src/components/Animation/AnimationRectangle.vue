@@ -65,7 +65,10 @@ export default {
       }
     },
     getInfoCanvas() {
-      if (this.$mapLayers.arr.length !== 0) {
+      if (
+        this.$mapLayers.arr.length !== 0 &&
+        this.getMapTimeSettings.Extent !== null
+      ) {
         this.$root.$emit("setAnimationTitle");
         let infoCanvas = document.createElement("canvas");
         let ctx = infoCanvas.getContext("2d");
