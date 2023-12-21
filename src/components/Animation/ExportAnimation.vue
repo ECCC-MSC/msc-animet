@@ -1,5 +1,5 @@
 <template>
-  <v-card v-if="getMapTimeSettings.Step !== null">
+  <v-card flat v-if="getMapTimeSettings.Step !== null">
     <v-card-title class="text-subtitle-2">
       {{ $t("MP4ExportTitle") }}
     </v-card-title>
@@ -10,7 +10,7 @@
     <v-row class="mx-4 mb-2" justify="center">
       <video
         :src="getMP4URL"
-        :style="getExportStyle"
+        class="video-preview"
         controls
         autoplay
         loop
@@ -36,7 +36,6 @@ export default {
   computed: {
     ...mapGetters("Layers", [
       "getAnimationTitle",
-      "getExportStyle",
       "getMapTimeSettings",
       "getMP4URL",
       "getOutputDate",
@@ -80,3 +79,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.video-preview {
+  min-width: 300px;
+  max-width: 480px;
+}
+</style>

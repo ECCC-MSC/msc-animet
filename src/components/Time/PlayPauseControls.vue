@@ -5,7 +5,6 @@
         <v-btn
           @click="playPause()"
           icon
-          x-large
           color="primary"
           :disabled="
             (isAnimating && playState !== 'play') ||
@@ -14,7 +13,7 @@
           v-bind="attrs"
           v-on="on"
         >
-          <v-icon>
+          <v-icon large>
             {{
               getMapTimeSettings.DateIndex === getDatetimeRangeSlider[1]
                 ? "mdi-replay"
@@ -52,6 +51,7 @@ export default {
   },
   methods: {
     playPause() {
+      this.$root.$emit("changeTab");
       if (!this.locked) {
         this.locked = true;
         setTimeout(this.unlock, 1000);
@@ -63,7 +63,10 @@ export default {
             this.$store.commit("Layers/setIsAnimating", true);
             this.play();
           } else {
-            this.$store.dispatch("Layers/setMapTimeIndex", -1);
+            this.$store.dispatch(
+              "Layers/setMapTimeIndex",
+              this.getDatetimeRangeSlider[0] - 1
+            );
             this.$store.commit("Layers/setPlayState", "play");
             this.$store.commit("Layers/setIsAnimating", true);
             this.play();

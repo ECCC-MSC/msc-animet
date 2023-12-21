@@ -11,6 +11,7 @@
     "axios": "^0.26.0",
     "canvas-txt": "^3.0.0",
     "core-js": "^3.6.5",
+    "countries-and-timezones": "^3.5.1",
     "debounce": "^1.2.1",
     "h264-mp4-encoder": "^1.0.12",
     "luxon": "^2.5.2",
@@ -23,7 +24,7 @@
     "vuex": "^3.4.0"
   },
   "devDependencies": {
-    "@mdi/font": "^7.1.96",
+    "@mdi/font": "^7.3.67",
     "@mdi/js": "^7.1.96",
     "@vue/cli-plugin-babel": "~5.0.8",
     "@vue/cli-service": "~5.0.8",

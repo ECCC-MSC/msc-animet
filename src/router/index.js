@@ -14,8 +14,6 @@ const router = new Router({
       props: (route) => ({
         layers: route.query.layers,
         extent: route.query.extent,
-        width: route.query.width,
-        height: route.query.height,
         color: route.query.color,
         basemap: route.query.basemap,
       }),

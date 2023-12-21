@@ -1,26 +1,18 @@
 <template>
   <v-app>
-    <AppBar />
-    <router-view class="pb-12" />
-    <AppFooter />
+    <router-view />
   </v-app>
 </template>
 
 <script>
-import AppBar from "./components/HeaderFooter/AppBar.vue";
-import AppFooter from "./components/HeaderFooter/AppFooter.vue";
-
 export default {
   name: "App",
-  components: {
-    AppBar,
-    AppFooter,
-  },
   created() {
-    let locale = navigator.language.split("-")[0];
-    this.$store.dispatch("Layers/setLang", locale);
-    this.$i18n.locale = locale;
-    this.$vuetify.current = locale;
+    const locale = navigator.language.split("-")[0];
+    const lang = locale === "fr" ? "fr" : "en";
+    this.$store.dispatch("Layers/setLang", lang);
+    this.$i18n.locale = lang;
+    this.$vuetify.current = lang;
     document.title = "MSC AniMet";
   },
 };
@@ -28,7 +20,7 @@ export default {
 
 <style lang="scss">
 html {
-  overflow-y: scroll; /* Always show vertical scrollbar */
+  overflow-y: hidden !important;
 }
 ::-webkit-scrollbar {
   width: 5px;

@@ -1,17 +1,52 @@
 <template>
-  <v-snackbar v-model="notifyExtentRebuilt" timeout="8000">
-    {{ expiredSnackBarMessage }}
-    <template v-slot:action="{ attrs }">
-      <v-btn
-        color="warning"
-        text
-        v-bind="attrs"
-        @click="notifyExtentRebuilt = false"
-      >
-        {{ $t("Close") }}
-      </v-btn>
-    </template>
-  </v-snackbar>
+  <div id="time-snackbar">
+    <v-snackbar v-model="notifyExtentRebuilt" timeout="8000" class="snackbar">
+      {{ expiredSnackBarMessage }}
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="warning"
+          text
+          v-bind="attrs"
+          @click="notifyExtentRebuilt = false"
+        >
+          {{ $t("Close") }}
+        </v-btn>
+      </template>
+    </v-snackbar>
+
+    <v-snackbar
+      v-model="notifyCancelAnimateResize"
+      timeout="-1"
+      class="snackbar"
+    >
+      {{ $t("MP4CreateNotifyCancelAnimation") }}
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="warning"
+          text
+          v-bind="attrs"
+          @click="notifyCancelAnimateResize = false"
+        >
+          {{ $t("Close") }}
+        </v-btn>
+      </template>
+    </v-snackbar>
+
+    <v-snackbar v-model="notifyWrongFormat" timeout="5000" class="snackbar">
+      <span class="snackMessage">{{ $t("WrongTimeFormat") }}</span>
+
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="warning"
+          text
+          v-bind="attrs"
+          @click="notifyWrongFormat = false"
+        >
+          {{ $t("Close") }}
+        </v-btn>
+      </template>
+    </v-snackbar>
+  </div>
 </template>
 
 <script>
@@ -24,9 +59,15 @@ import datetimeManipulations from "../../mixins/datetimeManipulations";
 export default {
   mixins: [datetimeManipulations],
   mounted() {
+    this.$root.$on("cancelAnimationResize", () => {
+      this.notifyCancelAnimateResize = true;
+    });
     this.$root.$on("checkLoadingErrors", this.checkExpiredOnMapMoveOrResize);
     this.$root.$on("fixTimeExtent", this.fixTimeExtent);
     this.$root.$on("loadingError", this.errorDispatcher);
+    this.$root.$on("notifyWrongFormat", () => {
+      this.notifyWrongFormat = true;
+    });
   },
   beforeDestroy() {
     this.$root.$off("checkLoadingErrors", this.checkExpiredOnMapMoveOrResize);
@@ -38,7 +79,9 @@ export default {
       errorLayersList: [],
       expiredSnackBarMessage: this.$t("MissingTimesteps"),
       expiredTimestepList: [],
+      notifyCancelAnimateResize: false,
       notifyExtentRebuilt: false,
+      notifyWrongFormat: false,
       xsltTime: `parse-xml($xml)//Layer[not(.//Layer) and Name = 'REPLACE_WITH_LAYERNAME']!map
                       {
                           'Dimension' : map
@@ -76,6 +119,7 @@ export default {
           this.notifyExtentRebuilt = true;
           if (this.isAnimating) {
             this.$root.$emit("redoAnimation");
+            this.$root.$emit("animationCanvasReset");
           } else {
             this.$root.$emit("fixLayerTimes");
           }
@@ -306,3 +350,13 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.snackbar::v-deep .v-snack__wrapper {
+  border-radius: 15px;
+  bottom: 128px;
+}
+.snackMessage {
+  white-space: pre-wrap;
+}
+</style>

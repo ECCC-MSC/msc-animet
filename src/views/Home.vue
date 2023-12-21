@@ -3,7 +3,6 @@
     <v-main>
       <v-container fluid>
         <map-canvas id="mapComponent" />
-        <export-animation v-if="MP4ExportFlag" id="MP4exportid" class="my-4" />
       </v-container>
     </v-main>
   </div>
@@ -12,7 +11,6 @@
 <script>
 import MapCanvas from "../components/Map/MapCanvas.vue";
 import { mapGetters } from "vuex";
-import ExportAnimation from "../components/Animation/ExportAnimation.vue";
 
 import localeData from "../locales/importLocaleFiles";
 
@@ -33,12 +31,6 @@ export default {
         castedExtent.push(parseFloat(element));
       });
       this.$root.$emit("goToExtent", castedExtent);
-    }
-    if (this.width !== undefined && this.height !== undefined) {
-      this.$root.$emit("setMapSize", [
-        parseInt(this.width),
-        parseInt(this.height),
-      ]);
     }
     if (this.color !== undefined) {
       if (this.color.match(/none/gi)) {
@@ -76,7 +68,7 @@ export default {
       } else {
         return;
       }
-      this.$root.$emit("collapseLayerTree");
+      this.$root.$emit("collapseMenu");
       let layer = {};
       layer.Name = layerName;
       layer.isLeaf = true;
@@ -101,14 +93,10 @@ export default {
     },
   },
   computed: {
-    ...mapGetters("Layers", ["getGeoMetWmsSources", "getMP4URL"]),
-    MP4ExportFlag() {
-      return this.getMP4URL !== "null";
-    },
+    ...mapGetters("Layers", ["getGeoMetWmsSources"]),
   },
   components: {
     MapCanvas,
-    ExportAnimation,
   },
 };
 </script>

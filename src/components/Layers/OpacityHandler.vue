@@ -1,5 +1,5 @@
 <template>
-  <v-menu open-on-hover bottom offset-y>
+  <v-menu open-on-hover :close-delay="150" bottom offset-y>
     <template v-slot:activator="{ on, attrs }">
       <v-btn
         x-large
@@ -25,6 +25,7 @@
       <v-card-text>
         <v-slider
           :value="item.get('opacity')"
+          @change="$root.$emit('updatePermalink')"
           @input="item.setOpacity($event)"
           min="0"
           max="1"

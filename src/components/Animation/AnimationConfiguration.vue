@@ -1,89 +1,194 @@
 <template>
-  <v-expansion-panels :value="0">
-    <v-expansion-panel>
-      <v-expansion-panel-header>
-        {{ $t("MP4CreateTitle") }}
-      </v-expansion-panel-header>
-      <v-expansion-panel-content>
-        <v-row>
-          <v-col class="flex-grow-1 flex-shrink-0">
-            <v-text-field
-              v-model="animationTitle"
-              counter="250"
-              maxlength="250"
-              dense
-              clearable
-              :disabled="isAnimating"
-              :hint="$t('MP4CreateTitleHint')"
-              :label="$t('MP4CreateCustomTitle')"
-            ></v-text-field>
-          </v-col>
-          <v-col class="flex-shrink-1 flex-grow-0">
-            <v-text-field
-              :disabled="isAnimating"
-              v-model="framesPerSecond"
-              type="number"
-              min="1"
-              max="30"
-              pattern="\d+"
-              class="fps-selector pa-0"
-            >
-              <template v-slot:label>
-                <v-tooltip top>
-                  <template v-slot:activator="{ on, attrs }">
-                    <div v-bind="attrs" v-on="on">{{ $t("FPS") }}</div>
-                  </template>
-                  <span>{{ $t("FramesPerSecond") }}</span>
-                </v-tooltip>
+  <div class="scroll">
+    <v-col class="options">
+      <v-text-field
+        v-model="animationTitle"
+        counter="250"
+        maxlength="250"
+        dense
+        clearable
+        :disabled="isAnimating"
+        :hint="$t('MP4CreateTitleHint')"
+        :label="$t('MP4CreateCustomTitle')"
+      ></v-text-field>
+      <v-row class="mt-0 mb-2 mx-0 align-center">
+        <v-select
+          hide-details
+          class="res-select res-width"
+          v-model="currentResolution"
+          :label="$t('VideoFormat')"
+          :items="resOptions"
+          :disabled="isAnimating"
+          @change="setResolution"
+        >
+        </v-select>
+        <v-text-field
+          hide-details
+          :disabled="isAnimating"
+          v-model="framesPerSecond"
+          type="number"
+          min="1"
+          max="30"
+          pattern="\d+"
+          class="fps-selector"
+        >
+          <template v-slot:label>
+            <v-tooltip top>
+              <template v-slot:activator="{ on, attrs }">
+                <div v-bind="attrs" v-on="on">{{ $t("FPS") }}</div>
               </template>
-            </v-text-field>
-          </v-col>
-          <v-col class="flex-shrink-1 flex-grow-0">
-            <v-switch
-              class="dark-base-switch ma-0 pa-0"
-              :disabled="isAnimating"
-              v-model="darkModeToggle"
-              hide-details
-              :label="$t('DarkBasemapSwitch')"
-              @change="toggleDarkMode"
-            >
-            </v-switch>
-          </v-col>
-        </v-row>
-      </v-expansion-panel-content>
-    </v-expansion-panel>
-  </v-expansion-panels>
+              <span>{{ $t("FramesPerSecond") }}</span>
+            </v-tooltip>
+          </template>
+        </v-text-field>
+        <v-switch
+          class="dark-base-switch ma-0 ml-2 pa-0"
+          :disabled="isAnimating"
+          v-model="darkModeToggle"
+          hide-details
+          :label="$t('DarkBasemapSwitch')"
+          @change="toggleDarkMode"
+        >
+        </v-switch>
+      </v-row>
+    </v-col>
+    <v-col class="options-bottom">
+      <v-select
+        hide-details
+        class="res-select"
+        v-model="aspectRatio"
+        :label="$t('AspectSelection')"
+        :items="Object.keys(resDict)"
+        :disabled="isAnimating"
+        @change="setResolution"
+      >
+        <template v-slot:item="{ item }">
+          {{ formatResolutionName(item) }}
+        </template>
+        <template v-slot:selection="{ item }">
+          {{ formatResolutionName(item) }}
+        </template>
+      </v-select>
+    </v-col>
+    <create-animation />
+    <export-animation v-if="MP4ExportFlag" />
+  </div>
 </template>
 
 <script>
 import { mapGetters, mapState } from "vuex";
 
+import CreateAnimation from "../Animation/CreateAnimation.vue";
+import ExportAnimation from "../Animation/ExportAnimation.vue";
+
 export default {
   mounted() {
+    window.addEventListener("resize", this.updateScreenSize);
     this.$root.$on("darkBasemapSwitch", this.handleDarkBasemapSwitch);
     this.$root.$on("setAnimationTitle", this.setAnimationTitle);
   },
   beforeDestroy() {
+    window.removeEventListener("resize", this.updateScreenSize);
     this.$root.$off("darkBasemapSwitch", this.handleDarkBasemapSwitch);
     this.$root.$off("setAnimationTitle", this.setAnimationTitle);
   },
   data() {
     return {
+      animationPreview: false,
       animationTitle: "",
       darkModeToggle: false,
+      resDict: {
+        Widescreen: {
+          name: "Widescreen",
+          "720p": {
+            height: 720,
+            width: 1280,
+          },
+          "1080p": {
+            height: 1080,
+            width: 1920,
+          },
+          aspect: "[16:9]",
+        },
+        Square: {
+          name: "Square",
+          "720p": {
+            height: 720,
+            width: 720,
+          },
+          "1080p": {
+            height: 1080,
+            width: 1080,
+          },
+          aspect: "[1:1]",
+        },
+        Portrait: {
+          name: "Portrait",
+          "720p": {
+            height: 1280,
+            width: 720,
+          },
+          "1080p": {
+            height: 1920,
+            width: 1080,
+          },
+          aspect: "[9:16]",
+        },
+        PortaitSmall: {
+          name: "Portrait",
+          "720p": {
+            height: 900,
+            width: 720,
+          },
+          "1080p": {
+            height: 1350,
+            width: 1080,
+          },
+          aspect: "[4:5]",
+        },
+        Standard: {
+          name: "Standard",
+          "720p": {
+            height: 720,
+            width: 960,
+          },
+          "1080p": {
+            height: 1080,
+            width: 1440,
+          },
+          aspect: "[4:3]",
+        },
+        UltraWideScreen: {
+          name: "UltraWideScreen",
+          "720p": {
+            height: 720,
+            width: 1680,
+          },
+          "1080p": {
+            height: 1080,
+            width: 2520,
+          },
+          aspect: "[21:9]",
+        },
+      },
+      resOptions: ["720p", "1080p"],
+      screenWidth: window.innerWidth,
     };
+  },
+  components: {
+    CreateAnimation,
+    ExportAnimation,
   },
   methods: {
     handleDarkBasemapSwitch(flag) {
       this.darkModeToggle = flag;
     },
-    toggleDarkMode() {
-      let rgb = [];
-      if (this.darkModeToggle) {
-        rgb = [0, 0, 0];
-      }
-      this.$store.dispatch("Layers/setRGB", rgb);
-      this.$root.$emit("darkModeMapEvent", this.darkModeToggle);
+    formatResolutionName(resolution) {
+      return `${this.$t(this.resDict[resolution].name)}${this.$t("Colon")} ${
+        this.resDict[resolution][this.getCurrentResolution].width
+      }x${this.resDict[resolution][this.getCurrentResolution].height} ${
+        this.resDict[resolution].aspect
+      }`;
     },
     setAnimationTitle() {
       if (this.animationTitle !== "" && this.animationTitle !== null) {
@@ -116,10 +221,46 @@ export default {
         }
       }
     },
+    setResolution() {
+      let controlElement = document.getElementById("animation-rect");
+      const newHeight = this.getCurrentAspect[this.getCurrentResolution].height;
+      const newWidth = this.getCurrentAspect[this.getCurrentResolution].width;
+      controlElement.style.height = `${
+        Math.round((newHeight / newWidth) * 10000) / 100
+      }vw`;
+      controlElement.style.maxWidth = `${
+        Math.round((newWidth / newHeight) * 10000) / 100
+      }vh`;
+      this.$root.$emit("calcFooterPreview");
+    },
+    toggleDarkMode() {
+      let rgb = [];
+      if (this.darkModeToggle) {
+        rgb = [0, 0, 0];
+      }
+      this.$store.dispatch("Layers/setRGB", rgb);
+      this.$root.$emit("darkModeMapEvent", this.darkModeToggle);
+    },
+    updateScreenSize() {
+      this.screenWidth = window.innerWidth;
+    },
   },
   computed: {
-    ...mapGetters("Layers", ["getMapTimeSettings"]),
+    ...mapGetters("Layers", [
+      "getCurrentAspect",
+      "getCurrentResolution",
+      "getMapTimeSettings",
+      "getMP4URL",
+    ]),
     ...mapState("Layers", ["isAnimating"]),
+    aspectRatio: {
+      get() {
+        return this.getCurrentAspect.name;
+      },
+      set(name) {
+        this.$store.commit("Layers/setCurrentAspect", this.resDict[name]);
+      },
+    },
     framesPerSecond: {
       get() {
         return this.$store.state["Layers"].framesPerSecond;
@@ -148,6 +289,39 @@ export default {
         }
       },
     },
+    layersLength() {
+      return this.$mapLayers.arr.length;
+    },
+    MP4ExportFlag() {
+      return this.getMP4URL !== "null";
+    },
+    currentResolution: {
+      get() {
+        return this.getCurrentResolution;
+      },
+      set(res) {
+        this.$store.commit("Layers/setCurrentResolution", res);
+      },
+    },
+  },
+  watch: {
+    animationTitle(newTitle, oldTitle) {
+      if (
+        (newTitle !== "" &&
+          newTitle !== null &&
+          (oldTitle === "" || oldTitle === null)) ||
+        ((newTitle === "" || newTitle === null) &&
+          oldTitle !== "" &&
+          oldTitle !== null)
+      ) {
+        this.$root.$emit("calcFooterPreview");
+      }
+    },
+    layersLength(_, oldValue) {
+      if (oldValue !== undefined) {
+        this.$root.$emit("calcFooterPreview");
+      }
+    },
   },
 };
 </script>
@@ -155,9 +329,53 @@ export default {
 <style scoped>
 .fps-selector {
   margin-top: -2px;
-  min-width: 34px;
+  width: 38px;
+  flex: 0 1 auto;
 }
 .dark-base-switch {
   min-width: 152px;
+}
+.options {
+  margin: auto;
+}
+.options-bottom {
+  margin: auto;
+  margin-top: -22px;
+}
+.res-select {
+  margin-top: -2px;
+}
+.res-width {
+  max-width: 110px;
+  padding-right: 12px;
+}
+.scroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px - 48px);
+}
+@media (max-width: 1265px) {
+  .scroll {
+    max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px - 48px - 42px);
+  }
+}
+@media (max-width: 1120px) {
+  .scroll {
+    max-height: calc(
+      100vh - (34px + 0.5em * 2) - 0.5em - 138px - 48px - 42px + 24px
+    );
+  }
+}
+@media (max-width: 750px) {
+  #animation-configuration {
+    width: 100% !important;
+  }
+}
+@media (max-width: 565px) {
+  .scroll {
+    max-height: calc(
+      100vh - (34px + 0.5em * 2) - 0.5em - 158px - 48px - 42px - 10px
+    );
+  }
 }
 </style>

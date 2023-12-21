@@ -13,10 +13,10 @@
     :disabled="isAnimating"
   >
     <template v-slot:item="{ item }">
-      {{ localeDateFormat(item) }}
+      {{ localeDateFormat(item, null, "DATETIME_MED") }}
     </template>
     <template v-slot:selection="{ item }">
-      {{ localeDateFormat(item) }}
+      {{ localeDateFormat(item, null, "DATETIME_MED") }}
     </template>
   </v-select>
 </template>
@@ -56,6 +56,7 @@ export default {
         layerEndTime: newDateArray[newDateArray.length - 1],
       });
       this.$root.$emit("modelRunChanged");
+      this.$root.$emit("calcFooterPreview");
       if (this.item.get("layerTimeStep") === this.getMapTimeSettings.Step) {
         this.changeMapTime(this.item.get("layerTimeStep"));
       } else {

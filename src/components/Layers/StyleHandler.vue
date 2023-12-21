@@ -46,6 +46,7 @@ export default {
         layerCurrentStyle: styleName,
       });
       layer.getSource().updateParams({ STYLES: styleName });
+      this.$root.$emit("updatePermalink");
     },
   },
   computed: {

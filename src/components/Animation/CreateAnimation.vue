@@ -18,9 +18,9 @@
       </template>
       <span>{{ $t("ErrorNoTimeLayer") }}</span>
     </v-tooltip>
-    <div v-if="isAnimating && playState !== 'play'">
+    <div v-if="isAnimating && playState !== 'play'" class="animation-progress">
       <v-row>
-        <v-col class="d-inline-flex">
+        <v-col class="d-flex">
           <v-progress-linear
             :value="MP4ProgressPercent"
             height="36"
@@ -41,19 +41,6 @@
         </v-col>
       </v-row>
     </div>
-    <v-snackbar v-model="notifyCancelAnimateResize" timeout="5000">
-      {{ $t("MP4CreateNotifyCancelAnimation") }}
-      <template v-slot:action="{ attrs }">
-        <v-btn
-          color="warning"
-          text
-          v-bind="attrs"
-          @click="notifyCancelAnimateResize = false"
-        >
-          {{ $t("Close") }}
-        </v-btn>
-      </template>
-    </v-snackbar>
   </div>
 </template>
 
@@ -70,13 +57,8 @@ export default {
   mounted() {
     this.$root.$on("cancelAnimationCreation", this.cancelAnimationCreation);
     this.$root.$on("cancelExpired", this.handleCancelExpired);
-    this.$root.$on("getExtent", this.getExtentHandler);
-    this.$root.$on("localeChange", this.getModelRuns);
-    this.$root.$on("modelRunChanged", this.getModelRuns);
     this.$root.$on("redoAnimation", this.createMP4Handler);
     this.$root.$on("restoreState", this.restoreState);
-    this.$root.$on("timeLayerAdded", this.getModelRuns);
-    this.$root.$on("timeLayerRemoved", this.getModelRuns);
 
     // cancel animation creations on window resize avoid Safari bug
     window.addEventListener("resize", this.cancelAnimationFromResize);
@@ -87,81 +69,57 @@ export default {
   beforeDestroy() {
     this.$root.$off("cancelAnimationCreation", this.cancelAnimationCreation);
     this.$root.$off("cancelExpired", this.handleCancelExpired);
-    this.$root.$off("getExtent", this.getExtentHandler);
-    this.$root.$off("localeChange", this.getModelRuns);
-    this.$root.$off("modelRunChanged", this.getModelRuns);
     this.$root.$off("redoAnimation", this.createMP4Handler);
     this.$root.$off("restoreState", this.restoreState);
-    this.$root.$off("timeLayerAdded", this.getModelRuns);
-    this.$root.$off("timeLayerRemoved", this.getModelRuns);
   },
   mixins: [datetimeManipulations],
-  props: ["map"],
   methods: {
     cancelAnimationCreation() {
       this.generating = false;
+      if (this.mapController) {
+        this.mapController.abort("");
+      }
+      if (this.animationController) {
+        this.animationController.abort("");
+      }
+      if (this.layersController) {
+        this.layersController.abort("");
+      }
     },
     cancelAnimationFromResize() {
       if (this.isAnimating) {
-        this.notifyCancelAnimateResize = true;
+        this.$root.$emit("cancelAnimationResize");
         this.cancelAnimationCreation();
       }
     },
-    getExtentHandler() {
-      this.getExtent();
-      this.$store.dispatch("Layers/setOutputWH", [
-        this.mapWidth,
-        this.mapHeight,
-      ]);
-    },
-    getExtent() {
-      const extent = this.map.getView().calculateExtent();
-      this.$store.dispatch("Layers/setExtent", extent);
-    },
-    getTimeTitleWidths(mapDivWidth) {
-      if (mapDivWidth < 600) {
-        return [280, 300];
-      } else {
-        return [mapDivWidth - 320, 300];
-      }
+    getTimeTitleWidths() {
+      return [this.mapWidth - 320, 300];
     },
     getModelRuns() {
-      let modelRuns = {};
-      const timeLayers = this.$mapLayers.arr.filter((l) =>
-        l.get("layerIsTemporal")
-      );
-      for (let i = 0; i < timeLayers.length; i++) {
-        if (timeLayers[i].get("layerCurrentMR") !== null) {
-          const refTime = timeLayers[i].get("layerCurrentMR");
-          if (refTime in modelRuns) {
-            modelRuns[refTime].push(timeLayers[i].get("layerName"));
-          } else {
-            modelRuns[refTime] = [timeLayers[i].get("layerName")];
-          }
-        }
-      }
-      if (Object.keys(modelRuns).length === 0) {
-        this.modelRunMessage = null;
-      } else if (Object.keys(modelRuns).length === 1) {
-        this.modelRunMessage = [
-          `${this.$t("ModelRun")}${this.$t("Colon")} ${this.localeDateFormat(
-            new Date(Date.parse(Object.keys(modelRuns)[0]))
-          )}`,
-        ];
-      } else {
-        let message = [];
-        for (const [key, values] of Object.entries(modelRuns)) {
-          message.push(
-            `${this.$t("ModelRun")}${this.$t("Colon")} ${this.localeDateFormat(
-              new Date(Date.parse(key))
-            )}`
+      let modelRuns = [];
+      let visibleLayers = this.$mapLayers.arr
+        .filter((l) => {
+          return l.get("layerVisibilityOn") && l instanceof OLImage;
+        })
+        .reverse();
+      const numVisibleLayers = visibleLayers.length;
+      for (let i = 0; i < numVisibleLayers; i++) {
+        if (
+          visibleLayers[i].get("layerCurrentMR") !== null &&
+          visibleLayers[i].get("layerCurrentMR") !== undefined
+        ) {
+          modelRuns.push(
+            this.localeDateFormat(
+              visibleLayers[i].get("layerCurrentMR"),
+              null,
+              "DATETIME_MED"
+            )
           );
-          for (let i = 0; i < values.length; i++) {
-            message.push("  - " + values[i]);
-          }
+        } else {
+          modelRuns.push("");
         }
-        this.modelRunMessage = message;
       }
+      return modelRuns;
     },
     getAnimationDateTitle(interval) {
       const firstDate =
@@ -176,11 +134,15 @@ export default {
       }
     },
     trackCreateMP4() {
-      if (this.appIsProductionEnv === 'production') {
-        _paq.push(['trackEvent', 'Button', 'Click', 'Create animation']);
+      if (this.appIsProductionEnv === "production") {
+        _paq.push(["trackEvent", "Button", "Click", "Create animation"]);
       }
     },
     async createMP4() {
+      let visibleLayers = this.$mapLayers.arr.filter((l) => {
+        return l.get("layerVisibilityOn") && l instanceof OLImage;
+      });
+      if (visibleLayers.length === 0) return;
       this.$root.$emit("setAnimationTitle");
       this.trackCreateMP4();
       this.createMP4Handler();
@@ -194,37 +156,29 @@ export default {
       this.$store.dispatch("Layers/setMP4URL", "null");
       this.$store.dispatch("Layers/setIsAnimating", true);
       this.generating = true;
-      this.getExtent();
-      this.evenSize();
-      this.map.updateSize();
-      let mapDiv = document.getElementById("map");
-      this.$store.dispatch("Layers/setOutputWH", [
-        this.mapWidth,
-        this.mapHeight,
-      ]);
-      this.$store.dispatch(
-        "Layers/setExportStyle",
-        `max-width: ${this.mapWidth}px max-height: ${this.mapHeight}px width: 100% height: 100%`
-      );
-      mapDiv.style.resize = "none";
-      this.map.getInteractions().forEach((x) => x.setActive(false));
-      const mapWidthConst = this.mapWidth;
-      const widths = this.getTimeTitleWidths(mapWidthConst);
+      this.$mapCanvas.mapObj.updateSize();
 
       let visibleLayers = this.$mapLayers.arr.filter((l) => {
         return l.get("layerVisibilityOn") && l instanceof OLImage;
       });
 
+      this.$mapCanvas.mapObj
+        .getInteractions()
+        .forEach((x) => x.setActive(false));
+      this.setMapHeight();
+      this.setMapWidth();
+      const widths = this.getTimeTitleWidths();
+
       this.infoCanvas = this.getInfoCanvas(
-        this.mapWidth,
         visibleLayers,
         widths,
         this.animationTitle
       );
+      this.dateCanvas = this.getDateCanvas();
+
       this.encoder = await HME.createH264MP4Encoder();
-      this.encoder.width = mapDiv.offsetWidth;
-      this.encoder.height =
-        this.mapHeight + this.infoCanvas.height + this.outputHeader.height;
+      this.encoder.width = this.mapWidth;
+      this.encoder.height = this.mapHeight;
       this.encoder.frameRate = this.framesPerSecond;
       this.encoder.quantizationParameter = 30;
       this.encoder.initialize();
@@ -243,9 +197,88 @@ export default {
         }
         if (this.generating === true) {
           this.$store.dispatch("Layers/setMapTimeIndex", i);
-          await new Promise((resolve) =>
-            this.map.once("rendercomplete", resolve)
-          );
+          if (i === this.datetimeRangeSlider[0]) {
+            this.mapController = new AbortController();
+            this.animationController = new AbortController();
+            let mapRendered = new Promise((resolve, reject) => {
+              const abortListener = ({ target }) => {
+                this.mapController.signal.removeEventListener(
+                  "abort",
+                  abortListener
+                );
+                reject(target.reason);
+              };
+              this.mapController.signal.addEventListener(
+                "abort",
+                abortListener
+              );
+
+              this.$mapCanvas.mapObj.once("rendercomplete", resolve);
+            }).catch(() => {
+              console.error("Animation creation cancelled");
+            });
+            let animationRendered = new Promise((resolve, reject) => {
+              const abortListener = ({ target }) => {
+                this.animationController.signal.removeEventListener(
+                  "abort",
+                  abortListener
+                );
+                reject(target.reason);
+              };
+              this.animationController.signal.addEventListener(
+                "abort",
+                abortListener
+              );
+
+              this.$animationCanvas.mapObj.once("rendercomplete", resolve);
+            }).catch(() => {
+              console.error("Animation creation cancelled");
+            });
+            await Promise.all([mapRendered, animationRendered]);
+          } else {
+            // For some reason the rendercomplete event seems to fire early
+            // with the animation on 2 maps, so I'm waiting for layers to
+            // throw the loadend event instead.
+            this.animationController = new AbortController();
+            this.layersController = new AbortController();
+            let layersRendered = new Promise((resolve, reject) => {
+              const abortListener = ({ target }) => {
+                this.layersController.signal.removeEventListener(
+                  "abort",
+                  abortListener
+                );
+                reject(target.reason);
+              };
+              this.layersController.signal.addEventListener(
+                "abort",
+                abortListener
+              );
+
+              this.$root.$on("layersRendered", () => {
+                resolve();
+              });
+            }).catch(() => {
+              console.error("Animation creation cancelled");
+            });
+            let animationRendered = new Promise((resolve, reject) => {
+              const abortListener = ({ target }) => {
+                this.animationController.signal.removeEventListener(
+                  "abort",
+                  abortListener
+                );
+                reject(target.reason);
+              };
+              this.animationController.signal.addEventListener(
+                "abort",
+                abortListener
+              );
+
+              this.$animationCanvas.mapObj.once("rendercomplete", resolve);
+            }).catch(() => {
+              console.error("Animation creation cancelled");
+            });
+            await Promise.all([layersRendered, animationRendered]);
+          }
           if (this.cancelExpired) {
             this.cancelExpired = false;
             this.generating = false;
@@ -253,7 +286,6 @@ export default {
           }
           await this.composeCanvas(
             this.getMapTimeSettings.Extent[i],
-            widths,
             this.encoder
           );
           this.$store.dispatch(
@@ -286,11 +318,16 @@ export default {
       if (this.generating) {
         this.$store.dispatch("Layers/setMP4URL", mp4URL);
       }
-      this.map.getInteractions().forEach((x) => x.setActive(true)); // Enables all map interactions such as drag or zoom
-      document.getElementById("map").style.resize = "both"; // Enables map div resizing
+      this.$mapCanvas.mapObj
+        .getInteractions()
+        .forEach((x) => x.setActive(true)); // Enables all map interactions such as drag or zoom
+      let theMap = document.getElementById("map");
+      theMap.style.height = "100%";
+      theMap.style.width = "100%";
     },
-    async composeCanvas(date, widths, encoder) {
-      this.map.updateSize();
+    async composeCanvas(date, encoder) {
+      this.$mapCanvas.mapObj.updateSize();
+      this.$animationCanvas.mapObj.updateSize();
       const mapCnv = this.getMapCanvas();
       this.getActiveLegends.forEach((layerName) =>
         this.addLegend(
@@ -301,7 +338,7 @@ export default {
             .get("legendColor")
         )
       );
-      await this.updateInfoCanvas(date, widths);
+      await this.updateInfoCanvas(date);
       const composedCnv = await this.stitchCanvases(mapCnv);
       try {
         encoder.addFrameRgba(
@@ -319,12 +356,38 @@ export default {
     },
     addLegend(mapCanvas, mapLegend, rgbObject) {
       const context = mapCanvas.getContext("2d");
+      let animationRect = document.getElementById("animation-rect");
+      const ratioH = (animationRect.offsetHeight - 8) / mapCanvas.height;
+      const ratioW = (animationRect.offsetWidth - 8) / mapCanvas.width;
+      let borderWidth = 0;
+      if (this.getColorBorder) {
+        borderWidth = 2;
+      }
+      const offsetLeft =
+        (mapLegend.offsetParent.offsetLeft - animationRect.offsetLeft) /
+          ratioW +
+        borderWidth -
+        4;
+      const offsetTop =
+        50 +
+        (mapLegend.offsetParent.offsetTop -
+          animationRect.offsetTop -
+          (50 / this.getCurrentAspect[this.getCurrentResolution].height) *
+            animationRect.offsetHeight) /
+          ratioH +
+        borderWidth -
+        4;
+      const legendWidth = mapLegend.clientWidth / ratioW;
+      const legendHeight =
+        ((mapLegend.naturalHeight / mapLegend.naturalWidth) *
+          mapLegend.clientWidth) /
+        ratioH;
       context.drawImage(
         mapLegend,
-        mapLegend.offsetParent.offsetLeft,
-        mapLegend.offsetParent.offsetTop,
-        mapLegend.clientWidth,
-        mapLegend.clientHeight
+        offsetLeft,
+        offsetTop,
+        legendWidth,
+        legendHeight
       ); // drawImage(image, dx, dy, dWidth, dHeight)
       if (this.getColorBorder) {
         const borderWidth = 2;
@@ -333,10 +396,10 @@ export default {
         context.lineWidth = borderWidth;
 
         context.strokeRect(
-          mapLegend.offsetParent.offsetLeft - borderWidth / 2,
-          mapLegend.offsetParent.offsetTop - borderWidth / 2,
-          mapLegend.clientWidth + borderWidth,
-          mapLegend.clientHeight + borderWidth
+          offsetLeft - borderWidth / 2,
+          offsetTop - borderWidth / 2,
+          legendWidth + borderWidth,
+          legendHeight + borderWidth
         );
       }
     },
@@ -344,29 +407,34 @@ export default {
       return new Promise((resolve) => {
         let composedCnv = document.createElement("canvas");
         let ctx = composedCnv.getContext("2d");
-        let ctx_w = mapCanvas.width;
-        let ctx_h =
-          this.outputHeader.height + mapCanvas.height + this.infoCanvas.height;
 
-        composedCnv.width = ctx_w;
-        composedCnv.height = ctx_h;
+        composedCnv.width = mapCanvas.width;
+        composedCnv.height = mapCanvas.height;
 
         [
           {
-            cnv: this.outputHeader,
+            cnv: mapCanvas,
+            x: 0,
             y: 0,
           },
           {
-            cnv: mapCanvas,
-            y: this.outputHeader.height,
+            cnv: this.outputHeader,
+            x: 0,
+            y: 0,
           },
           {
             cnv: this.infoCanvas,
-            y: this.outputHeader.height + mapCanvas.height,
+            x: mapCanvas.width - this.infoCanvas.width,
+            y: mapCanvas.height - this.infoCanvas.height,
+          },
+          {
+            cnv: this.outputDateCanvas,
+            x: mapCanvas.width - this.outputDateCanvas.width - 10,
+            y: this.outputHeader.height + 10,
           },
         ].forEach((n) => {
           ctx.beginPath();
-          ctx.drawImage(n.cnv, 0, n.y, ctx_w, n.cnv.height);
+          ctx.drawImage(n.cnv, n.x, n.y, n.cnv.width, n.cnv.height);
         });
 
         resolve(composedCnv);
@@ -374,14 +442,13 @@ export default {
     },
     getMapCanvas() {
       let mapCanvas = document.createElement("canvas");
-      let mapCanvasUI = document.getElementById("map");
-      mapCanvas.width = mapCanvasUI.offsetWidth; //size[0]
-      mapCanvas.height = mapCanvasUI.offsetHeight; //size[1]
+      mapCanvas.width = this.mapWidth; //size[0]
+      mapCanvas.height = this.mapHeight; //size[1]
       let mapContext = mapCanvas.getContext("2d");
       mapContext.fillStyle = "white";
       mapContext.fillRect(0, 0, mapCanvas.width, mapCanvas.height);
       Array.prototype.forEach.call(
-        document.querySelectorAll(".ol-layer canvas"),
+        document.querySelectorAll("#animation-canvas .ol-layer canvas"),
         function (canvas) {
           if (canvas.width > 0) {
             const opacity = canvas.parentNode.style.opacity;
@@ -401,48 +468,70 @@ export default {
       );
       return mapCanvas;
     },
-    getOutputHeader(mapCanvasWidth, widths, customTitle) {
+    getOutputHeader(widths, customTitle) {
       let outputHeaderCanvas = document.createElement("canvas");
       let ctx = outputHeaderCanvas.getContext("2d");
-      let ctx_w = mapCanvasWidth;
-      outputHeaderCanvas.width = ctx_w;
-      outputHeaderCanvas.height = 60;
-      ctx.fillStyle = "white";
+      outputHeaderCanvas.width = this.mapWidth;
+      if (this.mapWidth >= 1080) {
+        outputHeaderCanvas.height = 50;
+      } else {
+        outputHeaderCanvas.height = 30;
+      }
+      ctx.fillStyle = "rgba(255,255,255,0.65)";
       ctx.fillRect(0, 0, outputHeaderCanvas.width, outputHeaderCanvas.height);
       ctx.strokeStyle = "black";
       ctx.fillStyle = "black";
-      const logo_canvas = document.getElementById("eccc_logo");
+      const logo_canvas = document.getElementById(
+        `eccc_logo_${this.$i18n.locale}`
+      );
       let ratio = logo_canvas.naturalWidth / logo_canvas.naturalHeight;
       let width = null;
-      let fontSize = 26;
-      ctx.font = fontSize + "px sans-serif";
-      let metrics = ctx.measureText(customTitle);
-      if (mapCanvasWidth > 1000) {
+      if (this.mapWidth >= 1080) {
+        let fontSize = 26;
+        ctx.font = fontSize + "px sans-serif";
+        let metrics = ctx.measureText(customTitle);
         width = 2 * widths[1];
-        while (metrics.width > mapCanvasWidth - width && fontSize > 10) {
+        while (metrics.width > this.mapWidth - width - 16 && fontSize > 15) {
           fontSize -= 1;
           ctx.font = fontSize + "px sans-serif";
           metrics = ctx.measureText(customTitle);
         }
         canvasTxt.fontSize = fontSize;
         canvasTxt.align = "left";
-        canvasTxt.drawText(ctx, customTitle, 0, 0, mapCanvasWidth - width, 60);
+        canvasTxt.drawText(
+          ctx,
+          customTitle,
+          8,
+          0,
+          this.mapWidth - width - 16,
+          outputHeaderCanvas.height / 2 + fontSize / 2
+        );
       } else {
+        let fontSize = 18;
+        ctx.font = fontSize + "px sans-serif";
+        let metrics = ctx.measureText(customTitle);
         width = widths[1];
-        while (metrics.width > mapCanvasWidth - width && fontSize > 10) {
+        while (metrics.width > this.mapWidth - width - 16 && fontSize > 12) {
           fontSize -= 1;
           ctx.font = fontSize + "px sans-serif";
           metrics = ctx.measureText(customTitle);
         }
         canvasTxt.fontSize = fontSize;
         canvasTxt.align = "left";
-        canvasTxt.drawText(ctx, customTitle, 0, 0, mapCanvasWidth - width, 60);
+        canvasTxt.drawText(
+          ctx,
+          customTitle,
+          8,
+          0,
+          this.mapWidth - width - 16,
+          outputHeaderCanvas.height / 2 + fontSize / 2
+        );
       }
       let height = width / ratio;
-      if (mapCanvasWidth > 1000) {
+      if (this.mapWidth >= 1080) {
         ctx.drawImage(
           logo_canvas,
-          ctx_w - 2 * widths[1],
+          this.mapWidth - 2 * widths[1] - 8,
           (outputHeaderCanvas.height - height) / 2,
           width,
           height
@@ -450,7 +539,7 @@ export default {
       } else {
         ctx.drawImage(
           logo_canvas,
-          ctx_w - widths[1],
+          this.mapWidth - widths[1] - 8,
           (outputHeaderCanvas.height - height) / 2,
           width,
           height
@@ -458,34 +547,100 @@ export default {
       }
       this.outputHeader = outputHeaderCanvas;
     },
-    getInfoCanvas(mapCanvasWidth, visibleLayers, widths, customTitle) {
-      this.getOutputHeader(mapCanvasWidth, widths, customTitle);
+    getDateCanvas() {
+      this.outputDateCanvas = document.createElement("canvas");
+      let ctx = this.outputDateCanvas.getContext("2d");
+
+      let dateFont = 16;
+      if (this.getCurrentResolution === "1080p") {
+        canvasTxt.fontSize = 26;
+      } else {
+        canvasTxt.fontSize = 22;
+        dateFont = 12;
+      }
+      ctx.font = canvasTxt.fontSize + "px sans-serif";
+
+      if (
+        this.getMapTimeSettings.Step === "P1Y" ||
+        this.getMapTimeSettings.Step === "P1M"
+      ) {
+        let dateLabelForMeasurement;
+        if (this.getMapTimeSettings.Step === "P1Y") {
+          dateLabelForMeasurement = "2222";
+        } else {
+          dateLabelForMeasurement = "September 2222";
+        }
+        let metrics = ctx.measureText(dateLabelForMeasurement);
+
+        this.outputDateCanvas.height =
+          this.getCurrentResolution === "1080p" ? 34 : 30;
+        this.outputDateCanvas.width = metrics.width + 12;
+      } else {
+        const [dateLabel, timeLabel] = this.localeDateFormatAnimation(
+          this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
+          this.getMapTimeSettings.Step
+        );
+        let timeMetrics = ctx.measureText(timeLabel);
+
+        canvasTxt.fontSize = dateFont;
+        ctx.font = canvasTxt.fontSize + "px sans-serif";
+        let dateMetrics = ctx.measureText(dateLabel);
+
+        this.outputDateCanvas.height =
+          this.getCurrentResolution === "1080p" ? 54 : 50;
+        this.outputDateCanvas.width =
+          timeMetrics.width >= dateMetrics.width
+            ? timeMetrics.width + 16
+            : dateMetrics.width + 16;
+      }
+
+      ctx.fillStyle = "rgba(255,255,255,0.65)";
+      ctx.fillRect(
+        0,
+        0,
+        this.outputDateCanvas.width,
+        this.outputDateCanvas.height
+      );
+      ctx.strokeStyle = "black";
+      ctx.fillStyle = "black";
+    },
+    getInfoCanvas(visibleLayers, widths, customTitle) {
+      this.getOutputHeader(widths, customTitle);
       let infoCanvas = document.createElement("canvas");
       let ctx = infoCanvas.getContext("2d");
-      let ctx_w = mapCanvasWidth;
+      let ctx_w = this.mapWidth;
       this.isLayerListShown = !(
         visibleLayers.length === 1 &&
         customTitle === this.$t(visibleLayers[0].get("layerName"))
       );
       // Must be divisible by 2 otherwise encoder.initialize() will fail
-      let ctx_h = 50;
+      let ctx_h = 40;
 
       let fontArray = [];
       let metrics;
+      let baseFont = 18;
+      let minFont = 12;
+      if (this.mapWidth < 1080) {
+        baseFont = 13;
+        minFont = 10;
+      }
+      const modelRuns = this.getModelRuns();
+      const numModelRuns = modelRuns.filter((mr) => {
+        return mr !== "";
+      }).length;
       if (this.isLayerListShown) {
-        const baseFont = 18;
         ctx_h = 0;
         for (let i = visibleLayers.length - 1; i >= 0; i--) {
           let layerTitle = `• ${this.$t(visibleLayers[i].get("layerName"))}`;
           let fontSize = baseFont;
           ctx.font = fontSize + "px sans-serif";
           metrics = ctx.measureText(layerTitle);
-          while (metrics.width > widths[0] && fontSize > 7) {
+          while (metrics.width > widths[0] && fontSize > minFont) {
             fontSize -= 1;
             ctx.font = fontSize + "px sans-serif";
             metrics = ctx.measureText(layerTitle);
           }
-          ctx_h += fontSize + 8;
+          ctx_h += baseFont + 8;
           fontArray.push({
             name: visibleLayers[i].get("layerName"),
             title: layerTitle,
@@ -493,21 +648,84 @@ export default {
             color: visibleLayers[i].get("legendColor"),
           });
         }
-        ctx_h += 10;
         // Must be divisible by 2 otherwise encoder.initialize() will fail
         ctx_h = 2 * Math.ceil(ctx_h / 2);
-        let minHeight = 98;
-        if (this.modelRunMessage !== null) {
-          minHeight += (this.modelRunMessage.length - 1) * 10;
+        if (ctx_h < 40) ctx_h = 40;
+      }
+      let animetOffset = 0;
+      let animetPlacement = ctx_h;
+      let osmOffset = 0;
+      let osmPlacement = ctx_h;
+      if (!this.isLayerListShown) {
+        animetPlacement = 0.01 * infoCanvas.height;
+        osmPlacement = 20;
+      } else if (
+        !this.$mapCanvas.mapObj.getLayers().getArray()[0].get("visible")
+      ) {
+        if (this.mapWidth < 1080) {
+          animetOffset = 21;
+        } else {
+          animetOffset = 23;
         }
-        ctx_h = ctx_h >= minHeight ? ctx_h : minHeight;
+      } else {
+        if (this.mapWidth < 1080) {
+          animetOffset = 30;
+          osmOffset = 17;
+        } else {
+          animetOffset = 34;
+          osmOffset = 20;
+        }
       }
 
+      let animetAttr = this.$t("MadeWithAniMet");
+      if (this.mapWidth < 1080) {
+        canvasTxt.fontSize = 13;
+      } else {
+        canvasTxt.fontSize = 15;
+      }
+      canvasTxt.align = "left";
+      ctx.font = canvasTxt.fontSize + "px sans-serif";
+      metrics = ctx.measureText(animetAttr);
+
+      if (numModelRuns !== 0 && this.isLayerListShown) {
+        let minHeight;
+        if (numModelRuns === 1) {
+          minHeight = baseFont + animetOffset;
+        } else {
+          const lastMRIndex = modelRuns.findLastIndex((mr) => mr !== "");
+          minHeight = (lastMRIndex + 1) * (baseFont + 8) + animetOffset - 6;
+        }
+        ctx_h = ctx_h >= minHeight ? ctx_h : minHeight;
+        animetPlacement = ctx_h;
+        osmPlacement = ctx_h;
+      } else if (!this.isLayerListShown && numModelRuns === 0) {
+        if (!this.$mapCanvas.mapObj.getLayers().getArray()[0].get("visible")) {
+          ctx_h = 24;
+        }
+        ctx_w = metrics.width + 12;
+      } else if (
+        (numModelRuns === 0 && this.isLayerListShown) ||
+        (numModelRuns !== 0 && !this.isLayerListShown)
+      ) {
+        if (!this.$mapCanvas.mapObj.getLayers().getArray()[0].get("visible")) {
+          ctx_h = 24;
+        }
+      }
       infoCanvas.width = ctx_w;
       infoCanvas.height = ctx_h;
-      ctx.fillStyle = "white";
+      ctx.fillStyle = "rgba(255,255,255,0.65)";
       ctx.fillRect(0, 0, infoCanvas.width, infoCanvas.height);
+      ctx.fillStyle = "black";
       ctx.strokeStyle = "black";
+
+      canvasTxt.drawText(
+        ctx,
+        animetAttr,
+        ctx_w - metrics.width - 0.01 * infoCanvas.width - 4,
+        animetPlacement - animetOffset,
+        widths[1],
+        20
+      );
 
       let hPos = 0;
       fontArray.forEach((timeLayer) => {
@@ -523,7 +741,7 @@ export default {
             ctx,
             timeLayer.title.slice(0, 2),
             0.01 * infoCanvas.width,
-            hPos - 4,
+            hPos - 6,
             widths[0],
             30
           );
@@ -535,139 +753,177 @@ export default {
           ctx,
           timeLayer.title.slice(2),
           0.01 * infoCanvas.width + offsetX,
-          hPos,
+          hPos - 6,
           widths[0],
           30
         );
-        hPos += timeLayer.fontSize + 8;
+        hPos += baseFont + 8;
       });
 
       ctx.strokeStyle = "black";
       ctx.fillStyle = "black";
 
-      if (this.displayReferenceTime) {
+      if (numModelRuns !== 0) {
+        canvasTxt.fontSize = baseFont - 2;
+        ctx.font = canvasTxt.fontSize + "px sans-serif";
+        canvasTxt.align = "left";
+        const allEqualOrEmpty = (arr) => {
+          const nonEmptyArr = arr.filter((v) => v !== "");
+          metrics = ctx.measureText(`Ref${this.$t("Colon")}` + nonEmptyArr[0]);
+          return nonEmptyArr.every((v) => v === nonEmptyArr[0]);
+        };
+        if (!allEqualOrEmpty(modelRuns)) {
+          const numMRs = modelRuns.length;
+          for (let i = 1; i < numMRs; i++) {
+            let textLength = ctx.measureText(
+              `Ref${this.$t("Colon")}` + modelRuns[i]
+            );
+            if (textLength.width > metrics.width) {
+              metrics = textLength;
+            }
+          }
+          let MRPlacement = ctx_w - metrics.width - 0.01 * infoCanvas.width;
+          let side = 1;
+          if (!this.isLayerListShown) {
+            MRPlacement = 0.01 * infoCanvas.width;
+            side = 0;
+          }
+          let hPos = 0;
+          for (let i = 0; i < numMRs; i++) {
+            canvasTxt.drawText(
+              ctx,
+              modelRuns[i] === ""
+                ? ""
+                : `Ref${this.$t("Colon")}` + modelRuns[i],
+              MRPlacement,
+              hPos - 6,
+              widths[side],
+              30
+            );
+            hPos += baseFont + 8;
+          }
+        } else {
+          let MRPlacement = ctx_w - metrics.width - 0.01 * infoCanvas.width;
+          let side = 1;
+          if (!this.isLayerListShown) {
+            MRPlacement = 0.01 * infoCanvas.width;
+            side = 0;
+          }
+          const mrDate =
+            `Ref${this.$t("Colon")}` +
+            modelRuns.filter((mr) => {
+              return mr !== "";
+            })[0];
+          canvasTxt.drawText(ctx, mrDate, MRPlacement, -6, widths[side], 30);
+        }
+      }
+
+      if (this.$mapCanvas.mapObj.getLayers().getArray()[0].get("visible")) {
+        // © OpenStreetMap contributors
+        let OSMAttr = this.$t("AttributionOSM");
         canvasTxt.fontSize = 10;
         canvasTxt.align = "left";
         ctx.font = canvasTxt.fontSize + "px sans-serif";
-        metrics = ctx.measureText(this.modelRunMessage[0]);
-        for (let i = 1; i < this.modelRunMessage.length; i++) {
-          let textLength = ctx.measureText(this.modelRunMessage[i]);
-          if (textLength.width > metrics.width) {
-            metrics = textLength;
-          }
-        }
-
-        let MRPlacement = ctx_w - metrics.width - 0.01 * infoCanvas.width;
-        let side = 1;
-        if (!this.isLayerListShown) {
-          MRPlacement = 0.01 * infoCanvas.width;
-          side = 0;
-        }
-        for (let i = 0; i < this.modelRunMessage.length; i++) {
-          canvasTxt.drawText(
-            ctx,
-            this.modelRunMessage[i],
-            MRPlacement,
-            16 + 12 * i,
-            widths[side],
-            20
-          );
-        }
+        metrics = ctx.measureText(OSMAttr);
+        canvasTxt.drawText(
+          ctx,
+          OSMAttr,
+          ctx_w - metrics.width - 0.01 * infoCanvas.width - 4,
+          osmPlacement - osmOffset,
+          widths[1],
+          20
+        );
       }
-
-      let animetPlacement = ctx_h - 40;
-      let osmPlacement = ctx_h - 20;
-      if (!this.isLayerListShown) {
-        animetPlacement = 0.01 * infoCanvas.height;
-        osmPlacement = 20;
-      }
-
-      let animetAttr = this.$t("MadeWithAniMet");
-      canvasTxt.fontSize = 15;
-      canvasTxt.align = "left";
-      ctx.font = canvasTxt.fontSize + "px sans-serif";
-      metrics = ctx.measureText(animetAttr);
-      canvasTxt.drawText(
-        ctx,
-        animetAttr,
-        ctx_w - metrics.width - 0.01 * infoCanvas.width,
-        animetPlacement,
-        widths[1],
-        20
-      );
-
-      // © OpenStreetMap contributors
-      let OSMAttr = this.$t("AttributionOSM");
-      canvasTxt.fontSize = 10;
-      canvasTxt.align = "left";
-      ctx.font = canvasTxt.fontSize + "px sans-serif";
-      metrics = ctx.measureText(OSMAttr);
-      canvasTxt.drawText(
-        ctx,
-        OSMAttr,
-        ctx_w - metrics.width - 0.01 * infoCanvas.width,
-        osmPlacement,
-        widths[1],
-        20
-      );
 
       return infoCanvas;
     },
-    async updateInfoCanvas(newDate, widths) {
+    setMapHeight() {
+      this.mapHeight = this.getCurrentAspect[this.getCurrentResolution].height;
+    },
+    setMapWidth() {
+      this.mapWidth = this.getCurrentAspect[this.getCurrentResolution].width;
+    },
+    async updateInfoCanvas(newDate) {
       return new Promise((resolve) => {
-        let ctx = this.infoCanvas.getContext("2d");
+        let ctx = this.outputDateCanvas.getContext("2d");
 
-        canvasTxt.fontSize = 14;
-        canvasTxt.align = "left";
-        const dateLabel = this.localeDateFormat(
-          newDate,
-          this.getMapTimeSettings.Step
+        ctx.fillStyle = "rgba(255,255,255,0.65)";
+        ctx.clearRect(
+          0,
+          0,
+          this.outputDateCanvas.width,
+          this.outputDateCanvas.height
         );
-        ctx.font = canvasTxt.fontSize + "px sans-serif";
-        let metrics = ctx.measureText(dateLabel);
-
-        let datePlacement =
-          this.infoCanvas.width - metrics.width - 0.01 * this.infoCanvas.width;
-        let side = 1;
-        if (!this.isLayerListShown) {
-          datePlacement = 0.01 * this.infoCanvas.width;
-          side = 0;
-        }
-
-        ctx.fillStyle = "white";
-        if (side === 1) {
-          ctx.fillRect(
-            this.infoCanvas.width - widths[side],
-            0,
-            widths[side],
-            20
+        ctx.fillRect(
+          0,
+          0,
+          this.outputDateCanvas.width,
+          this.outputDateCanvas.height
+        );
+        if (
+          this.getMapTimeSettings.Step === "P1Y" ||
+          this.getMapTimeSettings.Step === "P1M"
+        ) {
+          const dateLabel = this.localeDateFormat(
+            newDate,
+            this.getMapTimeSettings.Step
+          );
+          ctx.fillStyle = "black";
+          canvasTxt.fontSize = this.getCurrentResolution === "1080p" ? 26 : 22;
+          ctx.font = canvasTxt.fontSize + "px sans-serif";
+          let metricsDate = ctx.measureText(dateLabel);
+          let datePlacement =
+            this.outputDateCanvas.width -
+            metricsDate.width -
+            (this.outputDateCanvas.width - metricsDate.width) / 2;
+          canvasTxt.drawText(
+            ctx,
+            dateLabel,
+            datePlacement,
+            this.getCurrentResolution === "1080p" ? -2 : -3,
+            this.outputDateCanvas.width,
+            30
           );
         } else {
-          ctx.fillRect(datePlacement, 0, widths[side], 20);
-        }
-        ctx.fillStyle = "black";
+          const [dateLabel, timeLabel] = this.localeDateFormatAnimation(
+            newDate,
+            this.getMapTimeSettings.Step
+          );
+          ctx.fillStyle = "black";
+          canvasTxt.fontSize = this.getCurrentResolution === "1080p" ? 16 : 12;
+          ctx.font = canvasTxt.fontSize + "px sans-serif";
+          let metricsDate = ctx.measureText(dateLabel);
+          let datePlacement =
+            this.outputDateCanvas.width -
+            metricsDate.width -
+            (this.outputDateCanvas.width - metricsDate.width) / 2;
+          canvasTxt.drawText(
+            ctx,
+            dateLabel,
+            datePlacement,
+            -10,
+            this.outputDateCanvas.width,
+            40
+          );
 
-        canvasTxt.drawText(
-          ctx,
-          dateLabel,
-          datePlacement,
-          0.01 * this.infoCanvas.height,
-          widths[side],
-          20
-        );
+          canvasTxt.fontSize = this.getCurrentResolution === "1080p" ? 26 : 22;
+          ctx.font = canvasTxt.fontSize + "px sans-serif";
+          let metricsTime = ctx.measureText(timeLabel);
+          let timePlacement =
+            this.outputDateCanvas.width -
+            metricsTime.width -
+            (this.outputDateCanvas.width - metricsTime.width) / 2;
+          canvasTxt.drawText(
+            ctx,
+            timeLabel,
+            timePlacement,
+            this.getCurrentResolution === "1080p" ? 13 : 10,
+            this.outputDateCanvas.width,
+            40
+          );
+        }
         resolve();
       });
-    },
-    evenSize() {
-      let mapDiv = document.getElementById("map");
-      if (mapDiv.offsetHeight % 2 == 1) {
-        const newHeight = mapDiv.offsetHeight - 1;
-        mapDiv.style.height = newHeight + "px";
-      }
-      if (mapDiv.offsetWidth % 2 == 1) {
-        const newWidth = mapDiv.offsetWidth - 1;
-        mapDiv.style.width = newWidth + "px";
-      }
     },
   },
   computed: {
@@ -682,34 +938,25 @@ export default {
     ...mapGetters("Layers", [
       "getActiveLegends",
       "getColorBorder",
+      "getCurrentAspect",
+      "getCurrentResolution",
       "getMapTimeSettings",
       "getTimeFormat",
     ]),
-    displayReferenceTime() {
-      return (
-        this.getMapTimeSettings.Step !== null && this.modelRunMessage !== null
-      );
-    },
-    mapHeight() {
-      return this.map.getSize()[1];
-    },
-    mapWidth() {
-      return this.map.getSize()[0];
-    },
-  },
-  watch: {
-    getTimeFormat() {
-      this.getModelRuns();
-    },
   },
   data() {
     return {
+      animationController: null,
+      layersController: null,
+      mapController: null,
       encoder: null,
       generating: false,
       infoCanvas: null,
       isLayerListShown: true,
+      mapHeight: 0,
+      mapWidth: 0,
       modelRunMessage: null,
-      notifyCancelAnimateResize: false,
+      outputDateCanvas: null,
       outputHeader: null,
       cancelExpired: false,
       appIsProductionEnv: process.env.NODE_ENV,
@@ -717,3 +964,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.animation-progress {
+  overflow: hidden;
+}
+</style>
