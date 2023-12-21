@@ -1,5 +1,21 @@
 # Release Notes
 
+## Version 2.0.0 (2023-12-21)
+
+### New Features
+- Complete redesign and overhaul of the user interface
+- Fully-functional mobile support
+- Addition of wall clock on outputted animations
+- Improved animation generation workflow with support for multiple aspect ratios and resolutions
+
+### Enhancements
+- User time preference (UTC/Local) now persists between sessions
+- Permalink now updates directly in the browser's address bar
+
+### Bug Fixes
+- Fixed issue where playhead would be located outside of temporal bounds
+- Fixed issue where legend resize handle would be misaligned
+
 ## Version 1.3.1 (2023-12-07)
 
 ### Bug Fixes
