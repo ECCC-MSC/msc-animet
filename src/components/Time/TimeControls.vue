@@ -467,7 +467,7 @@ export default {
   border-radius: 20px;
   max-width: 1200px;
 }
-@media (min-width: 1051px) {
+@media (min-width: 1121px) {
   .collapsed {
     pointer-events: auto;
     border-radius: 4px 4px 0 0;
