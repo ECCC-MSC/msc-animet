@@ -37,7 +37,7 @@
           @change="changeDisplayedTime"
         ></v-range-slider>
         <v-slider
-          class="mt-n8"
+          class="mt-n8 play-head"
           :disabled="isAnimating"
           :min="0"
           :max="getMapTimeSettings.Extent.length - 1"
@@ -192,6 +192,9 @@ export default {
 </script>
 
 <style scoped>
+.play-head::v-deep .v-slider__thumb {
+  z-index: 2;
+}
 .range_slider::v-deep .v-slider__thumb:before {
   left: -15px;
   top: -6px;
