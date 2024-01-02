@@ -287,12 +287,16 @@ export default {
       return customFormat;
     },
     localeDateFormat(dateIn, interval = null, format = "DATETIME_FULL") {
+      const locale =
+        this.$countryCode === null
+          ? this.$i18n.locale
+          : `${this.$i18n.locale}-${this.$countryCode}`;
       if (interval === "P1Y") {
         return dateIn.toISOString().split("-")[0];
       } else if (interval === "P1M") {
         return DateTime.fromJSDate(dateIn)
           .toUTC()
-          .setLocale(`${this.$i18n.locale}-${this.$countryCode}`)
+          .setLocale(locale)
           .toLocaleString({ year: "numeric", month: "long" });
       } else {
         const customFormat = this.getCustomDateFormat(format);
@@ -303,20 +307,24 @@ export default {
             return this.capitalize(
               DateTime.fromJSDate(dateIn)
                 .toUTC()
-                .setLocale(`${this.$i18n.locale}-${this.$countryCode}`)
+                .setLocale(locale)
                 .toLocaleString(customFormat) + "Z"
             ).replace(" h ", ":");
           }
         } else if (this.getTimeFormat === true) {
           return this.capitalize(
             DateTime.fromJSDate(dateIn)
-              .setLocale(`${this.$i18n.locale}-${this.$countryCode}`)
+              .setLocale(locale)
               .toLocaleString(customFormat)
           ).replace(" h ", ":");
         }
       }
     },
     localeDateFormatAnimation(dateIn) {
+      const locale =
+        this.$countryCode === null
+          ? this.$i18n.locale
+          : `${this.$i18n.locale}-${this.$countryCode}`;
       const customFormat = this.getCustomDateFormat("DATETIME_FULL");
       let dateFormat = {
         year: customFormat.year,
@@ -338,13 +346,13 @@ export default {
         const date = this.capitalize(
           DateTime.fromJSDate(dateIn)
             .toUTC()
-            .setLocale(`${this.$i18n.locale}-${this.$countryCode}`)
+            .setLocale(locale)
             .toLocaleString(dateFormat)
         );
         const time = this.capitalize(
           DateTime.fromJSDate(dateIn)
             .toUTC()
-            .setLocale(`${this.$i18n.locale}-${this.$countryCode}`)
+            .setLocale(locale)
             .toLocaleString(timeFormat) + "Z"
         ).replace(" h ", ":");
         return [date, time];
@@ -352,12 +360,12 @@ export default {
         dateFormat.weekday = customFormat.weekday;
         const date = this.capitalize(
           DateTime.fromJSDate(dateIn)
-            .setLocale(`${this.$i18n.locale}-${this.$countryCode}`)
+            .setLocale(locale)
             .toLocaleString(dateFormat)
         );
         const time = this.capitalize(
           DateTime.fromJSDate(dateIn)
-            .setLocale(`${this.$i18n.locale}-${this.$countryCode}`)
+            .setLocale(locale)
             .toLocaleString(timeFormat)
         ).replace(" h ", ":");
         return [date, time];

@@ -778,7 +778,7 @@ export default {
           const numMRs = modelRuns.length;
           for (let i = 1; i < numMRs; i++) {
             let textLength = ctx.measureText(
-              `Ref${this.$t("Colon")}` + modelRuns[i]
+              `Ref${this.$t("Colon")} ` + modelRuns[i]
             );
             if (textLength.width > metrics.width) {
               metrics = textLength;
@@ -796,7 +796,7 @@ export default {
               ctx,
               modelRuns[i] === ""
                 ? ""
-                : `Ref${this.$t("Colon")}` + modelRuns[i],
+                : `Ref${this.$t("Colon")} ` + modelRuns[i],
               MRPlacement,
               hPos - 6,
               widths[side],
@@ -812,7 +812,7 @@ export default {
             side = 0;
           }
           const mrDate =
-            `Ref${this.$t("Colon")}` +
+            `Ref${this.$t("Colon")} ` +
             modelRuns.filter((mr) => {
               return mr !== "";
             })[0];
