@@ -12,9 +12,12 @@ Vue.config.productionTip = false;
 
 const ct = require("countries-and-timezones");
 const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-const countryCode = ct.getCountryForTimezone(timeZone).id;
-
-Vue.prototype.$countryCode = countryCode;
+const country = ct.getCountryForTimezone(timeZone);
+if (country === null) {
+  Vue.prototype.$countryCode = null;
+} else {
+  Vue.prototype.$countryCode = country.id;
+}
 
 new Vue({
   router,

@@ -5,7 +5,10 @@
   >
     <div class="controller-padding" v-if="getMapTimeSettings.Step !== null">
       <div v-if="screenWidth >= 565">
-        <v-row class="mr-1 ml-1 pt-2 pb-1 px-0" v-if="!getCollapsedControls">
+        <v-row
+          class="mr-1 ml-1 pt-2 pb-1 px-0"
+          :class="getCollapsedControls ? 'hide-controls' : ''"
+        >
           <time-slider class="enable-events" />
           <interval-locale-selector class="enable-events" />
         </v-row>
@@ -26,11 +29,11 @@
       <v-col class="mr-1 pt-2 pb-2 px-0" v-else>
         <time-slider
           class="enable-events slider"
-          v-if="!getCollapsedControls"
+          :class="getCollapsedControls ? 'hide-controls' : ''"
         />
         <interval-locale-selector
           class="enable-events"
-          v-if="!getCollapsedControls"
+          :class="getCollapsedControls ? 'hide-controls' : ''"
         />
         <v-btn
           class="enable-events"
@@ -447,6 +450,9 @@ export default {
   transform: translateY(-13px);
   width: 100%;
   height: 26px !important;
+}
+.hide-controls {
+  display: none;
 }
 .slider {
   padding-top: 2px;
