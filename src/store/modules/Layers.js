@@ -24,6 +24,7 @@ const state = {
   framesPerSecond: 3,
   fullTimestepsList: [],
   isAnimating: false,
+  isAnimationReversed: false,
   isBasemapVisible: true,
   lang: "en",
   layerTreeItemsEn: Object.keys(wmsSources).map((key) => {
@@ -207,6 +208,9 @@ const mutations = {
   setIsAnimating: (state, newStatus) => {
     state.isAnimating = newStatus;
   },
+  setIsAnimationReversed: (state, isReversed) => {
+    state.isAnimationReversed = isReversed;
+  },
   setIsBasemapVisible: (state, newStatus) => {
     state.isBasemapVisible = newStatus;
   },
@@ -301,6 +305,9 @@ const actions = {
   },
   setIsAnimating({ commit }, payload) {
     commit("setIsAnimating", payload);
+  },
+  setIsAnimationReversed({ commit }, payload) {
+    commit("setIsAnimationReversed", payload);
   },
   setIsBasemapVisible({ commit }, payload) {
     commit("setIsBasemapVisible", payload);

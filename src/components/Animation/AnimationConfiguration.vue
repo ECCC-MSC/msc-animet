@@ -11,6 +11,26 @@
         :hint="$t('MP4CreateTitleHint')"
         :label="$t('MP4CreateCustomTitle')"
       ></v-text-field>
+
+      <v-col class="d-flex align-center">
+        <v-switch
+          class="dark-base-switch"
+          :disabled="isAnimating"
+          v-model="darkModeToggle"
+          hide-details
+          :label="$t('DarkBasemapSwitch')"
+          @change="toggleDarkMode"
+        >
+        </v-switch>
+        <v-switch
+          class="reverse-switch"
+          :disabled="isAnimating"
+          v-model="animationReversed"
+          hide-details
+          :label="$t('Reverse')"
+        >
+        </v-switch>
+      </v-col>
       <v-row class="mt-0 mb-2 mx-0 align-center">
         <v-select
           hide-details
@@ -41,15 +61,6 @@
             </v-tooltip>
           </template>
         </v-text-field>
-        <v-switch
-          class="dark-base-switch ma-0 ml-2 pa-0"
-          :disabled="isAnimating"
-          v-model="darkModeToggle"
-          hide-details
-          :label="$t('DarkBasemapSwitch')"
-          @change="toggleDarkMode"
-        >
-        </v-switch>
       </v-row>
     </v-col>
     <v-col class="options-bottom">
@@ -252,7 +263,7 @@ export default {
       "getMapTimeSettings",
       "getMP4URL",
     ]),
-    ...mapState("Layers", ["isAnimating"]),
+    ...mapState("Layers", ["isAnimating", "isAnimationReversed"]),
     aspectRatio: {
       get() {
         return this.getCurrentAspect.name;
@@ -287,6 +298,14 @@ export default {
         } else {
           this.$store.commit("Layers/setFramesPerSecond", parseInt(fps));
         }
+      },
+    },
+    animationReversed: {
+      get() {
+        return this.isAnimationReversed;
+      },
+      set(isReversed) {
+        this.$store.dispatch("Layers/setIsAnimationReversed", isReversed);
       },
     },
     layersLength() {
@@ -327,13 +346,15 @@ export default {
 </script>
 
 <style scoped>
+.dark-base-switch {
+  min-width: 120px;
+  margin: -12px 10px -8px -16px;
+  padding: 0;
+}
 .fps-selector {
   margin-top: -2px;
   width: 38px;
   flex: 0 1 auto;
-}
-.dark-base-switch {
-  min-width: 152px;
 }
 .options {
   margin: auto;
@@ -348,6 +369,11 @@ export default {
 .res-width {
   max-width: 110px;
   padding-right: 12px;
+}
+.reverse-switch {
+  min-width: 180px;
+  margin: -12px -12px -8px -20px;
+  padding: 0;
 }
 .scroll {
   overflow-x: hidden;

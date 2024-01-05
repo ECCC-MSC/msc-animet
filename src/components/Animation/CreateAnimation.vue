@@ -1,23 +1,15 @@
 <template>
   <div>
-    <v-tooltip top color="warning" :disabled="getMapTimeSettings.Step !== null">
-      <template v-slot:activator="{ on }">
-        <span v-on="on"
-          ><!-- span wrap to enable tooltip on disabled btn -->
-          <v-btn
-            v-if="!isAnimating || playState === 'play'"
-            :disabled="getMapTimeSettings.Step === null || playState === 'play'"
-            block
-            color="primary"
-            @click="createMP4"
-            class="text-none"
-          >
-            {{ $t("MP4CreateButtonLabel") }}
-          </v-btn>
-        </span>
-      </template>
-      <span>{{ $t("ErrorNoTimeLayer") }}</span>
-    </v-tooltip>
+    <v-btn
+      v-if="!isAnimating || playState === 'play'"
+      :disabled="getMapTimeSettings.Step === null || playState === 'play'"
+      block
+      color="primary"
+      @click="createMP4"
+      class="text-none"
+    >
+      {{ $t("MP4CreateButtonLabel") }}
+    </v-btn>
     <div v-if="isAnimating && playState !== 'play'" class="animation-progress">
       <v-row>
         <v-col class="d-flex">
@@ -189,10 +181,17 @@ export default {
         this.datetimeRangeSlider[1] - this.datetimeRangeSlider[0] + 1;
       let progressCounter = 1;
       const initialState = this.getMapTimeSettings.DateIndex;
+
+      let startIndex = this.isAnimationReversed
+        ? this.datetimeRangeSlider[1]
+        : this.datetimeRangeSlider[0];
+      let increment = this.isAnimationReversed ? -1 : 1;
       for (
-        let i = this.datetimeRangeSlider[0];
-        i <= this.datetimeRangeSlider[1];
-        i++, progressCounter++
+        let i = startIndex;
+        this.isAnimationReversed
+          ? i >= this.datetimeRangeSlider[0]
+          : i <= this.datetimeRangeSlider[1];
+        i += increment, progressCounter++
       ) {
         if (this.generating === false) {
           break;
@@ -934,6 +933,7 @@ export default {
       "datetimeRangeSlider",
       "framesPerSecond",
       "isAnimating",
+      "isAnimationReversed",
       "MP4ProgressPercent",
       "playState",
     ]),

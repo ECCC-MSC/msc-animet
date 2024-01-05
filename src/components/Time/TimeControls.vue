@@ -152,6 +152,9 @@ export default {
       this.$mapCanvas.mapObj.addLayer(imageLayer);
     },
     async mapControls() {
+      // Prevents a bug that triggers play twice
+      let playStateBuffer = this.playState;
+
       this.cancelExpired = false;
       const driverDate =
         this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex];
@@ -184,7 +187,7 @@ export default {
       }
       if (noChange) {
         this.$mapCanvas.mapObj.updateSize();
-        if (this.playState === "play") {
+        if (playStateBuffer === "play") {
           this.$root.$emit("playAnimation");
         }
         return;
@@ -198,14 +201,14 @@ export default {
           )
       );
       if (this.cancelExpired) {
-        if (this.playState === "play") {
+        if (playStateBuffer === "play") {
           this.$store.commit("Layers/setPlayState", "pause");
           this.$store.commit("Layers/setIsAnimating", false);
           this.$root.$emit("fixTimeExtent");
         } else if (!this.isAnimating) {
           this.$root.$emit("fixTimeExtent");
         }
-      } else if (this.playState === "play") {
+      } else if (playStateBuffer === "play") {
         if (r < 1000) {
           await this.delay(1000 - r);
         }

@@ -286,7 +286,7 @@ export default {
       "getPossibleOverlays",
       "getRGB",
     ]),
-    ...mapState("Layers", ["datetimeRangeSlider"]),
+    ...mapState("Layers", ["datetimeRangeSlider", "isAnimationReversed"]),
     dateIndex() {
       return this.getMapTimeSettings.DateIndex;
     },
@@ -295,8 +295,16 @@ export default {
     dateIndex: {
       deep: true,
       handler(newIndex, oldIndex) {
-        const correctIndex =
-          newIndex - oldIndex === 1 || newIndex === this.datetimeRangeSlider[0];
+        let correctIndex;
+        if (!this.isAnimationReversed) {
+          correctIndex =
+            newIndex - oldIndex === 1 ||
+            newIndex === this.datetimeRangeSlider[0];
+        } else {
+          correctIndex =
+            oldIndex - newIndex === 1 ||
+            newIndex === this.datetimeRangeSlider[1];
+        }
         if (newIndex !== null && correctIndex) {
           this.mapControls();
         }
