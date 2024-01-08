@@ -1,5 +1,12 @@
 # Release Notes
 
+## Version 2.0.1 (2024-01-08)
+
+### Bug Fixes
+- Fixed issue with UTC locale display
+- Fixed issue with playback pausing on minimize
+- Fixed missing space after Ref time
+
 ## Version 2.0.0 (2023-12-21)
 
 ### New Features
