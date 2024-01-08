@@ -15,7 +15,7 @@
         class="rotation-animation"
         :class="{
           'rotated-icon':
-            isAnimationReversed &&
+            playbackReversed &&
             (!(getMapTimeSettings.DateIndex === getDatetimeRangeSlider[0]) ||
               this.loop),
         }"
@@ -46,16 +46,17 @@ export default {
     return {
       locked: false,
       loop: false,
+      playbackReversed: false,
       showMenu: false,
       contextMenuActions: [{ label: this.$t("Reverse"), action: "reverse" }],
     };
   },
   computed: {
     ...mapGetters("Layers", ["getDatetimeRangeSlider", "getMapTimeSettings"]),
-    ...mapState("Layers", ["isAnimating", "isAnimationReversed", "playState"]),
+    ...mapState("Layers", ["isAnimating", "playState"]),
     changeIcon() {
       let replayCondition;
-      if (this.isAnimationReversed) {
+      if (this.playbackReversed) {
         replayCondition =
           this.getMapTimeSettings.DateIndex === this.getDatetimeRangeSlider[0];
       } else {
@@ -74,10 +75,7 @@ export default {
   methods: {
     changeBehavior(action) {
       if (action === "Reverse") {
-        this.$store.dispatch(
-          "Layers/setIsAnimationReversed",
-          !this.isAnimationReversed
-        );
+        this.playbackReversed = !this.playbackReversed;
       } else if (action === "Loop") {
         this.loop = !this.loop;
       }
@@ -88,7 +86,7 @@ export default {
         this.locked = true;
         setTimeout(this.unlock, 1000);
         if (this.playState === "pause") {
-          if (!this.isAnimationReversed) {
+          if (!this.playbackReversed) {
             if (
               this.getMapTimeSettings.DateIndex !==
               this.getDatetimeRangeSlider[1]
@@ -130,7 +128,7 @@ export default {
       }
     },
     play() {
-      if (!this.isAnimationReversed) {
+      if (!this.playbackReversed) {
         if (
           this.getMapTimeSettings.DateIndex < this.getDatetimeRangeSlider[1]
         ) {
