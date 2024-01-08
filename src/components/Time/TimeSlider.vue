@@ -66,8 +66,8 @@ import { mapGetters, mapState } from "vuex";
 
 import datetimeManipulations from "../../mixins/datetimeManipulations";
 
-import ArrowControls from "./ArrowControls.vue";
-import PlayPauseControls from "./PlayPauseControls.vue";
+import ArrowControls from "./AnimationControls/ArrowControls.vue";
+import PlayPauseControls from "./AnimationControls/PlayPauseControls.vue";
 
 export default {
   mixins: [datetimeManipulations],

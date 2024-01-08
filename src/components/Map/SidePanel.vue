@@ -155,7 +155,7 @@ export default {
       } else {
         setTimeout(() => {
           this.menuOpen = true;
-        }, 400);
+        }, 250);
       }
     },
     togglePreview(on) {
@@ -203,7 +203,7 @@ export default {
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: color 0.25s, opacity 0.5s;
+  transition: color 0.25s, opacity 0.45s;
 }
 .fade-enter,
 .fade-leave-to {
@@ -261,10 +261,11 @@ export default {
 .panel_button {
   width: 48px;
   height: 48px;
-  transition: background-color 0.375s, color 0.25s, opacity 0.5s, transform 0.5s;
+  transition: background-color 0.35s, color 0.25s, opacity 0.45s,
+    transform 0.45s;
 }
 .panel_button:before {
-  transition-duration: 0.5s;
+  transition-duration: 0.45s;
 }
 .panel-icon {
   position: absolute;

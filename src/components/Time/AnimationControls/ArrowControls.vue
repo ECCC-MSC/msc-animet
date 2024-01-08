@@ -1,30 +1,22 @@
 <template>
   <div>
-    <v-tooltip bottom>
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn
-          @click="changeDateIndex(getAction().name)"
-          icon
-          medium
-          color="primary"
-          v-bind="attrs"
-          v-on="on"
-          :disabled="
-            getMapTimeSettings.DateIndex ===
-              datetimeRangeSlider[getAction().prevent] || isAnimating
-          "
-        >
-          <v-icon>{{ getAction().icon }}</v-icon>
-        </v-btn>
-      </template>
-      <span>{{ $t(getAction().translation) }}</span>
-    </v-tooltip>
+    <v-btn
+      @click="changeDateIndex(getAction().name)"
+      icon
+      medium
+      color="primary"
+      :disabled="
+        getMapTimeSettings.DateIndex ===
+          datetimeRangeSlider[getAction().prevent] || isAnimating
+      "
+    >
+      <v-icon>{{ getAction().icon }}</v-icon>
+    </v-btn>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import { mapState } from "vuex";
+import { mapGetters, mapState } from "vuex";
 
 export default {
   props: {
@@ -43,25 +35,21 @@ export default {
           name: "first",
           icon: "mdi-skip-backward",
           prevent: 0,
-          translation: "MapRewindBackAll",
         },
         {
           name: "previous",
           icon: "mdi-skip-previous",
           prevent: 0,
-          translation: "MapRewindBackOne",
         },
         {
           name: "next",
           icon: "mdi-skip-next",
           prevent: 1,
-          translation: "MapJumpForwardOne",
         },
         {
           name: "last",
           icon: "mdi-skip-forward",
           prevent: 1,
-          translation: "MapJumpForwardAll",
         },
       ],
     };
