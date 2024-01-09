@@ -28,6 +28,7 @@ export default {
         this.$i18n.locale = "en";
         this.$vuetify.current = "en";
       }
+      localStorage.setItem("user-lang", this.$i18n.locale);
       this.$root.$emit("localeChange");
     },
   },
