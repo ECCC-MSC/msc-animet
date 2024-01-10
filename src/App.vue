@@ -8,12 +8,23 @@
 export default {
   name: "App",
   created() {
-    const locale = navigator.language.split("-")[0];
-    const lang = locale === "fr" ? "fr" : "en";
+    const userLangChoice = this.getLang();
+    let lang = "en";
+    if (userLangChoice !== null) {
+      lang = userLangChoice;
+    } else {
+      const locale = navigator.language.split("-")[0];
+      lang = locale === "fr" ? "fr" : "en";
+    }
     this.$store.dispatch("Layers/setLang", lang);
     this.$i18n.locale = lang;
     this.$vuetify.current = lang;
     document.title = "MSC AniMet";
+  },
+  methods: {
+    getLang() {
+      return localStorage.getItem("user-lang");
+    },
   },
 };
 </script>
