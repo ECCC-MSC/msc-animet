@@ -416,7 +416,7 @@ export default {
       );
 
       if (!allExist) {
-        setTimeout(waitForElements, 250);
+        setTimeout(this.waitForElements, 250);
       } else {
         return;
       }

@@ -299,12 +299,15 @@ export default {
     },
     handleCancelExpired() {
       this.cancelExpired = true;
+      this.cancelAnimationCreation();
     },
     restoreState(initialState = null) {
-      this.$store.dispatch(
-        "Layers/setMapTimeIndex",
-        initialState === null ? 0 : initialState
-      );
+      if (initialState === null) {
+        initialState = 0;
+      } else if (initialState > this.datetimeRangeSlider[1]) {
+        initialState = this.datetimeRangeSlider[1];
+      }
+      this.$store.dispatch("Layers/setMapTimeIndex", initialState);
 
       this.$store.dispatch("Layers/setMP4Percent", 0);
       this.$store.dispatch("Layers/setMP4CreateFlag", false);
