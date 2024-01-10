@@ -13,6 +13,7 @@ module.exports = defineConfig({
     });
   },
   configureWebpack: {
+    devtool: "source-map",
     plugins: [new NodePolyfillPlugin()],
     resolve: {
       fallback: {

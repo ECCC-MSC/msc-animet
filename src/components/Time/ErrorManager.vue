@@ -183,9 +183,8 @@ export default {
         ) {
           this.$root.$emit("cancelExpired");
           this.expiredTimestepList.push(layer.get("layerTimeStep"));
-          let newExtent = layer
-            .get("layerDateArray")
-            .toSpliced(layer.get("layerDateIndex"), 1);
+          let newExtent = [...layer.get("layerDateArray")];
+          newExtent.splice(layer.get("layerDateIndex"), 1);
           if (newExtent.length === 0) {
             throw new Error("All of the layer's timesteps are broken");
           }
