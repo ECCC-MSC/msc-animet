@@ -213,6 +213,7 @@ export default {
           .un("postrender", this.darkOSMCallback);
         this.$mapCanvas.mapObj.updateSize();
       }
+      this.$mapCanvas.mapObj.renderSync();
       let rgb = [];
       if (this.isMapColored) {
         rgb = [this.rgb.r, this.rgb.g, this.rgb.b];
