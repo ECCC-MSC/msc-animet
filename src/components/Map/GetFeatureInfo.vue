@@ -95,11 +95,15 @@ export default {
     },
     changeGFILang() {
       this.items.forEach((item) => {
-        const value = item.children[0].name.split(":")[1];
-        item.children[0].name = `${this.$t("Value")}${this.$t(
-          "Colon"
-        )}${value}`;
-        item.children[1].name = this.$t("OtherProperties");
+        if (item.children[0].name.includes(":")) {
+          const value = item.children[0].name.split(":")[1];
+          item.children[0].name = `${this.$t("Value")}${this.$t(
+            "Colon"
+          )}${value}`;
+          item.children[1].name = this.$t("OtherProperties");
+        } else {
+          item.children[0].name = this.$t("OtherProperties");
+        }
       });
     },
     async onSingleClick(evt, overlay) {
