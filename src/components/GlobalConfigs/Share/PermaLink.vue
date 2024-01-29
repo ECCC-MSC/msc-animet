@@ -68,6 +68,7 @@ export default {
   },
   computed: {
     ...mapGetters("Layers", [
+      "getActiveLegends",
       "getExtent",
       "getMapTimeSettings",
       "getPermalink",
@@ -100,6 +101,7 @@ export default {
           permalinktemp += "layers=";
           const numLayers = this.$mapLayers.arr.length;
           for (let i = 0; i < numLayers; i++) {
+            let layerName = this.$mapLayers.arr[i].get("layerName");
             let layerOpacity = this.$mapLayers.arr[i].get("opacity").toString();
             let isSnapped =
               this.$mapLayers.arr[i].get("layerName") ===
@@ -117,8 +119,11 @@ export default {
             ) {
               layerStyle = this.$mapLayers.arr[i].get("layerCurrentStyle");
             }
+            let legendDisplayed = this.getActiveLegends.includes(layerName)
+              ? "1"
+              : "0";
             permalinktemp +=
-              this.$mapLayers.arr[i].get("layerName") +
+              layerName +
               ";" +
               layerOpacity +
               ";" +
@@ -126,7 +131,9 @@ export default {
               ";" +
               isVisible +
               ";" +
-              layerStyle;
+              layerStyle +
+              ";" +
+              legendDisplayed;
 
             if (i < this.$mapLayers.arr.length - 1) {
               permalinktemp += ",";
@@ -161,7 +168,9 @@ export default {
             this.$router.history.current.fullPath.split("?")[1]
           ) !== permalinktemp.split("?")[1]
         ) {
-          this.$router.replace({ path: "?" + permalinktemp.split("?")[1] });
+          this.$router.replace({
+            path: "?" + permalinktemp.split("?")[1],
+          });
         }
 
         this.$store.dispatch("Layers/setPermalink", permalinktemp);
@@ -177,12 +186,15 @@ export default {
   font-size: 1rem;
   letter-spacing: normal;
 }
+
 .share-icon {
   margin-bottom: 3px;
 }
+
 .share-text {
   margin-left: -8px;
 }
+
 #permaLink {
   pointer-events: auto;
   z-index: 4;

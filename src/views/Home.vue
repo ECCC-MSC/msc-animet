@@ -56,7 +56,8 @@ export default {
       opacity,
       isSnapped,
       isVisible,
-      style
+      style,
+      legendDisplayed
     ) {
       var baseURL;
       const sourceContainingLayerName = this.findKeyInLocaleFiles(layerName);
@@ -80,6 +81,9 @@ export default {
       layer.visible = isVisible === "0" ? false : true;
       if (style !== "0") {
         layer.currentStyle = style;
+      }
+      if (legendDisplayed !== undefined) {
+        layer.legendDisplayed = legendDisplayed;
       }
       this.$root.$emit("permaLinkLayer", layer);
     },

@@ -353,8 +353,14 @@ export default {
       imageLayer.getSource().updateParams({
         STYLES: imageLayer.get("layerCurrentStyle"),
       });
-
-      if (
+      if (Object.hasOwn(layerData, "legendDisplayed")) {
+        if (layerData.legendDisplayed === "1") {
+          this.$store.dispatch(
+            "Layers/addActiveLegend",
+            imageLayer.get("layerName")
+          );
+        }
+      } else if (
         this.getActiveLegends.length === 0 &&
         imageLayer.get("layerStyles").length !== 0
       ) {

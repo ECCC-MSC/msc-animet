@@ -128,6 +128,7 @@ export default {
       } else {
         this.$store.dispatch("Layers/removeActiveLegend", name);
       }
+      this.$root.$emit("updatePermalink");
     },
   },
 };
@@ -138,11 +139,13 @@ export default {
   min-width: 400px;
   max-width: 600px;
 }
+
 @media (max-width: 400px) {
   .selector-menu {
     min-width: 0;
   }
 }
+
 #legendMapSelector {
   pointer-events: auto;
   z-index: 4;
