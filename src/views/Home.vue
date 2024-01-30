@@ -16,7 +16,7 @@ import localeData from "../locales/importLocaleFiles";
 
 export default {
   name: "Home",
-  props: ["layers", "extent", "width", "height", "color"],
+  props: ["layers", "extent", "color", "basemap", "hide"],
   async mounted() {
     if (this.layers !== undefined) {
       const layersPassed = this.layers.split(",");
@@ -46,6 +46,28 @@ export default {
           ]);
           this.$root.$emit("permalinkColor", true);
         }
+      }
+    }
+    if (this.hide !== undefined) {
+      const componentsToHide = this.hide.split(",");
+      if (componentsToHide.includes("all")) {
+        const objectsToHide = {
+          title: true,
+          topMenus: true,
+          timeControls: true,
+          sidePanel: true,
+          zoom: true,
+        };
+        this.$store.dispatch("Layers/setHidden", objectsToHide);
+      } else {
+        const objectsToHide = {
+          title: componentsToHide.includes("title"),
+          topMenus: componentsToHide.includes("top"),
+          timeControls: componentsToHide.includes("time"),
+          sidePanel: componentsToHide.includes("side"),
+          zoom: componentsToHide.includes("zoom"),
+        };
+        this.$store.dispatch("Layers/setHidden", objectsToHide);
       }
     }
   },

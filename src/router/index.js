@@ -16,6 +16,7 @@ const router = new Router({
         extent: route.query.extent,
         color: route.query.color,
         basemap: route.query.basemap,
+        hide: route.query.hide,
       }),
     },
   ],

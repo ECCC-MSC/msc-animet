@@ -23,6 +23,13 @@ const state = {
   extent: null,
   framesPerSecond: 3,
   fullTimestepsList: [],
+  hidden: {
+    title: false,
+    topMenus: false,
+    timeControls: false,
+    sidePanel: false,
+    zoom: false,
+  },
   isAnimating: false,
   isAnimationReversed: false,
   isBasemapVisible: true,
@@ -116,6 +123,9 @@ const getters = {
   getGeoMetWmsSources: (state) => {
     return state.wmsSources;
   },
+  getHidden: (state) => {
+    return state.hidden;
+  },
   getMapTimeSettings: (state) => {
     return state.mapTimeSettings;
   },
@@ -204,6 +214,9 @@ const mutations = {
   },
   setFramesPerSecond: (state, fps) => {
     state.framesPerSecond = fps;
+  },
+  setHidden: (state, hiddenComponents) => {
+    state.hidden = hiddenComponents;
   },
   setIsAnimating: (state, newStatus) => {
     state.isAnimating = newStatus;
@@ -302,6 +315,9 @@ const actions = {
   },
   setExtent({ commit }, payload) {
     commit("setExtent", payload);
+  },
+  setHidden({ commit }, payload) {
+    commit("setHidden", payload);
   },
   setIsAnimating({ commit }, payload) {
     commit("setIsAnimating", payload);
