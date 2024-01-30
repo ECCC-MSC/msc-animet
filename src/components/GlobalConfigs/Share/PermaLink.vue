@@ -163,6 +163,10 @@ export default {
           permalinktemp += `&color=${rgb}`;
         }
 
+        if (Object.hasOwn(this.$router.history.current.query, "hide")) {
+          permalinktemp += `&hide=${this.$router.history.current.query.hide}`;
+        }
+
         if (
           decodeURIComponent(
             this.$router.history.current.fullPath.split("?")[1]
