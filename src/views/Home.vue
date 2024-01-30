@@ -52,6 +52,7 @@ export default {
       const componentsToHide = this.hide.split(",");
       if (componentsToHide.includes("all")) {
         const objectsToHide = {
+          info: true,
           title: true,
           topMenus: true,
           timeControls: true,
@@ -61,6 +62,9 @@ export default {
         this.$store.dispatch("Layers/setHidden", objectsToHide);
       } else {
         const objectsToHide = {
+          info:
+            componentsToHide.includes("info") ||
+            componentsToHide.includes("time"),
           title: componentsToHide.includes("title"),
           topMenus: componentsToHide.includes("top"),
           timeControls: componentsToHide.includes("time"),
