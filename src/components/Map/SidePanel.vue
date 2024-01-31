@@ -1,5 +1,5 @@
 <template>
-  <div id="side_panel" v-show="!getHidden.sidePanel">
+  <div id="side_panel" v-if="!getHidden.sidePanel">
     <v-menu
       eager
       v-model="toggleMenu"

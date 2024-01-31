@@ -27,6 +27,7 @@
             : 'animet-version-open'
           : ''
       "
+      v-show="!getHidden.info"
       >{{ `${$t("MSCAnimet")} ${version}` }}</span
     >
   </div>
@@ -412,20 +413,24 @@ export default {
       };
     },
     waitForElements() {
-      const selectors = [
-        ".ol-scale-line",
-        ".ol-attribution.ol-uncollapsible",
-        ".ol-rotate",
-      ];
-      let allExist = selectors.every(
-        (selector) => document.querySelector(selector) !== null
-      );
+      return new Promise((resolve) => {
+        const selectors = [
+          ".ol-scale-line",
+          ".ol-attribution.ol-uncollapsible",
+          ".ol-rotate",
+        ];
+        let allExist = selectors.every(
+          (selector) => document.querySelector(selector) !== null
+        );
 
-      if (!allExist) {
-        setTimeout(this.waitForElements, 250);
-      } else {
-        return;
-      }
+        if (!allExist) {
+          setTimeout(() => {
+            this.waitForElements().then(resolve);
+          }, 250);
+        } else {
+          resolve();
+        }
+      });
     },
   },
   computed: {
@@ -433,6 +438,7 @@ export default {
     ...mapGetters("Layers", [
       "getActiveLegends",
       "getCollapsedControls",
+      "getHidden",
       "getHoldExtent",
       "getMapTimeSettings",
     ]),
@@ -447,7 +453,8 @@ export default {
     },
   },
   watch: {
-    getCollapsedControls(collapsed) {
+    async getCollapsedControls(collapsed) {
+      await this.waitForElements();
       const scaleLineElement = document.querySelector(".ol-scale-line");
       const attributionElement = document.querySelector(
         ".ol-attribution.ol-uncollapsible"
@@ -469,8 +476,23 @@ export default {
         scaleLineElement.classList.remove("scale-line-collapsed");
       }
     },
-    timeStep(newStep, oldStep) {
-      this.waitForElements();
+    "getHidden.info": {
+      async handler(hideInfos) {
+        if (hideInfos) {
+          await this.waitForElements();
+          const scaleLineElement = document.querySelector(".ol-scale-line");
+          const attributionElement = document.querySelector(
+            ".ol-attribution.ol-uncollapsible"
+          );
+          const rotateElement = document.querySelector(".ol-rotate");
+          scaleLineElement.classList.add("hidden");
+          attributionElement.classList.add("hidden");
+          rotateElement.classList.add("hidden");
+        }
+      },
+    },
+    async timeStep(newStep, oldStep) {
+      await this.waitForElements();
       const scaleLineElement = document.querySelector(".ol-scale-line");
       const attributionElement = document.querySelector(
         ".ol-attribution.ol-uncollapsible"
@@ -537,6 +559,9 @@ export default {
 }
 .ol-scale-line {
   bottom: 18px;
+}
+.hidden {
+  display: none;
 }
 @media (max-width: 1120px) {
   .scale-line-collapsed {

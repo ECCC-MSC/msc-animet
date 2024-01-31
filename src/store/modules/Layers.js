@@ -24,6 +24,7 @@ const state = {
   framesPerSecond: 3,
   fullTimestepsList: [],
   hidden: {
+    info: false,
     title: false,
     topMenus: false,
     timeControls: false,
