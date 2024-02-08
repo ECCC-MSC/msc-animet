@@ -1,5 +1,5 @@
 <template>
-  <div id="side_panel" v-if="!getHidden.sidePanel">
+  <div id="side_panel">
     <v-menu
       eager
       v-model="toggleMenu"
@@ -171,7 +171,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters("Layers", ["getHidden", "getMapTimeSettings"]),
+    ...mapGetters("Layers", ["getMapTimeSettings"]),
     layersLength() {
       return this.$mapLayers.arr.length;
     },

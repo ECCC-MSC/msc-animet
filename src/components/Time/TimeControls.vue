@@ -2,7 +2,6 @@
   <v-card
     id="time-controls"
     :class="getCollapsedControls ? 'time-controls-collapsed' : ''"
-    v-show="!getHidden.timeControls"
   >
     <div class="controller-padding" v-if="getMapTimeSettings.Step !== null">
       <div v-if="screenWidth >= 565">
@@ -411,7 +410,6 @@ export default {
     ...mapGetters("Layers", [
       "getCollapsedControls",
       "getDatetimeRangeSlider",
-      "getHidden",
       "getMapTimeSettings",
     ]),
     ...mapState("Layers", ["isAnimating", "playState"]),

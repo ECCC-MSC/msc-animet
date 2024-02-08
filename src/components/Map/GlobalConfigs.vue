@@ -2,7 +2,7 @@
   <v-container fluid id="global_configs">
     <v-row class="align-center ma-0 justify-space-between">
       <v-col cols="0" lg="4" class="pa-0"></v-col>
-      <v-col cols="12" lg="4" class="pa-0 pt-2" v-show="!getHidden.title">
+      <v-col cols="12" lg="4" class="pa-0 pt-2">
         <animet-logo />
       </v-col>
       <v-col
@@ -11,11 +11,11 @@
         class="d-flex pa-0 pt-2 justify-center align-center"
       >
         <v-spacer v-if="$vuetify.breakpoint.lgAndUp"></v-spacer>
-        <legend-selector class="mr-3" v-show="!getHidden.topMenus" />
-        <map-customization class="mr-3" v-show="!getHidden.topMenus" />
-        <page-theme class="mr-3" v-show="!getHidden.topMenus" />
-        <language-select class="mr-3" v-show="!getHidden.topMenus" />
-        <perma-link class="mr-3" v-show="!getHidden.topMenus" />
+        <legend-selector class="mr-3" />
+        <map-customization class="mr-3" />
+        <page-theme class="mr-3" />
+        <language-select class="mr-3" />
+        <perma-link class="mr-3" />
         <v-tooltip bottom>
           <template v-slot:activator="{ on, attrs }">
             <v-btn
@@ -27,7 +27,6 @@
               v-on="on"
               :href="$t('DocumentationURL')"
               target="_blank"
-              v-show="!getHidden.topMenus"
             >
               <v-icon> mdi-information-outline </v-icon>
             </v-btn>
@@ -47,8 +46,6 @@ import MapCustomization from "../GlobalConfigs/MapCustomization.vue";
 import PageTheme from "../GlobalConfigs/PageTheme.vue";
 import PermaLink from "../GlobalConfigs/Share/PermaLink.vue";
 
-import { mapGetters } from "vuex";
-
 export default {
   components: {
     AnimetLogo,
@@ -57,9 +54,6 @@ export default {
     MapCustomization,
     PageTheme,
     PermaLink,
-  },
-  computed: {
-    ...mapGetters("Layers", ["getHidden"]),
   },
 };
 </script>

@@ -16,7 +16,6 @@
       absolute
       @click="zoomIn"
       :disabled="isAnimating"
-      v-show="!getHidden.zoom"
     >
       <v-icon>mdi-plus</v-icon>
     </v-btn>
@@ -37,7 +36,6 @@
       absolute
       @click="zoomOut"
       :disabled="isAnimating"
-      v-show="!getHidden.zoom"
     >
       <v-icon>mdi-minus</v-icon>
     </v-btn>
@@ -63,11 +61,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters("Layers", [
-      "getCollapsedControls",
-      "getHidden",
-      "getMapTimeSettings",
-    ]),
+    ...mapGetters("Layers", ["getCollapsedControls", "getMapTimeSettings"]),
     ...mapState("Layers", ["isAnimating"]),
   },
 };
