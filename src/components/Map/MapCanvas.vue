@@ -27,7 +27,6 @@
             : 'animet-version-open'
           : ''
       "
-      v-show="!getHidden.info"
       >{{ `${$t("MSCAnimet")} ${version}` }}</span
     >
   </div>
@@ -438,7 +437,6 @@ export default {
     ...mapGetters("Layers", [
       "getActiveLegends",
       "getCollapsedControls",
-      "getHidden",
       "getHoldExtent",
       "getMapTimeSettings",
     ]),
@@ -475,21 +473,6 @@ export default {
         scaleLineElement.classList.add("scale-line-open");
         scaleLineElement.classList.remove("scale-line-collapsed");
       }
-    },
-    "getHidden.info": {
-      async handler(hideInfos) {
-        if (hideInfos) {
-          await this.waitForElements();
-          const scaleLineElement = document.querySelector(".ol-scale-line");
-          const attributionElement = document.querySelector(
-            ".ol-attribution.ol-uncollapsible"
-          );
-          const rotateElement = document.querySelector(".ol-rotate");
-          scaleLineElement.classList.add("hidden");
-          attributionElement.classList.add("hidden");
-          rotateElement.classList.add("hidden");
-        }
-      },
     },
     async timeStep(newStep, oldStep) {
       await this.waitForElements();
@@ -559,9 +542,6 @@ export default {
 }
 .ol-scale-line {
   bottom: 18px;
-}
-.hidden {
-  display: none;
 }
 @media (max-width: 1120px) {
   .scale-line-collapsed {

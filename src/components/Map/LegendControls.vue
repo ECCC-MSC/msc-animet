@@ -1,7 +1,6 @@
 <template>
   <div
     class="resizable draggable-container"
-    :class="{ 'hidden-top': getHidden.title && getHidden.topMenus }"
     ref="draggableContainer"
     @mousedown="dragMouseDown"
     @touchstart="dragMouseDown"
@@ -34,11 +33,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters("Layers", [
-      "getActiveLegends",
-      "getColorBorder",
-      "getHidden",
-    ]),
+    ...mapGetters("Layers", ["getActiveLegends", "getColorBorder"]),
     ...mapState("Layers", ["isAnimating"]),
     getStyle() {
       if (this.getColorBorder) {
@@ -127,10 +122,6 @@ export default {
 </script>
 
 <style scoped>
-.hidden-top {
-  top: 0 !important;
-  left: 0 !important;
-}
 .resizable {
   display: inline-block;
   resize: horizontal;
