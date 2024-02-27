@@ -1,4 +1,10 @@
 export default {
+  proj_climate : [
+  "EPSG:4326",
+  "EPSG:3978",
+  "EPSG:3857",
+  "EPSG:102100"
+],
   tree_fr_climate : [
   {
     "Title": "Anomalies de temp\u00e9rature et pr\u00e9cipitation interpol\u00e9es pour le Canada (CANGRD)",

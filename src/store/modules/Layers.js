@@ -4,8 +4,19 @@ import wmsSources from "../../../scripts/wms_sources_configs.json";
 const state = {
   activeLegendsList: [],
   animationTitle: "",
+  availableCRS: Object.keys(wmsSources).map((key) => {
+    const treeName = "tree_en_" + key.toLowerCase();
+    const projections = "proj_" + key.toLowerCase();
+    return layerTrees[treeName][projections];
+  }),
   collapseControls: false,
   colorBorder: false,
+  crsList: {
+    "EPSG:3857": [-180.0, -85.06, 180.0, 85.06],
+    "EPSG:3978": [-180.0, -80.0, 180.0, 86.46],
+    "EPSG:3995": [-180.0, -70.0, 180.0, 90.0],
+    "EPSG:4326": [-180.0, -90.0, 180.0, 90.0],
+  },
   currentAspect: {
     name: "Widescreen",
     "720p": {
@@ -18,6 +29,7 @@ const state = {
     },
     aspect: "[16:9]",
   },
+  currentCRS: "EPSG:3857",
   currentWmsSource: Object.values(wmsSources)[0]["url"],
   datetimeRangeSlider: [null, null],
   extent: null,
@@ -73,6 +85,7 @@ const state = {
   playState: "pause",
   resolution: "1080p",
   rgb: [],
+  showGraticules: false,
   timeFormat: true,
   uniqueTimestepsList: [],
   wmsSources: wmsSources,
@@ -91,8 +104,14 @@ const getters = {
   getColorBorder: (state) => {
     return state.colorBorder;
   },
+  getCrsList: (state) => {
+    return state.crsList;
+  },
   getCurrentAspect: (state) => {
     return state.currentAspect;
+  },
+  getCurrentCRS: (state) => {
+    return state.currentCRS;
   },
   getCurrentResolution: (state) => {
     return state.resolution;
@@ -105,6 +124,9 @@ const getters = {
   },
   getExtent: (state) => {
     return state.extent;
+  },
+  getAvailableCRS: (state) => {
+    return state.availableCRS;
   },
   getGeoMetTreeItems: (state) => {
     if (state.lang === "en") {
@@ -142,6 +164,9 @@ const getters = {
   },
   getRGB: (state) => {
     return state.rgb;
+  },
+  getShowGraticules: (state) => {
+    return state.showGraticules;
   },
   getTimeFormat: (state) => {
     return state.timeFormat;
@@ -189,6 +214,9 @@ const mutations = {
   },
   setCurrentAspect: (state, res) => {
     state.currentAspect = res;
+  },
+  setCurrentCRS: (state, crs) => {
+    state.currentCRS = crs;
   },
   setCurrentResolution: (state, opt) => {
     state.resolution = opt;
@@ -264,6 +292,9 @@ const mutations = {
   setRGB: (state, newRGB) => {
     state.rgb = newRGB;
   },
+  setShowGraticules: (state, isShown) => {
+    state.showGraticules = isShown;
+  },
   setTimeFormat: (state, newTimeFormat) => {
     state.timeFormat = newTimeFormat;
   },
@@ -296,6 +327,9 @@ const actions = {
   },
   setCurrentAspect({ commit }, payload) {
     commit("setCurrentAspect", payload);
+  },
+  setCurrentCRS({ commit }, payload) {
+    commit("setCurrentCRS", payload);
   },
   setCurrentResolution({ commit }, payload) {
     commit("setCurrentResolution", payload);
@@ -355,6 +389,9 @@ const actions = {
   },
   setRGB({ commit }, payload) {
     commit("setRGB", payload);
+  },
+  setShowGraticules({ commit }, payload) {
+    commit("setShowGraticules", payload);
   },
   setTimeFormat({ commit }, payload) {
     commit("setTimeFormat", payload);

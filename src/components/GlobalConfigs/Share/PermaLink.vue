@@ -69,10 +69,12 @@ export default {
   computed: {
     ...mapGetters("Layers", [
       "getActiveLegends",
+      "getCurrentCRS",
       "getExtent",
       "getMapTimeSettings",
       "getPermalink",
       "getRGB",
+      "getShowGraticules",
     ]),
     ...mapState("Layers", ["isBasemapVisible"]),
   },
@@ -154,6 +156,14 @@ export default {
           } else {
             permalinktemp += extent[j].toFixed() + ",";
           }
+        }
+
+        if (this.getCurrentCRS !== "EPSG:3857") {
+          permalinktemp += `&proj=${this.getCurrentCRS.split(":")[1]}`;
+        }
+
+        if (this.getShowGraticules) {
+          permalinktemp += "&grat=1";
         }
 
         let rgb = this.getRGB;
