@@ -9,7 +9,7 @@
       content-class="white black--text"
       v-model="toggleMenu"
     >
-      <template v-slot:activator="{ on: onMenu, attrs }">
+      <template v-slot:activator="{ on: onMenu }">
         <v-tooltip bottom>
           <template v-slot:activator="{ on: onTooltip }">
             <v-btn
@@ -20,13 +20,7 @@
               elevation="4"
               :disabled="isAnimating"
             >
-              <v-icon>
-                {{
-                  attrs["aria-expanded"] === "true"
-                    ? "mdi-earth-arrow-up"
-                    : "mdi-earth-arrow-down"
-                }}
-              </v-icon>
+              <v-icon> mdi-earth </v-icon>
             </v-btn>
           </template>
           <span>{{ $t("MapCustomizations") }}</span>
