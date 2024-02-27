@@ -54,12 +54,16 @@
               hoverable
               :ref="wmsSource"
               class="treeview pr-0"
+              :disabled="!getAvailableCRS[index].includes(getCurrentCRS)"
             >
               <template v-slot:prepend="{ item }">
                 <v-btn
                   v-if="!item.children"
                   icon
-                  :disabled="isAnimating"
+                  :disabled="
+                    isAnimating ||
+                    !getAvailableCRS[index].includes(getCurrentCRS)
+                  "
                   @click="requestLayerData(item)"
                 >
                   <v-icon color="primary">
@@ -75,7 +79,12 @@
               </template>
               <template v-slot:label="{ item }">
                 <v-container
-                  @click="isAnimating ? null : requestLayerData(item)"
+                  @click="
+                    isAnimating ||
+                    !getAvailableCRS[index].includes(getCurrentCRS)
+                      ? null
+                      : requestLayerData(item)
+                  "
                   class="ma-0 pa-0 tree-item"
                 >
                   <span :title="item.Title">{{ item.Title }}<br /></span>
@@ -165,7 +174,6 @@ export default {
                         {
                             'Name' : string(Name),
                             'Title' : string(Title),
-                            'Abstract' : string(Abstract),
                             'Dimension' : map
                             {
                                 'Dimension_time' : string(Dimension[@name = 'time']),
@@ -191,6 +199,9 @@ export default {
         let source = Object.hasOwn(layer, "wmsSource")
           ? layer.wmsSource
           : this.getCurrentWmsSource;
+        layer.wmsIndex = Object.keys(this.getGeoMetWmsSources).findIndex(
+          (key) => this.getGeoMetWmsSources[key]["url"] === source
+        );
         this.addedLayers.push(layer.Name);
         let layerData = null;
         const api = axios.create({
@@ -218,6 +229,7 @@ export default {
             }
           );
         });
+        console.log(layerData);
         layerData = { ...layerData, ...layer };
         layerData.isTemporal = layerData.Dimension.Dimension_time !== "";
         this.$root.$emit("buildLayer", layerData, source);
@@ -280,10 +292,12 @@ export default {
   computed: {
     ...mapState("Layers", ["isAnimating"]),
     ...mapGetters("Layers", [
+      "getCurrentCRS",
       "getCurrentWmsSource",
       "getGeoMetTreeItems",
       "getGeoMetWmsSources",
       "getPossibleOverlays",
+      "getAvailableCRS",
     ]),
   },
 };

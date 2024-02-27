@@ -85,6 +85,7 @@ export default {
           center: fromLonLat([-90, 55]),
           zoom: 4,
           maxZoom: 12,
+          projection: this.$mapCanvas.mapObj.getView().getProjection(),
         }),
         pixelRatio: 1,
         controls: [],

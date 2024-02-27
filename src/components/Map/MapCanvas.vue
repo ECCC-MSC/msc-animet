@@ -33,8 +33,9 @@
 </template>
 
 <script>
+import { applyTransform } from "ol/extent.js";
 import { Attribution, Control, ScaleLine } from "ol/control";
-import { fromLonLat } from "ol/proj";
+import Graticule from "ol/layer/Graticule.js";
 import ImageWMS from "ol/source/ImageWMS";
 import Map from "ol/Map";
 import "ol/ol.css";
@@ -42,8 +43,10 @@ import OLImage from "ol/layer/Image";
 import OSM from "ol/source/OSM";
 import { Overlay } from "ol";
 import Rotate from "ol/control/Rotate.js";
+import Stroke from "ol/style/Stroke.js";
 import TileLayer from "ol/layer/Tile";
 import View from "ol/View";
+import { get as getProjection, getTransform } from "ol/proj.js";
 
 import { mapGetters, mapState } from "vuex";
 
@@ -86,13 +89,33 @@ export default {
       units: "metric",
     });
 
+    this.graticule = new Graticule({
+      strokeStyle: new Stroke({
+        color: "rgba(0,0,0,0.85)",
+        width: 1.2,
+        lineDash: [0.5, 4],
+      }),
+      showLabels: true,
+      wrapX: true,
+      zIndex: 8000,
+      visible: this.getShowGraticules,
+    });
+
+    const newProjection = getProjection(this.getCurrentCRS);
+    const fromLonLat = getTransform("EPSG:4326", newProjection);
+    const worldExtent = this.getCrsList[this.getCurrentCRS];
+    newProjection.setWorldExtent(worldExtent);
+    const projExtent = applyTransform(worldExtent, fromLonLat, undefined, 8);
+    newProjection.setExtent(projExtent);
+
     this.$mapCanvas.mapObj = new Map({
       target: this.$refs["map"],
-      layers: [this.osm],
+      layers: [this.osm, this.graticule],
       view: new View({
         center: fromLonLat([-90, 55]),
         zoom: 4,
         maxZoom: 12,
+        projection: this.getCurrentCRS,
       }),
       pixelRatio: 1,
       controls: [scaleControl],
@@ -325,6 +348,7 @@ export default {
         layerVisibilityOn: Object.hasOwn(layerData, "visible")
           ? layerData.visible
           : true,
+        layerWmsIndex: layerData.wmsIndex,
         legendColor: this.randomHSVtoRGB(),
       });
 
@@ -437,8 +461,11 @@ export default {
     ...mapGetters("Layers", [
       "getActiveLegends",
       "getCollapsedControls",
+      "getCrsList",
+      "getCurrentCRS",
       "getHoldExtent",
       "getMapTimeSettings",
+      "getShowGraticules",
     ]),
     mapHeight() {
       return this.$mapCanvas.mapObj.getSize()[1];
@@ -472,6 +499,11 @@ export default {
         rotateElement.classList.remove("rotate-collapsed");
         scaleLineElement.classList.add("scale-line-open");
         scaleLineElement.classList.remove("scale-line-collapsed");
+      }
+    },
+    getShowGraticules(isShown) {
+      if (this.graticule !== null) {
+        this.graticule.setVisible(isShown);
       }
     },
     async timeStep(newStep, oldStep) {
@@ -513,6 +545,7 @@ export default {
       h: Math.random(),
       s: 0.95,
       v: 0.75,
+      graticule: null,
       loading: false,
       osm: new TileLayer({ source: new OSM() }),
       rotateArrow: null,

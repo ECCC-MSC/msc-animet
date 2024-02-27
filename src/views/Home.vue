@@ -13,10 +13,36 @@ import MapCanvas from "../components/Map/MapCanvas.vue";
 import { mapGetters } from "vuex";
 
 import localeData from "../locales/importLocaleFiles";
+import proj4 from "proj4";
+import { register } from "ol/proj/proj4";
 
 export default {
   name: "Home",
-  props: ["layers", "extent", "color", "basemap"],
+  props: ["layers", "extent", "color", "basemap", "proj", "grat"],
+  created() {
+    proj4.defs(
+      "EPSG:3978",
+      "+proj=lcc +lat_0=49 +lon_0=-95 +lat_1=49 +lat_2=77 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs"
+    );
+    proj4.defs(
+      "EPSG:3995",
+      "+proj=stere +lat_0=90 +lat_ts=71 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs"
+    );
+    register(proj4);
+
+    if (this.proj !== undefined) {
+      const foundCode = Object.keys(this.getCrsList).find((code) =>
+        code.includes(this.proj)
+      );
+      if (foundCode) {
+        this.$store.dispatch("Layers/setCurrentCRS", foundCode);
+      }
+    }
+
+    if (this.grat === "1") {
+      this.$store.dispatch("Layers/setShowGraticules", true);
+    }
+  },
   async mounted() {
     if (this.layers !== undefined) {
       const layersPassed = this.layers.split(",");
@@ -97,7 +123,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters("Layers", ["getGeoMetWmsSources"]),
+    ...mapGetters("Layers", ["getCrsList", "getGeoMetWmsSources"]),
   },
   components: {
     MapCanvas,

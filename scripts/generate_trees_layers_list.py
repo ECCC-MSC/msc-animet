@@ -1,8 +1,10 @@
 # =================================================================
 #
-# Author: Etienne Pelletier <etienne.pelletier@ec.gc.ca>
+# Authors: Etienne Pelletier <etienne.pelletier@ec.gc.ca>
+#          Philippe Théroux <philippe.theroux@ec.gc.ca>
 #
 # Copyright (c) 2022 Etienne Pelletier
+# Copyright (c) 2023-2024 Philippe Théroux
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation
@@ -29,12 +31,15 @@
 import glob
 import json
 import os
+import requests
+from xml.etree import ElementTree
 
 from owslib.wms import WebMapService
 
 
 TREE_JS_TEMPLATE = """\
 export default {{
+  {} : {},
   {} : {}
 }}\
 """
@@ -52,8 +57,6 @@ def generate_layer_dict(list_layer_metadata):
             "Title": layer_metadata.title,
             "Name": layer_metadata.name,
         }
-        if layer_metadata.abstract:
-            layer_dict["Abstract"] = (layer_metadata.abstract,)
         if layer_metadata.layers:
             layer_dict["isLeaf"] = False
             layer_dict["children"] = generate_layer_dict(
@@ -87,6 +90,30 @@ file_list = trees_files + layers_en_files + layers_fr_files
 for file_path in file_list:
     os.remove(file_path)
 
+# Function to extract CRS values from the first Layer
+def extract_wms_crs(url):
+    # Send a GET request to the URL
+    response = requests.get(url)
+
+    # Parse the XML response
+    root = ElementTree.fromstring(response.content)
+
+    # Define the namespace dictionary
+    ns = {'wms': 'http://www.opengis.net/wms'}
+
+    # Find the first Layer element with the correct namespace prefix
+    first_layer = root.find(".//wms:Layer", ns)
+
+    # If a Layer element is found, find all CRS elements within it
+    if first_layer is not None:
+        crs_elements = first_layer.findall("./wms:CRS", ns)
+        # Extract the text of each CRS element and store them in a list
+        crs_list = [element.text for element in crs_elements]
+    else:
+        crs_list = []
+
+    return crs_list
+
 for name, params in wmsSources.items():
     name = name.lower()
     for lang in langs:
@@ -105,6 +132,9 @@ for name, params in wmsSources.items():
         _, metadata = wms.items()[0]
         top_level_items = findTopLevel(metadata)
 
+        get_capa_url = f"{base_url}&SERVICE=WMS&VERSION={params['version']}&REQUEST=GetCapabilities"
+        crs_values = extract_wms_crs(get_capa_url)
+
         layers = []
         # iterate through top level items and recursively generate children as needed
         for layer_metadata in top_level_items:
@@ -114,6 +144,7 @@ for name, params in wmsSources.items():
         with open(f"../src/assets/trees/tree_{lang}_{name}.js", "w+") as f:
             f.write(
                 TREE_JS_TEMPLATE.format(
+                    f"proj_{name}", json.dumps(crs_values, indent=2),
                     f"tree_{lang}_{name}", json.dumps(layers_sorted, indent=2)
                 )
             )
