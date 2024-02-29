@@ -35,6 +35,7 @@
 <script>
 import { applyTransform } from "ol/extent.js";
 import { Attribution, Control, ScaleLine } from "ol/control";
+import { get as getProjection, getTransform } from "ol/proj.js";
 import Graticule from "ol/layer/Graticule.js";
 import ImageWMS from "ol/source/ImageWMS";
 import Map from "ol/Map";
@@ -46,7 +47,6 @@ import Rotate from "ol/control/Rotate.js";
 import Stroke from "ol/style/Stroke.js";
 import TileLayer from "ol/layer/Tile";
 import View from "ol/View";
-import { get as getProjection, getTransform } from "ol/proj.js";
 
 import { mapGetters, mapState } from "vuex";
 

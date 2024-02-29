@@ -7,11 +7,14 @@ import { mapGetters, mapState } from "vuex";
 
 import datetimeManipulations from "../../mixins/datetimeManipulations";
 
-import { fromLonLat } from "ol/proj";
+import { applyTransform } from "ol/extent.js";
+import { get as getProjection, getTransform } from "ol/proj.js";
+import Graticule from "ol/layer/Graticule.js";
 import ImageWMS from "ol/source/ImageWMS";
 import Map from "ol/Map";
 import OLImage from "ol/layer/Image";
 import OSM from "ol/source/OSM";
+import Stroke from "ol/style/Stroke.js";
 import TileLayer from "ol/layer/Tile";
 import View from "ol/View";
 
@@ -78,14 +81,34 @@ export default {
       document.getElementById("animation-canvas").style.width = `${
         this.getCurrentAspect[this.getCurrentResolution].width
       }px`;
+
+      const graticule = new Graticule({
+        strokeStyle: new Stroke({
+          color: "rgba(0,0,0,0.85)",
+          width: 1.2,
+          lineDash: [0.5, 4],
+        }),
+        showLabels: true,
+        wrapX: true,
+        zIndex: 8000,
+        visible: this.getShowGraticules,
+      });
+
+      const newProjection = getProjection(this.getCurrentCRS);
+      const fromLonLat = getTransform("EPSG:4326", newProjection);
+      const worldExtent = this.getCrsList[this.getCurrentCRS];
+      newProjection.setWorldExtent(worldExtent);
+      const projExtent = applyTransform(worldExtent, fromLonLat, undefined, 8);
+      newProjection.setExtent(projExtent);
+
       this.$animationCanvas.mapObj = new Map({
         target: this.$refs["animation-canvas"],
-        layers: [new TileLayer({ source: new OSM() })],
+        layers: [new TileLayer({ source: new OSM() }), graticule],
         view: new View({
           center: fromLonLat([-90, 55]),
           zoom: 4,
           maxZoom: 12,
-          projection: this.$mapCanvas.mapObj.getView().getProjection(),
+          projection: this.getCurrentCRS,
         }),
         pixelRatio: 1,
         controls: [],
@@ -281,11 +304,14 @@ export default {
   },
   computed: {
     ...mapGetters("Layers", [
+      "getCrsList",
       "getCurrentAspect",
+      "getCurrentCRS",
       "getCurrentResolution",
       "getMapTimeSettings",
       "getPossibleOverlays",
       "getRGB",
+      "getShowGraticules",
     ]),
     ...mapState("Layers", ["datetimeRangeSlider", "isAnimationReversed"]),
     dateIndex() {
