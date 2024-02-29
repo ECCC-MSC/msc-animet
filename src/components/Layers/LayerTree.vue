@@ -229,7 +229,6 @@ export default {
             }
           );
         });
-        console.log(layerData);
         layerData = { ...layerData, ...layer };
         layerData.isTemporal = layerData.Dimension.Dimension_time !== "";
         this.$root.$emit("buildLayer", layerData, source);
