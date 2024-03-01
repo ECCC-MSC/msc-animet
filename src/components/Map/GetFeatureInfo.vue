@@ -21,7 +21,7 @@
             <template v-slot:activator="{ on }">
               <span v-on="on">{{ item.name }}</span>
             </template>
-            <span>{{ item.name }}</span>
+            <span class="dont-break-out">{{ item.name }}</span>
           </v-tooltip>
         </template>
       </v-treeview>
@@ -255,6 +255,19 @@ export default {
   background-color: #333;
   max-width: 500px;
   opacity: 0.95;
+}
+.dont-break-out {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 .ol-popup {
   position: absolute;
