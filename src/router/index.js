@@ -20,7 +20,30 @@ const router = new Router({
         grat: route.query.grat,
       }),
     },
+    {
+      path: "*",
+      name: "NotFound",
+      component: require("@/views/NotFound").default,
+    },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  // Normalize the path by removing multiple slashes
+  const cleanedPath = to.path.replace(/\/\/+/g, "/");
+  const cleanedFullPath = to.fullPath.replace(/\/\/+/g, "/");
+  let newPath;
+  if (cleanedPath === "/") {
+    newPath = cleanedFullPath;
+  } else {
+    newPath = cleanedFullPath.replace(cleanedPath, "");
+  }
+
+  if (cleanedPath !== to.path) {
+    next({ path: newPath, replace: true });
+  } else {
+    next();
+  }
 });
 
 export default router;

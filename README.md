@@ -36,7 +36,9 @@ npm i
 npm run serve
 ```
 
-Server will be located at http://localhost:8080
+Server will be located at http://localhost:8080/msc-animet/
+
+Note: The path will be different if you changed the BASE_URL in the .env file
 
 ## Building for deployment
 
