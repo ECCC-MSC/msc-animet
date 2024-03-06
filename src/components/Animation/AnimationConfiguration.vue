@@ -100,12 +100,10 @@ import ExportAnimation from "../Animation/ExportAnimation.vue";
 
 export default {
   mounted() {
-    window.addEventListener("resize", this.updateScreenSize);
     this.$root.$on("darkBasemapSwitch", this.handleDarkBasemapSwitch);
     this.$root.$on("setAnimationTitle", this.setAnimationTitle);
   },
   beforeDestroy() {
-    window.removeEventListener("resize", this.updateScreenSize);
     this.$root.$off("darkBasemapSwitch", this.handleDarkBasemapSwitch);
     this.$root.$off("setAnimationTitle", this.setAnimationTitle);
   },
@@ -189,7 +187,6 @@ export default {
         },
       },
       resOptions: ["720p", "1080p"],
-      screenWidth: window.innerWidth,
     };
   },
   components: {
@@ -257,9 +254,6 @@ export default {
       }
       this.$store.dispatch("Layers/setRGB", rgb);
       this.$root.$emit("darkModeMapEvent", this.darkModeToggle);
-    },
-    updateScreenSize() {
-      this.screenWidth = window.innerWidth;
     },
   },
   computed: {

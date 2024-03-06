@@ -14,7 +14,7 @@
         />
       </div>
       <time-controls />
-      <v-progress-linear :active="loading" indeterminate id="progressBar" />
+      <v-progress-linear :active="loading > 0" indeterminate id="progressBar" />
     </div>
     <get-feature-info />
     <span
@@ -75,7 +75,7 @@ export default {
     this.$root.$on("goToExtent", this.goToExtentHandler);
     this.$root.$on("buildLayer", this.buildLayer);
     this.$root.$on("loadingStop", () => {
-      this.loading = false;
+      this.loading = 0;
     });
     this.$root.$on("localeChange", () => {
       this.$mapCanvas.mapObj.removeControl(this.rotateArrow);
@@ -249,8 +249,8 @@ export default {
           )
         )
       );
-      if (this.loading) {
-        this.loading = false;
+      if (this.loading !== 0) {
+        this.loading = 0;
       }
       if (removedLayer.get("layerIsTemporal") && layerFound) {
         this.$root.$emit("timeLayerRemoved", removedLayer);
@@ -308,11 +308,11 @@ export default {
         });
 
         special_layer.getSource().on("imageloadstart", () => {
-          this.loading = true;
+          this.loading += 1;
         });
 
         special_layer.getSource().on("imageloadend", () => {
-          this.loading = false;
+          this.loading -= 1;
         });
         this.$mapCanvas.mapObj.addLayer(special_layer);
       }
@@ -362,11 +362,11 @@ export default {
       this.setLayerZIndex(imageLayer);
 
       imageLayer.getSource().on("imageloadstart", () => {
-        this.loading = true;
+        this.loading += 1;
       });
 
       imageLayer.getSource().on("imageloadend", () => {
-        this.loading = false;
+        this.loading -= 1;
       });
 
       imageLayer.getSource().on("imageloaderror", (e) => {
@@ -384,10 +384,7 @@ export default {
             imageLayer.get("layerName")
           );
         }
-      } else if (
-        this.getActiveLegends.length === 0 &&
-        imageLayer.get("layerStyles").length !== 0
-      ) {
+      } else if (imageLayer.get("layerStyles").length !== 0) {
         this.$store.dispatch(
           "Layers/addActiveLegend",
           imageLayer.get("layerName")
@@ -546,7 +543,7 @@ export default {
       s: 0.95,
       v: 0.75,
       graticule: null,
-      loading: false,
+      loading: 0,
       osm: new TileLayer({ source: new OSM() }),
       rotateArrow: null,
       version: version,

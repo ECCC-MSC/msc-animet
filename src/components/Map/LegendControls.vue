@@ -1,12 +1,14 @@
 <template>
   <div
     class="resizable draggable-container"
+    :style="initialPosStyle()"
     ref="draggableContainer"
     @mousedown="dragMouseDown"
     @touchstart="dragMouseDown"
     v-if="getActiveLegends.length !== 0"
   >
     <img
+      :class="getLegendHidden"
       :id="name"
       :name="name"
       :src="getMapLegendURL(name)"
@@ -33,8 +35,20 @@ export default {
     };
   },
   computed: {
-    ...mapGetters("Layers", ["getActiveLegends", "getColorBorder"]),
+    ...mapGetters("Layers", [
+      "getActiveLegends",
+      "getColorBorder",
+      "getLegendIndex",
+    ]),
     ...mapState("Layers", ["isAnimating"]),
+    getLegendHidden() {
+      const getVisible = this.$mapLayers.arr
+        .find((l) => l.get("layerName") === this.name)
+        .get("layerVisibilityOn");
+      return {
+        "legend-hidden": !getVisible,
+      };
+    },
     getStyle() {
       if (this.getColorBorder) {
         return `2px solid ${this.getLegendStyle()}`;
@@ -117,17 +131,36 @@ export default {
       document.ontouchmove = null;
       document.ontouchend = null;
     },
+    initialPosStyle() {
+      const initialX = 8;
+      let initialY;
+      if (window.innerWidth < 1265) {
+        initialY = 100;
+      } else {
+        initialY = 50;
+      }
+      const offset = this.getLegendIndex.getItemInteger(this.name) * 10;
+      return {
+        top: `${initialY + offset}px`,
+        left: `${initialX + offset}px`,
+      };
+    },
   },
 };
 </script>
 
 <style scoped>
+.draggable-container {
+  cursor: move;
+  position: absolute;
+}
+.legend-hidden {
+  display: none;
+}
 .resizable {
   display: inline-block;
   resize: horizontal;
   overflow: auto;
-  top: 50px;
-  left: 0.5em;
   max-width: 100%;
   max-height: 100%;
 }
@@ -136,10 +169,6 @@ export default {
   height: auto;
   object-fit: contain;
   vertical-align: middle;
-}
-.draggable-container {
-  cursor: move;
-  position: absolute;
 }
 @media (max-width: 1265px) {
   .resizable {
