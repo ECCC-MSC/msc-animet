@@ -1,5 +1,5 @@
 <template>
-  <v-menu bottom offset-y>
+  <v-menu eager bottom offset-y class="style-selector">
     <template v-slot:activator="{ on: menu, attrs }">
       <v-tooltip bottom>
         <template v-slot:activator="{ on: tooltip }">
@@ -11,7 +11,6 @@
             icon
             :disabled="isAnimating || item.get('layerStyles').length === 0"
             hide-details
-            class="style-selector"
           >
             <v-icon> mdi-palette </v-icon>
           </v-btn>
