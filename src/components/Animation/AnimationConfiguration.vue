@@ -27,10 +27,16 @@
           :disabled="isAnimating"
           v-model="animationReversed"
           hide-details
-          :label="$t('Reverse')"
+          :label="$t('ReverseAnimation')"
         >
         </v-switch>
       </v-col>
+      <v-switch
+        hide-details
+        class="colored-border-switch"
+        :label="$t('ColorBorder')"
+        v-model="colorBorder"
+      ></v-switch>
       <v-row class="mt-0 mb-2 mx-0 align-center">
         <v-select
           hide-details
@@ -258,6 +264,7 @@ export default {
   },
   computed: {
     ...mapGetters("Layers", [
+      "getColorBorder",
       "getCurrentAspect",
       "getCurrentResolution",
       "getMapTimeSettings",
@@ -270,6 +277,14 @@ export default {
       },
       set(name) {
         this.$store.commit("Layers/setCurrentAspect", this.resDict[name]);
+      },
+    },
+    colorBorder: {
+      get() {
+        return this.getColorBorder;
+      },
+      set(state) {
+        this.$store.dispatch("Layers/setColorBorder", state);
       },
     },
     framesPerSecond: {
@@ -346,6 +361,9 @@ export default {
 </script>
 
 <style scoped>
+.colored-border-switch {
+  margin: 0 0 10px -4px;
+}
 .dark-base-switch {
   min-width: 120px;
   margin: -12px 10px -8px -16px;

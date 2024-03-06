@@ -11,7 +11,6 @@
         class="d-flex pa-0 pt-2 justify-center align-center"
       >
         <v-spacer v-if="$vuetify.breakpoint.lgAndUp"></v-spacer>
-        <legend-selector class="mr-3" />
         <map-customization class="mr-3" />
         <page-theme class="mr-3" />
         <language-select class="mr-3" />
@@ -41,7 +40,6 @@
 <script>
 import AnimetLogo from "../GlobalConfigs/AnimetLogo.vue";
 import LanguageSelect from "../GlobalConfigs/LanguageSelect.vue";
-import LegendSelector from "../GlobalConfigs/LegendSelector.vue";
 import MapCustomization from "../GlobalConfigs/MapCustomization.vue";
 import PageTheme from "../GlobalConfigs/PageTheme.vue";
 import PermaLink from "../GlobalConfigs/Share/PermaLink.vue";
@@ -50,7 +48,6 @@ export default {
   components: {
     AnimetLogo,
     LanguageSelect,
-    LegendSelector,
     MapCustomization,
     PageTheme,
     PermaLink,
