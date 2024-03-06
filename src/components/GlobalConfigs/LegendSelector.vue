@@ -91,7 +91,8 @@ export default {
       return this.$mapLayers.arr
         .slice()
         .filter((l) => l.get("layerStyles").length !== 0)
-        .map((l) => l.get("layerName"));
+        .map((l) => l.get("layerName"))
+        .reverse();
     },
     toggleMenu: {
       get() {
