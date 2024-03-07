@@ -90,17 +90,6 @@ export default {
     VisibilityHandler,
   },
   mixins: [datetimeManipulations],
-  data() {
-    return {
-      screenWidth: window.innerWidth,
-    };
-  },
-  mounted() {
-    window.addEventListener("resize", this.updateScreenSize);
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.updateScreenSize);
-  },
   methods: {
     changeLayerOrder(index) {
       let reverseIndex = this.numLayers - index - 1;
@@ -122,9 +111,6 @@ export default {
       } else {
         return "";
       }
-    },
-    updateScreenSize() {
-      this.screenWidth = window.innerWidth;
     },
   },
   computed: {

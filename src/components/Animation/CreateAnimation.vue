@@ -333,15 +333,21 @@ export default {
       this.$mapCanvas.mapObj.updateSize();
       this.$animationCanvas.mapObj.updateSize();
       const mapCnv = this.getMapCanvas();
-      this.getActiveLegends.forEach((layerName) =>
-        this.addLegend(
-          mapCnv,
-          document.getElementById(layerName),
+      this.getActiveLegends.forEach((layerName) => {
+        if (
           this.$mapLayers.arr
             .find((l) => l.get("layerName") === layerName)
-            .get("legendColor")
-        )
-      );
+            .get("layerVisibilityOn")
+        ) {
+          this.addLegend(
+            mapCnv,
+            document.getElementById(layerName),
+            this.$mapLayers.arr
+              .find((l) => l.get("layerName") === layerName)
+              .get("legendColor")
+          );
+        }
+      });
       await this.updateInfoCanvas(date);
       const composedCnv = await this.stitchCanvases(mapCnv);
       try {

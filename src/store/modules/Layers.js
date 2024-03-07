@@ -1,6 +1,8 @@
 import { default as layerTrees } from "../../assets/trees";
 import wmsSources from "../../../scripts/wms_sources_configs.json";
 
+import IntegerAssigner from "../../mixins/IntegerAssigner.js";
+
 const state = {
   activeLegendsList: [],
   animationTitle: "",
@@ -35,6 +37,7 @@ const state = {
   extent: null,
   framesPerSecond: 3,
   fullTimestepsList: [],
+  legendIndex: new IntegerAssigner(),
   isAnimating: false,
   isAnimationReversed: false,
   isBasemapVisible: true,
@@ -138,6 +141,9 @@ const getters = {
   getGeoMetWmsSources: (state) => {
     return state.wmsSources;
   },
+  getLegendIndex: (state) => {
+    return state.legendIndex;
+  },
   getMapTimeSettings: (state) => {
     return state.mapTimeSettings;
   },
@@ -178,6 +184,7 @@ const getters = {
 
 const mutations = {
   addActiveLegend: (state, legend) => {
+    state.legendIndex.addItem(legend);
     state.activeLegendsList.push(legend);
   },
   addTimestep: (state, timestep) => {
@@ -187,6 +194,7 @@ const mutations = {
     }
   },
   removeActiveLegend: (state, legend) => {
+    state.legendIndex.removeItem(legend);
     state.activeLegendsList = state.activeLegendsList.filter(
       (l) => l !== legend
     );
