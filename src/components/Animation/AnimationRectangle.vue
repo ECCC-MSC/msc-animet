@@ -178,6 +178,11 @@ export default {
           ctx_h,
           mapWidth
         );
+        if (
+          document.getElementById("animation-rect").style.display === "block"
+        ) {
+          this.$root.$emit("checkIntersect");
+        }
       }
     },
     getModelRuns() {
@@ -204,10 +209,7 @@ export default {
       const percentageFooter =
         (footerH / this.getCurrentAspect[this.getCurrentResolution].height) *
         100;
-      const invPercentageFooter =
-        (1 -
-          footerH / this.getCurrentAspect[this.getCurrentResolution].height) *
-        100;
+      const invPercentageFooter = 100.0 - percentageFooter;
       const percentageHeader =
         (headerH / this.getCurrentAspect[this.getCurrentResolution].height) *
         100;
@@ -272,7 +274,7 @@ export default {
   bottom: 0; /* vertical center */
   left: 0;
   right: 0; /* horizontal center */
-  z-index: 0;
+  z-index: 1;
   pointer-events: none !important;
 }
 #animation-rect::before {

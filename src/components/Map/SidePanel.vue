@@ -95,6 +95,11 @@ export default {
     LayerTree,
   },
   mounted() {
+    this.$root.$on("openPanel", () => {
+      if (!this.menuOpen) {
+        this.onMenuToggle();
+      }
+    });
     this.$root.$on("changeTab", () => {
       if (this.tab === 0 && this.$mapLayers.arr.length !== 0) this.tab = 1;
     });
@@ -162,12 +167,16 @@ export default {
       let controlElement = document.getElementById("animation-rect");
       if (on) {
         controlElement.style.display = "block";
+        this.$root.$emit("checkIntersect");
       } else {
         controlElement.style.display = "none";
       }
     },
     updateScreenSize() {
       this.screenWidth = window.innerWidth;
+      if (document.getElementById("animation-rect").style.display === "block") {
+        this.$root.$emit("checkIntersect");
+      }
     },
   },
   computed: {
@@ -282,7 +291,7 @@ export default {
 }
 /* Custom ids */
 #animation-configuration {
-  padding: 10px 10px 6px 10px;
+  padding: 4px 10px 6px 10px;
   width: 390px;
   max-width: 390px;
 }
