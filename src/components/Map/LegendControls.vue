@@ -5,6 +5,7 @@
     ref="draggableContainer"
     @mousedown="dragMouseDown"
     @touchstart="dragMouseDown"
+    @dblclick="$root.$emit('openPanel')"
     v-if="getActiveLegends.length !== 0"
   >
     <img
@@ -24,6 +25,13 @@ import { mapGetters, mapState } from "vuex";
 
 export default {
   props: ["name"],
+  mounted() {
+    this.$root.$on("checkIntersect", this.checkIntersect);
+  },
+  beforeDestroy() {
+    this.$store.dispatch("Layers/removeIntersect", this.name);
+    this.$root.$off("checkIntersect", this.checkIntersect);
+  },
   data() {
     return {
       positions: {
@@ -83,7 +91,19 @@ export default {
         event.preventDefault();
         return;
       }
-      if (event.target.classList.contains("resizable")) return;
+
+      if (event.target.classList.contains("resizable")) {
+        if (
+          document.getElementById("animation-rect").style.display === "block"
+        ) {
+          if (event.type === "touchstart") {
+            document.addEventListener("touchend", this.onResizeEnd);
+          } else {
+            document.addEventListener("mouseup", this.onResizeEnd);
+          }
+        }
+        return;
+      }
       event.preventDefault();
       // get the mouse cursor position at startup:
       if (event.type === "touchstart") {
@@ -130,6 +150,9 @@ export default {
       document.onmousemove = null;
       document.ontouchmove = null;
       document.ontouchend = null;
+      if (document.getElementById("animation-rect").style.display === "block") {
+        this.checkIntersect();
+      }
     },
     initialPosStyle() {
       const initialX = 8;
@@ -144,6 +167,28 @@ export default {
         top: `${initialY + offset}px`,
         left: `${initialX + offset}px`,
       };
+    },
+    onResizeEnd() {
+      document.removeEventListener("mouseup", this.onResizeEnd);
+      this.checkIntersect();
+    },
+    checkIntersect() {
+      const previewDims = document
+        .getElementById("animation-rect")
+        .getBoundingClientRect();
+      const imgDims = document
+        .getElementById(this.name)
+        .getBoundingClientRect();
+      if (
+        imgDims.top < previewDims.top ||
+        imgDims.bottom > previewDims.bottom ||
+        imgDims.left < previewDims.left ||
+        imgDims.right > previewDims.right
+      ) {
+        this.$store.dispatch("Layers/setIntersect", [this.name, true]);
+      } else {
+        this.$store.dispatch("Layers/setIntersect", [this.name, false]);
+      }
     },
   },
 };

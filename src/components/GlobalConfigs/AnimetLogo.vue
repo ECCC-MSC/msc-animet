@@ -74,6 +74,8 @@ export default {
   border-radius: 15px;
   white-space: nowrap;
   pointer-events: auto;
+  position: relative;
+  z-index: 2;
 }
 #eccc_logo_en {
   height: 22px;

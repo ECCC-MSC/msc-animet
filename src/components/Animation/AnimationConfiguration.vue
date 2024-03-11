@@ -1,7 +1,16 @@
 <template>
   <div class="scroll">
-    <v-col class="options">
+    <v-col class="options pt-0">
+      <v-alert
+        v-if="intersectMessage"
+        dense
+        outlined
+        type="warning"
+        class="replace-legends"
+        >{{ $t("ReplaceLegends") }}</v-alert
+      >
       <v-text-field
+        class="title-field"
         v-model="animationTitle"
         counter="250"
         maxlength="250"
@@ -112,6 +121,7 @@ export default {
       animationPreview: false,
       animationTitle: "",
       darkModeToggle: false,
+      intersectMessage: false,
       resDict: {
         Widescreen: {
           name: "Widescreen",
@@ -261,10 +271,19 @@ export default {
       "getColorBorder",
       "getCurrentAspect",
       "getCurrentResolution",
+      "getIntersectMessageDisplayed",
       "getMapTimeSettings",
       "getMP4URL",
     ]),
     ...mapState("Layers", ["isAnimating", "isAnimationReversed"]),
+    animationReversed: {
+      get() {
+        return this.isAnimationReversed;
+      },
+      set(isReversed) {
+        this.$store.dispatch("Layers/setIsAnimationReversed", isReversed);
+      },
+    },
     aspectRatio: {
       get() {
         return this.getCurrentAspect.name;
@@ -279,6 +298,14 @@ export default {
       },
       set(state) {
         this.$store.dispatch("Layers/setColorBorder", state);
+      },
+    },
+    currentResolution: {
+      get() {
+        return this.getCurrentResolution;
+      },
+      set(res) {
+        this.$store.commit("Layers/setCurrentResolution", res);
       },
     },
     framesPerSecond: {
@@ -309,27 +336,11 @@ export default {
         }
       },
     },
-    animationReversed: {
-      get() {
-        return this.isAnimationReversed;
-      },
-      set(isReversed) {
-        this.$store.dispatch("Layers/setIsAnimationReversed", isReversed);
-      },
-    },
     layersLength() {
       return this.$mapLayers.arr.length;
     },
     MP4ExportFlag() {
       return this.getMP4URL !== "null";
-    },
-    currentResolution: {
-      get() {
-        return this.getCurrentResolution;
-      },
-      set(res) {
-        this.$store.commit("Layers/setCurrentResolution", res);
-      },
     },
   },
   watch: {
@@ -344,6 +355,16 @@ export default {
       ) {
         this.$root.$emit("calcFooterPreview");
       }
+    },
+    getIntersectMessageDisplayed: {
+      deep: true,
+      handler(newObj) {
+        if (Object.values(newObj).some((value) => value === true)) {
+          this.intersectMessage = true;
+        } else {
+          this.intersectMessage = false;
+        }
+      },
     },
     layersLength(_, oldValue) {
       if (oldValue !== undefined) {
@@ -375,6 +396,14 @@ export default {
   margin: auto;
   margin-top: -22px;
 }
+.replace-legends {
+  font-size: 10pt;
+  line-height: 1.1;
+  display: block;
+  padding: 4px;
+  margin-bottom: 6px;
+  margin-top: 4px;
+}
 .res-select {
   margin-top: -2px;
 }
@@ -391,6 +420,9 @@ export default {
   overflow-x: hidden;
   overflow-y: auto;
   max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px - 48px);
+}
+.title-field::v-deep .v-label--active {
+  display: none;
 }
 @media (max-width: 1265px) {
   .scroll {

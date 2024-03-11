@@ -1,7 +1,8 @@
 import { default as layerTrees } from "../../assets/trees";
+import Vue from "vue";
 import wmsSources from "../../../scripts/wms_sources_configs.json";
 
-import IntegerAssigner from "../../mixins/IntegerAssigner.js";
+import IntegerAssigner from "../../utils/IntegerAssigner.js";
 
 const state = {
   activeLegendsList: [],
@@ -38,6 +39,7 @@ const state = {
   framesPerSecond: 3,
   fullTimestepsList: [],
   legendIndex: new IntegerAssigner(),
+  intersectDict: {},
   isAnimating: false,
   isAnimationReversed: false,
   isBasemapVisible: true,
@@ -101,6 +103,9 @@ const getters = {
   getAnimationTitle: (state) => {
     return state.animationTitle;
   },
+  getAvailableCRS: (state) => {
+    return state.availableCRS;
+  },
   getCollapsedControls: (state) => {
     return state.collapseControls;
   },
@@ -128,9 +133,6 @@ const getters = {
   getExtent: (state) => {
     return state.extent;
   },
-  getAvailableCRS: (state) => {
-    return state.availableCRS;
-  },
   getGeoMetTreeItems: (state) => {
     if (state.lang === "en") {
       return state.layerTreeItemsEn;
@@ -140,6 +142,9 @@ const getters = {
   },
   getGeoMetWmsSources: (state) => {
     return state.wmsSources;
+  },
+  getIntersectMessageDisplayed: (state) => {
+    return state.intersectDict;
   },
   getLegendIndex: (state) => {
     return state.legendIndex;
@@ -199,6 +204,9 @@ const mutations = {
       (l) => l !== legend
     );
   },
+  removeIntersect: (state, layerName) => {
+    Vue.delete(state.intersectDict, layerName);
+  },
   removeTimestep: (state, timestep) => {
     state.fullTimestepsList.splice(
       state.fullTimestepsList.indexOf(timestep),
@@ -240,6 +248,9 @@ const mutations = {
   },
   setFramesPerSecond: (state, fps) => {
     state.framesPerSecond = fps;
+  },
+  setIntersect: (state, [layerName, intersecting]) => {
+    Vue.set(state.intersectDict, layerName, intersecting);
   },
   setIsAnimating: (state, newStatus) => {
     state.isAnimating = newStatus;
@@ -321,6 +332,9 @@ const actions = {
   removeActiveLegend({ commit }, payload) {
     commit("removeActiveLegend", payload);
   },
+  removeIntersect({ commit }, payload) {
+    commit("removeIntersect", payload);
+  },
   removeTimestep({ commit }, payload) {
     commit("removeTimestep", payload);
   },
@@ -344,6 +358,9 @@ const actions = {
   },
   setExtent({ commit }, payload) {
     commit("setExtent", payload);
+  },
+  setIntersect({ commit }, payload) {
+    commit("setIntersect", payload);
   },
   setIsAnimating({ commit }, payload) {
     commit("setIsAnimating", payload);

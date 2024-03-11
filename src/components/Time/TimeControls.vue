@@ -475,6 +475,7 @@ export default {
   transform: translateX(-50%);
   border-radius: 20px;
   max-width: 1200px;
+  z-index: 2;
 }
 @media (min-width: 1121px) {
   .collapsed {

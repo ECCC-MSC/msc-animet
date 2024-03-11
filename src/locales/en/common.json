@@ -68,6 +68,7 @@
   "Overlays": "Overlays",
   "OverlaysTip": "Overlays add information on top of displayed layers.",
   "Portrait": "Portrait",
+  "ReplaceLegends": "Legends must be placed inside the frame to appear in the output animation.",
   "ResetRotation": "Reset rotation",
   "RevertColor": "Revert to original color",
   "Reverse": "Play in reverse",
