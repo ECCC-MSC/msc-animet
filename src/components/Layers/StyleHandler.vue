@@ -12,7 +12,10 @@
             :disabled="isAnimating || item.get('layerStyles').length === 0"
             hide-details
           >
-            <v-icon> mdi-palette </v-icon>
+            <v-icon v-if="getActiveLegends.includes(item.get('layerName'))">
+              mdi-palette
+            </v-icon>
+            <v-icon v-else> mdi-palette-outline </v-icon>
           </v-btn>
         </template>
         <span>{{ $t("LayerStyle") }}</span>
@@ -32,16 +35,24 @@
         </template>
       </v-checkbox>
       <v-list class="style-list">
-        <v-list-item
-          v-for="(style, styleIndex) in item.get('layerStyles')"
-          :key="styleIndex"
-          @click="changeStyleHandler(item, style.Name)"
-        >
-          <v-list-item-title>
-            {{ style.Name }}
-            <img :src="style.LegendURL" class="d-block image" />
-          </v-list-item-title>
-        </v-list-item>
+        <v-list-item-group v-model="selectedItem" color="primary" mandatory>
+          <v-list-item
+            v-for="(style, styleIndex) in item.get('layerStyles')"
+            class="pa-0"
+            :key="styleIndex"
+            @click="changeStyleHandler(item, style.Name)"
+          >
+            <v-list-item-icon class="ma-0 selected-icon">
+              <v-icon v-if="selectedItem === styleIndex"
+                >mdi-check-circle-outline</v-icon
+              >
+            </v-list-item-icon>
+            <v-list-item-title>
+              {{ style.Name }}
+              <img :src="style.LegendURL" class="d-block image" />
+            </v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
       </v-list>
     </v-container>
   </v-menu>
@@ -55,6 +66,11 @@ export default {
   data() {
     return {
       menuVisible: false,
+      selectedItem: this.item
+        .get("layerStyles")
+        .findIndex(
+          (style) => style.Name === this.item.get("layerCurrentStyle")
+        ),
     };
   },
   methods: {
@@ -105,6 +121,9 @@ export default {
 .image {
   border: 1px solid;
   border-color: #212121;
+}
+.selected-icon {
+  align-self: center;
 }
 .style-list {
   max-height: 300px;
