@@ -6,6 +6,7 @@
     @mousedown="dragMouseDown"
     @touchstart="dragMouseDown"
     @dblclick="$root.$emit('openPanel')"
+    @click="$emit('legend-click', name)"
     v-if="getActiveLegends.length !== 0"
   >
     <img

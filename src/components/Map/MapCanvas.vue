@@ -11,6 +11,7 @@
           v-for="name in getActiveLegends"
           :key="name"
           :name="name"
+          @legend-click="selectImage"
         />
       </div>
       <time-controls />
@@ -84,6 +85,12 @@ export default {
     });
     this.$root.$on("overlayToggle", this.manageOverlay);
     this.$root.$on("removeLayer", this.removeLayerHandler);
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Delete") {
+        this.removeLegend();
+      }
+    });
 
     const scaleControl = new ScaleLine({
       units: "metric",
@@ -206,6 +213,9 @@ export default {
       this.$mapCanvas.mapObj.updateSize();
     }).observe(this.$refs.map);
   },
+  beforeDestroy() {
+    window.removeEventListener("keydown", this.removeLegend);
+  },
   methods: {
     async resizeRefreshExpired() {
       await new Promise((resolve) =>
@@ -256,6 +266,18 @@ export default {
         this.$root.$emit("timeLayerRemoved", removedLayer);
       }
       this.$root.$emit("layerRemoved", removedLayer.get("layerName"));
+    },
+    removeLegend() {
+      if (this.selectedLegendLayerName !== null) {
+        this.$store.dispatch(
+          "Layers/removeActiveLegend",
+          this.selectedLegendLayerName
+        );
+        this.selectedLegendLayerName = null;
+      }
+    },
+    selectImage(layerName) {
+      this.selectedLegendLayerName = layerName;
     },
     setLayerZIndex(layer) {
       if (!Number.isInteger(layer.get("zIndex"))) {
@@ -546,6 +568,7 @@ export default {
       loading: 0,
       osm: new TileLayer({ source: new OSM() }),
       rotateArrow: null,
+      selectedLegendLayerName: null,
       version: version,
     };
   },
