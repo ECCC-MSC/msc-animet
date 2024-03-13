@@ -49,7 +49,7 @@ export default {
       "getColorBorder",
       "getLegendIndex",
     ]),
-    ...mapState("Layers", ["isAnimating"]),
+    ...mapState("Layers", ["isAnimating", "playState"]),
     getLegendHidden() {
       const getVisible = this.$mapLayers.arr
         .find((l) => l.get("layerName") === this.name)
@@ -88,7 +88,7 @@ export default {
         .LegendURL;
     },
     dragMouseDown: function (event) {
-      if (this.isAnimating) {
+      if (this.isAnimating && this.playState !== "play") {
         event.preventDefault();
         return;
       }

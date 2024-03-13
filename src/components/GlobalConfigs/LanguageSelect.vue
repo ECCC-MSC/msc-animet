@@ -6,7 +6,7 @@
       height="34px"
       class="rounded-circle font-weight-bold"
       @click="changeLang"
-      :disabled="isAnimating"
+      :disabled="isAnimating && playState !== 'play'"
     >
       {{ this.getFlagLang }}
     </v-btn>
@@ -33,7 +33,7 @@ export default {
     },
   },
   computed: {
-    ...mapState("Layers", ["isAnimating"]),
+    ...mapState("Layers", ["isAnimating", "playState"]),
     getFlagLang() {
       if (this.$i18n.locale === "fr") {
         return "EN";

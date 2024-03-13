@@ -43,6 +43,7 @@ const state = {
   isAnimating: false,
   isAnimationReversed: false,
   isBasemapVisible: true,
+  isLooping: false,
   lang: "en",
   layerTreeItemsEn: Object.keys(wmsSources).map((key) => {
     const treeName = "tree_en_" + key.toLowerCase();
@@ -261,6 +262,9 @@ const mutations = {
   setIsBasemapVisible: (state, newStatus) => {
     state.isBasemapVisible = newStatus;
   },
+  setIsLooping: (state, looping) => {
+    state.isLooping = looping;
+  },
   setLang: (state, lang) => {
     state.lang = lang;
   },
@@ -370,6 +374,9 @@ const actions = {
   },
   setIsBasemapVisible({ commit }, payload) {
     commit("setIsBasemapVisible", payload);
+  },
+  setIsLooping({ commit }, payload) {
+    commit("setIsLooping", payload);
   },
   setLang({ commit }, payload) {
     commit("setLang", payload);

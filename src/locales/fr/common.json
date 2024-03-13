@@ -41,6 +41,7 @@
   "LayerTree": "Ajouter",
   "Loading": "Chargement...",
   "Loop": "Lecture en boucle",
+  "LoopRetry": "Service non disponible. Nouvelle tentative dans 45 secondes.",
   "MadeWithAniMet": "Créé avec AniMet du SMC",
   "Major_cities": "Villes canadiennes",
   "MapCustomizations": "Personnaliser la carte",

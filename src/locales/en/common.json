@@ -41,6 +41,7 @@
   "LayerTree": "Add",
   "Loading": "Loading...",
   "Loop": "Loop",
+  "LoopRetry": "Service unavailable. Retrying in 45 seconds.",
   "MadeWithAniMet": "Made with MSC AniMet",
   "Major_cities": "Canadian cities",
   "MapCustomizations": "Customize map",

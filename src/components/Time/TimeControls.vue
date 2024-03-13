@@ -202,8 +202,10 @@ export default {
       );
       if (this.cancelExpired) {
         if (playStateBuffer === "play") {
-          this.$store.commit("Layers/setPlayState", "pause");
-          this.$store.commit("Layers/setIsAnimating", false);
+          if (!this.isLooping) {
+            this.$store.commit("Layers/setPlayState", "pause");
+            this.$store.commit("Layers/setIsAnimating", false);
+          }
           this.$root.$emit("fixTimeExtent");
         } else if (!this.isAnimating) {
           this.$root.$emit("fixTimeExtent");
@@ -412,7 +414,7 @@ export default {
       "getDatetimeRangeSlider",
       "getMapTimeSettings",
     ]),
-    ...mapState("Layers", ["isAnimating", "playState"]),
+    ...mapState("Layers", ["isAnimating", "isLooping", "playState"]),
     layerList() {
       return this.$mapLayers.arr.length;
     },

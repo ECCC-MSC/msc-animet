@@ -23,6 +23,7 @@
         :key="action"
         hide-details
         class="px-3 pt-0 pb-2 mt-0"
+        :input-value="action === 'Loop' ? isLooping : false"
         @change="$emit('action-clicked', action)"
       >
         <template v-slot:label>
@@ -43,13 +44,20 @@
 import { mapState } from "vuex";
 
 export default {
+  mounted() {
+    this.$nextTick(() => {
+      if (this.isLooping) {
+        this.$emit("action-clicked", "Loop");
+      }
+    });
+  },
   data() {
     return {
       controllerOptions: ["Reverse", "Loop"],
     };
   },
   computed: {
-    ...mapState("Layers", ["isAnimating"]),
+    ...mapState("Layers", ["isAnimating", "isLooping"]),
   },
 };
 </script>

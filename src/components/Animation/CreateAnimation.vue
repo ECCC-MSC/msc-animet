@@ -79,7 +79,7 @@ export default {
       }
     },
     cancelAnimationFromResize() {
-      if (this.isAnimating) {
+      if (this.isAnimating && this.playState !== "play") {
         this.$root.$emit("cancelAnimationResize");
         this.cancelAnimationCreation();
       }
