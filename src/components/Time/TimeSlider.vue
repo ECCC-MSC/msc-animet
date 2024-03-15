@@ -12,8 +12,8 @@
             getMapTimeSettings.Step,
             dateFormat
           )
-        }}</span
-      >
+        }}
+      </span>
       <div>
         <arrow-controls action="next" class="button_group"></arrow-controls>
         <arrow-controls action="last" class="button_group"></arrow-controls>
