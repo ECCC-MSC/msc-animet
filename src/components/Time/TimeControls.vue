@@ -21,9 +21,20 @@
             $store.commit('Layers/setCollapsedControls', !getCollapsedControls)
           "
         >
-          <v-icon id="collapse-icon" large>
-            {{ getCollapsedControls ? "mdi-chevron-up" : "mdi-chevron-down" }}
-          </v-icon>
+          <v-icon v-if="!getCollapsedControls" large> mdi-chevron-down </v-icon>
+          <span
+            v-else
+            class="text-wrap"
+            :class="getCollapsedControls ? '' : 'hide-controls'"
+          >
+            {{
+              localeDateFormat(
+                getMapTimeSettings.Extent[getMapTimeSettings.DateIndex],
+                getMapTimeSettings.Step,
+                "DATETIME_MED"
+              )
+            }}
+          </span>
         </v-btn>
       </div>
       <v-col class="mr-1 pt-2 pb-2 px-0" v-else>
@@ -43,9 +54,20 @@
             $store.commit('Layers/setCollapsedControls', !getCollapsedControls)
           "
         >
-          <v-icon large>
-            {{ getCollapsedControls ? "mdi-chevron-up" : "mdi-chevron-down" }}
-          </v-icon>
+          <v-icon v-if="!getCollapsedControls" large> mdi-chevron-down </v-icon>
+          <span
+            v-else
+            class="text-wrap"
+            :class="getCollapsedControls ? '' : 'hide-controls'"
+          >
+            {{
+              localeDateFormat(
+                getMapTimeSettings.Extent[getMapTimeSettings.DateIndex],
+                getMapTimeSettings.Step,
+                "DATETIME_FULL"
+              )
+            }}
+          </span>
         </v-btn>
       </v-col>
     </div>
@@ -415,14 +437,14 @@ export default {
       "getMapTimeSettings",
     ]),
     ...mapState("Layers", ["isAnimating", "isLooping", "playState"]),
-    layerList() {
-      return this.$mapLayers.arr.length;
-    },
     dateIndex() {
       return this.getMapTimeSettings.DateIndex;
     },
     extent() {
       return [this.getMapTimeSettings.Extent, this.getMapTimeSettings.Step];
+    },
+    layerList() {
+      return this.$mapLayers.arr.length;
     },
     snappedLayer() {
       return this.getMapTimeSettings.SnappedLayer;
@@ -463,10 +485,14 @@ export default {
   padding-top: 2px;
   padding-bottom: 0;
 }
-#collapse-button::v-deep .v-btn__content {
-  height: 20px;
+.text-wrap {
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: none !important;
+  white-space: nowrap !important;
 }
-#collapse-icon {
+#collapse-button::v-deep .v-btn__content {
   height: 20px;
 }
 #time-controls {
@@ -484,9 +510,9 @@ export default {
     pointer-events: auto;
     border-radius: 4px 4px 0 0;
     box-shadow: none;
-    margin-left: calc(50% - 25px);
+    margin-left: calc(27.5%);
     transform: translateY(10px);
-    width: 30px;
+    width: 45%;
     height: 26px !important;
   }
   .time-controls-collapsed {
