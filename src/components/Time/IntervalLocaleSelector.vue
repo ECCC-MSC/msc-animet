@@ -19,7 +19,7 @@
       </v-select>
       <v-switch
         class="locale-switch"
-        :disabled="isAnimating"
+        :disabled="isAnimating && playState !== 'play'"
         v-model="timeFormat"
         hide-details
         :label="$t('MP4CreateTimeFormat')"
@@ -45,7 +45,7 @@
       </v-select>
       <v-switch
         class="locale-switch"
-        :disabled="isAnimating"
+        :disabled="isAnimating && playState !== 'play'"
         v-model="timeFormat"
         hide-details
         :label="$t('MP4CreateTimeFormat')"
@@ -114,7 +114,7 @@ export default {
       "getTimeFormat",
       "getUniqueTimestepsList",
     ]),
-    ...mapState("Layers", ["isAnimating"]),
+    ...mapState("Layers", ["isAnimating", "playState"]),
     timeFormat: {
       get() {
         return this.getTimeFormat;

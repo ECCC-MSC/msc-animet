@@ -82,6 +82,7 @@ export default {
       notifyCancelAnimateResize: false,
       notifyExtentRebuilt: false,
       notifyWrongFormat: false,
+      timeoutHandles: {},
       xsltTime: `parse-xml($xml)//Layer[not(.//Layer) and Name = 'REPLACE_WITH_LAYERNAME']!map
                       {
                           'Dimension' : map
@@ -97,6 +98,14 @@ export default {
     async checkExpiredOnMapMoveOrResize() {
       if (this.expiredTimestepList.length !== 0) {
         this.fixTimeExtent();
+      }
+    },
+    clearAllTimeouts() {
+      for (var layerName in this.timeoutHandles) {
+        clearTimeout(this.timeoutHandles[layerName]["timeoutId"]);
+        const params = this.timeoutHandles[layerName]["params"];
+        this.errorDispatcher(params[0], params[1]);
+        delete this.timeoutHandles[layerName];
       }
     },
     async fixTimeExtent() {
@@ -117,7 +126,7 @@ export default {
         if (noChangeFlag) {
           this.expiredSnackBarMessage = this.$t("MissingTimesteps");
           this.notifyExtentRebuilt = true;
-          if (this.isAnimating) {
+          if (this.isAnimating && this.playState !== "play") {
             this.$root.$emit("redoAnimation");
             this.$root.$emit("animationCanvasReset");
           } else {
@@ -134,7 +143,7 @@ export default {
             );
             this.expiredSnackBarMessage = this.$t("MissingTimesteps");
             this.notifyExtentRebuilt = true;
-            if (this.isAnimating) {
+            if (this.isAnimating && this.playState !== "play") {
               this.$root.$emit("redoAnimation");
             }
           } else {
@@ -151,7 +160,7 @@ export default {
             } else {
               this.expiredSnackBarMessage = this.$t("MissingTimesteps");
               this.notifyExtentRebuilt = true;
-              if (this.isAnimating) {
+              if (this.isAnimating && this.playState !== "play") {
                 this.$root.$emit("redoAnimation");
               }
             }
@@ -171,6 +180,17 @@ export default {
         const serviceException =
           xmlDoc.getElementsByTagName("ogc:ServiceException")[0] ||
           xmlDoc.getElementsByTagName("ServiceException")[0];
+        // An error like 500 will trigger the catch
+        // undefined means there's actually no error
+        if (serviceException === undefined) {
+          this.errorLayersList.splice(
+            this.errorLayersList.indexOf(layer.get("layerName")),
+            1
+          );
+          this.$mapCanvas.mapObj.updateSize();
+          this.$root.$emit("loadingStop");
+          return;
+        }
         const attrs = serviceException.attributes;
         if (
           "code" in attrs &&
@@ -231,6 +251,25 @@ export default {
           );
         }
       } catch (error) {
+        if (this.playState === "play" && this.isLooping) {
+          const name = layer.get("layerName");
+          const timeoutId = setTimeout(() => {
+            clearTimeout(this.timeoutHandles[name]["timeoutId"]);
+            delete this.timeoutHandles[name];
+            this.errorDispatcher(layer, e);
+          }, 45000);
+          if (name in this.timeoutHandles) {
+            clearTimeout(this.timeoutHandles[name]["timeoutId"]);
+            delete this.timeoutHandles[name];
+          }
+          this.timeoutHandles[name] = {
+            timeoutId: timeoutId,
+            params: [layer, e],
+          };
+          this.expiredSnackBarMessage = this.$t("LoopRetry");
+          this.notifyExtentRebuilt = true;
+          return;
+        }
         this.$root.$emit("cancelExpired");
         this.$root.$emit("removeLayer", layer);
         this.expiredSnackBarMessage = this.$t("BrokenLayer");
@@ -343,9 +382,16 @@ export default {
       );
     },
   },
+  watch: {
+    playState(newState, oldState) {
+      if (newState !== "play" && oldState === "play") {
+        this.clearAllTimeouts();
+      }
+    },
+  },
   computed: {
     ...mapGetters("Layers", ["getDatetimeRangeSlider", "getMapTimeSettings"]),
-    ...mapState("Layers", ["isAnimating"]),
+    ...mapState("Layers", ["isAnimating", "isLooping", "playState"]),
   },
 };
 </script>

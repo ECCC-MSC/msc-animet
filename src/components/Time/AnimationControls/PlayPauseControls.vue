@@ -78,6 +78,7 @@ export default {
         this.playbackReversed = !this.playbackReversed;
       } else if (action === "Loop") {
         this.loop = !this.loop;
+        this.$store.dispatch("Layers/setIsLooping", this.loop);
       }
     },
     playPause() {

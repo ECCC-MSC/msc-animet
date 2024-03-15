@@ -15,7 +15,7 @@
       x-small
       absolute
       @click="zoomIn"
-      :disabled="isAnimating"
+      :disabled="isAnimating && playState !== 'play'"
     >
       <v-icon>mdi-plus</v-icon>
     </v-btn>
@@ -35,7 +35,7 @@
       x-small
       absolute
       @click="zoomOut"
-      :disabled="isAnimating"
+      :disabled="isAnimating && playState !== 'play'"
     >
       <v-icon>mdi-minus</v-icon>
     </v-btn>
@@ -62,7 +62,7 @@ export default {
   },
   computed: {
     ...mapGetters("Layers", ["getCollapsedControls", "getMapTimeSettings"]),
-    ...mapState("Layers", ["isAnimating"]),
+    ...mapState("Layers", ["isAnimating", "playState"]),
   },
 };
 </script>
