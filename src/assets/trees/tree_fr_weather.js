@@ -74,6 +74,18 @@ export default {
         "isLeaf": false,
         "children": [
           {
+            "Title": "AHRDP-Pr\u00e9lim.06 - Quantit\u00e9 de pr\u00e9cipitations (pr\u00e9liminaire) [mm]",
+            "Name": "HRDPA-Prelim_2.5km_Precip-Accum6h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "AHRDP-Pr\u00e9lim.24P - Quantit\u00e9 de pr\u00e9cipitations (pr\u00e9liminaire) - T12Z [mm]",
+            "Name": "HRDPA-Prelim_2.5km_Precip-Accum24h-T12Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "AHRDP.06F - Quantit\u00e9 de pr\u00e9cipitations [mm]",
             "Name": "HRDPA.6F_PR",
             "isLeaf": true,
@@ -120,6 +132,18 @@ export default {
             "Name": "HRDPA.24P_WATERSHED",
             "isLeaf": true,
             "isTemporal": false
+          },
+          {
+            "Title": "AHRDP.06 - Quantit\u00e9 de pr\u00e9cipitations [mm]",
+            "Name": "HRDPA_2.5km_Precip-Accum6h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "AHRDP.24 - Quantit\u00e9 de pr\u00e9cipitations - T06Z [mm]",
+            "Name": "HRDPA_2.5km_Precip-Accum24h-T06Z",
+            "isLeaf": true,
+            "isTemporal": true
           }
         ]
       },
@@ -137,6 +161,18 @@ export default {
           {
             "Title": "ARDP - Quantit\u00e9 de pr\u00e9cipitations sur un intervalle de 24 heures (pr\u00e9liminaire) [mm] [10 km]",
             "Name": "RDPA-Prelim_10km_Precip-Accum24h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "ARDP - Quantit\u00e9 de pr\u00e9cipitations sur un intervalle de 24 heures (pr\u00e9liminaire) - T06Z [mm] [10 km]",
+            "Name": "RDPA-Prelim_10km_Precip-Accum24h-T06Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "ARDP - Quantit\u00e9 de pr\u00e9cipitations sur un intervalle de 24 heures (pr\u00e9liminaire) - T12Z [mm] [10 km]",
+            "Name": "RDPA-Prelim_10km_Precip-Accum24h-T12Z",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -187,6 +223,18 @@ export default {
             "Name": "RDPA_10km_Precip-Accum24h",
             "isLeaf": true,
             "isTemporal": true
+          },
+          {
+            "Title": "ARDP.24F - Quantit\u00e9 de pr\u00e9cipitations sur un intervalle de 24 heures [mm] - T06Z [10 km] (archive)",
+            "Name": "RDPA_10km_Precip-Accum24h-T06Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "ARDP.24F - Quantit\u00e9 de pr\u00e9cipitations sur un intervalle de 24 heures [mm] - T12Z [10 km] (archive)",
+            "Name": "RDPA_10km_Precip-Accum24h-T12Z",
+            "isLeaf": true,
+            "isTemporal": true
           }
         ]
       }
@@ -211,8 +259,8 @@ export default {
     "isLeaf": false,
     "children": [
       {
-        "Title": "Geostationary Operational Environmental Satellite (GOES",
-        "Name": "Geostationary Operational Environmental Satellite (GOES",
+        "Title": "Satellite environnemental op\u00e9rationnel g\u00e9ostationnaire (GOES)",
+        "Name": "Satellite environnemental op\u00e9rationnel g\u00e9ostationnaire (GOES)",
         "isLeaf": false,
         "children": [
           {
@@ -307,6 +355,18 @@ export default {
       {
         "Title": "MetNotes",
         "Name": "METNOTES",
+        "isLeaf": true,
+        "isTemporal": false
+      },
+      {
+        "Title": "Zones standards de pr\u00e9vision marine",
+        "Name": "Marine-Standard-Forecast-Zones",
+        "isLeaf": true,
+        "isTemporal": false
+      },
+      {
+        "Title": "Zones standards de pr\u00e9vision publiques",
+        "Name": "Public-Standard-Forecast-Zones",
         "isLeaf": true,
         "isTemporal": false
       }
@@ -18632,6 +18692,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 150.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.150",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 150.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.150-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "RDPS.PRES - Humidit\u00e9 relative \u00e0 150.0 mb [0-1]",
                 "Name": "RDPS.PRES_HR.150",
                 "isLeaf": true,
@@ -18677,6 +18749,18 @@ export default {
               {
                 "Title": "RDPS.PRES - \u00c9cart du point de ros\u00e9e \u00e0 175.0 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.175",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 175.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.175",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 175.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.175-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -18781,6 +18865,18 @@ export default {
               {
                 "Title": "RDPS.PRES - \u00c9cart du point de ros\u00e9e \u00e0 225.0 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.225",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 225.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.225",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 225.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.225-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -18907,6 +19003,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 275.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.275",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 275.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.275-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "RDPS.PRES - Humidit\u00e9 relative \u00e0 275.0 mb [0-1]",
                 "Name": "RDPS.PRES_HR.275",
                 "isLeaf": true,
@@ -18956,6 +19064,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 300.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.300",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 300.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.300-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "RDPS.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 300.0 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.300",
                 "isLeaf": true,
@@ -18995,6 +19115,18 @@ export default {
               {
                 "Title": "RDPS.PRES - \u00c9cart du point de ros\u00e9e \u00e0 350.0 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.350",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 350.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.350",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 350.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.350-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -19048,6 +19180,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 400.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.400",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 400.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.400-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "RDPS.PRES - Humidit\u00e9 relative \u00e0 400.0 mb [0-1]",
                 "Name": "RDPS.PRES_HR.400",
                 "isLeaf": true,
@@ -19093,6 +19237,18 @@ export default {
               {
                 "Title": "RDPS.PRES - \u00c9cart du point de ros\u00e9e \u00e0 450.0 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.450",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 450.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.450",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 450.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.450-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -19219,6 +19375,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 550.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.550",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 550.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.550-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "RDPS.PRES - Humidit\u00e9 relative \u00e0 550.0 mb [0-1]",
                 "Name": "RDPS.PRES_HR.550",
                 "isLeaf": true,
@@ -19268,6 +19436,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 600.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.600",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 600.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.600-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "RDPS.PRES - Humidit\u00e9 relative \u00e0 600.0 mb [0-1]",
                 "Name": "RDPS.PRES_HR.600",
                 "isLeaf": true,
@@ -19313,6 +19493,18 @@ export default {
               {
                 "Title": "RDPS.PRES - \u00c9cart du point de ros\u00e9e \u00e0 650.0 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.650",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 650.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.650",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 650.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.650-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -19439,6 +19631,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 750.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.750",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 750.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.750-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "RDPS.PRES - Humidit\u00e9 relative \u00e0 750.0 mb [0-1]",
                 "Name": "RDPS.PRES_HR.750",
                 "isLeaf": true,
@@ -19484,6 +19688,18 @@ export default {
               {
                 "Title": "RDPS.PRES - \u00c9cart du point de ros\u00e9e \u00e0 800.0 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.800",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 800.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.800",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 800.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.800-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -19604,6 +19820,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 875.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.875",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 875.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.875-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "RDPS.PRES - Humidit\u00e9 relative \u00e0 875.0 mb [0-1]",
                 "Name": "RDPS.PRES_HR.875",
                 "isLeaf": true,
@@ -19649,6 +19877,18 @@ export default {
               {
                 "Title": "RDPS.PRES - \u00c9cart du point de ros\u00e9e \u00e0 900.0 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.900",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 900.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.900",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 900.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.900-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -19763,6 +20003,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 950.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.950",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 950.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.950-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "RDPS.PRES - Humidit\u00e9 relative \u00e0 950.0 mb [0-1]",
                 "Name": "RDPS.PRES_HR.950",
                 "isLeaf": true,
@@ -19812,6 +20064,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 970.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.970",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 970.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.970-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "RDPS.PRES - Humidit\u00e9 relative \u00e0 970.0 mb [0-1]",
                 "Name": "RDPS.PRES_HR.970",
                 "isLeaf": true,
@@ -19857,6 +20121,18 @@ export default {
               {
                 "Title": "RDPS.PRES - \u00c9cart du point de ros\u00e9e \u00e0 985.0 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.985",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 985.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.985",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 985.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.985-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -19973,6 +20249,18 @@ export default {
               {
                 "Title": "RDPS.PRES - \u00c9cart du point de ros\u00e9e \u00e0 1015.0 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.1015",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 1015.0 mb [gpm]",
+                "Name": "RDPS.PRES_GZ.1015",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Hauteur g\u00e9opotentielle \u00e0 1015.0 mb (contour) [gpm]",
+                "Name": "RDPS.PRES_GZ.1015-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -21430,12 +21718,6 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "REPS.DIAG.12_PRMM.ERGE0.5 - Quantit\u00e9 de pr\u00e9cipitations >= 0.5 mm [probabilit\u00e9 %]",
-                "Name": "REPS.DIAG.12_PRMM.ERGE0.5",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
                 "Title": "REPS.DIAG.12_PRMM.ERGE1 - Quantit\u00e9 de pr\u00e9cipitations >= 1 mm [probabilit\u00e9 %]",
                 "Name": "REPS.DIAG.12_PRMM.ERGE1",
                 "isLeaf": true,
@@ -21504,6 +21786,12 @@ export default {
               {
                 "Title": "REPS.DIAG.12_PRMM.ERGE100 - Quantit\u00e9 de pr\u00e9cipitations >= 100 mm [probabilit\u00e9 %]",
                 "Name": "REPS.DIAG.12_PRMM.ERGE100",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.DIAG.12_PRMM.ERGE150 - Quantit\u00e9 de pr\u00e9cipitations >= 150 mm [probabilit\u00e9 %]",
+                "Name": "REPS.DIAG.12_PRMM.ERGE150",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -33136,6 +33424,96 @@ export default {
           },
           {
             "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 0-2 [%]",
+            "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P00M-P02M",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 1-3 [%]",
+            "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P01M-P03M",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 3-5 [%]",
+            "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P03M-P05M",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 6-8 [%]",
+            "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P06M-P08M",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 9-11 [%]",
+            "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P09M-P11M",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - Mois 0-2 [%]",
+            "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P00M-P02M",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - Mois 1-3 [%]",
+            "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P01M-P03M",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - Mois 3-5 [%]",
+            "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P03M-P05M",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - Mois 6-8 [%]",
+            "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P06M-P08M",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - Mois 9-11 [%]",
+            "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P09M-P11M",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - Mois 0-2 [%]",
+            "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P00M-P02M",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - Mois 1-3 [%]",
+            "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P01M-P03M",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - Mois 3-5 [%]",
+            "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P03M-P05M",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - Mois 6-8 [%]",
+            "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P06M-P08M",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - Mois 9-11 [%]",
+            "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P09M-P11M",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 0-2 [%]",
             "Name": "CanSIPS_100km_PrecipRate-ProbAboveNormal-2m_P00M-P02M",
             "isLeaf": true,
             "isTemporal": false
@@ -35307,6 +35685,12 @@ export default {
           {
             "Title": "HRDPS.CONTINENTAL - \u00c9nergie potentielle convective disponible (contour) [J/kg]",
             "Name": "HRDPS.CONTINENTAL_BE-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Indice de ventilation",
+            "Name": "HRDPS.CONTINENTAL_CVI",
             "isLeaf": true,
             "isTemporal": true
           },
