@@ -34,16 +34,37 @@ export default {
   mounted() {
     this.$root.$on("animationCanvasReset", this.mapControls);
     this.$root.$on("cancelExpired", this.handleCancelExpired);
-    this.$root.$on("redoAnimation", this.resetCounters);
     this.animationCanvasSetup();
   },
   beforeDestroy() {
     this.$root.$off("animationCanvasReset", this.mapControls);
     this.$root.$off("cancelExpired", this.handleCancelExpired);
-    this.$root.$off("redoAnimation", this.resetCounters);
+    this.removeLayersListeners();
     this.$animationCanvas.mapObj = {};
   },
   methods: {
+    addLayersListeners() {
+      this.$mapCanvas.mapObj.getLayers().forEach((layer) => {
+        if (layer instanceof OLImage) {
+          const source = layer.getSource();
+          source.on("imageloadstart", this.incrementLoadingCount);
+          source.on(
+            ["imageloadend", "imageloaderror"],
+            this.incrementLoadedCount
+          );
+        }
+      });
+      this.$animationCanvas.mapObj.getLayers().forEach((layer) => {
+        if (layer instanceof OLImage) {
+          const source = layer.getSource();
+          source.on("imageloadstart", this.incrementLoadingCount);
+          source.on(
+            ["imageloadend", "imageloaderror"],
+            this.incrementLoadedCount
+          );
+        }
+      });
+    },
     addOverlays() {
       for (const [key, values] of Object.entries(this.getPossibleOverlays)) {
         if (values.isShown) {
@@ -130,29 +151,8 @@ export default {
       this.addOverlays();
       if (this.getMapTimeSettings.DateIndex === this.datetimeRangeSlider[0])
         this.mapControls();
-      this.$mapCanvas.mapObj.getLayers().forEach((layer) => {
-        if (layer instanceof OLImage) {
-          layer.getSource().on("imageloadstart", () => {
-            this.loading++;
-          });
 
-          layer.getSource().on("imageloadend", () => {
-            this.loaded++;
-          });
-        }
-      });
-
-      this.$animationCanvas.mapObj.getLayers().forEach((layer) => {
-        if (layer instanceof OLImage) {
-          layer.getSource().on("imageloadstart", () => {
-            this.loading++;
-          });
-
-          layer.getSource().on("imageloadend", () => {
-            this.loaded++;
-          });
-        }
-      });
+      this.addLayersListeners();
       const previewRect = document.getElementById("animation-rect");
       const size = [previewRect.offsetWidth, previewRect.offsetHeight];
       const mapView = this.$mapCanvas.mapObj.getView();
@@ -249,6 +249,12 @@ export default {
     handleCancelExpired() {
       this.cancelExpired = true;
     },
+    incrementLoadedCount() {
+      this.loaded++;
+    },
+    incrementLoadingCount() {
+      this.loading++;
+    },
     async mapControls() {
       this.cancelExpired = false;
       const driverDate =
@@ -256,7 +262,6 @@ export default {
       let visibleTLayers = this.copiedLayers.filter((l) => {
         return l.get("layerVisibilityOn") && l.get("layerIsTemporal");
       });
-      let noChange = true;
       const numVisibleLayers = visibleTLayers.length;
       for (let i = 0; i < numVisibleLayers; i++) {
         let dateArray = visibleTLayers[i].get("layerDateArray");
@@ -270,7 +275,6 @@ export default {
         });
         if (layerDateIndex >= 0) {
           this.setDateTime(visibleTLayers[i], dateArray[layerDateIndex]);
-          noChange = false;
           if (
             visibleTLayers[i].get("layerVisibilityOn") &&
             !visibleTLayers[i].get("visible")
@@ -281,10 +285,6 @@ export default {
           visibleTLayers[i].setVisible(false);
         }
       }
-      if (noChange) {
-        this.$animationCanvas.mapObj.updateSize();
-        return;
-      }
       await new Promise((resolve) =>
         this.$animationCanvas.mapObj.once("rendercomplete", resolve)
       );
@@ -292,9 +292,27 @@ export default {
         this.$root.$emit("fixTimeExtent");
       }
     },
-    resetCounters() {
-      this.loaded = 0;
-      this.loading = 0;
+    removeLayersListeners() {
+      this.$mapCanvas.mapObj.getLayers().forEach((layer) => {
+        if (layer instanceof OLImage) {
+          const source = layer.getSource();
+          source.un("imageloadstart", this.incrementLoadingCount);
+          source.un(
+            ["imageloadend", "imageloaderror"],
+            this.incrementLoadedCount
+          );
+        }
+      });
+      this.$animationCanvas.mapObj.getLayers().forEach((layer) => {
+        if (layer instanceof OLImage) {
+          const source = layer.getSource();
+          source.un("imageloadstart", this.incrementLoadingCount);
+          source.un(
+            ["imageloadend", "imageloaderror"],
+            this.incrementLoadedCount
+          );
+        }
+      });
     },
     async setDateTime(layer, date) {
       layer.getSource().updateParams({

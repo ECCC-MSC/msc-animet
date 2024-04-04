@@ -68,14 +68,17 @@ export default {
     this.$root.$on("notifyWrongFormat", () => {
       this.notifyWrongFormat = true;
     });
+    this.$root.$on("refreshExpired", this.autoRefreshHandler);
   },
   beforeDestroy() {
     this.$root.$off("checkLoadingErrors", this.checkExpiredOnMapMoveOrResize);
     this.$root.$off("fixTimeExtent", this.fixTimeExtent);
     this.$root.$off("loadingError", this.errorDispatcher);
+    this.$root.$off("refreshExpired", this.autoRefreshHandler);
   },
   data() {
     return {
+      blockRefresh: false,
       errorLayersList: [],
       expiredSnackBarMessage: this.$t("MissingTimesteps"),
       expiredTimestepList: [],
@@ -95,6 +98,29 @@ export default {
     };
   },
   methods: {
+    async autoRefreshHandler(layerList) {
+      if (
+        this.isAnimating &&
+        !(this.getDatetimeRangeSlider[0] === this.getDatetimeRangeSlider[1])
+      ) {
+        await new Promise((resolve) =>
+          this.$mapCanvas.mapObj.once("rendercomplete", resolve)
+        );
+      }
+      if (!this.blockRefresh) {
+        layerList.forEach((imageLayer) => {
+          this.errorLayersList.push(imageLayer.get("layerName"));
+        });
+        layerList.forEach((imageLayer) => {
+          this.refreshExpired(imageLayer);
+        });
+      }
+      if (
+        !this.isAnimating ||
+        this.getDatetimeRangeSlider[0] === this.getDatetimeRangeSlider[1]
+      )
+        this.fixTimeExtent();
+    },
     async checkExpiredOnMapMoveOrResize() {
       if (this.expiredTimestepList.length !== 0) {
         this.fixTimeExtent();
@@ -168,8 +194,10 @@ export default {
         }
       }
       this.$root.$emit("loadingStop");
+      this.blockRefresh = false;
     },
     async errorDispatcher(layer, e) {
+      this.blockRefresh = true;
       try {
         this.errorLayersList.push(layer.get("layerName"));
         const response = await axios.get(e.image.src_);
@@ -180,14 +208,11 @@ export default {
         const serviceException =
           xmlDoc.getElementsByTagName("ogc:ServiceException")[0] ||
           xmlDoc.getElementsByTagName("ServiceException")[0];
-        // An error like 500 will trigger the catch
-        // undefined means there's actually no error
+        // An error like 500 will trigger the catch.
+        // "undefined" means there's actually no error.
+        // Call refresh just to update the values and continue.
         if (serviceException === undefined) {
-          this.errorLayersList.splice(
-            this.errorLayersList.indexOf(layer.get("layerName")),
-            1
-          );
-          this.$mapCanvas.mapObj.updateSize();
+          this.refreshExpired(layer);
           this.$root.$emit("loadingStop");
           return;
         }
@@ -252,11 +277,13 @@ export default {
         }
       } catch (error) {
         if (this.playState === "play" && this.isLooping) {
+          this.$root.$emit("cancelCriticalError", true);
           const name = layer.get("layerName");
           const timeoutId = setTimeout(() => {
             clearTimeout(this.timeoutHandles[name]["timeoutId"]);
             delete this.timeoutHandles[name];
             this.errorDispatcher(layer, e);
+            this.$root.$emit("cancelCriticalError", false);
           }, 45000);
           if (name in this.timeoutHandles) {
             clearTimeout(this.timeoutHandles[name]["timeoutId"]);
@@ -312,15 +339,6 @@ export default {
           }
         );
       });
-      const layerActiveConfig = layer.get("layerActiveConfig");
-      let configs = this.createTimeLayerConfigs(
-        layerData.Dimension.Dimension_time
-      );
-      let newLayerIndex = this.findLayerIndex(
-        this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
-        configs[layerActiveConfig].layerDateArray,
-        configs[layerActiveConfig].layerTimeStep
-      );
       let newMRs =
         layerData.Dimension.Dimension_ref_time === ""
           ? null
@@ -336,12 +354,26 @@ export default {
           }
         }
       }
+      const layerActiveConfig = layer.get("layerActiveConfig");
+      let configs;
+      if (
+        layer.getSource().getParams().DIM_REFERENCE_TIME === undefined ||
+        !sameMR
+      ) {
+        configs = this.createTimeLayerConfigs(
+          layerData.Dimension.Dimension_time
+        );
+      } else {
+        configs = layer.get("layerConfigs");
+      }
+      let newLayerIndex = this.findLayerIndex(
+        this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
+        configs[layerActiveConfig].layerDateArray,
+        configs[layerActiveConfig].layerTimeStep
+      );
       if (!sameMR) {
         layer.getSource().updateParams({
-          DIM_REFERENCE_TIME: this.getProperDateString(
-            newMRs[newMRs.length - 1],
-            layer.get("layerDateFormat")
-          ),
+          DIM_REFERENCE_TIME: undefined,
         });
         if (newLayerIndex < 0) {
           layer.getSource().updateParams({
@@ -351,27 +383,26 @@ export default {
             ),
           });
         }
-      } else if (newLayerIndex >= 0 && sameMR) {
-        // If you find the time that failed again inside the time list,
-        // it means the getCapa is wrong. Manually remove the faulty
-        // timesteps until the index is no longer found.
-        do {
-          configs[layerActiveConfig].layerDateArray.splice(newLayerIndex, 1);
-          newLayerIndex = this.findLayerIndex(
-            this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
-            configs[layerActiveConfig].layerDateArray,
-            configs[layerActiveConfig].layerTimeStep
-          );
-        } while (newLayerIndex >= 0);
+      }
+      let layerMR;
+      if (
+        (layer.getSource().getParams().DIM_REFERENCE_TIME === undefined ||
+          !sameMR) &&
+        currentMR !== null
+      ) {
+        layerMR = newMRs[newMRs.length - 1];
+      } else {
+        layerMR = layer.get("layerCurrentMR");
       }
       layer.setProperties({
+        layerConfigs: configs,
         layerDateArray: configs[layerActiveConfig].layerDateArray,
         layerDateIndex: newLayerIndex,
         layerDefaultTime: new Date(layerData.Dimension.Dimension_time_default),
+        layerDimensionRefTime: layerData.Dimension.Dimension_ref_time,
+        layerDimensionTime: layerData.Dimension.Dimension_time,
         layerModelRuns: newMRs,
-        layerCurrentMR: sameMR
-          ? layer.get("layerCurrentMR")
-          : newMRs[newMRs.length - 1],
+        layerCurrentMR: layerMR,
         layerStartTime: new Date(configs[layerActiveConfig].layerStartTime),
         layerEndTime: new Date(configs[layerActiveConfig].layerEndTime),
         layerTimeStep: configs[layerActiveConfig].layerTimeStep,
