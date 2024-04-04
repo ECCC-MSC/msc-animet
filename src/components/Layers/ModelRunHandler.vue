@@ -40,20 +40,39 @@ export default {
           newDateArray.push(new Date(date.getTime() + timeDiff))
         );
 
-      this.item.getSource().updateParams({
-        DIM_REFERENCE_TIME: this.getProperDateString(
-          newModelRun,
-          this.item.get("layerDateFormat")
-        ),
-      });
+      if (
+        newModelRun ===
+        this.item.get("layerModelRuns")[
+          this.item.get("layerModelRuns").length - 1
+        ]
+      ) {
+        this.item.getSource().updateParams({
+          DIM_REFERENCE_TIME: undefined,
+        });
+      } else {
+        this.item.getSource().updateParams({
+          DIM_REFERENCE_TIME: this.getProperDateString(
+            newModelRun,
+            this.item.get("layerDateFormat")
+          ),
+        });
+      }
+      const layerActiveConfig = this.item.get("layerActiveConfig");
+      const configs = this.item.get("layerConfigs");
+      configs[layerActiveConfig].layerDateArray = newDateArray;
+      configs[layerActiveConfig].layerStartTime = newDateArray[0];
+      configs[layerActiveConfig].layerEndTime =
+        newDateArray[newDateArray.length - 1];
+
       this.item.setProperties({
+        layerConfigs: configs,
         layerDateArray: newDateArray,
         layerDefaultTime: new Date(
           this.item.get("layerDefaultTime").getTime() + timeDiff
         ),
         layerCurrentMR: newModelRun,
-        layerStartTime: newDateArray[0],
-        layerEndTime: newDateArray[newDateArray.length - 1],
+        layerStartTime: configs[layerActiveConfig].layerStartTime,
+        layerEndTime: configs[layerActiveConfig].layerEndTime,
       });
       this.$root.$emit("modelRunChanged");
       this.$root.$emit("calcFooterPreview");

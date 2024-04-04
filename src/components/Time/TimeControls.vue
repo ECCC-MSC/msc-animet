@@ -93,6 +93,7 @@ export default {
   mixins: [datetimeManipulations],
   data() {
     return {
+      cancelCriticalError: false,
       cancelExpired: false,
       screenWidth: window.innerWidth,
     };
@@ -100,6 +101,7 @@ export default {
   mounted() {
     this.$root.$on("addTemporalLayer", this.layerTimeManager);
     this.$root.$on("cancelExpired", this.handleCancelExpired);
+    this.$root.$on("cancelCriticalError", this.handleCriticalError);
     this.$root.$on("fixLayerTimes", this.mapControls);
     this.$root.$on("timeLayerRemoved", this.removedTimeLayerManager);
     window.addEventListener("resize", this.updateScreenSize);
@@ -107,6 +109,7 @@ export default {
   beforeDestroy() {
     this.$root.$off("addTemporalLayer", this.layerTimeManager);
     this.$root.$off("cancelExpired", this.handleCancelExpired);
+    this.$root.$on("cancelCriticalError", this.handleCriticalError);
     this.$root.$off("fixLayerTimes", this.mapControls);
     this.$root.$off("timeLayerRemoved", this.removedTimeLayerManager);
     window.removeEventListener("resize", this.updateScreenSize);
@@ -117,6 +120,9 @@ export default {
     },
     handleCancelExpired() {
       this.cancelExpired = true;
+    },
+    handleCriticalError(isError) {
+      this.cancelCriticalError = isError;
     },
     layerTimeManager(imageLayer, layerData) {
       let referenceTime =
@@ -138,6 +144,8 @@ export default {
         layerDateFormat: configs[0].layerDateFormat,
         layerDateIndex: 0,
         layerDefaultTime: new Date(layerData.Dimension.Dimension_time_default),
+        layerDimensionRefTime: layerData.Dimension.Dimension_ref_time,
+        layerDimensionTime: layerData.Dimension.Dimension_time,
         layerIndexOOB: false,
         layerModelRuns: referenceTime,
         layerCurrentMR:
@@ -170,7 +178,11 @@ export default {
           imageLayer.setVisible(false);
         }
       }
-      this.$root.$emit("timeLayerAdded");
+      this.setDateTime(
+        imageLayer,
+        this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex]
+      );
+      this.$root.$emit("timeLayerAdded", imageLayer.get("layerName"));
       this.$mapCanvas.mapObj.addLayer(imageLayer);
     },
     async mapControls() {
@@ -210,7 +222,15 @@ export default {
       if (noChange) {
         this.$mapCanvas.mapObj.updateSize();
         if (playStateBuffer === "play") {
+          // need this delay else it's too fast for the rest of the code
+          await this.delay(100);
           this.$root.$emit("playAnimation");
+        } else if (this.isAnimating) {
+          // Trigger manually because animation creation waits for
+          // render events, but noChange means no layers are shown
+          // so nothing ever changes or renders.
+          this.$root.$emit("layersRendered");
+          this.$animationCanvas.mapObj.updateSize();
         }
         return;
       }
@@ -223,16 +243,10 @@ export default {
           )
       );
       if (this.cancelExpired) {
-        if (playStateBuffer === "play") {
-          if (!this.isLooping) {
-            this.$store.commit("Layers/setPlayState", "pause");
-            this.$store.commit("Layers/setIsAnimating", false);
-          }
-          this.$root.$emit("fixTimeExtent");
-        } else if (!this.isAnimating) {
+        if (playStateBuffer === "play" || !this.isAnimating) {
           this.$root.$emit("fixTimeExtent");
         }
-      } else if (playStateBuffer === "play") {
+      } else if (!this.cancelCriticalError && playStateBuffer === "play") {
         if (r < 1000) {
           await this.delay(1000 - r);
         }
@@ -258,47 +272,42 @@ export default {
         ]);
       } else {
         if (this.getMapTimeSettings.SnappedLayer === null) {
-          if (
-            this.getDatetimeRangeSlider[1] >
-            this.getMapTimeSettings.Extent.length - 1
-          ) {
-            let first =
-              this.getDatetimeRangeSlider[0] >= 0
-                ? this.getDatetimeRangeSlider[0]
-                : 0;
-            this.$store.commit("Layers/setDatetimeRangeSlider", [
-              first > this.getMapTimeSettings.DateIndex
-                ? this.getMapTimeSettings.DateIndex
-                : first,
-              newExtent.length - 1,
-            ]);
-          } else if (oldExtent[this.getDatetimeRangeSlider[1]] < newExtent[0]) {
-            this.$store.commit("Layers/setDatetimeRangeSlider", [
-              0,
-              newExtent.length - 1,
-            ]);
-          } else if (
-            this.getMapTimeSettings.DateIndex < this.getDatetimeRangeSlider[0]
-          ) {
-            this.$store.dispatch("Layers/setMapSnappedLayer", null);
-            const first = this.getMapTimeSettings.DateIndex;
-            let last =
+          let first;
+          let last;
+          if (this.getDatetimeRangeSlider[0] === 0) {
+            first = 0;
+          }
+          if (this.getDatetimeRangeSlider[1] === oldExtent.length - 1) {
+            last = newExtent.length - 1;
+          }
+          if (first === undefined && last === undefined) {
+            const firstDate = oldExtent[this.getDatetimeRangeSlider[0]];
+            first = this.findLayerIndex(firstDate, newExtent, newStep);
+            first = first >= 0 ? first : 0;
+
+            const lastDate = oldExtent[this.getDatetimeRangeSlider[1]];
+            last = this.findLayerIndex(lastDate, newExtent, newStep);
+            last = last >= 0 ? last : newExtent.length - 1;
+          } else if (first === undefined) {
+            first =
+              last -
+              (this.getDatetimeRangeSlider[1] - this.getDatetimeRangeSlider[0]);
+            if (first < 0 || first > newExtent.length - 1 || first > last) {
+              first = 0;
+            }
+            if (first === last) {
+              this.$store.dispatch("Layers/setMapTimeIndex", first);
+            }
+          } else if (last === undefined) {
+            last =
               this.getDatetimeRangeSlider[1] -
               this.getDatetimeRangeSlider[0] +
-              this.getMapTimeSettings.DateIndex;
-            if (last >= newExtent.length) {
+              first;
+            if (last < 0 || last > newExtent.length - 1 || first > last) {
               last = newExtent.length - 1;
             }
-            this.$store.commit("Layers/setDatetimeRangeSlider", [first, last]);
-          } else if (
-            this.getMapTimeSettings.DateIndex > this.getDatetimeRangeSlider[1]
-          ) {
-            this.$store.dispatch("Layers/setMapSnappedLayer", null);
-            this.$store.commit("Layers/setDatetimeRangeSlider", [
-              this.getDatetimeRangeSlider[0],
-              this.getMapTimeSettings.DateIndex,
-            ]);
           }
+          this.$store.commit("Layers/setDatetimeRangeSlider", [first, last]);
         } else {
           this.onSnappedLayerChanged(this.getMapTimeSettings.SnappedLayer);
         }

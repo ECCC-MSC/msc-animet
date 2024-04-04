@@ -43,6 +43,7 @@
       <v-switch
         hide-details
         class="colored-border-switch"
+        :disabled="isAnimating"
         :label="$t('ColorBorder')"
         v-model="colorBorder"
       ></v-switch>
