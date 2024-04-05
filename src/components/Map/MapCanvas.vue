@@ -602,19 +602,19 @@ export default {
 }
 @media (max-width: 1120px) {
   .scale-line-collapsed {
-    bottom: 41px;
+    bottom: 65px;
   }
   .scale-line-open {
     bottom: 132px;
   }
   .rotate-collapsed {
-    bottom: 68px;
+    bottom: 92px;
   }
   .rotate-open {
     bottom: 159px;
   }
   .attribution-collapsed {
-    bottom: 22px !important;
+    bottom: 46px !important;
   }
   .attribution-open {
     bottom: 114px !important;
@@ -622,19 +622,19 @@ export default {
 }
 @media (max-width: 565px) {
   .scale-line-collapsed {
-    bottom: 41px;
+    bottom: 65px;
   }
   .scale-line-open {
     bottom: 186px;
   }
   .rotate-collapsed {
-    bottom: 68px;
+    bottom: 92px;
   }
   .rotate-open {
     bottom: 213px;
   }
   .attribution-collapsed {
-    bottom: 22px !important;
+    bottom: 46px !important;
   }
   .attribution-open {
     bottom: 168px !important;
@@ -666,7 +666,7 @@ export default {
 }
 @media (max-width: 1120px) {
   .animet-version-collapsed {
-    bottom: 25px !important;
+    bottom: 49px !important;
   }
   .animet-version-open {
     bottom: 116px !important;
@@ -674,7 +674,7 @@ export default {
 }
 @media (max-width: 565px) {
   .animet-version-collapsed {
-    bottom: 25px !important;
+    bottom: 49px !important;
   }
   .animet-version-open {
     bottom: 170px !important;

@@ -87,13 +87,13 @@ export default {
     bottom: 170px;
   }
   .zoom-plus-collapsed {
-    bottom: 79px;
+    bottom: 103px;
   }
   .zoom-minus-open {
     bottom: 138px;
   }
   .zoom-minus-collapsed {
-    bottom: 47px;
+    bottom: 71px;
   }
 }
 @media (max-width: 565px) {
@@ -101,13 +101,13 @@ export default {
     bottom: 224px;
   }
   .zoom-plus-collapsed {
-    bottom: 79px;
+    bottom: 103px;
   }
   .zoom-minus-open {
     bottom: 192px;
   }
   .zoom-minus-collapsed {
-    bottom: 47px;
+    bottom: 71px;
   }
 }
 </style>

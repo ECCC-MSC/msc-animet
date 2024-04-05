@@ -22,19 +22,14 @@
           "
         >
           <v-icon v-if="!getCollapsedControls" large> mdi-chevron-down </v-icon>
-          <span
-            v-else
-            class="text-wrap"
-            :class="getCollapsedControls ? '' : 'hide-controls'"
-          >
-            {{
-              localeDateFormat(
-                getMapTimeSettings.Extent[getMapTimeSettings.DateIndex],
-                getMapTimeSettings.Step,
-                "DATETIME_MED"
-              )
-            }}
-          </span>
+          <div v-else>
+            <span class="collapsed-date">{{
+              getCollapsedDateFormat()[0]
+            }}</span>
+            <span class="collapsed-time">{{
+              getCollapsedDateFormat()[1]
+            }}</span>
+          </div>
         </v-btn>
       </div>
       <v-col class="mr-1 pt-2 pb-2 px-0" v-else>
@@ -55,19 +50,14 @@
           "
         >
           <v-icon v-if="!getCollapsedControls" large> mdi-chevron-down </v-icon>
-          <span
-            v-else
-            class="text-wrap"
-            :class="getCollapsedControls ? '' : 'hide-controls'"
-          >
-            {{
-              localeDateFormat(
-                getMapTimeSettings.Extent[getMapTimeSettings.DateIndex],
-                getMapTimeSettings.Step,
-                "DATETIME_FULL"
-              )
-            }}
-          </span>
+          <div v-else>
+            <span class="collapsed-date">{{
+              getCollapsedDateFormat()[0]
+            }}</span>
+            <span class="collapsed-time">{{
+              getCollapsedDateFormat()[1]
+            }}</span>
+          </div>
         </v-btn>
       </v-col>
     </div>
@@ -117,6 +107,11 @@ export default {
   methods: {
     delay(time) {
       return new Promise((resolve) => setTimeout(resolve, time));
+    },
+    getCollapsedDateFormat() {
+      return this.localeDateFormatAnimation(
+        this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex]
+      );
     },
     handleCancelExpired() {
       this.cancelExpired = true;
@@ -469,7 +464,19 @@ export default {
   margin-top: 6px;
   transform: translateY(-13px);
   width: 100%;
-  height: 26px !important;
+  height: 50px !important;
+}
+.collapsed-date {
+  display: block;
+  font-size: 16px;
+  text-transform: none !important;
+  white-space: nowrap !important;
+}
+.collapsed-time {
+  display: block;
+  font-size: 24px;
+  text-transform: none !important;
+  white-space: nowrap !important;
 }
 .controller-padding {
   margin-bottom: -16px;
@@ -494,13 +501,6 @@ export default {
   padding-top: 2px;
   padding-bottom: 0;
 }
-.text-wrap {
-  font-size: 16px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-transform: none !important;
-  white-space: nowrap !important;
-}
 #collapse-button::v-deep .v-btn__content {
   height: 20px;
 }
@@ -519,10 +519,10 @@ export default {
     pointer-events: auto;
     border-radius: 4px 4px 0 0;
     box-shadow: none;
-    margin-left: calc(27.5%);
+    margin-left: calc(35%);
     transform: translateY(10px);
-    width: 45%;
-    height: 26px !important;
+    width: 30%;
+    height: 50px !important;
   }
   .time-controls-collapsed {
     background-color: transparent;

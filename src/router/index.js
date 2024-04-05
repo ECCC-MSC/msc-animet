@@ -21,6 +21,11 @@ const router = new Router({
       }),
     },
     {
+      path: "/4-displays",
+      name: "FourDisplays",
+      component: require("@/views/FourDisplays").default,
+    },
+    {
       path: "*",
       name: "NotFound",
       component: require("@/views/NotFound").default,

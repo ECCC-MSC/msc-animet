@@ -3,10 +3,14 @@
 <script>
 import axios from "axios";
 import SaxonJS from "saxon-js";
+
+import { mapState } from "vuex";
+
 export default {
   data() {
     return {
       interval: setInterval(this.fetchLayerData, 90000),
+      iterationCounter: 0,
       layers: [],
       xsltTime: `parse-xml($xml)//Layer[not(.//Layer) and Name = 'REPLACE_WITH_LAYERNAME']!map
                       {
@@ -32,6 +36,7 @@ export default {
   },
   methods: {
     checkRefresh(layersInfo) {
+      this.iterationCounter++;
       let errorList = [];
       layersInfo.forEach((layerInfo) => {
         if (
@@ -45,6 +50,17 @@ export default {
       });
       if (errorList.length !== 0) {
         this.$root.$emit("refreshExpired", errorList);
+      }
+      if (this.iterationCounter % 6 === 0) {
+        this.iterationCounter = 0;
+        if (this.isAnimating && this.playState !== "play") return;
+        this.$mapLayers.arr.forEach((layer) => {
+          if (!layer.get("layerIsTemporal")) {
+            layer.getSource().updateParams({
+              t: new Date().getTime(),
+            });
+          }
+        });
       }
     },
     stopPolling() {
@@ -95,6 +111,9 @@ export default {
       );
       this.checkRefresh(layersInfo);
     },
+  },
+  computed: {
+    ...mapState("Layers", ["isAnimating", "playState"]),
   },
 };
 </script>
