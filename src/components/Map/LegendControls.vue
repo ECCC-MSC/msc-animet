@@ -174,6 +174,14 @@ export default {
       this.checkIntersect();
     },
     checkIntersect() {
+      let layer = this.$mapLayers.arr.find(
+        (l) => l.get("layerName") === this.name
+      );
+      if (!layer.get("visible")) {
+        this.$store.dispatch("Layers/setIntersect", [this.name, false]);
+        return;
+      }
+
       const previewDims = document
         .getElementById("animation-rect")
         .getBoundingClientRect();
