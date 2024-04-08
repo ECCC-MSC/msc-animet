@@ -23,6 +23,7 @@ echo "Use .env for gh-pages"
 cp ./deploy/gh-pages/.env ./.env
 echo "Building and bundling application files..."
 npm run build
+cp ./dist/index.html ./dist/404.html
 git --work-tree dist add --all
 git --work-tree dist commit -m 'gh-pages deploy'
 echo "Pushing to gh-pages..."
