@@ -8,6 +8,14 @@
     :disabled="isAnimating"
     @change="changeProjectionHandler($event)"
   >
+    <template v-slot:item="{ item }">
+      <v-chip class="mr-1" small>{{ item.split(":")[1] }}</v-chip>
+      {{ `${$t(item)}` }}
+    </template>
+    <template v-slot:selection="{ item }">
+      <v-chip small>{{ item.split(":")[1] }}</v-chip>
+      {{ `${$t(item)}` }}
+    </template>
   </v-select>
 </template>
 

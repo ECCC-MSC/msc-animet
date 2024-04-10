@@ -3,15 +3,16 @@
     <v-dialog v-model="dialog" max-width="600px">
       <template v-slot:activator="{ on, attrs }">
         <v-btn
-          rounded
           v-bind="attrs"
           v-on="on"
-          @click="createPermaLink"
-          class="permalink-button text-none font-weight-bold pl-3 pr-3"
+          min-width="34px"
+          width="34px"
           height="34px"
+          class="rounded-circle font-weight-bold"
+          @click="createPermaLink"
         >
-          <v-icon class="share-icon" left> mdi-link-variant </v-icon>
-          <span class="share-text">{{ $t("Share") }}</span>
+          <v-icon class="share-icon"> mdi-share </v-icon>
+          <span v-show="false" class="share-text">{{ $t("Share") }}</span>
         </v-btn>
       </template>
       <v-card tile>
@@ -192,17 +193,8 @@ export default {
 </script>
 
 <style scoped>
-.permalink-button::v-deep .v-btn__content {
-  font-size: 1rem;
-  letter-spacing: normal;
-}
-
 .share-icon {
-  margin-bottom: 3px;
-}
-
-.share-text {
-  margin-left: -8px;
+  margin-bottom: 2px;
 }
 
 #permaLink {
