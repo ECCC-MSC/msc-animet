@@ -1,5 +1,48 @@
 # Release Notes
 
+## Version 2.1.0 (2024-04-10)
+
+### New Features
+- Added new map projections: EPSG 4326, 3978 and 3995
+- Added option to display map graticules
+- Ability to loop animations
+- Ability to loop animations permanently
+- Ability to play animation backwards
+- Ability to auto-refresh layers
+- Added a 4-display view for big TV displays
+
+### Enhancements
+- Changed to a cog icon for the controller playback options
+- Language change is now remembered via the user's browser cache
+- Updated OpenLayers from 6.13 to 6.15.1
+- Active layer legend is now remembered as part of the permalink
+- Minimized color picker inside an expansion panel to draw more attention to new options
+- Changed the webpage favicon to use the map emoji
+- Added 404/NotFound handling
+- Redirects to help fix multiple backslashes
+- Moved the legend selector to the style selector of each layer
+- Moved the toggle for coloured borders in the animation config panel
+- Legends will now always be added to the map by default for each layer added, with a small offset from one another
+- Legend will now be hidden when the layer is hidden
+- Added intersection logic for map legends to display warnings if they are outside the animation frame.
+- Added a double click handler on legends to open the animation panel
+- Improved clarity of which legends are displayed
+- Added DEL keyboard shortcut to remove the selected legend
+- Show current time when time controls are collapsed
+- Added a manual refresh on all non time-enabled layers every 9 minutes
+- Changed date display in collapsed controls to be on 2 lines
+- Changed share icon and removed the Share/Partager text
+- Changed zoom buttons to have 10x smaller increments for improved precision
+
+### Bug Fixes
+- Fixed a specific issue when clicking on the play button would trigger twice during a layer's rendering
+- Fixed a bug where a layer would crash in Firefox on missing timestep
+- Fixed an issue when translating a GetFeatureInfo "value" property
+- Fixed a bug with waitForElements function
+- Fixed a text length issue in the GetFeatureInfo tooltip
+- Fixed an issue with legend ordering and menu sizing
+- Fixed loading indicator to stay until everything is done loading
+
 ## Version 2.0.2 (2024-03-26)
 
 ### Bug Fixes

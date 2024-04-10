@@ -1,6 +1,6 @@
 {
   "name": "msc-animet",
-  "version": "2.1.0-dev",
+  "version": "2.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
