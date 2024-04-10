@@ -50,13 +50,13 @@ export default {
     zoomIn() {
       let currentZoom = this.$mapCanvas.mapObj.getView().getZoom();
       if (currentZoom < 20) {
-        this.$mapCanvas.mapObj.getView().setZoom(currentZoom + 1);
+        this.$mapCanvas.mapObj.getView().setZoom(currentZoom + 0.1);
       }
     },
     zoomOut() {
       let currentZoom = this.$mapCanvas.mapObj.getView().getZoom();
       if (currentZoom > 1) {
-        this.$mapCanvas.mapObj.getView().setZoom(currentZoom - 1);
+        this.$mapCanvas.mapObj.getView().setZoom(currentZoom - 0.1);
       }
     },
   },

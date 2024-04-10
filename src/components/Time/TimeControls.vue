@@ -290,7 +290,12 @@ export default {
             if (first < 0 || first > newExtent.length - 1 || first > last) {
               first = 0;
             }
-            if (first === last) {
+            const currentDate = this.findLayerIndex(
+              oldExtent[this.getMapTimeSettings.DateIndex],
+              newExtent,
+              newStep
+            );
+            if (currentDate < first) {
               this.$store.dispatch("Layers/setMapTimeIndex", first);
             }
           } else if (last === undefined) {
