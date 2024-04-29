@@ -49,7 +49,7 @@ export default {
         animationTitle = animationTitle
           .normalize("NFD")
           .replace(/[\u0300-\u036f]/g, "");
-        animationTitle = animationTitle.replace(/[^a-zA-Z0-9.]/g, " ");
+        animationTitle = animationTitle.replace(/[^a-zA-Z0-9.-]/g, " ");
         animationTitle = animationTitle.replace(/\s+/g, "_");
         animationTitle = animationTitle.replace(/[^a-zA-Z0-9]$/, "");
         animationTitle = "_" + animationTitle;
