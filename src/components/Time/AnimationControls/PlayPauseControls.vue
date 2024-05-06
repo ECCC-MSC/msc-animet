@@ -34,6 +34,12 @@ import ControllerOptions from "./ControllerOptions.vue";
 
 export default {
   mounted() {
+    this.$root.$on("cancelExpired", () => {
+      this.cancelExpired = true;
+    });
+    this.$root.$on("cancelCriticalError", (isError) => {
+      this.cancelCriticalError = isError;
+    });
     this.$root.$on("playAnimation", this.play);
   },
   beforeDestroy() {
@@ -44,6 +50,8 @@ export default {
   },
   data() {
     return {
+      cancelCriticalError: false,
+      cancelExpired: false,
       locked: false,
       loop: false,
       playbackReversed: false,
@@ -80,6 +88,15 @@ export default {
         this.loop = !this.loop;
         this.$store.dispatch("Layers/setIsLooping", this.loop);
       }
+    },
+    delay(time) {
+      return new Promise((resolve) => setTimeout(resolve, time));
+    },
+    measurePromise(fn) {
+      let onPromiseDone = () => performance.now() - start;
+
+      let start = performance.now();
+      return fn().then(onPromiseDone, onPromiseDone);
     },
     playPause() {
       this.$root.$emit("changeTab");
@@ -128,7 +145,8 @@ export default {
         }
       }
     },
-    play() {
+    async play() {
+      this.cancelExpired = false;
       if (!this.playbackReversed) {
         if (
           this.getMapTimeSettings.DateIndex < this.getDatetimeRangeSlider[1]
@@ -161,6 +179,24 @@ export default {
         } else {
           this.playPause();
         }
+      }
+      // Count time it takes to finish render for play button,
+      // if less than 1sec wait until it's been a second
+      let r = await this.measurePromise(
+        () =>
+          new Promise((resolve) =>
+            this.$mapCanvas.mapObj.once("rendercomplete", resolve)
+          )
+      );
+      if (this.cancelExpired) {
+        if (this.playState === "play" || !this.isAnimating) {
+          this.$root.$emit("fixTimeExtent");
+        }
+      } else if (!this.cancelCriticalError && this.playState === "play") {
+        if (r < 1000) {
+          await this.delay(1000 - r);
+        }
+        this.play();
       }
     },
     unlock() {

@@ -68,7 +68,7 @@ export default {
     addOverlays() {
       for (const [key, values] of Object.entries(this.getPossibleOverlays)) {
         if (values.isShown) {
-          let special_layer = new OLImage({
+          const special_layer = new OLImage({
             source: new ImageWMS({
               format: "image/png",
               url: values.url,
