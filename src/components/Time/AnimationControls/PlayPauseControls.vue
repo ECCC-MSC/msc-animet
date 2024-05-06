@@ -55,6 +55,7 @@ export default {
       locked: false,
       loop: false,
       playbackReversed: false,
+      playLocked: false,
       showMenu: false,
       contextMenuActions: [{ label: this.$t("Reverse"), action: "reverse" }],
     };
@@ -146,57 +147,64 @@ export default {
       }
     },
     async play() {
-      this.cancelExpired = false;
-      if (!this.playbackReversed) {
-        if (
-          this.getMapTimeSettings.DateIndex < this.getDatetimeRangeSlider[1]
-        ) {
-          this.$store.dispatch(
-            "Layers/setMapTimeIndex",
-            this.getMapTimeSettings.DateIndex + 1
-          );
-        } else if (this.loop) {
-          this.$store.dispatch(
-            "Layers/setMapTimeIndex",
-            this.getDatetimeRangeSlider[0]
-          );
+      if (!this.playLocked) {
+        this.playLocked = true;
+        this.cancelExpired = false;
+        if (!this.playbackReversed) {
+          if (
+            this.getMapTimeSettings.DateIndex < this.getDatetimeRangeSlider[1]
+          ) {
+            this.$store.dispatch(
+              "Layers/setMapTimeIndex",
+              this.getMapTimeSettings.DateIndex + 1
+            );
+          } else if (this.loop) {
+            this.$store.dispatch(
+              "Layers/setMapTimeIndex",
+              this.getDatetimeRangeSlider[0]
+            );
+          } else {
+            this.playPause();
+          }
         } else {
-          this.playPause();
+          if (
+            this.getMapTimeSettings.DateIndex > this.getDatetimeRangeSlider[0]
+          ) {
+            this.$store.dispatch(
+              "Layers/setMapTimeIndex",
+              this.getMapTimeSettings.DateIndex - 1
+            );
+          } else if (this.loop) {
+            this.$store.dispatch(
+              "Layers/setMapTimeIndex",
+              this.getDatetimeRangeSlider[1]
+            );
+          } else {
+            this.playPause();
+          }
         }
-      } else {
-        if (
-          this.getMapTimeSettings.DateIndex > this.getDatetimeRangeSlider[0]
-        ) {
-          this.$store.dispatch(
-            "Layers/setMapTimeIndex",
-            this.getMapTimeSettings.DateIndex - 1
-          );
-        } else if (this.loop) {
-          this.$store.dispatch(
-            "Layers/setMapTimeIndex",
-            this.getDatetimeRangeSlider[1]
-          );
+        // Count time it takes to finish render for play button,
+        // if less than 1sec wait until it's been a second
+        let r = await this.measurePromise(
+          () =>
+            new Promise((resolve) =>
+              this.$mapCanvas.mapObj.once("rendercomplete", resolve)
+            )
+        );
+        if (this.cancelExpired) {
+          if (this.playState === "play" || !this.isAnimating) {
+            this.playLocked = false;
+            this.$root.$emit("fixTimeExtent");
+          }
+        } else if (!this.cancelCriticalError && this.playState === "play") {
+          if (r < 1000) {
+            await this.delay(1000 - r);
+          }
+          this.playLocked = false;
+          this.play();
         } else {
-          this.playPause();
+          this.playLocked = false;
         }
-      }
-      // Count time it takes to finish render for play button,
-      // if less than 1sec wait until it's been a second
-      let r = await this.measurePromise(
-        () =>
-          new Promise((resolve) =>
-            this.$mapCanvas.mapObj.once("rendercomplete", resolve)
-          )
-      );
-      if (this.cancelExpired) {
-        if (this.playState === "play" || !this.isAnimating) {
-          this.$root.$emit("fixTimeExtent");
-        }
-      } else if (!this.cancelCriticalError && this.playState === "play") {
-        if (r < 1000) {
-          await this.delay(1000 - r);
-        }
-        this.play();
       }
     },
     unlock() {
