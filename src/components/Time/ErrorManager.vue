@@ -195,12 +195,15 @@ export default {
       }
       this.$root.$emit("loadingStop");
       this.blockRefresh = false;
+      if (this.playState === "play") {
+        this.$root.$emit("playAnimation");
+      }
     },
     async errorDispatcher(layer, e) {
       this.blockRefresh = true;
       try {
         this.errorLayersList.push(layer.get("layerName"));
-        const response = await axios.get(e.image.src_);
+        const response = await axios.get(e.image.image_.currentSrc);
         const xmlDoc = new DOMParser().parseFromString(
           response.data,
           "text/xml"

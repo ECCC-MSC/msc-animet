@@ -43,7 +43,7 @@ const state = {
   isAnimating: false,
   isAnimationReversed: false,
   isBasemapVisible: true,
-  isLooping: false,
+  isLooping: true,
   lang: "en",
   layerTreeItemsEn: Object.keys(wmsSources).map((key) => {
     const treeName = "tree_en_" + key.toLowerCase();
