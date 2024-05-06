@@ -83,23 +83,17 @@ export default {
   mixins: [datetimeManipulations],
   data() {
     return {
-      cancelCriticalError: false,
-      cancelExpired: false,
       screenWidth: window.innerWidth,
     };
   },
   mounted() {
     this.$root.$on("addTemporalLayer", this.layerTimeManager);
-    this.$root.$on("cancelExpired", this.handleCancelExpired);
-    this.$root.$on("cancelCriticalError", this.handleCriticalError);
     this.$root.$on("fixLayerTimes", this.mapControls);
     this.$root.$on("timeLayerRemoved", this.removedTimeLayerManager);
     window.addEventListener("resize", this.updateScreenSize);
   },
   beforeDestroy() {
     this.$root.$off("addTemporalLayer", this.layerTimeManager);
-    this.$root.$off("cancelExpired", this.handleCancelExpired);
-    this.$root.$on("cancelCriticalError", this.handleCriticalError);
     this.$root.$off("fixLayerTimes", this.mapControls);
     this.$root.$off("timeLayerRemoved", this.removedTimeLayerManager);
     window.removeEventListener("resize", this.updateScreenSize);
@@ -113,18 +107,12 @@ export default {
         this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex]
       );
     },
-    handleCancelExpired() {
-      this.cancelExpired = true;
-    },
-    handleCriticalError(isError) {
-      this.cancelCriticalError = isError;
-    },
     layerTimeManager(imageLayer, layerData) {
-      let referenceTime =
+      const referenceTime =
         layerData.Dimension.Dimension_ref_time === ""
           ? null
           : this.findFormat(layerData.Dimension.Dimension_ref_time)[0][0];
-      let configs = this.createTimeLayerConfigs(
+      const configs = this.createTimeLayerConfigs(
         layerData.Dimension.Dimension_time
       );
       if (configs === null) {
@@ -159,7 +147,7 @@ export default {
       if (this.getMapTimeSettings.Step === null || layerData.isSnapped) {
         this.changeMapTime(imageLayer.get("layerTimeStep"), imageLayer);
       } else {
-        let layerDateIndex = this.findLayerIndex(
+        const layerDateIndex = this.findLayerIndex(
           this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
           imageLayer.get("layerDateArray"),
           imageLayer.get("layerTimeStep")
@@ -182,45 +170,42 @@ export default {
     },
     async mapControls() {
       // Prevents a bug that triggers play twice
-      let playStateBuffer = this.playState;
+      const playStateBuffer = this.playState;
 
-      this.cancelExpired = false;
-      const driverDate =
+      const mapTime =
         this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex];
-      let visibleTLayers = this.$mapLayers.arr.filter((l) => {
-        return l.get("layerVisibilityOn") && l.get("layerIsTemporal");
-      });
+
+      const numLayers = this.$mapLayers.arr.length;
       let noChange = true;
-      for (let i = 0; i < visibleTLayers.length; i++) {
-        let dateArray = visibleTLayers[i].get("layerDateArray");
-        const layerDateIndex = this.findLayerIndex(
-          driverDate,
-          dateArray,
-          visibleTLayers[i].get("layerTimeStep")
-        );
-        visibleTLayers[i].setProperties({
-          layerDateIndex: layerDateIndex,
-        });
-        if (layerDateIndex >= 0) {
-          this.setDateTime(visibleTLayers[i], dateArray[layerDateIndex]);
-          noChange = false;
-          if (
-            visibleTLayers[i].get("layerVisibilityOn") &&
-            !visibleTLayers[i].get("visible")
-          ) {
-            visibleTLayers[i].setVisible(true);
+      for (let i = 0; i < numLayers; i++) {
+        if (
+          this.$mapLayers.arr[i].get("layerVisibilityOn") &&
+          this.$mapLayers.arr[i].get("layerIsTemporal")
+        ) {
+          const dateArray = this.$mapLayers.arr[i].get("layerDateArray");
+          const layerDateIndex = this.findLayerIndex(
+            mapTime,
+            dateArray,
+            this.$mapLayers.arr[i].get("layerTimeStep")
+          );
+          this.$mapLayers.arr[i].setProperties({
+            layerDateIndex: layerDateIndex,
+          });
+          if (layerDateIndex >= 0) {
+            this.setDateTime(this.$mapLayers.arr[i], dateArray[layerDateIndex]);
+            noChange = false;
+            if (!this.$mapLayers.arr[i].get("visible")) {
+              this.$mapLayers.arr[i].setVisible(true);
+            }
+          } else {
+            this.$mapLayers.arr[i].setVisible(false);
           }
-        } else if (visibleTLayers[i].get("visible")) {
-          visibleTLayers[i].setVisible(false);
         }
       }
       if (noChange) {
+        await this.delay(100);
         this.$mapCanvas.mapObj.updateSize();
-        if (playStateBuffer === "play") {
-          // need this delay else it's too fast for the rest of the code
-          await this.delay(100);
-          this.$root.$emit("playAnimation");
-        } else if (this.isAnimating) {
+        if (this.isAnimating && playStateBuffer !== "play") {
           // Trigger manually because animation creation waits for
           // render events, but noChange means no layers are shown
           // so nothing ever changes or renders.
@@ -229,30 +214,6 @@ export default {
         }
         return;
       }
-      // Count time it takes to finish render for play button,
-      // if less than 1sec wait until it's been a second
-      let r = await this.measurePromise(
-        () =>
-          new Promise((resolve) =>
-            this.$mapCanvas.mapObj.once("rendercomplete", resolve)
-          )
-      );
-      if (this.cancelExpired) {
-        if (playStateBuffer === "play" || !this.isAnimating) {
-          this.$root.$emit("fixTimeExtent");
-        }
-      } else if (!this.cancelCriticalError && playStateBuffer === "play") {
-        if (r < 1000) {
-          await this.delay(1000 - r);
-        }
-        this.$root.$emit("playAnimation");
-      }
-    },
-    measurePromise(fn) {
-      let onPromiseDone = () => performance.now() - start;
-
-      let start = performance.now();
-      return fn().then(onPromiseDone, onPromiseDone);
     },
     onExtentChanged(newExtent, newStep, oldExtent, oldStep) {
       if (
@@ -315,7 +276,7 @@ export default {
       }
     },
     onSnappedLayerChanged(newSnappedLayerName) {
-      let newSnappedLayer = this.$mapLayers.arr.find(
+      const newSnappedLayer = this.$mapLayers.arr.find(
         (l) => l.get("layerName") === newSnappedLayerName
       );
       const first = this.findLayerIndex(
@@ -358,7 +319,7 @@ export default {
         ) {
           this.changeMapTime(timestep);
         } else {
-          let firstTimeLayerFound = this.$mapLayers.arr.find((l) =>
+          const firstTimeLayerFound = this.$mapLayers.arr.find((l) =>
             l.get("layerIsTemporal")
           );
           if (firstTimeLayerFound === undefined) {
