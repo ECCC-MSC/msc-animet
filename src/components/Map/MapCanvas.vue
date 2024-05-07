@@ -15,7 +15,6 @@
         />
       </div>
       <time-controls />
-      <v-progress-linear :active="loading > 0" indeterminate id="progressBar" />
     </div>
     <get-feature-info />
     <span
@@ -78,9 +77,6 @@ export default {
   mounted() {
     this.$root.$on("goToExtent", this.goToExtentHandler);
     this.$root.$on("buildLayer", this.buildLayer);
-    this.$root.$on("loadingStop", () => {
-      this.loading = 0;
-    });
     this.$root.$on("localeChange", () => {
       this.$mapCanvas.mapObj.removeControl(this.rotateArrow);
       this.rotateArrow = new Rotate({ tipLabel: this.$t("ResetRotation") });
@@ -132,9 +128,6 @@ export default {
     });
 
     const attribution = new Attribution();
-    const progressBar = new Control({
-      element: document.getElementById("progressBar"),
-    });
     const legendMapOverlay = new Control({
       element: document.getElementById("legendMapOverlay"),
     });
@@ -179,7 +172,6 @@ export default {
     this.$mapCanvas.mapObj.addControl(attribution);
     this.$mapCanvas.mapObj.addControl(globalConfigs);
     this.$mapCanvas.mapObj.addControl(legendMapOverlay);
-    this.$mapCanvas.mapObj.addControl(progressBar);
     this.$mapCanvas.mapObj.addControl(sidePanel);
     this.$mapCanvas.mapObj.addControl(timeControls);
     this.$mapCanvas.mapObj.addControl(timeSnackbar);
@@ -262,9 +254,6 @@ export default {
           )
         )
       );
-      if (this.loading !== 0) {
-        this.loading = 0;
-      }
       if (removedLayer.get("layerIsTemporal") && layerFound) {
         this.$root.$emit("timeLayerRemoved", removedLayer);
       }
@@ -332,14 +321,6 @@ export default {
         special_layer.setProperties({
           layerName: layerName,
         });
-
-        special_layer.getSource().on("imageloadstart", () => {
-          this.loading += 1;
-        });
-
-        special_layer.getSource().on("imageloadend", () => {
-          this.loading -= 1;
-        });
         this.$mapCanvas.mapObj.addLayer(special_layer);
       }
       this.$store.dispatch("Layers/setOverlayDisplayed", layerName);
@@ -386,14 +367,6 @@ export default {
       }
 
       this.setLayerZIndex(imageLayer);
-
-      imageLayer.getSource().on("imageloadstart", () => {
-        this.loading += 1;
-      });
-
-      imageLayer.getSource().on("imageloadend", () => {
-        this.loading -= 1;
-      });
 
       imageLayer.getSource().on("imageloaderror", (e) => {
         if (this.isAnimating && this.playState !== "play") return;
@@ -569,7 +542,6 @@ export default {
       s: 0.95,
       v: 0.75,
       graticule: null,
-      loading: 0,
       osm: new TileLayer({ source: new OSM() }),
       rotateArrow: null,
       selectedLegendLayerName: null,
@@ -659,10 +631,6 @@ export default {
   color: black;
   text-shadow: 0 0 2px #fff;
   font-size: 10px;
-}
-#progressBar {
-  position: absolute;
-  bottom: 0;
 }
 @media (max-width: 1120px) {
   .animet-version-collapsed {
