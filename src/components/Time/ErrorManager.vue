@@ -193,7 +193,6 @@ export default {
           }
         }
       }
-      this.$root.$emit("loadingStop");
       this.blockRefresh = false;
       if (this.playState === "play") {
         this.$root.$emit("playAnimation");
@@ -216,7 +215,6 @@ export default {
         // Call refresh just to update the values and continue.
         if (serviceException === undefined) {
           this.refreshExpired(layer);
-          this.$root.$emit("loadingStop");
           return;
         }
         const attrs = serviceException.attributes;
