@@ -60,7 +60,14 @@ if [ -n $GEOMET_WEATHER_NIGHTLY_URL ] && [ -n $GEOMET_CLIMATE_NIGHTLY_URL ]
 then
   echo "Replacing default GeoMet URLs with nightly URLs in scripts/wms_sources_configs.json"
   sed -i "s#https://geo.weather.gc.ca/geomet#$GEOMET_WEATHER_NIGHTLY_URL#g" scripts/wms_sources_configs.json
-  sed -i "s#https://geo.weather.gc.ca/geomet-climate#$GEOMET_CLIMATE_NIGHTLY_URL#g" scripts/wms_sources_configs.json
+fi
+
+# add GeoMet Mapproxy nightly as a wms source for testing
+if [ -n $GEOMET_MAPPROXY_NIGHTLY_URL ]
+then
+  echo "Adding GeoMet Mapproxy nightly to scripts/wms_sources_configs.json"
+  mapproxy_nightly_source="  \},\n  \"Mapproxy\": \{\n    \"url\": \"$GEOMET_MAPPROXY_NIGHTLY_URL\",\n    \"version\": \"1.3.0\"\n  \},"
+  sed -i "s|  \},|$mapproxy_nightly_source|" scripts/wms_sources_configs.json
 fi
 
 echo "Stopping/building/starting Docker setup"
