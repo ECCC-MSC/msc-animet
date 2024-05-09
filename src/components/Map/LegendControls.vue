@@ -177,7 +177,7 @@ export default {
       let layer = this.$mapLayers.arr.find(
         (l) => l.get("layerName") === this.name
       );
-      if (!layer.get("visible")) {
+      if (!layer.get("layerVisibilityOn")) {
         this.$store.dispatch("Layers/setIntersect", [this.name, false]);
         return;
       }
