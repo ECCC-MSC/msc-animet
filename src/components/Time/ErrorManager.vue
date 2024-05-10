@@ -122,7 +122,10 @@ export default {
         this.fixTimeExtent();
     },
     async checkExpiredOnMapMoveOrResize() {
-      if (this.expiredTimestepList.length !== 0) {
+      if (
+        this.errorLayersList.length !== 0 ||
+        this.expiredTimestepList.length !== 0
+      ) {
         this.fixTimeExtent();
       }
     },
