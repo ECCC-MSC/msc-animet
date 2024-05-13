@@ -1,5 +1,17 @@
 # Release Notes
 
+## Version 2.1.1 (2024-05-13)
+
+### Bug Fixes
+- Fixed a memory leak issue
+- Fixed an issue with loading NRCan overlay in EPSG:3995
+- Fixed an issue with the warning message not showing for legend placement
+- Fixed an issue with zooming or panning while in a loop triggering multiple play events
+- Fixed an issue when a layer doesn't refresh when you zoom or pan
+- Removed a DomException error for OL that keeps appearing in console to avoid spam
+- Fixed filename output by keeping dashes out
+- Fixed 4-panel display to remember changes
+
 ## Version 2.1.0 (2024-04-10)
 
 ### New Features
