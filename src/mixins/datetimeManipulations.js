@@ -1,4 +1,4 @@
-import { DateTime } from "luxon";
+import { DateTime, Interval } from "luxon";
 import { mapGetters } from "vuex";
 import parseDuration from "../assets/parseHelper";
 
@@ -114,7 +114,7 @@ export default {
       this.$root.$emit("updatePermalink");
     },
     createTimeLayerConfigs(Dimension_time) {
-      let [dateArrayFormat, Step] = this.findFormat(Dimension_time);
+      let [dateArrayFormat, trueStep, Step] = this.findFormat(Dimension_time);
       if (dateArrayFormat === null) {
         return null;
       }
@@ -127,33 +127,18 @@ export default {
             layerStartTime: dateArrayFormat[i][0][0],
             layerEndTime:
               dateArrayFormat[i][0][dateArrayFormat[i][0].length - 1],
-            layerTimeStep: Step[i] === "PT0H" ? "PT1H" : Step[i],
-            layerTrueTimeStep: Step[i],
+            layerTimeStep: Step[i],
+            layerTrueTimeStep: trueStep[i],
           });
         }
       } else {
-        let trueInterval = null;
-        if (Step === null) {
-          if (dateArrayFormat[1] === "year") {
-            Step = "P1Y";
-          } else if (dateArrayFormat[1] === "month") {
-            Step = "P1M";
-          } else {
-            Step = "PT1H";
-          }
-        } else if (Step === "PT0H") {
-          trueInterval = "PT0H";
-          Step = "PT1H";
-        } else {
-          trueInterval = Step;
-        }
         configs.push({
           layerDateArray: dateArrayFormat[0],
           layerDateFormat: dateArrayFormat[1],
           layerStartTime: dateArrayFormat[0][0],
           layerEndTime: dateArrayFormat[0][dateArrayFormat[0].length - 1],
           layerTimeStep: Step,
-          layerTrueTimeStep: trueInterval,
+          layerTrueTimeStep: trueStep,
         });
       }
       return configs;
@@ -193,17 +178,19 @@ export default {
       switch (true) {
         case /^[^,/]*$/.test(dateRange):
         case /^[^/]*,[^/]*$/.test(dateRange): {
-          return [this.getNullIntervalDateArray(dateRange.split(",")), null];
+          return this.getNullIntervalDateArray(dateRange.split(","));
         }
         case /^[^,]*\/[^,]*\/[^,]*$/.test(dateRange): {
           let [startDateStr, endDateStr, interval] = dateRange.split("/");
           return [
             this.getDateArray(startDateStr, endDateStr, interval),
             interval,
+            interval === "PT0H" ? "PT1H" : interval,
           ];
         }
         case /^[^,]*\/[^,]*\/[^,]*(?:,[^,]*\/[^,]*\/[^,]*)*$/.test(dateRange): {
           let dateArrays = [];
+          let trueIntervals = [];
           let intervals = [];
           let dateRanges = dateRange.split(",");
           for (let i = 0; i < dateRanges.length; i++) {
@@ -211,12 +198,13 @@ export default {
             dateArrays.push(
               this.getDateArray(startDateStr, endDateStr, interval)
             );
-            intervals.push(interval);
+            trueIntervals.push(interval);
+            intervals.push(interval === "PT0H" ? "PT1H" : interval);
           }
-          return [dateArrays, intervals];
+          return [dateArrays, trueIntervals, intervals];
         }
         default:
-          return [null, null];
+          return [null, null, null];
       }
     },
     getDateArray(startDateStr, endDateStr, interval) {
@@ -243,13 +231,45 @@ export default {
     getNullIntervalDateArray(dateRange) {
       let dateArray = new Array();
       dateRange.forEach((dateString) => dateArray.push(new Date(dateString)));
+
       let format = "ISO";
       if (/^\d{4}-([0]\d|1[0-2])$/.test(dateRange[0])) {
         format = "month";
       } else if (/^\d{4}$/.test(dateRange[0])) {
         format = "year";
       }
-      return [dateArray, format];
+
+      let interval;
+      if (dateRange.length > 1) {
+        let probeStart = Interval.fromDateTimes(
+          DateTime.fromISO(dateRange[0], { zone: "utc" }),
+          DateTime.fromISO(dateRange[1], { zone: "utc" })
+        ).toDuration(["years", "months", "hours", "minutes"]);
+        let probeNext;
+        const dateRangeLength = dateRange.length;
+        for (let i = 2; i < dateRangeLength; i++) {
+          probeNext = Interval.fromDateTimes(
+            DateTime.fromISO(dateRange[i - 1], { zone: "utc" }),
+            DateTime.fromISO(dateRange[i], { zone: "utc" })
+          ).toDuration(["years", "months", "hours", "minutes"]);
+          if (!probeStart.equals(probeNext)) {
+            if (probeNext.toMillis() < probeStart.toMillis()) {
+              probeStart = probeNext;
+            }
+          }
+        }
+        interval = probeStart.toISO();
+      } else {
+        if (format === "ISO") {
+          interval = "PT1H";
+        } else if (format === "month") {
+          interval = "P1M";
+        } else {
+          interval = "P1Y";
+        }
+      }
+
+      return [[dateArray, format], null, interval];
     },
     getProperDateString(date, dateFormat) {
       if (dateFormat === "year") {
