@@ -149,7 +149,6 @@ export default {
     async play() {
       if (!this.playLocked) {
         this.playLocked = true;
-        this.cancelExpired = false;
         if (!this.playbackReversed) {
           if (
             this.getMapTimeSettings.DateIndex < this.getDatetimeRangeSlider[1]
@@ -195,6 +194,7 @@ export default {
           if (this.playState === "play" || !this.isAnimating) {
             this.playLocked = false;
             this.$root.$emit("fixTimeExtent");
+            this.cancelExpired = false;
           }
         } else if (!this.cancelCriticalError && this.playState === "play") {
           if (r < 1000) {

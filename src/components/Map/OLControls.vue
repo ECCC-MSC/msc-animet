@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-btn
-      id="customZoomPlus"
+      id="zoomPlus"
       class="zoom-plus"
       :class="
         getMapTimeSettings.Step !== null
@@ -21,7 +21,7 @@
     </v-btn>
 
     <v-btn
-      id="customZoomMinus"
+      id="zoomMinus"
       class="zoom-minus"
       :class="
         getMapTimeSettings.Step !== null
