@@ -3,7 +3,7 @@
     <animation-canvas v-if="isAnimating && playState !== 'play'" />
     <div ref="map" class="white map" id="map" :disabled="isAnimating">
       <animation-rectangle />
-      <custom-o-l-controls />
+      <o-l-controls />
       <global-configs />
       <side-panel id="side_panel" />
       <div id="legendMapOverlay">
@@ -16,14 +16,7 @@
       </div>
       <time-controls />
     </div>
-    <v-progress-linear
-      :active="loading > 0"
-      absolute
-      bottom
-      height="2"
-      indeterminate
-      id="progressBar"
-    />
+    <loading-bar :loading="loading > 0" />
     <get-feature-info />
     <span
       color="primary"
@@ -62,7 +55,8 @@ import { mapGetters, mapState } from "vuex";
 import AnimationCanvas from "../Animation/AnimationCanvas.vue";
 import AnimationRectangle from "../Animation/AnimationRectangle.vue";
 import AutoRefresh from "../Time/AutoRefresh.vue";
-import CustomOLControls from "./CustomOLControls.vue";
+import OLControls from "./OLControls.vue";
+import LoadingBar from "./LoadingBar.vue";
 import GetFeatureInfo from "./GetFeatureInfo.vue";
 import GlobalConfigs from "./GlobalConfigs.vue";
 import LegendControls from "./LegendControls.vue";
@@ -75,7 +69,8 @@ export default {
     AnimationCanvas,
     AnimationRectangle,
     AutoRefresh,
-    CustomOLControls,
+    OLControls,
+    LoadingBar,
     GetFeatureInfo,
     GlobalConfigs,
     LegendControls,
@@ -136,9 +131,6 @@ export default {
     });
 
     const attribution = new Attribution();
-    const progressBar = new Control({
-      element: document.getElementById("progressBar"),
-    });
     const legendMapOverlay = new Control({
       element: document.getElementById("legendMapOverlay"),
     });
@@ -153,10 +145,10 @@ export default {
       element: document.getElementById("global_configs"),
     });
     const zoomPlus = new Control({
-      element: document.getElementById("customZoomPlus"),
+      element: document.getElementById("zoomPlus"),
     });
     const zoomMinus = new Control({
-      element: document.getElementById("customZoomMinus"),
+      element: document.getElementById("zoomMinus"),
     });
     const animetVersion = new Control({
       element: document.getElementById("animet_version"),
@@ -183,7 +175,6 @@ export default {
     this.$mapCanvas.mapObj.addControl(attribution);
     this.$mapCanvas.mapObj.addControl(globalConfigs);
     this.$mapCanvas.mapObj.addControl(legendMapOverlay);
-    this.$mapCanvas.mapObj.addControl(progressBar);
     this.$mapCanvas.mapObj.addControl(sidePanel);
     this.$mapCanvas.mapObj.addControl(timeControls);
     this.$mapCanvas.mapObj.addControl(timeSnackbar);
@@ -660,10 +651,6 @@ export default {
   color: black;
   text-shadow: 0 0 2px #fff;
   font-size: 10px;
-}
-#progressBar {
-  pointer-events: none !important;
-  z-index: 3;
 }
 @media (max-width: 1120px) {
   .animet-version-collapsed {

@@ -1,6 +1,6 @@
 <template>
   <div class="Home">
-    <v-main>
+    <v-main class="main">
       <v-container fluid>
         <map-canvas id="mapComponent" />
       </v-container>
@@ -130,3 +130,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.Home,
+.main {
+  height: 100%;
+}
+</style>
