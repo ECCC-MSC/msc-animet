@@ -62,8 +62,6 @@ export default {
     this.$root.$on("cancelAnimationResize", () => {
       this.notifyCancelAnimateResize = true;
     });
-    this.$root.$on("checkLoadingErrors", this.checkExpiredOnMapMoveOrResize);
-    this.$root.$on("fixTimeExtent", this.fixTimeExtent);
     this.$root.$on("loadingError", this.errorDispatcher);
     this.$root.$on("notifyWrongFormat", () => {
       this.notifyWrongFormat = true;
@@ -71,8 +69,6 @@ export default {
     this.$root.$on("refreshExpired", this.autoRefreshHandler);
   },
   beforeDestroy() {
-    this.$root.$off("checkLoadingErrors", this.checkExpiredOnMapMoveOrResize);
-    this.$root.$off("fixTimeExtent", this.fixTimeExtent);
     this.$root.$off("loadingError", this.errorDispatcher);
     this.$root.$off("refreshExpired", this.autoRefreshHandler);
   },
@@ -115,19 +111,6 @@ export default {
           this.refreshExpired(imageLayer);
         });
       }
-      if (
-        !this.isAnimating ||
-        this.getDatetimeRangeSlider[0] === this.getDatetimeRangeSlider[1]
-      )
-        this.fixTimeExtent();
-    },
-    async checkExpiredOnMapMoveOrResize() {
-      if (
-        this.errorLayersList.length !== 0 ||
-        this.expiredTimestepList.length !== 0
-      ) {
-        this.fixTimeExtent();
-      }
     },
     clearAllTimeouts() {
       for (var layerName in this.timeoutHandles) {
@@ -138,14 +121,6 @@ export default {
       }
     },
     async fixTimeExtent() {
-      await new Promise((resolve) => {
-        let checkInterval = setInterval(() => {
-          if (this.errorLayersList.length === 0) {
-            clearInterval(checkInterval);
-            resolve();
-          }
-        }, 100); // Check every 100ms
-      });
       if (this.expiredTimestepList.length !== 0) {
         let noChangeFlag = true;
         if (this.expiredTimestepList.includes(this.getMapTimeSettings.Step)) {
@@ -418,6 +393,11 @@ export default {
     },
   },
   watch: {
+    isErrorLayersListEmpty(isEmpty) {
+      if (isEmpty) {
+        this.fixTimeExtent();
+      }
+    },
     playState(newState, oldState) {
       if (newState !== "play" && oldState === "play") {
         this.clearAllTimeouts();
@@ -427,6 +407,9 @@ export default {
   computed: {
     ...mapGetters("Layers", ["getDatetimeRangeSlider", "getMapTimeSettings"]),
     ...mapState("Layers", ["isAnimating", "isLooping", "playState"]),
+    isErrorLayersListEmpty() {
+      return this.errorLayersList.length === 0;
+    },
   },
 };
 </script>
