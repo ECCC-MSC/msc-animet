@@ -95,7 +95,8 @@ export default {
 
       if (event.target.classList.contains("resizable")) {
         if (
-          document.getElementById("animation-rect").style.display === "block"
+          document.getElementById("animation-rect").style.visibility ===
+          "visible"
         ) {
           if (event.type === "touchstart") {
             document.addEventListener("touchend", this.onResizeEnd);
@@ -151,7 +152,9 @@ export default {
       document.onmousemove = null;
       document.ontouchmove = null;
       document.ontouchend = null;
-      if (document.getElementById("animation-rect").style.display === "block") {
+      if (
+        document.getElementById("animation-rect").style.visibility === "visible"
+      ) {
         this.checkIntersect();
       }
     },

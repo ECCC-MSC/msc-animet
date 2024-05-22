@@ -179,7 +179,8 @@ export default {
           mapWidth
         );
         if (
-          document.getElementById("animation-rect").style.display === "block"
+          document.getElementById("animation-rect").style.visibility ===
+          "visible"
         ) {
           this.$root.$emit("checkIntersect");
         }
@@ -262,7 +263,7 @@ export default {
 
 <style scoped>
 #animation-rect {
-  display: none;
+  display: block;
   width: 100vw;
   height: 56.25vw; /* height:width ratio = 9/16 = .5625  */
   border: 4px solid red;
@@ -276,6 +277,7 @@ export default {
   right: 0; /* horizontal center */
   z-index: 1;
   pointer-events: none !important;
+  visibility: hidden;
 }
 #animation-rect::before {
   content: "";
