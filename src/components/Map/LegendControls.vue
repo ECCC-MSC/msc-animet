@@ -13,7 +13,7 @@
       :class="getLegendHidden"
       :id="name"
       :name="name"
-      :src="getMapLegendURL(name)"
+      :src="getMapLegendURL"
       :style="{ border: getStyle }"
       :title="name"
       crossorigin="anonymous"
@@ -58,6 +58,23 @@ export default {
         "legend-hidden": !getVisible,
       };
     },
+    getMapLegendURL() {
+      if (this.name === null) {
+        return null;
+      }
+      let layer = this.$mapLayers.arr.find(
+        (l) => l.get("layerName") === this.name
+      );
+      if (layer.get("layerStyles").length === 0) {
+        return null;
+      }
+      return (
+        layer
+          .get("layerStyles")
+          .find((style) => style.Name === layer.get("layerCurrentStyle"))
+          .LegendURL + `&lang=${this.$i18n.locale}`
+      );
+    },
     getStyle() {
       if (this.getColorBorder) {
         return `2px solid ${this.getLegendStyle()}`;
@@ -71,21 +88,6 @@ export default {
         .find((l) => l.get("layerName") === this.name)
         .get("legendColor");
       return `rgb(${legendRGB.r}, ${legendRGB.g}, ${legendRGB.b})`;
-    },
-    getMapLegendURL(layerName) {
-      if (layerName === null) {
-        return null;
-      }
-      let layer = this.$mapLayers.arr.find(
-        (l) => l.get("layerName") === layerName
-      );
-      if (layer.get("layerStyles").length === 0) {
-        return null;
-      }
-      return layer
-        .get("layerStyles")
-        .find((style) => style.Name === layer.get("layerCurrentStyle"))
-        .LegendURL;
     },
     dragMouseDown: function (event) {
       if (this.isAnimating && this.playState !== "play") {

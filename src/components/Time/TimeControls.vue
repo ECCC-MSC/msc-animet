@@ -144,8 +144,14 @@ export default {
         "Layers/addTimestep",
         imageLayer.get("layerTimeStep")
       );
-      if (this.getMapTimeSettings.Step === null || layerData.isSnapped) {
+      if (layerData.isSnapped) {
         this.changeMapTime(imageLayer.get("layerTimeStep"), imageLayer);
+      } else if (this.getMapTimeSettings.Step === null) {
+        this.changeMapTime(imageLayer.get("layerTimeStep"));
+        this.$store.commit("Layers/setDatetimeRangeSlider", [
+          0,
+          this.getMapTimeSettings.Extent.length - 1,
+        ]);
       } else {
         const layerDateIndex = this.findLayerIndex(
           this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
