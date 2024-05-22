@@ -61,7 +61,7 @@
                   v-if="!item.children"
                   icon
                   :disabled="
-                    isAnimating ||
+                    (isAnimating && playState !== 'play') ||
                     !getAvailableCRS[index].includes(getCurrentCRS)
                   "
                   @click="requestLayerData(item)"
@@ -195,6 +195,9 @@ export default {
   },
   methods: {
     async requestLayerData(layer) {
+      if (this.playState === "play") {
+        this.$root.$emit("stopAnimation");
+      }
       if (layer.isLeaf && !this.addedLayers.includes(layer.Name)) {
         let source = Object.hasOwn(layer, "wmsSource")
           ? layer.wmsSource
@@ -289,7 +292,7 @@ export default {
     },
   },
   computed: {
-    ...mapState("Layers", ["isAnimating"]),
+    ...mapState("Layers", ["isAnimating", "playState"]),
     ...mapGetters("Layers", [
       "getCurrentCRS",
       "getCurrentWmsSource",

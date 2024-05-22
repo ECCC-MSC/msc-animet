@@ -285,12 +285,6 @@ export default {
           visibleTLayers[i].setVisible(false);
         }
       }
-      await new Promise((resolve) =>
-        this.$animationCanvas.mapObj.once("rendercomplete", resolve)
-      );
-      if (this.cancelExpired) {
-        this.$root.$emit("fixTimeExtent");
-      }
     },
     removeLayersListeners() {
       this.$mapCanvas.mapObj.getLayers().forEach((layer) => {

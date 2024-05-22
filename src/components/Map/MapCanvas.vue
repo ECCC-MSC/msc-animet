@@ -191,7 +191,6 @@ export default {
       const rotation = view.getRotation();
       this.$store.dispatch("Layers/setExtent", [extent, rotation]);
       this.$root.$emit("updatePermalink");
-      this.resizeRefreshExpired();
     });
 
     this.$mapCanvas.mapObj.on("singleclick", (evt) => {
@@ -215,12 +214,6 @@ export default {
     window.removeEventListener("keydown", this.removeLegend);
   },
   methods: {
-    async resizeRefreshExpired() {
-      await new Promise((resolve) =>
-        this.$mapCanvas.mapObj.once("rendercomplete", resolve)
-      );
-      this.$root.$emit("checkLoadingErrors");
-    },
     async goToExtentHandler(locExtent) {
       let rotation = 0;
       if (locExtent.length === 5) {

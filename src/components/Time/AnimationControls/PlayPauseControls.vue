@@ -34,16 +34,15 @@ import ControllerOptions from "./ControllerOptions.vue";
 
 export default {
   mounted() {
-    this.$root.$on("cancelExpired", () => {
-      this.cancelExpired = true;
-    });
     this.$root.$on("cancelCriticalError", (isError) => {
       this.cancelCriticalError = isError;
     });
     this.$root.$on("playAnimation", this.play);
+    this.$root.$on("stopAnimation", this.playPause);
   },
   beforeDestroy() {
     this.$root.$off("playAnimation", this.play);
+    this.$root.$off("stopAnimation", this.playPause);
   },
   components: {
     ControllerOptions,
@@ -51,7 +50,6 @@ export default {
   data() {
     return {
       cancelCriticalError: false,
-      cancelExpired: false,
       locked: false,
       loop: false,
       playbackReversed: false,
@@ -100,11 +98,11 @@ export default {
       return fn().then(onPromiseDone, onPromiseDone);
     },
     playPause() {
-      this.$root.$emit("changeTab");
       if (!this.locked) {
         this.locked = true;
         setTimeout(this.unlock, 1000);
         if (this.playState === "pause") {
+          this.$root.$emit("changeTab");
           if (!this.playbackReversed) {
             if (
               this.getMapTimeSettings.DateIndex !==
@@ -190,13 +188,7 @@ export default {
               this.$mapCanvas.mapObj.once("rendercomplete", resolve)
             )
         );
-        if (this.cancelExpired) {
-          if (this.playState === "play" || !this.isAnimating) {
-            this.playLocked = false;
-            this.$root.$emit("fixTimeExtent");
-            this.cancelExpired = false;
-          }
-        } else if (!this.cancelCriticalError && this.playState === "play") {
+        if (!this.cancelCriticalError && this.playState === "play") {
           if (r < 1000) {
             await this.delay(1000 - r);
           }
