@@ -166,15 +166,17 @@ export default {
     togglePreview(on) {
       let controlElement = document.getElementById("animation-rect");
       if (on) {
-        controlElement.style.display = "block";
+        controlElement.style.visibility = "visible";
         this.$root.$emit("checkIntersect");
       } else {
-        controlElement.style.display = "none";
+        controlElement.style.visibility = "hidden";
       }
     },
     updateScreenSize() {
       this.screenWidth = window.innerWidth;
-      if (document.getElementById("animation-rect").style.display === "block") {
+      if (
+        document.getElementById("animation-rect").style.visibility === "visible"
+      ) {
         this.$root.$emit("checkIntersect");
       }
     },
