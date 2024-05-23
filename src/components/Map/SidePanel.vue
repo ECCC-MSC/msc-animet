@@ -29,7 +29,11 @@
           </v-btn>
         </transition>
       </template>
-      <v-container @click.stop>
+      <v-container
+        @click.stop
+        @mouseover="hover = true"
+        @mouseleave="hover = false"
+      >
         <v-toolbar class="toolbar">
           <template v-slot:extension>
             <v-tabs v-model="tab" bg-color="deep-purple-darken-4" center-active>
@@ -58,7 +62,10 @@
             </v-btn>
           </template>
         </v-toolbar>
-        <v-tabs-items v-model="tab">
+        <v-tabs-items
+          v-model="tab"
+          :class="{ 'hide-header': isAnimating && !hover }"
+        >
           <v-tab-item eager>
             <layer-tree id="layer-tree" />
           </v-tab-item>
@@ -85,7 +92,7 @@ import AnimationConfiguration from "../Animation/AnimationConfiguration.vue";
 import LayerConfiguration from "../Layers/LayerConfiguration.vue";
 import LayerTree from "../Layers/LayerTree.vue";
 
-import { mapGetters } from "vuex";
+import { mapGetters, mapState } from "vuex";
 
 export default {
   name: "SidePanel",
@@ -130,6 +137,7 @@ export default {
     return {
       buttonShown: false,
       color: null,
+      hover: false,
       menuOpen: true,
       screenWidth: window.innerWidth,
       tab: null,
@@ -183,6 +191,7 @@ export default {
   },
   computed: {
     ...mapGetters("Layers", ["getMapTimeSettings"]),
+    ...mapState("Layers", ["isAnimating"]),
     layersLength() {
       return this.$mapLayers.arr.length;
     },
@@ -219,6 +228,10 @@ export default {
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
+}
+.hide-header {
+  margin-top: -48px;
+  padding-top: 8px;
 }
 .move-transition-enter,
 .move-transition-leave-to {
