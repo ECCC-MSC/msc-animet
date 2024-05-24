@@ -330,12 +330,12 @@ export default {
 .treeview::v-deep .v-treeview-node__prepend {
   margin-right: 0;
 }
-@media (max-width: 1265px) {
+@media (max-width: 1120px) {
   .treeview {
-    max-height: calc(100vh - (34px + 0.5em * 2) - 138px - 190px - 42px);
+    max-height: calc(100vh - (34px + 0.5em * 2) - 138px - 190px + 24px);
   }
 }
-@media (max-width: 1120px) {
+@media (max-width: 959px) {
   .treeview {
     max-height: calc(100vh - (34px + 0.5em * 2) - 138px - 190px - 42px + 24px);
   }

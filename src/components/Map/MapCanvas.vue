@@ -586,20 +586,11 @@ export default {
   bottom: 18px;
 }
 @media (max-width: 1120px) {
-  .scale-line-collapsed {
-    bottom: 65px;
-  }
   .scale-line-open {
     bottom: 132px;
   }
-  .rotate-collapsed {
-    bottom: 92px;
-  }
   .rotate-open {
     bottom: 159px;
-  }
-  .attribution-collapsed {
-    bottom: 46px !important;
   }
   .attribution-open {
     bottom: 114px !important;
@@ -646,9 +637,6 @@ export default {
   font-size: 10px;
 }
 @media (max-width: 1120px) {
-  .animet-version-collapsed {
-    bottom: 49px !important;
-  }
   .animet-version-open {
     bottom: 116px !important;
   }

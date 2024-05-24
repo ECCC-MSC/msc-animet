@@ -1,7 +1,10 @@
 <template>
   <v-card
     id="time-controls"
-    :class="getCollapsedControls ? 'time-controls-collapsed' : ''"
+    :class="{
+      'time-controls-collapsed': getCollapsedControls,
+      'time-controls': !getCollapsedControls || screenWidth < 565,
+    }"
   >
     <div class="controller-padding" v-if="getMapTimeSettings.Step !== null">
       <div v-if="screenWidth >= 565">
@@ -22,6 +25,19 @@
           "
         >
           <v-icon v-if="!getCollapsedControls" large> mdi-chevron-down </v-icon>
+          <div
+            v-else-if="
+              getMapTimeSettings.Step === 'P1M' ||
+              getMapTimeSettings.Step === 'P1Y'
+            "
+          >
+            <span class="collapsed-date-M-Y">{{
+              this.localeDateFormat(
+                getMapTimeSettings.Extent[getMapTimeSettings.DateIndex],
+                getMapTimeSettings.Step
+              )
+            }}</span>
+          </div>
           <div v-else>
             <span class="collapsed-date">{{
               getCollapsedDateFormat()[0]
@@ -50,6 +66,19 @@
           "
         >
           <v-icon v-if="!getCollapsedControls" large> mdi-chevron-down </v-icon>
+          <div
+            v-else-if="
+              getMapTimeSettings.Step === 'P1M' ||
+              getMapTimeSettings.Step === 'P1Y'
+            "
+          >
+            <span class="collapsed-date-M-Y">{{
+              this.localeDateFormat(
+                getMapTimeSettings.Extent[getMapTimeSettings.DateIndex],
+                getMapTimeSettings.Step
+              )
+            }}</span>
+          </div>
           <div v-else>
             <span class="collapsed-date">{{
               getCollapsedDateFormat()[0]
@@ -431,12 +460,17 @@ export default {
 
 <style scoped>
 .collapsed {
-  border-radius: 0;
+  border-radius: 4px 4px 0 0;
   box-shadow: none;
-  margin-top: 6px;
-  transform: translateY(-13px);
-  width: 100%;
   height: 50px !important;
+  margin-top: 6px;
+  min-width: 255px !important;
+  pointer-events: auto;
+  transform: translateY(10px);
+  width: 30%;
+}
+.collapsed::before {
+  min-width: 250px;
 }
 .collapsed-date {
   display: block;
@@ -447,6 +481,12 @@ export default {
 .collapsed-time {
   display: block;
   font-size: 24px;
+  text-transform: none !important;
+  white-space: nowrap !important;
+}
+.collapsed-date-M-Y {
+  display: block;
+  font-size: 26px;
   text-transform: none !important;
   white-space: nowrap !important;
 }
@@ -461,62 +501,57 @@ export default {
   background-color: transparent !important;
   border-radius: 0;
   box-shadow: none;
+  height: 26px !important;
   margin-top: 6px;
   transform: translateY(-13px);
   width: 100%;
-  height: 26px !important;
 }
 .hide-controls {
   display: none;
 }
 .slider {
-  padding-top: 2px;
   padding-bottom: 0;
+  padding-top: 2px;
 }
 #collapse-button::v-deep .v-btn__content {
   height: 20px;
 }
 #time-controls {
-  position: absolute;
-  bottom: 24px;
-  width: 75%;
-  left: 50%;
-  transform: translateX(-50%);
   border-radius: 20px;
+  bottom: 24px;
+  left: 50%;
   max-width: 1200px;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  width: 75%;
   z-index: 2;
 }
-@media (min-width: 1121px) {
-  .collapsed {
-    pointer-events: auto;
-    border-radius: 4px 4px 0 0;
-    box-shadow: none;
-    margin-left: calc(35%);
-    transform: translateY(10px);
-    width: 30%;
-    height: 50px !important;
+@media (max-width: 1120px) {
+  .time-controls {
+    border-radius: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    width: 100% !important;
   }
+}
+@media (min-width: 565px) {
   .time-controls-collapsed {
     background-color: transparent;
     box-shadow: none !important;
-    pointer-events: none !important;
     padding-top: 0;
-  }
-}
-@media (max-width: 1120px) {
-  #time-controls {
-    width: 100%;
-    transform: none;
-    border-radius: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    pointer-events: none !important;
   }
 }
 @media (max-width: 565px) {
   .collapsed {
+    border-radius: 0;
+    margin-left: 0;
     margin-top: -8px;
     transform: translateY(-4px);
+    width: 100%;
   }
   .controller-padding {
     pointer-events: auto;
