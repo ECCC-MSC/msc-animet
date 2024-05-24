@@ -1,16 +1,16 @@
 <template>
   <v-container fluid id="global_configs">
     <v-row class="align-center ma-0 justify-space-between">
-      <v-col cols="0" lg="4" class="pa-0"></v-col>
-      <v-col cols="12" lg="4" class="pa-0 pt-2">
+      <v-col cols="0" md="4" class="pa-0"></v-col>
+      <v-col cols="12" md="4" class="pa-0 pt-2">
         <animet-logo />
       </v-col>
       <v-col
         cols="12"
-        lg="4"
+        md="4"
         class="d-flex pa-0 pt-2 justify-center align-center"
       >
-        <v-spacer v-if="$vuetify.breakpoint.lgAndUp"></v-spacer>
+        <v-spacer v-if="$vuetify.breakpoint.mdAndUp"></v-spacer>
         <map-customization class="mr-3" />
         <page-theme class="mr-3" />
         <language-select class="mr-3" />

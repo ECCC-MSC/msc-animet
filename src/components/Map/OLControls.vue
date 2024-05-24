@@ -86,14 +86,8 @@ export default {
   .zoom-plus-open {
     bottom: 170px;
   }
-  .zoom-plus-collapsed {
-    bottom: 103px;
-  }
   .zoom-minus-open {
     bottom: 138px;
-  }
-  .zoom-minus-collapsed {
-    bottom: 71px;
   }
 }
 @media (max-width: 565px) {

@@ -229,7 +229,7 @@ export default {
   object-fit: contain;
   vertical-align: middle;
 }
-@media (max-width: 1265px) {
+@media (max-width: 959px) {
   .resizable {
     top: 100px;
   }

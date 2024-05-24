@@ -250,19 +250,19 @@ export default {
   max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px);
   overflow: hidden;
 }
-@media (max-width: 1265px) {
+@media (max-width: 1120px) {
+  .v-menu__content {
+    max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px + 24px);
+  }
+}
+@media (max-width: 959px) {
   .v-menu__content {
     top: calc(34px + 42px + 0.5em * 2) !important;
-    max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px - 42px);
+    max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px - 42px + 24px);
   }
   .move-transition-enter,
   .move-transition-leave-to {
     transform: translateY(calc(-50vh + 92px)) !important;
-  }
-}
-@media (max-width: 1120px) {
-  .v-menu__content {
-    max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px - 42px + 24px);
   }
 }
 @media (max-width: 565px) {

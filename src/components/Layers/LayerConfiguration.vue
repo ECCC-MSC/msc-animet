@@ -196,12 +196,12 @@ export default {
   margin: 0;
   padding: 0;
 }
-@media (max-width: 1265px) {
+@media (max-width: 1120px) {
   .scroll {
-    max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px - 48px - 42px);
+    max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px - 48px + 24px);
   }
 }
-@media (max-width: 1120px) {
+@media (max-width: 959px) {
   .scroll {
     max-height: calc(
       100vh - (34px + 0.5em * 2) - 0.5em - 138px - 48px - 42px + 24px
