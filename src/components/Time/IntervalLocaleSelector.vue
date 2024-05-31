@@ -17,14 +17,7 @@
           {{ formatDuration(item) }}
         </template>
       </v-select>
-      <v-switch
-        class="locale-switch"
-        :disabled="isAnimating && playState !== 'play'"
-        v-model="timeFormat"
-        hide-details
-        :label="$t('MP4CreateTimeFormat')"
-      >
-      </v-switch>
+      <locale-selector />
     </div>
     <v-row class="justify-space-between pt-0 second-row" v-else>
       <v-select
@@ -43,14 +36,9 @@
           {{ formatDuration(item) }}
         </template>
       </v-select>
-      <v-switch
-        class="locale-switch"
-        :disabled="isAnimating && playState !== 'play'"
-        v-model="timeFormat"
-        hide-details
-        :label="$t('MP4CreateTimeFormat')"
-      >
-      </v-switch>
+      <v-col cols="5">
+        <locale-selector class="small-locale" />
+      </v-col>
     </v-row>
   </v-col>
 </template>
@@ -59,9 +47,14 @@
 import { Duration } from "luxon";
 import { mapGetters, mapState } from "vuex";
 
+import LocaleSelector from "./LocaleSelector.vue";
+
 import datetimeManipulations from "../../mixins/datetimeManipulations";
 
 export default {
+  components: {
+    LocaleSelector,
+  },
   mixins: [datetimeManipulations],
   data() {
     return {
@@ -71,10 +64,6 @@ export default {
   },
   mounted() {
     window.addEventListener("resize", this.updateScreenSize);
-    const userLocaleChoice = this.getLocale();
-    if (userLocaleChoice === "false") {
-      this.$store.dispatch("Layers/setTimeFormat", false);
-    }
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.updateScreenSize);
@@ -89,9 +78,6 @@ export default {
       l.loc.locale = this.$i18n.locale;
       l.loc.intl = this.$i18n.locale;
       return l.toHuman();
-    },
-    getLocale() {
-      return localStorage.getItem("user-locale");
     },
     updateScreenSize() {
       this.screenWidth = window.innerWidth;
@@ -109,22 +95,8 @@ export default {
     },
   },
   computed: {
-    ...mapGetters("Layers", [
-      "getMapTimeSettings",
-      "getTimeFormat",
-      "getUniqueTimestepsList",
-    ]),
-    ...mapState("Layers", ["isAnimating", "playState"]),
-    timeFormat: {
-      get() {
-        return this.getTimeFormat;
-      },
-      set(flag) {
-        this.$store.dispatch("Layers/setTimeFormat", flag);
-        localStorage.setItem("user-locale", flag);
-        this.$root.$emit("calcFooterPreview");
-      },
-    },
+    ...mapGetters("Layers", ["getMapTimeSettings", "getUniqueTimestepsList"]),
+    ...mapState("Layers", ["isAnimating"]),
     mapInterval() {
       return this.getMapTimeSettings.Step;
     },
@@ -138,14 +110,11 @@ export default {
   max-width: 142px;
   z-index: 4;
 }
-.locale-switch {
-  margin-top: 10px;
-}
-.locale-switch::v-deep .v-input--selection-controls__ripple {
-  z-index: 4;
-}
 .second-row {
   padding-left: 54px;
   padding-right: 17px;
+}
+.small-locale {
+  transform: translateX(28px);
 }
 </style>

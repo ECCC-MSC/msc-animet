@@ -14,19 +14,21 @@ const originalConsoleError = console.error;
 function customLog(message) {
   // OpenLayers added an annoying console.error everytime a WMS request
   // returns XML even if it's handled so this code is there to silence it
-  if (message.message !== "The source image cannot be decoded.")
-    originalConsoleError(message);
+  if (!(message instanceof DOMException)) originalConsoleError(message);
 }
 console.error = customLog;
 
 const ct = require("countries-and-timezones");
 const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 const country = ct.getCountryForTimezone(timeZone);
+
+Vue.prototype.$timeZone = Vue.observable({ id: timeZone });
 if (country === null) {
-  Vue.prototype.$countryCode = null;
+  Vue.prototype.$countryCode = Vue.observable({ id: null });
 } else {
-  Vue.prototype.$countryCode = country.id;
+  Vue.prototype.$countryCode = Vue.observable({ id: country.id });
 }
+Vue.prototype.$ct = ct;
 
 new Vue({
   router,
