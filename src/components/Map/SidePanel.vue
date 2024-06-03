@@ -246,7 +246,7 @@ export default {
   left: auto !important;
   right: 0.5em;
   top: calc(34px + 0.5em * 2) !important;
-  min-width: 345px !important;
+  min-width: 350px !important;
   max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px);
   overflow: hidden;
 }

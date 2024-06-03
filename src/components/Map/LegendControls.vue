@@ -163,7 +163,7 @@ export default {
     initialPosStyle() {
       const initialX = 8;
       let initialY;
-      if (window.innerWidth < 1265) {
+      if (window.innerWidth < 960) {
         initialY = 100;
       } else {
         initialY = 50;

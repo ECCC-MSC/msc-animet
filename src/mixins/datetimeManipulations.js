@@ -308,9 +308,9 @@ export default {
     },
     localeDateFormat(dateIn, interval = null, format = "DATETIME_FULL") {
       const locale =
-        this.$countryCode === null
+        this.$countryCode.id === null
           ? this.$i18n.locale
-          : `${this.$i18n.locale}-${this.$countryCode}`;
+          : `${this.$i18n.locale}-${this.$countryCode.id}`;
       if (interval === "P1Y") {
         return dateIn.toISOString().split("-")[0];
       } else if (interval === "P1M") {
@@ -334,6 +334,7 @@ export default {
         } else if (this.getTimeFormat === true) {
           return this.capitalize(
             DateTime.fromJSDate(dateIn)
+              .setZone(this.$timeZone.id)
               .setLocale(locale)
               .toLocaleString(customFormat)
           ).replace(" h ", ":");
@@ -342,9 +343,9 @@ export default {
     },
     localeDateFormatAnimation(dateIn) {
       const locale =
-        this.$countryCode === null
+        this.$countryCode.id === null
           ? this.$i18n.locale
-          : `${this.$i18n.locale}-${this.$countryCode}`;
+          : `${this.$i18n.locale}-${this.$countryCode.id}`;
       const customFormat = this.getCustomDateFormat("DATETIME_FULL");
       let dateFormat = {
         year: customFormat.year,
@@ -380,11 +381,13 @@ export default {
         dateFormat.weekday = customFormat.weekday;
         const date = this.capitalize(
           DateTime.fromJSDate(dateIn)
+            .setZone(this.$timeZone.id)
             .setLocale(locale)
             .toLocaleString(dateFormat)
         );
         const time = this.capitalize(
           DateTime.fromJSDate(dateIn)
+            .setZone(this.$timeZone.id)
             .setLocale(locale)
             .toLocaleString(timeFormat)
         ).replace(" h ", ":");

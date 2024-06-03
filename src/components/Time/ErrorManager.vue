@@ -32,7 +32,7 @@
       </template>
     </v-snackbar>
 
-    <v-snackbar v-model="notifyWrongFormat" timeout="5000" class="snackbar">
+    <v-snackbar v-model="notifyWrongFormat" timeout="-1" class="snackbar">
       <span class="snackMessage">{{ $t("WrongTimeFormat") }}</span>
 
       <template v-slot:action="{ attrs }">
@@ -248,7 +248,7 @@ export default {
           this.$root.$emit("cancelExpired");
           this.$root.$emit("removeLayer", layer);
           this.expiredSnackBarMessage = this.$t("UnhandledError");
-          console.log(e);
+          console.error("Unhandled error case: ", response);
           this.notifyExtentRebuilt = true;
           this.errorLayersList = this.errorLayersList.filter(
             (l) => l !== layer.get("layerName")
