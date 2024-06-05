@@ -235,8 +235,9 @@ export default {
         this.$mapCanvas.mapObj
           .getLayers()
           .getArray()
-          .find((l) => l.get("layerName") === removedLayer.get("layerName")) !==
-        undefined
+          .find(
+            (lf) => lf.get("layerName") === removedLayer.get("layerName")
+          ) !== undefined
       ) {
         layerFound = true;
         this.$mapCanvas.mapObj.removeLayer(removedLayer);
@@ -246,7 +247,7 @@ export default {
       this.$mapLayers.arr.forEach((elem) =>
         elem.setZIndex(
           this.$mapLayers.arr.findIndex(
-            (l) => l.get("layerName") === elem.get("layerName")
+            (layerObj) => layerObj.get("layerName") === elem.get("layerName")
           )
         )
       );
@@ -296,7 +297,7 @@ export default {
       const layerFound = this.$mapCanvas.mapObj
         .getLayers()
         .getArray()
-        .filter((l) => l.get("layerName") === layerName);
+        .filter((lo) => lo.get("layerName") === layerName);
       if (layerFound.length !== 0) {
         this.$mapCanvas.mapObj.removeLayer(layerFound[0]);
       } else {

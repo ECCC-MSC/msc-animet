@@ -21,7 +21,7 @@
             autofocus
             dense
             v-model="search"
-            :label="$t('Search')"
+            :label="$t('SearchTZ')"
             filled
             outlined
             hide-details
@@ -186,8 +186,8 @@ export default {
       };
     },
     getLabel() {
-      if (!this.$countryCode.id) return `${this.$i18n.locale}`;
-      return `${this.$i18n.locale}-${this.$countryCode.id}`;
+      if (this.timeFormat) return this.$t("LocalTime");
+      return "UTC";
     },
     timeFormat: {
       get() {

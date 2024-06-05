@@ -349,13 +349,14 @@ export default {
       this.$store.dispatch("Layers/removeTimestep", timestep);
       if (this.getMapTimeSettings.Step === timestep) {
         if (
-          this.$mapLayers.arr.filter((l) => l.get("layerTimeStep") === timestep)
-            .length !== 0
+          this.$mapLayers.arr.filter(
+            (layerObject) => layerObject.get("layerTimeStep") === timestep
+          ).length !== 0
         ) {
           this.changeMapTime(timestep);
         } else {
-          const firstTimeLayerFound = this.$mapLayers.arr.find((l) =>
-            l.get("layerIsTemporal")
+          const firstTimeLayerFound = this.$mapLayers.arr.find((otherLayer) =>
+            otherLayer.get("layerIsTemporal")
           );
           if (firstTimeLayerFound === undefined) {
             const mapTimeSettings = {

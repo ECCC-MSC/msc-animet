@@ -8,8 +8,11 @@ export default {
       return word.charAt(0).toUpperCase() + word.slice(1);
     },
     changeMapTime(timestep, snappedLayer = null) {
-      const timeLayers = this.$mapLayers.arr.filter((l) => {
-        return l.get("layerIsTemporal") && l.get("layerTimeStep") === timestep;
+      const timeLayers = this.$mapLayers.arr.filter((layerItem) => {
+        return (
+          layerItem.get("layerIsTemporal") &&
+          layerItem.get("layerTimeStep") === timestep
+        );
       });
       let arrayCombine = timeLayers[0].get("layerDateArray");
       if (timeLayers.length > 1) {
@@ -92,7 +95,9 @@ export default {
       }
       if (snappedLayer === null) {
         let currentSnappedLayer = timeLayers.find(
-          (l) => l.get("layerName") === this.getMapTimeSettings.SnappedLayer
+          (layerElement) =>
+            layerElement.get("layerName") ===
+            this.getMapTimeSettings.SnappedLayer
         );
         if (currentSnappedLayer !== undefined) {
           snappedLayer = currentSnappedLayer;

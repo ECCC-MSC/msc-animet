@@ -1,6 +1,11 @@
 <template>
   <div id="time-snackbar">
-    <v-snackbar v-model="notifyExtentRebuilt" timeout="8000" class="snackbar">
+    <v-snackbar
+      class="snackbar"
+      top
+      v-model="notifyExtentRebuilt"
+      :timeout="timeoutDuration"
+    >
       {{ expiredSnackBarMessage }}
       <template v-slot:action="{ attrs }">
         <v-btn
@@ -15,9 +20,10 @@
     </v-snackbar>
 
     <v-snackbar
-      v-model="notifyCancelAnimateResize"
-      timeout="-1"
       class="snackbar"
+      timeout="-1"
+      top
+      v-model="notifyCancelAnimateResize"
     >
       {{ $t("MP4CreateNotifyCancelAnimation") }}
       <template v-slot:action="{ attrs }">
@@ -32,7 +38,7 @@
       </template>
     </v-snackbar>
 
-    <v-snackbar v-model="notifyWrongFormat" timeout="-1" class="snackbar">
+    <v-snackbar class="snackbar" timeout="-1" top v-model="notifyWrongFormat">
       <span class="snackMessage">{{ $t("WrongTimeFormat") }}</span>
 
       <template v-slot:action="{ attrs }">
@@ -81,6 +87,7 @@ export default {
       notifyCancelAnimateResize: false,
       notifyExtentRebuilt: false,
       notifyWrongFormat: false,
+      timeoutDuration: 6000,
       timeoutHandles: {},
       xsltTime: `parse-xml($xml)//Layer[not(.//Layer) and Name = 'REPLACE_WITH_LAYERNAME']!map
                       {
@@ -129,6 +136,7 @@ export default {
         this.expiredTimestepList = [];
         if (noChangeFlag) {
           this.expiredSnackBarMessage = this.$t("MissingTimesteps");
+          this.timeoutDuration = 6000;
           this.notifyExtentRebuilt = true;
           if (this.isAnimating && this.playState !== "play") {
             this.$root.$emit("redoAnimation");
@@ -141,11 +149,12 @@ export default {
             this.changeMapTime(
               this.getMapTimeSettings.Step,
               this.$mapLayers.arr.find(
-                (l) =>
-                  l.get("layerName") === this.getMapTimeSettings.SnappedLayer
+                (sl) =>
+                  sl.get("layerName") === this.getMapTimeSettings.SnappedLayer
               )
             );
             this.expiredSnackBarMessage = this.$t("MissingTimesteps");
+            this.timeoutDuration = 6000;
             this.notifyExtentRebuilt = true;
             if (this.isAnimating && this.playState !== "play") {
               this.$root.$emit("redoAnimation");
@@ -157,12 +166,14 @@ export default {
             if (this.getMapTimeSettings.Extent[0] >= currentHighBoundDate) {
               // Cancel animation
               this.expiredSnackBarMessage = this.$t("ExtentFullyOOB");
+              this.timeoutDuration = 8000;
               this.notifyExtentRebuilt = true;
               if (this.isAnimating) {
                 this.$root.$emit("restoreState");
               }
             } else {
               this.expiredSnackBarMessage = this.$t("MissingTimesteps");
+              this.timeoutDuration = 6000;
               this.notifyExtentRebuilt = true;
               if (this.isAnimating && this.playState !== "play") {
                 this.$root.$emit("redoAnimation");
@@ -240,6 +251,7 @@ export default {
         ) {
           layer.getSource().updateParams({ STYLES: null });
           this.expiredSnackBarMessage = this.$t("StyleError");
+          this.timeoutDuration = 8000;
           this.notifyExtentRebuilt = true;
           this.errorLayersList = this.errorLayersList.filter(
             (l) => l !== layer.get("layerName")
@@ -249,6 +261,7 @@ export default {
           this.$root.$emit("removeLayer", layer);
           this.expiredSnackBarMessage = this.$t("UnhandledError");
           console.error("Unhandled error case: ", response);
+          this.timeoutDuration = 12000;
           this.notifyExtentRebuilt = true;
           this.errorLayersList = this.errorLayersList.filter(
             (l) => l !== layer.get("layerName")
@@ -261,8 +274,8 @@ export default {
           const timeoutId = setTimeout(() => {
             clearTimeout(this.timeoutHandles[name]["timeoutId"]);
             delete this.timeoutHandles[name];
-            this.errorDispatcher(layer, e);
             this.$root.$emit("cancelCriticalError", false);
+            this.errorDispatcher(layer, e);
           }, 45000);
           if (name in this.timeoutHandles) {
             clearTimeout(this.timeoutHandles[name]["timeoutId"]);
@@ -273,12 +286,14 @@ export default {
             params: [layer, e],
           };
           this.expiredSnackBarMessage = this.$t("LoopRetry");
+          this.timeoutDuration = 5000;
           this.notifyExtentRebuilt = true;
           return;
         }
         this.$root.$emit("cancelExpired");
         this.$root.$emit("removeLayer", layer);
         this.expiredSnackBarMessage = this.$t("BrokenLayer");
+        this.timeoutDuration = 12000;
         this.notifyExtentRebuilt = true;
         this.errorLayersList = this.errorLayersList.filter(
           (l) => l !== layer.get("layerName")
@@ -417,9 +432,15 @@ export default {
 <style scoped>
 .snackbar::v-deep .v-snack__wrapper {
   border-radius: 15px;
-  bottom: 128px;
+  top: 42px;
+  min-width: 0px;
 }
 .snackMessage {
   white-space: pre-wrap;
+}
+@media (max-width: 959px) {
+  .snackbar::v-deep .v-snack__wrapper {
+    top: 84px;
+  }
 }
 </style>
