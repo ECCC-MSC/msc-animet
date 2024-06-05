@@ -64,7 +64,10 @@
         </v-toolbar>
         <v-tabs-items
           v-model="tab"
-          :class="{ 'hide-header': isAnimating && !hover }"
+          :class="{
+            'hide-header':
+              isAnimating && !hover && playState === 'play' && tab === 1,
+          }"
         >
           <v-tab-item eager>
             <layer-tree id="layer-tree" />
@@ -191,7 +194,7 @@ export default {
   },
   computed: {
     ...mapGetters("Layers", ["getMapTimeSettings"]),
-    ...mapState("Layers", ["isAnimating"]),
+    ...mapState("Layers", ["isAnimating", "playState"]),
     layersLength() {
       return this.$mapLayers.arr.length;
     },
