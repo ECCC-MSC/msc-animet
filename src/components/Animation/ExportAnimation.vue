@@ -4,7 +4,7 @@
       {{ $t("MP4ExportTitle") }}
     </v-card-title>
     <v-card-subtitle>
-      {{ getMP4URL ? $t("MP4ExportSubtitle") : $t("PNGExportSubtitle") }}
+      {{ getMP4URL ? $t("MP4ExportSubtitle") : $t("JPEGExportSubtitle") }}
     </v-card-subtitle>
 
     <v-row class="mx-4 mb-2" justify="center">
@@ -26,7 +26,7 @@
 
     <v-card-actions class="mt-4">
       <v-btn block color="primary" @click="downloadOutput()" class="text-none">
-        {{ getMP4URL ? $t("MP4ExportDownload") : $t("PNGExportDownload") }} [{{
+        {{ getMP4URL ? $t("MP4ExportDownload") : $t("JPEGExportDownload") }} [{{
           this.formatBytes(this.getOutputSize, 0)
         }}]
         <v-icon dark class="ml-4"> mdi-download </v-icon>
@@ -63,7 +63,7 @@ export default {
         animationTitle = animationTitle.replace(/[^a-zA-Z0-9]$/, "");
         animationTitle = "_" + animationTitle;
       }
-      const outputFormat = this.getMP4URL ? ".mp4" : ".png";
+      const outputFormat = this.getMP4URL ? ".mp4" : ".jpeg";
       return `MSC-AniMet_${this.getOutputDate}${animationTitle}${outputFormat}`;
     },
   },

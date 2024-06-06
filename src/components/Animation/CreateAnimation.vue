@@ -11,7 +11,7 @@
       {{
         this.datetimeRangeSlider[0] !== this.datetimeRangeSlider[1]
           ? $t("MP4CreateButtonLabel")
-          : $t("PNGCreateButtonLabel")
+          : $t("JPEGCreateButtonLabel")
       }}
     </v-btn>
     <div v-if="isAnimating && playState !== 'play'" class="animation-progress">
@@ -375,7 +375,7 @@ export default {
       await this.updateInfoCanvas(date);
       const composedCnv = await this.stitchCanvases(mapCnv);
       if (this.MP4Length === 1) {
-        this.imgURL = composedCnv.toDataURL("image/png");
+        this.imgURL = composedCnv.toDataURL("image/jpeg", 0.9);
       }
       if (encoder !== null) {
         try {
