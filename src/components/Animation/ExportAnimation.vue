@@ -4,43 +4,52 @@
       {{ $t("MP4ExportTitle") }}
     </v-card-title>
     <v-card-subtitle>
-      {{ $t("MP4ExportSubtitle") }}
+      {{ getMP4URL ? $t("MP4ExportSubtitle") : $t("PNGExportSubtitle") }}
     </v-card-subtitle>
 
     <v-row class="mx-4 mb-2" justify="center">
       <video
+        v-if="getMP4URL"
         :src="getMP4URL"
-        class="video-preview"
+        class="output-preview"
         controls
         autoplay
         loop
       ></video>
+      <img
+        v-if="getImgURL && !isFullSize"
+        :src="getImgURL"
+        @click="toggleFullSize"
+        class="output-preview pointer"
+      />
     </v-row>
 
     <v-card-actions class="mt-4">
-      <v-btn block color="primary" @click="downloadMP4()" class="text-none">
-        {{ $t("MP4ExportDownload") }} [{{
+      <v-btn block color="primary" @click="downloadOutput()" class="text-none">
+        {{ getMP4URL ? $t("MP4ExportDownload") : $t("PNGExportDownload") }} [{{
           this.formatBytes(this.getOutputSize, 0)
         }}]
         <v-icon dark class="ml-4"> mdi-download </v-icon>
       </v-btn>
     </v-card-actions>
-    <a id="MP4-download" :download="exportName"></a>
+    <a id="output-download" :download="exportName"></a>
   </v-card>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapState } from "vuex";
 
 export default {
   computed: {
     ...mapGetters("Layers", [
       "getAnimationTitle",
+      "getImgURL",
       "getMapTimeSettings",
       "getMP4URL",
       "getOutputDate",
       "getOutputSize",
     ]),
+    ...mapState("Layers", ["isFullSize"]),
     exportName() {
       let animationTitle = this.getAnimationTitle;
       if (animationTitle !== "") {
@@ -54,14 +63,15 @@ export default {
         animationTitle = animationTitle.replace(/[^a-zA-Z0-9]$/, "");
         animationTitle = "_" + animationTitle;
       }
-      return "MSC-AniMet_" + this.getOutputDate + animationTitle + ".mp4";
+      const outputFormat = this.getMP4URL ? ".mp4" : ".png";
+      return `MSC-AniMet_${this.getOutputDate}${animationTitle}${outputFormat}`;
     },
   },
   methods: {
-    downloadMP4: function () {
-      let MP4link = document.getElementById("MP4-download");
-      MP4link.href = this.getMP4URL;
-      MP4link.click();
+    downloadOutput: function () {
+      let outputLink = document.getElementById("output-download");
+      outputLink.href = this.getMP4URL ? this.getMP4URL : this.getImgURL;
+      outputLink.click();
     },
     formatBytes(bytes, decimals = 2) {
       if (bytes === 0) return "0 Bytes";
@@ -76,13 +86,19 @@ export default {
       }
       return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
     },
+    toggleFullSize() {
+      this.$store.dispatch("Layers/setIsFullSize", true);
+    },
   },
 };
 </script>
 
 <style scoped>
-.video-preview {
+.output-preview {
   min-width: 300px;
   max-width: 480px;
+}
+.pointer {
+  cursor: pointer;
 }
 </style>

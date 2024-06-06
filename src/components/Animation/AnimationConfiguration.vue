@@ -7,8 +7,8 @@
         outlined
         type="warning"
         class="replace-legends"
-        >{{ $t("ReplaceLegends") }}</v-alert
-      >
+        >{{ $t("ReplaceLegends") }}
+      </v-alert>
       <v-text-field
         class="title-field"
         v-model="animationTitle"
@@ -272,6 +272,7 @@ export default {
       "getColorBorder",
       "getCurrentAspect",
       "getCurrentResolution",
+      "getImgURL",
       "getIntersectMessageDisplayed",
       "getMapTimeSettings",
       "getMP4URL",
@@ -341,7 +342,7 @@ export default {
       return this.$mapLayers.arr.length;
     },
     MP4ExportFlag() {
-      return this.getMP4URL !== "null";
+      return this.getMP4URL !== null || this.getImgURL !== null;
     },
   },
   watch: {

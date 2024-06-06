@@ -39,10 +39,12 @@ const state = {
   framesPerSecond: 3,
   fullTimestepsList: [],
   legendIndex: new IntegerAssigner(),
+  imgURL: null,
   intersectDict: {},
   isAnimating: false,
   isAnimationReversed: false,
   isBasemapVisible: true,
+  isFullSize: false,
   isLooping: true,
   lang: "en",
   layerTreeItemsEn: Object.keys(wmsSources).map((key) => {
@@ -61,9 +63,8 @@ const state = {
   },
   menusOpen: 0,
   modelRunMessages: null,
-  MP4CreateFlag: true,
   MP4ProgressPercent: 0,
-  MP4URL: "null",
+  MP4URL: null,
   outputDate: null,
   outputSize: null,
   overlays: {
@@ -143,6 +144,9 @@ const getters = {
   },
   getGeoMetWmsSources: (state) => {
     return state.wmsSources;
+  },
+  getImgURL: (state) => {
+    return state.imgURL;
   },
   getIntersectMessageDisplayed: (state) => {
     return state.intersectDict;
@@ -250,6 +254,9 @@ const mutations = {
   setFramesPerSecond: (state, fps) => {
     state.framesPerSecond = fps;
   },
+  setImgURL: (state, newURL) => {
+    state.imgURL = newURL;
+  },
   setIntersect: (state, [layerName, intersecting]) => {
     Vue.set(state.intersectDict, layerName, intersecting);
   },
@@ -261,6 +268,9 @@ const mutations = {
   },
   setIsBasemapVisible: (state, newStatus) => {
     state.isBasemapVisible = newStatus;
+  },
+  setIsFullSize: (state, fullSize) => {
+    state.isFullSize = fullSize;
   },
   setIsLooping: (state, looping) => {
     state.isLooping = looping;
@@ -286,9 +296,6 @@ const mutations = {
   },
   setModelRunMessages: (state, messages) => {
     state.modelRunMessages = messages;
-  },
-  setMP4CreateFlag: (state, flag) => {
-    state.MP4CreateFlag = flag;
   },
   setMP4Percent: (state, percent) => {
     state.MP4ProgressPercent = percent;
@@ -363,6 +370,9 @@ const actions = {
   setExtent({ commit }, payload) {
     commit("setExtent", payload);
   },
+  setImgURL({ commit }, payload) {
+    commit("setImgURL", payload);
+  },
   setIntersect({ commit }, payload) {
     commit("setIntersect", payload);
   },
@@ -374,6 +384,9 @@ const actions = {
   },
   setIsBasemapVisible({ commit }, payload) {
     commit("setIsBasemapVisible", payload);
+  },
+  setIsFullSize({ commit }, payload) {
+    commit("setIsFullSize", payload);
   },
   setIsLooping({ commit }, payload) {
     commit("setIsLooping", payload);
@@ -397,9 +410,6 @@ const actions = {
   },
   setModelRunMessages({ commit }, payload) {
     commit("setModelRunMessages", payload);
-  },
-  setMP4CreateFlag({ commit }, payload) {
-    commit("setMP4CreateFlag", payload);
   },
   setMP4Percent({ commit }, payload) {
     commit("setMP4Percent", payload);
