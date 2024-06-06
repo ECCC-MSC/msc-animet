@@ -8,7 +8,11 @@
       @click="createMP4"
       class="text-none"
     >
-      {{ $t("MP4CreateButtonLabel") }}
+      {{
+        this.datetimeRangeSlider[0] !== this.datetimeRangeSlider[1]
+          ? $t("MP4CreateButtonLabel")
+          : $t("PNGCreateButtonLabel")
+      }}
     </v-btn>
     <div v-if="isAnimating && playState !== 'play'" class="animation-progress">
       <v-row>
@@ -47,7 +51,6 @@ import datetimeManipulations from "../../mixins/datetimeManipulations";
 
 export default {
   mounted() {
-    this.$root.$on("cancelAnimationCreation", this.cancelAnimationCreation);
     this.$root.$on("cancelExpired", this.handleCancelExpired);
     this.$root.$on("redoAnimation", this.createMP4Handler);
     this.$root.$on("restoreState", this.restoreState);
@@ -59,7 +62,6 @@ export default {
     window.removeEventListener("resize", this.cancelAnimationFromResize);
   },
   beforeDestroy() {
-    this.$root.$off("cancelAnimationCreation", this.cancelAnimationCreation);
     this.$root.$off("cancelExpired", this.handleCancelExpired);
     this.$root.$off("redoAnimation", this.createMP4Handler);
     this.$root.$off("restoreState", this.restoreState);
@@ -67,15 +69,20 @@ export default {
   mixins: [datetimeManipulations],
   methods: {
     cancelAnimationCreation() {
-      this.generating = false;
-      if (this.mapController) {
-        this.mapController.abort("");
-      }
-      if (this.animationController) {
-        this.animationController.abort("");
-      }
-      if (this.layersController) {
-        this.layersController.abort("");
+      if (this.isAnimating && this.playState !== "play") {
+        this.generating = false;
+        if (this.mapController) {
+          this.mapController.abort("");
+        }
+        if (this.animationController) {
+          this.animationController.abort("");
+        }
+        if (this.layersController) {
+          this.layersController.abort("");
+        }
+        this.$store.dispatch("Layers/setMP4URL", this.MP4URL);
+        this.$store.dispatch("Layers/setImgURL", this.imgURL);
+        this.$store.dispatch("Layers/setOutputDate", this.outputDate);
       }
     },
     cancelAnimationFromResize() {
@@ -140,6 +147,7 @@ export default {
       this.$root.$emit("setAnimationTitle");
       this.trackCreateMP4();
       this.createMP4Handler();
+      this.outputDate = this.getOutputDate;
       this.$store.dispatch(
         "Layers/setOutputDate",
         this.getAnimationDateTitle(this.getMapTimeSettings.Step)
@@ -147,7 +155,10 @@ export default {
     },
     async createMP4Handler() {
       this.cancelExpired = false;
-      this.$store.dispatch("Layers/setMP4URL", "null");
+      this.imgURL = this.getImgURL;
+      this.MP4URL = this.getMP4URL;
+      this.$store.dispatch("Layers/setMP4URL", null);
+      this.$store.dispatch("Layers/setImgURL", null);
       this.$store.dispatch("Layers/setIsAnimating", true);
       this.generating = true;
       this.$mapCanvas.mapObj.updateSize();
@@ -177,8 +188,9 @@ export default {
       this.encoder.quantizationParameter = 30;
       this.encoder.initialize();
 
-      const MP4Length =
+      this.MP4Length =
         this.datetimeRangeSlider[1] - this.datetimeRangeSlider[0] + 1;
+
       let progressCounter = 1;
       const initialState = this.getMapTimeSettings.DateIndex;
 
@@ -295,7 +307,7 @@ export default {
           );
           this.$store.dispatch(
             "Layers/setMP4Percent",
-            Math.round((progressCounter / MP4Length) * 100)
+            Math.round((progressCounter / this.MP4Length) * 100)
           );
         }
       }
@@ -314,18 +326,26 @@ export default {
       this.$store.dispatch("Layers/setMapTimeIndex", initialState);
 
       this.$store.dispatch("Layers/setMP4Percent", 0);
-      this.$store.dispatch("Layers/setMP4CreateFlag", false);
       this.encoder.finalize();
-      const uint8Array = this.encoder.FS.readFile(this.encoder.outputFilename);
-      const animationBlob = new Blob([uint8Array], { type: "video/mp4" });
-      this.$store.dispatch("Layers/setOutputSize", animationBlob.size);
-      const mp4URL = URL.createObjectURL(animationBlob);
-      this.encoder.delete();
-      this.$store.dispatch("Layers/setMP4CreateFlag", true);
+
       this.$store.dispatch("Layers/setIsAnimating", false);
       if (this.generating) {
-        this.$store.dispatch("Layers/setMP4URL", mp4URL);
+        if (this.MP4Length === 1) {
+          const binaryData = atob(this.imgURL.split(",")[1]);
+          this.$store.dispatch("Layers/setOutputSize", binaryData.length);
+          this.$store.dispatch("Layers/setImgURL", this.imgURL);
+        } else {
+          const uint8Array = this.encoder.FS.readFile(
+            this.encoder.outputFilename
+          );
+          const animationBlob = new Blob([uint8Array], { type: "video/mp4" });
+          this.$store.dispatch("Layers/setOutputSize", animationBlob.size);
+          const mp4URL = URL.createObjectURL(animationBlob);
+          this.$store.dispatch("Layers/setMP4URL", mp4URL);
+        }
       }
+      this.encoder.delete();
+
       this.$mapCanvas.mapObj
         .getInteractions()
         .forEach((x) => x.setActive(true)); // Enables all map interactions such as drag or zoom
@@ -354,17 +374,22 @@ export default {
       });
       await this.updateInfoCanvas(date);
       const composedCnv = await this.stitchCanvases(mapCnv);
-      try {
-        encoder.addFrameRgba(
-          composedCnv
-            .getContext("2d")
-            .getImageData(0, 0, composedCnv.width, composedCnv.height).data
-        );
-      } catch (error) {
-        console.error(
-          "Crashed from addFrameRgba because the size of the Map was changed during animation creation."
-        );
-        this.cancelAnimationCreation();
+      if (this.MP4Length === 1) {
+        this.imgURL = composedCnv.toDataURL("image/png");
+      }
+      if (encoder !== null) {
+        try {
+          encoder.addFrameRgba(
+            composedCnv
+              .getContext("2d")
+              .getImageData(0, 0, composedCnv.width, composedCnv.height).data
+          );
+        } catch (error) {
+          console.error(
+            "Crashed from addFrameRgba because the size of the Map was changed during animation creation."
+          );
+          this.cancelAnimationCreation();
+        }
       }
       await new Promise((resolve) => window.requestAnimationFrame(resolve));
     },
@@ -955,7 +980,10 @@ export default {
       "getColorBorder",
       "getCurrentAspect",
       "getCurrentResolution",
+      "getImgURL",
       "getMapTimeSettings",
+      "getMP4URL",
+      "getOutputDate",
       "getTimeFormat",
     ]),
   },
@@ -966,11 +994,15 @@ export default {
       mapController: null,
       encoder: null,
       generating: false,
+      imgURL: null,
       infoCanvas: null,
       isLayerListShown: true,
       mapHeight: 0,
       mapWidth: 0,
+      MP4Length: 0,
+      MP4URL: null,
       modelRunMessage: null,
+      outputDate: null,
       outputDateCanvas: null,
       outputHeader: null,
       cancelExpired: false,

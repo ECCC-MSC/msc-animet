@@ -1,5 +1,11 @@
 <template>
   <div>
+    <img
+      v-if="getImgURL && isFullSize"
+      :src="getImgURL"
+      @click="exitFullscreenOnClick"
+      class="full-size"
+    />
     <animation-canvas v-if="isAnimating && playState !== 'play'" />
     <div ref="map" class="white map" id="map" :disabled="isAnimating">
       <animation-rectangle />
@@ -408,6 +414,15 @@ export default {
         this.$mapCanvas.mapObj.addLayer(imageLayer);
       }
     },
+    exitFullscreenOnClick() {
+      this.$store.dispatch("Layers/setIsFullSize", false);
+    },
+    exitFullscreenOnEscape(event) {
+      if (event.key === "Escape") {
+        this.$store.dispatch("Layers/setIsFullSize", false);
+        event.stopPropagation();
+      }
+    },
     randomHSVtoRGB() {
       var r, g, b, i, f, p, q, t;
       this.h += this.golden_ratio_conjugate;
@@ -466,13 +481,14 @@ export default {
     },
   },
   computed: {
-    ...mapState("Layers", ["isAnimating", "playState"]),
+    ...mapState("Layers", ["isAnimating", "isFullSize", "playState"]),
     ...mapGetters("Layers", [
       "getActiveLegends",
       "getCollapsedControls",
       "getCrsList",
       "getCurrentCRS",
       "getHoldExtent",
+      "getImgURL",
       "getMapTimeSettings",
       "getShowGraticules",
     ]),
@@ -513,6 +529,13 @@ export default {
     getShowGraticules(isShown) {
       if (this.graticule !== null) {
         this.graticule.setVisible(isShown);
+      }
+    },
+    isFullSize(newVal) {
+      if (newVal) {
+        document.addEventListener("keydown", this.exitFullscreenOnEscape);
+      } else {
+        document.removeEventListener("keydown", this.exitFullscreenOnEscape);
       }
     },
     async timeStep(newStep, oldStep) {
@@ -620,6 +643,20 @@ export default {
 </style>
 
 <style scoped>
+.full-size {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.9);
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
 .map {
   position: fixed;
   top: 0;
