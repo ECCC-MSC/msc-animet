@@ -17,6 +17,7 @@
           </v-btn>
         </template>
         <v-container @click.stop :class="getCurrentTheme">
+          <div class="content-overlay" :class="getCurrentTheme"></div>
           <v-text-field
             autofocus
             dense
@@ -25,7 +26,8 @@
             filled
             outlined
             hide-details
-            class="ma-0"
+            class="ma-0 sticky"
+            :class="getCurrentTheme"
             clearable
             clear-icon="mdi-close-circle-outline"
             @input="filterOnInput()"
@@ -44,6 +46,24 @@
           >
           </v-treeview>
         </v-container>
+        <div class="sticky-container">
+          <v-tooltip bottom offset-overflow>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                class="revert-button"
+                icon
+                @click="revertTimeZone"
+                color="primary"
+                fab
+                v-bind="attrs"
+                v-on="on"
+              >
+                <v-icon>mdi-undo</v-icon>
+              </v-btn>
+            </template>
+            <span>{{ $t("RevertTimeZone") }}</span>
+          </v-tooltip>
+        </div>
       </v-menu>
     </v-col>
   </v-row>
@@ -156,6 +176,16 @@ export default {
         countryCode: localStorage.getItem("country-code"),
       };
     },
+    revertTimeZone() {
+      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const country = this.$ct.getCountryForTimezone(timezone);
+      this.$timeZone.id = timezone;
+      if (country === null) {
+        this.$countryCode.id = null;
+      } else {
+        this.$countryCode.id = country.id;
+      }
+    },
     selectTimeZone(zone) {
       const timezone = zone[0].value;
       this.$countryCode.id = this.$ct.getCountryForTimezone(timezone).id;
@@ -204,9 +234,21 @@ export default {
 </script>
 
 <style scoped>
-.v-menu__content {
-  max-height: 500px;
-  overflow-y: auto;
+.sticky-container {
+  bottom: 0;
+  height: 0;
+  position: sticky;
+}
+.content-overlay {
+  height: 12px;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-left: -12px;
+  margin-right: -12px;
+  margin-top: -12px;
+  position: sticky;
+  z-index: 2;
 }
 .locale-btn {
   transform: translate(-16px, 6px);
@@ -219,5 +261,21 @@ export default {
 }
 .locale-switch::v-deep .v-input--selection-controls__ripple {
   z-index: 4;
+}
+.revert-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 4;
+}
+.sticky {
+  position: sticky;
+  top: 12px;
+  z-index: 2;
+}
+.v-menu__content {
+  min-width: 260px;
+  max-height: 500px;
+  overflow-y: auto;
 }
 </style>
