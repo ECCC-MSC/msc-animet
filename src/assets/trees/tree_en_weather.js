@@ -82,8 +82,8 @@ export default {
         ]
       },
       {
-        "Title": "Regional Air Quality Deterministic Prediction System - FireWork (RAQDPS-FW) [10 km]",
-        "Name": "Regional Air Quality Deterministic Prediction System - FireWork (RAQDPS-FW) [10 km]",
+        "Title": "Regional Air Quality Deterministic Prediction System (RAQDPS) [10 km]",
+        "Name": "Regional Air Quality Deterministic Prediction System (RAQDPS) [10 km]",
         "isLeaf": false,
         "children": [
           {
@@ -96,9 +96,101 @@ export default {
                 "Name": "FIREWORK.HOTSPOTS",
                 "isLeaf": true,
                 "isTemporal": false
+              },
+              {
+                "Title": "Wildfire hotspots ingested by RAQDPS",
+                "Name": "WildfireHotspots",
+                "isLeaf": true,
+                "isTemporal": false
               }
             ]
           },
+          {
+            "Title": "RAQDPS products",
+            "Name": "RAQDPS products",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "Concentration: entire column PM2.5 [kg/m2]",
+                "Name": "RAQDPS.EATM_PM2.5",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: entire column PM10 [kg/m2]",
+                "Name": "RAQDPS.EATM_PM10",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Total concentrations associated with forest fire and vegetation plumes: entire column PM2.5 [kg/m\u00b2]",
+                "Name": "RAQDPS.EAtm_PM2.5-WildfireSmokePlume",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Total concentrations associated with forest fire and vegetation plumes: entire column PM10 [kg/m\u00b2]",
+                "Name": "RAQDPS.EAtm_PM10-WildfireSmokePlume",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface NO [mol/mol]",
+                "Name": "RAQDPS.SFC_NO",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface NO2 [mol/mol]",
+                "Name": "RAQDPS.SFC_NO2",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface O3 [mol/mol]",
+                "Name": "RAQDPS.SFC_O3",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface PM2.5 [kg/m3]",
+                "Name": "RAQDPS.SFC_PM2.5",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface PM10 [kg/m3]",
+                "Name": "RAQDPS.SFC_PM10",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface SO2 [mol/mol]",
+                "Name": "RAQDPS.SFC_SO2",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Total concentrations associated with forest fire and vegetation plumes: surface PM2.5 [kg/m\u00b3]",
+                "Name": "RAQDPS.Sfc_PM2.5-WildfireSmokePlume",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Total concentrations associated with forest fire and vegetation plumes: surface PM10 [kg/m\u00b3]",
+                "Name": "RAQDPS.Sfc_PM10-WildfireSmokePlume",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Title": "Regional Air Quality Deterministic Prediction System - FireWork (RAQDPS-FW) [10 km]",
+        "Name": "Regional Air Quality Deterministic Prediction System - FireWork (RAQDPS-FW) [10 km]",
+        "isLeaf": false,
+        "children": [
           {
             "Title": "Cumulative Effects",
             "Name": "Cumulative Effects",
@@ -239,61 +331,6 @@ export default {
                 "isTemporal": true
               }
             ]
-          }
-        ]
-      },
-      {
-        "Title": "Regional Air Quality Deterministic Prediction System (RAQDPS) [10 km]",
-        "Name": "Regional Air Quality Deterministic Prediction System (RAQDPS) [10 km]",
-        "isLeaf": false,
-        "children": [
-          {
-            "Title": "Concentration: entire column PM2.5 [kg/m2]",
-            "Name": "RAQDPS.EATM_PM2.5",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "Concentration: entire column PM10 [kg/m2]",
-            "Name": "RAQDPS.EATM_PM10",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "Concentration: surface NO [mol/mol]",
-            "Name": "RAQDPS.SFC_NO",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "Concentration: surface NO2 [mol/mol]",
-            "Name": "RAQDPS.SFC_NO2",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "Concentration: surface O3 [mol/mol]",
-            "Name": "RAQDPS.SFC_O3",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "Concentration: surface PM2.5 [kg/m3]",
-            "Name": "RAQDPS.SFC_PM2.5",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "Concentration: surface PM10 [kg/m3]",
-            "Name": "RAQDPS.SFC_PM10",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "Concentration: surface SO2 [mol/mol]",
-            "Name": "RAQDPS.SFC_SO2",
-            "isLeaf": true,
-            "isTemporal": true
           }
         ]
       },
@@ -708,96 +745,6 @@ export default {
             "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P09M-P11M",
             "isLeaf": true,
             "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation above normal - Months 0-2 [%]",
-            "Name": "CanSIPS_100km_PrecipRate-ProbAboveNormal-2m_P00M-P02M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation above normal - Months 1-3 [%]",
-            "Name": "CanSIPS_100km_PrecipRate-ProbAboveNormal-2m_P01M-P03M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation above normal - Months 3-5 [%]",
-            "Name": "CanSIPS_100km_PrecipRate-ProbAboveNormal-2m_P03M-P05M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation above normal - Months 6-8 [%]",
-            "Name": "CanSIPS_100km_PrecipRate-ProbAboveNormal-2m_P06M-P08M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation above normal - Months 9-11 [%]",
-            "Name": "CanSIPS_100km_PrecipRate-ProbAboveNormal-2m_P09M-P11M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation below normal - Months 0-2 [%]",
-            "Name": "CanSIPS_100km_PrecipRate-ProbBelowNormal-2m_P00M-P02M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation below normal - Months 1-3 [%]",
-            "Name": "CanSIPS_100km_PrecipRate-ProbBelowNormal-2m_P01M-P03M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation below normal - Months 3-5 [%]",
-            "Name": "CanSIPS_100km_PrecipRate-ProbBelowNormal-2m_P03M-P05M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation below normal - Months 6-8 [%]",
-            "Name": "CanSIPS_100km_PrecipRate-ProbBelowNormal-2m_P06M-P08M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation below normal - Months 9-11 [%]",
-            "Name": "CanSIPS_100km_PrecipRate-ProbBelowNormal-2m_P09M-P11M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation near normal - Months 0-2[%]",
-            "Name": "CanSIPS_100km_PrecipRate-ProbNearNormal-2m_P00M-P02M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation near normal - Months 1-3 [%]",
-            "Name": "CanSIPS_100km_PrecipRate-ProbNearNormal-2m_P01M-P03M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation near normal - Months 3-5 [%]",
-            "Name": "CanSIPS_100km_PrecipRate-ProbNearNormal-2m_P03M-P05M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation near normal - Months 6-8 [%]",
-            "Name": "CanSIPS_100km_PrecipRate-ProbNearNormal-2m_P06M-P08M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation near normal - Months 9-11 [%]",
-            "Name": "CanSIPS_100km_PrecipRate-ProbNearNormal-2m_P09M-P11M",
-            "isLeaf": true,
-            "isTemporal": false
           }
         ]
       }
@@ -863,8 +810,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Temperature [\u00b0C] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_AirTemp.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Probability of blowing snow [%]",
             "Name": "GDPS-WEonG_15km_BlowingSnow-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of blowing snow [%] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_BlowingSnow-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -875,8 +834,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Presence of blowing snow (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_BlowingSnowPresence.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Dew point temperature [C]",
             "Name": "GDPS-WEonG_15km_DewPointTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Dew point temperature [C] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_DewPointTemp.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -887,8 +858,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Dominant precipitation type (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_DominantPrecipType.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Probability of drizzle [%]",
             "Name": "GDPS-WEonG_15km_Drizzle-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of drizzle [%] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_Drizzle-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -899,8 +882,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Probability of freezing drizzle [%] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_FreezingDrizzle-Prob.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Probability of freezing precipitation [%]",
             "Name": "GDPS-WEonG_15km_FreezingPrecip-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of freezing precipitation [%] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_FreezingPrecip-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -911,8 +906,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Conditional amount of freezing precipitation [mm] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_FreezingPrecipCondAmt.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Probability of freezing rain [%]",
             "Name": "GDPS-WEonG_15km_FreezingRain-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of freezing rain [%] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_FreezingRain-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -923,8 +930,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Visibility through ice fog [m] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_IceFogVisibility.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Probability of ice pellets [%]",
             "Name": "GDPS-WEonG_15km_IcePellets-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of ice pellets [%] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_IcePellets-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -935,8 +954,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Conditional amount of solid ice pellets [m] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_IcePelletsCondAmt.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Instantaneous precipitation type",
             "Name": "GDPS-WEonG_15km_InstantPrecipType",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Instantaneous precipitation type (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_InstantPrecipType.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -947,8 +978,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Visibility through liquid fog [m] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_LiquidFogVisibility.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Probability of liquid precipitation [%]",
             "Name": "GDPS-WEonG_15km_LiquidPrecip-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of liquid precipitation [%] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_LiquidPrecip-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -959,8 +1002,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Conditional amount of liquid precipitation [m] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_LiquidPrecipCondAmt.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Model orography [m]",
             "Name": "GDPS-WEonG_15km_Orography",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Model orography [m] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_Orography.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -971,8 +1026,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Probability of precipitation [%] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_Precip-Prob.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Character of precipitation",
             "Name": "GDPS-WEonG_15km_PrecipCharacter",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Character of precipitation (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_PrecipCharacter.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -983,8 +1050,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Conditional amount of precipitation [m] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_PrecipCondAmt.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Probability of rain [%]",
             "Name": "GDPS-WEonG_15km_Rain-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of rain [%] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_Rain-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -995,8 +1074,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - The second most common precipitation type (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_SecondMostCommonPrecipType.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Sky state day/night (combined cloud cover and opacity)",
             "Name": "GDPS-WEonG_15km_SkyState",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Sky state day/night (combined cloud cover and opacity) (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_SkyState.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -1007,8 +1098,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Probability of snow [%] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_Snow-Prob.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Height of snow level [m]",
             "Name": "GDPS-WEonG_15km_SnowHeight",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Height of snow level [m] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_SnowHeight.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -1019,8 +1122,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Probability of snow squalls [%] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_SnowSqualls-Prob.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Conditional amount of solid snow [m]",
             "Name": "GDPS-WEonG_15km_SolidSnowCondAmt",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Conditional amount of solid snow [m] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_SolidSnowCondAmt.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -1031,8 +1146,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Probability of thunderstorm occurence [%] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_Thunderstorm-Prob.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Total precipitation intensity index",
             "Name": "GDPS-WEonG_15km_TotalPrecipIntensityIndex",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Total precipitation intensity index (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_TotalPrecipIntensityIndex.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -1043,8 +1170,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Water/land proportion (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_WaterLand-Proportion.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Wind direction [deg true]",
             "Name": "GDPS-WEonG_15km_WindDir",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Wind direction [deg true] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_WindDir.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -1055,8 +1194,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Gust [m/s] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_WindGust.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Wind speed [m/s]",
             "Name": "GDPS-WEonG_15km_WindSpeed",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Wind speed [m/s] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_WindSpeed.3h",
             "isLeaf": true,
             "isTemporal": true
           }
@@ -2402,6 +2553,18 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS.ETA - UV index",
+            "Name": "GDPS.ETA_IUVA.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.ETA - UV Index for clear-sky conditions",
+            "Name": "GDPS.ETA_IUVC.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS.ETA - Water/land proportion",
             "Name": "GDPS.ETA_MGB",
             "isLeaf": true,
@@ -2428,6 +2591,12 @@ export default {
           {
             "Title": "GDPS.ETA - Total cloud cover [%]",
             "Name": "GDPS.ETA_NT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.ETA - Total column integrated ozone [DU]",
+            "Name": "GDPS.ETA_O3DU",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -2572,6 +2741,30 @@ export default {
           {
             "Title": "GDPS.ETA - Winds at 120m above surface [m/s]",
             "Name": "GDPS.ETA_UU_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.ETA - Daily maximum of the UV Index (00Z model run)",
+            "Name": "GDPS.ETA_UVAX_00Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.ETA - Daily maximum of the UV Index (12Z model run)",
+            "Name": "GDPS.ETA_UVAX_12Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.ETA - Daily maximum of the UV Index for clear-sky conditions (00Z model run)",
+            "Name": "GDPS.ETA_UVCX_00Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.ETA - Daily maximum of the UV Index for clear-sky conditions (12Z model run)",
+            "Name": "GDPS.ETA_UVCX_12Z",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -2762,13 +2955,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 10.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 10.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.10.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 10.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 10.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.10.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2877,13 +3070,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 20.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 20.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.20.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 20.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 20.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.20.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2992,13 +3185,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 30.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 30.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.30.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 30.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 30.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.30.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3107,13 +3300,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 50.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 50.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.50.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 50.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 50.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.50.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3222,13 +3415,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 100.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 100.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.100.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 100.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 100.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.100.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3337,13 +3530,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 150.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 150.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.150.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 150.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 150.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.150.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3446,13 +3639,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 175.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 175.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.175.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 175.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 175.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.175.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3531,13 +3724,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 200.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 200.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.200.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 200.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 200.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.200.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3652,13 +3845,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 225.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 225.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.225.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 225.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 225.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.225.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3737,13 +3930,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 250.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 250.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.250.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 250.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 250.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.250.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3870,13 +4063,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 275.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 275.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.275.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 275.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 275.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.275.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3955,13 +4148,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 300.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 300.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.300.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 300.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 300.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.300.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4064,13 +4257,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 350.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 350.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.350.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 350.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 350.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.350.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4149,13 +4342,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 400.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 400.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.400.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 400.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 400.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.400.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4258,13 +4451,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 450.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 450.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.450.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 450.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 450.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.450.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4325,13 +4518,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 500.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 500.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.500.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 500.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 500.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.500.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4422,13 +4615,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 550.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 550.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.550.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 550.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 550.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.550.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4501,13 +4694,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 600.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 600.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.600.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 600.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 600.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.600.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4592,13 +4785,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 650.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 650.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.650.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 650.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 650.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.650.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4659,13 +4852,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 700.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 700.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.700.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 700.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 700.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.700.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4756,13 +4949,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 750.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 750.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.750.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 750.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 750.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.750.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4835,13 +5028,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 800.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 800.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.800.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 800.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 800.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.800.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4902,13 +5095,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 850.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 850.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.850.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 850.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 850.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.850.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4999,13 +5192,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 875.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 875.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.875.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 875.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 875.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.875.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -5078,13 +5271,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 900.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 900.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.900.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 900.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 900.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.900.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -5145,13 +5338,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 925.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 925.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.925.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 925.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 925.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.925.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -5224,13 +5417,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 950.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 950.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.950.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 950.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 950.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.950.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -5303,13 +5496,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 970.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 970.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.970.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 970.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 970.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.970.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -5382,13 +5575,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 985.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 985.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.985.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 985.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 985.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.985.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -5449,13 +5642,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 1000.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 1000.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.1000.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 1000.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 1000.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.1000.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -5528,13 +5721,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 1015.0 mb (3 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 1015.0 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.1015.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 1015.0 mb (6 hourly forecast) [0-1]",
+                "Title": "GDPS.PRES - Relative humidity at 1015.0 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.1015.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10725,6 +10918,18 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "HRDPS.CONTINENTAL - UV index",
+            "Name": "HRDPS.CONTINENTAL_IUVA",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - UV Index for clear-sky conditions",
+            "Name": "HRDPS.CONTINENTAL_IUVC",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "HRDPS.CONTINENTAL - Air Density at 40m above ground [kg/m\u00b3]",
             "Name": "HRDPS.CONTINENTAL_M3_40m",
             "isLeaf": true,
@@ -10925,6 +11130,42 @@ export default {
           {
             "Title": "HRDPS.CONTINENTAL - Winds at 120m above surface [m/s]",
             "Name": "HRDPS.CONTINENTAL_UU_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Daily maximum of the UV Index (00Z model run)",
+            "Name": "HRDPS.CONTINENTAL_UVAX_00Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Daily maximum of the UV Index (06Z model run)",
+            "Name": "HRDPS.CONTINENTAL_UVAX_06Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Daily maximum of the UV Index (12Z model run)",
+            "Name": "HRDPS.CONTINENTAL_UVAX_12Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Daily maximum of the UV Index for clear-sky conditions (00Z model run)",
+            "Name": "HRDPS.CONTINENTAL_UVCX_00Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Daily maximum of the UV Index for clear-sky conditions (06Z model run)",
+            "Name": "HRDPS.CONTINENTAL_UVCX_06Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Daily maximum of the UV Index for clear-sky conditions (12Z model run)",
+            "Name": "HRDPS.CONTINENTAL_UVCX_12Z",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -12829,6 +13070,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "CIOPS-East - Sea ice velocity X vector [m/s]",
+                "Name": "CIOPS-East_2km_SeaIceVelocityX",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "CIOPS-East - Sea ice velocity Y vector [m/s]",
+                "Name": "CIOPS-East_2km_SeaIceVelocityY",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "CIOPS-East - Sea ice volume per unit grid cell area [m]",
                 "Name": "CIOPS-East_2km_SeaIceVol",
                 "isLeaf": true,
@@ -12849,6 +13102,18 @@ export default {
               {
                 "Title": "CIOPS-East - Sea water salinity [psu]",
                 "Name": "CIOPS-East_2km_SeaWaterSalinity_0.5m",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "CIOPS-East - Sea water velocity X vector [m/s]",
+                "Name": "CIOPS-East_2km_SeaWaterVelocityX_0.5m",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "CIOPS-East - Sea water velocity Y vector [m/s]",
+                "Name": "CIOPS-East_2km_SeaWaterVelocityY_0.5m",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -12877,229 +13142,229 @@ export default {
                 "isLeaf": false,
                 "children": [
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0001.5m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0001.5m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_1.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0002.5m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0002.5m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_2.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0003.5m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0003.5m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_3.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0004.5m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0004.5m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_4.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0005.5m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0005.5m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_5.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0006.5m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0006.5m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_6.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0007.5m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0007.5m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_7.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0008.5m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0008.5m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_8.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0009.5m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0009.5m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_9.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0011m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0011m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_11m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0012m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0012m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_12m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0013m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0013m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_13m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0014m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0014m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_14m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0015m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0015m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_15m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0016m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0016m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_16m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0017m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0017m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_17m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0018m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0018m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_18m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0020m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0020m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_20m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0021m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0021m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_21m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0024m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0024m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_24m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0028m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0028m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_28m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0035m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0035m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_35m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0045m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0045m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_45m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0059m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0059m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_59m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0077m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0077m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_77m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0098m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0098m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_98m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0122m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0122m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_122m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0147m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0147m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_147m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0173m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0173m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_173m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0200m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0200m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_200m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0226m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0226m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_226m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0253m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0253m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_253m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0280m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0280m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_280m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0307m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0307m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_307m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0334m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0334m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_334m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0361m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0361m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_361m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0388m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0388m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_388m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water potential temperature - 0415m [psu]",
+                    "Title": "CIOPS-East - Sea water potential temperature - 0415m [K]",
                     "Name": "CIOPS-East_SeaWaterPotentialTemp_415m",
                     "isLeaf": true,
                     "isTemporal": true
@@ -13342,234 +13607,704 @@ export default {
                 ]
               },
               {
+                "Title": "Sea water velocity (X vector)",
+                "Name": "Sea water velocity (X vector)",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0001.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_1.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0002.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_2.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0003.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_3.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0004.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_4.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0005.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_5.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0006.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_6.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0007.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_7.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0008.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_8.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0009.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_9.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0011m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_11m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0012m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_12m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0013m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_13m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0014m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_14m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0015m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_15m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0016m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_16m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0017m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_17m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0018m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_18m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0020m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_20m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0021m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_21m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0024m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_24m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0028m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_28m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0035m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_35m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0045m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_45m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0059m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_59m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0077m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_77m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0098m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_98m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0122m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_122m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0147m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_147m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0173m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_173m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0200m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_200m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0226m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_226m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0253m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_253m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0280m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_280m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0307m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_307m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0334m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_334m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0361m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_361m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0388m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_388m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (X vector) - 0415m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityX_415m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  }
+                ]
+              },
+              {
+                "Title": "Sea water velocity (Y vector)",
+                "Name": "Sea water velocity (Y vector)",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0001.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_1.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0002.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_2.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0003.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_3.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0004.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_4.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0005.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_5.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0006.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_6.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0007.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_7.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0008.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_8.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0009.5m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_9.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0011m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_11m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0012m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_12m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0013m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_13m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0014m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_14m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0015m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_15m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0016m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_16m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0017m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_17m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0018m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_18m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0020m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_20m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0021m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_21m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0024m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_24m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0028m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_28m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0035m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_35m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0045m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_45m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0059m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_59m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0077m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_77m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0098m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_98m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0122m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_122m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0147m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_147m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0173m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_173m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0200m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_200m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0226m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_226m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0253m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_253m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0280m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_280m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0307m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_307m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0334m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_334m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0361m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_361m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0388m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_388m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-East - Sea water velocity (Y vector) - 0415m [m/s]",
+                    "Name": "CIOPS-East_SeaWaterVelocityY_415m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  }
+                ]
+              },
+              {
                 "Title": "Sea water velocity",
                 "Name": "Sea water velocity",
                 "isLeaf": false,
                 "children": [
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0001.5m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0001.5m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_1.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0002.5m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0002.5m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_2.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0003.5m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0003.5m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_3.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0004.5m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0004.5m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_4.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0005.5m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0005.5m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_5.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0006.5m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0006.5m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_6.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0007.5m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0007.5m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_7.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0008.5m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0008.5m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_8.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0009.5m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0009.5m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_9.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0011m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0011m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_11m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0012m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0012m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_12m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0013m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0013m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_13m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0014m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0014m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_14m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0015m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0015m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_15m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0016m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0016m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_16m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0017m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0017m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_17m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0018m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0018m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_18m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0020m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0020m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_20m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0021m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0021m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_21m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0024m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0024m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_24m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0028m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0028m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_28m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0035m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0035m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_35m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0045m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0045m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_45m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0059m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0059m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_59m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0077m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0077m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_77m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0098m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0098m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_98m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0122m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0122m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_122m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0147m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0147m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_147m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0173m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0173m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_173m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0200m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0200m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_200m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0226m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0226m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_226m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0253m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0253m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_253m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0280m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0280m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_280m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0307m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0307m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_307m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0334m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0334m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_334m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0361m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0361m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_361m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0388m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0388m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_388m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-East - Sea water velocity - 0415m [psu]",
+                    "Title": "CIOPS-East - Sea water velocity - 0415m [m/s]",
                     "Name": "CIOPS-East_SeaWaterVelocity_415m",
                     "isLeaf": true,
                     "isTemporal": true
@@ -13615,6 +14350,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "CIOPS-SalishSea - Sea water velocity X vector [m/s]",
+                "Name": "CIOPS-SalishSea_500m_SeaWaterVelocityX_0.5m",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "CIOPS-SalishSea - Sea water velocity Y vector [m/s]",
+                "Name": "CIOPS-SalishSea_500m_SeaWaterVelocityY_0.5m",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "CIOPS-SalishSea - Sea water velocity [m/s]",
                 "Name": "CIOPS-SalishSea_500m_SeaWaterVelocity_0.5m",
                 "isLeaf": true,
@@ -13639,229 +14386,229 @@ export default {
                 "isLeaf": false,
                 "children": [
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0001.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0001.5m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_1.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0002.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0002.5m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_2.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0003.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0003.5m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_3.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0004.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0004.5m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_4.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0005.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0005.5m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_5.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0006.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0006.5m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_6.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0007.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0007.5m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_7.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0008.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0008.5m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_8.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0009.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0009.5m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_9.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0011m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0011m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_11m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0012m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0012m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_12m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0013m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0013m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_13m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0014m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0014m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_14m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0015m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0015m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_15m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0016m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0016m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_16m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0017m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0017m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_17m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0018m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0018m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_18m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0020m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0020m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_20m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0021m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0021m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_21m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0024m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0024m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_24m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0028m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0028m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_28m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0035m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0035m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_35m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0045m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0045m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_45m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0059m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0059m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_59m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0077m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0077m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_77m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0098m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0098m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_98m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0122m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0122m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_122m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0147m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0147m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_147m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0173m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0173m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_173m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0200m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0200m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_200m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0226m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0226m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_226m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0253m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0253m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_253m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0280m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0280m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_280m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0307m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0307m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_307m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0334m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0334m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_334m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0361m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0361m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_361m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0388m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0388m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_388m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0415m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0415m [K]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_415m",
                     "isLeaf": true,
                     "isTemporal": true
@@ -14104,234 +14851,704 @@ export default {
                 ]
               },
               {
+                "Title": "Sea water velocity (X vector)",
+                "Name": "Sea water velocity (X vector)",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0001.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_1.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0002.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_2.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0003.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_3.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0004.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_4.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0005.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_5.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0006.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_6.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0007.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_7.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0008.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_8.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0009.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_9.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0011m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_11m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0012m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_12m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0013m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_13m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0014m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_14m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0015m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_15m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0016m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_16m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0017m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_17m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0018m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_18m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0020m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_20m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0021m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_21m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0024m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_24m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0028m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_28m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0035m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_35m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0045m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_45m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0059m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_59m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0077m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_77m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0098m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_98m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0122m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_122m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0147m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_147m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0173m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_173m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0200m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_200m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0226m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_226m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0253m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_253m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0280m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_280m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0307m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_307m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0334m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_334m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0361m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_361m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0388m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_388m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0415m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityX_415m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  }
+                ]
+              },
+              {
+                "Title": "Sea water velocity (Y vector)",
+                "Name": "Sea water velocity (Y vector)",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0001.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_1.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0002.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_2.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0003.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_3.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0004.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_4.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0005.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_5.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0006.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_6.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0007.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_7.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0008.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_8.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0009.5m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_9.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0011m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_11m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0012m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_12m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0013m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_13m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0014m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_14m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0015m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_15m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0016m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_16m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0017m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_17m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0018m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_18m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0020m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_20m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0021m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_21m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0024m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_24m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0028m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_28m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0035m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_35m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0045m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_45m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0059m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_59m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0077m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_77m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0098m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_98m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0122m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_122m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0147m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_147m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0173m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_173m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0200m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_200m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0226m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_226m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0253m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_253m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0280m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_280m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0307m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_307m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0334m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_334m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0361m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_361m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0388m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_388m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0415m [m/s]",
+                    "Name": "CIOPS-SalishSea_SeaWaterVelocityY_415m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  }
+                ]
+              },
+              {
                 "Title": "Sea water velocity",
                 "Name": "Sea water velocity",
                 "isLeaf": false,
                 "children": [
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0001.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0001.5m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_1.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0002.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0002.5m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_2.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0003.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0003.5m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_3.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0004.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0004.5m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_4.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0005.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0005.5m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_5.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0006.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0006.5m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_6.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0007.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0007.5m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_7.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0008.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0008.5m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_8.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0009.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0009.5m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_9.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0011m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0011m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_11m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0012m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0012m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_12m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0013m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0013m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_13m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0014m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0014m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_14m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0015m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0015m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_15m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0016m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0016m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_16m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0017m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0017m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_17m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0018m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0018m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_18m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0020m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0020m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_20m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0021m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0021m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_21m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0024m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0024m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_24m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0028m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0028m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_28m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0035m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0035m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_35m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0045m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0045m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_45m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0059m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0059m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_59m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0077m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0077m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_77m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0098m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0098m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_98m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0122m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0122m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_122m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0147m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0147m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_147m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0173m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0173m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_173m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0200m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0200m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_200m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0226m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0226m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_226m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0253m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0253m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_253m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0280m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0280m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_280m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0307m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0307m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_307m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0334m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0334m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_334m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0361m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0361m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_361m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0388m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0388m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_388m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0415m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0415m [m/s]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_415m",
                     "isLeaf": true,
                     "isTemporal": true
@@ -14377,6 +15594,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "CIOPS-West - Sea water velocity X vector [m/s]",
+                "Name": "CIOPS-West_2km_SeaWaterVelocityX_0.5m",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "CIOPS-West - Sea water velocity Y vector [m/s]",
+                "Name": "CIOPS-West_2km_SeaWaterVelocityY_0.5m",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "CIOPS-West - Sea water velocity [m/s]",
                 "Name": "CIOPS-West_2km_SeaWaterVelocity_0.5m",
                 "isLeaf": true,
@@ -14401,229 +15630,229 @@ export default {
                 "isLeaf": false,
                 "children": [
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0001.5m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0001.5m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_1.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0002.5m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0002.5m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_2.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0003.5m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0003.5m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_3.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0004.5m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0004.5m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_4.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0005.5m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0005.5m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_5.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0006.5m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0006.5m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_6.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0007.5m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0007.5m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_7.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0008.5m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0008.5m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_8.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0009.5m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0009.5m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_9.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0011m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0011m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_11m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0012m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0012m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_12m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0013m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0013m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_13m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0014m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0014m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_14m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0015m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0015m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_15m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0016m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0016m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_16m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0017m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0017m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_17m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0018m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0018m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_18m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0020m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0020m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_20m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0021m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0021m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_21m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0024m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0024m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_24m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0028m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0028m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_28m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0035m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0035m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_35m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0045m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0045m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_45m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0059m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0059m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_59m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0077m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0077m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_77m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0098m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0098m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_98m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0122m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0122m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_122m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0147m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0147m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_147m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0173m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0173m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_173m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0200m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0200m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_200m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0226m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0226m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_226m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0253m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0253m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_253m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0280m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0280m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_280m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0307m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0307m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_307m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0334m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0334m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_334m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0361m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0361m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_361m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0388m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0388m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_388m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water potential temperature - 0415m [psu]",
+                    "Title": "CIOPS-West - Sea water potential temperature - 0415m [K]",
                     "Name": "CIOPS-West_SeaWaterPotentialTemp_415m",
                     "isLeaf": true,
                     "isTemporal": true
@@ -14866,234 +16095,704 @@ export default {
                 ]
               },
               {
+                "Title": "Sea water velocity (X vector)",
+                "Name": "Sea water velocity (X vector)",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0001.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_1.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0002.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_2.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0003.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_3.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0004.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_4.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0005.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_5.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0006.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_6.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0007.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_7.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0008.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_8.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0009.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_9.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0011m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_11m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0012m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_12m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0013m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_13m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0014m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_14m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0015m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_15m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0016m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_16m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0017m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_17m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0018m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_18m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0020m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_20m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0021m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_21m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0024m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_24m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0028m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_28m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0035m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_35m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0045m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_45m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0059m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_59m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0077m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_77m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0098m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_98m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0122m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_122m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0147m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_147m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0173m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_173m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0200m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_200m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0226m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_226m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0253m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_253m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0280m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_280m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0307m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_307m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0334m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_334m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0361m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_361m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0388m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_388m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (X vector) - 0415m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityX_415m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  }
+                ]
+              },
+              {
+                "Title": "Sea water velocity (Y vector)",
+                "Name": "Sea water velocity (Y vector)",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0001.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_1.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0002.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_2.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0003.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_3.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0004.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_4.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0005.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_5.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0006.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_6.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0007.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_7.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0008.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_8.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0009.5m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_9.5m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0011m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_11m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0012m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_12m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0013m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_13m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0014m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_14m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0015m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_15m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0016m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_16m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0017m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_17m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0018m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_18m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0020m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_20m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0021m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_21m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0024m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_24m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0028m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_28m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0035m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_35m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0045m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_45m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0059m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_59m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0077m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_77m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0098m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_98m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0122m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_122m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0147m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_147m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0173m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_173m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0200m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_200m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0226m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_226m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0253m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_253m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0280m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_280m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0307m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_307m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0334m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_334m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0361m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_361m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0388m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_388m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "CIOPS-West - Sea water velocity (Y vector) - 0415m [m/s]",
+                    "Name": "CIOPS-West_SeaWaterVelocityY_415m",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  }
+                ]
+              },
+              {
                 "Title": "Sea water velocity",
                 "Name": "Sea water velocity",
                 "isLeaf": false,
                 "children": [
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0001.5m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0001.5m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_1.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0002.5m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0002.5m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_2.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0003.5m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0003.5m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_3.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0004.5m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0004.5m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_4.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0005.5m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0005.5m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_5.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0006.5m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0006.5m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_6.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0007.5m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0007.5m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_7.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0008.5m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0008.5m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_8.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0009.5m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0009.5m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_9.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0011m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0011m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_11m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0012m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0012m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_12m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0013m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0013m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_13m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0014m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0014m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_14m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0015m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0015m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_15m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0016m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0016m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_16m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0017m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0017m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_17m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0018m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0018m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_18m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0020m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0020m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_20m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0021m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0021m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_21m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0024m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0024m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_24m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0028m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0028m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_28m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0035m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0035m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_35m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0045m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0045m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_45m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0059m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0059m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_59m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0077m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0077m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_77m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0098m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0098m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_98m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0122m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0122m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_122m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0147m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0147m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_147m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0173m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0173m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_173m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0200m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0200m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_200m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0226m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0226m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_226m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0253m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0253m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_253m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0280m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0280m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_280m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0307m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0307m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_307m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0334m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0334m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_334m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0361m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0361m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_361m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0388m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0388m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_388m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-West - Sea water velocity - 0415m [psu]",
+                    "Title": "CIOPS-West - Sea water velocity - 0415m [m/s]",
                     "Name": "CIOPS-West_SeaWaterVelocity_415m",
                     "isLeaf": true,
                     "isTemporal": true
@@ -15176,7 +16875,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "OCEAN.GIOPS.2D - Sea temperature [K]",
+            "Title": "OCEAN.GIOPS.2D - Sea water potential temperature [K]",
             "Name": "OCEAN.GIOPS.2D_TM2",
             "isLeaf": true,
             "isTemporal": true
@@ -15514,306 +17213,306 @@ export default {
             ]
           },
           {
-            "Title": "Sea temperature",
-            "Name": "Sea temperature",
+            "Title": "Sea water potential temperature",
+            "Name": "Sea water potential temperature",
             "isLeaf": false,
             "children": [
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0000m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0000m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0002m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0002m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0002",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0003m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0003m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0003",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0004m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0004m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0004",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0005m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0005m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0005",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0006m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0006m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0006",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0008m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0008m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0008",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0010m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0010m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0010",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0011m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0011m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0011",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0013m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0013m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0013",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0016m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0016m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0016",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0018m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0018m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0018",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0022m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0022m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0022",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0025m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0025m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0025",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0029m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0029m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0029",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0034m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0034m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0034",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0040m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0040m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0040",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0047m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0047m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0047",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0056m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0056m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0056",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0066m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0066m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0066",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0078m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0078m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0078",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0092m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0092m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0092",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0110m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0110m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0110",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0131m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0131m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0131",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0156m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0156m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0156",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0186m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0186m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0186",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0222m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0222m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0222",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0266m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0266m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0266",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0318m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0318m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0318",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0380m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0380m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0380",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0454m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0454m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0454",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0541m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0541m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0541",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0644m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0644m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0644",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0763m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0763m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0763",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 0902m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 0902m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_0902",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 1062m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 1062m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_1062",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 1245m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 1245m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_1245",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 1452m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 1452m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_1452",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 1684m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 1684m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_1684",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 1942m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 1942m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_1942",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 2225m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 2225m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_2225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 2533m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 2533m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_2533",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 2866m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 2866m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_2866",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 3221m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 3221m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_3221",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 3597m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 3597m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_3597",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 3992m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 3992m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_3992",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 4405m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 4405m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_4405",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 4833m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 4833m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_4833",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 5275m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 5275m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_5275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "OCEAN.GIOPS.3D - Sea temperature - 5728m [K]",
+                "Title": "OCEAN.GIOPS.3D - Sea water potential temperature - 5728m [K]",
                 "Name": "OCEAN.GIOPS.3D_TM2_5728",
                 "isLeaf": true,
                 "isTemporal": true
@@ -16219,7 +17918,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "RIOPS - Sea temperature [K]",
+            "Title": "RIOPS - Sea water potential temperature [K]",
             "Name": "RIOPS_VOTEMPER_DBS-0.5m",
             "isLeaf": true,
             "isTemporal": true
@@ -17134,450 +18833,450 @@ export default {
             ]
           },
           {
-            "Title": "Sea temperature",
-            "Name": "Sea temperature",
+            "Title": "Sea water potential temperature",
+            "Name": "Sea water potential temperature",
             "isLeaf": false,
             "children": [
               {
-                "Title": "RIOPS - Sea temperature - 0001.6m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0001.6m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-1.6m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0002.7m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0002.7m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-2.7m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0003.9m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0003.9m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-3.9m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0005.1m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0005.1m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-5.1m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0006.5m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0006.5m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-6.5m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0008.1m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0008.1m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-8.1m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0009.8m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0009.8m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-9.8m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0012m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0012m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-12m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0014m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0014m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-14m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0017m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0017m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-17m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0019m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0019m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-19m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0023m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0023m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-23m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0027m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0027m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-27m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0031m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0031m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-31m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0036m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0036m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-36m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0041m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0041m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-41m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0047m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0047m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-47m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0054m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0054m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-54m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0061m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0061m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-61m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0069m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0069m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-69m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0078m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0078m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-78m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0087m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0087m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-87m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0097m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0097m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-97m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0108m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0108m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-108m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0120m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0120m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-120m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0133m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0133m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-133m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0147m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0147m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-147m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0163m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0163m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-163m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0181m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0181m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-181m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0200m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0200m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-200m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0221m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0221m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-221m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0245m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0245m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-245m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0271m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0271m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-271m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0301m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0301m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-301m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0334m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0334m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-334m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0371m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0371m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-371m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0412m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0412m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-412m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0458m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0458m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-458m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0509m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0509m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-509m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0565m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0565m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-565m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0628m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0628m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-628m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0697m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0697m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-697m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0773m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0773m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-773m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0857m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0857m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-857m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 0947m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 0947m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-947m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 1046m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 1046m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-1046m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 1152m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 1152m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-1152m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 1266m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 1266m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-1266m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 1387m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 1387m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-1387m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 1516m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 1516m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-1516m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 1653m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 1653m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-1653m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 1796m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 1796m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-1796m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 1945m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 1945m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-1945m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 2101m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 2101m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-2101m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 2262m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 2262m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-2262m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 2429m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 2429m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-2429m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 2600m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 2600m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-2600m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 2776m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 2776m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-2776m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 2956m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 2956m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-2956m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 3139m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 3139m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-3139m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 3325m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 3325m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-3325m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 3513m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 3513m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-3513m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 3705m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 3705m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-3705m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 3898m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 3898m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-3898m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 4093m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 4093m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-4093m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 4290m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 4290m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-4290m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 4488m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 4488m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-4488m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 4688m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 4688m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-4688m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 4888m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 4888m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-4888m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 5089m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 5089m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-5089m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 5292m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 5292m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-5292m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 5495m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 5495m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-5495m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 5698m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 5698m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-5698m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RIOPS - Sea temperature - 5902m [K]",
+                "Title": "RIOPS - Sea water potential temperature - 5902m [K]",
                 "Name": "RIOPS_VOTEMPER_DBS-5902m",
                 "isLeaf": true,
                 "isTemporal": true
@@ -17614,6 +19313,12 @@ export default {
           {
             "Title": "HRDPA-Prelim.06 - Quantity of precipitation (preliminary) [mm]",
             "Name": "HRDPA-Prelim_2.5km_Precip-Accum6h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPA-Prelim.24 - Quantity of precipitation (preliminary) - T06Z [mm]",
+            "Name": "HRDPA-Prelim_2.5km_Precip-Accum24h-T06Z",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -17682,6 +19387,12 @@ export default {
             "Name": "HRDPA_2.5km_Precip-Accum24h-T06Z",
             "isLeaf": true,
             "isTemporal": true
+          },
+          {
+            "Title": "HRDPA.24 - Quantity of precipitation - T12Z [mm]",
+            "Name": "HRDPA_2.5km_Precip-Accum24h-T12Z",
+            "isLeaf": true,
+            "isTemporal": true
           }
         ]
       },
@@ -17693,12 +19404,6 @@ export default {
           {
             "Title": "RDPA - Quantity of precipitation over a 6h hour interval (preliminary) [mm] [10 km]",
             "Name": "RDPA-Prelim_10km_Precip-Accum6h",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPA - Quantity of precipitation over a 24h hour interval (preliminary) [mm] [10 km]",
-            "Name": "RDPA-Prelim_10km_Precip-Accum24h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -17753,12 +19458,6 @@ export default {
           {
             "Title": "RDPA - Quantity of precipitation over a 6h hour interval [mm] [10 km] (archive)",
             "Name": "RDPA_10km_Precip-Accum6h",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPA - Quantity of precipitation over a 24h hour interval [mm] [10 km] (archive)",
-            "Name": "RDPA_10km_Precip-Accum24h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -18662,6 +20361,18 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS.ETA - UV index",
+            "Name": "RDPS.ETA_IUVA",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - UV Index for clear-sky conditions",
+            "Name": "RDPS.ETA_IUVC",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS.ETA - Downward shortwave accumulated radiation flux at the surface [J/m\u00b2]",
             "Name": "RDPS.ETA_N4",
             "isLeaf": true,
@@ -18754,6 +20465,54 @@ export default {
           {
             "Title": "RDPS.ETA - Winds [m/s]",
             "Name": "RDPS.ETA_UU",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Daily maximum of the UV Index (00Z model run)",
+            "Name": "RDPS.ETA_UVAX_00Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Daily maximum of the UV Index (06Z model run)",
+            "Name": "RDPS.ETA_UVAX_06Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Daily maximum of the UV Index (12Z model run)",
+            "Name": "RDPS.ETA_UVAX_12Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Daily maximum of the UV Index (18Z model run)",
+            "Name": "RDPS.ETA_UVAX_18Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Daily maximum of the UV Index for clear-sky conditions (00Z model run)",
+            "Name": "RDPS.ETA_UVCX_00Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Daily maximum of the UV Index for clear-sky conditions (06Z model run)",
+            "Name": "RDPS.ETA_UVCX_06Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Daily maximum of the UV Index for clear-sky conditions (12Z model run)",
+            "Name": "RDPS.ETA_UVCX_12Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Daily maximum of the UV Index for clear-sky conditions (18Z model run)",
+            "Name": "RDPS.ETA_UVCX_18Z",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -18854,7 +20613,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 10.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 10.0 mb [%]",
                 "Name": "RDPS.PRES_HR.10",
                 "isLeaf": true,
                 "isTemporal": true
@@ -18915,7 +20674,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 20.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 20.0 mb [%]",
                 "Name": "RDPS.PRES_HR.20",
                 "isLeaf": true,
                 "isTemporal": true
@@ -18976,7 +20735,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 30.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 30.0 mb [%]",
                 "Name": "RDPS.PRES_HR.30",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19037,7 +20796,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 50.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 50.0 mb [%]",
                 "Name": "RDPS.PRES_HR.50",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19098,7 +20857,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 100.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 100.0 mb [%]",
                 "Name": "RDPS.PRES_HR.100",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19159,7 +20918,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 150.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 150.0 mb [%]",
                 "Name": "RDPS.PRES_HR.150",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19220,7 +20979,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 175.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 175.0 mb [%]",
                 "Name": "RDPS.PRES_HR.175",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19281,6 +21040,12 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "RDPS.PRES - Relative humidity at 200.0 mb [%]",
+                "Name": "RDPS.PRES_HR.200",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "RDPS.PRES - Specific humidity at 200.0 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.200",
                 "isLeaf": true,
@@ -19336,7 +21101,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 225.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 225.0 mb [%]",
                 "Name": "RDPS.PRES_HR.225",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19397,7 +21162,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 250.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 250.0 mb [%]",
                 "Name": "RDPS.PRES_HR.250",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19470,7 +21235,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 275.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 275.0 mb [%]",
                 "Name": "RDPS.PRES_HR.275",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19586,7 +21351,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 350.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 350.0 mb [%]",
                 "Name": "RDPS.PRES_HR.350",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19647,7 +21412,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 400.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 400.0 mb [%]",
                 "Name": "RDPS.PRES_HR.400",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19708,7 +21473,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 450.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 450.0 mb [%]",
                 "Name": "RDPS.PRES_HR.450",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19769,7 +21534,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 500.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 500.0 mb [%]",
                 "Name": "RDPS.PRES_HR.500",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19842,7 +21607,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 550.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 550.0 mb [%]",
                 "Name": "RDPS.PRES_HR.550",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19903,7 +21668,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 600.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 600.0 mb [%]",
                 "Name": "RDPS.PRES_HR.600",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19964,7 +21729,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 650.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 650.0 mb [%]",
                 "Name": "RDPS.PRES_HR.650",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20025,7 +21790,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 700.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 700.0 mb [%]",
                 "Name": "RDPS.PRES_HR.700",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20098,7 +21863,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 750.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 750.0 mb [%]",
                 "Name": "RDPS.PRES_HR.750",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20159,7 +21924,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 800.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 800.0 mb [%]",
                 "Name": "RDPS.PRES_HR.800",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20220,7 +21985,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 850.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 850.0 mb [%]",
                 "Name": "RDPS.PRES_HR.850",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20287,7 +22052,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 875.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 875.0 mb [%]",
                 "Name": "RDPS.PRES_HR.875",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20348,7 +22113,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 900.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 900.0 mb [%]",
                 "Name": "RDPS.PRES_HR.900",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20409,7 +22174,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 925.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 925.0 mb [%]",
                 "Name": "RDPS.PRES_HR.925",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20470,7 +22235,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 950.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 950.0 mb [%]",
                 "Name": "RDPS.PRES_HR.950",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20531,7 +22296,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 970.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 970.0 mb [%]",
                 "Name": "RDPS.PRES_HR.970",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20592,7 +22357,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 985.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 985.0 mb [%]",
                 "Name": "RDPS.PRES_HR.985",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20653,7 +22418,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 1000.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 1000.0 mb [%]",
                 "Name": "RDPS.PRES_HR.1000",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20720,7 +22485,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 1015.0 mb [0-1]",
+                "Title": "RDPS.PRES - Relative humidity at 1015.0 mb [%]",
                 "Name": "RDPS.PRES_HR.1015",
                 "isLeaf": true,
                 "isTemporal": true
@@ -27049,139 +28814,6 @@ export default {
             ]
           },
           {
-            "Title": "ETA_UU",
-            "Name": "ETA_UU",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "REPS.MEM.ETA_UU.01 - Winds [m/s] [control member]",
-                "Name": "REPS.MEM.ETA_UU.01",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.02 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.02",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.03 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.03",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.04 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.04",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.05 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.05",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.06 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.06",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.07 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.07",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.08 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.08",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.09 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.09",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.10 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.10",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.11 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.11",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.12 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.12",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.13 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.13",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.14 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.14",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.15 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.15",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.16 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.16",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.17 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.17",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.18 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.18",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.19 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.19",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.20 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.20",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.ETA_UU.21 - Winds [m/s]",
-                "Name": "REPS.MEM.ETA_UU.21",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
             "Title": "ETA_WSPD",
             "Name": "ETA_WSPD",
             "isLeaf": false,
@@ -31704,1203 +33336,6 @@ export default {
             ]
           },
           {
-            "Title": "PRES_UU.50",
-            "Name": "PRES_UU.50",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "REPS.MEM.PRES_UU.50.01 - Winds at 50.0 mb [m/s] [control member]",
-                "Name": "REPS.MEM.PRES_UU.50.01",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.02 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.02",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.03 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.03",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.04 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.04",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.05 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.05",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.06 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.06",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.07 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.07",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.08 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.08",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.09 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.09",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.10 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.10",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.11 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.11",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.12 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.12",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.13 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.13",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.14 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.14",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.15 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.15",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.16 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.16",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.17 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.17",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.18 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.18",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.19 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.19",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.20 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.20",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.50.21 - Winds at 50.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.50.21",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "PRES_UU.100",
-            "Name": "PRES_UU.100",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "REPS.MEM.PRES_UU.100.01 - Winds at 100.0 mb [m/s] [control member]",
-                "Name": "REPS.MEM.PRES_UU.100.01",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.02 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.02",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.03 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.03",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.04 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.04",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.05 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.05",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.06 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.06",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.07 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.07",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.08 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.08",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.09 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.09",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.10 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.10",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.11 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.11",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.12 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.12",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.13 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.13",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.14 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.14",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.15 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.15",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.16 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.16",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.17 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.17",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.18 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.18",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.19 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.19",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.20 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.20",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.100.21 - Winds at 100.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.100.21",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "PRES_UU.200",
-            "Name": "PRES_UU.200",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "REPS.MEM.PRES_UU.200.01 - Winds at 200.0 mb [m/s] [control member]",
-                "Name": "REPS.MEM.PRES_UU.200.01",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.02 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.02",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.03 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.03",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.04 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.04",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.05 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.05",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.06 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.06",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.07 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.07",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.08 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.08",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.09 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.09",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.10 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.10",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.11 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.11",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.12 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.12",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.13 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.13",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.14 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.14",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.15 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.15",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.16 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.16",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.17 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.17",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.18 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.18",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.19 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.19",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.20 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.20",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.200.21 - Winds at 200.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.200.21",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "PRES_UU.250",
-            "Name": "PRES_UU.250",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "REPS.MEM.PRES_UU.250.01 - Winds at 250.0 mb [m/s] [control member]",
-                "Name": "REPS.MEM.PRES_UU.250.01",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.02 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.02",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.03 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.03",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.04 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.04",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.05 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.05",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.06 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.06",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.07 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.07",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.08 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.08",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.09 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.09",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.10 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.10",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.11 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.11",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.12 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.12",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.13 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.13",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.14 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.14",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.15 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.15",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.16 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.16",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.17 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.17",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.18 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.18",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.19 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.19",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.20 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.20",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.250.21 - Winds at 250.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.250.21",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "PRES_UU.500",
-            "Name": "PRES_UU.500",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "REPS.MEM.PRES_UU.500.01 - Winds at 500.0 mb [m/s] [control member]",
-                "Name": "REPS.MEM.PRES_UU.500.01",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.02 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.02",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.03 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.03",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.04 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.04",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.05 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.05",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.06 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.06",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.07 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.07",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.08 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.08",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.09 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.09",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.10 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.10",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.11 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.11",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.12 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.12",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.13 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.13",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.14 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.14",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.15 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.15",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.16 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.16",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.17 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.17",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.18 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.18",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.19 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.19",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.20 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.20",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.500.21 - Winds at 500.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.500.21",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "PRES_UU.700",
-            "Name": "PRES_UU.700",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "REPS.MEM.PRES_UU.700.01 - Winds at 700.0 mb [m/s] [control member]",
-                "Name": "REPS.MEM.PRES_UU.700.01",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.02 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.02",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.03 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.03",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.04 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.04",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.05 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.05",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.06 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.06",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.07 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.07",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.08 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.08",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.09 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.09",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.10 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.10",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.11 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.11",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.12 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.12",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.13 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.13",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.14 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.14",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.15 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.15",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.16 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.16",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.17 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.17",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.18 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.18",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.19 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.19",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.20 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.20",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.700.21 - Winds at 700.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.700.21",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "PRES_UU.850",
-            "Name": "PRES_UU.850",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "REPS.MEM.PRES_UU.850.01 - Winds at 850.0 mb [m/s] [control member]",
-                "Name": "REPS.MEM.PRES_UU.850.01",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.02 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.02",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.03 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.03",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.04 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.04",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.05 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.05",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.06 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.06",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.07 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.07",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.08 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.08",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.09 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.09",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.10 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.10",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.11 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.11",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.12 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.12",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.13 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.13",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.14 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.14",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.15 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.15",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.16 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.16",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.17 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.17",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.18 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.18",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.19 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.19",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.20 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.20",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.850.21 - Winds at 850.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.850.21",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "PRES_UU.925",
-            "Name": "PRES_UU.925",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "REPS.MEM.PRES_UU.925.01 - Winds at 925.0 mb [m/s] [control member]",
-                "Name": "REPS.MEM.PRES_UU.925.01",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.02 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.02",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.03 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.03",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.04 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.04",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.05 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.05",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.06 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.06",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.07 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.07",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.08 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.08",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.09 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.09",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.10 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.10",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.11 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.11",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.12 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.12",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.13 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.13",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.14 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.14",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.15 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.15",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.16 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.16",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.17 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.17",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.18 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.18",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.19 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.19",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.20 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.20",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.925.21 - Winds at 925.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.925.21",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "PRES_UU.1000",
-            "Name": "PRES_UU.1000",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.01 - Winds at 1000.0 mb [m/s] [control member]",
-                "Name": "REPS.MEM.PRES_UU.1000.01",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.02 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.02",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.03 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.03",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.04 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.04",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.05 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.05",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.06 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.06",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.07 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.07",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.08 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.08",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.09 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.09",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.10 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.10",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.11 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.11",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.12 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.12",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.13 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.13",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.14 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.14",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.15 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.15",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.16 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.16",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.17 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.17",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.18 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.18",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.19 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.19",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.20 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.20",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "REPS.MEM.PRES_UU.1000.21 - Winds at 1000.0 mb [m/s]",
-                "Name": "REPS.MEM.PRES_UU.1000.21",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
             "Title": "PRES_WSPD.40m",
             "Name": "PRES_WSPD.40m",
             "isLeaf": false,
@@ -33754,6 +34189,18 @@ export default {
           {
             "Title": "WCPS - Turbocline depth [m]",
             "Name": "WCPS_1km_TurboclineDepth",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "WCPS - Surface wind U vector at 10 m above ground [m/s]",
+            "Name": "WCPS_1km_WindsU_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "WCPS - Surface wind V vector at 10 m above ground [m/s]",
+            "Name": "WCPS_1km_WindsV_10m",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -35702,12 +36149,6 @@ export default {
                     "Name": "RDWPS-Lake-Erie_1km_WVHGT",
                     "isLeaf": true,
                     "isTemporal": true
-                  },
-                  {
-                    "Title": "RDWPS - Winds at 10m above surface [m/s]",
-                    "Name": "RDWPS-Lake-Erie_1km_Winds_10m",
-                    "isLeaf": true,
-                    "isTemporal": true
                   }
                 ]
               },
@@ -35797,12 +36238,6 @@ export default {
                   {
                     "Title": "RDWPS - Significant height of wind waves [m]",
                     "Name": "RDWPS-Lake-Huron-Michigan_1km_WVHGT",
-                    "isLeaf": true,
-                    "isTemporal": true
-                  },
-                  {
-                    "Title": "RDWPS - Winds at 10m above surface [m/s]",
-                    "Name": "RDWPS-Lake-Huron-Michigan_1km_Winds_10m",
                     "isLeaf": true,
                     "isTemporal": true
                   }
@@ -35896,12 +36331,6 @@ export default {
                     "Name": "RDWPS-Lake-Ontario_1km_WVHGT",
                     "isLeaf": true,
                     "isTemporal": true
-                  },
-                  {
-                    "Title": "RDWPS - Winds at 10m above surface [m/s]",
-                    "Name": "RDWPS-Lake-Ontario_1km_Winds_10m",
-                    "isLeaf": true,
-                    "isTemporal": true
                   }
                 ]
               },
@@ -35991,12 +36420,6 @@ export default {
                   {
                     "Title": "RDWPS - Significant height of wind waves [m]",
                     "Name": "RDWPS-Lake-Superior_1km_WVHGT",
-                    "isLeaf": true,
-                    "isTemporal": true
-                  },
-                  {
-                    "Title": "RDWPS - Winds at 10m above surface [m/s]",
-                    "Name": "RDWPS-Lake-Superior_1km_Winds_10m",
                     "isLeaf": true,
                     "isTemporal": true
                   }
@@ -36092,12 +36515,6 @@ export default {
           {
             "Title": "RDWPS - Significant height of wind waves [m]",
             "Name": "RDWPS_2.5km_WindWavesSignificantHeight",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDWPS - Winds at 10m above surface [m/s]",
-            "Name": "RDWPS_2.5km_Winds_10m",
             "isLeaf": true,
             "isTemporal": true
           }
