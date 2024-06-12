@@ -340,6 +340,97 @@ export default {
         "isLeaf": false,
         "children": [
           {
+            "Title": "RDAQA products",
+            "Name": "RDAQA products",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "Concentration: surface PM2.5 (FireWork) [kg/m\u00b3]",
+                "Name": "RDAQA-FW_10km_PM2.5",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface PM10 (FireWork) [kg/m\u00b3]",
+                "Name": "RDAQA-FW_10km_PM10",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface NO (preliminary) [mol/mol]",
+                "Name": "RDAQA-Prelim_10km_NO",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface NO2 (preliminary) [mol/mol]",
+                "Name": "RDAQA-Prelim_10km_NO2",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface O3 (preliminary) [mol/mol]",
+                "Name": "RDAQA-Prelim_10km_O3",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface PM2.5 (preliminary) [kg/m\u00b3]",
+                "Name": "RDAQA-Prelim_10km_PM2.5",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface PM10 (preliminary) [kg/m\u00b3]",
+                "Name": "RDAQA-Prelim_10km_PM10",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface SO2 (preliminary) [mol/mol]",
+                "Name": "RDAQA-Prelim_10km_SO2",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface NO [mol/mol]",
+                "Name": "RDAQA_10km_NO",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface NO2 [mol/mol]",
+                "Name": "RDAQA_10km_NO2",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface O3 [mol/mol]",
+                "Name": "RDAQA_10km_O3",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface PM2.5 [kg/m\u00b3]",
+                "Name": "RDAQA_10km_PM2.5",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface PM10 [kg/m\u00b3]",
+                "Name": "RDAQA_10km_PM10",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration: surface SO2 [mol/mol]",
+                "Name": "RDAQA_10km_SO2",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
             "Title": "Cumulative Effects products",
             "Name": "Cumulative Effects products",
             "isLeaf": false,

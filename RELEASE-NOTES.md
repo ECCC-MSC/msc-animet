@@ -1,5 +1,10 @@
 # Release Notes
 
+## Version 2.1.3 (2024-06-12)
+
+### Bug Fixes
+- Re-update GeoMet-Weather 2.28.0 layer list due to timing with refreshed global get capabilities
+
 ## Version 2.1.2 (2024-06-12)
 
 ### Bug Fixes
