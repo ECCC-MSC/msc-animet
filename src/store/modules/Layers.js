@@ -66,6 +66,7 @@ const state = {
   MP4ProgressPercent: 0,
   MP4URL: null,
   outputDate: null,
+  outputFormat: "MP4",
   outputSize: null,
   overlays: {
     Boundaries: {
@@ -168,6 +169,9 @@ const getters = {
   },
   getOutputDate: (state) => {
     return state.outputDate;
+  },
+  getOutputFormat: (state) => {
+    return state.outputFormat;
   },
   getOutputSize: (state) => {
     return state.outputSize;
@@ -306,6 +310,9 @@ const mutations = {
   setOutputDate: (state, newOutputDate) => {
     state.outputDate = newOutputDate;
   },
+  setOutputFormat: (state, format) => {
+    state.outputFormat = format;
+  },
   setOutputSize: (state, newSize) => {
     state.outputSize = newSize;
   },
@@ -419,6 +426,9 @@ const actions = {
   },
   setOutputDate({ commit }, payload) {
     commit("setOutputDate", payload);
+  },
+  setOutputFormat({ commit }, payload) {
+    commit("setOutputFormat", payload);
   },
   setOutputSize({ commit }, payload) {
     commit("setOutputSize", payload);
