@@ -77,6 +77,16 @@
             </v-tooltip>
           </template>
         </v-text-field>
+        <v-spacer></v-spacer>
+        <v-select
+          hide-details
+          class="res-select output-width"
+          v-model="outputFormat"
+          :label="$t('OutputFormat')"
+          :items="outputOptions"
+          :disabled="isAnimating"
+        >
+        </v-select>
       </v-row>
     </v-col>
     <v-col class="options-bottom">
@@ -123,6 +133,7 @@ export default {
       animationTitle: "",
       darkModeToggle: false,
       intersectMessage: false,
+      outputOptions: ["JPEG", "MP4"],
       resDict: {
         Widescreen: {
           name: "Widescreen",
@@ -276,6 +287,7 @@ export default {
       "getIntersectMessageDisplayed",
       "getMapTimeSettings",
       "getMP4URL",
+      "getOutputFormat",
     ]),
     ...mapState("Layers", ["isAnimating", "isAnimationReversed"]),
     animationReversed: {
@@ -344,6 +356,14 @@ export default {
     MP4ExportFlag() {
       return this.getMP4URL !== null || this.getImgURL !== null;
     },
+    outputFormat: {
+      get() {
+        return this.getOutputFormat;
+      },
+      set(format) {
+        this.$store.commit("Layers/setOutputFormat", format);
+      },
+    },
   },
   watch: {
     animationTitle(newTitle, oldTitle) {
@@ -397,6 +417,9 @@ export default {
 .options-bottom {
   margin: auto;
   margin-top: -22px;
+}
+.output-width {
+  max-width: 110px;
 }
 .replace-legends {
   font-size: 10pt;

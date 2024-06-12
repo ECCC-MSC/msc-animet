@@ -185,6 +185,8 @@ export default {
       } else {
         this.$countryCode.id = country.id;
       }
+      localStorage.setItem("timezone", timezone);
+      localStorage.setItem("country-code", this.$countryCode.id);
     },
     selectTimeZone(zone) {
       const timezone = zone[0].value;

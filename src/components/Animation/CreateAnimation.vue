@@ -9,7 +9,8 @@
       class="text-none"
     >
       {{
-        this.datetimeRangeSlider[0] !== this.datetimeRangeSlider[1]
+        this.datetimeRangeSlider[0] !== this.datetimeRangeSlider[1] &&
+        getOutputFormat === "MP4"
           ? $t("MP4CreateButtonLabel")
           : $t("JPEGCreateButtonLabel")
       }}
@@ -52,7 +53,7 @@ import datetimeManipulations from "../../mixins/datetimeManipulations";
 export default {
   mounted() {
     this.$root.$on("cancelExpired", this.handleCancelExpired);
-    this.$root.$on("redoAnimation", this.createMP4Handler);
+    this.$root.$on("redoAnimation", this.redoAnimation);
     this.$root.$on("restoreState", this.restoreState);
 
     // cancel animation creations on window resize avoid Safari bug
@@ -63,7 +64,7 @@ export default {
   },
   beforeDestroy() {
     this.$root.$off("cancelExpired", this.handleCancelExpired);
-    this.$root.$off("redoAnimation", this.createMP4Handler);
+    this.$root.$off("redoAnimation", this.redoAnimation);
     this.$root.$off("restoreState", this.restoreState);
   },
   mixins: [datetimeManipulations],
@@ -121,16 +122,25 @@ export default {
       return modelRuns;
     },
     getAnimationDateTitle(interval) {
-      const firstDate =
-        this.getMapTimeSettings.Extent[this.datetimeRangeSlider[0]];
+      let exportTitleDate;
+      if (this.getOutputFormat === "MP4") {
+        exportTitleDate =
+          this.getMapTimeSettings.Extent[this.datetimeRangeSlider[0]];
+      } else {
+        exportTitleDate =
+          this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex];
+      }
       if (interval === "P1Y") {
-        return `${firstDate.toISOString().split("-")[0]}`;
+        return `${exportTitleDate.toISOString().split("-")[0]}`;
       } else if (interval === "P1M") {
-        let firstDateSplit = firstDate.toISOString().split("-");
-        return `${firstDateSplit[0]}${firstDateSplit[1]}`;
+        let exportTitleDateSplit = exportTitleDate.toISOString().split("-");
+        return `${exportTitleDateSplit[0]}${exportTitleDateSplit[1]}`;
       } else {
         return (
-          firstDate.toISOString().split(":00.000")[0].replace(/[:-]/g, "") + "Z"
+          exportTitleDate
+            .toISOString()
+            .split(":00.000")[0]
+            .replace(/[:-]/g, "") + "Z"
         );
       }
     },
@@ -188,21 +198,34 @@ export default {
       this.encoder.quantizationParameter = 30;
       this.encoder.initialize();
 
-      this.MP4Length =
-        this.datetimeRangeSlider[1] - this.datetimeRangeSlider[0] + 1;
+      if (this.getOutputFormat === "MP4") {
+        this.MP4Length =
+          this.datetimeRangeSlider[1] - this.datetimeRangeSlider[0] + 1;
+      } else {
+        this.MP4Length = 1;
+      }
 
       let progressCounter = 1;
       const initialState = this.getMapTimeSettings.DateIndex;
 
-      let startIndex = this.isAnimationReversed
-        ? this.datetimeRangeSlider[1]
-        : this.datetimeRangeSlider[0];
+      let startIndex;
+      let endIndex;
+      if (this.getOutputFormat === "MP4") {
+        if (!this.isAnimationReversed) {
+          startIndex = this.datetimeRangeSlider[0];
+          endIndex = this.datetimeRangeSlider[1];
+        } else {
+          startIndex = this.datetimeRangeSlider[1];
+          endIndex = this.datetimeRangeSlider[0];
+        }
+      } else {
+        startIndex = initialState;
+        endIndex = initialState;
+      }
       let increment = this.isAnimationReversed ? -1 : 1;
       for (
         let i = startIndex;
-        this.isAnimationReversed
-          ? i >= this.datetimeRangeSlider[0]
-          : i <= this.datetimeRangeSlider[1];
+        this.isAnimationReversed ? i >= endIndex : i <= endIndex;
         i += increment, progressCounter++
       ) {
         if (this.generating === false) {
@@ -316,6 +339,13 @@ export default {
     handleCancelExpired() {
       this.cancelExpired = true;
       this.cancelAnimationCreation();
+    },
+    async redoAnimation() {
+      this.createMP4Handler();
+      this.$store.dispatch(
+        "Layers/setOutputDate",
+        this.getAnimationDateTitle(this.getMapTimeSettings.Step)
+      );
     },
     restoreState(initialState = null) {
       if (initialState === null) {
@@ -984,6 +1014,7 @@ export default {
       "getMapTimeSettings",
       "getMP4URL",
       "getOutputDate",
+      "getOutputFormat",
       "getTimeFormat",
     ]),
   },
