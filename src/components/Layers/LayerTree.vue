@@ -129,7 +129,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from "../../utils/AxiosConfig.js";
 import SaxonJS from "saxon-js";
 import { mapGetters, mapState } from "vuex";
 

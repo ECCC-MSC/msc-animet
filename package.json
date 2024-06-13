@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.26.0",
+    "axios-retry": "^4.4.0",
     "canvas-txt": "^3.0.0",
     "core-js": "^3.6.5",
     "countries-and-timezones": "^3.5.1",

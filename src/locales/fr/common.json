@@ -52,6 +52,7 @@
   "LoopRetry": "Service non disponible. Nouvelle tentative dans 45 secondes.",
   "MadeWithAniMet": "Créé avec AniMet du SMC",
   "Major_cities": "Villes canadiennes",
+  "MakeLayersVisible": "Toutes les couches sont invisibles, aucune animation/image ne peut être créée.",
   "MapCustomizations": "Personnaliser la carte",
   "MissingTimesteps": "Certains pas de temps ont expiré. Les informations temporelles ont été mises à jour.",
   "ModelRun": "Passe du modèle",

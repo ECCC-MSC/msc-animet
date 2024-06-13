@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from "../../utils/AxiosConfig.js";
 import { mapGetters, mapState } from "vuex";
 import SaxonJS from "saxon-js";
 
@@ -242,8 +242,9 @@ export default {
             layerStartTime: newExtent[0],
             layerEndTime: newExtent[newExtent.length - 1],
           });
-          this.errorLayersList = this.errorLayersList.filter(
-            (l) => l !== layer.get("layerName")
+          this.errorLayersList.splice(
+            this.errorLayersList.indexOf(layer.get("layerName")),
+            1
           );
         } else if (
           "code" in attrs &&
@@ -253,8 +254,9 @@ export default {
           this.expiredSnackBarMessage = this.$t("StyleError");
           this.timeoutDuration = 8000;
           this.notifyExtentRebuilt = true;
-          this.errorLayersList = this.errorLayersList.filter(
-            (l) => l !== layer.get("layerName")
+          this.errorLayersList.splice(
+            this.errorLayersList.indexOf(layer.get("layerName")),
+            1
           );
         } else {
           this.$root.$emit("cancelExpired");
@@ -263,8 +265,9 @@ export default {
           console.error("Unhandled error case: ", response);
           this.timeoutDuration = 12000;
           this.notifyExtentRebuilt = true;
-          this.errorLayersList = this.errorLayersList.filter(
-            (l) => l !== layer.get("layerName")
+          this.errorLayersList.splice(
+            this.errorLayersList.indexOf(layer.get("layerName")),
+            1
           );
         }
       } catch (error) {
@@ -295,8 +298,9 @@ export default {
         this.expiredSnackBarMessage = this.$t("BrokenLayer");
         this.timeoutDuration = 12000;
         this.notifyExtentRebuilt = true;
-        this.errorLayersList = this.errorLayersList.filter(
-          (l) => l !== layer.get("layerName")
+        this.errorLayersList.splice(
+          this.errorLayersList.indexOf(layer.get("layerName")),
+          1
         );
       }
     },
@@ -402,8 +406,9 @@ export default {
         layerTimeStep: configs[layerActiveConfig].layerTimeStep,
         layerTrueTimeStep: configs[layerActiveConfig].layerTrueTimeStep,
       });
-      this.errorLayersList = this.errorLayersList.filter(
-        (l) => l !== layer.get("layerName")
+      this.errorLayersList.splice(
+        this.errorLayersList.indexOf(layer.get("layerName")),
+        1
       );
     },
   },

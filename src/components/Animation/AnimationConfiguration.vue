@@ -33,7 +33,11 @@
         </v-switch>
         <v-switch
           class="reverse-switch"
-          :disabled="isAnimating"
+          :disabled="
+            isAnimating ||
+            datetimeRangeSlider[0] === datetimeRangeSlider[1] ||
+            getOutputFormat !== 'MP4'
+          "
           v-model="animationReversed"
           hide-details
           :label="$t('ReverseAnimation')"
@@ -60,7 +64,11 @@
         </v-select>
         <v-text-field
           hide-details
-          :disabled="isAnimating"
+          :disabled="
+            isAnimating ||
+            datetimeRangeSlider[0] === datetimeRangeSlider[1] ||
+            getOutputFormat !== 'MP4'
+          "
           v-model="framesPerSecond"
           type="number"
           min="1"
@@ -84,7 +92,9 @@
           v-model="outputFormat"
           :label="$t('OutputFormat')"
           :items="outputOptions"
-          :disabled="isAnimating"
+          :disabled="
+            isAnimating || datetimeRangeSlider[0] === datetimeRangeSlider[1]
+          "
         >
         </v-select>
       </v-row>
@@ -289,7 +299,11 @@ export default {
       "getMP4URL",
       "getOutputFormat",
     ]),
-    ...mapState("Layers", ["isAnimating", "isAnimationReversed"]),
+    ...mapState("Layers", [
+      "datetimeRangeSlider",
+      "isAnimating",
+      "isAnimationReversed",
+    ]),
     animationReversed: {
       get() {
         return this.isAnimationReversed;

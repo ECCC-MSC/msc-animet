@@ -244,8 +244,7 @@ export default {
           // Trigger manually because animation creation waits for
           // render events, but noChange means no layers are shown
           // so nothing ever changes or renders.
-          this.$root.$emit("layersRendered");
-          this.$animationCanvas.mapObj.updateSize();
+          this.$root.$emit("noChange");
         }
         return;
       }
