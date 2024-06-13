@@ -52,6 +52,7 @@
   "LoopRetry": "Service unavailable. Retrying in 45 seconds.",
   "MadeWithAniMet": "Made with MSC AniMet",
   "Major_cities": "Canadian cities",
+  "MakeLayersVisible": "All layers are invisible, no animation/image can be created.",
   "MapCustomizations": "Customize map",
   "MissingTimesteps": "Some timesteps have expired. The temporal values have been updated.",
   "ModelRun": "Model run",

@@ -1,20 +1,31 @@
 <template>
   <div>
-    <v-btn
-      v-if="!isAnimating || playState === 'play'"
-      :disabled="getMapTimeSettings.Step === null || playState === 'play'"
-      block
-      color="primary"
-      @click="createMP4"
-      class="text-none"
-    >
-      {{
-        this.datetimeRangeSlider[0] !== this.datetimeRangeSlider[1] &&
-        getOutputFormat === "MP4"
-          ? $t("MP4CreateButtonLabel")
-          : $t("JPEGCreateButtonLabel")
-      }}
-    </v-btn>
+    <v-tooltip :disabled="layersVisible" bottom>
+      <template v-slot:activator="{ on }">
+        <div v-on="on">
+          <v-btn
+            v-if="!isAnimating || playState === 'play'"
+            :disabled="
+              getMapTimeSettings.Step === null ||
+              playState === 'play' ||
+              !layersVisible
+            "
+            block
+            color="primary"
+            @click="createMP4"
+            class="text-none"
+          >
+            {{
+              datetimeRangeSlider[0] !== datetimeRangeSlider[1] &&
+              getOutputFormat === "MP4"
+                ? $t("MP4CreateButtonLabel")
+                : $t("JPEGCreateButtonLabel")
+            }}
+          </v-btn>
+        </div>
+      </template>
+      <span>{{ $t("MakeLayersVisible") }}</span>
+    </v-tooltip>
     <div v-if="isAnimating && playState !== 'play'" class="animation-progress">
       <v-row>
         <v-col class="d-flex">
@@ -150,10 +161,6 @@ export default {
       }
     },
     async createMP4() {
-      let visibleLayers = this.$mapLayers.arr.filter((l) => {
-        return l.get("layerVisibilityOn") && l instanceof OLImage;
-      });
-      if (visibleLayers.length === 0) return;
       this.$root.$emit("setAnimationTitle");
       this.trackCreateMP4();
       this.createMP4Handler();
@@ -249,6 +256,7 @@ export default {
               );
 
               this.$animationCanvas.mapObj.once("rendercomplete", resolve);
+              this.$root.$on("noChange", resolve);
             }).catch(() => {
               console.error("Animation creation cancelled");
             });
@@ -270,6 +278,7 @@ export default {
                 );
 
                 this.$mapCanvas.mapObj.once("rendercomplete", resolve);
+                this.$root.$on("noChange", resolve);
               }).catch(() => {
                 console.error("Animation creation cancelled");
               });
@@ -294,9 +303,8 @@ export default {
                 abortListener
               );
 
-              this.$root.$on("layersRendered", () => {
-                resolve();
-              });
+              this.$root.$on("layersRendered", resolve);
+              this.$root.$on("noChange", resolve);
             }).catch(() => {
               console.error("Animation creation cancelled");
             });
@@ -314,6 +322,7 @@ export default {
               );
 
               this.$animationCanvas.mapObj.once("rendercomplete", resolve);
+              this.$root.$on("noChange", resolve);
             }).catch(() => {
               console.error("Animation creation cancelled");
             });
@@ -1017,6 +1026,13 @@ export default {
       "getOutputFormat",
       "getTimeFormat",
     ]),
+    layersVisible() {
+      let visibleLayers = this.$mapLayers.arr.filter((l) => {
+        return l.get("layerVisibilityOn") && l instanceof OLImage;
+      });
+      if (visibleLayers.length === 0) return false;
+      return true;
+    },
   },
   data() {
     return {
