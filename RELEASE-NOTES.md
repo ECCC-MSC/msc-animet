@@ -1,5 +1,42 @@
 # Release Notes
 
+## Version 2.2.0 (2024-06-17)
+
+### New Features
+- Added a time zone selection, saving preference to browser cache
+- Added ability to save an animation frame as a JPEG
+- 4-Displays page will now remember each panel's permalink
+
+### Enhancements
+- Improved file naming when downloading animation
+- Upgraded OpenLayers to version 9.1
+- Upgrade luxon to version 3.4.x
+- Animation looping is turned on by default
+- Improved how guesses work for layers where times are only comma separated and the interval isn't specified
+- Added ability to remove/add layers when animation is playing; stopping the animation to perform the action
+- Improved error handling when zooming and panning the map during a loop
+- Display minimal layer information during animation loop
+- Changed snackbar notifications to display at the top of the page
+- Improved overall error handling and logging
+- Added many other quality of life improvements
+
+### Bug Fixes
+- Fixed 404 handling in nightly deployments
+- Fixed various event handling issues while animation is looping
+- Fixed a memory leak issue caused by use of Vuetify's progress bar
+- Fixed warning message not appearing when in certain cases of legend being out of bounds of animation border
+- Fixed console.error to remove DomException log spam from OpenLayers
+- Fixed freezes and timesteps erroring out in certain play loop cases with network timeouts
+- Pressing the Pause button will no longer change tabs to layer configs, only pressing Play does now
+- Fixed legends disappearing when changing tabs during animation creation
+- Fixed language-dependent legends to change depending on current UI language setting
+- Adding the first time-enabled layer will now no longer snap by default
+- Fixed various formatting issues with screen sizes
+- Collapsed time controls now display the time in the correct format when timestep is monthly or yearly
+- Fixed a bug where DOMExceptions weren't caught because the error message changed
+- Fixed axios to retry 4 times, taking longer and longer between retries to reduce odds of failure on timeouts
+- Many other minor bug fixes to help improve error tracing
+
 ## Version 2.1.3 (2024-06-12)
 
 ### Bug Fixes
