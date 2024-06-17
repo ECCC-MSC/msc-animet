@@ -5,7 +5,9 @@
 ### New Features
 - Added a time zone selection, saving preference to browser cache
 - Added ability to save an animation frame as a JPEG
-- 4-Displays page will now remember each panel's permalink
+- [Experimental] 4-Displays page will now remember each panel's permalink (cannot be used on smaller screens)
+- Added display of a simplified layer information during animation loop
+- Updated layers list to display new GOES satellite layers
 
 ### Enhancements
 - Improved file naming when downloading animation
@@ -15,7 +17,6 @@
 - Improved how guesses work for layers where times are only comma separated and the interval isn't specified
 - Added ability to remove/add layers when animation is playing; stopping the animation to perform the action
 - Improved error handling when zooming and panning the map during a loop
-- Display minimal layer information during animation loop
 - Changed snackbar notifications to display at the top of the page
 - Improved overall error handling and logging
 - Added many other quality of life improvements
