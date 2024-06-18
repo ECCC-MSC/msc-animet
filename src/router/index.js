@@ -21,9 +21,12 @@ const router = new Router({
       }),
     },
     {
-      path: "/4-displays",
-      name: "FourDisplays",
-      component: require("@/views/FourDisplays").default,
+      path: "/:number(1|2|3|4)-displays",
+      name: "MultiDisplay",
+      component: require("@/views/MultiDisplay").default,
+      props: (route) => ({
+        disp: route.query.disp,
+      }),
     },
     {
       path: "*",
