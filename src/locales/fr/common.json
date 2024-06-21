@@ -49,7 +49,7 @@
   "Loading": "Chargement...",
   "LocalTime": "Local",
   "Loop": "Lecture en boucle",
-  "LoopRetry": "Service non disponible. Nouvelle tentative dans 45 secondes.",
+  "LoopRetry": "Service non disponible. Nouvelle tentative dans 20 secondes.",
   "MadeWithAniMet": "Créé avec AniMet du SMC",
   "Major_cities": "Villes canadiennes",
   "MakeLayersVisible": "Toutes les couches sont invisibles, aucune animation/image ne peut être créée.",

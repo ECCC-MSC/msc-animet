@@ -63,7 +63,6 @@ import datetimeManipulations from "../../mixins/datetimeManipulations";
 
 export default {
   mounted() {
-    this.$root.$on("cancelExpired", this.handleCancelExpired);
     this.$root.$on("redoAnimation", this.redoAnimation);
     this.$root.$on("restoreState", this.restoreState);
 
@@ -74,7 +73,6 @@ export default {
     window.removeEventListener("resize", this.cancelAnimationFromResize);
   },
   beforeDestroy() {
-    this.$root.$off("cancelExpired", this.handleCancelExpired);
     this.$root.$off("redoAnimation", this.redoAnimation);
     this.$root.$off("restoreState", this.restoreState);
   },
@@ -171,7 +169,6 @@ export default {
       );
     },
     async createMP4Handler() {
-      this.cancelExpired = false;
       this.imgURL = this.getImgURL;
       this.MP4URL = this.getMP4URL;
       this.$store.dispatch("Layers/setMP4URL", null);
@@ -328,8 +325,7 @@ export default {
             });
             await Promise.all([layersRendered, animationRendered]);
           }
-          if (this.cancelExpired) {
-            this.cancelExpired = false;
+          if (this.pendingErrorResolution) {
             this.generating = false;
             return;
           }
@@ -344,10 +340,6 @@ export default {
         }
       }
       this.restoreState(initialState);
-    },
-    handleCancelExpired() {
-      this.cancelExpired = true;
-      this.cancelAnimationCreation();
     },
     async redoAnimation() {
       this.createMP4Handler();
@@ -1012,6 +1004,7 @@ export default {
       "isAnimating",
       "isAnimationReversed",
       "MP4ProgressPercent",
+      "pendingErrorResolution",
       "playState",
     ]),
     ...mapGetters("Layers", [
@@ -1034,6 +1027,13 @@ export default {
       return true;
     },
   },
+  watch: {
+    pendingErrorResolution(isPending) {
+      if (this.isAnimating && this.playState !== "play" && isPending) {
+        this.cancelAnimationCreation();
+      }
+    },
+  },
   data() {
     return {
       animationController: null,
@@ -1052,7 +1052,6 @@ export default {
       outputDate: null,
       outputDateCanvas: null,
       outputHeader: null,
-      cancelExpired: false,
       appIsProductionEnv: process.env.NODE_ENV,
     };
   },
