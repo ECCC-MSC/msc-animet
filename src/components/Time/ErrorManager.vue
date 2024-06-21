@@ -115,6 +115,7 @@ export default {
           this.errorLayersList.push(imageLayer.get("layerName"));
         });
         this.$store.dispatch("Layers/setPendingErrorResolution", true);
+        this.$store.dispatch("Layers/setPendingErrorResolution", true);
         layerList.forEach((imageLayer) => {
           this.updateTimeInformation(imageLayer);
         });

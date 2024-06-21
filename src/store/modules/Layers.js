@@ -14,6 +14,7 @@ const state = {
   }),
   collapseControls: false,
   colorBorder: false,
+  configPanelHover: false,
   crsList: {
     "EPSG:3857": [-180.0, -85.06, 180.0, 85.06],
     "EPSG:3978": [-180.0, -80.0, 180.0, 86.46],
@@ -238,6 +239,9 @@ const mutations = {
   setColorBorder: (state, newStatus) => {
     state.colorBorder = newStatus;
   },
+  setConfigPanelHover: (state, hovered) => {
+    state.configPanelHover = hovered;
+  },
   setCurrentAspect: (state, res) => {
     state.currentAspect = res;
   },
@@ -368,6 +372,9 @@ const actions = {
   },
   setColorBorder({ commit }, payload) {
     commit("setColorBorder", payload);
+  },
+  setConfigPanelHover({ commit }, payload) {
+    commit("setConfigPanelHover", payload);
   },
   setCurrentAspect({ commit }, payload) {
     commit("setCurrentAspect", payload);
