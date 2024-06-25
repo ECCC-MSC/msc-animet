@@ -7,9 +7,15 @@
           :key="item.get('layerName')"
           outlined
           class="px-0"
-          :class="{ 'item-padding': !isAnimating }"
+          :class="{
+            'item-padding':
+              !isAnimating || configPanelHover || playState !== 'play',
+          }"
         >
-          <v-list-item-content v-if="isAnimating" class="pa-0">
+          <v-list-item-content
+            v-if="isAnimating && !configPanelHover && playState === 'play'"
+            class="pa-0"
+          >
             <v-list-item-title :title="$t(item.get('layerName'))">
               {{ $t(item.get("layerName")) }}
             </v-list-item-title>
@@ -27,7 +33,10 @@
             ></div>
             <model-run-handler class="mr-text" :item="item" />
           </v-list-item-content>
-          <v-list-item-content v-if="!isAnimating" class="pa-0">
+          <v-list-item-content
+            v-if="!isAnimating || configPanelHover || playState !== 'play'"
+            class="pa-0"
+          >
             <v-col class="pa-0">
               <v-list-item-title :title="$t(item.get('layerName'))">
                 {{ $t(item.get("layerName")) }}
@@ -65,14 +74,17 @@
             <v-divider v-if="numLayers - 1 !== index"></v-divider>
           </v-list-item-content>
           <v-divider
-            v-if="!isAnimating"
+            v-if="!isAnimating || configPanelHover || playState !== 'play'"
             vertical
             class="ml-3 divider"
           ></v-divider>
-          <v-list-item-action v-if="!isAnimating" class="mx-1 action">
+          <v-list-item-action
+            v-if="!isAnimating || configPanelHover || playState !== 'play'"
+            class="mx-1 action"
+          >
             <v-btn
               v-if="index !== 0"
-              :disabled="index === 0 || isAnimating"
+              :disabled="index === 0 || (isAnimating && playState !== 'play')"
               @click="changeLayerOrder(index - 1)"
               icon
             >
@@ -80,7 +92,9 @@
             </v-btn>
             <v-btn
               v-if="index + 1 < numLayers"
-              :disabled="index + 1 >= numLayers || isAnimating"
+              :disabled="
+                index + 1 >= numLayers || (isAnimating && playState !== 'play')
+              "
               @click="changeLayerOrder(index)"
               icon
             >
@@ -140,7 +154,7 @@ export default {
   },
   computed: {
     ...mapGetters("Layers", ["getMapTimeSettings"]),
-    ...mapState("Layers", ["isAnimating"]),
+    ...mapState("Layers", ["configPanelHover", "isAnimating", "playState"]),
     layerListReversed() {
       return this.$mapLayers.arr.slice().reverse();
     },

@@ -31,8 +31,16 @@
       </template>
       <v-container
         @click.stop
-        @mouseover="hover = true"
-        @mouseleave="hover = false"
+        @mouseover="
+          () => {
+            this.$store.dispatch('Layers/setConfigPanelHover', true);
+          }
+        "
+        @mouseleave="
+          () => {
+            this.$store.dispatch('Layers/setConfigPanelHover', false);
+          }
+        "
       >
         <v-toolbar class="toolbar">
           <template v-slot:extension>
@@ -66,13 +74,16 @@
           v-model="tab"
           :class="{
             'hide-header':
-              isAnimating && !hover && playState === 'play' && tab === 1,
+              isAnimating &&
+              !configPanelHover &&
+              playState === 'play' &&
+              tab === 1,
           }"
         >
           <v-tab-item eager>
             <layer-tree id="layer-tree" />
           </v-tab-item>
-          <v-tab-item eager>
+          <v-tab-item eager @click="stopLoop">
             <layer-configuration
               id="layer-configuration"
               v-show="$mapLayers.arr.length !== 0"
@@ -140,7 +151,6 @@ export default {
     return {
       buttonShown: false,
       color: null,
-      hover: false,
       menuOpen: true,
       screenWidth: window.innerWidth,
       tab: null,
@@ -174,6 +184,11 @@ export default {
         }, 250);
       }
     },
+    stopLoop() {
+      if (this.isAnimating && this.playState === "play") {
+        this.$root.$emit("stopAnimation");
+      }
+    },
     togglePreview(on) {
       let controlElement = document.getElementById("animation-rect");
       if (on) {
@@ -194,7 +209,7 @@ export default {
   },
   computed: {
     ...mapGetters("Layers", ["getMapTimeSettings"]),
-    ...mapState("Layers", ["isAnimating", "playState"]),
+    ...mapState("Layers", ["configPanelHover", "isAnimating", "playState"]),
     layersLength() {
       return this.$mapLayers.arr.length;
     },
