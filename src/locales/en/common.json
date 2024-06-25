@@ -49,7 +49,7 @@
   "Loading": "Loading...",
   "LocalTime": "Local",
   "Loop": "Loop",
-  "LoopRetry": "Service unavailable. Retrying in 45 seconds.",
+  "LoopRetry": "Service unavailable. Retrying in 20 seconds.",
   "MadeWithAniMet": "Made with MSC AniMet",
   "Major_cities": "Canadian cities",
   "MakeLayersVisible": "All layers are invisible, no animation/image can be created.",

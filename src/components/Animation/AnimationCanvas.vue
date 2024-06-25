@@ -23,7 +23,6 @@ import "ol/ol.css";
 export default {
   data() {
     return {
-      cancelExpired: false,
       copiedLayers: [],
       darkOSMCallback: null,
       loaded: 0,
@@ -33,12 +32,10 @@ export default {
   mixins: [datetimeManipulations],
   mounted() {
     this.$root.$on("animationCanvasReset", this.mapControls);
-    this.$root.$on("cancelExpired", this.handleCancelExpired);
     this.animationCanvasSetup();
   },
   beforeDestroy() {
     this.$root.$off("animationCanvasReset", this.mapControls);
-    this.$root.$off("cancelExpired", this.handleCancelExpired);
     this.removeLayersListeners();
     this.$animationCanvas.mapObj = {};
   },
@@ -246,9 +243,6 @@ export default {
         }
       });
     },
-    handleCancelExpired() {
-      this.cancelExpired = true;
-    },
     incrementLoadedCount() {
       this.loaded++;
     },
@@ -256,7 +250,6 @@ export default {
       this.loading++;
     },
     async mapControls() {
-      this.cancelExpired = false;
       const driverDate =
         this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex];
       let visibleTLayers = this.copiedLayers.filter((l) => {

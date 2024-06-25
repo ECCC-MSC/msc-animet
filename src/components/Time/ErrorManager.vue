@@ -114,8 +114,9 @@ export default {
         layerList.forEach((imageLayer) => {
           this.errorLayersList.push(imageLayer.get("layerName"));
         });
+        this.$store.dispatch("Layers/setPendingErrorResolution", true);
         layerList.forEach((imageLayer) => {
-          this.refreshExpired(imageLayer);
+          this.updateTimeInformation(imageLayer);
         });
       }
     },
@@ -182,6 +183,7 @@ export default {
           }
         }
       }
+      this.$store.dispatch("Layers/setPendingErrorResolution", false);
       this.blockRefresh = false;
       if (this.playState === "play") {
         this.$root.$emit("playAnimation");
@@ -190,6 +192,7 @@ export default {
     async errorDispatcher(layer, e) {
       this.blockRefresh = true;
       try {
+        this.$store.dispatch("Layers/setPendingErrorResolution", true);
         this.errorLayersList.push(layer.get("layerName"));
         const response = await axios.get(e.image.image_.currentSrc);
         const xmlDoc = new DOMParser().parseFromString(
@@ -203,7 +206,7 @@ export default {
         // "undefined" means there's actually no error.
         // Call refresh just to update the values and continue.
         if (serviceException === undefined) {
-          this.refreshExpired(layer);
+          this.updateTimeInformation(layer, e);
           return;
         }
         const attrs = serviceException.attributes;
@@ -212,11 +215,10 @@ export default {
           attrs["code"].nodeValue === "NoMatch" &&
           attrs["locator"].nodeValue === "time"
         ) {
-          this.refreshExpired(layer);
+          this.updateTimeInformation(layer, e);
         } else if (
           serviceException.textContent.includes("Unable to access file")
         ) {
-          this.$root.$emit("cancelExpired");
           this.expiredTimestepList.push(layer.get("layerTimeStep"));
           let newExtent = [...layer.get("layerDateArray")];
           newExtent.splice(layer.get("layerDateIndex"), 1);
@@ -259,7 +261,6 @@ export default {
             1
           );
         } else {
-          this.$root.$emit("cancelExpired");
           this.$root.$emit("removeLayer", layer);
           this.expiredSnackBarMessage = this.$t("UnhandledError");
           console.error("Unhandled error case: ", response);
@@ -271,72 +272,78 @@ export default {
           );
         }
       } catch (error) {
-        if (this.playState === "play" && this.isLooping) {
-          this.$root.$emit("cancelCriticalError", true);
-          const name = layer.get("layerName");
-          const timeoutId = setTimeout(() => {
-            clearTimeout(this.timeoutHandles[name]["timeoutId"]);
-            delete this.timeoutHandles[name];
-            this.$root.$emit("cancelCriticalError", false);
-            this.errorDispatcher(layer, e);
-          }, 45000);
-          if (name in this.timeoutHandles) {
-            clearTimeout(this.timeoutHandles[name]["timeoutId"]);
-            delete this.timeoutHandles[name];
-          }
-          this.timeoutHandles[name] = {
-            timeoutId: timeoutId,
-            params: [layer, e],
-          };
-          this.expiredSnackBarMessage = this.$t("LoopRetry");
-          this.timeoutDuration = 5000;
-          this.notifyExtentRebuilt = true;
-          return;
+        let name = layer.get("layerName");
+        const timeoutId = setTimeout(() => {
+          clearTimeout(this.timeoutHandles[name]["timeoutId"]);
+          delete this.timeoutHandles[name];
+          this.errorDispatcher(layer, e);
+          this.errorLayersList.splice(
+            this.errorLayersList.indexOf(name.split("_copy")[0]),
+            1
+          );
+        }, 20000);
+        while (name in this.timeoutHandles) {
+          name = `${name}_copy`;
         }
-        this.$root.$emit("cancelExpired");
-        this.$root.$emit("removeLayer", layer);
-        this.expiredSnackBarMessage = this.$t("BrokenLayer");
-        this.timeoutDuration = 12000;
+        this.timeoutHandles[name] = {
+          timeoutId: timeoutId,
+          params: [layer, e],
+        };
+        this.expiredSnackBarMessage = this.$t("LoopRetry");
+        this.timeoutDuration = 19000;
         this.notifyExtentRebuilt = true;
-        this.errorLayersList.splice(
-          this.errorLayersList.indexOf(layer.get("layerName")),
-          1
-        );
       }
     },
-    async refreshExpired(layer) {
-      this.$root.$emit("cancelExpired");
-      this.expiredTimestepList.push(layer.get("layerTimeStep"));
+    async updateTimeInformation(layer, originalError = null) {
       let layerData = null;
+      try {
+        const api = axios.create({
+          baseURL: layer.get("source")["url_"],
+          params: {
+            SERVICE: "WMS",
+            VERSION: "1.3.0",
+            REQUEST: "GetCapabilities",
+            LAYERS: layer.get("layerName"),
+            t: new Date().getTime(),
+          },
+        });
+        await api.get().then((response) => {
+          layerData = SaxonJS.XPath.evaluate(
+            this.xsltTime.replace(
+              "REPLACE_WITH_LAYERNAME",
+              layer.get("layerName")
+            ),
+            null,
+            {
+              xpathDefaultNamespace: "http://www.opengis.net/wms",
+              namespaceContext: {
+                xlink: "http://www.w3.org/1999/xlink",
+              },
+              params: {
+                xml: response.data,
+              },
+            }
+          );
+        });
+        this.expiredTimestepList.push(layer.get("layerTimeStep"));
+      } catch (error) {
+        if (originalError === null) {
+          this.errorLayersList.splice(
+            this.errorLayersList.indexOf(layer.get("layerName")),
+            1
+          );
+        } else {
+          setTimeout(() => {
+            this.errorDispatcher(layer, originalError);
+            this.errorLayersList.splice(
+              this.errorLayersList.indexOf(layer.get("layerName")),
+              1
+            );
+          }, 4000);
+        }
+        return;
+      }
       const currentMR = layer.get("layerCurrentMR");
-      const api = axios.create({
-        baseURL: layer.get("source")["url_"],
-        params: {
-          SERVICE: "WMS",
-          VERSION: "1.3.0",
-          REQUEST: "GetCapabilities",
-          LAYERS: layer.get("layerName"),
-          t: new Date().getTime(),
-        },
-      });
-      await api.get().then((response) => {
-        layerData = SaxonJS.XPath.evaluate(
-          this.xsltTime.replace(
-            "REPLACE_WITH_LAYERNAME",
-            layer.get("layerName")
-          ),
-          null,
-          {
-            xpathDefaultNamespace: "http://www.opengis.net/wms",
-            namespaceContext: {
-              xlink: "http://www.w3.org/1999/xlink",
-            },
-            params: {
-              xml: response.data,
-            },
-          }
-        );
-      });
       let newMRs =
         layerData.Dimension.Dimension_ref_time === ""
           ? null
@@ -413,6 +420,13 @@ export default {
     },
   },
   watch: {
+    isAnimating(newState) {
+      if (newState && this.playState !== "play") {
+        this.blockRefresh = true;
+      } else if (!newState) {
+        this.blockRefresh = false;
+      }
+    },
     isErrorLayersListEmpty(isEmpty) {
       if (isEmpty) {
         this.fixTimeExtent();
@@ -426,7 +440,7 @@ export default {
   },
   computed: {
     ...mapGetters("Layers", ["getDatetimeRangeSlider", "getMapTimeSettings"]),
-    ...mapState("Layers", ["isAnimating", "isLooping", "playState"]),
+    ...mapState("Layers", ["isAnimating", "playState"]),
     isErrorLayersListEmpty() {
       return this.errorLayersList.length === 0;
     },

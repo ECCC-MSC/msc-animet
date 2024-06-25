@@ -89,6 +89,7 @@ const state = {
       isShown: false,
     },
   },
+  pendingErrorResolution: false,
   permalink: null,
   playState: "pause",
   resolution: "1080p",
@@ -320,6 +321,9 @@ const mutations = {
     return (state.overlays[overlay]["isShown"] =
       !state.overlays[overlay]["isShown"]);
   },
+  setPendingErrorResolution: (state, isPending) => {
+    state.pendingErrorResolution = isPending;
+  },
   setPermalink: (state, permalink) => {
     state.permalink = permalink;
   },
@@ -435,6 +439,9 @@ const actions = {
   },
   setOverlayDisplayed({ commit }, payload) {
     commit("setOverlayDisplayed", payload);
+  },
+  setPendingErrorResolution({ commit }, payload) {
+    commit("setPendingErrorResolution", payload);
   },
   setPermalink({ commit }, payload) {
     commit("setPermalink", payload);

@@ -34,9 +34,6 @@ import ControllerOptions from "./ControllerOptions.vue";
 
 export default {
   mounted() {
-    this.$root.$on("cancelCriticalError", (isError) => {
-      this.cancelCriticalError = isError;
-    });
     this.$root.$on("playAnimation", this.play);
     this.$root.$on("stopAnimation", this.playPause);
   },
@@ -49,7 +46,6 @@ export default {
   },
   data() {
     return {
-      cancelCriticalError: false,
       locked: false,
       loop: false,
       playbackReversed: false,
@@ -60,7 +56,11 @@ export default {
   },
   computed: {
     ...mapGetters("Layers", ["getDatetimeRangeSlider", "getMapTimeSettings"]),
-    ...mapState("Layers", ["isAnimating", "playState"]),
+    ...mapState("Layers", [
+      "isAnimating",
+      "pendingErrorResolution",
+      "playState",
+    ]),
     changeIcon() {
       let replayCondition;
       if (this.playbackReversed) {
@@ -188,7 +188,7 @@ export default {
               this.$mapCanvas.mapObj.once("rendercomplete", resolve)
             )
         );
-        if (!this.cancelCriticalError && this.playState === "play") {
+        if (!this.pendingErrorResolution && this.playState === "play") {
           if (r < 1000) {
             await this.delay(1000 - r);
           }
