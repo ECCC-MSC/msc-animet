@@ -115,7 +115,6 @@ export default {
           this.errorLayersList.push(imageLayer.get("layerName"));
         });
         this.$store.dispatch("Layers/setPendingErrorResolution", true);
-        this.$store.dispatch("Layers/setPendingErrorResolution", true);
         layerList.forEach((imageLayer) => {
           this.updateTimeInformation(imageLayer);
         });
@@ -125,8 +124,12 @@ export default {
       for (var layerName in this.timeoutHandles) {
         clearTimeout(this.timeoutHandles[layerName]["timeoutId"]);
         const params = this.timeoutHandles[layerName]["params"];
-        this.errorDispatcher(params[0], params[1]);
         delete this.timeoutHandles[layerName];
+        this.errorDispatcher(params[0], params[1]);
+        this.errorLayersList.splice(
+          this.errorLayersList.indexOf(layerName.split("_copy")[0]),
+          1
+        );
       }
     },
     async fixTimeExtent() {
@@ -207,7 +210,14 @@ export default {
         // "undefined" means there's actually no error.
         // Call refresh just to update the values and continue.
         if (serviceException === undefined) {
-          this.updateTimeInformation(layer, e);
+          if (layer.get("layerIsTemporal")) {
+            this.updateTimeInformation(layer, e);
+          } else {
+            this.errorLayersList.splice(
+              this.errorLayersList.indexOf(layer.get("layerName")),
+              1
+            );
+          }
           return;
         }
         const attrs = serviceException.attributes;
@@ -220,35 +230,50 @@ export default {
         } else if (
           serviceException.textContent.includes("Unable to access file")
         ) {
-          this.expiredTimestepList.push(layer.get("layerTimeStep"));
-          let newExtent = [...layer.get("layerDateArray")];
-          newExtent.splice(layer.get("layerDateIndex"), 1);
-          if (newExtent.length === 0) {
-            throw new Error("All of the layer's timesteps are broken");
-          }
-          let newDefaultTimeIndex = this.findLayerIndex(
-            layer.get("layerDefaultTime"),
-            newExtent,
-            layer.get("layerTimeStep")
-          );
-          layer.setProperties({
-            layerDateArray: newExtent,
-            layerDateIndex: this.findLayerIndex(
-              this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
+          if (layer.get("layerIsTemporal")) {
+            this.expiredTimestepList.push(layer.get("layerTimeStep"));
+            let newExtent = [...layer.get("layerDateArray")];
+            newExtent.splice(layer.get("layerDateIndex"), 1);
+            if (newExtent.length === 0) {
+              throw new Error("All of the layer's timesteps are broken");
+            }
+            let newDefaultTimeIndex = this.findLayerIndex(
+              layer.get("layerDefaultTime"),
               newExtent,
               layer.get("layerTimeStep")
-            ),
-            layerDefaultTime:
-              newDefaultTimeIndex > 0
-                ? newExtent[newDefaultTimeIndex]
-                : newExtent[0],
-            layerStartTime: newExtent[0],
-            layerEndTime: newExtent[newExtent.length - 1],
-          });
-          this.errorLayersList.splice(
-            this.errorLayersList.indexOf(layer.get("layerName")),
-            1
-          );
+            );
+            layer.setProperties({
+              layerDateArray: newExtent,
+              layerDateIndex: this.findLayerIndex(
+                this.getMapTimeSettings.Extent[
+                  this.getMapTimeSettings.DateIndex
+                ],
+                newExtent,
+                layer.get("layerTimeStep")
+              ),
+              layerDefaultTime:
+                newDefaultTimeIndex > 0
+                  ? newExtent[newDefaultTimeIndex]
+                  : newExtent[0],
+              layerStartTime: newExtent[0],
+              layerEndTime: newExtent[newExtent.length - 1],
+            });
+            this.errorLayersList.splice(
+              this.errorLayersList.indexOf(layer.get("layerName")),
+              1
+            );
+          } else {
+            setTimeout(() => {
+              this.errorDispatcher(layer, e);
+              this.errorLayersList.splice(
+                this.errorLayersList.indexOf(layer.get("layerName")),
+                1
+              );
+            }, 4000);
+            this.expiredSnackBarMessage = this.$t("LoopRetry");
+            this.timeoutDuration = 4000;
+            this.notifyExtentRebuilt = true;
+          }
         } else if (
           "code" in attrs &&
           attrs["code"].nodeValue === "StyleNotDefined"
@@ -327,6 +352,82 @@ export default {
           );
         });
         this.expiredTimestepList.push(layer.get("layerTimeStep"));
+        const currentMR = layer.get("layerCurrentMR");
+        let newMRs =
+          layerData.Dimension.Dimension_ref_time === ""
+            ? null
+            : this.findFormat(layerData.Dimension.Dimension_ref_time)[0][0];
+        let sameMR = true;
+        // Check if the model run was the problem and not the timestep
+        if (currentMR !== null) {
+          sameMR = false;
+          for (let i = 0; i < newMRs.length; i++) {
+            if (newMRs[i].getTime() === currentMR.getTime()) {
+              sameMR = true;
+              break;
+            }
+          }
+        }
+        const layerActiveConfig = layer.get("layerActiveConfig");
+        let configs;
+        if (
+          layer.getSource().getParams().DIM_REFERENCE_TIME === undefined ||
+          !sameMR
+        ) {
+          configs = this.createTimeLayerConfigs(
+            layerData.Dimension.Dimension_time
+          );
+        } else {
+          configs = layer.get("layerConfigs");
+        }
+        let newLayerIndex = this.findLayerIndex(
+          this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
+          configs[layerActiveConfig].layerDateArray,
+          configs[layerActiveConfig].layerTimeStep
+        );
+        if (!sameMR) {
+          layer.getSource().updateParams({
+            DIM_REFERENCE_TIME: undefined,
+          });
+          if (newLayerIndex < 0) {
+            layer.getSource().updateParams({
+              TIME: this.getProperDateString(
+                configs[layerActiveConfig].layerDateArray[0],
+                configs[layerActiveConfig].dateFormat
+              ),
+            });
+          }
+        }
+        let layerMR;
+        if (
+          (layer.getSource().getParams().DIM_REFERENCE_TIME === undefined ||
+            !sameMR) &&
+          currentMR !== null
+        ) {
+          layerMR = newMRs[newMRs.length - 1];
+        } else {
+          layerMR = layer.get("layerCurrentMR");
+        }
+        layer.setProperties({
+          layerConfigs: configs,
+          layerDateArray: configs[layerActiveConfig].layerDateArray,
+          layerDateIndex: newLayerIndex,
+          layerDefaultTime: new Date(
+            layerData.Dimension.Dimension_time_default
+          ),
+          layerDimensionRefTime: layerData.Dimension.Dimension_ref_time,
+          layerDimensionTime: layerData.Dimension.Dimension_time,
+          layerModelRuns: newMRs,
+          layerCurrentMR: layerMR,
+          layerStartTime: new Date(configs[layerActiveConfig].layerStartTime),
+          layerEndTime: new Date(configs[layerActiveConfig].layerEndTime),
+          layerTimeStep: configs[layerActiveConfig].layerTimeStep,
+          layerTrueTimeStep: configs[layerActiveConfig].layerTrueTimeStep,
+        });
+        this.errorLayersList.splice(
+          this.errorLayersList.indexOf(layer.get("layerName")),
+          1
+        );
       } catch (error) {
         if (originalError === null) {
           this.errorLayersList.splice(
@@ -341,83 +442,11 @@ export default {
               1
             );
           }, 4000);
-        }
-        return;
-      }
-      const currentMR = layer.get("layerCurrentMR");
-      let newMRs =
-        layerData.Dimension.Dimension_ref_time === ""
-          ? null
-          : this.findFormat(layerData.Dimension.Dimension_ref_time)[0][0];
-      let sameMR = true;
-      // Check if the model run was the problem and not the timestep
-      if (currentMR !== null) {
-        sameMR = false;
-        for (let i = 0; i < newMRs.length; i++) {
-          if (newMRs[i].getTime() === currentMR.getTime()) {
-            sameMR = true;
-            break;
-          }
+          this.expiredSnackBarMessage = this.$t("LoopRetry");
+          this.timeoutDuration = 4000;
+          this.notifyExtentRebuilt = true;
         }
       }
-      const layerActiveConfig = layer.get("layerActiveConfig");
-      let configs;
-      if (
-        layer.getSource().getParams().DIM_REFERENCE_TIME === undefined ||
-        !sameMR
-      ) {
-        configs = this.createTimeLayerConfigs(
-          layerData.Dimension.Dimension_time
-        );
-      } else {
-        configs = layer.get("layerConfigs");
-      }
-      let newLayerIndex = this.findLayerIndex(
-        this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
-        configs[layerActiveConfig].layerDateArray,
-        configs[layerActiveConfig].layerTimeStep
-      );
-      if (!sameMR) {
-        layer.getSource().updateParams({
-          DIM_REFERENCE_TIME: undefined,
-        });
-        if (newLayerIndex < 0) {
-          layer.getSource().updateParams({
-            TIME: this.getProperDateString(
-              configs[layerActiveConfig].layerDateArray[0],
-              configs[layerActiveConfig].dateFormat
-            ),
-          });
-        }
-      }
-      let layerMR;
-      if (
-        (layer.getSource().getParams().DIM_REFERENCE_TIME === undefined ||
-          !sameMR) &&
-        currentMR !== null
-      ) {
-        layerMR = newMRs[newMRs.length - 1];
-      } else {
-        layerMR = layer.get("layerCurrentMR");
-      }
-      layer.setProperties({
-        layerConfigs: configs,
-        layerDateArray: configs[layerActiveConfig].layerDateArray,
-        layerDateIndex: newLayerIndex,
-        layerDefaultTime: new Date(layerData.Dimension.Dimension_time_default),
-        layerDimensionRefTime: layerData.Dimension.Dimension_ref_time,
-        layerDimensionTime: layerData.Dimension.Dimension_time,
-        layerModelRuns: newMRs,
-        layerCurrentMR: layerMR,
-        layerStartTime: new Date(configs[layerActiveConfig].layerStartTime),
-        layerEndTime: new Date(configs[layerActiveConfig].layerEndTime),
-        layerTimeStep: configs[layerActiveConfig].layerTimeStep,
-        layerTrueTimeStep: configs[layerActiveConfig].layerTrueTimeStep,
-      });
-      this.errorLayersList.splice(
-        this.errorLayersList.indexOf(layer.get("layerName")),
-        1
-      );
     },
   },
   watch: {
