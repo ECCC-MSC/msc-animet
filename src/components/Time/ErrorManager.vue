@@ -80,7 +80,8 @@ export default {
   },
   data() {
     return {
-      blockRefresh: false,
+      blockRefreshAnimation: false,
+      blockRefreshError: false,
       errorLayersList: [],
       expiredSnackBarMessage: this.$t("MissingTimesteps"),
       expiredTimestepList: [],
@@ -110,7 +111,7 @@ export default {
           this.$mapCanvas.mapObj.once("rendercomplete", resolve)
         );
       }
-      if (!this.blockRefresh) {
+      if (!this.blockRefreshError && !this.blockRefreshAnimation) {
         layerList.forEach((imageLayer) => {
           this.errorLayersList.push(imageLayer.get("layerName"));
         });
@@ -188,13 +189,13 @@ export default {
         }
       }
       this.$store.dispatch("Layers/setPendingErrorResolution", false);
-      this.blockRefresh = false;
+      this.blockRefreshError = false;
       if (this.playState === "play") {
         this.$root.$emit("playAnimation");
       }
     },
     async errorDispatcher(layer, e) {
-      this.blockRefresh = true;
+      this.blockRefreshError = true;
       try {
         this.$store.dispatch("Layers/setPendingErrorResolution", true);
         this.errorLayersList.push(layer.get("layerName"));
@@ -452,9 +453,9 @@ export default {
   watch: {
     isAnimating(newState) {
       if (newState && this.playState !== "play") {
-        this.blockRefresh = true;
+        this.blockRefreshAnimation = true;
       } else if (!newState) {
-        this.blockRefresh = false;
+        this.blockRefreshAnimation = false;
       }
     },
     isErrorLayersListEmpty(isEmpty) {
