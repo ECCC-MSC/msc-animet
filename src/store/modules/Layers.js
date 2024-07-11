@@ -10,7 +10,10 @@ const state = {
   availableCRS: Object.keys(wmsSources).map((key) => {
     const treeName = "tree_en_" + key.toLowerCase();
     const projections = "proj_" + key.toLowerCase();
-    return layerTrees[treeName][projections];
+    const projList = layerTrees[treeName][projections].map((item) =>
+      item.toUpperCase()
+    );
+    return projList;
   }),
   collapseControls: false,
   colorBorder: false,

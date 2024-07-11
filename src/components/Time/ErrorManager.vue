@@ -83,7 +83,7 @@ export default {
       blockRefreshAnimation: false,
       blockRefreshError: false,
       errorLayersList: [],
-      expiredSnackBarMessage: this.$t("MissingTimesteps"),
+      expiredSnackBarMessage: this.$t("ExpiredTimesteps"),
       expiredTimestepList: [],
       notifyCancelAnimateResize: false,
       notifyExtentRebuilt: false,
@@ -141,9 +141,6 @@ export default {
         }
         this.expiredTimestepList = [];
         if (noChangeFlag) {
-          this.expiredSnackBarMessage = this.$t("MissingTimesteps");
-          this.timeoutDuration = 6000;
-          this.notifyExtentRebuilt = true;
           if (this.isAnimating && this.playState !== "play") {
             this.$root.$emit("redoAnimation");
             this.$root.$emit("animationCanvasReset");
@@ -159,9 +156,6 @@ export default {
                   sl.get("layerName") === this.getMapTimeSettings.SnappedLayer
               )
             );
-            this.expiredSnackBarMessage = this.$t("MissingTimesteps");
-            this.timeoutDuration = 6000;
-            this.notifyExtentRebuilt = true;
             if (this.isAnimating && this.playState !== "play") {
               this.$root.$emit("redoAnimation");
             }
@@ -170,17 +164,13 @@ export default {
               this.getMapTimeSettings.Extent[this.getDatetimeRangeSlider[1]];
             this.changeMapTime(this.getMapTimeSettings.Step);
             if (this.getMapTimeSettings.Extent[0] >= currentHighBoundDate) {
-              // Cancel animation
-              this.expiredSnackBarMessage = this.$t("ExtentFullyOOB");
-              this.timeoutDuration = 8000;
-              this.notifyExtentRebuilt = true;
-              if (this.isAnimating) {
+              if (this.isAnimating && this.playState !== "play") {
+                // Cancel animation
+                this.expiredSnackBarMessage = this.$t("ExtentFullyOOB");
+                this.timeoutDuration = 8000;
                 this.$root.$emit("restoreState");
               }
             } else {
-              this.expiredSnackBarMessage = this.$t("MissingTimesteps");
-              this.timeoutDuration = 6000;
-              this.notifyExtentRebuilt = true;
               if (this.isAnimating && this.playState !== "play") {
                 this.$root.$emit("redoAnimation");
               }
@@ -188,6 +178,7 @@ export default {
           }
         }
       }
+      this.notifyExtentRebuilt = true;
       this.$store.dispatch("Layers/setPendingErrorResolution", false);
       this.blockRefreshError = false;
       if (this.playState === "play") {
@@ -211,14 +202,12 @@ export default {
         // "undefined" means there's actually no error.
         // Call refresh just to update the values and continue.
         if (serviceException === undefined) {
-          if (layer.get("layerIsTemporal")) {
-            this.updateTimeInformation(layer, e);
-          } else {
-            this.errorLayersList.splice(
-              this.errorLayersList.indexOf(layer.get("layerName")),
-              1
-            );
-          }
+          this.expiredSnackBarMessage = this.$t("ServiceRestored");
+          this.timeoutDuration = 3000;
+          this.errorLayersList.splice(
+            this.errorLayersList.indexOf(layer.get("layerName")),
+            1
+          );
           return;
         }
         const attrs = serviceException.attributes;
@@ -234,6 +223,7 @@ export default {
           if (layer.get("layerIsTemporal")) {
             this.expiredTimestepList.push(layer.get("layerTimeStep"));
             let newExtent = [...layer.get("layerDateArray")];
+            const missingTimestep = newExtent[layer.get("layerDateIndex")];
             newExtent.splice(layer.get("layerDateIndex"), 1);
             if (newExtent.length === 0) {
               throw new Error("All of the layer's timesteps are broken");
@@ -259,6 +249,14 @@ export default {
               layerStartTime: newExtent[0],
               layerEndTime: newExtent[newExtent.length - 1],
             });
+            this.expiredSnackBarMessage = this.$t("MissingTimesteps", {
+              TIMESTEP: this.localeDateFormat(
+                missingTimestep,
+                layer.get("layerTimeStep")
+              ),
+              LAYER: layer.get("layerName"),
+            });
+            this.timeoutDuration = 8000;
             this.errorLayersList.splice(
               this.errorLayersList.indexOf(layer.get("layerName")),
               1
@@ -271,8 +269,10 @@ export default {
                 1
               );
             }, 4000);
-            this.expiredSnackBarMessage = this.$t("LoopRetry");
             this.timeoutDuration = 4000;
+            this.expiredSnackBarMessage = this.$t("LoopRetry", {
+              SECONDS: this.timeoutDuration / 1000,
+            });
             this.notifyExtentRebuilt = true;
           }
         } else if (
@@ -282,7 +282,6 @@ export default {
           layer.getSource().updateParams({ STYLES: null });
           this.expiredSnackBarMessage = this.$t("StyleError");
           this.timeoutDuration = 8000;
-          this.notifyExtentRebuilt = true;
           this.errorLayersList.splice(
             this.errorLayersList.indexOf(layer.get("layerName")),
             1
@@ -292,7 +291,6 @@ export default {
           this.expiredSnackBarMessage = this.$t("UnhandledError");
           console.error("Unhandled error case: ", response);
           this.timeoutDuration = 12000;
-          this.notifyExtentRebuilt = true;
           this.errorLayersList.splice(
             this.errorLayersList.indexOf(layer.get("layerName")),
             1
@@ -303,7 +301,13 @@ export default {
         const timeoutId = setTimeout(() => {
           clearTimeout(this.timeoutHandles[name]["timeoutId"]);
           delete this.timeoutHandles[name];
-          this.errorDispatcher(layer, e);
+          if (
+            this.$mapLayers.arr.includes(
+              (l) => l.get("layerName") === layer.get("layerName")
+            )
+          ) {
+            this.errorDispatcher(layer, e);
+          }
           this.errorLayersList.splice(
             this.errorLayersList.indexOf(name.split("_copy")[0]),
             1
@@ -316,8 +320,10 @@ export default {
           timeoutId: timeoutId,
           params: [layer, e],
         };
-        this.expiredSnackBarMessage = this.$t("LoopRetry");
-        this.timeoutDuration = 19000;
+        this.timeoutDuration = 20000;
+        this.expiredSnackBarMessage = this.$t("LoopRetry", {
+          SECONDS: this.timeoutDuration / 1000,
+        });
         this.notifyExtentRebuilt = true;
       }
     },
@@ -338,7 +344,7 @@ export default {
           layerData = SaxonJS.XPath.evaluate(
             this.xsltTime.replace(
               "REPLACE_WITH_LAYERNAME",
-              layer.get("layerName")
+              layer.get("layerXmlName")
             ),
             null,
             {
@@ -425,6 +431,8 @@ export default {
           layerTimeStep: configs[layerActiveConfig].layerTimeStep,
           layerTrueTimeStep: configs[layerActiveConfig].layerTrueTimeStep,
         });
+        this.expiredSnackBarMessage = this.$t("ExpiredTimesteps");
+        this.timeoutDuration = 6000;
         this.errorLayersList.splice(
           this.errorLayersList.indexOf(layer.get("layerName")),
           1
@@ -443,8 +451,10 @@ export default {
               1
             );
           }, 4000);
-          this.expiredSnackBarMessage = this.$t("LoopRetry");
           this.timeoutDuration = 4000;
+          this.expiredSnackBarMessage = this.$t("LoopRetry", {
+            SECONDS: this.timeoutDuration / 1000,
+          });
           this.notifyExtentRebuilt = true;
         }
       }

@@ -202,9 +202,29 @@ export default {
         let source = Object.hasOwn(layer, "wmsSource")
           ? layer.wmsSource
           : this.getCurrentWmsSource;
-        layer.wmsIndex = Object.keys(this.getGeoMetWmsSources).findIndex(
+        const sources = Object.keys(this.getGeoMetWmsSources);
+        layer.wmsIndex = sources.findIndex(
           (key) => this.getGeoMetWmsSources[key]["url"] === source
         );
+        let xmlName;
+        if (
+          Object.hasOwn(
+            this.getGeoMetWmsSources[sources[layer.wmsIndex]],
+            "query_pattern"
+          )
+        ) {
+          let pattern =
+            this.getGeoMetWmsSources[sources[layer.wmsIndex]]["query_pattern"];
+          const querySplits = layer.Name.split(":");
+          let layerPattern = "";
+          for (let i = 0; i < querySplits.length; i++) {
+            layerPattern += `/${querySplits[i]}`;
+          }
+          source = pattern.replace("{LAYER}", layerPattern);
+          layer.xmlName = querySplits[querySplits.length - 1];
+        } else {
+          layer.xmlName = layer.Name;
+        }
         this.addedLayers.push(layer.Name);
         let layerData = null;
         const api = axios.create({
@@ -219,7 +239,7 @@ export default {
         });
         await api.get().then((response) => {
           layerData = SaxonJS.XPath.evaluate(
-            this.xsltFull.replace("REPLACE_WITH_LAYERNAME", layer.Name),
+            this.xsltFull.replace("REPLACE_WITH_LAYERNAME", layer.xmlName),
             null,
             {
               xpathDefaultNamespace: "http://www.opengis.net/wms",

@@ -10,6 +10,7 @@
     v-if="getActiveLegends.length !== 0"
   >
     <img
+      class="white"
       :class="getLegendHidden"
       :id="name"
       :name="name"
@@ -68,12 +69,15 @@ export default {
       if (layer.get("layerStyles").length === 0) {
         return null;
       }
-      return (
-        layer
-          .get("layerStyles")
-          .find((style) => style.Name === layer.get("layerCurrentStyle"))
-          .LegendURL + `&lang=${this.$i18n.locale}`
-      );
+
+      const legendUrl = layer
+        .get("layerStyles")
+        .find(
+          (style) => style.Name === layer.get("layerCurrentStyle")
+        ).LegendURL;
+      if (legendUrl.includes("GetLegendGraphic"))
+        return `${legendUrl}&lang=${this.$i18n.locale}`;
+      return legendUrl;
     },
     getStyle() {
       if (this.getColorBorder) {
