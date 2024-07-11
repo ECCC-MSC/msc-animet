@@ -87,7 +87,10 @@ export default {
             });
             await api.get().then((response) => {
               layerData = SaxonJS.XPath.evaluate(
-                this.xsltTime.replace("REPLACE_WITH_LAYERNAME", layerName),
+                this.xsltTime.replace(
+                  "REPLACE_WITH_LAYERNAME",
+                  layer.get("layerXmlName")
+                ),
                 null,
                 {
                   xpathDefaultNamespace: "http://www.opengis.net/wms",

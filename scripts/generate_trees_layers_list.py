@@ -39,8 +39,8 @@ from owslib.wms import WebMapService
 
 TREE_JS_TEMPLATE = """\
 export default {{
-  {} : {},
-  {} : {}
+  '{}' : {},
+  '{}' : {}
 }}\
 """
 

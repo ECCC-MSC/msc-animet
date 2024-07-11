@@ -66,19 +66,6 @@ export default {
         }
       }
       let dateIndex;
-      if (snappedLayer !== null) {
-        dateIndex = this.findLayerIndex(
-          snappedLayer.get("layerDefaultTime"),
-          arrayCombine,
-          snappedLayer.get("layerTimeStep")
-        );
-      } else {
-        dateIndex = this.findLayerIndex(
-          timeLayers[0].get("layerDefaultTime"),
-          arrayCombine,
-          timeLayers[0].get("layerTimeStep")
-        );
-      }
       if (timestep === this.getMapTimeSettings.Step) {
         const currentDateIndex = this.findLayerIndex(
           this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
@@ -91,7 +78,25 @@ export default {
           dateIndex = 0;
         } else if (currentDateIndex === -2) {
           dateIndex = arrayCombine.length - 1;
+        } else if (currentDateIndex === -3) {
+          dateIndex = this.getMapTimeSettings.DateIndex;
         }
+      } else if (!this.getMapTimeSettings.DateIndex) {
+        if (snappedLayer !== null) {
+          dateIndex = this.findLayerIndex(
+            snappedLayer.get("layerDefaultTime"),
+            arrayCombine,
+            snappedLayer.get("layerTimeStep")
+          );
+        } else {
+          dateIndex = this.findLayerIndex(
+            timeLayers[0].get("layerDefaultTime"),
+            arrayCombine,
+            timeLayers[0].get("layerTimeStep")
+          );
+        }
+      } else {
+        dateIndex = this.getMapTimeSettings.DateIndex;
       }
       if (snappedLayer === null) {
         let currentSnappedLayer = timeLayers.find(

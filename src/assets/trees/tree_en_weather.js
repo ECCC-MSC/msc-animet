@@ -1,5 +1,5 @@
 export default {
-  proj_weather : [
+  'proj_weather' : [
   "EPSG:4326",
   "EPSG:2294",
   "EPSG:2295",
@@ -62,7 +62,7 @@ export default {
   "EPSG:900913",
   "AUTO2:42003"
 ],
-  tree_en_weather : [
+  'tree_en_weather' : [
   {
     "Title": "Air Quality",
     "Name": "Air Quality",

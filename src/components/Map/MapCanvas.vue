@@ -368,6 +368,7 @@ export default {
           ? layerData.visible
           : true,
         layerWmsIndex: layerData.wmsIndex,
+        layerXmlName: layerData.xmlName,
         legendColor: this.randomHSVtoRGB(),
       });
 

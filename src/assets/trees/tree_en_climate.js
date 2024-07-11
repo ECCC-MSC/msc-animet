@@ -1,12 +1,12 @@
 export default {
-  proj_climate : [
+  'proj_climate' : [
   "EPSG:4326",
   "EPSG:3978",
   "EPSG:3995",
   "EPSG:3857",
   "EPSG:102100"
 ],
-  tree_en_climate : [
+  'tree_en_climate' : [
   {
     "Title": "CMIP5-based climate scenarios (CMIP5)",
     "Name": "CMIP5-based climate scenarios (CMIP5)",

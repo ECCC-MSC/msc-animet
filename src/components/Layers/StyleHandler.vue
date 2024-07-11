@@ -49,7 +49,10 @@
             </v-list-item-icon>
             <v-list-item-title>
               {{ style.Name }}
-              <img :src="getImgSrc(style.LegendURL)" class="d-block image" />
+              <img
+                :src="getImgSrc(style.LegendURL)"
+                class="d-block image white"
+              />
             </v-list-item-title>
           </v-list-item>
         </v-list-item-group>
@@ -82,7 +85,9 @@ export default {
       this.$root.$emit("updatePermalink");
     },
     getImgSrc(legendUrl) {
-      return `${legendUrl}&lang=${this.$i18n.locale}`;
+      if (legendUrl.includes("GetLegendGraphic"))
+        return `${legendUrl}&lang=${this.$i18n.locale}`;
+      return legendUrl;
     },
     legendStyle(name) {
       if (this.getColorBorder) {
