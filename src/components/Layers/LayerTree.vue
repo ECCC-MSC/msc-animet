@@ -206,7 +206,6 @@ export default {
         layer.wmsIndex = sources.findIndex(
           (key) => this.getGeoMetWmsSources[key]["url"] === source
         );
-        let xmlName;
         if (
           Object.hasOwn(
             this.getGeoMetWmsSources[sources[layer.wmsIndex]],
@@ -225,7 +224,6 @@ export default {
         } else {
           layer.xmlName = layer.Name;
         }
-        this.addedLayers.push(layer.Name);
         let layerData = null;
         const api = axios.create({
           baseURL: source,
@@ -252,6 +250,7 @@ export default {
             }
           );
         });
+        this.addedLayers.push(layer.Name);
         layerData = { ...layerData, ...layer };
         layerData.isTemporal = layerData.Dimension.Dimension_time !== "";
         this.$root.$emit("buildLayer", layerData, source);
