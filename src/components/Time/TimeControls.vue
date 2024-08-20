@@ -12,83 +12,108 @@
           class="mr-1 ml-1 pt-2 pb-1 px-0"
           :class="getCollapsedControls ? 'hide-controls' : ''"
         >
-          <time-slider class="enable-events" />
+          <time-slider :hide="getCollapsedControls" class="enable-events" />
           <interval-locale-selector class="enable-events" />
         </v-row>
-        <v-btn
-          id="collapse-button"
-          class="enable-events"
-          :class="getCollapsedControls ? 'collapsed' : 'extended'"
-          small
-          @click="
-            $store.commit('Layers/setCollapsedControls', !getCollapsedControls)
-          "
-        >
-          <v-icon v-if="!getCollapsedControls" large> mdi-chevron-down </v-icon>
-          <div
-            v-else-if="
-              getMapTimeSettings.Step === 'P1M' ||
-              getMapTimeSettings.Step === 'P1Y'
+        <div>
+          <play-pause-controls
+            v-if="getCollapsedControls"
+            :hide="getCollapsedControls"
+            class="collapsed-play-pause"
+          ></play-pause-controls>
+          <v-btn
+            id="collapse-button"
+            class="enable-events"
+            :class="getCollapsedControls ? 'collapsed' : 'extended'"
+            small
+            @click="
+              $store.commit(
+                'Layers/setCollapsedControls',
+                !getCollapsedControls
+              )
             "
           >
-            <span class="collapsed-date-M-Y">{{
-              this.localeDateFormat(
-                getMapTimeSettings.Extent[getMapTimeSettings.DateIndex],
-                getMapTimeSettings.Step
-              )
-            }}</span>
-          </div>
-          <div v-else>
-            <span class="collapsed-date">{{
-              getCollapsedDateFormat()[0]
-            }}</span>
-            <span class="collapsed-time">{{
-              getCollapsedDateFormat()[1]
-            }}</span>
-          </div>
-        </v-btn>
+            <v-icon v-if="!getCollapsedControls" large>
+              mdi-chevron-down
+            </v-icon>
+            <div
+              v-else-if="
+                getMapTimeSettings.Step === 'P1M' ||
+                getMapTimeSettings.Step === 'P1Y'
+              "
+            >
+              <span class="collapsed-date-M-Y">{{
+                this.localeDateFormat(
+                  getMapTimeSettings.Extent[getMapTimeSettings.DateIndex],
+                  getMapTimeSettings.Step
+                )
+              }}</span>
+            </div>
+            <div v-else>
+              <span class="collapsed-date">{{
+                getCollapsedDateFormat()[0]
+              }}</span>
+              <span class="collapsed-time">{{
+                getCollapsedDateFormat()[1]
+              }}</span>
+            </div>
+          </v-btn>
+        </div>
       </div>
-      <v-col class="mr-1 pt-2 pb-2 px-0" v-else>
-        <time-slider
-          class="enable-events slider"
-          :class="getCollapsedControls ? 'hide-controls' : ''"
-        />
-        <interval-locale-selector
-          class="enable-events"
-          :class="getCollapsedControls ? 'hide-controls' : ''"
-        />
-        <v-btn
-          class="enable-events"
-          :class="getCollapsedControls ? 'collapsed' : 'extended'"
-          small
-          @click="
-            $store.commit('Layers/setCollapsedControls', !getCollapsedControls)
-          "
-        >
-          <v-icon v-if="!getCollapsedControls" large> mdi-chevron-down </v-icon>
-          <div
-            v-else-if="
-              getMapTimeSettings.Step === 'P1M' ||
-              getMapTimeSettings.Step === 'P1Y'
+      <div v-else>
+        <play-pause-controls
+          v-if="getCollapsedControls"
+          :hide="getCollapsedControls"
+          class="collapsed-play-pause-small"
+        ></play-pause-controls>
+        <v-col class="mr-1 pt-2 pb-2 px-0">
+          <time-slider
+            class="enable-events slider"
+            :class="getCollapsedControls ? 'hide-controls' : ''"
+            :hide="getCollapsedControls"
+          />
+          <interval-locale-selector
+            class="enable-events"
+            :class="getCollapsedControls ? 'hide-controls' : ''"
+          />
+          <v-btn
+            class="enable-events"
+            :class="getCollapsedControls ? 'collapsed' : 'extended'"
+            small
+            @click="
+              $store.commit(
+                'Layers/setCollapsedControls',
+                !getCollapsedControls
+              )
             "
           >
-            <span class="collapsed-date-M-Y">{{
-              this.localeDateFormat(
-                getMapTimeSettings.Extent[getMapTimeSettings.DateIndex],
-                getMapTimeSettings.Step
-              )
-            }}</span>
-          </div>
-          <div v-else>
-            <span class="collapsed-date">{{
-              getCollapsedDateFormat()[0]
-            }}</span>
-            <span class="collapsed-time">{{
-              getCollapsedDateFormat()[1]
-            }}</span>
-          </div>
-        </v-btn>
-      </v-col>
+            <v-icon v-if="!getCollapsedControls" large>
+              mdi-chevron-down
+            </v-icon>
+            <div
+              v-else-if="
+                getMapTimeSettings.Step === 'P1M' ||
+                getMapTimeSettings.Step === 'P1Y'
+              "
+            >
+              <span class="collapsed-date-M-Y">{{
+                this.localeDateFormat(
+                  getMapTimeSettings.Extent[getMapTimeSettings.DateIndex],
+                  getMapTimeSettings.Step
+                )
+              }}</span>
+            </div>
+            <div v-else>
+              <span class="collapsed-date">{{
+                getCollapsedDateFormat()[0]
+              }}</span>
+              <span class="collapsed-time">{{
+                getCollapsedDateFormat()[1]
+              }}</span>
+            </div>
+          </v-btn>
+        </v-col>
+      </div>
     </div>
     <error-manager />
   </v-card>
@@ -101,12 +126,14 @@ import datetimeManipulations from "../../mixins/datetimeManipulations";
 
 import ErrorManager from "./ErrorManager.vue";
 import IntervalLocaleSelector from "./IntervalLocaleSelector.vue";
+import PlayPauseControls from "./AnimationControls/PlayPauseControls.vue";
 import TimeSlider from "./TimeSlider.vue";
 
 export default {
   components: {
     ErrorManager,
     IntervalLocaleSelector,
+    PlayPauseControls,
     TimeSlider,
   },
   mixins: [datetimeManipulations],
@@ -464,13 +491,28 @@ export default {
   box-shadow: none;
   height: 50px !important;
   margin-top: 6px;
-  min-width: 255px !important;
+  min-width: 285px !important;
   pointer-events: auto;
   transform: translateY(10px);
   width: 30%;
 }
 .collapsed::before {
   min-width: 250px;
+}
+.collapsed-play-pause {
+  display: flex;
+  position: relative;
+  min-width: 285px !important;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+  transform: translate(5px, 59px);
+}
+.collapsed-play-pause-small {
+  bottom: 4px;
+  position: absolute;
+  z-index: 2;
 }
 .collapsed-date {
   display: block;

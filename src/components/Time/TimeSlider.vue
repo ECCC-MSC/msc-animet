@@ -20,7 +20,10 @@
       </div>
     </v-row>
     <v-row>
-      <play-pause-controls class="play-pause"></play-pause-controls>
+      <play-pause-controls
+        v-if="!hide"
+        class="play-pause"
+      ></play-pause-controls>
       <v-col class="pl-0">
         <v-range-slider
           class="range_slider"
@@ -70,6 +73,9 @@ import ArrowControls from "./AnimationControls/ArrowControls.vue";
 import PlayPauseControls from "./AnimationControls/PlayPauseControls.vue";
 
 export default {
+  props: {
+    hide: Boolean,
+  },
   mixins: [datetimeManipulations],
   components: {
     ArrowControls,

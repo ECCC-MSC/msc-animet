@@ -3,6 +3,7 @@
     <template v-slot:activator="{ on, attrs }">
       <v-btn
         class="controller-options"
+        :class="hide ? 'hide-controls' : ''"
         color="primary"
         small
         v-bind="attrs"
@@ -44,6 +45,9 @@
 import { mapState } from "vuex";
 
 export default {
+  props: {
+    hide: Boolean,
+  },
   mounted() {
     this.$nextTick(() => {
       if (this.isLooping) {
@@ -69,6 +73,9 @@ export default {
 }
 .controller-options-icon {
   font-size: 20px !important;
+}
+.hide-controls {
+  display: none;
 }
 .options-card {
   min-width: 150px;
