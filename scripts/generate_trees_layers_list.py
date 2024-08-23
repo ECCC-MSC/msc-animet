@@ -31,6 +31,7 @@
 import glob
 import json
 import os
+import re
 import requests
 from xml.etree import ElementTree
 
@@ -90,6 +91,73 @@ file_list = trees_files + layers_en_files + layers_fr_files
 for file_path in file_list:
     os.remove(file_path)
 
+
+####################################
+#  Sorting layer tree with regex
+####################################
+
+# Transform digits in int (great for natural sort e.i at pressure levels, products at hour interval) but removes leading zeros before significant digits.
+def natural_sort(title):
+    return [int(text) if text.isdigit() else text.lower() for text in re.split(r'(\d+)', title)]
+
+# For not standard titles, needing to keep leading zeros before significant digits.
+# e.g 0.025m,0.075m,0.15m.
+def natural_sort_leading_zeros(title):
+    return [text.lower() if not text.isdigit() else text for text in re.split(r'(\d+)', title)]
+
+
+def get_regex_group(item):
+    title = item.get('Title', '')
+    leaf = item.get('isLeaf')
+    name = item.get('Name', '')
+
+    # Most common title pattern is two parts with a dash separating them.
+    # SYSTEMNAME - Variable [units] e.g GDPS.ETA - Total cloud cover [%].
+    # Not all layers have this pattern, special cases below
+    pattern_two_dash = re.match(r'^(.*?) - (.*)$', title)
+
+    # Control member name have this ENDING pattern (*MEM*.ab or *_ab where ab are digits), but we need to exclude PRES layers having similar ending.
+    # Includes : REPS.MEM.ETA_AD.01,  REPS.MEM.PRES_TT.200.13.
+    # Includes : GEWPS_25km_FirstSwellMeanWaveDir_01, RESPS-Atlantic-North-West_9km_SeaSfcHeight_01 (because of _ab ending).
+    # Exclude PRES only pattern : RDPS.PRES_TT.10 (because ends with .ab).
+    pattern_ens_member = re.compile(r'(.*\.MEM\.*)|[_][0-9]{2}$')
+
+
+    if leaf:
+        # CanSIPS added because the name is easier to sort by (months included).
+        if (pattern_ens_member.search(name) or ('CanSIPS' in name)):
+            return (natural_sort(name), '')
+
+        # We want to sort by the second part of the title, then the first.
+        # e.g We want to sort Air temperature before Humidex even if TT is after HMX.
+        # GEPS.DIAG.3_TT.ERC0 - Air temperature at 2 m above ground (0th percentile).
+        # GEPS.DIAG.3_HMX.ERC0 - Humidex at 2 m above ground (0th percentile)
+        if pattern_two_dash:
+
+            prefix = pattern_two_dash.group(1).strip()
+            suffix = pattern_two_dash.group(2).strip()
+
+            if ('CaLDAS-NSRPS' in name):
+                return (natural_sort_leading_zeros(suffix), natural_sort_leading_zeros(prefix))
+
+            return (natural_sort(suffix), natural_sort(prefix))
+
+    # If doesn't match regex, sort by the entire title.
+    # e.g MetNotes, Current Conditions, Hurricane Response Zone.
+    return (natural_sort(title), '')
+
+
+def recursive_sort(layer_tree):
+    # Sort by regex, then sort directories before single layers.
+    layer_tree.sort(key=lambda k: get_regex_group(k))
+    layer_tree.sort(key=lambda k: 0 if 'children' in k else 1)
+
+    for child_branch in layer_tree:
+            if 'children' in child_branch:
+                  recursive_sort(child_branch['children'])
+    return layer_tree
+
+
 # Function to extract CRS values from the first Layer
 def extract_wms_crs(url):
     # Send a GET request to the URL
@@ -139,7 +207,7 @@ for name, params in wmsSources.items():
         # iterate through top level items and recursively generate children as needed
         for layer_metadata in top_level_items:
             layers += generate_layer_dict([layer_metadata])
-        layers_sorted = sorted(layers, key=lambda k: k["Title"])
+        layers_sorted = recursive_sort(layers)
 
         with open(f"../src/assets/trees/tree_{lang}_{name}.js", "w+") as f:
             f.write(
