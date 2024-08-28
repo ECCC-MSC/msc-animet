@@ -55,20 +55,69 @@ rm -fr latest
 mkdir $NIGHTLYDIR && cd $NIGHTLYDIR
 git clone $GITREPO . -b main --depth=1
 
+# Check if WMS_SOURCES_FILE exists
+WMS_SOURCES_FILE=scripts/wms_sources_configs.json
+if [ ! -f "$WMS_SOURCES_FILE" ]; then
+  echo "File $WMS_SOURCES_FILE does not exist."
+  exit 1
+fi
+
 # point to GeoMet nightly WMS server
 if [ -n $GEOMET_WEATHER_NIGHTLY_URL ] && [ -n $GEOMET_CLIMATE_NIGHTLY_URL ]
 then
-  echo "Replacing default GeoMet URLs with nightly URLs in scripts/wms_sources_configs.json"
-  sed -i "s#https://geo.weather.gc.ca/geomet#$GEOMET_WEATHER_NIGHTLY_URL#g" scripts/wms_sources_configs.json
-  sed -i "s#https://geo.weather.gc.ca/geomet-climate#$GEOMET_CLIMATE_NIGHTLY_URL#g" scripts/wms_sources_configs.json
+  echo "Replacing default GeoMet URLs with nightly URLs in $WMS_SOURCES_FILE"
+  sed -i "s#https://geo.weather.gc.ca/geomet#$GEOMET_WEATHER_NIGHTLY_URL#g" $WMS_SOURCES_FILE
+  sed -i "s#https://geo.weather.gc.ca/geomet-climate#$GEOMET_CLIMATE_NIGHTLY_URL#g" $WMS_SOURCES_FILE
 fi
 
 # add GeoMet Mapproxy nightly as a wms source for testing
+MAPPROXY_SOURCE='  "Mapproxy": {
+    "url": "'"$GEOMET_MAPPROXY_NIGHTLY_URL"'",
+    "version": "1.3.0"
+  }'
+
 if [ -n $GEOMET_MAPPROXY_NIGHTLY_URL ]
 then
-  echo "Adding GeoMet Mapproxy nightly to scripts/wms_sources_configs.json"
-  mapproxy_nightly_source="  \},\n  \"Mapproxy\": \{\n    \"url\": \"$GEOMET_MAPPROXY_NIGHTLY_URL\",\n    \"version\": \"1.3.0\"\n  \},"
-  sed -i "s|  \},|$mapproxy_nightly_source|" scripts/wms_sources_configs.json
+  echo "Adding GeoMet Mapproxy nightly to $WMS_SOURCES_FILE"
+  # Remove the last line; the last closing brace '}' from the original file
+  sed -i '$d' "$WMS_SOURCES_FILE"
+  # Add comma
+  sed -i '$ s/$/,/' $WMS_SOURCES_FILE
+  # Append the new data and close the JSON object with '}'
+  echo "$MAPPROXY_SOURCE" >> "$WMS_SOURCES_FILE"
+  echo "}" >> "$WMS_SOURCES_FILE"
+fi
+
+# US NWS / NOAA layers (nightly only for testing)
+NWS_NOAA_LAYERS='  "NASA": {
+    "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+    "version": "1.3.0"
+  },
+  "Gebco": {
+    "url": "https://www.gebco.net/data_and_products/gebco_web_services/web_map_service/mapserv",
+    "version": "1.3.0"
+  },
+  "NOAA-Nowcoast": {
+    "url": "https://nowcoast.noaa.gov/geoserver/ows",
+    "version": "1.3.0",
+    "query_pattern": "https://nowcoast.noaa.gov/geoserver{LAYER}/ows"
+  },
+  "NOAA-NCEP": {
+    "url": "https://opengeo.ncep.noaa.gov/geoserver/ows",
+    "version": "1.3.0",
+    "query_pattern": "https://opengeo.ncep.noaa.gov/geoserver{LAYER}/ows"
+  }'
+
+if [ -n $GEOMET_MAPPROXY_NIGHTLY_URL ]
+then
+  echo "Adding US NWS / NOAA layers to scripts/wms_sources_configs.json"
+  # Remove the last line; the last closing brace '}' from the original file
+  sed -i '$d' "$WMS_SOURCES_FILE"
+  # Add comma
+  sed -i '$ s/$/,/' $WMS_SOURCES_FILE
+  # Append the new data and close the JSON object with '}'
+  echo "$NWS_NOAA_LAYERS" >> "$WMS_SOURCES_FILE"
+  echo "}" >> "$WMS_SOURCES_FILE"
 fi
 
 echo "Stopping/building/starting Docker setup"
