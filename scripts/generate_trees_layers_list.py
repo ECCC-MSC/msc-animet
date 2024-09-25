@@ -62,9 +62,7 @@ def generate_layer_dict(list_layer_metadata):
         }
         if layer_metadata.layers:
             layer_dict["isLeaf"] = False
-            layer_dict["children"] = generate_layer_dict(
-                layer_metadata.layers
-            )
+            layer_dict["children"] = generate_layer_dict(layer_metadata.layers)
         if len(layer_metadata.layers) == 0:
             layer_dict["isLeaf"] = True
             if layer_metadata.timepositions:
@@ -74,11 +72,13 @@ def generate_layer_dict(list_layer_metadata):
         items.append(layer_dict)
     return items
 
+
 def findTopLevel(metadata):
-    if(metadata.parent == None):
+    if metadata.parent == None:
         return metadata.layers
     else:
         return findTopLevel(metadata.parent)
+
 
 langs = ["en", "fr"]
 with open("wms_sources_configs.json") as f:
@@ -98,14 +98,22 @@ for file_path in file_list:
 #  Sorting layer tree with regex
 ####################################
 
+
 # Transform digits in int (great for natural sort e.i at pressure levels, products at hour interval) but removes leading zeros before significant digits.
 def natural_sort(title):
-    return [int(text) if text.isdigit() else text.lower() for text in re.split(r'(\d+)', title)]
+    return [
+        int(text) if text.isdigit() else text.lower()
+        for text in re.split(r'(\d+)', title)
+    ]
+
 
 # For not standard titles, needing to keep leading zeros before significant digits.
 # e.g 0.025m,0.075m,0.15m.
 def natural_sort_leading_zeros(title):
-    return [text.lower() if not text.isdigit() else text for text in re.split(r'(\d+)', title)]
+    return [
+        text.lower() if not text.isdigit() else text
+        for text in re.split(r'(\d+)', title)
+    ]
 
 
 def get_regex_group(item):
@@ -124,10 +132,9 @@ def get_regex_group(item):
     # Exclude PRES only pattern : RDPS.PRES_TT.10 (because ends with .ab).
     pattern_ens_member = re.compile(r'(.*\.MEM\.*)|[_][0-9]{2}$')
 
-
     if leaf:
         # CanSIPS added because the name is easier to sort by (months included).
-        if (pattern_ens_member.search(name) or ('CanSIPS' in name)):
+        if pattern_ens_member.search(name) or ('CanSIPS' in name):
             return (natural_sort(name), '')
 
         # We want to sort by the second part of the title, then the first.
@@ -139,8 +146,11 @@ def get_regex_group(item):
             prefix = pattern_two_dash.group(1).strip()
             suffix = pattern_two_dash.group(2).strip()
 
-            if ('CaLDAS-NSRPS' in name):
-                return (natural_sort_leading_zeros(suffix), natural_sort_leading_zeros(prefix))
+            if 'CaLDAS-NSRPS' in name:
+                return (
+                    natural_sort_leading_zeros(suffix),
+                    natural_sort_leading_zeros(prefix),
+                )
 
             return (natural_sort(suffix), natural_sort(prefix))
 
@@ -155,8 +165,8 @@ def recursive_sort(layer_tree):
     layer_tree.sort(key=lambda k: 0 if 'children' in k else 1)
 
     for child_branch in layer_tree:
-            if 'children' in child_branch:
-                  recursive_sort(child_branch['children'])
+        if 'children' in child_branch:
+            recursive_sort(child_branch['children'])
     return layer_tree
 
 
@@ -184,6 +194,7 @@ def extract_wms_crs(url):
 
     return crs_list
 
+
 sources_to_remove = []
 for name, params in wmsSources.items():
     for lang in langs:
@@ -192,9 +203,7 @@ for name, params in wmsSources.items():
         else:
             base_url = f"{params['url']}?lang={lang}"
         try:
-            wms = WebMapService(
-                base_url, version=params["version"]
-            )
+            wms = WebMapService(base_url, version=params["version"])
         except Exception as e:
             LOGGER.warning(f"Ignoring source {name} due to error: {e}")
             # remove source from wms sources configurations
@@ -218,8 +227,10 @@ for name, params in wmsSources.items():
         with open(f"../src/assets/trees/tree_{lang}_{name}.js", "w+") as f:
             f.write(
                 TREE_JS_TEMPLATE.format(
-                    f"proj_{name}", json.dumps(crs_values, indent=2),
-                    f"tree_{lang}_{name}", json.dumps(layers_sorted, indent=2)
+                    f"proj_{name}",
+                    json.dumps(crs_values, indent=2),
+                    f"tree_{lang}_{name}",
+                    json.dumps(layers_sorted, indent=2),
                 )
             )
 
@@ -231,7 +242,9 @@ for name, params in wmsSources.items():
 
         with open(f"../src/locales/{lang}/layers_{name}.json", "w") as f:
             # write layers_dict_sorted to json file
-            f.write(json.dumps(layers_dict_sorted, indent=2, ensure_ascii=False))
+            f.write(
+                json.dumps(layers_dict_sorted, indent=2, ensure_ascii=False)
+            )
 
 # writing wms sources list to assets directory with failed sources removed
 for source in sources_to_remove:
