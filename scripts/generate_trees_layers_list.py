@@ -30,6 +30,7 @@
 # =================================================================
 import glob
 import json
+import logging
 import os
 import re
 import requests
@@ -37,6 +38,7 @@ from xml.etree import ElementTree
 
 from owslib.wms import WebMapService
 
+LOGGER = logging.getLogger(__name__)
 
 TREE_JS_TEMPLATE = """\
 export default {{
@@ -182,8 +184,8 @@ def extract_wms_crs(url):
 
     return crs_list
 
+sources_to_remove = []
 for name, params in wmsSources.items():
-    name = name.lower()
     for lang in langs:
         if "?" in params["url"]:
             base_url = f"{params['url']}&lang={lang}"
@@ -194,7 +196,10 @@ for name, params in wmsSources.items():
                 base_url, version=params["version"]
             )
         except Exception as e:
-            raise SystemExit(e)
+            LOGGER.warning(f"Ignoring source {name} due to error: {e}")
+            # remove source from wms sources configurations
+            sources_to_remove.append(name)
+            break
 
         # get all top level layer metadata objects
         _, metadata = wms.items()[0]
@@ -209,6 +214,7 @@ for name, params in wmsSources.items():
             layers += generate_layer_dict([layer_metadata])
         layers_sorted = recursive_sort(layers)
 
+        name = name.lower()
         with open(f"../src/assets/trees/tree_{lang}_{name}.js", "w+") as f:
             f.write(
                 TREE_JS_TEMPLATE.format(
@@ -223,6 +229,12 @@ for name, params in wmsSources.items():
                 layers_dict[metadata.name] = metadata.title
         layers_dict_sorted = dict(sorted(layers_dict.items()))
 
-        with open(f"../src/locales/{lang}/layers_{name}.json", "w+") as f:
+        with open(f"../src/locales/{lang}/layers_{name}.json", "w") as f:
             # write layers_dict_sorted to json file
             f.write(json.dumps(layers_dict_sorted, indent=2, ensure_ascii=False))
+
+# writing wms sources list to assets directory with failed sources removed
+for source in sources_to_remove:
+    wmsSources.pop(source)
+with open(f"../src/assets/wms_sources_configs.json", "w") as f:
+    f.write(json.dumps(wmsSources, indent=2))

@@ -1,6 +1,6 @@
 import { default as layerTrees } from "../../assets/trees";
 import Vue from "vue";
-import wmsSources from "../../../scripts/wms_sources_configs.json";
+import wmsSources from "../../assets/wms_sources_configs.json";
 
 import IntegerAssigner from "../../utils/IntegerAssigner.js";
 
