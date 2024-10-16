@@ -195,18 +195,6 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "AHRDP.06P - Quantit\u00e9 de pr\u00e9cipitations (pr\u00e9liminaire) [mm]",
-            "Name": "HRDPA.6P_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "AHRDP.24P - Quantit\u00e9 de pr\u00e9cipitations (pr\u00e9liminaire) [mm]",
-            "Name": "HRDPA.24P_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
             "Title": "AHRDP.24 - Quantit\u00e9 de pr\u00e9cipitations - T06Z [mm]",
             "Name": "HRDPA_2.5km_Precip-Accum24h-T06Z",
             "isLeaf": true,
@@ -221,18 +209,6 @@ export default {
           {
             "Title": "AHRDP.06 - Quantit\u00e9 de pr\u00e9cipitations [mm]",
             "Name": "HRDPA_2.5km_Precip-Accum6h",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "AHRDP.06F - Quantit\u00e9 de pr\u00e9cipitations [mm]",
-            "Name": "HRDPA.6F_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "AHRDP.24F - Quantit\u00e9 de pr\u00e9cipitations [mm]",
-            "Name": "HRDPA.24F_PR",
             "isLeaf": true,
             "isTemporal": true
           }

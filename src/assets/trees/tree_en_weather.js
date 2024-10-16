@@ -19401,18 +19401,6 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "HRDPA.06P - Quantity of precipitation (preliminary) [mm]",
-            "Name": "HRDPA.6P_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPA.24P - Quantity of precipitation (preliminary) [mm]",
-            "Name": "HRDPA.24P_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
             "Title": "HRDPA.24 - Quantity of precipitation - T06Z [mm]",
             "Name": "HRDPA_2.5km_Precip-Accum24h-T06Z",
             "isLeaf": true,
@@ -19427,18 +19415,6 @@ export default {
           {
             "Title": "HRDPA.06 - Quantity of precipitation [mm]",
             "Name": "HRDPA_2.5km_Precip-Accum6h",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPA.06F - Quantity of precipitation [mm]",
-            "Name": "HRDPA.6F_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPA.24F - Quantity of precipitation [mm]",
-            "Name": "HRDPA.24F_PR",
             "isLeaf": true,
             "isTemporal": true
           }
