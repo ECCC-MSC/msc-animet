@@ -12671,20 +12671,8 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.NORTH - Relative humidity [%]",
-            "Name": "HRDPS.NORTH_HR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Specific Humidity [kg/kg]",
-            "Name": "HRDPS.NORTH_HU",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Surface and soil temperatures (Superficial) [K]",
-            "Name": "HRDPS.NORTH_I0",
+            "Title": "HRDPA.24 - Quantity of precipitation - T06Z [mm]",
+            "Name": "HRDPA_2.5km_Precip-Accum24h-T06Z",
             "isLeaf": true,
             "isTemporal": false
           },
@@ -12699,19 +12687,14 @@ export default {
             "Name": "HRDPS.NORTH_NT",
             "isLeaf": true,
             "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Surface pressure [Pa]",
-            "Name": "HRDPS.NORTH_P0",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Surface pressure (contour) [Pa]",
-            "Name": "HRDPS.NORTH_P0-CONTOUR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
+          }
+        ]
+      },
+      {
+        "Title": "Regional Deterministic Precipitation Analysis (RDPA) [10 km]",
+        "Name": "Regional Deterministic Precipitation Analysis (RDPA) [10 km]",
+        "isLeaf": false,
+        "children": [
           {
             "Title": "HRDPS.NORTH - Sea level pressure (contour) [Pa]",
             "Name": "HRDPS.NORTH_PN",

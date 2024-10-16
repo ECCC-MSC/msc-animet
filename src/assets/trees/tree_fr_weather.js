@@ -195,20 +195,8 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "ARDP.24F - Quantit\u00e9 de pr\u00e9cipitations [mm] [10 km] (archive)",
-            "Name": "RDPA.24F_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "ARDP.24P - Quantit\u00e9 de pr\u00e9cipitations (pr\u00e9liminaire) [mm] [10 km] (archive)",
-            "Name": "RDPA.24P_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "ARDP.ARC_15km.6F - Quantit\u00e9 de pr\u00e9cipitations [mm] [15 km] (archive)",
-            "Name": "RDPA.ARC_15km.6F_PR",
+            "Title": "AHRDP.24 - Quantit\u00e9 de pr\u00e9cipitations - T06Z [mm]",
+            "Name": "HRDPA_2.5km_Precip-Accum24h-T06Z",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -221,18 +209,6 @@ export default {
           {
             "Title": "ARDP - Quantit\u00e9 de pr\u00e9cipitations sur un intervalle de 6 heures [mm] [10 km] (archive)",
             "Name": "RDPA_10km_Precip-Accum6h",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "ARDP.24F - Quantit\u00e9 de pr\u00e9cipitations sur un intervalle de 24 heures [mm] - T06Z [10 km] (archive)",
-            "Name": "RDPA_10km_Precip-Accum24h-T06Z",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "ARDP.24F - Quantit\u00e9 de pr\u00e9cipitations sur un intervalle de 24 heures [mm] - T12Z [10 km] (archive)",
-            "Name": "RDPA_10km_Precip-Accum24h-T12Z",
             "isLeaf": true,
             "isTemporal": true
           }
