@@ -1,5 +1,24 @@
 # Release Notes
 
+## Version 2.2.2 (2024-10-16)
+
+### Bug Fixes
+- Update GeoMet-Weather layer list with removed layers
+
+## Version 2.2.1 (2024-07-04)
+
+### Bug Fixes
+- Update GeoMet-Weather 2.30.0 layer list
+- Fixed panels freezing during a loop if the connection is particularly unstable
+- Fixed animation creation crashing during error handling
+- Fixed layers getting removed from AniMet during idle or animation creation during connection errors
+- Fixed time continuing to move forward during critical error because critical error flag wasn't triggered fast enough
+- Fixed infinite error loop when non-temporal layer would fail
+- Fixed bug that would prevent animation from restarting after pausing during an error
+- Fixed update method of ErrorManager by placing in a try/catch block
+- Fixed blockRefresh handling of ErrorManager
+- Other minor fixes for improved error handling
+
 ## Version 2.2.0 (2024-06-17)
 
 ### New Features
