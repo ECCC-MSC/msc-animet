@@ -816,13 +816,13 @@ export default {
         "isTemporal": false
       },
       {
-        "Title": "Marine Standard Forecast Zones",
+        "Title": "Marine Standard Forecast Zones (hybrid)",
         "Name": "Marine-Standard-Forecast-Zones",
         "isLeaf": true,
         "isTemporal": false
       },
       {
-        "Title": "Public Standard Forecast Zones",
+        "Title": "Public Standard Forecast Zones (hybrid)",
         "Name": "Public-Standard-Forecast-Zones",
         "isLeaf": true,
         "isTemporal": false
@@ -840,8 +840,20 @@ export default {
         "isLeaf": false,
         "children": [
           {
+            "Title": "GDPS-WEonG - Temperature [\u00b0C]",
+            "Name": "GDPS-WEonG_15km_AirTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Temperature [\u00b0C] (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_AirTemp.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of blowing snow [%]",
+            "Name": "GDPS-WEonG_15km_BlowingSnow-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -852,8 +864,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Presence of blowing snow",
+            "Name": "GDPS-WEonG_15km_BlowingSnowPresence",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Presence of blowing snow (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_BlowingSnowPresence.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Dew point temperature [C]",
+            "Name": "GDPS-WEonG_15km_DewPointTemp",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -864,8 +888,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Dominant precipitation type",
+            "Name": "GDPS-WEonG_15km_DominantPrecipType",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Dominant precipitation type (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_DominantPrecipType.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of drizzle [%]",
+            "Name": "GDPS-WEonG_15km_Drizzle-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -876,8 +912,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Probability of freezing drizzle [%]",
+            "Name": "GDPS-WEonG_15km_FreezingDrizzle-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Probability of freezing drizzle [%] (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_FreezingDrizzle-Prob.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of freezing precipitation [%]",
+            "Name": "GDPS-WEonG_15km_FreezingPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -888,8 +936,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Conditional amount of freezing precipitation [mm]",
+            "Name": "GDPS-WEonG_15km_FreezingPrecipCondAmt",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Conditional amount of freezing precipitation [mm] (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_FreezingPrecipCondAmt.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of freezing rain [%]",
+            "Name": "GDPS-WEonG_15km_FreezingRain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -900,8 +960,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Visibility through ice fog [m]",
+            "Name": "GDPS-WEonG_15km_IceFogVisibility",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Visibility through ice fog [m] (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_IceFogVisibility.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of ice pellets [%]",
+            "Name": "GDPS-WEonG_15km_IcePellets-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -912,8 +984,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Conditional amount of solid ice pellets [m]",
+            "Name": "GDPS-WEonG_15km_IcePelletsCondAmt",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Conditional amount of solid ice pellets [m] (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_IcePelletsCondAmt.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Instantaneous precipitation type",
+            "Name": "GDPS-WEonG_15km_InstantPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -924,8 +1008,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Visibility through liquid fog [m]",
+            "Name": "GDPS-WEonG_15km_LiquidFogVisibility",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Visibility through liquid fog [m] (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_LiquidFogVisibility.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of liquid precipitation [%]",
+            "Name": "GDPS-WEonG_15km_LiquidPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -936,8 +1032,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Conditional amount of liquid precipitation [m]",
+            "Name": "GDPS-WEonG_15km_LiquidPrecipCondAmt",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Conditional amount of liquid precipitation [m] (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_LiquidPrecipCondAmt.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Model orography [m]",
+            "Name": "GDPS-WEonG_15km_Orography",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -948,8 +1056,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Probability of precipitation [%]",
+            "Name": "GDPS-WEonG_15km_Precip-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Probability of precipitation [%] (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_Precip-Prob.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Character of precipitation",
+            "Name": "GDPS-WEonG_15km_PrecipCharacter",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -960,8 +1080,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Conditional amount of precipitation [m]",
+            "Name": "GDPS-WEonG_15km_PrecipCondAmt",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Conditional amount of precipitation [m] (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_PrecipCondAmt.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of rain [%]",
+            "Name": "GDPS-WEonG_15km_Rain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -972,8 +1104,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - The second most common precipitation type",
+            "Name": "GDPS-WEonG_15km_SecondMostCommonPrecipType",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - The second most common precipitation type (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_SecondMostCommonPrecipType.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Sky state day/night (combined cloud cover and opacity)",
+            "Name": "GDPS-WEonG_15km_SkyState",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -984,8 +1128,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Probability of snow [%]",
+            "Name": "GDPS-WEonG_15km_Snow-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Probability of snow [%] (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_Snow-Prob.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Height of snow level [m]",
+            "Name": "GDPS-WEonG_15km_SnowHeight",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -996,8 +1152,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Probability of snow squalls [%]",
+            "Name": "GDPS-WEonG_15km_SnowSqualls-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Probability of snow squalls [%] (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_SnowSqualls-Prob.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Conditional amount of solid snow [m]",
+            "Name": "GDPS-WEonG_15km_SolidSnowCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -1008,8 +1176,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Probability of thunderstorm occurence [%]",
+            "Name": "GDPS-WEonG_15km_Thunderstorm-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Probability of thunderstorm occurence [%] (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_Thunderstorm-Prob.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Total precipitation intensity index",
+            "Name": "GDPS-WEonG_15km_TotalPrecipIntensityIndex",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -1020,8 +1200,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Water/land proportion",
+            "Name": "GDPS-WEonG_15km_WaterLand-Proportion",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Water/land proportion (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_WaterLand-Proportion.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Wind direction [deg true]",
+            "Name": "GDPS-WEonG_15km_WindDir",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -1032,8 +1224,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS-WEonG - Gust [m/s]",
+            "Name": "GDPS-WEonG_15km_WindGust",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS-WEonG - Gust [m/s] (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_WindGust.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Wind speed [m/s]",
+            "Name": "GDPS-WEonG_15km_WindSpeed",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -10984,6 +11188,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "HRDPS.CONTINENTAL - Daily maximum of the UV Index (18Z model run)",
+            "Name": "HRDPS.CONTINENTAL_UVAX_18Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "HRDPS.CONTINENTAL - Daily maximum of the UV Index for clear-sky conditions (00Z model run)",
             "Name": "HRDPS.CONTINENTAL_UVCX_00Z",
             "isLeaf": true,
@@ -10998,6 +11208,12 @@ export default {
           {
             "Title": "HRDPS.CONTINENTAL - Daily maximum of the UV Index for clear-sky conditions (12Z model run)",
             "Name": "HRDPS.CONTINENTAL_UVCX_12Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Daily maximum of the UV Index for clear-sky conditions (18Z model run)",
+            "Name": "HRDPS.CONTINENTAL_UVCX_18Z",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -12671,8 +12887,20 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "HRDPA.24 - Quantity of precipitation - T06Z [mm]",
-            "Name": "HRDPA_2.5km_Precip-Accum24h-T06Z",
+            "Title": "HRDPS.NORTH - Relative humidity [%]",
+            "Name": "HRDPS.NORTH_HR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.NORTH - Specific Humidity [kg/kg]",
+            "Name": "HRDPS.NORTH_HU",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.NORTH - Surface and soil temperatures (Superficial) [K]",
+            "Name": "HRDPS.NORTH_I0",
             "isLeaf": true,
             "isTemporal": false
           },
@@ -12687,14 +12915,19 @@ export default {
             "Name": "HRDPS.NORTH_NT",
             "isLeaf": true,
             "isTemporal": true
-          }
-        ]
-      },
-      {
-        "Title": "Regional Deterministic Precipitation Analysis (RDPA) [10 km]",
-        "Name": "Regional Deterministic Precipitation Analysis (RDPA) [10 km]",
-        "isLeaf": false,
-        "children": [
+          },
+          {
+            "Title": "HRDPS.NORTH - Surface pressure [Pa]",
+            "Name": "HRDPS.NORTH_P0",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.NORTH - Surface pressure (contour) [Pa]",
+            "Name": "HRDPS.NORTH_P0-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
           {
             "Title": "HRDPS.NORTH - Sea level pressure (contour) [Pa]",
             "Name": "HRDPS.NORTH_PN",
@@ -19144,22 +19377,10 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "HRDPA.06F - Quantity of precipitation [mm]",
-            "Name": "HRDPA.6F_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
             "Title": "HRDPA.06F - Average watershed precipitation [mm]",
             "Name": "HRDPA.06F_WATERSHED",
             "isLeaf": true,
             "isTemporal": false
-          },
-          {
-            "Title": "HRDPA.06P - Quantity of precipitation (preliminary) [mm]",
-            "Name": "HRDPA.6P_PR",
-            "isLeaf": true,
-            "isTemporal": true
           },
           {
             "Title": "HDRPA.06P - Average watershed precipitation (preliminary) [mm]",
@@ -19168,22 +19389,10 @@ export default {
             "isTemporal": false
           },
           {
-            "Title": "HRDPA.24F - Quantity of precipitation [mm]",
-            "Name": "HRDPA.24F_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
             "Title": "HRDPA.24F - Average watershed precipitation [mm]",
             "Name": "HRDPA.24F_WATERSHED",
             "isLeaf": true,
             "isTemporal": false
-          },
-          {
-            "Title": "HRDPA.24P - Quantity of precipitation (preliminary) [mm]",
-            "Name": "HRDPA.24P_PR",
-            "isLeaf": true,
-            "isTemporal": true
           },
           {
             "Title": "HRDPA.24P - Average watershed precipitation (preliminary) [mm]",
@@ -33841,6 +34050,12 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "GOES-East Day Land Cloud Fire /SWIR [1 km]",
+                "Name": "GOES-East_1km_DayLandCloudFire-SWIR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "GOES-East Day visibility / Day Cloud Convection  [1 km]",
                 "Name": "GOES-East_1km_DayVis",
                 "isLeaf": true,
@@ -33922,6 +34137,12 @@ export default {
               {
                 "Title": "GOES-West Day Cloud Type/Night Microphysics [1 km]",
                 "Name": "GOES-West_1km_DayCloudType-NightMicrophysics",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GOES-West Day Land Cloud Fire /SWIR [1 km]",
+                "Name": "GOES-West_1km_DayLandCloudFire-SWIR",
                 "isLeaf": true,
                 "isTemporal": true
               },
