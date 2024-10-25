@@ -153,14 +153,8 @@ export default {
         );
       }
     },
-    trackCreateMP4() {
-      if (this.appIsProductionEnv === "production") {
-        _paq.push(["trackEvent", "Button", "Click", "Create animation"]);
-      }
-    },
     async createMP4() {
       this.$root.$emit("setAnimationTitle");
-      this.trackCreateMP4();
       this.createMP4Handler();
       this.outputDate = this.getOutputDate;
       this.$store.dispatch(
