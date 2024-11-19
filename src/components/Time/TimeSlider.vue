@@ -8,9 +8,9 @@
       <span class="text-wrap">
         {{
           localeDateFormat(
-            getMapTimeSettings.Extent[getMapTimeSettings.DateIndex],
-            getMapTimeSettings.Step,
-            dateFormat
+            mapTimeSettings.Extent[mapTimeSettings.DateIndex],
+            mapTimeSettings.Step,
+            dateFormat,
           )
         }}
       </span>
@@ -30,27 +30,30 @@
           v-model="datetimeRangeSlider"
           :disabled="isAnimating"
           :min="0"
-          :max="getMapTimeSettings.Extent.length - 1"
-          :rules="[rangeValuesNotSame]"
+          :max="mapTimeSettings.Extent.length - 1"
+          :step="1"
           :color="hideRangeSlider"
           :thumb-color="hideRangeSlider"
           :track-color="hideRangeSlider"
           :track-fill-color="hideRangeSlider"
+          :track-size="2"
+          :thumb-label="false"
           hide-details
-          @change="changeDisplayedTime"
+          @end="handleEnd"
+          @update:model-value="changeDisplayedTime"
         ></v-range-slider>
-        <v-slider
-          class="mt-n8 play-head"
-          :disabled="isAnimating"
-          :min="0"
-          :max="getMapTimeSettings.Extent.length - 1"
-          color="rgba(0, 0, 0, 0)"
-          track-color="rgba(0, 0, 0, 0)"
-          thumb-color="rgba(231, 116, 22, 0.5)"
-          :thumb-size="36"
-          hide-details
-          v-model="currentTime"
-        ></v-slider>
+        <div
+          class="play-head-slider mt-n8"
+          ref="playHeadSlider"
+          @mousedown="startDrag"
+          @touchstart="startDrag"
+        >
+          <div class="play-head-slider-track"></div>
+          <div
+            class="play-head-slider-thumb"
+            :style="{ left: `${thumbPosition}%` }"
+          ></div>
+        </div>
       </v-col>
     </v-row>
     <v-row justify="space-between" class="mt-n6 bottom_row">
@@ -65,153 +68,267 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
-
-import datetimeManipulations from "../../mixins/datetimeManipulations";
-
-import ArrowControls from "./AnimationControls/ArrowControls.vue";
-import PlayPauseControls from "./AnimationControls/PlayPauseControls.vue";
+import datetimeManipulations from '../../mixins/datetimeManipulations'
 
 export default {
+  inject: ['store'],
   props: {
     hide: Boolean,
   },
   mixins: [datetimeManipulations],
-  components: {
-    ArrowControls,
-    PlayPauseControls,
-  },
   data() {
     return {
+      isDragging: false,
       screenWidth: window.innerWidth,
-    };
+      throttle: false,
+    }
   },
   mounted() {
-    window.addEventListener("resize", this.updateScreenSize);
+    window.addEventListener('keydown', this.movePlayHead)
+    window.addEventListener('resize', this.updateScreenSize)
   },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.updateScreenSize);
+  beforeUnmount() {
+    window.removeEventListener('keydown', this.movePlayHead)
+    window.removeEventListener('resize', this.updateScreenSize)
   },
   methods: {
-    rangeValuesNotSame(rangeInput) {
-      return !(rangeInput[0] === rangeInput[1]);
+    handleEnd() {
+      document.activeElement.blur()
+    },
+    movePlayHead(event) {
+      if (this.isAnimating) return
+      if (!this.throttle) {
+        this.throttle = true
+        switch (event.key) {
+          case 'ArrowLeft':
+            if (this.mapTimeSettings.DateIndex > this.datetimeRangeSlider[0]) {
+              this.store.setMapTimeIndex(this.mapTimeSettings.DateIndex - 1)
+            } else {
+              this.store.setMapTimeIndex(this.datetimeRangeSlider[1])
+            }
+            break
+          case 'ArrowRight':
+            if (this.mapTimeSettings.DateIndex < this.datetimeRangeSlider[1]) {
+              this.store.setMapTimeIndex(this.mapTimeSettings.DateIndex + 1)
+            } else {
+              this.store.setMapTimeIndex(this.datetimeRangeSlider[0])
+            }
+            break
+        }
+        setTimeout(() => {
+          this.throttle = false
+        }, 250)
+      }
+    },
+    startDrag(event) {
+      if (this.isAnimating) return
+
+      this.isDragging = true
+      this.updateThumbPosition(event)
+
+      const moveHandler = (e) => {
+        if (this.isDragging) {
+          this.updateThumbPosition(e)
+        }
+      }
+
+      const endHandler = () => {
+        this.isDragging = false
+        document.removeEventListener('mousemove', moveHandler)
+        document.removeEventListener('touchmove', moveHandler)
+        document.removeEventListener('mouseup', endHandler)
+        document.removeEventListener('touchend', endHandler)
+        this.handleEnd()
+      }
+
+      document.addEventListener('mousemove', moveHandler)
+      document.addEventListener('touchmove', moveHandler)
+      document.addEventListener('mouseup', endHandler)
+      document.addEventListener('touchend', endHandler)
+    },
+    updateCurrentTime(newDateIndex) {
+      this.emitter.emit('changeTab')
+      if (this.mapTimeSettings.DateIndex !== null) {
+        if (newDateIndex < this.datetimeRangeSlider[0]) {
+          this.store.setMapSnappedLayer(null)
+          this.store.setDatetimeRangeSlider([
+            newDateIndex,
+            this.datetimeRangeSlider[1],
+          ])
+        } else if (newDateIndex > this.datetimeRangeSlider[1]) {
+          this.store.setMapSnappedLayer(null)
+          this.store.setDatetimeRangeSlider([
+            this.datetimeRangeSlider[0],
+            newDateIndex,
+          ])
+        }
+      }
+      this.store.setMapTimeIndex(newDateIndex)
+      this.emitter.emit('updatePermalink')
     },
     updateScreenSize() {
-      this.screenWidth = window.innerWidth;
+      this.screenWidth = window.innerWidth
+    },
+    updateThumbPosition(event) {
+      const rect = this.$refs.playHeadSlider.getBoundingClientRect()
+      const x = (event.clientX || event.touches[0].clientX) - rect.left
+      const percentage = Math.max(0, Math.min(1, x / rect.width))
+      const max = this.mapTimeSettings.Extent.length - 1
+      const newDateIndex = Math.round(percentage * max)
+
+      this.updateCurrentTime(newDateIndex)
     },
     changeDisplayedTime() {
-      this.$root.$emit("changeTab");
+      this.emitter.emit('changeTab')
       if (
-        this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex] <
-        this.getMapTimeSettings.Extent[this.datetimeRangeSlider[0]]
+        this.mapTimeSettings.Extent[this.mapTimeSettings.DateIndex] <
+        this.mapTimeSettings.Extent[this.datetimeRangeSlider[0]]
       ) {
-        this.$store.dispatch(
-          "Layers/setMapTimeIndex",
-          this.datetimeRangeSlider[0]
-        );
-        this.$root.$emit("adjustMapTime");
+        this.store.setMapTimeIndex(this.datetimeRangeSlider[0])
+        this.emitter.emit('adjustMapTime')
       } else if (
-        this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex] >
-        this.getMapTimeSettings.Extent[this.datetimeRangeSlider[1]]
+        this.mapTimeSettings.Extent[this.mapTimeSettings.DateIndex] >
+        this.mapTimeSettings.Extent[this.datetimeRangeSlider[1]]
       ) {
-        this.$store.dispatch(
-          "Layers/setMapTimeIndex",
-          this.datetimeRangeSlider[1]
-        );
-        this.$root.$emit("adjustMapTime");
+        this.store.setMapTimeIndex(this.datetimeRangeSlider[1])
+        this.emitter.emit('adjustMapTime')
       }
-      if (this.getMapTimeSettings.SnappedLayer !== null) {
-        this.$store.dispatch("Layers/setMapSnappedLayer", null);
+      if (this.mapTimeSettings.SnappedLayer !== null) {
+        this.store.setMapSnappedLayer(null)
       }
-      this.$root.$emit("updatePermalink");
+      this.emitter.emit('updatePermalink')
     },
     formatDate(index, format) {
-      if (index > this.getMapTimeSettings.Extent.length - 1) {
-        index = this.getMapTimeSettings.Extent.length - 1;
+      if (index > this.mapTimeSettings.Extent.length - 1) {
+        index = this.mapTimeSettings.Extent.length - 1
       } else if (index < 0) {
-        index = 0;
+        index = 0
       }
       return this.localeDateFormat(
-        this.getMapTimeSettings.Extent[index],
-        this.getMapTimeSettings.Step,
-        format
-      );
+        this.mapTimeSettings.Extent[index],
+        this.mapTimeSettings.Step,
+        format,
+      )
     },
   },
   computed: {
-    ...mapGetters("Layers", ["getDatetimeRangeSlider", "getMapTimeSettings"]),
-    ...mapState("Layers", ["isAnimating"]),
-    currentTime: {
-      get() {
-        return this.getMapTimeSettings.DateIndex;
-      },
-      set(newDateIndex) {
-        this.$root.$emit("changeTab");
-        if (this.getMapTimeSettings.DateIndex !== null) {
-          if (newDateIndex < this.datetimeRangeSlider[0]) {
-            this.$store.dispatch("Layers/setMapSnappedLayer", null);
-            this.$store.commit("Layers/setDatetimeRangeSlider", [
-              newDateIndex,
-              this.datetimeRangeSlider[1],
-            ]);
-          } else if (newDateIndex > this.datetimeRangeSlider[1]) {
-            this.$store.dispatch("Layers/setMapSnappedLayer", null);
-            this.$store.commit("Layers/setDatetimeRangeSlider", [
-              this.datetimeRangeSlider[0],
-              newDateIndex,
-            ]);
-          }
-        }
-        this.$store.dispatch("Layers/setMapTimeIndex", newDateIndex);
-        this.$root.$emit("updatePermalink");
-      },
+    isAnimating() {
+      return this.store.getIsAnimating
+    },
+    mapTimeSettings() {
+      return this.store.getMapTimeSettings
     },
     dateFormat() {
       if (this.screenWidth > 850) {
-        return "DATETIME_FULL";
-      } else if (this.screenWidth > 720) {
-        return "DATETIME_MED";
+        return 'DATETIME_FULL'
+      } else if (this.screenWidth > 740) {
+        return 'DATETIME_MED'
       } else {
-        return "DATETIME_SHORT";
+        return 'DATETIME_SHORT'
       }
     },
     datetimeRangeSlider: {
       get() {
-        return this.getDatetimeRangeSlider;
+        return this.store.getDatetimeRangeSlider
       },
       set(dateRange) {
-        this.$store.commit("Layers/setDatetimeRangeSlider", dateRange);
+        this.store.setDatetimeRangeSlider(dateRange)
       },
     },
     hideRangeSlider() {
       if (
-        this.getMapTimeSettings.Extent !== null &&
-        this.getMapTimeSettings.Extent.length === 1
+        this.mapTimeSettings.Extent !== null &&
+        this.mapTimeSettings.Extent.length === 1
       ) {
-        return "rgba(0, 0, 0, 0)";
+        return 'rgba(0, 0, 0, 0)'
       } else {
-        return undefined;
+        return 'primary'
       }
     },
+    thumbPosition() {
+      const max = this.mapTimeSettings.Extent.length - 1
+      return (this.mapTimeSettings.DateIndex / max) * 100
+    },
   },
-};
+}
 </script>
 
-<style scoped>
-.play-head::v-deep .v-slider__thumb {
+<style>
+.range_slider {
+  --v-focus-opacity: 0.2 !important;
+  --v-hover-opacity: 0.2 !important;
+  --v-pressed-opacity: 0.5 !important;
+}
+.range_slider .v-slider__container .v-slider-thumb {
+  transform: translate(114%, -50%) !important;
+}
+.range_slider .v-slider-thumb {
   z-index: 2;
 }
-.range_slider::v-deep .v-slider__thumb:before {
-  left: -15px;
+.range_slider .v-slider-thumb__surface::before {
   top: -6px;
+  left: -15px;
+  width: 36px;
+  height: 36px;
+  z-index: 2;
 }
-.range_slider::v-deep .v-slider__thumb {
+.range_slider .v-slider-thumb--focused .v-slider-thumb__surface::before,
+.range_slider .v-slider-thumb:hover .v-slider-thumb__surface::before {
+  transform: scale(1) !important;
+}
+.range_slider .v-slider-thumb__ripple {
+  left: calc(var(--v-slider-thumb-size) / -1.3);
+  top: calc(var(--v-slider-thumb-size) / -3.4);
+  width: 36px;
+  height: 36px;
+}
+.range_slider .v-slider-thumb__surface {
   width: 6px;
   height: 24px;
-  left: -3px;
+  position: relative;
   border-radius: 15px;
-  z-index: 2;
 }
+.range_slider .v-slider-track__fill {
+  height: 2px !important;
+}
+</style>
+
+<style scoped>
+.play-head-slider {
+  position: relative;
+  left: 8px;
+  height: 32px;
+  width: calc(100% - 16px);
+  cursor: pointer;
+}
+
+.play-head-slider-track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0);
+  transform: translateY(-50%);
+}
+
+.play-head-slider-thumb {
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: rgba(231, 116, 22, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+  z-index: 3;
+}
+
+.play-head-slider-thumb:hover,
+.play-head-slider-thumb:active {
+  transform: translate(-50%, -50%) scale(1.8);
+}
+
 .button_group {
   display: inline-block;
 }

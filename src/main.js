@@ -1,39 +1,42 @@
-import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
-import i18n from "./plugins/i18n";
-import vuetify from "./plugins/vuetify";
+import { registerPlugins } from '@/plugins'
+import { useStore } from '@/stores/store'
 
-Vue.prototype.$mapLayers = Vue.observable({ arr: [] });
-Vue.prototype.$mapCanvas = Vue.observable({ mapObj: {} });
-Vue.prototype.$animationCanvas = Vue.observable({ mapObj: {} });
-Vue.config.productionTip = false;
+import mitt from 'mitt'
+import * as ct from 'countries-and-timezones'
 
-const originalConsoleError = console.error;
+import App from './App.vue'
+
+import { createApp, reactive } from 'vue'
+
+const emitter = mitt()
+const app = createApp(App)
+
+registerPlugins(app)
+app.provide('store', useStore())
+
+app.config.globalProperties.$mapLayers = reactive({ arr: [] })
+app.config.globalProperties.$mapCanvas = reactive({ mapObj: {} })
+app.config.globalProperties.$animationCanvas = reactive({ mapObj: {} })
+
+app.config.globalProperties.emitter = emitter
+
+const originalConsoleError = console.error
 function customLog(message) {
   // OpenLayers added an annoying console.error everytime a WMS request
   // returns XML even if it's handled so this code is there to silence it
-  if (!(message instanceof DOMException)) originalConsoleError(message);
+  if (!(message instanceof DOMException)) originalConsoleError(message)
 }
-console.error = customLog;
+console.error = customLog
 
-const ct = require("countries-and-timezones");
-const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-const country = ct.getCountryForTimezone(timeZone);
+const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
+const country = ct.getCountryForTimezone(timeZone)
 
-Vue.prototype.$timeZone = Vue.observable({ id: timeZone });
+app.config.globalProperties.$timeZone = reactive({ id: timeZone })
 if (country === null) {
-  Vue.prototype.$countryCode = Vue.observable({ id: null });
+  app.config.globalProperties.$countryCode = reactive({ id: null })
 } else {
-  Vue.prototype.$countryCode = Vue.observable({ id: country.id });
+  app.config.globalProperties.$countryCode = reactive({ id: country.id })
 }
-Vue.prototype.$ct = ct;
+app.config.globalProperties.$ct = ct
 
-new Vue({
-  router,
-  store,
-  i18n,
-  vuetify,
-  render: (h) => h(App),
-}).$mount("#app");
+app.mount('#app')

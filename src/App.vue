@@ -1,33 +1,56 @@
 <template>
   <v-app>
-    <router-view />
+    <v-main>
+      <router-view />
+    </v-main>
   </v-app>
 </template>
 
 <script>
+import { useI18n } from 'vue-i18n'
+
 export default {
-  name: "App",
-  created() {
-    const userLangChoice = this.getLang();
-    let lang = "en";
-    if (userLangChoice !== null) {
-      lang = userLangChoice;
-    } else {
-      const locale = navigator.language.split("-")[0];
-      lang = locale === "fr" ? "fr" : "en";
+  name: 'App',
+  inject: ['store'],
+  data() {
+    return {
+      t: useI18n().t,
     }
-    this.$store.dispatch("Layers/setLang", lang);
-    this.$i18n.locale = lang;
-    this.$vuetify.current = lang;
-    document.title = "MSC AniMet";
+  },
+  created() {
+    const userLangChoice = this.getLang()
+    let lang = 'en'
+    if (userLangChoice !== null) {
+      lang = userLangChoice
+    } else {
+      const locale = navigator.language.split('-')[0]
+      lang = locale === 'fr' ? 'fr' : 'en'
+    }
+    this.store.setLang(lang)
+    this.$i18n.locale = lang
+    document.title = 'MSC AniMet'
   },
   methods: {
     getLang() {
-      return localStorage.getItem("user-lang");
+      return localStorage.getItem('user-lang')
     },
   },
-};
+}
 </script>
+
+<style>
+.v-snackbar .v-snackbar__wrapper {
+  border-radius: 16px !important;
+}
+.v-tooltip > .v-overlay__content {
+  color: white;
+  background-color: rgb(84, 84, 84);
+}
+.v-theme--dark .v-snackbar__wrapper {
+  background-color: rgb(var(--v-theme-snackbarBackground)) !important;
+  color: rgb(var(--v-theme-snackbarText)) !important;
+}
+</style>
 
 <style lang="scss">
 html {

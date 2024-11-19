@@ -1,43 +1,36 @@
-import "@mdi/font/css/materialdesignicons.css";
-import Vue from "vue";
-import Vuetify from "vuetify/lib";
+import '@mdi/font/css/materialdesignicons.css'
+import 'vuetify/styles'
 
-const locales = {
-  en: require("vuetify/es5/locale/en"),
-  fr: require("vuetify/es5/locale/fr"),
-};
+import { createVuetify } from 'vuetify'
 
-const current = navigator.language.split("-")[0];
-
-Vue.use(Vuetify);
-
-export default new Vuetify({
-  locales,
-  current,
-  icons: {
-    iconfont: "mdi",
-  },
+export default createVuetify({
   theme: {
-    dark: false,
+    defaultTheme: 'dark',
     themes: {
       dark: {
-        primary: "#1689E7",
-        accent: "#4CBB99",
-        secondary: "#7BC6FF",
-        success: "#4CAF50",
-        info: "#2196F3",
-        warning: "#FB8C00",
-        error: "#FF5252",
+        colors: {
+          snackbarBackground: '#424242',
+          snackbarText: '#eeeeee',
+          primary: '#1689E7',
+          accent: '#4CBB99',
+          secondary: '#7BC6FF',
+          success: '#4CAF50',
+          info: '#2196F3',
+          warning: '#FB8C00',
+          error: '#FF5252',
+        },
       },
       light: {
-        primary: "#1689E7",
-        accent: "#4CBB99",
-        secondary: "#7BC6FF",
-        success: "#4CAF50",
-        info: "#2196F3",
-        warning: "#FB8C00",
-        error: "#FF5252",
+        colors: {
+          primary: '#1689E7',
+          accent: '#4CBB99',
+          secondary: '#7BC6FF',
+          success: '#4CAF50',
+          info: '#2196F3',
+          warning: '#FB8C00',
+          error: '#FF5252',
+        },
       },
     },
   },
-});
+})

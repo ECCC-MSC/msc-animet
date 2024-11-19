@@ -1,73 +1,87 @@
 <template>
   <div id="theme">
-    <v-tooltip bottom>
-      <template v-slot:activator="{ on, attrs }">
+    <v-tooltip location="bottom">
+      <template v-slot:activator="{ props }">
         <v-btn
-          min-width="34px"
-          width="34px"
-          height="34px"
+          size="34"
           class="rounded-circle"
-          v-bind="attrs"
-          v-on="on"
+          v-bind="props"
           @click="toggleThemeDarkMode"
         >
           <v-icon
-            :style="{
-              transform: `rotate(${$vuetify.theme.dark ? 0 : -190}deg)`,
-            }"
+            size="24"
+            :class="{ 'theme-icon': true, 'theme-icon-dark': isDark }"
           >
-            {{ "mdi-theme-light-dark" }}
+            mdi-theme-light-dark
           </v-icon>
         </v-btn>
       </template>
-      <span
-        >{{
-          $vuetify.theme.dark
-            ? $t("MP4CreateLightMode")
-            : $t("MP4CreateDarkMode")
-        }}
-      </span>
+      <span>{{
+        isDark ? t('MP4CreateLightMode') : t('MP4CreateDarkMode')
+      }}</span>
     </v-tooltip>
   </div>
 </template>
 
 <script>
+import { onMounted, computed } from 'vue'
+import { useTheme } from 'vuetify'
+import { useI18n } from 'vue-i18n'
+
 export default {
-  mounted() {
-    const userThemeChoice = this.getTheme();
-    if (userThemeChoice === null) {
-      if (this.getMediaPreference()) {
-        this.toggleThemeDarkMode();
+  setup() {
+    const theme = useTheme()
+    const { t } = useI18n()
+
+    const isDark = computed(() => theme.global.current.value.dark)
+
+    const toggleThemeDarkMode = () => {
+      theme.global.name.value = isDark.value ? 'light' : 'dark'
+      localStorage.setItem('user-theme', theme.global.name.value)
+    }
+
+    const getMediaPreference = () => {
+      const hasDarkPreference = window.matchMedia(
+        '(prefers-color-scheme: dark)',
+      ).matches
+      return hasDarkPreference ? 'dark' : 'light'
+    }
+
+    const getTheme = () => {
+      return localStorage.getItem('user-theme')
+    }
+
+    onMounted(() => {
+      const userThemeChoice = getTheme()
+      if (userThemeChoice === null) {
+        theme.global.name.value = getMediaPreference()
+        localStorage.setItem('user-theme', theme.global.name.value)
+      } else {
+        theme.global.name.value = userThemeChoice
       }
-    } else if (userThemeChoice === "true") {
-      this.toggleThemeDarkMode();
+    })
+
+    return {
+      isDark,
+      toggleThemeDarkMode,
+      t,
     }
   },
-  methods: {
-    getMediaPreference() {
-      const hasDarkPreference = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      if (hasDarkPreference) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    getTheme() {
-      return localStorage.getItem("user-theme");
-    },
-    toggleThemeDarkMode() {
-      localStorage.setItem("user-theme", !this.$vuetify.theme.dark);
-      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-    },
-  },
-};
+}
 </script>
 
 <style scoped>
 #theme {
   pointer-events: auto;
   z-index: 4;
+}
+
+.theme-icon {
+  transition: transform 0.3s ease;
+  transform: rotate(-190deg);
+}
+
+.theme-icon-dark {
+  transform: rotate(0deg);
 }
 </style>

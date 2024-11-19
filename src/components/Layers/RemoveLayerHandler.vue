@@ -1,37 +1,43 @@
 <template>
-  <v-tooltip class="remove-layer-tooltip" bottom>
-    <template v-slot:activator="{ on, attrs }">
+  <v-tooltip class="remove-layer-tooltip" location="bottom">
+    <template v-slot:activator="{ props }">
       <v-btn
-        x-large
+        class="icon-size"
+        variant="text"
         :color="color"
-        icon
-        v-bind="attrs"
-        v-on="on"
+        icon="mdi-close"
+        v-bind="props"
         @click="removeLayerHandler(item)"
         :disabled="isAnimating"
       >
-        <v-icon> mdi-close </v-icon>
       </v-btn>
     </template>
-    <span>{{ $t("LayerBarRemoveTooltip") }}</span>
+    <span>{{ $t('LayerBarRemoveTooltip') }}</span>
   </v-tooltip>
 </template>
 
 <script>
-import { mapState } from "vuex";
-
-import datetimeManipulations from "../../mixins/datetimeManipulations";
+import datetimeManipulations from '../../mixins/datetimeManipulations'
 
 export default {
+  inject: ['store'],
   mixins: [datetimeManipulations],
-  props: ["item", "color"],
+  props: ['item', 'color'],
   methods: {
     removeLayerHandler(removedLayer) {
-      this.$root.$emit("removeLayer", removedLayer);
+      this.emitter.emit('removeLayer', removedLayer)
     },
   },
   computed: {
-    ...mapState("Layers", ["isAnimating"]),
+    isAnimating() {
+      return this.store.getIsAnimating
+    },
   },
-};
+}
 </script>
+
+<style scoped>
+.icon-size {
+  font-size: 22px;
+}
+</style>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta property="dcterms:modified" title="W3CDTF" id="dcterms-modified" />
+    <meta
+      name="description"
+      content="MSC AniMet is a simple tool enabling users to interact with MSC Open Data weather data and create custom weather animations for any area in the world. The resulting animations can be downloaded and shared with a permalink."
+    />
+    <link rel="icon" href="/favicon.ico" />
+    <title>MSC AniMet</title>
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but this app doesn't work properly without JavaScript
+        enabled. Please enable it to continue.</strong
+      >
+    </noscript>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      document
+        .getElementById('dcterms-modified')
+        .setAttribute('content', new Date().toISOString())
+      var userLang = navigator.language || navigator.userLanguage
+      if (userLang.startsWith('fr')) {
+        document
+          .querySelector('meta[name="description"]')
+          .setAttribute(
+            'content',
+            "AniMet du SMC est un outil simple permettant aux utilisateurs d'interagir avec les données météorologiques ouvertes du SMC et de créer des animations météorologiques personnalisées pour n'importe quelle région du monde. Les animations résultantes peuvent être téléchargées et partagées avec un permalien.",
+          )
+      }
+    </script>
+  </body>
+</html>

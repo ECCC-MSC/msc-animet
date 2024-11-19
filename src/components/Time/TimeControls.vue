@@ -2,117 +2,117 @@
   <v-card
     id="time-controls"
     :class="{
-      'time-controls-collapsed': getCollapsedControls,
-      'time-controls': !getCollapsedControls || screenWidth < 565,
+      'time-controls-collapsed': collapsedControls,
+      'time-controls': !collapsedControls || screenWidth < 565,
     }"
   >
-    <div class="controller-padding" v-if="getMapTimeSettings.Step !== null">
-      <div v-if="screenWidth >= 565">
-        <v-row
-          class="mr-1 ml-1 pt-2 pb-1 px-0"
-          :class="getCollapsedControls ? 'hide-controls' : ''"
-        >
-          <time-slider :hide="getCollapsedControls" class="enable-events" />
-          <interval-locale-selector class="enable-events" />
-        </v-row>
-        <div>
-          <play-pause-controls
-            v-if="getCollapsedControls"
-            :hide="getCollapsedControls"
-            class="collapsed-play-pause"
-          ></play-pause-controls>
-          <v-btn
-            id="collapse-button"
-            class="enable-events"
-            :class="getCollapsedControls ? 'collapsed' : 'extended'"
-            small
-            @click="
-              $store.commit(
-                'Layers/setCollapsedControls',
-                !getCollapsedControls
-              )
-            "
+    <div
+      :class="
+        collapsedControls
+          ? 'controller-padding-collapsed'
+          : 'controller-padding'
+      "
+      v-show="mapTimeSettings.Step !== null"
+    >
+      <div v-if="mapTimeSettings.Step !== null">
+        <div v-if="screenWidth >= 565">
+          <v-row
+            class="mr-1 ml-1 pt-2 pb-1 px-0"
+            :class="collapsedControls ? 'hide-controls' : ''"
           >
-            <v-icon v-if="!getCollapsedControls" large>
-              mdi-chevron-down
-            </v-icon>
-            <div
-              v-else-if="
-                getMapTimeSettings.Step === 'P1M' ||
-                getMapTimeSettings.Step === 'P1Y'
-              "
+            <time-slider :hide="collapsedControls" class="enable-events" />
+            <interval-locale-selector class="enable-events" />
+          </v-row>
+          <div>
+            <play-pause-controls
+              v-if="collapsedControls"
+              :hide="collapsedControls"
+              class="collapsed-play-pause"
+            ></play-pause-controls>
+            <v-btn
+              id="collapse-button"
+              class="enable-events pa-0"
+              :class="collapsedControls ? 'collapsed' : 'extended'"
+              @click="store.setCollapsedControls(!collapsedControls)"
             >
-              <span class="collapsed-date-M-Y">{{
-                this.localeDateFormat(
-                  getMapTimeSettings.Extent[getMapTimeSettings.DateIndex],
-                  getMapTimeSettings.Step
-                )
-              }}</span>
-            </div>
-            <div v-else>
-              <span class="collapsed-date">{{
-                getCollapsedDateFormat()[0]
-              }}</span>
-              <span class="collapsed-time">{{
-                getCollapsedDateFormat()[1]
-              }}</span>
-            </div>
-          </v-btn>
+              <v-icon v-if="!collapsedControls" class="icon-nudge" size="36">
+                mdi-chevron-down
+              </v-icon>
+              <div
+                v-else-if="
+                  mapTimeSettings.Step === 'P1M' ||
+                  mapTimeSettings.Step === 'P1Y'
+                "
+              >
+                <span class="collapsed-date-M-Y">{{
+                  this.localeDateFormat(
+                    mapTimeSettings.Extent[mapTimeSettings.DateIndex],
+                    mapTimeSettings.Step,
+                  )
+                }}</span>
+              </div>
+              <div v-else>
+                <span class="collapsed-date">{{
+                  getCollapsedDateFormat()[0]
+                }}</span>
+                <span class="collapsed-time">{{
+                  getCollapsedDateFormat()[1]
+                }}</span>
+              </div>
+            </v-btn>
+          </div>
         </div>
-      </div>
-      <div v-else>
-        <play-pause-controls
-          v-if="getCollapsedControls"
-          :hide="getCollapsedControls"
-          class="collapsed-play-pause-small"
-        ></play-pause-controls>
-        <v-col class="mr-1 pt-2 pb-2 px-0">
-          <time-slider
-            class="enable-events slider"
-            :class="getCollapsedControls ? 'hide-controls' : ''"
-            :hide="getCollapsedControls"
-          />
-          <interval-locale-selector
-            class="enable-events"
-            :class="getCollapsedControls ? 'hide-controls' : ''"
-          />
-          <v-btn
-            class="enable-events"
-            :class="getCollapsedControls ? 'collapsed' : 'extended'"
-            small
-            @click="
-              $store.commit(
-                'Layers/setCollapsedControls',
-                !getCollapsedControls
-              )
-            "
+        <div v-else>
+          <play-pause-controls
+            v-if="collapsedControls"
+            :hide="collapsedControls"
+            class="collapsed-play-pause-small"
+          ></play-pause-controls>
+          <v-col
+            class="mr-1 pb-1 pt-2 pa-0"
+            :class="{ 'column-padding': collapsedControls }"
           >
-            <v-icon v-if="!getCollapsedControls" large>
-              mdi-chevron-down
-            </v-icon>
-            <div
-              v-else-if="
-                getMapTimeSettings.Step === 'P1M' ||
-                getMapTimeSettings.Step === 'P1Y'
-              "
+            <time-slider
+              class="enable-events slider"
+              :class="collapsedControls ? 'hide-controls' : ''"
+              :hide="collapsedControls"
+            />
+            <interval-locale-selector
+              class="enable-events"
+              :class="collapsedControls ? 'hide-controls' : ''"
+            />
+            <v-btn
+              class="enable-events pa-0"
+              :class="collapsedControls ? 'collapsed' : 'extended'"
+              @click="store.setCollapsedControls(!collapsedControls)"
             >
-              <span class="collapsed-date-M-Y">{{
-                this.localeDateFormat(
-                  getMapTimeSettings.Extent[getMapTimeSettings.DateIndex],
-                  getMapTimeSettings.Step
-                )
-              }}</span>
-            </div>
-            <div v-else>
-              <span class="collapsed-date">{{
-                getCollapsedDateFormat()[0]
-              }}</span>
-              <span class="collapsed-time">{{
-                getCollapsedDateFormat()[1]
-              }}</span>
-            </div>
-          </v-btn>
-        </v-col>
+              <v-icon v-if="!collapsedControls" size="36">
+                mdi-chevron-down
+              </v-icon>
+              <div
+                v-else-if="
+                  mapTimeSettings.Step === 'P1M' ||
+                  mapTimeSettings.Step === 'P1Y'
+                "
+              >
+                <span class="collapsed-date-M-Y">{{
+                  this.localeDateFormat(
+                    mapTimeSettings.Extent[mapTimeSettings.DateIndex],
+                    mapTimeSettings.Step,
+                  )
+                }}</span>
+              </div>
+              <div v-else>
+                <span class="collapsed-date">{{
+                  getCollapsedDateFormat()[0]
+                }}</span>
+                <span class="collapsed-time">{{
+                  getCollapsedDateFormat()[1]
+                }}</span>
+              </div>
+            </v-btn>
+          </v-col>
+        </div>
       </div>
     </div>
     <error-manager />
@@ -120,61 +120,50 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
-
-import datetimeManipulations from "../../mixins/datetimeManipulations";
-
-import ErrorManager from "./ErrorManager.vue";
-import IntervalLocaleSelector from "./IntervalLocaleSelector.vue";
-import PlayPauseControls from "./AnimationControls/PlayPauseControls.vue";
-import TimeSlider from "./TimeSlider.vue";
+import datetimeManipulations from '../../mixins/datetimeManipulations'
 
 export default {
-  components: {
-    ErrorManager,
-    IntervalLocaleSelector,
-    PlayPauseControls,
-    TimeSlider,
-  },
+  inject: ['store'],
   mixins: [datetimeManipulations],
   data() {
     return {
       screenWidth: window.innerWidth,
-    };
+    }
   },
   mounted() {
-    this.$root.$on("addTemporalLayer", this.layerTimeManager);
-    this.$root.$on("fixLayerTimes", this.mapControls);
-    this.$root.$on("timeLayerRemoved", this.removedTimeLayerManager);
-    window.addEventListener("resize", this.updateScreenSize);
+    this.emitter.on('addTemporalLayer', this.layerTimeManager)
+    this.emitter.on('fixLayerTimes', this.mapControls)
+    this.emitter.on('timeLayerRemoved', this.removedTimeLayerManager)
+    window.addEventListener('resize', this.updateScreenSize)
   },
-  beforeDestroy() {
-    this.$root.$off("addTemporalLayer", this.layerTimeManager);
-    this.$root.$off("fixLayerTimes", this.mapControls);
-    this.$root.$off("timeLayerRemoved", this.removedTimeLayerManager);
-    window.removeEventListener("resize", this.updateScreenSize);
+  beforeUnmount() {
+    this.emitter.off('addTemporalLayer', this.layerTimeManager)
+    this.emitter.off('fixLayerTimes', this.mapControls)
+    this.emitter.off('timeLayerRemoved', this.removedTimeLayerManager)
+    window.removeEventListener('resize', this.updateScreenSize)
   },
   methods: {
     delay(time) {
-      return new Promise((resolve) => setTimeout(resolve, time));
+      return new Promise((resolve) => setTimeout(resolve, time))
     },
     getCollapsedDateFormat() {
       return this.localeDateFormatAnimation(
-        this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex]
-      );
+        this.mapTimeSettings.Extent[this.mapTimeSettings.DateIndex],
+      )
     },
-    layerTimeManager(imageLayer, layerData) {
+    layerTimeManager(eventData) {
+      const { imageLayer, layerData } = eventData
       const referenceTime =
-        layerData.Dimension.Dimension_ref_time === ""
+        layerData.Dimension.Dimension_ref_time === ''
           ? null
-          : this.findFormat(layerData.Dimension.Dimension_ref_time)[0][0];
+          : this.findFormat(layerData.Dimension.Dimension_ref_time)[0][0]
       const configs = this.createTimeLayerConfigs(
-        layerData.Dimension.Dimension_time
-      );
+        layerData.Dimension.Dimension_time,
+      )
       if (configs === null) {
-        this.$root.$emit("notifyWrongFormat");
-        this.$root.$emit("removeLayer", imageLayer);
-        return;
+        this.emitter.emit('notifyWrongFormat')
+        this.emitter.emit('removeLayer', imageLayer)
+        return
       }
       imageLayer.setProperties({
         layerActiveConfig: 0,
@@ -195,294 +184,311 @@ export default {
         layerEndTime: new Date(configs[0].layerEndTime),
         layerTimeStep: configs[0].layerTimeStep,
         layerTrueTimeStep: configs[0].layerTrueTimeStep,
-      });
-      this.$store.dispatch(
-        "Layers/addTimestep",
-        imageLayer.get("layerTimeStep")
-      );
+      })
+      this.store.addTimestep(imageLayer.get('layerTimeStep'))
       if (layerData.isSnapped) {
-        this.changeMapTime(imageLayer.get("layerTimeStep"), imageLayer);
-      } else if (this.getMapTimeSettings.Step === null) {
-        this.changeMapTime(imageLayer.get("layerTimeStep"));
-        this.$store.commit("Layers/setDatetimeRangeSlider", [
+        this.changeMapTime(imageLayer.get('layerTimeStep'), imageLayer)
+      } else if (this.mapTimeSettings.Step === null) {
+        this.changeMapTime(imageLayer.get('layerTimeStep'))
+        this.store.setDatetimeRangeSlider([
           0,
-          this.getMapTimeSettings.Extent.length - 1,
-        ]);
+          this.mapTimeSettings.Extent.length - 1,
+        ])
       } else {
         const layerDateIndex = this.findLayerIndex(
-          this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex],
-          imageLayer.get("layerDateArray"),
-          imageLayer.get("layerTimeStep")
-        );
+          this.mapTimeSettings.Extent[this.mapTimeSettings.DateIndex],
+          imageLayer.get('layerDateArray'),
+          imageLayer.get('layerTimeStep'),
+        )
         imageLayer.setProperties({
           layerDateIndex: layerDateIndex,
-        });
-        if (this.getMapTimeSettings.Step === imageLayer.get("layerTimeStep")) {
-          this.changeMapTime(imageLayer.get("layerTimeStep"));
+        })
+        if (this.mapTimeSettings.Step === imageLayer.get('layerTimeStep')) {
+          this.changeMapTime(imageLayer.get('layerTimeStep'))
         } else if (layerDateIndex < 0) {
-          imageLayer.setVisible(false);
+          imageLayer.setVisible(false)
         }
       }
       this.setDateTime(
         imageLayer,
-        this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex]
-      );
-      this.$root.$emit("timeLayerAdded", imageLayer.get("layerName"));
-      this.$mapCanvas.mapObj.addLayer(imageLayer);
+        this.mapTimeSettings.Extent[this.mapTimeSettings.DateIndex],
+      )
+      this.emitter.emit('timeLayerAdded', imageLayer.get('layerName'))
+      this.$mapCanvas.mapObj.addLayer(imageLayer)
     },
     async mapControls() {
       // Prevents a bug that triggers play twice
-      const playStateBuffer = this.playState;
+      const playStateBuffer = this.playState
 
       const mapTime =
-        this.getMapTimeSettings.Extent[this.getMapTimeSettings.DateIndex];
+        this.mapTimeSettings.Extent[this.mapTimeSettings.DateIndex]
 
-      const numLayers = this.$mapLayers.arr.length;
-      let noChange = true;
+      const numLayers = this.$mapLayers.arr.length
+      let noChange = true
       for (let i = 0; i < numLayers; i++) {
         if (
-          this.$mapLayers.arr[i].get("layerVisibilityOn") &&
-          this.$mapLayers.arr[i].get("layerIsTemporal")
+          this.$mapLayers.arr[i].get('layerVisibilityOn') &&
+          this.$mapLayers.arr[i].get('layerIsTemporal')
         ) {
-          const dateArray = this.$mapLayers.arr[i].get("layerDateArray");
+          const dateArray = this.$mapLayers.arr[i].get('layerDateArray')
           const layerDateIndex = this.findLayerIndex(
             mapTime,
             dateArray,
-            this.$mapLayers.arr[i].get("layerTimeStep")
-          );
+            this.$mapLayers.arr[i].get('layerTimeStep'),
+          )
           this.$mapLayers.arr[i].setProperties({
             layerDateIndex: layerDateIndex,
-          });
+          })
           if (layerDateIndex >= 0) {
-            this.setDateTime(this.$mapLayers.arr[i], dateArray[layerDateIndex]);
-            noChange = false;
-            if (!this.$mapLayers.arr[i].get("visible")) {
-              this.$mapLayers.arr[i].setVisible(true);
+            this.setDateTime(this.$mapLayers.arr[i], dateArray[layerDateIndex])
+            noChange = false
+            if (!this.$mapLayers.arr[i].get('visible')) {
+              this.$mapLayers.arr[i].setVisible(true)
             }
           } else {
-            this.$mapLayers.arr[i].setVisible(false);
+            this.$mapLayers.arr[i].setVisible(false)
           }
         }
       }
       if (noChange) {
-        await this.delay(100);
-        this.$mapCanvas.mapObj.updateSize();
-        if (this.isAnimating && playStateBuffer !== "play") {
+        await this.delay(100)
+        this.$mapCanvas.mapObj.updateSize()
+        if (this.isAnimating && playStateBuffer !== 'play') {
           // Trigger manually because animation creation waits for
           // render events, but noChange means no layers are shown
           // so nothing ever changes or renders.
-          this.$root.$emit("noChange");
+          this.emitter.emit('noChange')
         }
-        return;
+        return
       }
     },
-    onExtentChanged(newExtent, newStep, oldExtent, oldStep) {
-      if (
-        this.getMapTimeSettings.SnappedLayer !== null &&
-        newStep !== oldStep
-      ) {
-        return;
+    onExtentChanged(newExtent, newStep, oldExtent, oldStep, layerDiff = 0) {
+      if (this.mapTimeSettings.SnappedLayer !== null && newStep !== oldStep) {
+        return
       } else if (newStep !== oldStep) {
-        this.$store.commit("Layers/setDatetimeRangeSlider", [
-          0,
-          newExtent.length - 1,
-        ]);
+        this.store.setDatetimeRangeSlider([0, newExtent.length - 1])
       } else {
-        if (this.getMapTimeSettings.SnappedLayer === null) {
-          let first;
-          let last;
-          if (this.getDatetimeRangeSlider[0] === 0) {
-            first = 0;
+        if (this.mapTimeSettings.SnappedLayer === null) {
+          let first
+          let last
+          if (this.datetimeRangeSlider[0] === 0) {
+            first = 0
           }
-          if (this.getDatetimeRangeSlider[1] === oldExtent.length - 1) {
-            last = newExtent.length - 1;
+          if (this.datetimeRangeSlider[1] === oldExtent.length - 1) {
+            last = newExtent.length - 1
           }
           if (first === undefined && last === undefined) {
-            const firstDate = oldExtent[this.getDatetimeRangeSlider[0]];
-            first = this.findLayerIndex(firstDate, newExtent, newStep);
-            first = first >= 0 ? first : 0;
+            const firstDate = oldExtent[this.datetimeRangeSlider[0]]
+            first = this.findLayerIndex(firstDate, newExtent, newStep)
+            first = first >= 0 ? first : 0
 
-            const lastDate = oldExtent[this.getDatetimeRangeSlider[1]];
-            last = this.findLayerIndex(lastDate, newExtent, newStep);
-            last = last >= 0 ? last : newExtent.length - 1;
+            const lastDate = oldExtent[this.datetimeRangeSlider[1]]
+            last = this.findLayerIndex(lastDate, newExtent, newStep)
+            last = last >= 0 ? last : newExtent.length - 1
           } else if (first === undefined) {
-            first =
-              last -
-              (this.getDatetimeRangeSlider[1] - this.getDatetimeRangeSlider[0]);
-            if (first < 0 || first > newExtent.length - 1 || first > last) {
-              first = 0;
+            if (layerDiff !== 0) {
+              first = this.findLayerIndex(
+                oldExtent[this.datetimeRangeSlider[0]],
+                newExtent,
+                newStep,
+              )
+            } else {
+              first =
+                last -
+                (this.datetimeRangeSlider[1] - this.datetimeRangeSlider[0])
             }
-            const currentDate = this.findLayerIndex(
-              oldExtent[this.getMapTimeSettings.DateIndex],
-              newExtent,
-              newStep
-            );
-            if (currentDate < first) {
-              this.$store.dispatch("Layers/setMapTimeIndex", first);
+            if (first < 0 || first > newExtent.length - 1 || first > last) {
+              first = 0
             }
           } else if (last === undefined) {
-            last =
-              this.getDatetimeRangeSlider[1] -
-              this.getDatetimeRangeSlider[0] +
-              first;
+            if (layerDiff !== 0) {
+              last = this.findLayerIndex(
+                oldExtent[this.datetimeRangeSlider[1]],
+                newExtent,
+                newStep,
+              )
+            } else {
+              last =
+                this.datetimeRangeSlider[1] -
+                this.datetimeRangeSlider[0] +
+                first
+            }
             if (last < 0 || last > newExtent.length - 1 || first > last) {
-              last = newExtent.length - 1;
+              last = newExtent.length - 1
             }
           }
-          this.$store.commit("Layers/setDatetimeRangeSlider", [first, last]);
+          if (this.mapTimeSettings.DateIndex < first) {
+            this.store.setMapTimeIndex(first)
+          } else if (this.mapTimeSettings.DateIndex > last) {
+            this.store.setMapTimeIndex(last)
+          }
+          this.store.setDatetimeRangeSlider([first, last])
         } else {
-          this.onSnappedLayerChanged(this.getMapTimeSettings.SnappedLayer);
+          this.onSnappedLayerChanged(this.mapTimeSettings.SnappedLayer)
         }
-        this.$root.$emit("updatePermalink");
+        this.emitter.emit('updatePermalink')
       }
     },
     onSnappedLayerChanged(newSnappedLayerName) {
       const newSnappedLayer = this.$mapLayers.arr.find(
-        (l) => l.get("layerName") === newSnappedLayerName
-      );
+        (l) => l.get('layerName') === newSnappedLayerName,
+      )
       const first = this.findLayerIndex(
-        newSnappedLayer.get("layerStartTime"),
-        this.getMapTimeSettings.Extent,
-        newSnappedLayer.get("layerTimeStep")
-      );
+        newSnappedLayer.get('layerStartTime'),
+        this.mapTimeSettings.Extent,
+        newSnappedLayer.get('layerTimeStep'),
+      )
       const last = this.findLayerIndex(
-        newSnappedLayer.get("layerEndTime"),
-        this.getMapTimeSettings.Extent,
-        newSnappedLayer.get("layerTimeStep")
-      );
-      if (
-        this.getMapTimeSettings.DateIndex < first ||
-        this.getMapTimeSettings.DateIndex > last
-      ) {
-        let newCurrent = this.findLayerIndex(
-          newSnappedLayer.get("layerDefaultTime"),
-          this.getMapTimeSettings.Extent,
-          newSnappedLayer.get("layerTimeStep")
-        );
-        if (newCurrent < 0) {
-          newCurrent = this.findLayerIndex(
-            newSnappedLayer.get("layerStartTime"),
-            this.getMapTimeSettings.Extent,
-            newSnappedLayer.get("layerTimeStep")
-          );
-        }
-        this.$store.dispatch("Layers/setMapTimeIndex", newCurrent);
+        newSnappedLayer.get('layerEndTime'),
+        this.mapTimeSettings.Extent,
+        newSnappedLayer.get('layerTimeStep'),
+      )
+      if (this.mapTimeSettings.DateIndex < first) {
+        this.store.setMapTimeIndex(first)
+      } else if (this.mapTimeSettings.DateIndex > last) {
+        this.store.setMapTimeIndex(last)
       }
-      this.$store.commit("Layers/setDatetimeRangeSlider", [first, last]);
+      this.store.setDatetimeRangeSlider([first, last])
     },
     removedTimeLayerManager(imageLayer) {
-      const timestep = imageLayer.get("layerTimeStep");
-      this.$store.dispatch("Layers/removeTimestep", timestep);
-      if (this.getMapTimeSettings.Step === timestep) {
+      const timestep = imageLayer.get('layerTimeStep')
+      this.store.removeTimestep(timestep)
+      if (this.mapTimeSettings.Step === timestep) {
         if (
           this.$mapLayers.arr.filter(
-            (layerObject) => layerObject.get("layerTimeStep") === timestep
+            (layerObject) => layerObject.get('layerTimeStep') === timestep,
           ).length !== 0
         ) {
-          this.changeMapTime(timestep);
+          this.changeMapTime(timestep)
         } else {
           const firstTimeLayerFound = this.$mapLayers.arr.find((otherLayer) =>
-            otherLayer.get("layerIsTemporal")
-          );
+            otherLayer.get('layerIsTemporal'),
+          )
           if (firstTimeLayerFound === undefined) {
             const mapTimeSettings = {
               SnappedLayer: null,
               Step: null,
               DateIndex: null,
               Extent: null,
-            };
-            this.$store.dispatch("Layers/setMapTimeSettings", mapTimeSettings);
+            }
+            this.store.setMapTimeSettings(mapTimeSettings)
           } else {
-            this.changeMapTime(firstTimeLayerFound.get("layerTimeStep"));
+            this.changeMapTime(firstTimeLayerFound.get('layerTimeStep'))
           }
         }
       }
     },
     async setDateTime(layer, date) {
       layer.getSource().updateParams({
-        TIME: this.getProperDateString(date, layer.get("layerDateFormat")),
-      });
+        TIME: this.getProperDateString(date, layer.get('layerDateFormat')),
+      })
     },
     updateScreenSize() {
-      this.screenWidth = window.innerWidth;
+      this.screenWidth = window.innerWidth
     },
   },
   watch: {
     dateIndex: {
       deep: true,
-      handler(newIndex) {
+      handler([newIndex, _]) {
         if (newIndex !== null) {
-          this.mapControls();
+          this.mapControls()
         }
       },
     },
     extent: {
       deep: true,
-      handler([newExtent, newStep], [oldExtent, oldStep]) {
+      handler(
+        [newExtent, newStep, newNumLayers],
+        [oldExtent, oldStep, oldNumLayers],
+      ) {
         if (oldExtent !== null && newExtent !== null) {
           if (
             newExtent[0].getTime() !== oldExtent[0].getTime() ||
             newExtent[newExtent.length - 1].getTime() !==
               oldExtent[oldExtent.length - 1].getTime()
           ) {
-            this.onExtentChanged(newExtent, newStep, oldExtent, oldStep);
-          } else if (this.getMapTimeSettings.SnappedLayer !== null) {
-            this.onSnappedLayerChanged(this.getMapTimeSettings.SnappedLayer);
+            this.onExtentChanged(
+              newExtent,
+              newStep,
+              oldExtent,
+              oldStep,
+              newNumLayers - oldNumLayers,
+            )
+          } else if (this.mapTimeSettings.SnappedLayer !== null) {
+            this.onSnappedLayerChanged(this.mapTimeSettings.SnappedLayer)
           } else if (newExtent.length !== oldExtent.length) {
             let first = this.findLayerIndex(
-              oldExtent[this.getDatetimeRangeSlider[0]],
+              oldExtent[this.datetimeRangeSlider[0]],
               newExtent,
-              newStep
-            );
+              newStep,
+            )
             let last = this.findLayerIndex(
-              oldExtent[this.getDatetimeRangeSlider[1]],
+              oldExtent[this.datetimeRangeSlider[1]],
               newExtent,
-              newStep
-            );
+              newStep,
+            )
             if (first < 0 || first === newExtent.length - 1) {
-              first = 0;
+              first = 0
             }
             if (last <= 0) {
-              last = newExtent.length - 1;
+              last = newExtent.length - 1
             }
-            this.$store.commit("Layers/setDatetimeRangeSlider", [first, last]);
+            this.store.setDatetimeRangeSlider([first, last])
           }
         }
       },
     },
     layerList(newLength, oldLength) {
       if (newLength !== oldLength && newLength === 0) {
-        this.$store.commit("Layers/setDatetimeRangeSlider", [null, null]);
+        this.store.setDatetimeRangeSlider([null, null])
       }
-      this.$root.$emit("updatePermalink");
+      this.emitter.emit('updatePermalink')
     },
     snappedLayer(newSnap, oldSnap) {
       if (newSnap !== null && newSnap !== oldSnap) {
-        this.onSnappedLayerChanged(newSnap);
+        this.onSnappedLayerChanged(newSnap)
       }
     },
   },
   computed: {
-    ...mapGetters("Layers", [
-      "getCollapsedControls",
-      "getDatetimeRangeSlider",
-      "getMapTimeSettings",
-    ]),
-    ...mapState("Layers", ["isAnimating", "isLooping", "playState"]),
+    collapsedControls() {
+      return this.store.getCollapsedControls
+    },
+    datetimeRangeSlider() {
+      return this.store.getDatetimeRangeSlider
+    },
+    isAnimating() {
+      return this.store.getIsAnimating
+    },
+    isLooping() {
+      return this.store.getIsLooping
+    },
+    mapTimeSettings() {
+      return this.store.getMapTimeSettings
+    },
+    playState() {
+      return this.store.getPlayState
+    },
+
     dateIndex() {
-      return this.getMapTimeSettings.DateIndex;
+      return [this.mapTimeSettings.DateIndex, this.mapTimeSettings.Extent]
     },
     extent() {
-      return [this.getMapTimeSettings.Extent, this.getMapTimeSettings.Step];
+      return [
+        this.mapTimeSettings.Extent,
+        this.mapTimeSettings.Step,
+        this.$mapLayers.arr.length,
+      ]
     },
     layerList() {
-      return this.$mapLayers.arr.length;
+      return this.$mapLayers.arr.length
     },
     snappedLayer() {
-      return this.getMapTimeSettings.SnappedLayer;
+      return this.mapTimeSettings.SnappedLayer
     },
   },
-};
+}
 </script>
 
 <style scoped>
@@ -493,7 +499,7 @@ export default {
   margin-top: 6px;
   min-width: 285px !important;
   pointer-events: auto;
-  transform: translateY(10px);
+  transform: translateY(2px);
   width: 30%;
 }
 .collapsed::before {
@@ -507,7 +513,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
   z-index: 2;
-  transform: translate(5px, 59px);
+  transform: translate(5px, 51px);
 }
 .collapsed-play-pause-small {
   bottom: 4px;
@@ -532,8 +538,14 @@ export default {
   text-transform: none !important;
   white-space: nowrap !important;
 }
+.column-padding {
+  padding-top: 0 !important;
+}
 .controller-padding {
   margin-bottom: -16px;
+  pointer-events: none;
+}
+.controller-padding-collapsed {
   pointer-events: none;
 }
 .enable-events {
@@ -541,22 +553,25 @@ export default {
 }
 .extended {
   background-color: transparent !important;
-  border-radius: 0;
+  border-radius: 0 0 20px 20px;
   box-shadow: none;
   height: 26px !important;
   margin-top: 6px;
-  transform: translateY(-13px);
+  transform: translateY(-10px);
   width: 100%;
 }
 .hide-controls {
   display: none;
 }
+.icon-nudge {
+  transform: translateY(-8px);
+}
 .slider {
   padding-bottom: 0;
   padding-top: 2px;
 }
-#collapse-button::v-deep .v-btn__content {
-  height: 20px;
+#collapse-button {
+  font-size: 0.75rem;
 }
 #time-controls {
   border-radius: 20px;
@@ -566,6 +581,7 @@ export default {
   position: absolute;
   text-align: center;
   transform: translateX(-50%);
+  transition: none;
   width: 75%;
   z-index: 2;
 }
@@ -585,6 +601,7 @@ export default {
     box-shadow: none !important;
     padding-top: 0;
     pointer-events: none !important;
+    bottom: 0 !important;
   }
 }
 @media (max-width: 565px) {
@@ -592,14 +609,12 @@ export default {
     border-radius: 0;
     margin-left: 0;
     margin-top: -8px;
-    transform: translateY(-4px);
+    padding-top: 0 !important;
+    transform: translateY(8px);
     width: 100%;
   }
   .controller-padding {
     pointer-events: auto;
-  }
-  .extended {
-    transform: translateY(-4px);
   }
   #time-controls {
     padding-top: 0;

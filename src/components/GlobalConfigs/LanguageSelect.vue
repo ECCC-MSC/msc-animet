@@ -1,10 +1,8 @@
 <template>
   <div id="lang-sel">
     <v-btn
-      min-width="34px"
-      width="34px"
-      height="34px"
-      class="rounded-circle font-weight-bold"
+      size="34"
+      class="rounded-circle font-weight-bold lang-size"
       @click="changeLang"
       :disabled="isAnimating && playState !== 'play'"
     >
@@ -14,37 +12,42 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 export default {
+  inject: ['store'],
   methods: {
     changeLang() {
-      if (this.$i18n.locale === "en") {
-        this.$store.dispatch("Layers/setLang", "fr");
-        this.$i18n.locale = "fr";
-        this.$vuetify.current = "fr";
+      if (this.$i18n.locale === 'en') {
+        this.store.setLang('fr')
+        this.$i18n.locale = 'fr'
       } else {
-        this.$store.dispatch("Layers/setLang", "en");
-        this.$i18n.locale = "en";
-        this.$vuetify.current = "en";
+        this.store.setLang('en')
+        this.$i18n.locale = 'en'
       }
-      localStorage.setItem("user-lang", this.$i18n.locale);
-      this.$root.$emit("localeChange");
+      localStorage.setItem('user-lang', this.$i18n.locale)
+      this.emitter.emit('localeChange')
     },
   },
   computed: {
-    ...mapState("Layers", ["isAnimating", "playState"]),
+    isAnimating() {
+      return this.store.getIsAnimating
+    },
+    playState() {
+      return this.store.getPlayState
+    },
     getFlagLang() {
-      if (this.$i18n.locale === "fr") {
-        return "EN";
+      if (this.$i18n.locale === 'fr') {
+        return 'EN'
       } else {
-        return "FR";
+        return 'FR'
       }
     },
   },
-};
+}
 </script>
 <style scoped>
+.lang-size {
+  font-size: 16px;
+}
 #lang-sel {
   pointer-events: auto;
   z-index: 4;
