@@ -1,11 +1,12 @@
 {
-  "name": "vue3-animet",
-  "version": "0.0.0",
+  "name": "msc-animet",
+  "version": "2.3.0-dev",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --fix --ignore-path .gitignore"
+    "lint": "eslint . --fix --ignore-path .gitignore",
+    "deploy": "./deploy/gh-pages/deploy.sh"
   },
   "dependencies": {
     "@mdi/font": "7.4.47",
@@ -17,10 +18,8 @@
     "h264-mp4-encoder": "^1.0.12",
     "luxon": "^3.4.4",
     "mitt": "^3.0.1",
-    "node-polyfill-webpack-plugin": "^4.0.0",
     "ol": "^9.2.4",
     "proj4": "^2.11.0",
-    "roboto-fontface": "*",
     "vite-plugin-node-polyfills": "^0.22.0",
     "vue": "^3.4.31",
     "vue-i18n": "^9.13.1",
