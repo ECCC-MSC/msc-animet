@@ -10,49 +10,34 @@
         md="4"
         class="d-flex pa-0 pt-2 justify-center align-center"
       >
-        <v-spacer v-if="$vuetify.breakpoint.mdAndUp"></v-spacer>
-        <map-customization class="mr-3" />
+        <v-spacer v-if="mdAndUp"></v-spacer>
+        <customization-menu class="mr-3" />
         <page-theme class="mr-3" />
         <language-select class="mr-3" />
         <perma-link class="mr-3" />
-        <v-tooltip bottom>
-          <template v-slot:activator="{ on, attrs }">
+        <v-tooltip location="bottom">
+          <template v-slot:activator="{ props }">
             <v-btn
-              min-width="34px"
-              width="34px"
-              height="34px"
+              size="34"
               class="rounded-circle info-btn"
-              v-bind="attrs"
-              v-on="on"
+              v-bind="props"
               :href="$t('DocumentationURL')"
               target="_blank"
             >
-              <v-icon> mdi-information-outline </v-icon>
+              <v-icon size="24">mdi-information-outline</v-icon>
             </v-btn>
           </template>
-          <span>{{ $t("UserDoc") }}</span>
+          <span>{{ $t('UserDoc') }}</span>
         </v-tooltip>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
-<script>
-import AnimetLogo from "../GlobalConfigs/AnimetLogo.vue";
-import LanguageSelect from "../GlobalConfigs/LanguageSelect.vue";
-import MapCustomization from "../GlobalConfigs/MapCustomization.vue";
-import PageTheme from "../GlobalConfigs/PageTheme.vue";
-import PermaLink from "../GlobalConfigs/Share/PermaLink.vue";
+<script setup>
+import { useDisplay } from 'vuetify'
 
-export default {
-  components: {
-    AnimetLogo,
-    LanguageSelect,
-    MapCustomization,
-    PageTheme,
-    PermaLink,
-  },
-};
+const { mdAndUp } = useDisplay()
 </script>
 
 <style scoped>

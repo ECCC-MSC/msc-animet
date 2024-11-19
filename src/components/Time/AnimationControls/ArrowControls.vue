@@ -2,29 +2,29 @@
   <div>
     <v-btn
       @click="changeDateIndex(getAction().name)"
-      icon
       medium
       color="primary"
+      size="36"
+      variant="text"
       :disabled="
-        getMapTimeSettings.DateIndex ===
+        mapTimeSettings.DateIndex ===
           datetimeRangeSlider[getAction().prevent] || isAnimating
       "
+      :icon="getAction().icon"
     >
-      <v-icon>{{ getAction().icon }}</v-icon>
     </v-btn>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
-
 export default {
+  inject: ['store'],
   props: {
     action: {
       type: String,
       required: true,
       validator: function (value) {
-        return ["first", "previous", "next", "last"].includes(value);
+        return ['first', 'previous', 'next', 'last'].includes(value)
       },
     },
   },
@@ -32,73 +32,68 @@ export default {
     return {
       items: [
         {
-          name: "first",
-          icon: "mdi-skip-backward",
+          name: 'first',
+          icon: 'mdi-skip-backward',
           prevent: 0,
         },
         {
-          name: "previous",
-          icon: "mdi-skip-previous",
+          name: 'previous',
+          icon: 'mdi-skip-previous',
           prevent: 0,
         },
         {
-          name: "next",
-          icon: "mdi-skip-next",
+          name: 'next',
+          icon: 'mdi-skip-next',
           prevent: 1,
         },
         {
-          name: "last",
-          icon: "mdi-skip-forward",
+          name: 'last',
+          icon: 'mdi-skip-forward',
           prevent: 1,
         },
       ],
-    };
+    }
   },
   computed: {
-    ...mapGetters("Layers", ["getMapTimeSettings"]),
-    ...mapState("Layers", ["datetimeRangeSlider", "isAnimating"]),
+    datetimeRangeSlider() {
+      return this.store.getDatetimeRangeSlider
+    },
+    isAnimating() {
+      return this.store.getIsAnimating
+    },
+    mapTimeSettings() {
+      return this.store.getMapTimeSettings
+    },
   },
   methods: {
     changeDateIndex(actionName) {
-      this.$root.$emit("changeTab");
+      this.emitter.emit('changeTab')
       switch (actionName) {
-        case "first":
-          if (this.getMapTimeSettings.DateIndex > this.datetimeRangeSlider[0]) {
-            this.$store.dispatch(
-              "Layers/setMapTimeIndex",
-              this.datetimeRangeSlider[0]
-            );
+        case 'first':
+          if (this.mapTimeSettings.DateIndex > this.datetimeRangeSlider[0]) {
+            this.store.setMapTimeIndex(this.datetimeRangeSlider[0])
           }
-          break;
-        case "previous":
-          if (this.getMapTimeSettings.DateIndex > this.datetimeRangeSlider[0]) {
-            this.$store.dispatch(
-              "Layers/setMapTimeIndex",
-              this.getMapTimeSettings.DateIndex - 1
-            );
+          break
+        case 'previous':
+          if (this.mapTimeSettings.DateIndex > this.datetimeRangeSlider[0]) {
+            this.store.setMapTimeIndex(this.mapTimeSettings.DateIndex - 1)
           }
-          break;
-        case "next":
-          if (this.getMapTimeSettings.DateIndex < this.datetimeRangeSlider[1]) {
-            this.$store.dispatch(
-              "Layers/setMapTimeIndex",
-              this.getMapTimeSettings.DateIndex + 1
-            );
+          break
+        case 'next':
+          if (this.mapTimeSettings.DateIndex < this.datetimeRangeSlider[1]) {
+            this.store.setMapTimeIndex(this.mapTimeSettings.DateIndex + 1)
           }
-          break;
-        case "last":
-          if (this.getMapTimeSettings.DateIndex < this.datetimeRangeSlider[1]) {
-            this.$store.dispatch(
-              "Layers/setMapTimeIndex",
-              this.datetimeRangeSlider[1]
-            );
+          break
+        case 'last':
+          if (this.mapTimeSettings.DateIndex < this.datetimeRangeSlider[1]) {
+            this.store.setMapTimeIndex(this.datetimeRangeSlider[1])
           }
-          break;
+          break
       }
     },
     getAction() {
-      return this.items.filter((action) => action.name === this.action)[0];
+      return this.items.filter((action) => action.name === this.action)[0]
     },
   },
-};
+}
 </script>

@@ -6,15 +6,17 @@
         :label="$t('TimestepsDropdown')"
         v-model="selection"
         hide-details
-        :items="getUniqueTimestepsList"
-        :disabled="getUniqueTimestepsList.length === 0 || isAnimating"
-        @input="changeMapStep(selection)"
+        variant="underlined"
+        :items="uniqueTimestepsList"
+        :disabled="uniqueTimestepsList.length === 0 || isAnimating"
+        @update:modelValue="changeMapStep(selection)"
       >
-        <template v-slot:item="{ item }">
-          {{ formatDuration(item) }}
+        <template v-slot:item="{ props, item }">
+          <v-list-item v-bind="props" :title="formatDuration(item.raw)">
+          </v-list-item>
         </template>
         <template v-slot:selection="{ item }">
-          {{ formatDuration(item) }}
+          {{ formatDuration(item.raw) }}
         </template>
       </v-select>
       <locale-selector />
@@ -25,15 +27,17 @@
         :label="$t('TimestepsDropdown')"
         v-model="selection"
         hide-details
-        :items="getUniqueTimestepsList"
-        :disabled="getUniqueTimestepsList.length === 0 || isAnimating"
-        @input="changeMapStep(selection)"
+        variant="underlined"
+        :items="uniqueTimestepsList"
+        :disabled="uniqueTimestepsList.length === 0 || isAnimating"
+        @update:modelValue="changeMapStep(selection)"
       >
-        <template v-slot:item="{ item }">
-          {{ formatDuration(item) }}
+        <template v-slot:item="{ props, item }">
+          <v-list-item v-bind="props" :title="formatDuration(item.raw)">
+          </v-list-item>
         </template>
         <template v-slot:selection="{ item }">
-          {{ formatDuration(item) }}
+          {{ formatDuration(item.raw) }}
         </template>
       </v-select>
       <v-col cols="5">
@@ -44,43 +48,38 @@
 </template>
 
 <script>
-import { Duration } from "luxon";
-import { mapGetters, mapState } from "vuex";
+import { Duration } from 'luxon'
 
-import LocaleSelector from "./LocaleSelector.vue";
-
-import datetimeManipulations from "../../mixins/datetimeManipulations";
+import datetimeManipulations from '../../mixins/datetimeManipulations'
 
 export default {
-  components: {
-    LocaleSelector,
-  },
+  inject: ['store'],
   mixins: [datetimeManipulations],
   data() {
     return {
       screenWidth: window.innerWidth,
       selection: null,
-    };
+    }
   },
   mounted() {
-    window.addEventListener("resize", this.updateScreenSize);
+    window.addEventListener('resize', this.updateScreenSize)
   },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.updateScreenSize);
+  beforeUnmount() {
+    window.removeEventListener('resize', this.updateScreenSize)
   },
   methods: {
     changeMapStep(selection) {
-      this.$root.$emit("changeTab");
-      this.changeMapTime(selection);
+      this.emitter.emit('changeTab')
+      this.changeMapTime(selection)
     },
     formatDuration(timestep) {
-      let l = Duration.fromISO(timestep);
-      l.loc.locale = this.$i18n.locale;
-      l.loc.intl = this.$i18n.locale;
-      return l.toHuman();
+      let l = Duration.fromISO(timestep)
+      l.loc.locale = this.$i18n.locale
+      l.loc.intl = this.$i18n.locale
+      return l.toHuman()
     },
     updateScreenSize() {
-      this.screenWidth = window.innerWidth;
+      this.screenWidth = window.innerWidth
     },
   },
   watch: {
@@ -88,20 +87,27 @@ export default {
       immediate: true,
       handler(newInterval) {
         if (newInterval !== null) {
-          this.selection = newInterval;
-          this.$root.$emit("calcFooterPreview");
+          this.selection = newInterval
+          this.emitter.emit('calcFooterPreview')
         }
       },
     },
   },
   computed: {
-    ...mapGetters("Layers", ["getMapTimeSettings", "getUniqueTimestepsList"]),
-    ...mapState("Layers", ["isAnimating"]),
+    isAnimating() {
+      return this.store.getIsAnimating
+    },
+    mapTimeSettings() {
+      return this.store.getMapTimeSettings
+    },
+    uniqueTimestepsList() {
+      return this.store.getUniqueTimestepsList
+    },
     mapInterval() {
-      return this.getMapTimeSettings.Step;
+      return this.mapTimeSettings.Step
     },
   },
-};
+}
 </script>
 
 <style scoped>

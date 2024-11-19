@@ -1,7 +1,6 @@
 .DS_Store
 node_modules
 /dist
-/generate-tree-venv
 
 # local env files
 .env.local

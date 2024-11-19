@@ -2,82 +2,86 @@
   <div>
     <v-btn
       id="zoomPlus"
-      class="zoom-plus"
+      class="zoom-plus rounded-circle"
       :class="
-        getMapTimeSettings.Step !== null
-          ? getCollapsedControls
+        mapTimeSettings.Step !== null
+          ? collapsedControls
             ? 'zoom-plus-collapsed'
             : 'zoom-plus-open'
           : ''
       "
       elevation="4"
-      fab
-      x-small
+      size="28"
       absolute
       @click="zoomIn"
       :disabled="isAnimating && playState !== 'play'"
     >
-      <v-icon>mdi-plus</v-icon>
+      <v-icon size="18">mdi-plus</v-icon>
     </v-btn>
 
     <v-btn
       id="zoomMinus"
-      class="zoom-minus"
+      class="zoom-minus rounded-circle"
       :class="
-        getMapTimeSettings.Step !== null
-          ? getCollapsedControls
+        mapTimeSettings.Step !== null
+          ? collapsedControls
             ? 'zoom-minus-collapsed'
             : 'zoom-minus-open'
           : ''
       "
       elevation="4"
-      fab
-      x-small
+      icon="mdi-minus"
+      size="28"
       absolute
       @click="zoomOut"
       :disabled="isAnimating && playState !== 'play'"
     >
-      <v-icon>mdi-minus</v-icon>
+      <v-icon size="18">mdi-minus</v-icon>
     </v-btn>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
-
 export default {
+  inject: ['store'],
   methods: {
     zoomIn() {
-      let currentZoom = this.$mapCanvas.mapObj.getView().getZoom();
+      let currentZoom = this.$mapCanvas.mapObj.getView().getZoom()
       if (currentZoom < 20) {
-        this.$mapCanvas.mapObj.getView().setZoom(currentZoom + 0.1);
+        this.$mapCanvas.mapObj.getView().setZoom(currentZoom + 0.1)
       }
     },
     zoomOut() {
-      let currentZoom = this.$mapCanvas.mapObj.getView().getZoom();
+      let currentZoom = this.$mapCanvas.mapObj.getView().getZoom()
       if (currentZoom > 1) {
-        this.$mapCanvas.mapObj.getView().setZoom(currentZoom - 0.1);
+        this.$mapCanvas.mapObj.getView().setZoom(currentZoom - 0.1)
       }
     },
   },
   computed: {
-    ...mapGetters("Layers", ["getCollapsedControls", "getMapTimeSettings"]),
-    ...mapState("Layers", ["isAnimating", "playState"]),
+    collapsedControls() {
+      return this.store.getCollapsedControls
+    },
+    isAnimating() {
+      return this.store.getIsAnimating
+    },
+    mapTimeSettings() {
+      return this.store.getMapTimeSettings
+    },
+    playState() {
+      return this.store.getPlayState
+    },
   },
-};
+}
 </script>
 
 <style scoped>
 .zoom-plus {
-  width: 28px;
-  height: 28px;
   position: absolute;
   bottom: 56px;
   right: 8px;
 }
 .zoom-minus {
-  width: 28px;
-  height: 28px;
   position: absolute;
   bottom: 24px;
   right: 8px;

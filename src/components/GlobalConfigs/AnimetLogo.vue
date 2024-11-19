@@ -1,7 +1,7 @@
 <template>
   <div id="animet_logo" :class="getLangCSS">
     <span class="animet">{{ $t("MSCAnimet") }}</span>
-    <transition-group name="fade" class="img-transition">
+    <transition-group tag="span" name="fade" class="img-transition">
       <img
         v-if="$i18n.locale === 'fr'"
         key="fr"
@@ -24,9 +24,10 @@
 export default {
   computed: {
     img() {
-      return require(`../../assets/eccc_c_${this.$i18n.locale}.${
-        window.navigator.userAgent.indexOf("Firefox") != -1 ? "png" : "svg"
-      }`);
+      const locale = this.$i18n.locale;
+      const isFirefox = window.navigator.userAgent.indexOf("Firefox") !== -1;
+      const extension = isFirefox ? "png" : "svg";
+      return new URL(`../../assets/eccc_c_${locale}.${extension}`, import.meta.url).href;
     },
     getLangCSS() {
       return {

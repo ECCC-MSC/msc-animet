@@ -1,29 +1,22 @@
-// For 'en' translations
-const importEnLocaleFiles = require.context(
-  ".",
-  true,
-  /^\.\/en\/layers_.+\.json$/
-);
+// src/locales/importLocale.js
+const importEnLocaleFiles = import.meta.glob('./en/layers_*.json', {eager: true});
+const importFrLocaleFiles = import.meta.glob('./fr/layers_*.json', {eager: true});
+
 let enLocaleData = {};
-
-importEnLocaleFiles.keys().forEach((fileName) => {
-  const sourceName = fileName.match(/layers_(.+)\.json$/)[1];
-  enLocaleData[sourceName] = importEnLocaleFiles(fileName);
-});
-
-// For 'fr' translations
-const importFrLocaleFiles = require.context(
-  ".",
-  true,
-  /^\.\/fr\/layers_.+\.json$/
-);
 let frLocaleData = {};
 
-importFrLocaleFiles.keys().forEach((fileName) => {
-  const sourceName = fileName.match(/layers_(.+)\.json$/)[1];
-  frLocaleData[sourceName] = importFrLocaleFiles(fileName);
-});
+// Process English locales
+for (const path in importEnLocaleFiles) {
+  const sourceName = path.match(/layers_(.+)\.json$/)[1];
+  enLocaleData[sourceName] = importEnLocaleFiles[path].default;
+}
 
-let localeData = { enLocaleData, frLocaleData };
+// Process French locales
+for (const path in importFrLocaleFiles) {
+  const sourceName = path.match(/layers_(.+)\.json$/)[1];
+  frLocaleData[sourceName] = importFrLocaleFiles[path].default;
+}
+
+const localeData = { enLocaleData, frLocaleData };
 
 export default localeData;
