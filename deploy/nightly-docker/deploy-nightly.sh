@@ -94,7 +94,7 @@ NWS_NOAA_LAYERS='  "NASA": {
     "version": "1.3.0"
   },
   "Gebco": {
-    "url": "https://www.gebco.net/data_and_products/gebco_web_services/web_map_service/mapserv",
+    "url": "https://wms.gebco.net/mapserv?",
     "version": "1.3.0"
   },
   "NOAA-Nowcoast": {

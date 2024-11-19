@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import layerTrees from '../assets/trees'
-import wmsSources from '../../scripts/wms_sources_configs.json'
+import wmsSources from '../assets/wms_sources_configs.json'
 import IntegerAssigner from '../utils/IntegerAssigner.js'
 
 export const useStore = defineStore('store', {

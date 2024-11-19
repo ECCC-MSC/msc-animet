@@ -3,7 +3,6 @@ FROM node:18-slim as develop-stage
 RUN apt-get update || : && apt-get install python3-all python3-pip python3-owslib -y
 WORKDIR /app
 COPY package*.json ./
-RUN npm install -g @vue/cli
 COPY . .
 
 # build stage
