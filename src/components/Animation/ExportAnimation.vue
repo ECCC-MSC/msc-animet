@@ -1,35 +1,41 @@
 <template>
-  <v-card flat v-if="getMapTimeSettings.Step !== null">
-    <v-card-title class="text-subtitle-2">
-      {{ $t("MP4ExportTitle") }}
+  <v-card flat v-if="mapTimeSettings.Step !== null">
+    <v-card-title class="text-subtitle-2 pb-0">
+      {{ $t('MP4ExportTitle') }}
     </v-card-title>
-    <v-card-subtitle>
-      {{ getMP4URL ? $t("MP4ExportSubtitle") : $t("JPEGExportSubtitle") }}
+    <v-card-subtitle class="export-subtitle">
+      {{ mp4URL ? $t('MP4ExportSubtitle') : $t('JPEGExportSubtitle') }}
     </v-card-subtitle>
-
-    <v-row class="mx-4 mb-2" justify="center">
-      <video
-        v-if="getMP4URL"
-        :src="getMP4URL"
-        class="output-preview"
-        controls
-        autoplay
-        loop
-      ></video>
-      <img
-        v-if="getImgURL && !isFullSize"
-        :src="getImgURL"
-        @click="toggleFullSize"
-        class="output-preview pointer"
-      />
-    </v-row>
-
-    <v-card-actions class="mt-4">
-      <v-btn block color="primary" @click="downloadOutput()" class="text-none">
-        {{ getMP4URL ? $t("MP4ExportDownload") : $t("JPEGExportDownload") }} [{{
-          this.formatBytes(this.getOutputSize, 0)
+    <v-card-text class="py-1">
+      <v-row class="ma-0" justify="center">
+        <video
+          v-if="mp4URL"
+          :src="mp4URL"
+          class="output-preview"
+          controls
+          autoplay
+          loop
+        ></video>
+        <img
+          v-if="imgURL && !isFullSize"
+          :src="imgURL"
+          @click="toggleFullSize"
+          class="output-preview pointer"
+        />
+      </v-row>
+    </v-card-text>
+    <v-card-actions>
+      <v-btn
+        block
+        variant="elevated"
+        color="primary"
+        @click="downloadOutput()"
+        class="text-none"
+      >
+        {{ mp4URL ? $t('MP4ExportDownload') : $t('JPEGExportDownload') }} [{{
+          this.formatBytes(this.outputSize, 0)
         }}]
-        <v-icon dark class="ml-4"> mdi-download </v-icon>
+        <v-icon class="ml-4"> mdi-download </v-icon>
       </v-btn>
     </v-card-actions>
     <a id="output-download" :download="exportName"></a>
@@ -37,63 +43,75 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
-
 export default {
+  inject: ['store'],
   computed: {
-    ...mapGetters("Layers", [
-      "getAnimationTitle",
-      "getImgURL",
-      "getMapTimeSettings",
-      "getMP4URL",
-      "getOutputDate",
-      "getOutputSize",
-    ]),
-    ...mapState("Layers", ["isFullSize"]),
+    animationTitle() {
+      return this.store.getAnimationTitle
+    },
+    imgURL() {
+      return this.store.getImgURL
+    },
+    isFullSize() {
+      return this.store.getIsFullSize
+    },
+    mapTimeSettings() {
+      return this.store.getMapTimeSettings
+    },
+    mp4URL() {
+      return this.store.getMP4URL
+    },
+    outputDate() {
+      return this.store.getOutputDate
+    },
+    outputSize() {
+      return this.store.getOutputSize
+    },
     exportName() {
-      let animationTitle = this.getAnimationTitle;
-      if (animationTitle !== "") {
-        animationTitle = animationTitle.replaceAll("^", "");
-        animationTitle = animationTitle.replaceAll(",", ".");
-        animationTitle = animationTitle
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "");
-        animationTitle = animationTitle.replace(/[^a-zA-Z0-9.-]/g, " ");
-        animationTitle = animationTitle.replace(/\s+/g, "_");
-        animationTitle = animationTitle.replace(/[^a-zA-Z0-9]$/, "");
-        animationTitle = "_" + animationTitle;
+      let title = this.animationTitle
+      if (title !== '') {
+        title = title.replaceAll('^', '')
+        title = title.replaceAll(',', '.')
+        title = title.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        title = title.replace(/[^a-zA-Z0-9.-]/g, ' ')
+        title = title.replace(/\s+/g, '_')
+        title = title.replace(/[^a-zA-Z0-9]$/, '')
+        title = '_' + title
       }
-      const outputFormat = this.getMP4URL ? ".mp4" : ".jpeg";
-      return `MSC-AniMet_${this.getOutputDate}${animationTitle}${outputFormat}`;
+      const outputFormat = this.mp4URL ? '.mp4' : '.jpeg'
+      return `MSC-AniMet_${this.outputDate}${title}${outputFormat}`
     },
   },
   methods: {
     downloadOutput: function () {
-      let outputLink = document.getElementById("output-download");
-      outputLink.href = this.getMP4URL ? this.getMP4URL : this.getImgURL;
-      outputLink.click();
+      let outputLink = document.getElementById('output-download')
+      outputLink.href = this.mp4URL ? this.mp4URL : this.imgURL
+      outputLink.click()
     },
     formatBytes(bytes, decimals = 2) {
-      if (bytes === 0) return "0 Bytes";
+      if (bytes === 0) return '0 Bytes'
 
-      const k = 1024;
-      let dm = decimals < 0 ? 0 : decimals;
-      const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+      const k = 1024
+      let dm = decimals < 0 ? 0 : decimals
+      const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
 
-      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      const i = Math.floor(Math.log(bytes) / Math.log(k))
       if (i > 1) {
-        dm = 1;
+        dm = 1
       }
-      return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i]
     },
     toggleFullSize() {
-      this.$store.dispatch("Layers/setIsFullSize", true);
+      this.store.setIsFullSize(true)
     },
   },
-};
+}
 </script>
 
 <style scoped>
+.export-subtitle {
+  white-space: unset;
+}
 .output-preview {
   min-width: 300px;
   max-width: 480px;

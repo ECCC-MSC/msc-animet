@@ -1,5 +1,4 @@
 # for local development
-version: '1.2-nightly'
 services:
   msc-animet:
     image: eccc-msc/msc-animet:nightly

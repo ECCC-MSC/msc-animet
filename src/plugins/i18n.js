@@ -1,29 +1,29 @@
-import Vue from "vue";
-import VueI18n from "vue-i18n";
+import { createI18n } from 'vue-i18n';
+import localeData from '../locales/importLocaleFiles';
 
-import localeData from "../locales/importLocaleFiles";
+const enCommonPath = '../locales/en/common.json'
+let en = {...import.meta.glob('../locales/en/common.json', {eager: true})[enCommonPath]};
+for (const src in localeData['enLocaleData']) {
+  Object.assign(en, localeData['enLocaleData'][src]);
+}
 
-Vue.use(VueI18n);
-let en = { ...require("../locales/en/common.json") };
-for (const src in localeData["enLocaleData"]) {
-  Object.assign(en, localeData["enLocaleData"][src]);
+const frCommonPath = '../locales/fr/common.json'
+let fr = {...import.meta.glob('../locales/fr/common.json', {eager: true})[frCommonPath]};
+for (const src in localeData['frLocaleData']) {
+  Object.assign(fr, localeData['frLocaleData'][src]);
 }
-let fr = { ...require("../locales/fr/common.json") };
-for (const src in localeData["frLocaleData"]) {
-  Object.assign(fr, localeData["frLocaleData"][src]);
-}
-// Translated messages/strings
+
 const messages = {
   en: en,
   fr: fr,
 };
 
-// Default locale based on browser settings
-let locale = navigator.language.split("-")[0];
+let locale = navigator.language.split('-')[0];
 
-export default new VueI18n({
-  fallbackLocale: "en",
-  locale,
+export default createI18n({
+  legacy: false,
+  locale: locale,
+  fallbackLocale: 'en',
   messages,
   silentFallbackWarn: true,
 });

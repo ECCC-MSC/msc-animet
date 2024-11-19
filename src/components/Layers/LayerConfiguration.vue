@@ -1,26 +1,28 @@
 <template>
-  <v-card>
-    <v-list class="ml-4 pa-0 scroll">
+  <v-card class="radius">
+    <div class="ml-4 pa-0 scroll">
       <transition-group name="list" tag="div">
         <v-list-item
           v-for="(item, index) in layerListReversed"
           :key="item.get('layerName')"
           outlined
-          class="px-0"
+          class="pl-0"
           :class="{
             'item-padding':
               !isAnimating || configPanelHover || playState !== 'play',
+            'pr-3': numLayers === 1,
+            'pr-0': numLayers !== 0,
           }"
         >
-          <v-list-item-content
+          <template
             v-if="isAnimating && !configPanelHover && playState === 'play'"
             class="pa-0"
           >
             <v-list-item-title :title="$t(item.get('layerName'))">
-              {{ $t(item.get("layerName")) }}
+              {{ $t(item.get('layerName')) }}
             </v-list-item-title>
-            <v-list-item-subtitle>
-              {{ item.get("layerName") }}
+            <v-list-item-subtitle class="layer-subtitle">
+              {{ item.get('layerName') }}
             </v-list-item-subtitle>
             <div
               v-if="
@@ -32,17 +34,14 @@
               v-text="$t('ModelRun')"
             ></div>
             <model-run-handler class="mr-text" :item="item" />
-          </v-list-item-content>
-          <v-list-item-content
-            v-if="!isAnimating || configPanelHover || playState !== 'play'"
-            class="pa-0"
-          >
+          </template>
+          <template v-else class="pa-0">
             <v-col class="pa-0">
               <v-list-item-title :title="$t(item.get('layerName'))">
-                {{ $t(item.get("layerName")) }}
+                {{ $t(item.get('layerName')) }}
               </v-list-item-title>
-              <v-list-item-subtitle>
-                {{ item.get("layerName") }}
+              <v-list-item-subtitle class="layer-subtitle">
+                {{ item.get('layerName') }}
               </v-list-item-subtitle>
 
               <model-run-handler :item="item" />
@@ -71,118 +70,103 @@
                 />
               </v-row>
             </v-col>
-            <v-divider v-if="numLayers - 1 !== index"></v-divider>
-          </v-list-item-content>
-          <v-divider
-            v-if="!isAnimating || configPanelHover || playState !== 'play'"
-            vertical
-            class="ml-3 divider"
-          ></v-divider>
-          <v-list-item-action
-            v-if="!isAnimating || configPanelHover || playState !== 'play'"
-            class="mx-1 action"
-          >
-            <v-btn
-              v-if="index !== 0"
-              :disabled="index === 0 || (isAnimating && playState !== 'play')"
-              @click="changeLayerOrder(index - 1)"
-              icon
+          </template>
+          <template v-slot:append>
+            <v-list-item-action
+              v-if="!isAnimating || configPanelHover || playState !== 'play'"
+              class="arrow-position d-flex flex-column align-center"
             >
-              <v-icon> mdi-arrow-up </v-icon>
-            </v-btn>
-            <v-btn
-              v-if="index + 1 < numLayers"
-              :disabled="
-                index + 1 >= numLayers || (isAnimating && playState !== 'play')
-              "
-              @click="changeLayerOrder(index)"
-              icon
-            >
-              <v-icon> mdi-arrow-down </v-icon>
-            </v-btn>
-          </v-list-item-action>
+              <v-btn
+                v-if="index !== 0"
+                :disabled="isAnimating"
+                @click="changeLayerOrder(index - 1)"
+                icon="mdi-arrow-up"
+                variant="text"
+              >
+              </v-btn>
+              <v-btn
+                v-if="index + 1 < numLayers"
+                :disabled="isAnimating"
+                @click="changeLayerOrder(index)"
+                icon="mdi-arrow-down"
+                variant="text"
+              >
+              </v-btn>
+            </v-list-item-action>
+          </template>
         </v-list-item>
       </transition-group>
-    </v-list>
+    </div>
   </v-card>
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
-
-import datetimeManipulations from "../../mixins/datetimeManipulations";
-
-import ModelRunHandler from "./ModelRunHandler.vue";
-import OpacityHandler from "./OpacityHandler.vue";
-import RemoveLayerHandler from "./RemoveLayerHandler.vue";
-import SnappedLayerHandler from "./SnappedLayerHandler.vue";
-import StyleHandler from "./StyleHandler.vue";
-import VisibilityHandler from "./VisibilityHandler.vue";
+import datetimeManipulations from '../../mixins/datetimeManipulations'
 
 export default {
-  components: {
-    ModelRunHandler,
-    OpacityHandler,
-    RemoveLayerHandler,
-    SnappedLayerHandler,
-    StyleHandler,
-    VisibilityHandler,
-  },
+  inject: ['store'],
   mixins: [datetimeManipulations],
   methods: {
     changeLayerOrder(index) {
-      let reverseIndex = this.numLayers - index - 1;
-      this.$mapLayers.arr[reverseIndex].setZIndex(reverseIndex - 1);
-      this.$mapLayers.arr[reverseIndex - 1].setZIndex(reverseIndex);
+      let reverseIndex = this.numLayers - index - 1
+      this.$mapLayers.arr[reverseIndex].setZIndex(reverseIndex - 1)
+      this.$mapLayers.arr[reverseIndex - 1].setZIndex(reverseIndex)
       this.$mapLayers.arr[reverseIndex] = this.$mapLayers.arr.splice(
         reverseIndex - 1,
         1,
-        this.$mapLayers.arr[reverseIndex]
-      )[0];
-      this.$root.$emit("updatePermalink");
-      this.$root.$emit("calcFooterPreview");
+        this.$mapLayers.arr[reverseIndex],
+      )[0]
+      this.emitter.emit('updatePermalink')
+      this.emitter.emit('calcFooterPreview')
     },
     isSnapped(layerName) {
-      if (this.getMapTimeSettings.SnappedLayer !== null) {
-        return layerName === this.getMapTimeSettings.SnappedLayer
-          ? "primary"
-          : "";
+      if (this.mapTimeSettings.SnappedLayer !== null) {
+        return layerName === this.mapTimeSettings.SnappedLayer ? 'primary' : ''
       } else {
-        return "";
+        return ''
       }
     },
   },
   computed: {
-    ...mapGetters("Layers", ["getMapTimeSettings"]),
-    ...mapState("Layers", ["configPanelHover", "isAnimating", "playState"]),
+    configPanelHover() {
+      return this.store.getConfigPanelHover
+    },
+    isAnimating() {
+      return this.store.getIsAnimating
+    },
+    mapTimeSettings() {
+      return this.store.getMapTimeSettings
+    },
+    playState() {
+      return this.store.getPlayState
+    },
     layerListReversed() {
-      return this.$mapLayers.arr.slice().reverse();
+      return this.$mapLayers.arr.slice().reverse()
     },
     numLayers() {
-      return this.$mapLayers.arr.length;
+      return this.$mapLayers.arr.length
     },
   },
-};
+}
 </script>
 
 <style scoped>
-.action {
-  margin-bottom: 10px;
-  margin-top: -4px;
+.arrow-position {
+  margin-left: -16px;
 }
 .content {
   min-height: 96px;
   max-width: 100%;
 }
-.divider {
-  margin-bottom: -2px;
-  margin-top: -2px;
-}
 .item-padding {
   padding-bottom: 2px;
   padding-top: 2px;
 }
-.list-enter,
+.layer-subtitle {
+  margin-top: -4px;
+  margin-bottom: 4px;
+}
+.list-enter-from,
 .list-leave-to {
   opacity: 0;
 }
@@ -196,19 +180,24 @@ export default {
 .mr-subtitle {
   margin-bottom: -8px;
   margin-top: -4px;
+  color: #747474;
 }
-.mr-text::v-deep .v-label.v-label--active,
-.mr-text::v-deep .v-input__append-inner {
+.mr-text:deep(.v-field__append-inner),
+.mr-text:deep(.v-field__outline) {
   display: none;
+}
+.mr-text:deep(.v-field__input) {
+  padding: 0;
+  margin-top: -8px;
+  margin-bottom: -14px;
+}
+.radius {
+  border-radius: 0px;
 }
 .scroll {
   overflow-x: hidden;
   overflow-y: auto;
   max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px - 48px);
-}
-.v-input.model-run.mr-text.v-input--hide-details.v-input--is-label-active.v-input--is-dirty.v-input--is-disabled.v-text-field.v-text-field--is-booted {
-  margin: 0;
-  padding: 0;
 }
 @media (max-width: 1120px) {
   .scroll {

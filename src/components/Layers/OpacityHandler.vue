@@ -1,36 +1,37 @@
 <template>
-  <v-menu open-on-hover :close-delay="150" bottom offset-y>
-    <template v-slot:activator="{ on, attrs }">
+  <v-menu open-on-hover :close-delay="150" location="bottom" offset="8">
+    <template v-slot:activator="{ props }">
       <v-btn
-        x-large
+        class="icon-size"
+        icon="mdi-opacity"
+        variant="text"
+        v-bind="props"
         :color="color"
-        v-bind="attrs"
-        v-on="on"
-        icon
         :disabled="isAnimating"
       >
-        <v-icon> mdi-opacity </v-icon>
       </v-btn>
     </template>
 
     <v-card class="pl-4 pr-4 pt-4" min-width="300">
       <v-row class="d-flex justify-space-between">
         <v-card-title>
-          {{ $t("LayerBarOpacity") }}
+          {{ $t('LayerBarOpacity') }}
         </v-card-title>
         <v-card-title>
-          {{ Math.ceil(Math.round(item.get("opacity") * 100)) + "%" }}
+          {{ Math.ceil(Math.round(item.get('opacity') * 100)) + '%' }}
         </v-card-title>
       </v-row>
-      <v-card-text>
+      <v-card-text class="pb-0">
         <v-slider
-          :value="item.get('opacity')"
-          @change="$root.$emit('updatePermalink')"
-          @input="item.setOpacity($event)"
+          color="primary"
           min="0"
           max="1"
           step="0.05"
+          thumb-size="16"
+          track-size="2"
+          v-model="opacity"
           :disabled="isAnimating"
+          @change="emitter.emit('updatePermalink')"
         >
         </v-slider>
       </v-card-text>
@@ -39,12 +40,27 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 export default {
-  props: ["item", "color"],
+  inject: ['store'],
+  props: ['item', 'color'],
   computed: {
-    ...mapState("Layers", ["isAnimating"]),
+    isAnimating() {
+      return this.store.getIsAnimating
+    },
+    opacity: {
+      get() {
+        return this.item.get('opacity')
+      },
+      set(op) {
+        this.item.setOpacity(op)
+      },
+    },
   },
-};
+}
 </script>
+
+<style scoped>
+.icon-size {
+  font-size: 22px;
+}
+</style>

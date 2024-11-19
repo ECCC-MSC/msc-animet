@@ -1,13 +1,13 @@
 <template>
-  <v-menu top offset-y nudge-top="10">
-    <template v-slot:activator="{ on, attrs }">
+  <v-menu location="top" offset="10">
+    <template v-slot:activator="{ props }">
       <v-btn
         class="controller-options"
         :class="hide ? 'hide-controls' : ''"
         color="primary"
-        small
-        v-bind="attrs"
-        v-on="on"
+        size="28"
+        v-bind="props"
+        variant="text"
         icon
         :disabled="isAnimating"
       >
@@ -15,23 +15,25 @@
       </v-btn>
     </template>
 
-    <v-card @click.stop class="pb-1 options-card">
+    <v-card @click.stop class="options-card">
       <v-card-subtitle class="pa-2">
-        {{ $t("ControllerOptions") }}
+        {{ $t('ControllerOptions') }}
       </v-card-subtitle>
       <v-switch
         v-for="action in controllerOptions"
         :key="action"
         hide-details
-        class="px-3 pt-0 pb-2 mt-0"
-        :input-value="action === 'Loop' ? isLooping : false"
+        class="px-3 controller-options-switches"
+        color="primary"
+        density="compact"
+        :model-value="action === 'Loop' ? isLooping : false"
         @change="$emit('action-clicked', action)"
       >
         <template v-slot:label>
           <span
             :class="{
-              'white--text': $vuetify.theme.dark,
-              'black--text': !$vuetify.theme.dark,
+              'text-white': this.theme.global.current.value.dark,
+              'text-black': !this.theme.global.current.value.dark,
             }"
             >{{ $t(action) }}</span
           >
@@ -42,28 +44,38 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { useTheme } from 'vuetify'
 
 export default {
+  inject: ['store'],
+  setup() {
+    const theme = useTheme()
+    return { theme }
+  },
   props: {
     hide: Boolean,
   },
   mounted() {
     this.$nextTick(() => {
       if (this.isLooping) {
-        this.$emit("action-clicked", "Loop");
+        this.$emit('action-clicked', 'Loop')
       }
-    });
+    })
   },
   data() {
     return {
-      controllerOptions: ["Reverse", "Loop"],
-    };
+      controllerOptions: ['Reverse', 'Loop'],
+    }
   },
   computed: {
-    ...mapState("Layers", ["isAnimating", "isLooping"]),
+    isAnimating() {
+      return this.store.getIsAnimating
+    },
+    isLooping() {
+      return this.store.getIsLooping
+    },
   },
-};
+}
 </script>
 
 <style scoped>
@@ -73,6 +85,17 @@ export default {
 }
 .controller-options-icon {
   font-size: 20px !important;
+}
+.controller-options-switches {
+  margin-top: -8px;
+}
+
+.controller-options-switches:deep(.v-selection-control__input > .v-icon) {
+  opacity: 1;
+}
+.controller-options-switches:deep(.v-label) {
+  opacity: 1;
+  font-size: 1rem;
 }
 .hide-controls {
   display: none;

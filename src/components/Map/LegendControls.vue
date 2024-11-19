@@ -5,9 +5,9 @@
     ref="draggableContainer"
     @mousedown="dragMouseDown"
     @touchstart="dragMouseDown"
-    @dblclick="$root.$emit('openPanel')"
+    @dblclick="emitter.emit('openPanel')"
     @click="$emit('legend-click', name)"
-    v-if="getActiveLegends.length !== 0"
+    v-if="activeLegends.length !== 0"
   >
     <img
       class="white"
@@ -23,16 +23,15 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
-
 export default {
-  props: ["name"],
+  inject: ['store'],
+  props: ['name'],
   mounted() {
-    this.$root.$on("checkIntersect", this.checkIntersect);
+    this.emitter.on('checkIntersect', this.checkIntersect)
   },
-  beforeDestroy() {
-    this.$store.dispatch("Layers/removeIntersect", this.name);
-    this.$root.$off("checkIntersect", this.checkIntersect);
+  beforeUnmount() {
+    this.store.removeIntersect(this.name)
+    this.emitter.off('checkIntersect', this.checkIntersect)
   },
   data() {
     return {
@@ -42,174 +41,181 @@ export default {
         movementX: 0,
         movementY: 0,
       },
-    };
+    }
   },
   computed: {
-    ...mapGetters("Layers", [
-      "getActiveLegends",
-      "getColorBorder",
-      "getLegendIndex",
-    ]),
-    ...mapState("Layers", ["isAnimating", "playState"]),
+    activeLegends() {
+      return this.store.getActiveLegends
+    },
+    colorBorder() {
+      return this.store.getColorBorder
+    },
+    legendIndex() {
+      return this.store.getLegendIndex
+    },
+    isAnimating() {
+      return this.store.getIsAnimating
+    },
+    playState() {
+      return this.store.getPlayState
+    },
     getLegendHidden() {
       const getVisible = this.$mapLayers.arr
-        .find((l) => l.get("layerName") === this.name)
-        .get("layerVisibilityOn");
+        .find((l) => l.get('layerName') === this.name)
+        .get('layerVisibilityOn')
       return {
-        "legend-hidden": !getVisible,
-      };
+        'legend-hidden': !getVisible,
+      }
     },
     getMapLegendURL() {
       if (this.name === null) {
-        return null;
+        return null
       }
       let layer = this.$mapLayers.arr.find(
-        (l) => l.get("layerName") === this.name
-      );
-      if (layer.get("layerStyles").length === 0) {
-        return null;
+        (l) => l.get('layerName') === this.name,
+      )
+      if (layer.get('layerStyles').length === 0) {
+        return null
       }
 
       const legendUrl = layer
-        .get("layerStyles")
+        .get('layerStyles')
         .find(
-          (style) => style.Name === layer.get("layerCurrentStyle")
-        ).LegendURL;
-      if (legendUrl.includes("GetLegendGraphic"))
-        return `${legendUrl}&lang=${this.$i18n.locale}`;
-      return legendUrl;
+          (style) => style.Name === layer.get('layerCurrentStyle'),
+        ).LegendURL
+      if (legendUrl.includes('GetLegendGraphic'))
+        return `${legendUrl}&lang=${this.$i18n.locale}`
+      return legendUrl
     },
     getStyle() {
-      if (this.getColorBorder) {
-        return `2px solid ${this.getLegendStyle()}`;
+      if (this.colorBorder) {
+        return `2px solid ${this.getLegendStyle()}`
       }
-      return "none";
+      return 'none'
     },
   },
   methods: {
     getLegendStyle() {
       const legendRGB = this.$mapLayers.arr
-        .find((l) => l.get("layerName") === this.name)
-        .get("legendColor");
-      return `rgb(${legendRGB.r}, ${legendRGB.g}, ${legendRGB.b})`;
+        .find((l) => l.get('layerName') === this.name)
+        .get('legendColor')
+      return `rgb(${legendRGB.r}, ${legendRGB.g}, ${legendRGB.b})`
     },
     dragMouseDown: function (event) {
-      if (this.isAnimating && this.playState !== "play") {
-        event.preventDefault();
-        return;
+      if (this.isAnimating && this.playState !== 'play') {
+        event.preventDefault()
+        return
       }
 
-      if (event.target.classList.contains("resizable")) {
+      if (event.target.classList.contains('resizable')) {
         if (
-          document.getElementById("animation-rect").style.visibility ===
-          "visible"
+          document.getElementById('animation-rect').style.visibility ===
+          'visible'
         ) {
-          if (event.type === "touchstart") {
-            document.addEventListener("touchend", this.onResizeEnd);
+          if (event.type === 'touchstart') {
+            document.addEventListener('touchend', this.onResizeEnd)
           } else {
-            document.addEventListener("mouseup", this.onResizeEnd);
+            document.addEventListener('mouseup', this.onResizeEnd)
           }
         }
-        return;
+        return
       }
-      event.preventDefault();
+      event.preventDefault()
       // get the mouse cursor position at startup:
-      if (event.type === "touchstart") {
+      if (event.type === 'touchstart') {
         // Touch event
-        this.positions.clientX = event.touches[0].clientX;
-        this.positions.clientY = event.touches[0].clientY;
-        document.ontouchmove = this.elementDrag;
-        document.ontouchend = this.closeDragElement;
+        this.positions.clientX = event.touches[0].clientX
+        this.positions.clientY = event.touches[0].clientY
+        document.ontouchmove = this.elementDrag
+        document.ontouchend = this.closeDragElement
       } else {
         // Mouse event
-        this.positions.clientX = event.clientX;
-        this.positions.clientY = event.clientY;
-        document.onmousemove = this.elementDrag;
-        document.onmouseup = this.closeDragElement;
+        this.positions.clientX = event.clientX
+        this.positions.clientY = event.clientY
+        document.onmousemove = this.elementDrag
+        document.onmouseup = this.closeDragElement
       }
     },
     elementDrag: function (event) {
-      if (event.type === "touchmove") {
+      if (event.type === 'touchmove') {
         this.positions.movementX =
-          this.positions.clientX - event.touches[0].clientX;
+          this.positions.clientX - event.touches[0].clientX
         this.positions.movementY =
-          this.positions.clientY - event.touches[0].clientY;
-        this.positions.clientX = event.touches[0].clientX;
-        this.positions.clientY = event.touches[0].clientY;
+          this.positions.clientY - event.touches[0].clientY
+        this.positions.clientX = event.touches[0].clientX
+        this.positions.clientY = event.touches[0].clientY
       } else {
-        event.preventDefault();
-        this.positions.movementX = this.positions.clientX - event.clientX;
-        this.positions.movementY = this.positions.clientY - event.clientY;
-        this.positions.clientX = event.clientX;
-        this.positions.clientY = event.clientY;
+        event.preventDefault()
+        this.positions.movementX = this.positions.clientX - event.clientX
+        this.positions.movementY = this.positions.clientY - event.clientY
+        this.positions.clientX = event.clientX
+        this.positions.clientY = event.clientY
       }
       // set the element's new position:
       this.$refs.draggableContainer.style.top =
         this.$refs.draggableContainer.offsetTop -
         this.positions.movementY +
-        "px";
+        'px'
       this.$refs.draggableContainer.style.left =
         this.$refs.draggableContainer.offsetLeft -
         this.positions.movementX +
-        "px";
+        'px'
     },
     closeDragElement() {
-      document.onmouseup = null;
-      document.onmousemove = null;
-      document.ontouchmove = null;
-      document.ontouchend = null;
+      document.onmouseup = null
+      document.onmousemove = null
+      document.ontouchmove = null
+      document.ontouchend = null
       if (
-        document.getElementById("animation-rect").style.visibility === "visible"
+        document.getElementById('animation-rect').style.visibility === 'visible'
       ) {
-        this.checkIntersect();
+        this.checkIntersect()
       }
     },
     initialPosStyle() {
-      const initialX = 8;
-      let initialY;
+      const initialX = 8
+      let initialY
       if (window.innerWidth < 960) {
-        initialY = 100;
+        initialY = 100
       } else {
-        initialY = 50;
+        initialY = 50
       }
-      const offset = this.getLegendIndex.getItemInteger(this.name) * 10;
+      const offset = this.legendIndex.getItemInteger(this.name) * 10
       return {
         top: `${initialY + offset}px`,
         left: `${initialX + offset}px`,
-      };
+      }
     },
     onResizeEnd() {
-      document.removeEventListener("mouseup", this.onResizeEnd);
-      this.checkIntersect();
+      document.removeEventListener('mouseup', this.onResizeEnd)
+      this.checkIntersect()
     },
     checkIntersect() {
       let layer = this.$mapLayers.arr.find(
-        (l) => l.get("layerName") === this.name
-      );
-      if (!layer.get("layerVisibilityOn")) {
-        this.$store.dispatch("Layers/setIntersect", [this.name, false]);
-        return;
+        (l) => l.get('layerName') === this.name,
+      )
+      if (!layer.get('layerVisibilityOn')) {
+        this.store.setIntersect([this.name, false])
+        return
       }
 
       const previewDims = document
-        .getElementById("animation-rect")
-        .getBoundingClientRect();
-      const imgDims = document
-        .getElementById(this.name)
-        .getBoundingClientRect();
+        .getElementById('animation-rect')
+        .getBoundingClientRect()
+      const imgDims = document.getElementById(this.name).getBoundingClientRect()
       if (
         imgDims.top < previewDims.top ||
         imgDims.bottom > previewDims.bottom ||
         imgDims.left < previewDims.left ||
         imgDims.right > previewDims.right
       ) {
-        this.$store.dispatch("Layers/setIntersect", [this.name, true]);
+        this.store.setIntersect([this.name, true])
       } else {
-        this.$store.dispatch("Layers/setIntersect", [this.name, false]);
+        this.store.setIntersect([this.name, false])
       }
     },
   },
-};
+}
 </script>
 
 <style scoped>

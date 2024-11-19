@@ -1,57 +1,78 @@
-import Vue from "vue";
-import Router from "vue-router";
+import { createRouter, createWebHistory } from 'vue-router/auto'
 
-Vue.use(Router);
+import Home from '@/views/Home.vue'
+import MultiDisplay from '@/views/MultiDisplay.vue'
+import NotFound from '@/views/NotFound.vue'
 
-const router = new Router({
-  mode: "history",
-  base: process.env.BASE_URL,
-  routes: [
-    {
-      path: "/",
-      name: "home",
-      component: require("@/views/Home").default,
-      props: (route) => ({
-        layers: route.query.layers,
-        extent: route.query.extent,
-        color: route.query.color,
-        basemap: route.query.basemap,
-        proj: route.query.proj,
-        grat: route.query.grat,
-      }),
-    },
-    {
-      path: "/:number(1|2|3|4)-displays",
-      name: "MultiDisplay",
-      component: require("@/views/MultiDisplay").default,
-      props: (route) => ({
-        disp: route.query.disp,
-      }),
-    },
-    {
-      path: "*",
-      name: "NotFound",
-      component: require("@/views/NotFound").default,
-    },
-  ],
-});
+const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: Home,
+    props: (route) => ({
+      layers: route.query.layers,
+      extent: route.query.extent,
+      color: route.query.color,
+      basemap: route.query.basemap,
+      proj: route.query.proj,
+      grat: route.query.grat,
+    }),
+  },
+  {
+    path: '/:number(1|2|3|4)-displays',
+    name: 'MultiDisplay',
+    component: MultiDisplay,
+    props: (route) => ({
+      disp: route.query.disp,
+    }),
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFound,
+  },
+]
+
+const router = createRouter({
+  history: createWebHistory(import.meta.env.VITE_BASE_URL),
+  routes: routes,
+})
 
 router.beforeEach((to, from, next) => {
   // Normalize the path by removing multiple slashes
-  const cleanedPath = to.path.replace(/\/\/+/g, "/");
-  const cleanedFullPath = to.fullPath.replace(/\/\/+/g, "/");
-  let newPath;
-  if (cleanedPath === "/") {
-    newPath = cleanedFullPath;
+  const cleanedPath = to.path.replace(/\/\/+/g, '/')
+  const cleanedFullPath = to.fullPath.replace(/\/\/+/g, '/')
+  let newPath
+  if (cleanedPath === '/') {
+    newPath = cleanedFullPath
   } else {
-    newPath = cleanedFullPath.replace(cleanedPath, "");
+    newPath = cleanedFullPath.replace(cleanedPath, '')
   }
 
   if (cleanedPath !== to.path) {
-    next({ path: newPath, replace: true });
+    next({ path: newPath, replace: true })
   } else {
-    next();
+    next()
   }
-});
+})
 
-export default router;
+// Workaround for https://github.com/vitejs/vite/issues/11804
+router.onError((err, to) => {
+  if (err?.message?.includes?.('Failed to fetch dynamically imported module')) {
+    if (!localStorage.getItem('vuetify:dynamic-reload')) {
+      console.log('Reloading page to fix dynamic import error')
+      localStorage.setItem('vuetify:dynamic-reload', 'true')
+      location.assign(to.fullPath)
+    } else {
+      console.error('Dynamic import error, reloading page did not fix it', err)
+    }
+  } else {
+    console.error(err)
+  }
+})
+
+router.isReady().then(() => {
+  localStorage.removeItem('vuetify:dynamic-reload')
+})
+
+export default router
