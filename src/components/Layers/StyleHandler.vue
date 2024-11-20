@@ -78,10 +78,16 @@
 </template>
 
 <script>
+import { computed } from 'vue'
 import { useTheme } from 'vuetify'
 
 export default {
   inject: ['store'],
+  setup() {
+    const theme = useTheme()
+    const isDark = computed(() => theme.global.current.value.dark)
+    return { isDark }
+  },
   props: ['item', 'color'],
   data() {
     return {
@@ -130,8 +136,7 @@ export default {
       return this.store.getIsAnimating
     },
     getCurrentTheme() {
-      const theme = useTheme()
-      return theme.global.current.value.dark ? 'bg-grey-darken-4' : 'bg-white'
+      return this.isDark ? 'bg-grey-darken-4' : 'bg-white'
     },
     selectedStyle() {
       return this.item

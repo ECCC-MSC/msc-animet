@@ -32,11 +32,12 @@
         <template v-slot:label>
           <span
             :class="{
-              'text-white': this.theme.global.current.value.dark,
-              'text-black': !this.theme.global.current.value.dark,
+              'text-white': isDark,
+              'text-black': !isDark,
             }"
-            >{{ $t(action) }}</span
           >
+            {{ $t(action) }}
+          </span>
         </template>
       </v-switch>
     </v-card>
@@ -44,13 +45,15 @@
 </template>
 
 <script>
+import { computed } from 'vue'
 import { useTheme } from 'vuetify'
 
 export default {
   inject: ['store'],
   setup() {
     const theme = useTheme()
-    return { theme }
+    const isDark = computed(() => theme.global.current.value.dark)
+    return { isDark }
   },
   props: {
     hide: Boolean,
