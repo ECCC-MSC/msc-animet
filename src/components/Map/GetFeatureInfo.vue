@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useTheme } from 'vuetify'
 
@@ -42,7 +43,8 @@ export default {
   inject: ['store'],
   setup() {
     const theme = useTheme()
-    return { theme }
+    const isDark = computed(() => theme.global.current.value.dark)
+    return { isDark }
   },
   data() {
     return {
@@ -82,16 +84,14 @@ export default {
       return this.store.getMenusOpen
     },
     getCurrentTheme() {
-      return this.theme.global.current.value.dark ? 'custom-dark' : 'bg-white'
+      return this.isDark ? 'custom-dark' : 'bg-white'
     },
     maplayersLength() {
       return this.$mapLayers.arr.length
     },
     popupStyle() {
       return {
-        '--popup-gfi-arrow-color': this.theme.global.current.value.dark
-          ? '#212121'
-          : 'white',
+        '--popup-gfi-arrow-color': this.isDark ? '#212121' : 'white',
       }
     },
   },
@@ -104,7 +104,7 @@ export default {
       },
     },
     maplayersLength(newVal, oldVal) {
-      if (oldVal !== null && newVal === 0) {
+      if (oldVal !== null && newVal === 0 && this.overlay) {
         this.closePopup()
       }
     },
@@ -193,7 +193,7 @@ export default {
                       ),
                     })
                     index++
-                    
+
                     const item = {
                       id: index,
                       name: name,
@@ -212,14 +212,19 @@ export default {
           if (this.items.length !== 0) {
             for (const item of this.items) {
               if ('isOpen' in item) {
-                const indexGFI = itemsGFI.findIndex(obj => obj.name === item.name)
+                const indexGFI = itemsGFI.findIndex(
+                  (obj) => obj.name === item.name,
+                )
                 if (indexGFI !== -1) {
                   itemsGFI[indexGFI].isOpen = item.isOpen
                   for (const feature of item.children) {
                     if ('isOpen' in feature) {
-                      const indexFeat = itemsGFI[indexGFI].children.findIndex(feat => feat.name === feature.name)
+                      const indexFeat = itemsGFI[indexGFI].children.findIndex(
+                        (feat) => feat.name === feature.name,
+                      )
                       if (indexFeat !== -1) {
-                        itemsGFI[indexGFI].children[indexFeat].isOpen = feature.isOpen
+                        itemsGFI[indexGFI].children[indexFeat].isOpen =
+                          feature.isOpen
                       }
                     }
                   }

@@ -76,11 +76,17 @@
 </template>
 
 <script>
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useTheme } from 'vuetify'
 
 export default {
   inject: ['store'],
+  setup() {
+    const theme = useTheme()
+    const isDark = computed(() => theme.global.current.value.dark)
+    return { isDark }
+  },
   data() {
     return {
       activateNodeCheck: false,
@@ -235,8 +241,7 @@ export default {
   },
   computed: {
     getCurrentTheme() {
-      const theme = useTheme()
-      return theme.global.current.value.dark ? 'bg-grey-darken-4' : 'bg-white'
+      return this.isDark ? 'bg-grey-darken-4' : 'bg-white'
     },
     getLabel() {
       if (this.timeFormat) return this.t('LocalTime')

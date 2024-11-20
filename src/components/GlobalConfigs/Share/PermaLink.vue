@@ -53,11 +53,17 @@
 </template>
 
 <script>
+import { computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useTheme } from 'vuetify'
 
 export default {
   inject: ['store'],
+  setup() {
+    const theme = useTheme()
+    const isDark = computed(() => theme.global.current.value.dark)
+    return { isDark }
+  },
   data() {
     return {
       dialog: false,
@@ -82,10 +88,7 @@ export default {
       return this.store.getExtent
     },
     getCurrentTheme() {
-      const theme = useTheme()
-      return theme.global.current.value.dark
-        ? 'hsla(0, 0%, 100%, .08)'
-        : 'rgba(0, 0, 0, .06)'
+      return this.isDark ? 'hsla(0, 0%, 100%, .08)' : 'rgba(0, 0, 0, .06)'
     },
     mapTimeSettings() {
       return this.store.getMapTimeSettings

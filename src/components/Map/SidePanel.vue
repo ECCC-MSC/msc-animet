@@ -138,6 +138,7 @@ export default {
   },
   data() {
     return {
+      buttonAnimation: false,
       buttonShown: false,
       color: null,
       menuOpen: true,
@@ -164,12 +165,16 @@ export default {
       }
     },
     onMenuToggle() {
+      if (this.buttonAnimation) return
+      this.buttonAnimation = true
       this.buttonShown = !this.buttonShown
       if (this.menuOpen) {
         this.menuOpen = false
+        this.buttonAnimation = false
       } else {
         setTimeout(() => {
           this.menuOpen = true
+          this.buttonAnimation = false
         }, 250)
       }
     },
