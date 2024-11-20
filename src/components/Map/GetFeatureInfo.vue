@@ -9,6 +9,9 @@
   >
     <a href="#" id="popupGFI-closer" class="ol-popup-closer"></a>
     <v-card flat class="tree-container">
+      <span class="coordinates" @click="changeRepresentation">{{
+        coordinatesRepresentation
+      }}</span>
       <div id="treeviewGFI">
         <tree-node
           v-for="node in items"
@@ -39,6 +42,8 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useTheme } from 'vuetify'
 
+import { transform } from 'ol/proj.js'
+
 export default {
   inject: ['store'],
   setup() {
@@ -49,6 +54,40 @@ export default {
   data() {
     return {
       closer: null,
+      coordinateOptions: {
+        DD: {
+          name: 'Decimal degrees',
+          method: (lon, lat) => {
+            return `lat: ${lat.toFixed(2)}°, lon: ${lon.toFixed(2)}°`
+          },
+        },
+        DDM: {
+          name: 'Degrees and decimal minutes',
+          method: (lon, lat) => {
+            const formattedLon = this.decimalToDMS(lon, false)
+            const formattedLat = this.decimalToDMS(lat, true)
+            return `${formattedLat.degrees}°${formattedLat.minutes}'${formattedLat.direction}, ${formattedLon.degrees}°${formattedLon.minutes}'${formattedLon.direction}`
+          },
+        },
+        DMS: {
+          name: 'Degrees, Minutes, Seconds',
+          method: (lon, lat) => {
+            const formattedLon = this.decimalToDMS(lon, false)
+            const formattedLat = this.decimalToDMS(lat, true)
+            return `${formattedLat.degrees}°${formattedLat.minutes}'${formattedLat.seconds}"${formattedLat.direction}, ${formattedLon.degrees}°${formattedLon.minutes}'${formattedLon.seconds}"${formattedLon.direction}`
+          },
+        },
+        SD: {
+          name: 'Signed degrees',
+          method: (lon, lat) => {
+            const latDirection = lat >= 0 ? 'N' : 'S'
+            const lonDirection = lon >= 0 ? 'E' : 'W'
+            return `${Math.abs(lat.toFixed(2))}°${latDirection}, ${Math.abs(lon.toFixed(2))}°${lonDirection}`
+          },
+        },
+      },
+      coordinatesSelection: 'SD',
+      currentCoordinates: null,
       eventGFI: null,
       items: [],
       locked: false,
@@ -57,11 +96,15 @@ export default {
     }
   },
   mounted() {
+    const coordinatesPreference = this.getCoordinatesPreference()
+    if (coordinatesPreference !== null) {
+      this.coordinatesSelection = coordinatesPreference
+    }
     window.addEventListener('keydown', this.closeMenu)
     this.emitter.on('onMapClicked', this.onSingleClick)
     this.emitter.on('modelRunChanged', () => {
       if (this.overlay !== null && this.eventGFI !== null)
-        this.onSingleClick(this.eventGFI)
+        this.onSingleClick(this.eventGFI, false)
     })
 
     this.closer = document.getElementById('popupGFI-closer')
@@ -83,11 +126,30 @@ export default {
     menusOpen() {
       return this.store.getMenusOpen
     },
+    coordinatesRepresentation() {
+      let rep =
+        this.currentCoordinates !== null
+          ? this.coordinateOptions[this.coordinatesSelection].method(
+              this.currentCoordinates[0],
+              this.currentCoordinates[1],
+            )
+          : ''
+      if (this.$i18n.locale === 'fr') {
+        rep = rep.replace('W', 'O')
+      }
+      return rep
+    },
     getCurrentTheme() {
       return this.isDark ? 'custom-dark' : 'bg-white'
     },
     maplayersLength() {
       return this.$mapLayers.arr.length
+    },
+    mapLayersProperties() {
+      return this.$mapLayers.arr.map((layer) => {
+        const properties = layer.getProperties()
+        return { ...properties }
+      })
     },
     popupStyle() {
       return {
@@ -96,11 +158,15 @@ export default {
     },
   },
   watch: {
+    mapLayersProperties() {
+      if (this.overlay !== null && this.eventGFI !== null)
+        this.onSingleClick(this.eventGFI, false)
+    },
     mapTimeSettings: {
       deep: true,
       handler() {
         if (this.overlay !== null && this.eventGFI !== null)
-          this.onSingleClick(this.eventGFI)
+          this.onSingleClick(this.eventGFI, false)
       },
     },
     maplayersLength(newVal, oldVal) {
@@ -108,23 +174,14 @@ export default {
         this.closePopup()
       }
     },
-    '$mapLayers.arr': {
-      deep: true,
-      handler() {
-        if (this.overlay !== null && this.eventGFI !== null)
-          this.onSingleClick(this.eventGFI)
-      },
-    },
   },
   methods: {
-    closeMenu(event) {
-      if (
-        event.key === 'Escape' &&
-        this.overlay !== null &&
-        !event.defaultPrevented
-      ) {
-        this.closePopup()
-      }
+    changeRepresentation() {
+      const representations = Object.keys(this.coordinateOptions)
+      const currentIndex = representations.indexOf(this.coordinatesSelection)
+      const nextIndex = (currentIndex + 1) % representations.length
+      this.coordinatesSelection = representations[nextIndex]
+      this.setCoordinatesPreference(this.coordinatesSelection)
     },
     changeGFILang() {
       this.items.forEach((item) => {
@@ -137,7 +194,39 @@ export default {
         }
       })
     },
-    async onSingleClick(eventGFI) {
+    closeMenu(event) {
+      if (
+        event.key === 'Escape' &&
+        this.overlay !== null &&
+        !event.defaultPrevented
+      ) {
+        this.closePopup()
+      }
+    },
+    decimalToDMS(decimal, isLatitude) {
+      const absDecimal = Math.abs(decimal)
+      const degrees = Math.floor(absDecimal)
+      const minutesDecimal = (absDecimal - degrees) * 60
+      const minutes = Math.floor(minutesDecimal)
+      const seconds = ((minutesDecimal - minutes) * 60).toFixed(2)
+
+      return {
+        degrees: degrees,
+        minutes: minutes,
+        seconds: parseFloat(seconds),
+        direction: isLatitude
+          ? decimal >= 0
+            ? 'N'
+            : 'S'
+          : decimal >= 0
+            ? 'E'
+            : 'W',
+      }
+    },
+    getCoordinatesPreference() {
+      return localStorage.getItem('coordinates-preference')
+    },
+    async onSingleClick(eventGFI, pan = true) {
       if (!this.locked) {
         this.locked = true
         this.eventGFI = eventGFI
@@ -157,7 +246,6 @@ export default {
                 )
             }
           })
-          overlay.setPosition(evt.coordinate)
           this.overlay = overlay
           let index = 0
           for (const [name, url] of Object.entries(urls)) {
@@ -233,8 +321,15 @@ export default {
             }
           }
           this.items = itemsGFI
-          if (this.items.length !== 0) {
+          if (this.items.length !== 0 && pan) {
             this.popupFocus()
+            overlay.setPosition(evt.coordinate)
+            this.setMapCoordinates(evt.coordinate)
+          } else if (this.items.length === 0 && !pan) {
+            this.closePopup()
+          } else {
+            overlay.setPosition(evt.coordinate)
+            this.setMapCoordinates(evt.coordinate)
           }
           this.locked = false
         } else {
@@ -287,6 +382,17 @@ export default {
         }
       })
     },
+    setCoordinatesPreference(newSelection) {
+      localStorage.setItem('coordinates-preference', newSelection)
+    },
+    setMapCoordinates(eventCoordinates) {
+      const mapProjection = this.$mapCanvas.mapObj.getView().getProjection()
+      this.currentCoordinates = transform(
+        eventCoordinates,
+        mapProjection,
+        'EPSG:4326',
+      )
+    },
     closePopup() {
       this.overlay.setPosition(undefined)
       this.closer.blur()
@@ -300,6 +406,15 @@ export default {
 </script>
 
 <style scoped>
+.coordinates {
+  cursor: pointer;
+  display: flex;
+  font-size: 0.9em;
+  margin-right: 6px;
+  padding-left: 10px;
+  width: 100%;
+  white-space: nowrap;
+}
 .custom-dark {
   background-color: #212121;
   border-color: #212121;
