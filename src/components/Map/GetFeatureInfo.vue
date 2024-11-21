@@ -9,9 +9,15 @@
   >
     <a href="#" id="popupGFI-closer" class="ol-popup-closer"></a>
     <v-card flat class="tree-container">
-      <span class="coordinates" @click="changeRepresentation">{{
-        coordinatesRepresentation
-      }}</span>
+      <span
+        id="coordinates"
+        class="coordinates"
+        @click="changeRepresentation"
+        >{{ coordinatesRepresentation }}</span
+      >
+      <div class="divider-container">
+        <v-divider class="divider"></v-divider>
+      </div>
       <div id="treeviewGFI">
         <tree-node
           v-for="node in items"
@@ -88,6 +94,7 @@ export default {
       },
       coordinatesSelection: 'SD',
       currentCoordinates: null,
+      dividerWidth: 0,
       eventGFI: null,
       items: [],
       locked: false,
@@ -158,6 +165,14 @@ export default {
     },
   },
   watch: {
+    coordinatesRepresentation(text) {
+      const canvas = document.createElement('canvas')
+      const context = canvas.getContext('2d')
+      context.font = window.getComputedStyle(
+        document.getElementById('coordinates'),
+      ).fontSize
+      this.dividerWidth = `${context.measureText(text).width + 20}px`
+    },
     mapLayersProperties() {
       if (this.overlay !== null && this.eventGFI !== null)
         this.onSingleClick(this.eventGFI, false)
@@ -407,13 +422,15 @@ export default {
 
 <style scoped>
 .coordinates {
+  align-items: center;
   cursor: pointer;
   display: flex;
-  font-size: 0.9em;
-  margin-right: 6px;
-  padding-left: 10px;
-  width: 100%;
+  font-size: 0.7em;
+  justify-content: center;
+  margin-left: 20px;
+  padding-right: 20px;
   white-space: nowrap;
+  width: 100%;
 }
 .custom-dark {
   background-color: #212121;
@@ -423,6 +440,14 @@ export default {
   background-color: #333;
   max-width: 500px;
   opacity: 0.95;
+}
+.divider {
+  margin-left: auto;
+  margin-right: auto;
+  width: v-bind(dividerWidth);
+}
+.divider-container {
+  padding-left: 20px;
 }
 .dont-break-out {
   overflow-wrap: break-word;

@@ -48,7 +48,7 @@
               density="compact"
               variant="underlined"
               @keydown.left.right.space.stop
-              @input="filterOnInput(index)"
+              @input="debouncedFilterOnInput(index)"
               @click:clear="filterOnInput(index)"
             >
             </v-text-field>
@@ -132,8 +132,8 @@
             <template v-slot:label>
               <span
                 :class="{
-                  'text-white': this.theme.global.current.value.dark,
-                  'text-black': !this.theme.global.current.value.dark,
+                  'text-white': isDark,
+                  'text-black': !isDark,
                 }"
                 >{{ $t(overlay) }}</span
               >
@@ -147,6 +147,9 @@
 
 <script>
 import axios from '../../utils/AxiosConfig.js'
+
+import { debounce } from 'lodash'
+
 import { useDisplay } from 'vuetify'
 import { useTheme } from 'vuetify'
 
@@ -154,7 +157,8 @@ export default {
   inject: ['store'],
   setup() {
     const theme = useTheme()
-    return { theme }
+    const isDark = computed(() => theme.global.current.value.dark)
+    return { isDark }
   },
   created() {
     const { smAndDown } = useDisplay()
@@ -165,6 +169,8 @@ export default {
       },
       { immediate: true },
     )
+
+    this.debouncedFilterOnInput = debounce(this.filterOnInput, 500)
 
     this.filteredTreeNodes.push(...this.geometTreeItems)
     this.searchGeoMet = new Array(
@@ -192,15 +198,16 @@ export default {
   },
   data() {
     return {
-      isNightly: import.meta.env.VITE_APP_IS_NIGHTLY,
       activateNodeCheck: false,
       addedLayers: [],
       closedNodes: new Set(),
+      debouncedFilterOnInput: null,
       filteredTreeNodes: [],
+      isNightly: import.meta.env.VITE_APP_IS_NIGHTLY,
       openedLevels: [],
       searchGeoMet: [],
-      tab: null,
       smAndDown: false,
+      tab: null,
     }
   },
   methods: {
@@ -317,25 +324,35 @@ export default {
         )
       }
     },
-    filterCallbackFunction(array, fn) {
+    filterCallbackFunction(array, fn, searchLength) {
       return array.reduce((r, o) => {
-        let children = this.filterCallbackFunction(o.children || [], fn)
-        if (fn(o) || children.length) {
-          r.push(
-            Object.assign({}, o, children.length && { children }, {
-              isOpen: !this.closedNodes.has(o.Name),
-            }),
+        let children
+        if (searchLength === 2 && fn(o)) {
+          children = o.children || []
+        } else {
+          children = this.filterCallbackFunction(
+            o.children || [],
+            fn,
+            searchLength,
           )
         }
-        if (this.closedNodes.has(o.Name)) {
-          // delete o.isOpen;
+        if (fn(o) || children.length) {
+          const newNode = {
+            ...o,
+            isOpen: !this.closedNodes.has(o.Name),
+          }
+          if (children.length > 0) {
+            newNode.children = children
+          }
+          r.push(newNode)
         }
         return r
       }, [])
     },
     filterOnInput(index) {
       if (this.searchGeoMet[index] !== null) {
-        if (this.searchGeoMet[index].trim().length >= 2) {
+        const searchLength = this.searchGeoMet[index].trim().length
+        if (searchLength >= 2) {
           this.activateNodeCheck = true
           this.filteredTreeNodes[index] = this.filterCallbackFunction(
             this.geometTreeItems[index],
@@ -346,6 +363,7 @@ export default {
               const itemText = `${item['Title']} ${item['Name']}`.toLowerCase()
               return searchTerms.every((term) => itemText.includes(term))
             },
+            searchLength,
           )
         } else {
           this.activateNodeCheck = false
