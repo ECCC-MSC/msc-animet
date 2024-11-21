@@ -66,8 +66,8 @@ fi
 if [ -n $GEOMET_WEATHER_NIGHTLY_URL ] && [ -n $GEOMET_CLIMATE_NIGHTLY_URL ]
 then
   echo "Replacing default GeoMet URLs with nightly URLs in $WMS_SOURCES_FILE"
-  sed -i "s#https://geo.weather.gc.ca/geomet#$GEOMET_WEATHER_NIGHTLY_URL#g" $WMS_SOURCES_FILE
-  sed -i "s#https://geo.weather.gc.ca/geomet-climate#$GEOMET_CLIMATE_NIGHTLY_URL#g" $WMS_SOURCES_FILE
+  sed -i "s#https://geo.weather.gc.ca/geomet#$GEOMET_WEATHER_NIGHTLY_URL#" $WMS_SOURCES_FILE
+  sed -i "s#https://geo.weather.gc.ca/geomet-climate#$GEOMET_CLIMATE_NIGHTLY_URL#" $WMS_SOURCES_FILE
 fi
 
 # add GeoMet Mapproxy nightly as a wms source for testing
