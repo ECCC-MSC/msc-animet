@@ -55,10 +55,16 @@ rm -fr latest
 mkdir $NIGHTLYDIR && cd $NIGHTLYDIR
 git clone $GITREPO . -b main --depth=1
 
-# Check if WMS_SOURCES_FILE exists
 WMS_SOURCES_FILE=scripts/wms_sources_configs.json
+WMS_SOURCES_ASSETS_FILE=src/assets/wms_sources_configs.json
+# Check if WMS_SOURCES_FILE exists
 if [ ! -f "$WMS_SOURCES_FILE" ]; then
-  echo "File $WMS_SOURCES_FILE does not exist."
+  echo "Error: File $WMS_SOURCES_FILE does not exist."
+  exit 1
+fi
+# Check if WMS_SOURCES_ASSETS_FILE exists
+if [ ! -f "$WMS_SOURCES_ASSETS_FILE" ]; then
+  echo "Error: File $WMS_SOURCES_ASSETS_FILE does not exist."
   exit 1
 fi
 
@@ -66,8 +72,10 @@ fi
 if [ -n $GEOMET_WEATHER_NIGHTLY_URL ] && [ -n $GEOMET_CLIMATE_NIGHTLY_URL ]
 then
   echo "Replacing default GeoMet URLs with nightly URLs in $WMS_SOURCES_FILE"
-  sed -i "s#https://geo.weather.gc.ca/geomet#$GEOMET_WEATHER_NIGHTLY_URL#" $WMS_SOURCES_FILE
-  sed -i "s#https://geo.weather.gc.ca/geomet-climate#$GEOMET_CLIMATE_NIGHTLY_URL#" $WMS_SOURCES_FILE
+  sed -i "s#\"https://geo.weather.gc.ca/geomet\"#\"$GEOMET_WEATHER_NIGHTLY_URL\"#g" $WMS_SOURCES_FILE
+  sed -i "s#\"https://geo.weather.gc.ca/geomet\"#\"$GEOMET_WEATHER_NIGHTLY_URL\"#g" $WMS_SOURCES_ASSETS_FILE
+  sed -i "s#\"https://geo.weather.gc.ca/geomet-climate\"#\"$GEOMET_CLIMATE_NIGHTLY_URL\"#g" $WMS_SOURCES_FILE
+  sed -i "s#\"https://geo.weather.gc.ca/geomet-climate\"#\"$GEOMET_CLIMATE_NIGHTLY_URL\"#g" $WMS_SOURCES_ASSETS_FILE
 fi
 
 # add GeoMet Mapproxy nightly as a wms source for testing
@@ -119,6 +127,10 @@ then
   echo "$NWS_NOAA_LAYERS" >> "$WMS_SOURCES_FILE"
   echo "}" >> "$WMS_SOURCES_FILE"
 fi
+
+# Certficate file needed for generate_trees_layers_list.py when building container
+CERT_FILE=/usr/local/share/ca-certificates/_ICM_Root.crt
+cp $CERT_FILE ./
 
 echo "Stopping/building/starting Docker setup"
 docker compose -f docker-compose.yml build --no-cache

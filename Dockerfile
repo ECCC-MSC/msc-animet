@@ -7,8 +7,11 @@ COPY . .
 
 # build stage
 FROM develop-stage AS build-stage
-## build layer name reference file
 WORKDIR /app/scripts
+ARG CERT_FILE=_ICM_Root.crt
+COPY $CERT_FILE /usr/local/share/ca-certificates/
+RUN ln -sf /usr/local/share/ca-certificates/_ICM_Root.crt /etc/ssl/certs/_ICM_Root.pem && \
+    update-ca-certificates
 RUN python3 generate_trees_layers_list.py && \
     # Extract keys from wms_sources_configs.json to verify generated tree and layer list files
     config_keys=$(jq -r 'keys[] | ascii_downcase' wms_sources_configs.json) && \
@@ -32,7 +35,7 @@ RUN python3 generate_trees_layers_list.py && \
         echo "Error: $missing_files files are missing!" && exit 1; \
     fi && \
     echo "All expected files are generated successfully."
-## build app
+
 WORKDIR /app
 RUN npm install
 COPY deploy/nightly-docker/.env ./ 
