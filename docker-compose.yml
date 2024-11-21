@@ -6,5 +6,10 @@ services:
     build:
       context: .
     restart: unless-stopped
+    volumes:
+      # below is required so that the container has certificates required
+      # for SSL-enabled connections to internal hosts (geomet-dev-xx.edc-mtl.ec.gc.ca)
+      - "/etc/ssl/certs:/etc/ssl/certs:ro" # mount host ssl certs
+      - "/usr/local/share/ca-certificates/:/usr/local/share/ca-certificates/:ro" # mount host ca-certificates
     ports:
     - '5090:80'

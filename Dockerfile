@@ -1,6 +1,6 @@
 # develop stage
 FROM node:20-slim AS develop-stage
-RUN apt-get update || : && apt-get install python3-all python3-pip python3-owslib jq -y
+RUN apt-get update || : && apt-get install python3-all python3-pip python3-owslib python3-certifi jq -y
 WORKDIR /app
 COPY package*.json ./
 COPY . .
