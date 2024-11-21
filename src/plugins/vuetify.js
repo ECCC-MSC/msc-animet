@@ -8,7 +8,6 @@ export default createVuetify({
     defaultTheme: 'dark',
     themes: {
       dark: {
-        dark: true,
         colors: {
           snackbarBackground: '#424242',
           snackbarText: '#eeeeee',
@@ -22,7 +21,6 @@ export default createVuetify({
         },
       },
       light: {
-        dark: false,
         colors: {
           primary: '#1689E7',
           accent: '#4CBB99',
