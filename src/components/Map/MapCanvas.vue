@@ -367,7 +367,8 @@ export default {
         const layer = this.$mapLayers.arr.find(
           (l) => l.get('layerName') === e.target.getParams()['LAYERS'],
         )
-        this.emitter.emit('loadingError', { layer: layer, error: e })
+        if (layer !== undefined)
+          this.emitter.emit('loadingError', { layer: layer, error: e })
       })
 
       imageLayer.getSource().updateParams({

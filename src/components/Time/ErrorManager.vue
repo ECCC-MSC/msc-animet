@@ -70,6 +70,11 @@ export default {
     this.emitter.on('cancelAnimationResize', () => {
       this.notifyCancelAnimateResize = true
     })
+    this.emitter.on('LayerQueryFailure', () => {
+      this.expiredSnackBarMessage = this.t('BrokenLayer')
+      this.timeoutDuration = 12000
+      this.notifyExtentRebuilt = true
+    })
     this.emitter.on('loadingError', this.errorDispatcher)
     this.emitter.on('notifyWrongFormat', () => {
       this.notifyWrongFormat = true
@@ -221,7 +226,18 @@ export default {
             const missingTimestep = newExtent[layer.get('layerDateIndex')]
             newExtent.splice(layer.get('layerDateIndex'), 1)
             if (newExtent.length === 0) {
-              throw new Error("All of the layer's timesteps are broken")
+              if (this.isAnimating) {
+                throw new Error("All of the layer's timesteps are broken")
+              } else {
+                this.emitter.emit('removeLayer', layer)
+                this.expiredSnackBarMessage = this.t('BrokenLayer')
+                this.timeoutDuration = 12000
+                this.errorLayersList.splice(
+                  this.errorLayersList.indexOf(layer.get('layerName')),
+                  1,
+                )
+                return
+              }
             }
             let newDefaultTimeIndex = this.findLayerIndex(
               layer.get('layerDefaultTime'),
@@ -455,7 +471,12 @@ export default {
           1,
         )
       } catch (error) {
-        if (originalError === null) {
+        if (
+          this.$mapLayers.arr.indexOf(
+            (l) => l.get('layerName') === layer.get('layerName'),
+          ) === -1 ||
+          originalError === null
+        ) {
           this.errorLayersList.splice(
             this.errorLayersList.indexOf(layer.get('layerName')),
             1,

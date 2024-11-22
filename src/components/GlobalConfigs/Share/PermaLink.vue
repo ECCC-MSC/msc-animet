@@ -32,7 +32,7 @@
             rounded
             single-line
             :value="[permalink ? permalink : prefixLink()]"
-            @keydown.left.right.space.stop
+            @keydown.left.right.space.enter.stop
           >
             <template v-slot:prepend>
               <v-btn
