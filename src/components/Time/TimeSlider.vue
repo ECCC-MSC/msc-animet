@@ -39,6 +39,7 @@
           :track-size="2"
           :thumb-label="false"
           hide-details
+          :elevation="datetimeRangeSlider[0] === datetimeRangeSlider[1] ? 0 : 2"
           @end="handleEnd"
           @update:model-value="changeDisplayedTime"
         ></v-range-slider>
@@ -247,6 +248,7 @@ export default {
     },
     thumbPosition() {
       const max = this.mapTimeSettings.Extent.length - 1
+      if (max === 0) return 0
       return (this.mapTimeSettings.DateIndex / max) * 100
     },
   },

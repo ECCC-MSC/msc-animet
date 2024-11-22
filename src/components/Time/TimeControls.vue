@@ -220,10 +220,14 @@ export default {
       // Prevents a bug that triggers play twice
       const playStateBuffer = this.playState
 
-      const mapTime =
-        this.mapTimeSettings.Extent[this.mapTimeSettings.DateIndex]
-
       const numLayers = this.$mapLayers.arr.length
+
+      let mapTime
+      if (this.mapTimeSettings.Extent !== null) {
+        mapTime = this.mapTimeSettings.Extent[this.mapTimeSettings.DateIndex]
+      } else {
+        numLayers = 0
+      }
       let noChange = true
       for (let i = 0; i < numLayers; i++) {
         if (

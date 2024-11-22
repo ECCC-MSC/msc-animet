@@ -16,7 +16,7 @@
         variant="underlined"
         clearable
         hide-details
-        @keydown.left.right.space.stop
+        @keydown.left.right.space.enter.stop
         :disabled="isAnimating"
         :label="$t('MP4CreateCustomTitle')"
       ></v-text-field>
@@ -74,7 +74,7 @@
           class="fps-selector"
           density="compact"
           variant="underlined"
-          @keydown.left.right.space.stop
+          @keydown.left.right.space.enter.stop
           @keydown.enter.stop
         >
           <template v-slot:label>

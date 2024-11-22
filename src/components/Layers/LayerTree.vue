@@ -47,7 +47,7 @@
               color="primary"
               density="compact"
               variant="underlined"
-              @keydown.left.right.space.stop
+              @keydown.left.right.space.enter.stop
               @input="debouncedFilterOnInput(index)"
               @click:clear="filterOnInput(index)"
             >
@@ -310,6 +310,12 @@ export default {
                   .getAttributeNS('http://www.w3.org/1999/xlink', 'href'),
               })
             }
+          } else {
+            this.addedLayers = this.addedLayers.filter(
+              (added) => added !== layer.Name,
+            )
+            this.emitter.emit('LayerQueryFailure')
+            throw new Error(`Query for ${layer.Name} failed`)
           }
         })
         layerData = { ...layerData, ...layer }
