@@ -1,7 +1,6 @@
 <template>
   <div
-    class="resizable draggable-container"
-    :style="initialPosStyle()"
+    class="resizable draggable-container initial-position"
     ref="draggableContainer"
     @mousedown="dragMouseDown"
     @touchstart="dragMouseDown"
@@ -28,6 +27,7 @@ export default {
   props: ['name'],
   mounted() {
     this.emitter.on('checkIntersect', this.checkIntersect)
+    this.initialPos = this.initialPosStyle()
   },
   beforeUnmount() {
     this.store.removeIntersect(this.name)
@@ -35,6 +35,7 @@ export default {
   },
   data() {
     return {
+      initialPos: { top: 0, left: 0 },
       positions: {
         clientX: null,
         clientY: null,
@@ -222,6 +223,10 @@ export default {
 .draggable-container {
   cursor: move;
   position: absolute;
+}
+.initial-position {
+  top: v-bind('initialPos.top');
+  left: v-bind('initialPos.left');
 }
 .legend-hidden {
   display: none;

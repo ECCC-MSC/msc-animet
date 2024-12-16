@@ -2,6 +2,7 @@
 node_modules
 /dist
 /generate-tree-venv
+src/assets/wms_sources_configs.json
 
 # local env files
 .env.local

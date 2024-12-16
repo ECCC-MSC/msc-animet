@@ -72,27 +72,6 @@ export const useStore = defineStore('store', {
     outputDate: null,
     outputFormat: 'MP4',
     outputSize: null,
-    overlays: {
-      Boundaries: {
-        layers:
-          'boundary_large_01,boundary_small,boundary_mid,boundary_large_02,boundary_large_03',
-        url: 'https://maps.geogratis.gc.ca/wms/canvec_en',
-        zIndex: 9998,
-        isShown: false,
-      },
-      Major_cities: {
-        layers: 'places_small,places_mid,places_large',
-        url: 'https://maps.geogratis.gc.ca/wms/canvec_en',
-        zIndex: 9999,
-        isShown: false,
-      },
-      Water_bodies: {
-        layers: 'shoreline_small,shoreline_mid,shoreline_large',
-        url: 'https://maps.geogratis.gc.ca/wms/canvec_en',
-        zIndex: 9997,
-        isShown: false,
-      },
-    },
     pendingErrorResolution: false,
     permalink: null,
     playState: 'pause',
@@ -140,7 +119,6 @@ export const useStore = defineStore('store', {
     getPendingErrorResolution: (state) => state.pendingErrorResolution,
     getPermalink: (state) => state.permalink,
     getPlayState: (state) => state.playState,
-    getPossibleOverlays: (state) => state.overlays,
     getRGB: (state) => state.rgb,
     getShowGraticules: (state) => state.showGraticules,
     getTimeFormat: (state) => state.timeFormat,
@@ -267,9 +245,6 @@ export const useStore = defineStore('store', {
     },
     setOutputSize(newSize) {
       this.outputSize = newSize
-    },
-    setOverlayDisplayed(overlay) {
-      this.overlays[overlay]['isShown'] = !this.overlays[overlay]['isShown']
     },
     setPendingErrorResolution(isPending) {
       this.pendingErrorResolution = isPending

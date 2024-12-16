@@ -14,7 +14,7 @@ RUN ln -sf /usr/local/share/ca-certificates/_ICM_Root.crt /etc/ssl/certs/_ICM_Ro
     update-ca-certificates
 RUN python3 generate_trees_layers_list.py && \
     # Extract keys from wms_sources_configs.json to verify generated tree and layer list files
-    config_keys=$(jq -r 'keys[] | ascii_downcase' wms_sources_configs.json) && \
+    config_keys=$(jq -r 'keys[] | ascii_downcase' "/app/src/assets/wms_sources_configs.json") && \
     missing_files=0 && \
     for key in $config_keys; do \
         for lang in en fr; do \
