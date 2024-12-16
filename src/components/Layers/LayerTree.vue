@@ -145,7 +145,7 @@ export default {
       closedNodes: new Set(),
       debouncedFilterOnInput: null,
       filteredTreeNodes: [],
-      isNightly: import.meta.env.VITE_APP_IS_NIGHTLY,
+      isNightly: import.meta.env.APP_IS_NIGHTLY,
       openedLevels: [],
       searchGeoMet: [],
       smAndDown: false,

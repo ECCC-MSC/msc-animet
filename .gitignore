@@ -2,7 +2,9 @@
 node_modules
 /dist
 /generate-tree-venv
-src/assets/wms_sources_configs.json
+/src/assets/wms_sources_configs.json
+_ICM_Root.crt
+/scripts/__pycache__
 
 # local env files
 .env.local
@@ -22,3 +24,33 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Generated files for nightly build
+src/assets/trees/tree_en_climatenightly.js
+src/assets/trees/tree_en_gebco.js
+src/assets/trees/tree_en_mapproxy.js
+src/assets/trees/tree_en_nasa.js
+src/assets/trees/tree_en_noaa-ncep.js
+src/assets/trees/tree_en_noaa-nowcoast.js
+src/assets/trees/tree_en_weathernightly.js
+src/assets/trees/tree_fr_climatenightly.js
+src/assets/trees/tree_fr_gebco.js
+src/assets/trees/tree_fr_mapproxy.js
+src/assets/trees/tree_fr_nasa.js
+src/assets/trees/tree_fr_noaa-ncep.js
+src/assets/trees/tree_fr_noaa-nowcoast.js
+src/assets/trees/tree_fr_weathernightly.js
+src/locales/en/layers_climatenightly.json
+src/locales/en/layers_gebco.json
+src/locales/en/layers_mapproxy.json
+src/locales/en/layers_nasa.json
+src/locales/en/layers_noaa-ncep.json
+src/locales/en/layers_noaa-nowcoast.json
+src/locales/en/layers_weathernightly.json
+src/locales/fr/layers_climatenightly.json
+src/locales/fr/layers_gebco.json
+src/locales/fr/layers_mapproxy.json
+src/locales/fr/layers_nasa.json
+src/locales/fr/layers_noaa-ncep.json
+src/locales/fr/layers_noaa-nowcoast.json
+src/locales/fr/layers_weathernightly.json

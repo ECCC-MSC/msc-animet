@@ -5,6 +5,8 @@ services:
     container_name: msc-animet-nightly
     build:
       context: .
+      args:
+        ANIMET_NIGHTLY: "True"
     restart: unless-stopped
     ports:
     - '5090:80'

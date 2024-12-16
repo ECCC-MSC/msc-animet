@@ -8,10 +8,13 @@ COPY . .
 # build stage
 FROM develop-stage AS build-stage
 WORKDIR /app/scripts
+## cert must be copied over to app repo first
 ARG CERT_FILE=_ICM_Root.crt
 COPY $CERT_FILE /usr/local/share/ca-certificates/
 RUN ln -sf /usr/local/share/ca-certificates/_ICM_Root.crt /etc/ssl/certs/_ICM_Root.pem && \
     update-ca-certificates
+ARG ANIMET_NIGHTLY=False
+ENV ANIMET_NIGHTLY=${ANIMET_NIGHTLY}
 RUN python3 generate_trees_layers_list.py && \
     # Extract keys from wms_sources_configs.json to verify generated tree and layer list files
     config_keys=$(jq -r 'keys[] | ascii_downcase' "/app/src/assets/wms_sources_configs.json") && \
@@ -38,12 +41,26 @@ RUN python3 generate_trees_layers_list.py && \
 
 WORKDIR /app
 RUN npm install
-COPY deploy/nightly-docker/.env ./ 
+COPY deploy/nightly-docker/.env ./
 RUN npm run build
 
 # production stage
-FROM nginx:1.23.3-alpine AS production-stage
-COPY --from=build-stage /app/dist/ /usr/share/nginx/html/
+# Comment out this section to disable production stage
+# >>>>>>>>>>>>>>>>>>
+# FROM nginx:1.23.3-alpine AS production-stage
+# COPY --from=build-stage /app/dist/ /usr/share/nginx/html/
+# COPY deploy/nightly-docker/nginx/default.conf /etc/nginx/conf.d/
+# EXPOSE 80
+# CMD ["nginx", "-g", "daemon off;"]
+# <<<<<<<<<<<<<<<<<<
+
+# production stage (without stage seperation for debugging purposes)
+# Uncomment out this section to disable production stage
+# >>>>>>>>>>>>>>>>>>
+RUN apt-get install -y nginx && \
+    rm -rf /var/lib/apt/lists/*
+COPY dist/ /usr/share/nginx/html/
 COPY deploy/nightly-docker/nginx/default.conf /etc/nginx/conf.d/
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
+# <<<<<<<<<<<<<<<<<<
