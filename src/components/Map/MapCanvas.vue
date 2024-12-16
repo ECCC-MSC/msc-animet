@@ -69,7 +69,6 @@ export default {
       this.rotateArrow = new Rotate({ tipLabel: this.t('ResetRotation') })
       this.$mapCanvas.mapObj.addControl(this.rotateArrow)
     })
-    this.emitter.on('overlayToggle', this.manageOverlay)
     this.emitter.on('removeLayer', this.removeLayerHandler)
 
     window.addEventListener('keydown', (event) => {
@@ -270,45 +269,6 @@ export default {
           }
         }
       }
-    },
-    async manageOverlay(overlayInfo) {
-      const { values: layer, overlay: layerName } = overlayInfo
-      const layerFound = this.$mapCanvas.mapObj
-        .getLayers()
-        .getArray()
-        .filter((lo) => lo.get('layerName') === layerName)
-      if (layerFound.length !== 0) {
-        this.$mapCanvas.mapObj.removeLayer(layerFound[0])
-      } else {
-        let special_layer = new OLImage({
-          source: new ImageWMS({
-            format: 'image/png',
-            url: layer.url,
-            params: {
-              layers: layer.layers,
-            },
-            transition: 0,
-            crossOrigin: 'Anonymous',
-            ratio: 1,
-          }),
-          maxZoom: 12.1,
-          minZoom: 0.9,
-          visible: true,
-          opacity: 1,
-          zIndex: layer.zIndex,
-        })
-        special_layer.setProperties({
-          layerName: layerName,
-        })
-        special_layer.getSource().on('imageloadstart', () => {
-          this.loading += 1
-        })
-        special_layer.getSource().on(['imageloadend', 'imageloaderror'], () => {
-          this.loading -= 1
-        })
-        this.$mapCanvas.mapObj.addLayer(special_layer)
-      }
-      this.store.setOverlayDisplayed(layerName)
     },
     async buildLayer(eventData) {
       const { layerData, source: wmsSource } = eventData

@@ -38,6 +38,8 @@ from xml.etree import ElementTree
 
 from owslib.wms import WebMapService
 
+from wms_sources_configs import wms_sources
+
 LOGGER = logging.getLogger(__name__)
 
 TREE_JS_TEMPLATE = """\
@@ -81,9 +83,7 @@ def findTopLevel(metadata):
 
 
 langs = ["en", "fr"]
-with open("wms_sources_configs.json") as f:
-    wmsSources = json.load(f)
-
+    
 trees_files = glob.glob("../src/assets/trees/tree_*.js")
 layers_en_files = glob.glob("../src/locales/en/layers_*.json")
 layers_fr_files = glob.glob("../src/locales/fr/layers_*.json")
@@ -196,7 +196,10 @@ def extract_wms_crs(url):
 
 
 sources_to_remove = []
-for name, params in wmsSources.items():
+for name, params in wms_sources.items():
+    if not params["display"]:
+        sources_to_remove.append(name)
+        continue
     for lang in langs:
         if "?" in params["url"]:
             base_url = f"{params['url']}&lang={lang}"
@@ -248,6 +251,6 @@ for name, params in wmsSources.items():
 
 # writing wms sources list to assets directory with failed sources removed
 for source in sources_to_remove:
-    wmsSources.pop(source)
+    wms_sources.pop(source)
 with open(f"../src/assets/wms_sources_configs.json", "w") as f:
-    f.write(json.dumps(wmsSources, indent=2))
+    f.write(json.dumps(wms_sources, indent=2))

@@ -1,60 +1,41 @@
 <template>
   <v-card class="radius" max-width="100%">
-    <v-tabs :show-arrows="displayTabArrows" v-model="tab">
-      <v-tab
-        v-for="(wmsSource, index) in Object.keys(geometWmsSources)"
-        :key="index"
-        class="source-tabs"
-        color="primary"
-        density="compact"
-      >
-        {{ $t(wmsSource) }}
-        <v-tooltip location="top">
-          <template v-slot:activator="{ props }">
-            <v-chip
-              v-if="isNightly == 1"
-              class="nightly-chip"
-              color="info"
-              density="compact"
-              size="small"
-              v-bind="props"
-            >
-              Nightly
-            </v-chip>
-          </template>
-          <span>{{ geometWmsSources[wmsSource].url }}</span>
-        </v-tooltip>
-      </v-tab>
-      <v-tab class="source-tabs" color="primary">{{ $t('Overlays') }}</v-tab>
-    </v-tabs>
-    <v-tabs-window v-model="tab">
-      <v-tabs-window-item
-        v-for="(_, wmsSource, index) in geometWmsSources"
-        :key="index"
-        eager
-      >
+    <tabs :tabs="geometWmsSources" @tab-change="setCurrentWMSSource">
+      <template v-slot:tab-content>
         <v-card flat>
           <v-card-title class="pt-2 pb-0 pl-3 pr-2">
-            {{ $t('GeoMetWms', { wmsSource: $t(wmsSource) }) }}
+            {{
+              $t('GeoMetWms', {
+                wmsSource: sourceParameters.no_translations
+                  ? wmsSource
+                  : $t(wmsSource),
+              })
+            }}
           </v-card-title>
           <v-card-text class="pt-2 pb-2 pl-3 pr-2">
             <v-text-field
               autofocus
-              v-model="searchGeoMet[index]"
-              :label="$t('GeoMetSearchLabel', { wmsSource: $t(wmsSource) })"
+              v-model="searchGeoMet[this.tab]"
+              :label="
+                $t('GeoMetSearchLabel', {
+                  wmsSource: sourceParameters.no_translations
+                    ? wmsSource
+                    : $t(wmsSource),
+                })
+              "
               clearable
               hide-details
               color="primary"
               density="compact"
               variant="underlined"
               @keydown.left.right.space.enter.stop
-              @input="debouncedFilterOnInput(index)"
-              @click:clear="filterOnInput(index)"
+              @input="debouncedFilterOnInput(this.tab)"
+              @click:clear="filterOnInput(this.tab)"
             >
             </v-text-field>
             <div :ref="wmsSource" class="treeview pr-0">
               <tree-node
-                v-for="node in filteredTreeNodes[index]"
+                v-for="node in filteredTreeNodes[this.tab]"
                 :key="`${node.Name}`"
                 :node="node"
                 key-prop="Name"
@@ -115,33 +96,8 @@
             </div>
           </v-card-text>
         </v-card>
-      </v-tabs-window-item>
-      <v-tabs-window-item eager>
-        <v-card class="pb-3">
-          <v-card-subtitle>
-            {{ $t('OverlaysTip') }}
-          </v-card-subtitle>
-          <v-checkbox
-            v-for="(values, overlay, index) in possibleOverlays"
-            :key="index"
-            :disabled="isAnimating"
-            hide-details
-            class="pl-12 overlay-cb"
-            @change="emitter.emit('overlayToggle', { values, overlay })"
-          >
-            <template v-slot:label>
-              <span
-                :class="{
-                  'text-white': isDark,
-                  'text-black': !isDark,
-                }"
-                >{{ $t(overlay) }}</span
-              >
-            </template>
-          </v-checkbox>
-        </v-card>
-      </v-tabs-window-item>
-    </v-tabs-window>
+      </template>
+    </tabs>
   </v-card>
 </template>
 
@@ -182,20 +138,6 @@ export default {
     this.emitter.on('localeChange', this.resetSearchAndTree)
     this.emitter.on('permaLinkLayer', this.requestLayerData)
   },
-  watch: {
-    tab(newTab, oldTab) {
-      if (newTab !== Object.keys(this.geometWmsSources).length) {
-        this.store.setWmsSourceURL(
-          this.geometWmsSources[Object.keys(this.geometWmsSources)[newTab]][
-            'url'
-          ],
-        )
-        if (oldTab !== null) {
-          this.resetSearchAndTree()
-        }
-      }
-    },
-  },
   data() {
     return {
       activateNodeCheck: false,
@@ -207,7 +149,7 @@ export default {
       openedLevels: [],
       searchGeoMet: [],
       smAndDown: false,
-      tab: null,
+      tab: 0,
     }
   },
   methods: {
@@ -397,6 +339,19 @@ export default {
         this.filterOnInput(i)
       }
     },
+    setCurrentWMSSource(newTab, oldTab) {
+      if (newTab !== Object.keys(this.geometWmsSources).length) {
+        this.tab = newTab
+        this.store.setWmsSourceURL(
+          this.geometWmsSources[Object.keys(this.geometWmsSources)[newTab]][
+            'url'
+          ],
+        )
+        if (oldTab !== null) {
+          this.resetSearchAndTree()
+        }
+      }
+    },
   },
   computed: {
     availableCRS() {
@@ -420,14 +375,17 @@ export default {
     playState() {
       return this.store.getPlayState
     },
-    possibleOverlays() {
-      return this.store.getPossibleOverlays
-    },
     displayTabArrows() {
       return Boolean(
         this.smAndDown &&
           (this.isNightly || Object.keys(this.geometWmsSources).length > 2),
       )
+    },
+    sourceParameters() {
+      return this.geometWmsSources[this.wmsSource]
+    },
+    wmsSource() {
+      return Object.keys(this.geometWmsSources)[this.tab]
     },
   },
 }
@@ -442,13 +400,6 @@ export default {
 .icon-only-btn:hover {
   background-color: rgba(211, 211, 211, 0.2);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.overlay-cb:deep(.v-selection-control__input > .v-icon) {
-  opacity: 1;
-}
-.overlay-cb:deep(.v-label) {
-  opacity: 1;
-  font-size: 1.08rem;
 }
 .radius {
   border-radius: 0px;

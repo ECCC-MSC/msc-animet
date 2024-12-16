@@ -33,10 +33,10 @@ npm i
 ## Running
 
 ```bash
-npm run serve
+npm run dev
 ```
 
-Server will be located at http://localhost:8080/msc-animet/
+Server will be located at http://localhost:3000/msc-animet/
 
 Note: The path will be different if you changed the BASE_URL in the .env file
 
@@ -85,23 +85,34 @@ npm i
 git remote add upstream https://github.com/ECCC-MSC/msc-animet.git
 ```
 
-Afterwards, we'll be changing the configuration file to specify which WMS sources we wish to have. That file is located inside `scripts/wms_sources_configs.json` and this is where we'll be adding our new sources. This process is quite simple; you simple give it a name, the url to the wms and the version, which would look like:
+Afterwards, we'll be changing the configuration file to specify which WMS sources we wish to have. That file is located inside `scripts/wms_sources_configs.py` and this is where we'll be adding our new sources. This process is quite simple; you simple give it a name, the url to the wms, the version and display to `True`, which would look like:
 
-```JSON
-{
-  "Weather": {
-    "url": "https://geo.weather.gc.ca/geomet",
-    "version": "1.3.0"
-  },
-  "Climate": {
-    "url": "https://geo.weather.gc.ca/geomet-climate",
-    "version": "1.3.0"
-  },
-  "Test": {
-    "url": "https://my_beautiful_wms",
-    "version": "1.3.0"
-  }
+```Python
+wms_sources = {
+    "Weather": {
+        "url": "https://geo.weather.gc.ca/geomet",
+        "version": "1.3.0"
+        "display": True,
+    },
+    "Climate": {
+        "url": "https://geo.weather.gc.ca/geomet-climate",
+        "version": "1.3.0"
+        "display": True,
+    },
+    "NOAA-Nowcoast": {
+        "url": "https://nowcoast.noaa.gov/geoserver/ows",
+        "version": "1.3.0",
+        "query_pattern": "https://nowcoast.noaa.gov/geoserver{LAYER}/ows",
+        "no_translations": True,
+        "display": True,
+    },
 }
 ```
+
+Optionally:
+
+- Set `no_translations` to `True` if you don't have french/english versions of these names inside both `common.json` files.
+- Also, if the source you are adding contains a specific pattern to query layers individually, set the `query_pattern` parameter
+  with `{LAYER}` so the app knows how to make such queries.
 
 Once that's done and you've saved the file, inside the terminal, all we have left to do is to run the script to [update the layer tree](#updating-geomet-weather-layer-tree-names) and [run](#running) the application, it's that easy!

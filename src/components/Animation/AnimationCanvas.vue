@@ -61,33 +61,6 @@ export default {
         }
       })
     },
-    addOverlays() {
-      for (const [key, values] of Object.entries(this.possibleOverlays)) {
-        if (values.isShown) {
-          const special_layer = new OLImage({
-            source: new ImageWMS({
-              format: 'image/png',
-              url: values.url,
-              params: {
-                layers: values.layers,
-              },
-              transition: 0,
-              crossOrigin: 'Anonymous',
-              ratio: 1,
-            }),
-            maxZoom: 12.1,
-            minZoom: 0.9,
-            visible: true,
-            opacity: 1,
-            zIndex: values.zIndex,
-          })
-          special_layer.setProperties({
-            layerName: key,
-          })
-          this.$animationCanvas.mapObj.addLayer(special_layer)
-        }
-      }
-    },
     animationCanvasSetup() {
       let theMap = document.getElementById('map')
       theMap.style.height = `${theMap.offsetHeight}px`
@@ -144,7 +117,6 @@ export default {
           .setVisible(isBasemapVisible)
       }
       this.copyLayers()
-      this.addOverlays()
       if (this.mapTimeSettings.DateIndex === this.datetimeRangeSlider[0])
         this.mapControls()
 
@@ -327,9 +299,6 @@ export default {
     },
     mapTimeSettings() {
       return this.store.getMapTimeSettings
-    },
-    possibleOverlays() {
-      return this.store.getPossibleOverlays
     },
     rgb() {
       return this.store.getRGB
