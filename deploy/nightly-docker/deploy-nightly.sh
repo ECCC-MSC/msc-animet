@@ -55,15 +55,26 @@ rm -fr latest
 mkdir $NIGHTLYDIR && cd $NIGHTLYDIR
 git clone $GITREPO . -b main --depth=1
 
-# Certficate file needed for generate_trees_layers_list.py when building container
+# Certificate file needed for generate_trees_layers_list.py when building container
 CERT_FILE=/usr/local/share/ca-certificates/_ICM_Root.crt
-cp $CERT_FILE ./
+CERT_DEST_FILE=$(basename "$CERT_FILE")
+
+cp "$CERT_FILE" ./ || { echo "Failed to copy $CERT_FILE"; exit 1; }
+
+# Check if the file exists in the destination directory
+if [ -f "./$CERT_DEST_FILE" ]; then
+    echo "Certificate file copied successfully: $CERT_DEST_FILE"
+else
+    echo "Error: Certificate file not found in the destination after copying."
+    exit 1
+fi
+
 
 echo "Stopping/building/starting Docker setup"
-docker compose -f docker-compose.yml build --no-cache
-docker compose -f docker-compose.yml down
+docker compose --project-name msc-animet-nightly -f docker-compose.yml build --no-cache
+docker compose --project-name msc-animet-nightly -f docker-compose.yml down
 docker container rm -f msc-animet-nightly
-docker compose -f docker-compose.yml up -d
+docker compose --project-name msc-animet-nightly -f docker-compose.yml up -d
 
 cat > animet-nightly.conf <<EOF
 <Location /animet>
