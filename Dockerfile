@@ -13,8 +13,12 @@ ARG CERT_FILE=_ICM_Root.crt
 COPY $CERT_FILE /usr/local/share/ca-certificates/
 RUN ln -sf /usr/local/share/ca-certificates/_ICM_Root.crt /etc/ssl/certs/_ICM_Root.pem && \
     update-ca-certificates
-ARG ANIMET_NIGHTLY=False
-ENV ANIMET_NIGHTLY=${ANIMET_NIGHTLY}
+## ENV variables from host server
+ARG ANIMET_NIGHTLY GEOMET_CLIMATE_NIGHTLY_URL GEOMET_WEATHER_NIGHTLY_URL GEOMET_MAPPROXY_NIGHTLY_URL
+ENV ANIMET_NIGHTLY=${ANIMET_NIGHTLY} \
+    GEOMET_CLIMATE_NIGHTLY_URL=${GEOMET_CLIMATE_NIGHTLY_URL} \
+    GEOMET_WEATHER_NIGHTLY_URL=${GEOMET_WEATHER_NIGHTLY_URL} \
+    GEOMET_MAPPROXY_NIGHTLY_URL=${GEOMET_MAPPROXY_NIGHTLY_URL}
 RUN python3 generate_trees_layers_list.py && \
     # Extract keys from wms_sources_configs.json to verify generated tree and layer list files
     config_keys=$(jq -r 'keys[] | ascii_downcase' "/app/src/assets/wms_sources_configs.json") && \

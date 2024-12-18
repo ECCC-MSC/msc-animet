@@ -7,6 +7,9 @@ services:
       context: .
       args:
         ANIMET_NIGHTLY: "True"
+        GEOMET_CLIMATE_NIGHTLY_URL: "${GEOMET_CLIMATE_NIGHTLY_URL}"
+        GEOMET_WEATHER_NIGHTLY_URL: "${GEOMET_WEATHER_NIGHTLY_URL}"
+        GEOMET_MAPPROXY_NIGHTLY_URL: "${GEOMET_MAPPROXY_NIGHTLY_URL}"
     restart: unless-stopped
     ports:
     - '5090:80'
