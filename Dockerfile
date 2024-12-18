@@ -48,23 +48,21 @@ RUN npm install
 COPY deploy/nightly-docker/.env ./
 RUN npm run build
 
-# production stage
-# Comment out this section to disable production stage
+# production stage - Comment out this section to disable production stage
 # >>>>>>>>>>>>>>>>>>
-# FROM nginx:1.23.3-alpine AS production-stage
-# COPY --from=build-stage /app/dist/ /usr/share/nginx/html/
-# COPY deploy/nightly-docker/nginx/default.conf /etc/nginx/conf.d/
-# EXPOSE 80
-# CMD ["nginx", "-g", "daemon off;"]
-# <<<<<<<<<<<<<<<<<<
-
-# production stage (without stage seperation for debugging purposes)
-# Uncomment out this section to disable production stage
-# >>>>>>>>>>>>>>>>>>
-RUN apt-get install -y nginx && \
-    rm -rf /var/lib/apt/lists/*
-COPY dist/ /usr/share/nginx/html/
+FROM nginx:1.23.3-alpine AS production-stage
+COPY --from=build-stage /app/dist/ /usr/share/nginx/html/
 COPY deploy/nightly-docker/nginx/default.conf /etc/nginx/conf.d/
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
+# <<<<<<<<<<<<<<<<<<
+
+# production stage (without stage seperation for debugging purposes) - Uncomment out this section to disable production stage
+# >>>>>>>>>>>>>>>>>>
+# RUN apt-get install -y nginx && \
+#     rm -rf /var/lib/apt/lists/*
+# COPY dist/ /usr/share/nginx/html/
+# COPY deploy/nightly-docker/nginx/default.conf /etc/nginx/conf.d/
+# EXPOSE 80
+# CMD ["nginx", "-g", "daemon off;"]
 # <<<<<<<<<<<<<<<<<<
