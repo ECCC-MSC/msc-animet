@@ -32,6 +32,7 @@
   "GeoMetWms": "Add {wmsSource} layers",
   "GoToHomePage": "Go to MSC AniMet home page",
   "Grey": "Grey",
+  "InvalidSRS": "CRS {CRS} is invalid for this data source.",
   "JPEGCreateButtonLabel": "Create image",
   "JPEGExportDownload": "Download as JPEG",
   "JPEGExportSubtitle": "Preview the created image and download using the button below",

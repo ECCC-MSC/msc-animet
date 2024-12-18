@@ -404,13 +404,6 @@ export default {
 .radius {
   border-radius: 0px;
 }
-.source-tabs {
-  flex: 1;
-  padding: 0 4px;
-}
-.source-tabs:deep(.v-btn__content) {
-  white-space: normal;
-}
 .subtitle {
   color: grey;
   display: block;
@@ -428,11 +421,6 @@ export default {
   max-height: calc(100vh - (34px + 0.5em * 2) - 138px - 190px);
   overflow-y: auto;
 }
-.v-tabs:deep(.v-slide-group__next),
-.v-tabs:deep(.v-slide-group__prev) {
-  flex: 0 1;
-  min-width: 30px;
-}
 @media (max-width: 1120px) {
   .treeview {
     max-height: calc(100vh - (34px + 0.5em * 2) - 138px - 190px + 24px);
@@ -444,11 +432,6 @@ export default {
   }
 }
 @media (max-width: 565px) {
-  .nightly-chip {
-    padding-left: 4px;
-    padding-right: 14px;
-    transform: translateX(-10px);
-  }
   .treeview {
     max-height: calc(100vh - (34px + 0.5em * 2) - 158px - 190px - 42px - 10px);
   }

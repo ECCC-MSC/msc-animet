@@ -295,6 +295,19 @@ export default {
             this.errorLayersList.indexOf(layer.get('layerName')),
             1,
           )
+        } else if (
+          'code' in attrs &&
+          attrs['code'].nodeValue === 'InvalidSRS'
+        ) {
+          this.emitter.emit('removeLayer', layer)
+          this.expiredSnackBarMessage = this.t('InvalidSRS', {
+            CRS: this.currentCRS,
+          })
+          this.timeoutDuration = 8000
+          this.errorLayersList.splice(
+            this.errorLayersList.indexOf(layer.get('layerName')),
+            1,
+          )
         } else {
           this.emitter.emit('removeLayer', layer)
           this.expiredSnackBarMessage = this.t('UnhandledError')
@@ -518,6 +531,9 @@ export default {
     },
   },
   computed: {
+    currentCRS() {
+      return this.store.getCurrentCRS
+    },
     datetimeRangeSlider() {
       return this.store.getDatetimeRangeSlider
     },

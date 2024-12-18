@@ -115,8 +115,8 @@ export default {
     })
     window.addEventListener('keydown', this.closeMenu)
     window.addEventListener('resize', this.updateScreenSize)
-    this.emitter.on('collapseMenu', () => {
-      if (!this.buttonShown) {
+    this.emitter.on('collapseMenu', (permalinkSetup) => {
+      if (permalinkSetup) {
         var unwatch = this.$watch(
           'layersLength',
           (_, oldVal) => {
@@ -127,6 +127,8 @@ export default {
           },
           { immediate: true },
         )
+      }
+      if (!this.buttonShown) {
         this.buttonShown = true
         this.menuOpen = false
       }

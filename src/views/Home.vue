@@ -92,7 +92,7 @@ export default {
       } else {
         return
       }
-      this.emitter.emit('collapseMenu')
+      this.emitter.emit('collapseMenu', true)
       let layer = {}
       layer.Name = layerName
       layer.isLeaf = true

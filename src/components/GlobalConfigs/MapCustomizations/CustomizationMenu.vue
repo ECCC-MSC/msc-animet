@@ -82,7 +82,7 @@ export default {
         this.menuOpen = !this.menuOpen
         this.store.setMenusOpen(this.menuOpen)
         if (this.menuOpen) {
-          this.emitter.emit('collapseMenu')
+          this.emitter.emit('collapseMenu', false)
         }
       },
     },
