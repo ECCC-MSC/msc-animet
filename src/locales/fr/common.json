@@ -32,6 +32,7 @@
   "GeoMetWms": "Ajouter des couches {wmsSource}",
   "GoToHomePage": "Aller à la page d'accueil AniMet du SMC",
   "Grey": "Grise",
+  "InvalidSRS": "Le SRC {CRS} n'est pas valide pour cette source de données.",
   "JPEGCreateButtonLabel": "Créer l'image",
   "JPEGExportDownload": "Télécharger au format JPEG",
   "JPEGExportSubtitle": "Prévisualiser l'image créée et télécharger à l'aide du bouton ci-dessous",
