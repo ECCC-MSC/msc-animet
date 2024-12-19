@@ -60,8 +60,8 @@ CMD ["nginx", "-g", "daemon off;"]
 # production stage (without stage seperation for debugging purposes) - Uncomment out this section to disable production stage
 # >>>>>>>>>>>>>>>>>>
 # RUN apt-get install -y nginx && \
-#     rm -rf /var/lib/apt/lists/*
-# COPY dist/ /usr/share/nginx/html/
+#     rm -rf /var/lib/apt/lists/* && \
+#     cp dist/ /usr/share/nginx/html/
 # COPY deploy/nightly-docker/nginx/default.conf /etc/nginx/conf.d/
 # EXPOSE 80
 # CMD ["nginx", "-g", "daemon off;"]
