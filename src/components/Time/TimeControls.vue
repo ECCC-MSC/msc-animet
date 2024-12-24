@@ -151,8 +151,8 @@ export default {
         this.mapTimeSettings.Extent[this.mapTimeSettings.DateIndex],
       )
     },
-    layerTimeManager(eventData) {
-      const { imageLayer, layerData } = eventData
+    async layerTimeManager(eventData) {
+      const { imageLayer, layerData, autoPlay } = eventData
       const referenceTime =
         layerData.Dimension.Dimension_ref_time === ''
           ? null
@@ -215,6 +215,13 @@ export default {
       )
       this.emitter.emit('timeLayerAdded', imageLayer.get('layerName'))
       this.$mapCanvas.mapObj.addLayer(imageLayer)
+      if (autoPlay) {
+        await new Promise((resolve) =>
+          this.$mapCanvas.mapObj.once('rendercomplete', resolve),
+        )
+        this.emitter.emit('toggleAnimation')
+        this.store.setCollapsedControls(true)
+      }
     },
     async mapControls() {
       // Prevents a bug that triggers play twice

@@ -13,14 +13,12 @@ export default {
     }
   },
   mounted() {
-    this.emitter.on('timeLayerAdded', (layerName) => {
-      this.layers.push(layerName)
-    })
-    this.emitter.on('timeLayerRemoved', (layer) => {
-      this.layers = this.layers.filter((l) => l !== layer.get('layerName'))
-    })
+    this.emitter.on('timeLayerAdded', this.onTimeLayerAdded)
+    this.emitter.on('timeLayerRemoved', this.onTimeLayerRemoved)
   },
   beforeUnmount() {
+    this.emitter.off('timeLayerAdded', this.onTimeLayerAdded)
+    this.emitter.off('timeLayerRemoved', this.onTimeLayerRemoved)
     this.stopPolling()
   },
   methods: {
@@ -51,9 +49,6 @@ export default {
           }
         })
       }
-    },
-    stopPolling() {
-      clearInterval(this.interval)
     },
     async fetchLayerData() {
       let layersInfo = []
@@ -127,6 +122,15 @@ export default {
         }),
       )
       this.checkRefresh(layersInfo)
+    },
+    onTimeLayerAdded(layerName) {
+      this.layers.push(layerName)
+    },
+    onTimeLayerRemoved(layer) {
+      this.layers = this.layers.filter((l) => l !== layer.get('layerName'))
+    },
+    stopPolling() {
+      clearInterval(this.interval)
     },
   },
   computed: {

@@ -62,20 +62,11 @@ import { version } from '../../../package.json'
 export default {
   inject: ['store'],
   mounted() {
-    this.emitter.on('goToExtent', this.goToExtentHandler)
     this.emitter.on('buildLayer', this.buildLayer)
-    this.emitter.on('localeChange', () => {
-      this.$mapCanvas.mapObj.removeControl(this.rotateArrow)
-      this.rotateArrow = new Rotate({ tipLabel: this.t('ResetRotation') })
-      this.$mapCanvas.mapObj.addControl(this.rotateArrow)
-    })
+    this.emitter.on('goToExtent', this.goToExtentHandler)
+    this.emitter.on('localeChange', this.onLocaleChange)
     this.emitter.on('removeLayer', this.removeLayerHandler)
-
-    window.addEventListener('keydown', (event) => {
-      if (event.key === 'Delete') {
-        this.removeLegend()
-      }
-    })
+    window.addEventListener('keydown', this.onKeyDown)
 
     const scaleControl = new ScaleLine({
       units: 'metric',
@@ -194,7 +185,11 @@ export default {
     }).observe(this.$refs.map)
   },
   beforeUnmount() {
-    window.removeEventListener('keydown', this.removeLegend)
+    this.emitter.off('buildLayer', this.buildLayer)
+    this.emitter.off('goToExtent', this.goToExtentHandler)
+    this.emitter.off('localeChange', this.onLocaleChange)
+    this.emitter.off('removeLayer', this.removeLayerHandler)
+    window.removeEventListener('keydown', this.onKeyDown)
   },
   methods: {
     async goToExtentHandler(locExtent) {
@@ -205,6 +200,16 @@ export default {
       const currentView = this.$mapCanvas.mapObj.getView()
       currentView.setRotation(rotation)
       currentView.fit(locExtent, { size: this.$mapCanvas.mapObj.getSize() })
+    },
+    onKeyDown(event) {
+      if (event.key === 'Delete') {
+        this.removeLegend()
+      }
+    },
+    onLocaleChange() {
+      this.$mapCanvas.mapObj.removeControl(this.rotateArrow)
+      this.rotateArrow = new Rotate({ tipLabel: this.t('ResetRotation') })
+      this.$mapCanvas.mapObj.addControl(this.rotateArrow)
     },
     async removeLayerHandler(removedLayer) {
       if (this.activeLegends.includes(removedLayer.get('layerName'))) {
@@ -271,7 +276,7 @@ export default {
       }
     },
     async buildLayer(eventData) {
-      const { layerData, source: wmsSource } = eventData
+      const { layerData, source: wmsSource, autoPlay } = eventData
       let imageLayer = null
       imageLayer = new OLImage({
         source: new ImageWMS({
@@ -342,9 +347,20 @@ export default {
         this.store.addActiveLegend(imageLayer.get('layerName'))
       }
       if (imageLayer.get('layerIsTemporal')) {
-        this.emitter.emit('addTemporalLayer', { imageLayer, layerData })
+        this.emitter.emit('addTemporalLayer', {
+          imageLayer,
+          layerData,
+          autoPlay,
+        })
       } else {
         this.$mapCanvas.mapObj.addLayer(imageLayer)
+        if (autoPlay) {
+          await new Promise((resolve) =>
+            this.$mapCanvas.mapObj.once('rendercomplete', resolve),
+          )
+          this.emitter.emit('toggleAnimation')
+          this.store.setCollapsedControls(true)
+        }
       }
     },
     exitFullscreenOnClick() {

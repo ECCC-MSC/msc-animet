@@ -1011,7 +1011,6 @@ export default {
     playState() {
       return this.store.getPlayState
     },
-
     activeLegends() {
       return this.store.getActiveLegends
     },

@@ -1,13 +1,13 @@
 <template>
   <div>
     <center>
-      <h1>{{ $t("NotFound") }}</h1>
+      <h1>{{ $t('NotFound') }}</h1>
       <p>
-        {{ $t("NotFoundSub") }}
+        {{ $t('NotFoundSub') }}
       </p>
       <p>
         <router-link :to="{ name: 'home' }">
-          {{ $t("GoToHomePage") }}
+          {{ $t('GoToHomePage') }}
         </router-link>
       </p>
     </center>
@@ -16,8 +16,8 @@
 
 <script>
 export default {
-  name: "NotFound",
-};
+  name: 'NotFound',
+}
 </script>
 
 <style scoped>

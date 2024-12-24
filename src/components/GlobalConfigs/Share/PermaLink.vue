@@ -66,9 +66,11 @@ export default {
   },
   data() {
     return {
+      channel: new BroadcastChannel('iframe-updates'),
       dialog: false,
       route: useRoute(),
       router: useRouter(),
+      updateTimer: null,
     }
   },
   mounted() {
@@ -76,6 +78,7 @@ export default {
   },
   beforeUnmount() {
     this.emitter.off('updatePermalink', this.createPermaLink)
+    this.channel.close()
   },
   computed: {
     activeLegends() {
@@ -96,8 +99,14 @@ export default {
     permalink() {
       return this.store.getPermalink
     },
+    playState() {
+      return this.store.getPlayState
+    },
     rgb() {
       return this.store.getRGB
+    },
+    routerParameters() {
+      return this.route.query
     },
     showGraticules() {
       return this.store.getShowGraticules
@@ -107,21 +116,15 @@ export default {
     },
   },
   methods: {
+    bufferUpdate() {
+      clearTimeout(this.updateTimer)
+      this.updateTimer = setTimeout(() => {
+        this.channel.postMessage('update')
+      }, 2000)
+    },
     closeAll() {
       this.dialog = false
       document.activeElement.blur()
-    },
-    selectFieldValue(id) {
-      const copyText = document.getElementById(id)
-      copyText.select()
-      copyText.setSelectionRange(0, 99999)
-      return copyText.value
-    },
-    toClipboard(id) {
-      navigator.clipboard.writeText(this.selectFieldValue(id))
-    },
-    prefixLink() {
-      return window.location.origin + window.location.pathname
     },
     createPermaLink() {
       if (this.extent !== null) {
@@ -202,6 +205,10 @@ export default {
           permalinktemp += `&color=${this.rgb}`
         }
 
+        if (this.playState === 'play') {
+          permalinktemp += `&play=1`
+        }
+
         this.router.replace({
           path: this.route.path,
           query: Object.fromEntries(
@@ -210,8 +217,26 @@ export default {
         })
 
         this.store.setPermalink(permalinktemp)
+
         return permalinktemp
       }
+    },
+    prefixLink() {
+      return window.location.origin + window.location.pathname
+    },
+    selectFieldValue(id) {
+      const copyText = document.getElementById(id)
+      copyText.select()
+      copyText.setSelectionRange(0, 99999)
+      return copyText.value
+    },
+    toClipboard(id) {
+      navigator.clipboard.writeText(this.selectFieldValue(id))
+    },
+  },
+  watch: {
+    routerParameters() {
+      this.bufferUpdate()
     },
   },
 }
