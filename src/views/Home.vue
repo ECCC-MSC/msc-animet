@@ -14,7 +14,12 @@ import { register } from 'ol/proj/proj4'
 export default {
   inject: ['store'],
   name: 'Home',
-  props: ['layers', 'extent', 'color', 'basemap', 'proj', 'grat'],
+  props: ['layers', 'extent', 'color', 'basemap', 'proj', 'grat', 'play'],
+  data() {
+    return {
+      layerCount: null,
+    }
+  },
   created() {
     proj4.defs(
       'EPSG:3978',
@@ -42,7 +47,9 @@ export default {
   async mounted() {
     if (this.layers !== undefined) {
       const layersPassed = this.layers.split(',')
+      this.layerCount = layersPassed.length
       layersPassed.forEach((layer, index) => {
+        this.layerCount--
         this.addLayerEvent(index, ...layer.split(';'))
       })
     }
@@ -92,7 +99,13 @@ export default {
       } else {
         return
       }
-      this.emitter.emit('collapseMenu', true)
+      if (this.layerCount === 0) {
+        if (this.play) {
+          this.emitter.emit('changeTab')
+        } else {
+          this.emitter.emit('collapseMenu', true)
+        }
+      }
       let layer = {}
       layer.Name = layerName
       layer.isLeaf = true
@@ -108,7 +121,8 @@ export default {
       if (legendDisplayed !== undefined) {
         layer.legendDisplayed = legendDisplayed
       }
-      this.emitter.emit('permaLinkLayer', layer)
+      const autoPlay = this.play && this.layerCount === 0
+      this.emitter.emit('permaLinkLayer', { layer, autoPlay })
     },
     findKeyInLocaleFiles(key) {
       for (const sourceName in localeData['enLocaleData']) {

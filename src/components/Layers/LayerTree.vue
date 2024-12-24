@@ -41,7 +41,7 @@
                 key-prop="Name"
                 title-prop="Title"
                 @node-toggled="handleNodeToggle"
-                @request="requestLayerData"
+                @request="requestLayerData({ layer: $event })"
               >
                 <template #node-icon="{ node }">
                   <v-btn
@@ -132,11 +132,14 @@ export default {
     this.searchGeoMet = new Array(
       Object.keys(this.geometWmsSources).length,
     ).fill(null)
-    this.emitter.on('layerRemoved', (layerName) => {
-      this.addedLayers = this.addedLayers.filter((added) => added !== layerName)
-    })
+    this.emitter.on('layerRemoved', this.removeLayer)
     this.emitter.on('localeChange', this.resetSearchAndTree)
     this.emitter.on('permaLinkLayer', this.requestLayerData)
+  },
+  beforeUnmount() {
+    this.emitter.off('layerRemoved', this.removeLayer)
+    this.emitter.off('localeChange', this.resetSearchAndTree)
+    this.emitter.off('permaLinkLayer', this.requestLayerData)
   },
   data() {
     return {
@@ -145,7 +148,6 @@ export default {
       closedNodes: new Set(),
       debouncedFilterOnInput: null,
       filteredTreeNodes: [],
-      isNightly: import.meta.env.APP_IS_NIGHTLY,
       openedLevels: [],
       searchGeoMet: [],
       smAndDown: false,
@@ -153,9 +155,13 @@ export default {
     }
   },
   methods: {
-    async requestLayerData(layer) {
+    removeLayer(layerName) {
+      this.addedLayers = this.addedLayers.filter((added) => added !== layerName)
+    },
+    async requestLayerData(eventData) {
+      const { layer, autoPlay = false } = eventData
       if (this.playState === 'play') {
-        this.emitter.emit('stopAnimation')
+        this.emitter.emit('toggleAnimation')
       }
       if (layer.isLeaf && !this.addedLayers.includes(layer.Name)) {
         let source = Object.hasOwn(layer, 'wmsSource')
@@ -256,13 +262,13 @@ export default {
             this.addedLayers = this.addedLayers.filter(
               (added) => added !== layer.Name,
             )
-            this.emitter.emit('LayerQueryFailure')
+            this.emitter.emit('layerQueryFailure')
             throw new Error(`Query for ${layer.Name} failed`)
           }
         })
         layerData = { ...layerData, ...layer }
         layerData.isTemporal = layerData.Dimension.Dimension_time !== ''
-        this.emitter.emit('buildLayer', { layerData, source })
+        this.emitter.emit('buildLayer', { layerData, source, autoPlay })
       } else if (
         this.$mapLayers.arr.some((l) => l.get('layerName') === layer.Name)
       ) {
@@ -374,12 +380,6 @@ export default {
     },
     playState() {
       return this.store.getPlayState
-    },
-    displayTabArrows() {
-      return Boolean(
-        this.smAndDown &&
-          (this.isNightly || Object.keys(this.geometWmsSources).length > 2),
-      )
     },
     sourceParameters() {
       return this.geometWmsSources[this.wmsSource]

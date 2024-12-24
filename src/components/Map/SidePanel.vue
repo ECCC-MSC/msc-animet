@@ -105,36 +105,16 @@ export default {
   name: 'SidePanel',
   inject: ['store'],
   mounted() {
-    this.emitter.on('openPanel', () => {
-      if (!this.menuOpen) {
-        this.onMenuToggle()
-      }
-    })
-    this.emitter.on('changeTab', () => {
-      if (this.tab === 0 && this.$mapLayers.arr.length !== 0) this.tab = 1
-    })
+    this.emitter.on('changeTab', this.onChangeTab)
+    this.emitter.on('collapseMenu', this.onCollapseMenu)
+    this.emitter.on('openPanel', this.onOpenPanel)
     window.addEventListener('keydown', this.closeMenu)
     window.addEventListener('resize', this.updateScreenSize)
-    this.emitter.on('collapseMenu', (permalinkSetup) => {
-      if (permalinkSetup) {
-        var unwatch = this.$watch(
-          'layersLength',
-          (_, oldVal) => {
-            if (oldVal !== undefined) {
-              this.tab = 1
-              unwatch()
-            }
-          },
-          { immediate: true },
-        )
-      }
-      if (!this.buttonShown) {
-        this.buttonShown = true
-        this.menuOpen = false
-      }
-    })
   },
   beforeUnmount() {
+    this.emitter.off('changeTab', this.onChangeTab)
+    this.emitter.off('collapseMenu', this.onCollapseMenu)
+    this.emitter.off('openPanel', this.onOpenPanel)
     window.removeEventListener('keydown', this.closeMenu)
     window.removeEventListener('resize', this.updateScreenSize)
   },
@@ -180,9 +160,35 @@ export default {
         }, 250)
       }
     },
+    onChangeTab() {
+      if (this.tab === 0 && this.$mapLayers.arr.length !== 0) this.tab = 1
+    },
+    onCollapseMenu(permalinkSetup) {
+      if (permalinkSetup) {
+        var unwatch = this.$watch(
+          'layersLength',
+          (_, oldVal) => {
+            if (oldVal !== undefined) {
+              this.tab = 1
+              unwatch()
+            }
+          },
+          { immediate: true },
+        )
+      }
+      if (!this.buttonShown) {
+        this.buttonShown = true
+        this.menuOpen = false
+      }
+    },
+    onOpenPanel() {
+      if (!this.menuOpen) {
+        this.onMenuToggle()
+      }
+    },
     stopLoop() {
       if (this.isAnimating && this.playState === 'play') {
-        this.emitter.emit('stopAnimation')
+        this.emitter.emit('toggleAnimation')
       }
     },
     togglePreview(on) {

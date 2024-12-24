@@ -41,14 +41,14 @@ export default {
       this.play(true)
     }
     this.emitter.on('playAnimation', this.play)
-    this.emitter.on('stopAnimation', this.playPause)
+    this.emitter.on('toggleAnimation', this.playPause)
   },
   beforeUnmount() {
     // Once unmounted, component no longer sees Pinia store changes
     // Make sure to kill this loop and restart it in the new one that's been mounted
     this.killUnmountLoop = true
     this.emitter.off('playAnimation', this.play)
-    this.emitter.off('stopAnimation', this.playPause)
+    this.emitter.off('toggleAnimation', this.playPause)
   },
   data() {
     return {

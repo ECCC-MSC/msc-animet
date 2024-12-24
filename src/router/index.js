@@ -16,6 +16,7 @@ const routes = [
       basemap: route.query.basemap,
       proj: route.query.proj,
       grat: route.query.grat,
+      play: route.query.play,
     }),
   },
   {

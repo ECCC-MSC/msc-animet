@@ -108,20 +108,18 @@ export default {
       this.coordinatesSelection = coordinatesPreference
     }
     window.addEventListener('keydown', this.closeMenu)
+    this.emitter.on('localeChange', this.changeGFILang)
+    this.emitter.on('modelRunChanged', this.onModelRunChange)
     this.emitter.on('onMapClicked', this.onSingleClick)
-    this.emitter.on('modelRunChanged', () => {
-      if (this.overlay !== null && this.eventGFI !== null)
-        this.onSingleClick(this.eventGFI, false)
-    })
 
     this.closer = document.getElementById('popupGFI-closer')
     this.closer.onclick = this.closePopup
-    this.emitter.on('localeChange', this.changeGFILang)
   },
   beforeUnmount() {
-    this.emitter.off('onMapClicked', this.onSingleClick)
     window.removeEventListener('keydown', this.closeMenu)
     this.emitter.off('localeChange', this.changeGFILang)
+    this.emitter.off('modelRunChanged', this.onModelRunChange)
+    this.emitter.off('onMapClicked', this.onSingleClick)
   },
   computed: {
     isAnimating() {
@@ -240,6 +238,10 @@ export default {
     },
     getCoordinatesPreference() {
       return localStorage.getItem('coordinates-preference')
+    },
+    onModelRunChange() {
+      if (this.overlay !== null && this.eventGFI !== null)
+        this.onSingleClick(this.eventGFI, false)
     },
     async onSingleClick(eventGFI, pan = true) {
       if (!this.locked) {

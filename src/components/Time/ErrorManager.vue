@@ -67,22 +67,17 @@ export default {
   inject: ['store'],
   mixins: [datetimeManipulations],
   mounted() {
-    this.emitter.on('cancelAnimationResize', () => {
-      this.notifyCancelAnimateResize = true
-    })
-    this.emitter.on('LayerQueryFailure', () => {
-      this.expiredSnackBarMessage = this.t('BrokenLayer')
-      this.timeoutDuration = 12000
-      this.notifyExtentRebuilt = true
-    })
+    this.emitter.on('cancelAnimationResize', this.onCancelAnimationResize)
+    this.emitter.on('layerQueryFailure', this.onLayerQueryFailure)
     this.emitter.on('loadingError', this.errorDispatcher)
-    this.emitter.on('notifyWrongFormat', () => {
-      this.notifyWrongFormat = true
-    })
+    this.emitter.on('notifyWrongFormat', this.onNotifyWrongFormat)
     this.emitter.on('refreshExpired', this.autoRefreshHandler)
   },
   beforeUnmount() {
+    this.emitter.off('cancelAnimationResize', this.onCancelAnimationResize)
+    this.emitter.off('layerQueryFailure', this.onLayerQueryFailure)
     this.emitter.off('loadingError', this.errorDispatcher)
+    this.emitter.off('notifyWrongFormat', this.onNotifyWrongFormat)
     this.emitter.off('refreshExpired', this.autoRefreshHandler)
   },
   data() {
@@ -349,6 +344,17 @@ export default {
         this.notifyExtentRebuilt = true
       }
     },
+    onCancelAnimationResize() {
+      this.notifyCancelAnimateResize = true
+    },
+    onLayerQueryFailure() {
+      this.expiredSnackBarMessage = this.t('BrokenLayer')
+      this.timeoutDuration = 12000
+      this.notifyExtentRebuilt = true
+    },
+    onNotifyWrongFormat() {
+      this.notifyWrongFormat = true
+    },
     async updateTimeInformation(layer, originalError = null) {
       let layerData = null
       try {
@@ -528,6 +534,7 @@ export default {
       if (newState !== 'play' && oldState === 'play') {
         this.clearAllTimeouts()
       }
+      this.emitter.emit('updatePermalink')
     },
   },
   computed: {

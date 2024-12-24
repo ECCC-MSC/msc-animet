@@ -96,14 +96,14 @@ export default {
     }
   },
   mounted() {
-    this.emitter.on('invisibleBasemap', () => {
-      this.basemap = null
-    })
-    this.emitter.on('permalinkColor', () => {
-      this.isMapColored = true
-    })
+    this.emitter.on('invisibleBasemap', this.nullBasemap)
+    this.emitter.on('permalinkColor', this.setMapIsColored)
     this.initializeMaps()
     this.updateProjection()
+  },
+  beforeUnmount() {
+    this.emitter.off('invisibleBasemap', this.nullBasemap)
+    this.emitter.off('permalinkColor', this.setMapIsColored)
   },
   computed: {
     crsList() {
@@ -293,8 +293,14 @@ export default {
     isSelected(source, colorName) {
       return this.selection === `${source}-${colorName}`
     },
+    nullBasemap() {
+      this.basemap = null
+    },
     setColor() {
       this.rgb = this.store.getRGB
+    },
+    setMapIsColored() {
+      this.isMapColored = true
     },
     updateProjection() {
       const newProjection = getProjection(this.currentCRS)
