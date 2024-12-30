@@ -201,10 +201,14 @@ for name, params in wms_sources.items():
         sources_to_remove.append(name)
         continue
     for lang in langs:
-        if "?" in params["url"]:
-            base_url = f"{params['url']}&lang={lang}"
+        if f"url_{lang}" in params:
+            base_url = params[f"url_{lang}"]
         else:
-            base_url = f"{params['url']}?lang={lang}"
+            base_url = params["url"]
+        if "?" in base_url:
+            base_url = f"{base_url}&lang={lang}"
+        else:
+            base_url = f"{base_url}?lang={lang}"
         try:
             wms = WebMapService(base_url, version=params["version"])
         except Exception as e:

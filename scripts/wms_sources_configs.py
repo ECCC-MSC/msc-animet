@@ -54,4 +54,10 @@ wms_sources = {
         "no_translations": True,
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
     },
+    "NRCan": {
+        "url": "https://maps.geogratis.gc.ca/wms/canvec_en",
+        "url_fr": "https://maps.geogratis.gc.ca/wms/canvec_fr",
+        "version": "1.3.0",
+        "display": os.environ.get("ANIMET_NIGHTLY", default=False),
+    },
 }

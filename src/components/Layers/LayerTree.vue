@@ -33,7 +33,7 @@
               @click:clear="filterOnInput(this.tab)"
             >
             </v-text-field>
-            <div :ref="wmsSource" class="treeview pr-0">
+            <div class="treeview pr-0">
               <tree-node
                 v-for="node in filteredTreeNodes[this.tab]"
                 :key="`${node.Name}`"
@@ -341,7 +341,7 @@ export default {
     },
     resetSearchAndTree() {
       this.searchGeoMet.fill(null)
-      for (let i = 0; i < Object.keys(this.$refs).length; i++) {
+      for (let i = 0; i < Object.keys(this.filteredTreeNodes).length; i++) {
         this.filterOnInput(i)
       }
     },
