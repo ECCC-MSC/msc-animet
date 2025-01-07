@@ -78,6 +78,8 @@ export const useStore = defineStore('store', {
     resolution: '1080p',
     rgb: [],
     showGraticules: false,
+    textBoxes: [],
+    textBoxFocused: false,
     timeFormat: true,
     uniqueTimestepsList: [],
     wmsSources: wmsSources,
@@ -121,6 +123,8 @@ export const useStore = defineStore('store', {
     getPlayState: (state) => state.playState,
     getRGB: (state) => state.rgb,
     getShowGraticules: (state) => state.showGraticules,
+    getTextBoxes: (state) => state.textBoxes,
+    getTextBoxFocused: (state) => state.textBoxFocused,
     getTimeFormat: (state) => state.timeFormat,
     getUniqueTimestepsList: (state) => state.uniqueTimestepsList,
   },
@@ -128,6 +132,9 @@ export const useStore = defineStore('store', {
     addActiveLegend(legend) {
       this.legendIndex.addItem(legend)
       this.activeLegendsList.push(legend)
+    },
+    addTextBox(textBox) {
+      this.textBoxes.push(textBox)
     },
     addTimestep(timestep) {
       this.fullTimestepsList.push(timestep)
@@ -143,6 +150,11 @@ export const useStore = defineStore('store', {
     },
     removeIntersect(layerName) {
       delete this.intersectDict[layerName]
+    },
+    removeTextBox(textBoxId) {
+      this.textBoxes = this.textBoxes.filter(
+        (textBox) => textBox.id !== textBoxId,
+      )
     },
     removeTimestep(timestep) {
       this.fullTimestepsList.splice(this.fullTimestepsList.indexOf(timestep), 1)
@@ -226,7 +238,7 @@ export const useStore = defineStore('store', {
         } else {
           this.menusOpen -= 1
         }
-      }, 1000)
+      }, 750)
     },
     setModelRunMessages(messages) {
       this.modelRunMessages = messages
@@ -260,6 +272,11 @@ export const useStore = defineStore('store', {
     },
     setShowGraticules(isShown) {
       this.showGraticules = isShown
+    },
+    setTextBoxFocused(isFocused) {
+      setTimeout(() => {
+        this.textBoxFocused = isFocused
+      }, 750)
     },
     setTimeFormat(newTimeFormat) {
       this.timeFormat = newTimeFormat

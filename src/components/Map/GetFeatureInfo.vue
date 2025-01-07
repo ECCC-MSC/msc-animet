@@ -131,6 +131,9 @@ export default {
     menusOpen() {
       return this.store.getMenusOpen
     },
+    textBoxFocused() {
+      return this.store.getTextBoxFocused
+    },
     coordinatesRepresentation() {
       let rep =
         this.currentCoordinates !== null
@@ -249,7 +252,11 @@ export default {
         this.eventGFI = eventGFI
         const { event: evt, overlay } = eventGFI
         let itemsGFI = []
-        if (this.$mapLayers.arr.length > 0 && this.menusOpen === 0) {
+        if (
+          this.$mapLayers.arr.length > 0 &&
+          this.menusOpen === 0 &&
+          this.textBoxFocused === false
+        ) {
           let urls = {}
           this.$mapLayers.arr.toReversed().forEach((layer) => {
             if (layer.get('visible')) {

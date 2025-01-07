@@ -253,6 +253,7 @@ export default {
 
 <style>
 .v-overlay-menu .v-overlay__content {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: absolute;
   left: auto !important;
   right: 0.5em;

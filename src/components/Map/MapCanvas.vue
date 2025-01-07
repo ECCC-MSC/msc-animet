@@ -20,6 +20,14 @@
           @legend-click="selectImage"
         />
       </div>
+      <div id="textBoxOverlay">
+        <editable-text-box
+          v-for="textBox in textBoxes"
+          :key="textBox.id"
+          :id="textBox.id"
+          :coord="textBox.coord"
+        />
+      </div>
       <time-controls />
     </div>
     <loading-bar :loading="loading > 0" />
@@ -55,6 +63,9 @@ import Rotate from 'ol/control/Rotate.js'
 import Stroke from 'ol/style/Stroke.js'
 import TileLayer from 'ol/layer/Tile'
 import View from 'ol/View'
+
+import ContextMenu from 'ol-contextmenu'
+import 'ol-contextmenu/dist/ol-contextmenu.css'
 
 import { useI18n } from 'vue-i18n'
 import { version } from '../../../package.json'
@@ -108,6 +119,9 @@ export default {
     const legendMapOverlay = new Control({
       element: document.getElementById('legendMapOverlay'),
     })
+    const textBoxOverlay = new Control({
+      element: document.getElementById('textBoxOverlay'),
+    })
     const timeControls = new Control({
       element: document.getElementById('time-controls'),
     })
@@ -144,12 +158,26 @@ export default {
       },
     })
 
+    const contextMenu = new ContextMenu({
+      width: 170,
+      defaultItems: false,
+      items: [
+        {
+          text: 'Add Textbox',
+          classname: 'context-menu-icon mdi mdi-text-box-edit',
+          callback: this.addTextBox,
+        },
+      ],
+    })
+
     this.$mapCanvas.mapObj.addControl(animationRect)
     this.$mapCanvas.mapObj.addControl(animetVersion)
     this.$mapCanvas.mapObj.addControl(attribution)
+    this.$mapCanvas.mapObj.addControl(contextMenu)
     this.$mapCanvas.mapObj.addControl(globalConfigs)
     this.$mapCanvas.mapObj.addControl(legendMapOverlay)
     this.$mapCanvas.mapObj.addControl(sidePanel)
+    this.$mapCanvas.mapObj.addControl(textBoxOverlay)
     this.$mapCanvas.mapObj.addControl(timeControls)
     this.$mapCanvas.mapObj.addControl(timeSnackbar)
     this.$mapCanvas.mapObj.addControl(zoomMinus)
@@ -192,6 +220,13 @@ export default {
     window.removeEventListener('keydown', this.onKeyDown)
   },
   methods: {
+    addTextBox(evt) {
+      this.store.addTextBox({
+        id: this.textBoxId,
+        coord: evt.coordinate,
+      })
+      this.textBoxId++
+    },
     async goToExtentHandler(locExtent) {
       let rotation = 0
       if (locExtent.length === 5) {
@@ -460,6 +495,9 @@ export default {
     showGraticules() {
       return this.store.getShowGraticules
     },
+    textBoxes() {
+      return this.store.textBoxes
+    },
     mapHeight() {
       return this.$mapCanvas.mapObj.getSize()[1]
     },
@@ -551,6 +589,7 @@ export default {
       rotateArrow: null,
       selectedLegendLayerName: null,
       t: useI18n().t,
+      textBoxId: 0,
       version: version,
     }
   },
@@ -608,6 +647,11 @@ export default {
   .attribution-open {
     bottom: 168px !important;
   }
+}
+.context-menu-icon::before {
+  margin-right: 8px;
+  margin-left: -5px;
+  font-size: 1.3em;
 }
 </style>
 

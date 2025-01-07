@@ -64,7 +64,7 @@ const tabsHeader = ref(null)
 const scrollContainer = ref(null)
 const tabRefs = reactive({})
 
-const arrowMouvementAmount = 150
+const arrowMouvementAmount = 220
 const arrowLeft = ref(false)
 const arrowRight = ref(false)
 
