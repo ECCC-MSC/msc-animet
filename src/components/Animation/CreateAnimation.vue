@@ -168,7 +168,7 @@ export default {
     },
     async createMP4Handler() {
       this.imgURL = this.storeImgURL
-      this.MP4URL = this.mp4URL
+      this.MP4URL = this.getMP4URL
       this.store.setMP4URL(null)
       this.store.setImgURL(null)
       this.store.setIsAnimating(true)
@@ -367,8 +367,8 @@ export default {
           )
           const animationBlob = new Blob([uint8Array], { type: 'video/mp4' })
           this.store.setOutputSize(animationBlob.size)
-          const mp4URL = URL.createObjectURL(animationBlob)
-          this.store.setMP4URL(mp4URL)
+          const outputURL = URL.createObjectURL(animationBlob)
+          this.store.setMP4URL(outputURL)
         }
       }
       this.encoder.delete()
@@ -396,6 +396,12 @@ export default {
               .get('legendColor'),
           )
         }
+      })
+      this.textBoxes.forEach((textBoxObj) => {
+        this.addTextBox(
+          mapCnv,
+          document.getElementById(`text-box-${textBoxObj.id}`),
+        )
       })
       await this.updateInfoCanvas(date)
       const composedCnv = await this.stitchCanvases(mapCnv)
@@ -466,6 +472,47 @@ export default {
           legendHeight + borderWidth,
         )
       }
+    },
+    addTextBox(mapCanvas, textBox) {
+      const mapTextBox = textBox.getBoundingClientRect()
+      let animationRect = document.getElementById('animation-rect')
+      const ratioH = (animationRect.offsetHeight - 8) / mapCanvas.height
+      const ratioW = (animationRect.offsetWidth - 8) / mapCanvas.width
+      const offsetLeft =
+        (mapTextBox.left - animationRect.offsetLeft) / ratioW - 4
+      const offsetTop =
+        50 +
+        (mapTextBox.top -
+          animationRect.offsetTop -
+          (50 / this.currentAspect[this.currentResolution].height) *
+            animationRect.offsetHeight) /
+          ratioH -
+        4
+      const textBoxWidth = mapTextBox.width / ratioW
+      const textBoxHeight = mapTextBox.height / ratioH
+
+      const context = mapCanvas.getContext('2d')
+      canvasTxt.fontSize = 16 / Math.max(ratioH, ratioW)
+      context.font = canvasTxt.fontSize + 'px sans-serif'
+      context.fillStyle = 'rgba(255,255,255,0.65)'
+      context.fillRect(offsetLeft, offsetTop, textBoxWidth, textBoxHeight)
+
+      context.strokeStyle = 'black'
+      context.fillStyle = 'black'
+      canvasTxt.vAlign = 'top'
+      canvasTxt.lineHeight = canvasTxt.fontSize * 1.5
+
+      canvasTxt.drawText(
+        context,
+        textBox.textContent,
+        offsetLeft + 5,
+        offsetTop + 2,
+        textBoxWidth - 8,
+        textBoxHeight - 10,
+      )
+
+      canvasTxt.vAlign = 'middle'
+      canvasTxt.lineHeight = null
     },
     async stitchCanvases(mapCanvas) {
       return new Promise((resolve) => {
@@ -987,32 +1034,11 @@ export default {
     },
   },
   computed: {
-    animationTitle() {
-      return this.store.getAnimationTitle
-    },
-    datetimeRangeSlider() {
-      return this.store.getDatetimeRangeSlider
-    },
-    framesPerSecond() {
-      return this.store.getFramesPerSecond
-    },
-    isAnimating() {
-      return this.store.getIsAnimating
-    },
-    isAnimationReversed() {
-      return this.store.getIsAnimationReversed
-    },
-    MP4ProgressPercent() {
-      return this.store.getMP4ProgressPercent
-    },
-    pendingErrorResolution() {
-      return this.store.getPendingErrorResolution
-    },
-    playState() {
-      return this.store.getPlayState
-    },
     activeLegends() {
       return this.store.getActiveLegends
+    },
+    animationTitle() {
+      return this.store.getAnimationTitle
     },
     colorBorder() {
       return this.store.getColorBorder
@@ -1023,20 +1049,44 @@ export default {
     currentResolution() {
       return this.store.getCurrentResolution
     },
-    storeImgURL() {
-      return this.store.getImgURL
+    datetimeRangeSlider() {
+      return this.store.getDatetimeRangeSlider
+    },
+    framesPerSecond() {
+      return this.store.getFramesPerSecond
+    },
+    getMP4URL() {
+      return this.store.getMP4URL
+    },
+    isAnimating() {
+      return this.store.getIsAnimating
+    },
+    isAnimationReversed() {
+      return this.store.getIsAnimationReversed
     },
     mapTimeSettings() {
       return this.store.getMapTimeSettings
     },
-    mp4URL() {
-      return this.store.getMP4URL
+    MP4ProgressPercent() {
+      return this.store.getMP4ProgressPercent
+    },
+    outputFormat() {
+      return this.store.getOutputFormat
+    },
+    pendingErrorResolution() {
+      return this.store.getPendingErrorResolution
+    },
+    playState() {
+      return this.store.getPlayState
+    },
+    storeImgURL() {
+      return this.store.getImgURL
     },
     storeOutputDate() {
       return this.store.getOutputDate
     },
-    outputFormat() {
-      return this.store.getOutputFormat
+    textBoxes() {
+      return this.store.textBoxes
     },
     layersVisible() {
       let visibleLayers = this.$mapLayers.arr.filter((l) => {

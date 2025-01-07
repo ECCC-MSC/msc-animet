@@ -102,6 +102,7 @@ export default {
   opacity: 0;
 }
 .customize-menu .v-overlay__content {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex !important;
   position: absolute;
   left: auto !important;

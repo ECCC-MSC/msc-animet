@@ -7,7 +7,7 @@
         density="compact"
         type="warning"
         variant="outlined"
-        >{{ $t('ReplaceLegends') }}
+        >{{ $t('ElementsOutOfFrame') }}
       </v-alert>
       <v-text-field
         class="pt-1 title-field"

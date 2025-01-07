@@ -7,16 +7,9 @@
 </template>
 
 <script>
-import { useI18n } from 'vue-i18n'
-
 export default {
   name: 'App',
   inject: ['store'],
-  data() {
-    return {
-      t: useI18n().t,
-    }
-  },
   created() {
     const userLangChoice = this.getLang()
     let lang = 'en'
