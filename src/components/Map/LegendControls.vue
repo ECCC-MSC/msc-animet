@@ -8,16 +8,22 @@
     @dblclick="emitter.emit('openPanel')"
     @click="emit('legend-click', name)"
   >
-    <img
-      class="white"
-      :class="getLegendHidden"
-      :id="name"
-      :name="name"
-      :src="getMapLegendURL"
-      :style="{ border: getStyle }"
-      :title="name"
-      crossorigin="anonymous"
-    />
+    <div class="image-container">
+      <img
+        class="white"
+        :class="getLegendHidden"
+        :id="name"
+        :name="name"
+        :src="getMapLegendURL"
+        :style="{ border: getStyle }"
+        :title="name"
+        crossorigin="anonymous"
+      />
+      <button
+        class="close-button mdi mdi-close"
+        @pointerup="emit('legend-remove', name)"
+      ></button>
+    </div>
   </DraggableResizable>
 </template>
 
@@ -29,7 +35,7 @@ import { useI18n } from 'vue-i18n'
 const { proxy } = getCurrentInstance()
 
 const props = defineProps(['name'])
-const emit = defineEmits(['legend-click'])
+const emit = defineEmits(['legend-click', 'legend-remove'])
 
 const store = inject('store')
 const { locale } = useI18n()
@@ -139,5 +145,34 @@ onBeforeUnmount(() => {
   height: auto;
   object-fit: contain;
   vertical-align: middle;
+}
+@media (pointer: coarse) {
+  .image-container .close-button {
+    display: block;
+  }
+}
+@media (hover: hover) {
+  .image-container:hover .close-button {
+    display: block;
+  }
+}
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  display: none;
+  transition: background-color 0.3s;
+}
+.close-button:hover {
+  background-color: rgba(255, 0, 0, 0.7);
 }
 </style>

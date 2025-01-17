@@ -1,4 +1,6 @@
 {
+  "AddArrow": "Arrow",
+  "AddTextbox": "Textbox",
   "AnimationFrom": "Weather animation from",
   "AppBarCreate": "Animation configuration",
   "AppBarExport": "Created animation",

@@ -1,27 +1,26 @@
 <template>
-  <div class="textbox-wrapper">
-    <DraggableResizable
-      :initialPosition="initialPosStyle()"
-      resizeDirection="both"
-      @checkIntersect="checkIntersect"
-    >
-      <div class="text-box-container">
-        <div
-          :id="`text-box-${id}`"
-          class="text-box"
-          contentEditable="plaintext-only"
-          spellcheck="false"
-          @blur="handleUnfocus"
-          @focus="onTextboxFocus"
-          @keydown.left.right.space.enter.stop
-        ></div>
-        <button
-          class="close-button mdi mdi-close"
-          @click="destroyTextbox"
-        ></button>
-      </div>
-    </DraggableResizable>
-  </div>
+  <DraggableResizable
+    :initialPosition="initialPosStyle()"
+    resizeDirection="both"
+    @checkIntersect="checkIntersect"
+  >
+    <div class="text-box-container">
+      <div
+        :id="`text-box-${id}`"
+        class="text-box"
+        contentEditable="true"
+        spellcheck="false"
+        @blur="handleUnfocus"
+        @focus="onTextboxFocus"
+        @paste="handlePaste"
+        @keydown.left.right.space.enter.stop
+      ></div>
+      <button
+        class="close-button mdi mdi-close"
+        @click="destroyTextbox"
+      ></button>
+    </div>
+  </DraggableResizable>
 </template>
 
 <script setup>
@@ -59,6 +58,17 @@ const onTextboxFocus = () => {
 
 const handleUnfocus = () => {
   store.setTextBoxFocused(false)
+}
+
+const handlePaste = (evt) => {
+  evt.preventDefault()
+  const text = evt.clipboardData?.getData('text/plain')
+  const selectedRange = window.getSelection()?.getRangeAt(0)
+  if (!selectedRange || !text) return
+
+  selectedRange.deleteContents()
+  selectedRange.insertNode(document.createTextNode(text))
+  selectedRange.setStart(selectedRange.endContainer, selectedRange.endOffset)
 }
 
 const initialPosStyle = () => {
@@ -109,6 +119,16 @@ const checkIntersect = () => {
   opacity: 0;
   content: 'placeholder';
 }
+@media (pointer: coarse) {
+  .text-box-container:focus-within .close-button {
+    display: block;
+  }
+}
+@media (hover: hover) {
+  .text-box-container:hover .close-button {
+    display: block;
+  }
+}
 .close-button {
   position: absolute;
   top: 0;
@@ -124,9 +144,6 @@ const checkIntersect = () => {
   cursor: pointer;
   display: none;
   transition: background-color 0.3s;
-}
-.text-box-container:hover .close-button {
-  display: block;
 }
 .close-button:hover {
   background-color: rgba(255, 0, 0, 0.7);
