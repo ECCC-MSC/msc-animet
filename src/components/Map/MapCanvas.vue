@@ -18,6 +18,7 @@
           :key="name"
           :name="name"
           @legend-click="selectImage"
+          @legend-remove="removeLegend"
         />
       </div>
       <div id="textBoxOverlay">
@@ -63,6 +64,13 @@ import Rotate from 'ol/control/Rotate.js'
 import Stroke from 'ol/style/Stroke.js'
 import TileLayer from 'ol/layer/Tile'
 import View from 'ol/View'
+import { Vector as VectorSource } from 'ol/source.js'
+import { Vector as VectorLayer } from 'ol/layer.js'
+import { Draw, Modify, Select, Snap, Translate } from 'ol/interaction.js'
+import { Style, RegularShape, Fill } from 'ol/style.js'
+import Point from 'ol/geom/Point.js'
+import { Collection } from 'ol'
+import { never, pointerMove, click } from 'ol/events/condition'
 
 import ContextMenu from 'ol-contextmenu'
 import 'ol-contextmenu/dist/ol-contextmenu.css'
@@ -158,22 +166,57 @@ export default {
       },
     })
 
-    const contextMenu = new ContextMenu({
+    this.contextMenu = new ContextMenu({
       width: 170,
       defaultItems: false,
-      items: [
-        {
-          text: 'Add Textbox',
-          classname: 'context-menu-icon mdi mdi-text-box-edit',
-          callback: this.addTextBox,
-        },
-      ],
+      items: this.contextMenuItems,
+    })
+    this.contextMenu.on('open', () => {
+      this.contextMenuOpen = true
+    })
+    this.contextMenu.on('close', () => {
+      this.contextMenuOpen = false
     })
 
+    const customCondition = function (mapBrowserEvent) {
+      return click(mapBrowserEvent) || pointerMove(mapBrowserEvent)
+    }
+    const selectHover = new Select({
+      condition: customCondition,
+      style: null,
+    })
+    selectHover.on('select', (evt) => {
+      if (!this.blockSelect) {
+        const feature = evt.target
+          .getFeatures()
+          .getArray()?.[0]
+          ?.get('features')?.[0]
+        if (
+          feature &&
+          (!this.selectedFeature ||
+            this.selectedFeature.ol_uid !== feature.ol_uid)
+        ) {
+          this.selectedFeature = feature
+          if (this.selectedFeature) {
+            Object.entries(this.interactions).forEach(
+              ([index, interaction]) => {
+                if (interaction['feature'] === this.selectedFeature) {
+                  interaction['translate'].setActive(true)
+                  this.activeFeatureIndex = index
+                } else {
+                  interaction['translate'].setActive(false)
+                }
+              },
+            )
+          }
+        }
+      }
+    })
+    this.$mapCanvas.mapObj.addInteraction(selectHover)
     this.$mapCanvas.mapObj.addControl(animationRect)
     this.$mapCanvas.mapObj.addControl(animetVersion)
     this.$mapCanvas.mapObj.addControl(attribution)
-    this.$mapCanvas.mapObj.addControl(contextMenu)
+    this.$mapCanvas.mapObj.addControl(this.contextMenu)
     this.$mapCanvas.mapObj.addControl(globalConfigs)
     this.$mapCanvas.mapObj.addControl(legendMapOverlay)
     this.$mapCanvas.mapObj.addControl(sidePanel)
@@ -196,13 +239,35 @@ export default {
     })
 
     this.$mapCanvas.mapObj.on('singleclick', (evt) => {
-      this.emitter.emit('onMapClicked', { event: evt, overlay: popupGFI })
+      this.selectedLegendLayerName = null
+      if (!this.selectedFeature && !this.contextMenuOpen) {
+        this.emitter.emit('onMapClicked', { event: evt, overlay: popupGFI })
+      }
     })
     this.$mapCanvas.mapObj
       .getViewport()
       .addEventListener('pointerdown', (evt) => {
         if (evt.target.tagName === 'CANVAS' || evt.target.tagName === 'IMG') {
           this.emitter.emit('changeTab')
+        }
+        if (!this.blockSelect) {
+          const pixel = this.$mapCanvas.mapObj.getEventPixel(evt)
+
+          const feature = this.$mapCanvas.mapObj.forEachFeatureAtPixel(
+            pixel,
+            (feature) => {
+              return feature
+            },
+          )
+          if (!feature && this.activeFeatureIndex) {
+            this.selectedFeature = undefined
+            if (this.interactions[this.activeFeatureIndex]) {
+              this.interactions[this.activeFeatureIndex]['translate'].setActive(
+                false,
+              )
+            }
+            this.activeFeatureIndex = null
+          }
         }
       })
     this.$mapCanvas.mapObj.on('movestart', (evt) => {
@@ -227,6 +292,292 @@ export default {
       })
       this.textBoxId++
     },
+    styleFunction(feature) {
+      const geometry = feature.getGeometry()
+      const styles = [
+        new Style({
+          stroke: new Stroke({
+            color: '#FF0000',
+            width: 2,
+          }),
+        }),
+      ]
+
+      const start = geometry.getCoordinateAt(0)
+      const end = geometry.getCoordinateAt(1)
+      const dx = end[0] - start[0]
+      const dy = end[1] - start[1]
+      const rotation = Math.atan2(dy, dx)
+
+      styles.push(
+        new Style({
+          geometry: new Point(end),
+          image: new RegularShape({
+            fill: new Fill({ color: '#FF0000' }),
+            points: 3,
+            radius: 8,
+            rotation: -rotation,
+            angle: Math.PI / 2,
+          }),
+        }),
+      )
+
+      return styles
+    },
+    addArrow() {
+      this.blockSelect = true
+      const source = new VectorSource()
+      const vector = new VectorLayer({
+        source: source,
+        style: this.styleFunction,
+      })
+      this.$mapCanvas.mapObj.addLayer(vector)
+
+      const id = this.interactionIndex
+      this.interactionIndex++
+      const interaction = {
+        source: source,
+        feature: null,
+        draw: null,
+        snap: null,
+        modify: null,
+        translate: null,
+      }
+      this.interactions[id] = interaction
+
+      interaction['draw'] = new Draw({
+        source: source,
+        type: 'LineString',
+        maxPoints: 2,
+        stopClick: true,
+      })
+
+      const cancelDrawing = (deleteInteraction) => {
+        this.blockSelect = false
+
+        this.$mapCanvas.mapObj.removeInteraction(this.interactions[id]['draw'])
+        removeEventListeners()
+        if (deleteInteraction) delete this.interactions[id]
+      }
+
+      const handleKeyDown = (event) => {
+        if (event.key === 'Escape') {
+          cancelDrawing(true)
+        }
+      }
+
+      const handleRightClick = (event) => {
+        event.preventDefault()
+        cancelDrawing(true)
+      }
+
+      const removeEventListeners = () => {
+        document.removeEventListener('keydown', handleKeyDown)
+        this.$mapCanvas.mapObj
+          .getViewport()
+          .removeEventListener('contextmenu', handleRightClick)
+      }
+
+      document.addEventListener('keydown', handleKeyDown)
+      this.$mapCanvas.mapObj
+        .getViewport()
+        .addEventListener('contextmenu', handleRightClick)
+
+      interaction['draw'].on('drawend', (evt) => {
+        cancelDrawing()
+
+        const pixelTolerance = 10
+        interaction['feature'] = evt.feature
+        interaction['modify'] = new Modify({
+          source: source,
+          features: new Collection([interaction['feature']]),
+          insertVertexCondition: never,
+          pixelTolerance: pixelTolerance,
+        })
+
+        interaction['snap'] = new Snap({
+          source: source,
+          pixelTolerance: 0,
+        })
+
+        interaction['translate'] = new Translate({
+          features: new Collection([interaction['feature']]),
+          hitTolerance: pixelTolerance,
+          condition: (event) => {
+            const coordinate = this.$mapCanvas.mapObj.getPixelFromCoordinate(
+              event.coordinate,
+            )
+            const geometry = interaction['feature'].getGeometry()
+            const coordinates = geometry.getCoordinates()
+            const startPixel = this.$mapCanvas.mapObj.getPixelFromCoordinate(
+              coordinates[0],
+            )
+            const endPixel = this.$mapCanvas.mapObj.getPixelFromCoordinate(
+              coordinates[coordinates.length - 1],
+            )
+            return !(
+              this.isPixelEqual(coordinate, startPixel, pixelTolerance) ||
+              this.isPixelEqual(coordinate, endPixel, pixelTolerance)
+            )
+          },
+        })
+        interaction['translate'].on('translatestart', () => {
+          this.blockSelect = true
+        })
+        interaction['translate'].on('translateend', () => {
+          this.blockSelect = false
+        })
+        interaction['modify'].on('modifystart', () => {
+          this.blockSelect = true
+        })
+        interaction['modify'].on('modifyend', () => {
+          this.blockSelect = false
+        })
+
+        this.addDeleteFunctionality(id)
+
+        this.$mapCanvas.mapObj.addInteraction(interaction['modify'])
+        this.$mapCanvas.mapObj.addInteraction(interaction['snap'])
+        this.$mapCanvas.mapObj.addInteraction(interaction['translate'])
+      })
+
+      this.$mapCanvas.mapObj.addInteraction(interaction['draw'])
+    },
+    isPixelEqual([x1, y1], [x2, y2], tolerance) {
+      const dx = x2 - x1
+      const dy = y2 - y1
+      const distance = Math.sqrt(dx * dx + dy * dy)
+      return distance <= tolerance
+    },
+    addDeleteFunctionality(id) {
+      const handleKeyDown = (event) => {
+        if (this.interactions[id]['feature'] === this.selectedFeature) {
+          if (event.key === 'Delete') {
+            this.deleteFeature(id)
+          }
+        }
+      }
+
+      let longPressTimer
+      const longPressDuration = 1500
+      const handleTouchStart = (event) => {
+        if (event.touches.length === 1) {
+          const feature = this.interactions[id]['feature']
+          const pixel = this.$mapCanvas.mapObj.getEventPixel(event.touches[0])
+          const featureAtPixel = this.$mapCanvas.mapObj.forEachFeatureAtPixel(
+            pixel,
+            (f) => f,
+          )
+
+          if (
+            featureAtPixel === feature ||
+            featureAtPixel?.get('features')?.[0] === feature
+          ) {
+            this.startDeleteAnimation(feature, id)
+
+            longPressTimer = setTimeout(() => {
+              this.deleteFeature(id)
+            }, longPressDuration)
+          }
+        }
+      }
+
+      const handleTouchEnd = () => {
+        this.resetFeatureStyle(id)
+        clearTimeout(longPressTimer)
+      }
+
+      const handleTouchMove = () => {
+        this.resetFeatureStyle(id)
+        clearTimeout(longPressTimer)
+      }
+
+      document.addEventListener('keydown', handleKeyDown)
+      this.$mapCanvas.mapObj
+        .getViewport()
+        .addEventListener('touchstart', handleTouchStart)
+      this.$mapCanvas.mapObj
+        .getViewport()
+        .addEventListener('touchend', handleTouchEnd)
+      this.$mapCanvas.mapObj
+        .getViewport()
+        .addEventListener('touchmove', handleTouchMove)
+
+      this.interactions[id]['eventListeners'] = {
+        keydown: handleKeyDown,
+        touchstart: handleTouchStart,
+        touchend: handleTouchEnd,
+        touchmove: handleTouchMove,
+      }
+    },
+    resetFeatureStyle(id) {
+      if (this.interactions[id] && this.interactions[id]['deleteAnimation']) {
+        clearInterval(this.interactions[id]['deleteAnimation'].interval)
+        this.interactions[id]['feature'].setStyle(
+          this.interactions[id]['deleteAnimation'].originalStyle,
+        )
+        delete this.interactions[id]['deleteAnimation']
+      }
+    },
+    startDeleteAnimation(feature, id) {
+      const originalStyle = feature.getStyle()
+      let opacity = 1
+      const animationInterval = setInterval(() => {
+        opacity -= 0.1
+        if (opacity <= 0.2) {
+          clearInterval(animationInterval)
+        }
+        feature.setStyle(
+          new Style({
+            stroke: new Stroke({
+              color: `rgba(255, 0, 0, ${opacity})`,
+              width: 2,
+            }),
+          }),
+        )
+      }, 150)
+
+      // Store the animation data for later cleanup
+      this.interactions[id]['deleteAnimation'] = {
+        interval: animationInterval,
+        originalStyle: originalStyle,
+      }
+    },
+    deleteFeature(id) {
+      this.interactions[id]['source'].removeFeature(
+        this.interactions[id]['feature'],
+      )
+      this.$mapCanvas.mapObj.removeInteraction(this.interactions[id]['modify'])
+      this.$mapCanvas.mapObj.removeInteraction(this.interactions[id]['snap'])
+      this.$mapCanvas.mapObj.removeInteraction(
+        this.interactions[id]['translate'],
+      )
+
+      document.removeEventListener(
+        'keydown',
+        this.interactions[id]['eventListeners'].keydown,
+      )
+      this.$mapCanvas.mapObj
+        .getViewport()
+        .removeEventListener(
+          'touchstart',
+          this.interactions[id]['eventListeners'].touchstart,
+        )
+      this.$mapCanvas.mapObj
+        .getViewport()
+        .removeEventListener(
+          'touchend',
+          this.interactions[id]['eventListeners'].touchend,
+        )
+      this.$mapCanvas.mapObj
+        .getViewport()
+        .removeEventListener(
+          'touchmove',
+          this.interactions[id]['eventListeners'].touchmove,
+        )
+
+      delete this.interactions[id]
+    },
     async goToExtentHandler(locExtent) {
       let rotation = 0
       if (locExtent.length === 5) {
@@ -245,6 +596,7 @@ export default {
       this.$mapCanvas.mapObj.removeControl(this.rotateArrow)
       this.rotateArrow = new Rotate({ tipLabel: this.t('ResetRotation') })
       this.$mapCanvas.mapObj.addControl(this.rotateArrow)
+      this.updateContextMenu()
     },
     async removeLayerHandler(removedLayer) {
       if (this.activeLegends.includes(removedLayer.get('layerName'))) {
@@ -279,8 +631,12 @@ export default {
       }
       this.emitter.emit('layerRemoved', removedLayer.get('layerName'))
     },
-    removeLegend() {
-      if (this.selectedLegendLayerName !== null) {
+    removeLegend(name = null) {
+      if (name) {
+        this.store.removeActiveLegend(name)
+        this.selectedLegendLayerName = null
+        this.emitter.emit('updatePermalink')
+      } else if (this.selectedLegendLayerName !== null) {
         this.store.removeActiveLegend(this.selectedLegendLayerName)
         this.selectedLegendLayerName = null
         this.emitter.emit('updatePermalink')
@@ -443,6 +799,12 @@ export default {
         b: Math.round(b * 255),
       }
     },
+    updateContextMenu() {
+      if (this.contextMenu) {
+        this.contextMenu.clear()
+        this.contextMenuItems.forEach((item) => this.contextMenu.push(item))
+      }
+    },
     waitForElements() {
       return new Promise((resolve) => {
         const selectors = [
@@ -497,6 +859,20 @@ export default {
     },
     textBoxes() {
       return this.store.textBoxes
+    },
+    contextMenuItems() {
+      return [
+        {
+          text: this.t('AddTextbox'),
+          classname: 'context-menu-icon mdi mdi-text-box-edit',
+          callback: this.addTextBox,
+        },
+        {
+          text: this.t('AddArrow'),
+          classname: 'context-menu-icon mdi mdi-arrow-top-right-thin',
+          callback: this.addArrow,
+        },
+      ]
     },
     mapHeight() {
       return this.$mapCanvas.mapObj.getSize()[1]
@@ -579,6 +955,13 @@ export default {
   },
   data() {
     return {
+      activeFeatureIndex: null,
+      contextMenu: null,
+      contextMenuOpen: false,
+      interactions: {},
+      interactionIndex: 0,
+      blockSelect: false,
+      selectedFeature: undefined,
       golden_ratio_conjugate: (1 + Math.sqrt(5)) / 2 - 1,
       h: Math.random(),
       s: 0.95,

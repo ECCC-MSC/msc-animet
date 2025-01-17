@@ -15,6 +15,8 @@ import OSM from 'ol/source/OSM'
 import Stroke from 'ol/style/Stroke.js'
 import TileLayer from 'ol/layer/Tile'
 import View from 'ol/View'
+import { Vector as VectorLayer } from 'ol/layer.js'
+import { Vector as VectorSource } from 'ol/source.js'
 
 import 'ol/ol.css'
 
@@ -211,6 +213,24 @@ export default {
           })
           this.copiedLayers.push(newLayer)
           this.$animationCanvas.mapObj.addLayer(newLayer)
+        }
+      })
+      this.$mapCanvas.mapObj.getLayers().forEach((layer) => {
+        if (layer instanceof VectorLayer) {
+          const newSource = new VectorSource({
+            features: layer
+              .getSource()
+              .getFeatures()
+              .map((feature) => feature.clone()),
+          })
+          const vector = new VectorLayer({
+            source: newSource,
+            style: layer.getStyle(),
+            zIndex: layer.getZIndex(),
+            visible: layer.getVisible(),
+          })
+
+          this.$animationCanvas.mapObj.addLayer(vector)
         }
       })
     },
