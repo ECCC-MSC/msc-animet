@@ -1,5 +1,7 @@
 {
   "AddArrow": "Flèche",
+  "AddBox": "Rectangle",
+  "AddCircle": "Cercle",
   "AddTextbox": "Boite de texte",
   "AnimationFrom": "Animation météo de",
   "AppBarCreate": "Configuration",

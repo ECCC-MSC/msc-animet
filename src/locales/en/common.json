@@ -1,5 +1,7 @@
 {
   "AddArrow": "Arrow",
+  "AddBox": "Rectangle",
+  "AddCircle": "Circle",
   "AddTextbox": "Textbox",
   "AnimationFrom": "Weather animation from",
   "AppBarCreate": "Animation configuration",
