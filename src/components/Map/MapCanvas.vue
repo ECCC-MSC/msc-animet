@@ -161,13 +161,13 @@ export default {
       },
     })
 
-    const { addArrow, addBox, addCircle, selectedFeature } = useVectorShapes(
-      this.$mapCanvas.mapObj,
-    )
+    const { addArrow, addBox, addCircle, addPolygon, selectedFeature } =
+      useVectorShapes(this.$mapCanvas.mapObj)
     this.selectedFeature = selectedFeature
     this.addArrowFunction = addArrow
     this.addBoxFunction = addBox
     this.addCircleFunction = addCircle
+    this.addPolygonFunction = addPolygon
 
     this.contextMenu = new ContextMenu({
       width: 170,
@@ -546,6 +546,11 @@ export default {
           classname: 'context-menu-icon mdi mdi-circle-outline',
           callback: this.addCircleFunction,
         },
+        {
+          text: this.t('AddPolygon'),
+          classname: 'context-menu-icon mdi mdi-vector-polygon',
+          callback: this.addPolygonFunction,
+        },
       ]
     },
     mapHeight() {
@@ -632,6 +637,7 @@ export default {
       addArrowFunction: null,
       addBoxFunction: null,
       addCircleFunction: null,
+      addPolygonFunction: null,
       contextMenu: null,
       contextMenuOpen: false,
       selectedFeature: undefined,

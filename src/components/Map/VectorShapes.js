@@ -11,6 +11,7 @@ import { never, click, pointerMove } from 'ol/events/condition'
 import { Style, Stroke, Fill } from 'ol/style'
 import { Point } from 'ol/geom'
 import RegularShape from 'ol/style/RegularShape'
+import { getCenter, getHeight, getWidth } from 'ol/extent.js'
 
 export function useVectorShapes(mapObj) {
   const blockSelect = ref(false)
@@ -335,17 +336,69 @@ export function useVectorShapes(mapObj) {
 
     mapObj.addInteraction(interaction.draw)
   }
-
+  function calculateCenter(geometry) {
+    let center, coordinates, minRadius
+    const type = geometry.getType()
+    if (type === 'Polygon') {
+      let x = 0
+      let y = 0
+      let i = 0
+      coordinates = geometry.getCoordinates()[0].slice(1)
+      coordinates.forEach(function (coordinate) {
+        x += coordinate[0]
+        y += coordinate[1]
+        i++
+      })
+      center = [x / i, y / i]
+    } else if (type === 'LineString') {
+      center = geometry.getCoordinateAt(0.5)
+      coordinates = geometry.getCoordinates()
+    } else {
+      center = getCenter(geometry.getExtent())
+    }
+    let sqDistances
+    if (coordinates) {
+      sqDistances = coordinates.map(function (coordinate) {
+        const dx = coordinate[0] - center[0]
+        const dy = coordinate[1] - center[1]
+        return dx * dx + dy * dy
+      })
+      minRadius = Math.sqrt(Math.max.apply(Math, sqDistances)) / 3
+    } else {
+      minRadius =
+        Math.max(
+          getWidth(geometry.getExtent()),
+          getHeight(geometry.getExtent()),
+        ) / 3
+    }
+    return {
+      center: center,
+      coordinates: coordinates,
+      minRadius: minRadius,
+      sqDistances: sqDistances,
+    }
+  }
   function addBox() {
     blockSelect.value = true
     const source = new VectorSource()
+    const style = new Style({
+      geometry: function (feature) {
+        const modifyGeometry = feature.get('modifyGeometry')
+        return modifyGeometry ? modifyGeometry.geometry : feature.getGeometry()
+      },
+      fill: new Fill({
+        color: 'rgba(255, 255, 255, 0.2)',
+      }),
+      stroke: new Stroke({
+        color: '#FF0000',
+        width: 2,
+      }),
+    })
     const vector = new VectorLayer({
       source: source,
-      style: {
-        'fill-color': 'rgba(255, 255, 255, 0.2)',
-        'stroke-color': '#FF0000',
-        'stroke-width': 2,
-        'circle-fill-color': '#ffcc33',
+      style: function (feature) {
+        const styles = [style]
+        return styles
       },
     })
     mapObj.addLayer(vector)
@@ -400,22 +453,88 @@ export function useVectorShapes(mapObj) {
       const pixelTolerance = 10
 
       interaction.feature = evt.feature
-      console.log(evt.feature)
+
       interaction.snap = new Snap({
         source: source,
         pixelTolerance: 0,
       })
+      const defaultStyle = new Modify({ source: source })
+        .getOverlay()
+        .getStyleFunction()
       interaction.modify = new Modify({
         source: source,
         features: new Collection([interaction.feature]),
+        deleteCondition: never,
         insertVertexCondition: never,
         pixelTolerance: pixelTolerance,
+        style: function (feature) {
+          feature.get('features').forEach(function (modifyFeature) {
+            const modifyGeometry = modifyFeature.get('modifyGeometry')
+            if (modifyGeometry) {
+              const point = feature.getGeometry().getCoordinates()
+              let modifyPoint = modifyGeometry.point
+              if (!modifyPoint) {
+                // save the initial geometry and vertex position
+                modifyPoint = point
+                modifyGeometry.point = modifyPoint
+                modifyGeometry.geometry0 = modifyGeometry.geometry
+                // get anchor and minimum radius of vertices to be used
+                const result = calculateCenter(modifyGeometry.geometry0)
+                modifyGeometry.center = result.center
+                modifyGeometry.minRadius = result.minRadius
+              }
+
+              const center = modifyGeometry.center
+              const minRadius = modifyGeometry.minRadius
+              let dx, dy
+              dx = modifyPoint[0] - center[0]
+              dy = modifyPoint[1] - center[1]
+              const initialRadius = Math.sqrt(dx * dx + dy * dy)
+              if (initialRadius > minRadius) {
+                const initialAngle = Math.atan2(dy, dx)
+                dx = point[0] - center[0]
+                dy = point[1] - center[1]
+                const currentRadius = Math.sqrt(dx * dx + dy * dy)
+                if (currentRadius > 0) {
+                  const currentAngle = Math.atan2(dy, dx)
+                  const geometry = modifyGeometry.geometry0.clone()
+                  geometry.scale(
+                    currentRadius / initialRadius,
+                    undefined,
+                    center,
+                  )
+                  geometry.rotate(currentAngle - initialAngle, center)
+                  modifyGeometry.geometry = geometry
+                }
+              }
+            }
+          })
+          return defaultStyle(feature)
+        },
       })
       interaction.translate = new Translate({
         features: new Collection([interaction.feature]),
         hitTolerance: pixelTolerance,
       })
+      interaction.modify.on('modifystart', function (event) {
+        event.features.forEach(function (feature) {
+          feature.set(
+            'modifyGeometry',
+            { geometry: feature.getGeometry().clone() },
+            true,
+          )
+        })
+      })
 
+      interaction.modify.on('modifyend', function (event) {
+        event.features.forEach(function (feature) {
+          const modifyGeometry = feature.get('modifyGeometry')
+          if (modifyGeometry) {
+            feature.setGeometry(modifyGeometry.geometry)
+            feature.unset('modifyGeometry', true)
+          }
+        })
+      })
       interaction.modify.on('modifystart', () => {
         blockSelect.value = true
       })
@@ -526,6 +645,106 @@ export function useVectorShapes(mapObj) {
 
     mapObj.addInteraction(interaction.draw)
   }
+  function addPolygon() {
+    blockSelect.value = true
+    const source = new VectorSource()
+    const vector = new VectorLayer({
+      source: source,
+      style: {
+        'fill-color': 'rgba(255, 255, 255, 0.2)',
+        'stroke-color': '#FF0000',
+        'stroke-width': 2,
+        'circle-fill-color': '#ffcc33',
+      },
+    })
+    mapObj.addLayer(vector)
+
+    const id = interactionIndex++
+    const interaction = {
+      source: source,
+      feature: null,
+      draw: null,
+      snap: null,
+      modify: null,
+      translate: null,
+    }
+    interactions.value[id] = interaction
+
+    interaction.draw = new Draw({
+      source: source,
+      type: 'Polygon',
+      stopClick: true,
+    })
+
+    const cancelDrawing = (deleteInteraction) => {
+      blockSelect.value = false
+      mapObj.removeInteraction(interactions.value[id].draw)
+      removeEventListeners()
+      if (deleteInteraction) delete interactions.value[id]
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        cancelDrawing(true)
+      }
+    }
+
+    const handleRightClick = (event) => {
+      event.preventDefault()
+      cancelDrawing(true)
+    }
+
+    const removeEventListeners = () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      mapObj.getViewport().removeEventListener('contextmenu', handleRightClick)
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    mapObj.getViewport().addEventListener('contextmenu', handleRightClick)
+
+    interaction.draw.on('drawend', (evt) => {
+      cancelDrawing()
+
+      const pixelTolerance = 10
+      interaction.feature = evt.feature
+      interaction.modify = new Modify({
+        source: source,
+        features: new Collection([interaction.feature]),
+        pixelTolerance: pixelTolerance,
+      })
+
+      interaction.snap = new Snap({
+        source: source,
+        pixelTolerance: 0,
+      })
+
+      interaction.translate = new Translate({
+        features: new Collection([interaction.feature]),
+        hitTolerance: pixelTolerance,
+      })
+
+      interaction.translate.on('translatestart', () => {
+        blockSelect.value = true
+      })
+      interaction.translate.on('translateend', () => {
+        blockSelect.value = false
+      })
+      interaction.modify.on('modifystart', () => {
+        blockSelect.value = true
+      })
+      interaction.modify.on('modifyend', () => {
+        blockSelect.value = false
+      })
+
+      addDeleteFunctionality(id)
+
+      mapObj.addInteraction(interaction.snap)
+      mapObj.addInteraction(interaction.translate)
+      mapObj.addInteraction(interaction.modify)
+    })
+
+    mapObj.addInteraction(interaction.draw)
+  }
 
   mapObj.getViewport().addEventListener('pointerdown', (evt) => {
     if (!blockSelect.value) {
@@ -548,6 +767,7 @@ export function useVectorShapes(mapObj) {
     addArrow,
     addBox,
     addCircle,
+    addPolygon,
     selectedFeature,
   }
 }

@@ -2,6 +2,7 @@
   "AddArrow": "Arrow",
   "AddBox": "Rectangle",
   "AddCircle": "Circle",
+  "AddPolygon": "Polygon",
   "AddTextbox": "Textbox",
   "AnimationFrom": "Weather animation from",
   "AppBarCreate": "Animation configuration",
