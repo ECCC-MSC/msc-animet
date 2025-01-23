@@ -20,21 +20,17 @@ export function useVectorShapes(mapObj) {
   let interactionIndex = 0
   const interactions = ref({})
 
-  const customCondition = function (mapBrowserEvent) {
-    return click(mapBrowserEvent) || pointerMove(mapBrowserEvent)
-  }
-
+  const selectClick = new Select({
+    condition: click,
+    style: null,
+  })
   const selectHover = new Select({
-    condition: customCondition,
+    condition: pointerMove,
     style: null,
   })
 
-  selectHover.on('select', (evt) => {
+  function selectFeature(feature) {
     if (!blockSelect.value) {
-      const feature = evt.target
-        .getFeatures()
-        .getArray()?.[0]
-        ?.get('features')?.[0]
       if (
         feature &&
         (!selectedFeature.value ||
@@ -44,62 +40,41 @@ export function useVectorShapes(mapObj) {
         if (selectedFeature.value) {
           Object.entries(interactions.value).forEach(([index, interaction]) => {
             if (interaction['feature'] === selectedFeature.value) {
-              if (interaction['translate']) {
-                interaction['translate'].setActive(true)
-              }
+              interaction['translate'].setActive(true)
               activeFeatureIndex.value = index
             } else {
-              if (interaction['translate']) {
-                interaction['translate'].setActive(false)
-              }
+              interaction['translate'].setActive(false)
             }
           })
         }
       }
     }
+  }
+  selectClick.on('select', (evt) => {
+    const feature = evt.target
+      .getFeatures()
+      .getArray()?.[0]
+      ?.get('features')?.[0]
+    selectFeature(feature)
+  })
+  selectHover.on('select', (evt) => {
+    const feature = evt.target
+      .getFeatures()
+      .getArray()?.[0]
+      ?.get('features')?.[0]
+    selectFeature(feature)
   })
 
+  mapObj.addInteraction(selectClick)
   mapObj.addInteraction(selectHover)
 
-  function isPixelEqual([x1, y1], [x2, y2], tolerance) {
-    const dx = x2 - x1
-    const dy = y2 - y1
-    const distance = Math.sqrt(dx * dx + dy * dy)
-    return distance <= tolerance
-  }
-
-  function arrowStyleFunction(feature) {
-    const geometry = feature.getGeometry()
-    const styles = [
-      new Style({
-        stroke: new Stroke({
-          color: '#FF0000',
-          width: 2,
-        }),
-      }),
-    ]
-
-    const start = geometry.getCoordinateAt(0)
-    const end = geometry.getCoordinateAt(1)
-    const dx = end[0] - start[0]
-    const dy = end[1] - start[1]
-    const rotation = Math.atan2(dy, dx)
-
-    styles.push(
-      new Style({
-        geometry: new Point(end),
-        image: new RegularShape({
-          fill: new Fill({ color: '#FF0000' }),
-          points: 3,
-          radius: 8,
-          rotation: -rotation,
-          angle: Math.PI / 2,
-        }),
-      }),
-    )
-
-    return styles
-  }
+  mapObj.on('click', function (evt) {
+    mapObj.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
+      if (feature && feature.getGeometry().getType() !== 'Point') {
+        selectFeature(feature)
+      }
+    })
+  })
 
   function resetFeatureStyle(id) {
     if (interactions.value[id] && interactions.value[id]['deleteAnimation']) {
@@ -139,13 +114,9 @@ export function useVectorShapes(mapObj) {
     interactions.value[id]['source'].removeFeature(
       interactions.value[id]['feature'],
     )
-    if (interactions.value[id]['modify']) {
-      mapObj.removeInteraction(interactions.value[id]['modify'])
-    }
+    mapObj.removeInteraction(interactions.value[id]['modify'])
     mapObj.removeInteraction(interactions.value[id]['snap'])
-    if (interactions.value[id]['translate']) {
-      mapObj.removeInteraction(interactions.value[id]['translate'])
-    }
+    mapObj.removeInteraction(interactions.value[id]['translate'])
 
     document.removeEventListener(
       'keydown',
@@ -225,18 +196,28 @@ export function useVectorShapes(mapObj) {
       touchmove: handleTouchMove,
     }
   }
-
-  function addArrow() {
+  function addGeometry(
+    layerStyle,
+    name,
+    drawParams,
+    modifyParams,
+    translateParams,
+    orderedInteractions,
+    modifyStart,
+    modifyEnd,
+  ) {
     blockSelect.value = true
     const source = new VectorSource()
     const vector = new VectorLayer({
+      zIndex: 9999,
       source: source,
-      style: arrowStyleFunction,
+      style: layerStyle,
     })
     mapObj.addLayer(vector)
 
     const id = interactionIndex++
     const interaction = {
+      name: name,
       source: source,
       feature: null,
       draw: null,
@@ -246,12 +227,7 @@ export function useVectorShapes(mapObj) {
     }
     interactions.value[id] = interaction
 
-    interaction.draw = new Draw({
-      source: source,
-      type: 'LineString',
-      maxPoints: 2,
-      stopClick: true,
-    })
+    interaction.draw = new Draw(drawParams(source))
 
     const cancelDrawing = (deleteInteraction) => {
       blockSelect.value = false
@@ -282,37 +258,17 @@ export function useVectorShapes(mapObj) {
     interaction.draw.on('drawend', (evt) => {
       cancelDrawing()
 
-      const pixelTolerance = 10
       interaction.feature = evt.feature
-      interaction.modify = new Modify({
-        source: source,
-        features: new Collection([interaction.feature]),
-        insertVertexCondition: never,
-        pixelTolerance: pixelTolerance,
-      })
+      interaction.modify = new Modify(modifyParams(source, interaction.feature))
 
       interaction.snap = new Snap({
         source: source,
         pixelTolerance: 0,
       })
 
-      interaction.translate = new Translate({
-        features: new Collection([interaction.feature]),
-        hitTolerance: pixelTolerance,
-        condition: (event) => {
-          const coordinate = mapObj.getPixelFromCoordinate(event.coordinate)
-          const geometry = interaction.feature.getGeometry()
-          const coordinates = geometry.getCoordinates()
-          const startPixel = mapObj.getPixelFromCoordinate(coordinates[0])
-          const endPixel = mapObj.getPixelFromCoordinate(
-            coordinates[coordinates.length - 1],
-          )
-          return !(
-            isPixelEqual(coordinate, startPixel, pixelTolerance) ||
-            isPixelEqual(coordinate, endPixel, pixelTolerance)
-          )
-        },
-      })
+      interaction.translate = new Translate(
+        translateParams(interaction.feature),
+      )
 
       interaction.translate.on('translatestart', () => {
         blockSelect.value = true
@@ -320,6 +276,12 @@ export function useVectorShapes(mapObj) {
       interaction.translate.on('translateend', () => {
         blockSelect.value = false
       })
+      if (modifyStart) {
+        interaction.modify.on('modifystart', modifyStart)
+      }
+      if (modifyEnd) {
+        interaction.modify.on('modifyend', modifyEnd)
+      }
       interaction.modify.on('modifystart', () => {
         blockSelect.value = true
       })
@@ -329,12 +291,96 @@ export function useVectorShapes(mapObj) {
 
       addDeleteFunctionality(id)
 
-      mapObj.addInteraction(interaction.modify)
-      mapObj.addInteraction(interaction.snap)
-      mapObj.addInteraction(interaction.translate)
+      for (const interactionName of orderedInteractions) {
+        mapObj.addInteraction(interaction[interactionName])
+      }
     })
 
     mapObj.addInteraction(interaction.draw)
+  }
+  function addArrow() {
+    function arrowStyleFunction(feature) {
+      const geometry = feature.getGeometry()
+      const styles = [
+        new Style({
+          stroke: new Stroke({
+            color: '#FF0000',
+            width: 2,
+          }),
+        }),
+      ]
+
+      const start = geometry.getCoordinateAt(0)
+      const end = geometry.getCoordinateAt(1)
+      const dx = end[0] - start[0]
+      const dy = end[1] - start[1]
+      const rotation = Math.atan2(dy, dx)
+
+      styles.push(
+        new Style({
+          geometry: new Point(end),
+          image: new RegularShape({
+            fill: new Fill({ color: '#FF0000' }),
+            points: 3,
+            radius: 8,
+            rotation: -rotation,
+            angle: Math.PI / 2,
+          }),
+        }),
+      )
+
+      return styles
+    }
+    function drawParams(source) {
+      return {
+        source: source,
+        type: 'LineString',
+        maxPoints: 2,
+        stopClick: true,
+      }
+    }
+    function modifyParams(source, feature) {
+      return {
+        source: source,
+        features: new Collection([feature]),
+        insertVertexCondition: never,
+        pixelTolerance: 10,
+      }
+    }
+    function translateParams(feature) {
+      function isPixelEqual([x1, y1], [x2, y2], tolerance) {
+        const dx = x2 - x1
+        const dy = y2 - y1
+        const distance = Math.sqrt(dx * dx + dy * dy)
+        return distance <= tolerance
+      }
+      return {
+        features: new Collection([feature]),
+        hitTolerance: 10,
+        condition: (event) => {
+          const coordinate = mapObj.getPixelFromCoordinate(event.coordinate)
+          const geometry = feature.getGeometry()
+          const coordinates = geometry.getCoordinates()
+          const startPixel = mapObj.getPixelFromCoordinate(coordinates[0])
+          const endPixel = mapObj.getPixelFromCoordinate(
+            coordinates[coordinates.length - 1],
+          )
+          return !(
+            isPixelEqual(coordinate, startPixel, 10) ||
+            isPixelEqual(coordinate, endPixel, 10)
+          )
+        },
+      }
+    }
+    const orderedInteractions = ['modify', 'snap', 'translate']
+    addGeometry(
+      arrowStyleFunction,
+      'Arrow',
+      drawParams,
+      modifyParams,
+      translateParams,
+      orderedInteractions,
+    )
   }
   function calculateCenter(geometry) {
     let center, coordinates, minRadius
@@ -379,94 +425,37 @@ export function useVectorShapes(mapObj) {
     }
   }
   function addBox() {
-    blockSelect.value = true
-    const source = new VectorSource()
     const style = new Style({
       geometry: function (feature) {
         const modifyGeometry = feature.get('modifyGeometry')
         return modifyGeometry ? modifyGeometry.geometry : feature.getGeometry()
       },
       fill: new Fill({
-        color: 'rgba(255, 255, 255, 0.2)',
+        color: 'rgba(255, 255, 255, 0)',
       }),
       stroke: new Stroke({
         color: '#FF0000',
         width: 2,
       }),
     })
-    const vector = new VectorLayer({
-      source: source,
-      style: function (feature) {
-        const styles = [style]
-        return styles
-      },
-    })
-    mapObj.addLayer(vector)
-
-    const id = interactionIndex++
-    const interaction = {
-      source: source,
-      feature: null,
-      draw: null,
-      snap: null,
-      modify: null,
-      translate: null,
-    }
-    interactions.value[id] = interaction
-
-    interaction.draw = new Draw({
-      source: source,
-      type: 'Circle',
-      stopClick: true,
-      geometryFunction: createBox(),
-    })
-
-    const cancelDrawing = (deleteInteraction) => {
-      blockSelect.value = false
-      mapObj.removeInteraction(interactions.value[id].draw)
-      removeEventListeners()
-      if (deleteInteraction) delete interactions.value[id]
-    }
-
-    const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        cancelDrawing(true)
+    function drawParams(source) {
+      return {
+        source: source,
+        type: 'Circle',
+        stopClick: true,
+        geometryFunction: createBox(),
       }
     }
-
-    const handleRightClick = (event) => {
-      event.preventDefault()
-      cancelDrawing(true)
-    }
-
-    const removeEventListeners = () => {
-      document.removeEventListener('keydown', handleKeyDown)
-      mapObj.getViewport().removeEventListener('contextmenu', handleRightClick)
-    }
-
-    document.addEventListener('keydown', handleKeyDown)
-    mapObj.getViewport().addEventListener('contextmenu', handleRightClick)
-
-    interaction.draw.on('drawend', (evt) => {
-      cancelDrawing()
-
-      const pixelTolerance = 10
-
-      interaction.feature = evt.feature
-
-      interaction.snap = new Snap({
-        source: source,
-        pixelTolerance: 0,
-      })
+    function modifyParams(source, feature) {
       const defaultStyle = new Modify({ source: source })
         .getOverlay()
         .getStyleFunction()
-      interaction.modify = new Modify({
+      return {
         source: source,
-        features: new Collection([interaction.feature]),
+        features: new Collection([feature]),
         deleteCondition: never,
         insertVertexCondition: never,
-        pixelTolerance: pixelTolerance,
+        pixelTolerance: 10,
         style: function (feature) {
           feature.get('features').forEach(function (modifyFeature) {
             const modifyGeometry = modifyFeature.get('modifyGeometry')
@@ -511,239 +500,117 @@ export function useVectorShapes(mapObj) {
           })
           return defaultStyle(feature)
         },
+      }
+    }
+    function translateParams(feature) {
+      return {
+        features: new Collection([feature]),
+        hitTolerance: 10,
+      }
+    }
+    const orderedInteractions = ['translate', 'modify', 'snap']
+    const modifyStart = function (event) {
+      event.features.forEach(function (feature) {
+        feature.set(
+          'modifyGeometry',
+          { geometry: feature.getGeometry().clone() },
+          true,
+        )
       })
-      interaction.translate = new Translate({
-        features: new Collection([interaction.feature]),
-        hitTolerance: pixelTolerance,
-      })
-      interaction.modify.on('modifystart', function (event) {
-        event.features.forEach(function (feature) {
-          feature.set(
-            'modifyGeometry',
-            { geometry: feature.getGeometry().clone() },
-            true,
-          )
-        })
-      })
+    }
 
-      interaction.modify.on('modifyend', function (event) {
-        event.features.forEach(function (feature) {
-          const modifyGeometry = feature.get('modifyGeometry')
-          if (modifyGeometry) {
-            feature.setGeometry(modifyGeometry.geometry)
-            feature.unset('modifyGeometry', true)
-          }
-        })
+    const modifyEnd = function (event) {
+      event.features.forEach(function (feature) {
+        const modifyGeometry = feature.get('modifyGeometry')
+        if (modifyGeometry) {
+          feature.setGeometry(modifyGeometry.geometry)
+          feature.unset('modifyGeometry', true)
+        }
       })
-      interaction.modify.on('modifystart', () => {
-        blockSelect.value = true
-      })
-      interaction.modify.on('modifyend', () => {
-        blockSelect.value = false
-      })
-      interaction.translate.on('translatestart', () => {
-        blockSelect.value = true
-      })
-      interaction.translate.on('translateend', () => {
-        blockSelect.value = false
-      })
-
-      addDeleteFunctionality(id)
-
-      mapObj.addInteraction(interaction.translate)
-      mapObj.addInteraction(interaction.modify)
-      mapObj.addInteraction(interaction.snap)
-    })
-
-    mapObj.addInteraction(interaction.draw)
+    }
+    addGeometry(
+      [style],
+      'Rectangle',
+      drawParams,
+      modifyParams,
+      translateParams,
+      orderedInteractions,
+      modifyStart,
+      modifyEnd,
+    )
   }
 
   function addCircle() {
-    blockSelect.value = true
-    const source = new VectorSource()
-    const vector = new VectorLayer({
-      source: source,
-      style: {
-        'fill-color': 'rgba(255, 255, 255, 0.2)',
-        'stroke-color': '#FF0000',
-        'stroke-width': 2,
-        'circle-fill-color': '#ffcc33',
-      },
-    })
-    mapObj.addLayer(vector)
-
-    const id = interactionIndex++
-    const interaction = {
-      source: source,
-      feature: null,
-      draw: null,
-      snap: null,
-      modify: null,
+    const style = {
+      'fill-color': 'rgba(255, 255, 255, 0)',
+      'stroke-color': '#FF0000',
+      'stroke-width': 2,
     }
-    interactions.value[id] = interaction
-
-    interaction.draw = new Draw({
-      source: source,
-      type: 'Circle',
-      stopClick: true,
-    })
-
-    const cancelDrawing = (deleteInteraction) => {
-      blockSelect.value = false
-      mapObj.removeInteraction(interactions.value[id].draw)
-      removeEventListeners()
-      if (deleteInteraction) delete interactions.value[id]
-    }
-
-    const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        cancelDrawing(true)
+    function drawParams(source) {
+      return {
+        source: source,
+        type: 'Circle',
+        stopClick: true,
       }
     }
-
-    const handleRightClick = (event) => {
-      event.preventDefault()
-      cancelDrawing(true)
-    }
-
-    const removeEventListeners = () => {
-      document.removeEventListener('keydown', handleKeyDown)
-      mapObj.getViewport().removeEventListener('contextmenu', handleRightClick)
-    }
-
-    document.addEventListener('keydown', handleKeyDown)
-    mapObj.getViewport().addEventListener('contextmenu', handleRightClick)
-
-    interaction.draw.on('drawend', (evt) => {
-      cancelDrawing()
-
-      const pixelTolerance = 10
-      interaction.feature = evt.feature
-      interaction.modify = new Modify({
+    function modifyParams(source, feature) {
+      return {
         source: source,
-        features: new Collection([interaction.feature]),
-        pixelTolerance: pixelTolerance,
-      })
-
-      interaction.snap = new Snap({
-        source: source,
-        pixelTolerance: 0,
-      })
-
-      interaction.modify.on('modifystart', () => {
-        blockSelect.value = true
-      })
-      interaction.modify.on('modifyend', () => {
-        blockSelect.value = false
-      })
-
-      addDeleteFunctionality(id)
-
-      mapObj.addInteraction(interaction.modify)
-      mapObj.addInteraction(interaction.snap)
-    })
-
-    mapObj.addInteraction(interaction.draw)
+        features: new Collection([feature]),
+        pixelTolerance: 10,
+      }
+    }
+    function translateParams(feature) {
+      return {
+        features: new Collection([feature]),
+        hitTolerance: 10,
+      }
+    }
+    const orderedInteractions = ['translate', 'modify', 'snap']
+    addGeometry(
+      style,
+      'Circle',
+      drawParams,
+      modifyParams,
+      translateParams,
+      orderedInteractions,
+    )
   }
   function addPolygon() {
-    blockSelect.value = true
-    const source = new VectorSource()
-    const vector = new VectorLayer({
-      source: source,
-      style: {
-        'fill-color': 'rgba(255, 255, 255, 0.2)',
-        'stroke-color': '#FF0000',
-        'stroke-width': 2,
-        'circle-fill-color': '#ffcc33',
-      },
-    })
-    mapObj.addLayer(vector)
-
-    const id = interactionIndex++
-    const interaction = {
-      source: source,
-      feature: null,
-      draw: null,
-      snap: null,
-      modify: null,
-      translate: null,
+    const style = {
+      'fill-color': 'rgba(255, 255, 255, 0)',
+      'stroke-color': '#FF0000',
+      'stroke-width': 2,
     }
-    interactions.value[id] = interaction
-
-    interaction.draw = new Draw({
-      source: source,
-      type: 'Polygon',
-      stopClick: true,
-    })
-
-    const cancelDrawing = (deleteInteraction) => {
-      blockSelect.value = false
-      mapObj.removeInteraction(interactions.value[id].draw)
-      removeEventListeners()
-      if (deleteInteraction) delete interactions.value[id]
-    }
-
-    const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        cancelDrawing(true)
+    function drawParams(source) {
+      return {
+        source: source,
+        type: 'Polygon',
+        stopClick: true,
       }
     }
-
-    const handleRightClick = (event) => {
-      event.preventDefault()
-      cancelDrawing(true)
-    }
-
-    const removeEventListeners = () => {
-      document.removeEventListener('keydown', handleKeyDown)
-      mapObj.getViewport().removeEventListener('contextmenu', handleRightClick)
-    }
-
-    document.addEventListener('keydown', handleKeyDown)
-    mapObj.getViewport().addEventListener('contextmenu', handleRightClick)
-
-    interaction.draw.on('drawend', (evt) => {
-      cancelDrawing()
-
-      const pixelTolerance = 10
-      interaction.feature = evt.feature
-      interaction.modify = new Modify({
+    function modifyParams(source, feature) {
+      return {
         source: source,
-        features: new Collection([interaction.feature]),
-        pixelTolerance: pixelTolerance,
-      })
-
-      interaction.snap = new Snap({
-        source: source,
-        pixelTolerance: 0,
-      })
-
-      interaction.translate = new Translate({
-        features: new Collection([interaction.feature]),
-        hitTolerance: pixelTolerance,
-      })
-
-      interaction.translate.on('translatestart', () => {
-        blockSelect.value = true
-      })
-      interaction.translate.on('translateend', () => {
-        blockSelect.value = false
-      })
-      interaction.modify.on('modifystart', () => {
-        blockSelect.value = true
-      })
-      interaction.modify.on('modifyend', () => {
-        blockSelect.value = false
-      })
-
-      addDeleteFunctionality(id)
-
-      mapObj.addInteraction(interaction.snap)
-      mapObj.addInteraction(interaction.translate)
-      mapObj.addInteraction(interaction.modify)
-    })
-
-    mapObj.addInteraction(interaction.draw)
+        features: new Collection([feature]),
+        pixelTolerance: 10,
+      }
+    }
+    function translateParams(feature) {
+      return {
+        features: new Collection([feature]),
+        hitTolerance: 10,
+      }
+    }
+    const orderedInteractions = ['translate', 'modify', 'snap']
+    addGeometry(
+      style,
+      'Polygon',
+      drawParams,
+      modifyParams,
+      translateParams,
+      orderedInteractions,
+    )
   }
 
   mapObj.getViewport().addEventListener('pointerdown', (evt) => {
