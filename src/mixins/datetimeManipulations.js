@@ -213,6 +213,16 @@ export default {
           }
           return [dateArrays, trueIntervals, intervals]
         }
+        case /^[^,/]+,[^,/]+\/[^,/]+\/[^,/]+/.test(dateRange): {
+          let [singleDate, firstInterval, ...remainingIntervals] =
+            dateRange.split(',')
+          let [_, endDate, duration] = firstInterval.split('/')
+          firstInterval = `${singleDate}/${endDate}/${duration}`
+          dateRange = remainingIntervals.length
+            ? `${firstInterval},${remainingIntervals.join(',')}`
+            : firstInterval
+          return this.findFormat(dateRange)
+        }
         default:
           return [null, null, null]
       }

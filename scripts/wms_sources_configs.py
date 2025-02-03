@@ -27,6 +27,12 @@ wms_sources = {
         "no_translations": True,
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
     },
+    "ECMWF": {
+        "url": "https://eccharts.ecmwf.int/wms/?token=public",
+        "version": "1.3.0",
+        "no_translations": True,
+        "display": os.environ.get("ANIMET_NIGHTLY", default=False),
+    },
     "NASA": {
         "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
         "version": "1.3.0",
