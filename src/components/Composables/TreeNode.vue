@@ -1,5 +1,13 @@
 <template>
-  <div class="tree-node">
+  <div v-if="node.children && node.Img">
+    <img
+      :src="img"
+      class="image"
+      @click="handleMultiAdd(node)"
+    ></img>
+    <span class="image-title">{{ node.Title }}</span>
+  </div>
+  <div v-else class="tree-node">
     <div @click="handleClick(node)" class="node-content">
       <div class="content-wrapper">
         <v-icon v-if="node.children" class="toggle-icon">
@@ -16,7 +24,10 @@
         </slot>
       </div>
     </div>
-    <div v-if="node.children && node.isOpen" class="children">
+    <div
+      v-if="node.children && node.isOpen"
+      :class="node.children[0].Img ? 'image-grid' : 'children'"
+    >
       <tree-node
         v-for="child in node.children"
         :key="child[props.keyProp]"
@@ -36,7 +47,9 @@
 
 <script setup>
 import { computed, inject, ref, watch } from 'vue'
+import { getCurrentInstance } from 'vue'
 
+const { proxy } = getCurrentInstance()
 const store = inject('store')
 
 const props = defineProps({
@@ -70,12 +83,36 @@ const playState = computed(() => {
   return store.getPlayState
 })
 
+const img = computed(() => {
+  return new URL(`../../assets/presets/images/${props.node.Img}.png`, import.meta.url)
+    .href
+})
+
 const emit = defineEmits(['nodeToggled', 'request'])
 
 const handleClick = (node) => {
   if (node.children) toggle()
   else request(node)
 }
+
+const handleMultiAdd = (node) => {
+  const missingNames = node.children.filter(
+    (childNode) =>
+      !proxy.$mapLayers.arr.some(
+        (layer) => layer.get('layerName') === childNode.Name,
+      ),
+  )
+  if (missingNames.length > 0 && missingNames.length < node.children.length) {
+    for (const childNode of missingNames) {
+      emit('request', childNode)
+    }
+  } else {
+    for (const childNode of node.children) {
+      emit('request', childNode)
+    }
+  }
+}
+
 const toggle = () => {
   if (props.node.children) {
     isOpen.value = !isOpen.value
@@ -99,6 +136,31 @@ const bubbleNodeRequest = (node) => {
 </script>
 
 <style scoped>
+.image {
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  vertical-align: top;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 10px;
+  row-gap: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.image-title {
+  display: block;
+  text-align: center;
+  font-size: 0.8em;
+  padding-bottom: 5px;
+  white-space: normal;
+  word-break: break-word;
+  width: 100%;
+}
 .children {
   padding-left: 20px;
 }

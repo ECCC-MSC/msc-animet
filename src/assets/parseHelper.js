@@ -1,5 +1,5 @@
 let durationRegex =
-  /^(-)?P(?:(?:(\d+\.?\d*)Y)?(?:(\d+\.?\d*)M)?(?:(\d+\.?\d*)D)?(?:T(?:(\d+\.?\d*)H)?(?:(\d+\.?\d*)M)?(?:(\d+\.?\d*)S)?)?|(\d+\.?\d*)W)$/;
+  /^(-)?P(?:(?:(\d+\.?\d*)Y)?(?:(\d+\.?\d*)M)?(?:(\d+\.?\d*)D)?(?:T(?:(\d+\.?\d*)H)?(?:(\d+\.?\d*)M)?(?:(\d+\.?\d*)S)?)?|(\d+\.?\d*)W)$/
 /**
  * Parse ISO 8601 duration (with a few limitations)
  *
@@ -11,19 +11,19 @@ let durationRegex =
  * @returns {Object} Parsed duration with "add" method that sums or substracts parsed duration to a given date, accorging duration sign
  */
 export default function parseDuration(duration) {
-  let parsed;
+  let parsed
   duration &&
     duration.replace(durationRegex, (_, sign, ...units) => {
-      sign = sign ? -1 : 1;
+      sign = sign ? -1 : 1
       // parse number for each unit
       let [year, month, day, hour, minute, second, week] = units.map(
-        (num) => parseInt(num, 10) * sign || 0
-      );
-      parsed = { year, month, week, day, hour, minute, second };
-    });
+        (num) => parseInt(num, 10) * sign || 0,
+      )
+      parsed = { year, month, week, day, hour, minute, second }
+    })
   // no regexp match
   if (!parsed) {
-    throw new Error(`Invalid duration "${duration}"`);
+    throw new Error(`Invalid duration "${duration}"`)
   }
 
   return Object.assign(parsed, {
@@ -36,10 +36,10 @@ export default function parseDuration(duration) {
      */
     add(date) {
       if (
-        Object.prototype.toString.call(date) !== "[object Date]" ||
+        Object.prototype.toString.call(date) !== '[object Date]' ||
         isNaN(date.valueOf())
       ) {
-        throw new TypeError("Invalide date");
+        throw new TypeError('Invalide date')
       }
       return new Date(
         Date.UTC(
@@ -49,9 +49,9 @@ export default function parseDuration(duration) {
           date.getUTCHours() + parsed.hour,
           date.getUTCMinutes() + parsed.minute,
           date.getUTCSeconds() + parsed.second,
-          date.getUTCMilliseconds()
-        )
-      );
+          date.getUTCMilliseconds(),
+        ),
+      )
     },
-  });
+  })
 }

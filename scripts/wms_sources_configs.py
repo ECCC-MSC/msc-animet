@@ -1,6 +1,11 @@
 import os
 
 wms_sources = {
+    "Presets": {
+        "url": "https://geo.weather.gc.ca/geomet",
+        "version": "1.3.0",
+        "display": True,
+    },
     "Weather": {
         "url": "https://geo.weather.gc.ca/geomet",
         "version": "1.3.0",

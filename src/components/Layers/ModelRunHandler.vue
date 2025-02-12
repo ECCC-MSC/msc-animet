@@ -62,22 +62,15 @@ export default {
           ),
         })
       }
-      const layerActiveConfig = this.item.get('layerActiveConfig')
-      const configs = this.item.get('layerConfigs')
-      configs[layerActiveConfig].layerDateArray = newDateArray
-      configs[layerActiveConfig].layerStartTime = newDateArray[0]
-      configs[layerActiveConfig].layerEndTime =
-        newDateArray[newDateArray.length - 1]
 
       this.item.setProperties({
-        layerConfigs: configs,
         layerDateArray: newDateArray,
         layerDefaultTime: new Date(
           this.item.get('layerDefaultTime').getTime() + timeDiff,
         ),
         layerCurrentMR: newModelRun,
-        layerStartTime: configs[layerActiveConfig].layerStartTime,
-        layerEndTime: configs[layerActiveConfig].layerEndTime,
+        layerStartTime: newDateArray[0],
+        layerEndTime: newDateArray[newDateArray.length - 1],
       })
       this.emitter.emit('modelRunChanged')
       this.emitter.emit('calcFooterPreview')

@@ -34,6 +34,7 @@ import logging
 import os
 import re
 import requests
+import shutil
 from xml.etree import ElementTree
 
 from owslib.wms import WebMapService
@@ -217,41 +218,42 @@ for name, params in wms_sources.items():
             sources_to_remove.append(name)
             break
 
-        # get all top level layer metadata objects
-        _, metadata = wms.items()[0]
-        top_level_items = findTopLevel(metadata)
+        if name != "Presets":
+            # get all top level layer metadata objects
+            _, metadata = wms.items()[0]
+            top_level_items = findTopLevel(metadata)
 
-        get_capa_url = f"{base_url}&SERVICE=WMS&VERSION={params['version']}&REQUEST=GetCapabilities"
-        crs_values = extract_wms_crs(get_capa_url)
+            get_capa_url = f"{base_url}&SERVICE=WMS&VERSION={params['version']}&REQUEST=GetCapabilities"
+            crs_values = extract_wms_crs(get_capa_url)
 
-        layers = []
-        # iterate through top level items and recursively generate children as needed
-        for layer_metadata in top_level_items:
-            layers += generate_layer_dict([layer_metadata])
-        layers_sorted = recursive_sort(layers)
+            layers = []
+            # iterate through top level items and recursively generate children as needed
+            for layer_metadata in top_level_items:
+                layers += generate_layer_dict([layer_metadata])
+            layers_sorted = recursive_sort(layers)
 
-        name = name.lower()
-        with open(f"../src/assets/trees/tree_{lang}_{name}.js", "w+") as f:
-            f.write(
-                TREE_JS_TEMPLATE.format(
-                    f"proj_{name}",
-                    json.dumps(crs_values, indent=2),
-                    f"tree_{lang}_{name}",
-                    json.dumps(layers_sorted, indent=2),
+            name = name.lower()
+            with open(f"../src/assets/trees/tree_{lang}_{name}.js", "w+") as f:
+                f.write(
+                    TREE_JS_TEMPLATE.format(
+                        f"proj_{name}",
+                        json.dumps(crs_values, indent=2),
+                        f"tree_{lang}_{name}",
+                        json.dumps(layers_sorted, indent=2),
+                    )
                 )
-            )
 
-        layers_dict = {}
-        for _, metadata in wms.items():
-            if not metadata.layers:
-                layers_dict[metadata.name] = metadata.title
-        layers_dict_sorted = dict(sorted(layers_dict.items()))
+            layers_dict = {}
+            for _, metadata in wms.items():
+                if not metadata.layers:
+                    layers_dict[metadata.name] = metadata.title
+            layers_dict_sorted = dict(sorted(layers_dict.items()))
 
-        with open(f"../src/locales/{lang}/layers_{name}.json", "w") as f:
-            # write layers_dict_sorted to json file
-            f.write(
-                json.dumps(layers_dict_sorted, indent=2, ensure_ascii=False)
-            )
+            with open(f"../src/locales/{lang}/layers_{name}.json", "w") as f:
+                # write layers_dict_sorted to json file
+                f.write(
+                    json.dumps(layers_dict_sorted, indent=2, ensure_ascii=False)
+                )
 
 # writing wms sources list to assets directory with failed sources removed
 for source in sources_to_remove:
