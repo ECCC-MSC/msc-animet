@@ -157,19 +157,17 @@ export default {
         layerData.Dimension.Dimension_ref_time === ''
           ? null
           : this.findFormat(layerData.Dimension.Dimension_ref_time)[0][0]
-      const configs = this.createTimeLayerConfigs(
+      const config = this.createTimeLayerConfig(
         layerData.Dimension.Dimension_time,
       )
-      if (configs === null) {
+      if (config === null) {
         this.emitter.emit('notifyWrongFormat')
         this.emitter.emit('removeLayer', imageLayer)
         return
       }
       imageLayer.setProperties({
-        layerActiveConfig: 0,
-        layerConfigs: configs,
-        layerDateArray: configs[0].layerDateArray,
-        layerDateFormat: configs[0].layerDateFormat,
+        layerDateArray: config.layerDateArray,
+        layerDateFormat: config.layerDateFormat,
         layerDateIndex: 0,
         layerDefaultTime: new Date(layerData.Dimension.Dimension_time_default),
         layerDimensionRefTime: layerData.Dimension.Dimension_ref_time,
@@ -180,10 +178,10 @@ export default {
           referenceTime === null
             ? null
             : referenceTime[referenceTime.length - 1],
-        layerStartTime: new Date(configs[0].layerStartTime),
-        layerEndTime: new Date(configs[0].layerEndTime),
-        layerTimeStep: configs[0].layerTimeStep,
-        layerTrueTimeStep: configs[0].layerTrueTimeStep,
+        layerStartTime: new Date(config.layerStartTime),
+        layerEndTime: new Date(config.layerEndTime),
+        layerTimeStep: config.layerTimeStep,
+        layerTrueTimeStep: config.layerTrueTimeStep,
       })
       this.store.addTimestep(imageLayer.get('layerTimeStep'))
       if (layerData.isSnapped) {

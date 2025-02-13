@@ -66,7 +66,7 @@
                   </v-btn>
                 </template>
 
-                <template #title-slot="{ node }">
+                <template v-if="!node.Img" #title-slot="{ node }">
                   <v-tooltip
                     :text="node.Title"
                     location="bottom"

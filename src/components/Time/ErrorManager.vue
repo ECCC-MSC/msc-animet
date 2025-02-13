@@ -427,22 +427,21 @@ export default {
             }
           }
         }
-        const layerActiveConfig = layer.get('layerActiveConfig')
-        let configs
+        let config
         if (
           layer.getSource().getParams().DIM_REFERENCE_TIME === undefined ||
           !sameMR
         ) {
-          configs = this.createTimeLayerConfigs(
+          config = this.createTimeLayerConfig(
             layerData.Dimension.Dimension_time,
           )
         } else {
-          configs = layer.get('layerConfigs')
+          config = layer.getProperties()
         }
         let newLayerIndex = this.findLayerIndex(
           this.mapTimeSettings.Extent[this.mapTimeSettings.DateIndex],
-          configs[layerActiveConfig].layerDateArray,
-          configs[layerActiveConfig].layerTimeStep,
+          config.layerDateArray,
+          config.layerTimeStep,
         )
         if (!sameMR) {
           layer.getSource().updateParams({
@@ -451,8 +450,8 @@ export default {
           if (newLayerIndex < 0) {
             layer.getSource().updateParams({
               TIME: this.getProperDateString(
-                configs[layerActiveConfig].layerDateArray[0],
-                configs[layerActiveConfig].dateFormat,
+                config.layerDateArray[0],
+                config.dateFormat,
               ),
             })
           }
@@ -468,8 +467,7 @@ export default {
           layerMR = layer.get('layerCurrentMR')
         }
         layer.setProperties({
-          layerConfigs: configs,
-          layerDateArray: configs[layerActiveConfig].layerDateArray,
+          layerDateArray: config.layerDateArray,
           layerDateIndex: newLayerIndex,
           layerDefaultTime: new Date(
             layerData.Dimension.Dimension_time_default,
@@ -478,10 +476,10 @@ export default {
           layerDimensionTime: layerData.Dimension.Dimension_time,
           layerModelRuns: newMRs,
           layerCurrentMR: layerMR,
-          layerStartTime: new Date(configs[layerActiveConfig].layerStartTime),
-          layerEndTime: new Date(configs[layerActiveConfig].layerEndTime),
-          layerTimeStep: configs[layerActiveConfig].layerTimeStep,
-          layerTrueTimeStep: configs[layerActiveConfig].layerTrueTimeStep,
+          layerStartTime: new Date(config.layerStartTime),
+          layerEndTime: new Date(config.layerEndTime),
+          layerTimeStep: config.layerTimeStep,
+          layerTrueTimeStep: config.layerTrueTimeStep,
         })
         this.expiredSnackBarMessage = this.t('ExpiredTimesteps')
         this.timeoutDuration = 6000

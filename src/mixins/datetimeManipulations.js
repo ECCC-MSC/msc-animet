@@ -123,35 +123,19 @@ export default {
       this.store.setMapTimeSettings(newSettings)
       this.emitter.emit('updatePermalink')
     },
-    createTimeLayerConfigs(Dimension_time) {
+    createTimeLayerConfig(Dimension_time) {
       let [dateArrayFormat, trueStep, Step] = this.findFormat(Dimension_time)
       if (dateArrayFormat === null) {
         return null
       }
-      let configs = []
-      if (dateArrayFormat.every((element) => Array.isArray(element))) {
-        for (let i = 0; i < dateArrayFormat.length; i++) {
-          configs.push({
-            layerDateArray: dateArrayFormat[i][0],
-            layerDateFormat: dateArrayFormat[i][1],
-            layerStartTime: dateArrayFormat[i][0][0],
-            layerEndTime:
-              dateArrayFormat[i][0][dateArrayFormat[i][0].length - 1],
-            layerTimeStep: Step[i],
-            layerTrueTimeStep: trueStep[i],
-          })
-        }
-      } else {
-        configs.push({
-          layerDateArray: dateArrayFormat[0],
-          layerDateFormat: dateArrayFormat[1],
-          layerStartTime: dateArrayFormat[0][0],
-          layerEndTime: dateArrayFormat[0][dateArrayFormat[0].length - 1],
-          layerTimeStep: Step,
-          layerTrueTimeStep: trueStep,
-        })
+      return {
+        layerDateArray: dateArrayFormat[0],
+        layerDateFormat: dateArrayFormat[1],
+        layerStartTime: dateArrayFormat[0][0],
+        layerEndTime: dateArrayFormat[0][dateArrayFormat[0].length - 1],
+        layerTimeStep: Step,
+        layerTrueTimeStep: trueStep,
       }
-      return configs
     },
     findLayerIndex(date, layerDateArr, step) {
       let start = 0
@@ -186,10 +170,11 @@ export default {
       dateRange = dateRange.replace(/\s/g, '')
       // only 1 case will return true, so switch with "true" will give the correct format
       switch (true) {
-        case /^[^,/]*$/.test(dateRange):
-        case /^[^/]*,[^/]*$/.test(dateRange): {
+        // single date or dates separated by a comma
+        case /^[^/]*(,[^/]*)?$/.test(dateRange): {
           return this.getNullIntervalDateArray(dateRange.split(','))
         }
+        // start/end/step
         case /^[^,]*\/[^,]*\/[^,]*$/.test(dateRange): {
           let [startDateStr, endDateStr, interval] = dateRange.split('/')
           return [
@@ -198,21 +183,24 @@ export default {
             interval === 'PT0H' ? 'PT1H' : interval,
           ]
         }
+        // multiple start/end/step comma-separated
+        // transform into single dates since there are likely multiple formats
         case /^[^,]*\/[^,]*\/[^,]*(?:,[^,]*\/[^,]*\/[^,]*)*$/.test(dateRange): {
-          let dateArrays = []
-          let trueIntervals = []
-          let intervals = []
+          let dateArray = []
           let dateRanges = dateRange.split(',')
           for (let i = 0; i < dateRanges.length; i++) {
             let [startDateStr, endDateStr, interval] = dateRanges[i].split('/')
-            dateArrays.push(
-              this.getDateArray(startDateStr, endDateStr, interval),
+            dateArray = dateArray.concat(
+              this.getDateArray(startDateStr, endDateStr, interval)[0],
             )
-            trueIntervals.push(interval)
-            intervals.push(interval === 'PT0H' ? 'PT1H' : interval)
           }
-          return [dateArrays, trueIntervals, intervals]
+          const arrayToCSV = dateArray
+            .map((dateObj) => dateObj.toISOString())
+            .join(',')
+          return this.findFormat(arrayToCSV)
         }
+        // special case mostly for ECMWF that looks like start1,date2/end1/step,start2/end2/step2
+        // so this is simply to put start1 inside the first interval
         case /^[^,/]+,[^,/]+\/[^,/]+\/[^,/]+/.test(dateRange): {
           let [singleDate, firstInterval, ...remainingIntervals] =
             dateRange.split(',')
