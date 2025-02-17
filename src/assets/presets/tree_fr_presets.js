@@ -67,6 +67,7 @@ export default {
       Title: 'Précipitation',
       Name: 'Precipitation',
       isLeaf: false,
+      isOpen: true,
       children: [
         {
           Title: 'Pluie radar',
@@ -75,14 +76,14 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'Dynamic radar coverage for rain',
-              Name: 'RADAR_COVERAGE_RRAI',
+              Title: 'Inverted dynamic radar coverage for rain',
+              Name: 'RADAR_COVERAGE_RRAI.INV',
               isLeaf: true,
               isTemporal: true,
             },
             {
-              Title: 'Inverted dynamic radar coverage for rain',
-              Name: 'RADAR_COVERAGE_RRAI.INV',
+              Title: 'Dynamic radar coverage for rain',
+              Name: 'RADAR_COVERAGE_RRAI',
               isLeaf: true,
               isTemporal: true,
             },
@@ -115,14 +116,14 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'Dynamic radar coverage for snow',
-              Name: 'RADAR_COVERAGE_RSNO',
+              Title: 'Inverted dynamic radar coverage for snow',
+              Name: 'RADAR_COVERAGE_RSNO.INV',
               isLeaf: true,
               isTemporal: true,
             },
             {
-              Title: 'Inverted dynamic radar coverage for snow',
-              Name: 'RADAR_COVERAGE_RSNO.INV',
+              Title: 'Dynamic radar coverage for snow',
+              Name: 'RADAR_COVERAGE_RSNO',
               isLeaf: true,
               isTemporal: true,
             },
@@ -198,6 +199,7 @@ export default {
       Title: 'Satellite',
       Name: 'Satellite',
       isLeaf: false,
+      isOpen: true,
       children: [
         {
           Title: 'Naturelle + IR de nuit',
@@ -227,6 +229,7 @@ export default {
       Title: 'Événements environnementaux extrêmes',
       Name: 'Extreme Environmental Events',
       isLeaf: false,
+      isOpen: true,
       children: [
         {
           Title: "Trajectoires d'ouragan",
@@ -235,15 +238,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'Hurricane Forecast Location',
-              Name: 'HURRICANE_CENTRE',
-              isLeaf: true,
-              isTemporal: true,
-              opacity: 1,
-            },
-            {
-              Title: 'Hurricane Line Segments',
-              Name: 'HURRICANE_LINE',
+              Title: 'Hurricane Response Zone',
+              Name: 'HURRICANE_RESPONSE_ZONE',
               isLeaf: true,
               isTemporal: true,
               opacity: 1,
@@ -263,8 +259,15 @@ export default {
               opacity: 1,
             },
             {
-              Title: 'Hurricane Response Zone',
-              Name: 'HURRICANE_RESPONSE_ZONE',
+              Title: 'Hurricane Line Segments',
+              Name: 'HURRICANE_LINE',
+              isLeaf: true,
+              isTemporal: true,
+              opacity: 1,
+            },
+            {
+              Title: 'Hurricane Forecast Location',
+              Name: 'HURRICANE_CENTRE',
               isLeaf: true,
               isTemporal: true,
               opacity: 1,

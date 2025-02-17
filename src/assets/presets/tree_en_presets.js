@@ -67,22 +67,23 @@ export default {
       Title: 'Precipitation',
       Name: 'Precipitation',
       isLeaf: false,
+      isOpen: true,
       children: [
         {
-          Title: 'Radar rain',
-          Name: 'Radar rain',
+          Title: 'Radar Rain',
+          Name: 'Radar Rain',
           Img: 'Radar Rain',
           isLeaf: false,
           children: [
             {
-              Title: 'Dynamic radar coverage for rain',
-              Name: 'RADAR_COVERAGE_RRAI',
+              Title: 'Inverted dynamic radar coverage for rain',
+              Name: 'RADAR_COVERAGE_RRAI.INV',
               isLeaf: true,
               isTemporal: true,
             },
             {
-              Title: 'Inverted dynamic radar coverage for rain',
-              Name: 'RADAR_COVERAGE_RRAI.INV',
+              Title: 'Dynamic radar coverage for rain',
+              Name: 'RADAR_COVERAGE_RRAI',
               isLeaf: true,
               isTemporal: true,
             },
@@ -95,8 +96,8 @@ export default {
           ],
         },
         {
-          Title: 'Rain accumulation',
-          Name: 'Rain accumulation',
+          Title: 'Rain Accumulation',
+          Name: 'Rain Accumulation',
           Img: 'Rain Accumulation',
           isLeaf: false,
           children: [
@@ -109,20 +110,20 @@ export default {
           ],
         },
         {
-          Title: 'Radar snow',
-          Name: 'Radar snow',
+          Title: 'Radar Snow',
+          Name: 'Radar Snow',
           Img: 'Radar Snow',
           isLeaf: false,
           children: [
             {
-              Title: 'Dynamic radar coverage for snow',
-              Name: 'RADAR_COVERAGE_RSNO',
+              Title: 'Inverted dynamic radar coverage for snow',
+              Name: 'RADAR_COVERAGE_RSNO.INV',
               isLeaf: true,
               isTemporal: true,
             },
             {
-              Title: 'Inverted dynamic radar coverage for snow',
-              Name: 'RADAR_COVERAGE_RSNO.INV',
+              Title: 'Dynamic radar coverage for snow',
+              Name: 'RADAR_COVERAGE_RSNO',
               isLeaf: true,
               isTemporal: true,
             },
@@ -135,8 +136,8 @@ export default {
           ],
         },
         {
-          Title: 'Snow accumulation',
-          Name: 'Snow accumulation',
+          Title: 'Snow Accumulation',
+          Name: 'Snow Accumulation',
           Img: 'Snow Accumulation',
           isLeaf: false,
           children: [
@@ -149,8 +150,8 @@ export default {
           ],
         },
         {
-          Title: 'Snow depth',
-          Name: 'Snow depth',
+          Title: 'Snow Depth',
+          Name: 'Snow Depth',
           Img: 'Snow Depth',
           isLeaf: false,
           children: [
@@ -163,8 +164,8 @@ export default {
           ],
         },
         {
-          Title: 'Precipitation type',
-          Name: 'Precipitation type',
+          Title: 'Precipitation Type',
+          Name: 'Precipitation Type',
           Img: 'Precipitation Type',
           isLeaf: false,
           children: [
@@ -179,8 +180,8 @@ export default {
           ],
         },
         {
-          Title: 'Probability of thunderstorm',
-          Name: 'Probability of thunderstorm',
+          Title: 'Probability of Thunderstorm',
+          Name: 'Probability of Thunderstorm',
           Img: 'Probability of Thunderstorm',
           isLeaf: false,
           children: [
@@ -198,6 +199,7 @@ export default {
       Title: 'Satellite',
       Name: 'Satellite',
       isLeaf: false,
+      isOpen: true,
       children: [
         {
           Title: 'Natural + NightIR',
@@ -224,9 +226,10 @@ export default {
       ],
     },
     {
-      Title: 'Extreme environmental events',
+      Title: 'Extreme Environmental Events',
       Name: 'Extreme Environmental Events',
       isLeaf: false,
+      isOpen: true,
       children: [
         {
           Title: 'Hurricane tracks',
@@ -235,15 +238,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'Hurricane Forecast Location',
-              Name: 'HURRICANE_CENTRE',
-              isLeaf: true,
-              isTemporal: true,
-              opacity: 1,
-            },
-            {
-              Title: 'Hurricane Line Segments',
-              Name: 'HURRICANE_LINE',
+              Title: 'Hurricane Response Zone',
+              Name: 'HURRICANE_RESPONSE_ZONE',
               isLeaf: true,
               isTemporal: true,
               opacity: 1,
@@ -263,8 +259,15 @@ export default {
               opacity: 1,
             },
             {
-              Title: 'Hurricane Response Zone',
-              Name: 'HURRICANE_RESPONSE_ZONE',
+              Title: 'Hurricane Line Segments',
+              Name: 'HURRICANE_LINE',
+              isLeaf: true,
+              isTemporal: true,
+              opacity: 1,
+            },
+            {
+              Title: 'Hurricane Forecast Location',
+              Name: 'HURRICANE_CENTRE',
               isLeaf: true,
               isTemporal: true,
               opacity: 1,
