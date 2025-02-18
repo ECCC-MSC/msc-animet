@@ -3,8 +3,9 @@
     <img
       :src="img"
       class="image"
+      :class="{ selected: presetSelected(node) }"
       @click="handleMultiAdd(node)"
-    ></img>
+    />
     <span class="image-title">{{ node.Title }}</span>
   </div>
   <div v-else class="tree-node">
@@ -84,8 +85,10 @@ const playState = computed(() => {
 })
 
 const img = computed(() => {
-  return new URL(`../../assets/presets/images/${props.node.Img}.png`, import.meta.url)
-    .href
+  return new URL(
+    `../../assets/presets/images/${props.node.Img}.png`,
+    import.meta.url,
+  ).href
 })
 
 const emit = defineEmits(['nodeToggled', 'request'])
@@ -95,6 +98,14 @@ const handleClick = (node) => {
   else request(node)
 }
 
+const presetSelected = (node) => {
+  return node.children.every((childNode) =>
+    proxy.$mapLayers.arr.some(
+      (layer) => layer.get('layerName') === childNode.Name,
+    ),
+  )
+}
+
 const handleMultiAdd = (node) => {
   const missingNames = node.children.filter(
     (childNode) =>
@@ -102,13 +113,18 @@ const handleMultiAdd = (node) => {
         (layer) => layer.get('layerName') === childNode.Name,
       ),
   )
+  let index = proxy.$mapLayers.arr.length
   if (missingNames.length > 0 && missingNames.length < node.children.length) {
     for (const childNode of missingNames) {
+      childNode.zIndex = index
       emit('request', childNode)
+      index++
     }
   } else {
     for (const childNode of node.children) {
+      childNode.zIndex = index
       emit('request', childNode)
+      index++
     }
   }
 }
@@ -143,6 +159,10 @@ const bubbleNodeRequest = (node) => {
   height: auto;
   object-fit: contain;
   vertical-align: top;
+}
+.selected {
+  border: 2px solid #007bff;
+  transform: scale(1.05);
 }
 .image-grid {
   display: grid;
