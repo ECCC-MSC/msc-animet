@@ -2,7 +2,7 @@ import os
 
 wms_sources = {
     "Presets": {
-        "url": "https://geo.weather.gc.ca/geomet",
+        "url": os.environ.get("GEOMET_WEATHER_NIGHTLY_URL", default="https://geo.weather.gc.ca/geomet"),
         "version": "1.3.0",
         "display": True,
     },

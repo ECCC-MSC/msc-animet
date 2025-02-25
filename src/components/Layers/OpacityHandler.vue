@@ -31,7 +31,7 @@
           track-size="2"
           v-model="opacity"
           :disabled="isAnimating"
-          @change="emitter.emit('updatePermalink')"
+          @update:modelValue="emitter.emit('updatePermalink')"
         >
         </v-slider>
       </v-card-text>
