@@ -59,11 +59,20 @@ export default {
       extentPassed.forEach((element) => {
         castedExtent.push(parseFloat(element))
       })
+      if (this.basemap === '0') {
+        let rotation = 0
+        if (castedExtent.length === 5) {
+          rotation = castedExtent.pop()
+        }
+        this.store.setExtent([castedExtent, rotation])
+      }
       this.emitter.emit('goToExtent', castedExtent)
     }
     if (this.basemap !== undefined) {
       if (this.basemap === '0') {
-        this.emitter.emit('invisibleBasemap')
+        this.store.setBasemap(null)
+      } else {
+        this.store.setBasemap(this.basemap)
       }
     }
     if (this.color !== undefined) {

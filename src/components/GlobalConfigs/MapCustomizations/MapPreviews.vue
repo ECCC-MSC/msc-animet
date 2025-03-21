@@ -1,5 +1,19 @@
 <template>
   <div class="map-previews-grid">
+    <div v-if="simplifiedBoundaries" class="source-group">
+      <h3>{{ $t('NaturalEarth') }}</h3>
+      <div class="color-options">
+        <div class="map-preview-container">
+          <div
+            id="natural"
+            ref="natural-blue"
+            class="map-preview"
+            :class="{ selected: isSelected('natural', 'blue') }"
+          ></div>
+          <span>{{ $t('Base') }}</span>
+        </div>
+      </div>
+    </div>
     <div v-for="source in sources" :key="source" class="source-group">
       <h3>{{ source }}</h3>
       <div class="color-options">
@@ -53,6 +67,9 @@
 import { applyTransform } from 'ol/extent.js'
 import { get as getProjection, getTransform } from 'ol/proj.js'
 import Map from 'ol/Map'
+import MVT from 'ol/format/MVT.js'
+import VectorTileLayer from 'ol/layer/VectorTile.js'
+import VectorTileSource from 'ol/source/VectorTile.js'
 import View from 'ol/View'
 import TileLayer from 'ol/layer/Tile'
 import OSM from 'ol/source/OSM'
@@ -63,19 +80,27 @@ export default {
     return {
       backgrounds: {
         White: {
+          basemap: null,
           name: 'white',
           color: [255, 255, 255],
         },
         Grey: {
+          basemap: null,
           name: 'grey',
           color: [158, 158, 158],
         },
         Black: {
+          basemap: null,
           name: 'black',
           color: [0, 0, 0],
         },
       },
       basemap: 'OSM',
+      blueBackground: {
+        basemap: 'natural',
+        name: 'blue',
+        color: [170, 211, 223],
+      },
       colors: [
         { name: 'Base', rgb: [null, null, null] },
         { name: 'Light', rgb: [255, 255, 255] },
@@ -92,17 +117,16 @@ export default {
       maps: {},
       rgb: [255, 255, 255],
       selection: null,
+      simplifiedBoundaries: import.meta.env.VITE_SIMPLIFIED_BOUNDARIES,
       sources: ['OSM'],
     }
   },
   mounted() {
-    this.emitter.on('invisibleBasemap', this.nullBasemap)
     this.emitter.on('permalinkColor', this.setMapIsColored)
     this.initializeMaps()
     this.updateProjection()
   },
   beforeUnmount() {
-    this.emitter.off('invisibleBasemap', this.nullBasemap)
     this.emitter.off('permalinkColor', this.setMapIsColored)
   },
   computed: {
@@ -112,16 +136,19 @@ export default {
     currentCRS() {
       return this.store.getCurrentCRS
     },
-    isBasemapVisible() {
-      return this.store.getIsBasemapVisible
+    activeBasemap() {
+      return this.store.getBasemap
     },
   },
   watch: {
     currentCRS() {
       this.updateProjection()
     },
-    selection(newSel) {
-      if (newSel.split('-')[0] !== 'null') {
+    selection(newSel, oldSel) {
+      if (newSel === 'natural-blue' || oldSel === 'natural-blue') {
+        this.toggleVectorLayer()
+      }
+      if (this.sources.includes(newSel.split('-')[0])) {
         if (newSel.split('-')[1] === 'Base') {
           this.coloredBasemapHandler(false)
         } else {
@@ -134,7 +161,7 @@ export default {
         if (
           Object.keys(oldVal).length === 0 &&
           Object.keys(newVal).length !== 0 &&
-          this.basemap !== null
+          this.activeBasemap === 'OSM'
         ) {
           if (this.isMapColored) {
             this.setColor()
@@ -142,7 +169,7 @@ export default {
               if (
                 color.rgb.every((value, index) => value === this.rgb[index])
               ) {
-                this.selection = `${this.basemap}-${color.name}`
+                this.selection = `${this.activeBasemap}-${color.name}`
                 break
               }
             }
@@ -150,15 +177,19 @@ export default {
           } else {
             this.selection = 'OSM-Base'
           }
-        } else if (this.basemap === null) {
+        } else {
           if (this.isMapColored) {
             this.setColor()
           }
           const backgroundObj = {
+            basemap: this.activeBasemap,
             name: null,
             color: this.rgb,
           }
-          for (const background of Object.values(this.backgrounds)) {
+          for (const background of [
+            this.blueBackground,
+            ...Object.values(this.backgrounds),
+          ]) {
             if (
               background.color.every(
                 (value, index) => value === this.rgb[index],
@@ -238,6 +269,9 @@ export default {
       evt.context.globalCompositeOperation = 'source-over'
     },
     initializeMaps() {
+      if (this.simplifiedBoundaries) {
+        this.maps['natural-blue'] = this.initVectorBasemap()
+      }
       this.sources.forEach((source) => {
         this.colors.forEach((color) => {
           const targetRef = `map-${source}-${color.name}`
@@ -248,6 +282,63 @@ export default {
           )
         })
       })
+    },
+    toggleVectorLayer() {
+      const layer = this.$mapCanvas.mapObj
+        .getLayers()
+        .getArray()
+        .find((l) => l.get('layerName') === 'geomet-natural-earth')
+      if (!layer) {
+        this.$mapCanvas.mapObj.addLayer(this.createVectorLayer())
+      } else {
+        this.$mapCanvas.mapObj.removeLayer(layer)
+      }
+    },
+    createVectorLayer() {
+      return new VectorTileLayer({
+        declutter: true,
+        source: new VectorTileSource({
+          format: new MVT(),
+          url: this.simplifiedBoundaries,
+        }),
+        style: {
+          'stroke-width': 0.6,
+          'stroke-color': '#8c8b8b',
+          'fill-color': '#f7f7e9',
+        },
+        layerName: 'geomet-natural-earth',
+        zIndex: -1,
+      })
+    },
+    initVectorBasemap() {
+      const newProjection = getProjection(this.currentCRS)
+      const fromLonLat = getTransform('EPSG:4326', newProjection)
+      const worldExtent = this.crsList[this.currentCRS]
+      newProjection.setWorldExtent(worldExtent)
+      const projExtent = applyTransform(worldExtent, fromLonLat, undefined, 8)
+      newProjection.setExtent(projExtent)
+
+      const vtLayerTC = this.createVectorLayer()
+      const previewMap = new Map({
+        target: this.$refs['natural-blue'],
+        layers: [vtLayerTC],
+        view: new View({
+          center: fromLonLat([-90, 55]),
+          zoom: this.defaultZoomLevels[this.currentCRS],
+          minZoom: this.defaultZoomLevels[this.currentCRS],
+          maxZoom: this.defaultZoomLevels[this.currentCRS],
+          projection: this.currentCRS,
+        }),
+        pixelRatio: 1,
+        controls: [],
+        interactions: [],
+      })
+      document.getElementById('natural').style.backgroundColor = '#AAD3DF'
+      previewMap.on('click', () => {
+        this.whiteBasemapHandler(false, this.blueBackground)
+      })
+
+      return previewMap
     },
     initMap(target, color, source) {
       const newProjection = getProjection(this.currentCRS)
@@ -293,9 +384,6 @@ export default {
     isSelected(source, colorName) {
       return this.selection === `${source}-${colorName}`
     },
-    nullBasemap() {
-      this.basemap = null
-    },
     setColor() {
       this.rgb = this.store.getRGB
     },
@@ -321,16 +409,18 @@ export default {
       })
     },
     whiteBasemapHandler(visible, background = null) {
+      const basemap = this.$mapCanvas.mapObj.getLayers().getArray()[0]
+      basemap.setVisible(visible)
       if (background) {
         const rgb = background.color
         const cssColor = `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`
         document.getElementById('map').style.backgroundColor = cssColor
-        this.selection = `null-${background.name}`
+        this.selection = `${background.basemap}-${background.name}`
         this.store.setRGB(rgb)
+        this.store.setBasemap(background.basemap)
+      } else {
+        this.store.setBasemap('OSM')
       }
-      const activeBasemap = this.$mapCanvas.mapObj.getLayers().getArray()[0]
-      activeBasemap.setVisible(visible)
-      this.store.setIsBasemapVisible(visible)
       this.emitter.emit('updatePermalink')
       this.emitter.emit('calcFooterPreview')
     },

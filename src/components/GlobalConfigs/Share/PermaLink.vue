@@ -111,8 +111,8 @@ export default {
     showGraticules() {
       return this.store.getShowGraticules
     },
-    isBasemapVisible() {
-      return this.store.getIsBasemapVisible
+    activeBasemap() {
+      return this.store.getBasemap
     },
   },
   methods: {
@@ -197,8 +197,12 @@ export default {
           permalinktemp += '&grat=1'
         }
 
-        if (!this.isBasemapVisible) {
-          permalinktemp += `&basemap=0`
+        if (this.activeBasemap !== 'OSM') {
+          if (this.activeBasemap) {
+            permalinktemp += `&basemap=${this.activeBasemap}`
+          } else {
+            permalinktemp += '&basemap=0'
+          }
         }
 
         if (this.rgb.length !== 0) {
