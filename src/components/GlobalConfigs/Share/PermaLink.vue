@@ -198,7 +198,7 @@ export default {
         }
 
         if (this.activeBasemap !== 'OSM') {
-          if (this.activeBasemap) {
+          if (this.activeBasemap !== 'NoBasemap') {
             permalinktemp += `&basemap=${this.activeBasemap}`
           } else {
             permalinktemp += '&basemap=0'

@@ -70,7 +70,7 @@ export default {
     }
     if (this.basemap !== undefined) {
       if (this.basemap === '0') {
-        this.store.setBasemap(null)
+        this.store.setBasemap('NoBasemap')
       } else {
         this.store.setBasemap(this.basemap)
       }
