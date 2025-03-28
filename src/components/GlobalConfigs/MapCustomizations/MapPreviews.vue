@@ -69,21 +69,21 @@ export default {
               rgb: {
                 land: [255, 255, 255, 1],
                 water: [170, 211, 223],
-                stroke: [140, 140, 140],
+                stroke: [140, 140, 140, 0.6],
               },
             },
             Grey: {
               rgb: {
                 land: [223, 223, 223, 1],
                 water: [158, 158, 158],
-                stroke: [0, 0, 0],
+                stroke: [0, 0, 0, 0.6],
               },
             },
             Dark: {
               rgb: {
                 land: [0, 0, 0, 1],
-                water: [158, 158, 158],
-                stroke: [140, 140, 140],
+                water: [110, 110, 110],
+                stroke: [140, 140, 140, 0.6],
               },
             },
           },
@@ -98,21 +98,21 @@ export default {
               rgb: {
                 land: [255, 255, 255, 0],
                 water: [255, 255, 255],
-                stroke: [0, 0, 0],
+                stroke: [0, 0, 0, 1],
               },
             },
             Grey: {
               rgb: {
                 land: [255, 255, 255, 0],
                 water: [158, 158, 158],
-                stroke: [0, 0, 0],
+                stroke: [0, 0, 0, 1],
               },
             },
             Dark: {
               rgb: {
                 land: [255, 255, 255, 0],
                 water: [0, 0, 0],
-                stroke: [255, 255, 255],
+                stroke: [255, 255, 255, 1],
               },
             },
           },
@@ -186,21 +186,13 @@ export default {
             this.sources[newSource].zIndex,
           )
         } else {
-          this.toggleVectorLayer(
-            colors.rgb,
-            this.sources[newSource].name,
-            colorName,
-          )
+          this.toggleVectorLayer(colors.rgb, newSource, colorName)
         }
       } else if (
         oldSel !== null &&
         this.sources[oldSel.split('-')[0]].name === 'Simplified'
       ) {
-        this.toggleVectorLayer(
-          null,
-          this.sources[oldSel.split('-')[0]].name,
-          oldSel.split('-')[1],
-        )
+        this.toggleVectorLayer(null, oldSel.split('-')[0], oldSel.split('-')[1])
       }
       if (newSource === 'OSM') {
         if (newSel.split('-')[1] === 'Base') {
@@ -342,7 +334,10 @@ export default {
       const layer = this.$mapCanvas.mapObj
         .getLayers()
         .getArray()
-        .find((l) => l.get('layerName') === `${source}-${colorName}`)
+        .find(
+          (l) =>
+            l.get('layerName') === `${this.sources[source].name}-${colorName}`,
+        )
       if (!layer) {
         this.$mapCanvas.mapObj.addLayer(
           this.createVectorLayer(colors, source, colorName),
@@ -353,14 +348,14 @@ export default {
     },
     toggleVectorLayerStyle(colors, source, oldColorName, newColorName, zIndex) {
       const fillColor = `rgba(${colors.land.join(',')})`
-      const strokeColor = `rgb(${colors.stroke.join(',')})`
+      const [r, g, b, strokeWidth] = colors.stroke
       const layer = this.$mapCanvas.mapObj
         .getLayers()
         .getArray()
         .find((l) => l.get('layerName') === `${source}-${oldColorName}`)
       layer.setStyle({
-        'stroke-width': 0.6,
-        'stroke-color': strokeColor,
+        'stroke-width': strokeWidth,
+        'stroke-color': `rgb(${r},${g},${b})`,
         'fill-color': fillColor,
       })
       layer.setProperties({
@@ -370,7 +365,7 @@ export default {
     },
     createVectorLayer(colors, source, colorName) {
       const fillColor = `rgba(${colors.land.join(',')})`
-      const strokeColor = `rgb(${colors.stroke.join(',')})`
+      const [r, g, b, strokeWidth] = colors.stroke
       return new VectorTileLayer({
         declutter: true,
         source: new VectorTileSource({
@@ -378,11 +373,11 @@ export default {
           url: this.sources[source].displayCondition,
         }),
         style: {
-          'stroke-width': 0.6,
-          'stroke-color': strokeColor,
+          'stroke-width': strokeWidth,
+          'stroke-color': `rgb(${r},${g},${b})`,
           'fill-color': fillColor,
         },
-        layerName: `${source}-${colorName}`,
+        layerName: `${this.sources[source].name}-${colorName}`,
         zIndex: this.sources[source].zIndex,
       })
     },
