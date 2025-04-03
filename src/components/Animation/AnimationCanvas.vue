@@ -10,6 +10,7 @@ import { get as getProjection, getTransform } from 'ol/proj.js'
 import Graticule from 'ol/layer/Graticule.js'
 import ImageWMS from 'ol/source/ImageWMS'
 import Map from 'ol/Map'
+import MVT from 'ol/format/MVT.js'
 import OLImage from 'ol/layer/Image'
 import OSM from 'ol/source/OSM'
 import Stroke from 'ol/style/Stroke.js'
@@ -17,6 +18,8 @@ import TileLayer from 'ol/layer/Tile'
 import View from 'ol/View'
 import { Vector as VectorLayer } from 'ol/layer.js'
 import { Vector as VectorSource } from 'ol/source.js'
+import VectorTileLayer from 'ol/layer/VectorTile.js'
+import VectorTileSource from 'ol/source/VectorTile.js'
 
 import 'ol/ol.css'
 
@@ -216,6 +219,25 @@ export default {
         }
       })
       this.$mapCanvas.mapObj.getLayers().forEach((layer) => {
+        if (layer instanceof VectorTileLayer) {
+          const originalSource = layer.getSource()
+          const originalUrl = originalSource.getUrls()[0]
+          const originalStyle = layer.getStyle()
+          let originalProperties = Object.assign({}, layer.getProperties())
+          delete originalProperties.map
+          delete originalProperties.source
+
+          const vectorTile = new VectorTileLayer({
+            source: new VectorTileSource({
+              format: new MVT(),
+              url: originalUrl,
+            }),
+            style: originalStyle,
+            ...originalProperties,
+          })
+
+          this.$animationCanvas.mapObj.addLayer(vectorTile)
+        }
         if (layer instanceof VectorLayer) {
           const newSource = new VectorSource({
             features: layer

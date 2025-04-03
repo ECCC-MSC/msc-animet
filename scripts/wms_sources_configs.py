@@ -71,4 +71,10 @@ wms_sources = {
         "version": "1.3.0",
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
     },
+    "ServicesCarto": {
+        "url": "https://servicescarto.mern.gouv.qc.ca/pes/services/Territoire/SDA_WMS/MapServer/WmsServer",
+        "version": "1.3.0",
+        "no_translations": True,
+        "display": os.environ.get("ANIMET_NIGHTLY", default=False),
+    }
 }

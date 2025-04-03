@@ -15,6 +15,7 @@ export const useStore = defineStore('store', {
       )
       return projList
     }),
+    basemap: 'OSM',
     collapseControls: false,
     colorBorder: false,
     configPanelHover: false,
@@ -47,7 +48,6 @@ export const useStore = defineStore('store', {
     intersectDict: {},
     isAnimating: false,
     isAnimationReversed: false,
-    isBasemapVisible: true,
     isFullSize: false,
     isLooping: true,
     lang: 'en',
@@ -99,7 +99,7 @@ export const useStore = defineStore('store', {
     getDatetimeRangeSlider: (state) => state.datetimeRangeSlider,
     getExtent: (state) => state.extent,
     getFramesPerSecond: (state) => state.framesPerSecond,
-    getIsBasemapVisible: (state) => state.isBasemapVisible,
+    getBasemap: (state) => state.basemap,
     getIsLooping: (state) => state.isLooping,
     getIsFullSize: (state) => state.isFullSize,
     getGeoMetTreeItems: (state) =>
@@ -210,8 +210,8 @@ export const useStore = defineStore('store', {
     setIsAnimationReversed(isReversed) {
       this.isAnimationReversed = isReversed
     },
-    setIsBasemapVisible(newStatus) {
-      this.isBasemapVisible = newStatus
+    setBasemap(newStatus) {
+      this.basemap = newStatus
     },
     setIsFullSize(fullSize) {
       this.isFullSize = fullSize

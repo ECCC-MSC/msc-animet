@@ -1,51 +1,24 @@
 <template>
   <div class="map-previews-grid">
-    <div v-for="source in sources" :key="source" class="source-group">
-      <h3>{{ source }}</h3>
-      <div class="color-options">
-        <div
-          v-for="color in colors"
-          :key="`${source}-${color.name}`"
-          class="map-preview-container"
-        >
+    <template v-for="(params, source) in sources" :key="source">
+      <div v-if="params.displayCondition" class="source-group">
+        <h3>{{ $t(source) }}</h3>
+        <div class="color-options">
           <div
-            :ref="`map-${source}-${color.name}`"
-            class="map-preview"
-            :class="{ selected: isSelected(source, color.name) }"
-          ></div>
-          <span>{{ $t(color.name) }}</span>
+            v-for="(_, colorName) in params.colors"
+            :key="`${source}-${colorName}`"
+            class="map-preview-container"
+          >
+            <div
+              :ref="`${source}-${colorName}`"
+              class="map-preview"
+              :class="{ selected: isSelected(source, colorName) }"
+            ></div>
+            <span>{{ $t(colorName) }}</span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="source-group">
-      <h3 class="source-title">{{ $t('NoBasemap') }}</h3>
-      <div class="color-options">
-        <div class="map-preview-container">
-          <div
-            class="map-preview bg-white"
-            :class="{ selected: isSelected('null', 'white') }"
-            @click="whiteBasemapHandler(false, backgrounds.White)"
-          ></div>
-          <span class="color-label">{{ $t('White') }}</span>
-        </div>
-        <div class="map-preview-container">
-          <div
-            class="map-preview bg-grey"
-            :class="{ selected: isSelected('null', 'grey') }"
-            @click="whiteBasemapHandler(false, backgrounds.Grey)"
-          ></div>
-          <span class="color-label">{{ $t('Grey') }}</span>
-        </div>
-        <div class="map-preview-container">
-          <div
-            class="map-preview bg-black"
-            :class="{ selected: isSelected('null', 'black') }"
-            @click="whiteBasemapHandler(false, backgrounds.Black)"
-          ></div>
-          <span class="color-label">{{ $t('Black') }}</span>
-        </div>
-      </div>
-    </div>
+    </template>
   </div>
 </template>
 
@@ -53,34 +26,17 @@
 import { applyTransform } from 'ol/extent.js'
 import { get as getProjection, getTransform } from 'ol/proj.js'
 import Map from 'ol/Map'
-import View from 'ol/View'
-import TileLayer from 'ol/layer/Tile'
+import MVT from 'ol/format/MVT.js'
 import OSM from 'ol/source/OSM'
+import TileLayer from 'ol/layer/Tile'
+import VectorTileLayer from 'ol/layer/VectorTile.js'
+import VectorTileSource from 'ol/source/VectorTile.js'
+import View from 'ol/View'
 
 export default {
   inject: ['store'],
   data() {
     return {
-      backgrounds: {
-        White: {
-          name: 'white',
-          color: [255, 255, 255],
-        },
-        Grey: {
-          name: 'grey',
-          color: [158, 158, 158],
-        },
-        Black: {
-          name: 'black',
-          color: [0, 0, 0],
-        },
-      },
-      basemap: 'OSM',
-      colors: [
-        { name: 'Base', rgb: [null, null, null] },
-        { name: 'Light', rgb: [255, 255, 255] },
-        { name: 'Dark', rgb: [0, 0, 0] },
-      ],
       darkOSMCallback: null,
       defaultZoomLevels: {
         'EPSG:3857': 0.2,
@@ -92,17 +48,100 @@ export default {
       maps: {},
       rgb: [255, 255, 255],
       selection: null,
-      sources: ['OSM'],
+      sources: {
+        OSM: {
+          name: 'OSM',
+          callback: this.osmInit,
+          displayCondition: true,
+          colors: {
+            Base: { rgb: [null, null, null] },
+            Light: { rgb: [255, 255, 255] },
+            Dark: { rgb: [0, 0, 0] },
+          },
+        },
+        Simplified: {
+          name: 'Simplified',
+          callback: this.simplifiedInit,
+          displayCondition: import.meta.env.VITE_SIMPLIFIED_BOUNDARIES,
+          zIndex: -1,
+          colors: {
+            Base: {
+              rgb: {
+                land: [255, 255, 255, 1],
+                water: [170, 211, 223],
+                stroke: [140, 140, 140, 0.6],
+              },
+            },
+            Grey: {
+              rgb: {
+                land: [223, 223, 223, 1],
+                water: [158, 158, 158],
+                stroke: [0, 0, 0, 0.6],
+              },
+            },
+            Dark: {
+              rgb: {
+                land: [0, 0, 0, 1],
+                water: [110, 110, 110],
+                stroke: [140, 140, 140, 0.6],
+              },
+            },
+          },
+        },
+        Overlay: {
+          name: 'Simplified',
+          callback: this.simplifiedInit,
+          displayCondition: import.meta.env.VITE_SIMPLIFIED_BOUNDARIES,
+          zIndex: 1000,
+          colors: {
+            White: {
+              rgb: {
+                land: [255, 255, 255, 0],
+                water: [255, 255, 255],
+                stroke: [0, 0, 0, 1],
+              },
+            },
+            Grey: {
+              rgb: {
+                land: [255, 255, 255, 0],
+                water: [158, 158, 158],
+                stroke: [0, 0, 0, 1],
+              },
+            },
+            Dark: {
+              rgb: {
+                land: [255, 255, 255, 0],
+                water: [0, 0, 0],
+                stroke: [255, 255, 255, 1],
+              },
+            },
+          },
+        },
+        NoBasemap: {
+          name: 'NoBasemap',
+          callback: this.noBasemapInit,
+          displayCondition: true,
+          colors: {
+            White: {
+              rgb: [255, 255, 255],
+            },
+            Grey: {
+              rgb: [158, 158, 158],
+            },
+            Black: {
+              rgb: [0, 0, 0],
+            },
+          },
+        },
+      },
     }
   },
   mounted() {
-    this.emitter.on('invisibleBasemap', this.nullBasemap)
     this.emitter.on('permalinkColor', this.setMapIsColored)
     this.initializeMaps()
     this.updateProjection()
   },
   beforeUnmount() {
-    this.emitter.off('invisibleBasemap', this.nullBasemap)
     this.emitter.off('permalinkColor', this.setMapIsColored)
   },
   computed: {
@@ -112,16 +151,50 @@ export default {
     currentCRS() {
       return this.store.getCurrentCRS
     },
-    isBasemapVisible() {
-      return this.store.getIsBasemapVisible
+    activeBasemap() {
+      const basemap = this.store.getBasemap
+      const sources = Object.keys(this.sources).filter(
+        (source) => this.sources[source].displayCondition,
+      )
+      for (const source of sources) {
+        if (source.toLowerCase() === basemap.toLowerCase()) {
+          return source
+        }
+      }
+      this.store.setBasemap('OSM')
+      return this.store.getBasemap
     },
   },
   watch: {
     currentCRS() {
       this.updateProjection()
     },
-    selection(newSel) {
-      if (newSel.split('-')[0] !== 'null') {
+    selection(newSel, oldSel) {
+      const newSource = newSel.split('-')[0]
+      const colorName = newSel.split('-')[1]
+      const colors = this.sources[newSource].colors[colorName]
+      if (this.sources[newSource].name === 'Simplified') {
+        if (
+          oldSel !== null &&
+          this.sources[oldSel.split('-')[0]].name === 'Simplified'
+        ) {
+          this.toggleVectorLayerStyle(
+            colors.rgb,
+            this.sources[newSource].name,
+            oldSel.split('-')[1],
+            colorName,
+            this.sources[newSource].zIndex,
+          )
+        } else {
+          this.toggleVectorLayer(colors.rgb, newSource, colorName)
+        }
+      } else if (
+        oldSel !== null &&
+        this.sources[oldSel.split('-')[0]].name === 'Simplified'
+      ) {
+        this.toggleVectorLayer(null, oldSel.split('-')[0], oldSel.split('-')[1])
+      }
+      if (newSource === 'OSM') {
         if (newSel.split('-')[1] === 'Base') {
           this.coloredBasemapHandler(false)
         } else {
@@ -134,15 +207,17 @@ export default {
         if (
           Object.keys(oldVal).length === 0 &&
           Object.keys(newVal).length !== 0 &&
-          this.basemap !== null
+          this.activeBasemap === 'OSM'
         ) {
           if (this.isMapColored) {
             this.setColor()
-            for (const color of this.colors) {
+            for (const [colorName, values] of Object.entries(
+              this.sources[this.activeBasemap].colors,
+            )) {
               if (
-                color.rgb.every((value, index) => value === this.rgb[index])
+                values.rgb.every((value, index) => value === this.rgb[index])
               ) {
-                this.selection = `${this.basemap}-${color.name}`
+                this.selection = `${this.activeBasemap}-${colorName}`
                 break
               }
             }
@@ -150,23 +225,22 @@ export default {
           } else {
             this.selection = 'OSM-Base'
           }
-        } else if (this.basemap === null) {
+        } else {
           if (this.isMapColored) {
             this.setColor()
           }
-          const backgroundObj = {
-            name: null,
-            color: this.rgb,
-          }
-          for (const background of Object.values(this.backgrounds)) {
-            if (
-              background.color.every(
-                (value, index) => value === this.rgb[index],
+          const sourceColors = this.sources[this.activeBasemap].colors
+          const colorName =
+            Object.keys(sourceColors).find((color) => {
+              const rgb = sourceColors[color].rgb
+              return (rgb.water ?? rgb).every(
+                (value, idx) => value === this.rgb[idx],
               )
-            ) {
-              backgroundObj.name = background.name
-              break
-            }
+            }) || null
+          const backgroundObj = {
+            basemap: this.activeBasemap,
+            name: colorName,
+            color: this.rgb,
           }
           this.whiteBasemapHandler(false, backgroundObj)
         }
@@ -238,40 +312,114 @@ export default {
       evt.context.globalCompositeOperation = 'source-over'
     },
     initializeMaps() {
-      this.sources.forEach((source) => {
-        this.colors.forEach((color) => {
-          const targetRef = `map-${source}-${color.name}`
-          this.maps[`${source}-${color.name}`] = this.initMap(
-            targetRef,
-            color,
-            source,
-          )
-        })
+      Object.entries(this.sources).forEach(([source, params]) => {
+        if (params.displayCondition) {
+          Object.entries(params.colors).forEach(([colorName, values]) => {
+            const targetRef = `${source}-${colorName}`
+            const color = {
+              name: colorName,
+              rgb: values.rgb,
+            }
+            this.maps[`${source}-${colorName}`] = this.initMap(
+              targetRef,
+              color,
+              source,
+              params.callback,
+            )
+          })
+        }
       })
     },
-    initMap(target, color, source) {
-      const newProjection = getProjection(this.currentCRS)
-      const fromLonLat = getTransform('EPSG:4326', newProjection)
-      const worldExtent = this.crsList[this.currentCRS]
-      newProjection.setWorldExtent(worldExtent)
-      const projExtent = applyTransform(worldExtent, fromLonLat, undefined, 8)
-      newProjection.setExtent(projExtent)
-
-      const osm = new TileLayer({ source: new OSM() })
-      const previewMap = new Map({
-        target: this.$refs[target][0],
-        layers: [osm],
-        view: new View({
-          center: fromLonLat([-90, 55]),
-          zoom: this.defaultZoomLevels[this.currentCRS],
-          minZoom: this.defaultZoomLevels[this.currentCRS],
-          maxZoom: this.defaultZoomLevels[this.currentCRS],
-          projection: this.currentCRS,
-        }),
-        pixelRatio: 1,
-        controls: [],
-        interactions: [],
+    toggleVectorLayer(colors, source, colorName) {
+      const layer = this.$mapCanvas.mapObj
+        .getLayers()
+        .getArray()
+        .find(
+          (l) =>
+            l.get('layerName') === `${this.sources[source].name}-${colorName}`,
+        )
+      if (!layer) {
+        this.$mapCanvas.mapObj.addLayer(
+          this.createVectorLayer(colors, source, colorName),
+        )
+      } else {
+        this.$mapCanvas.mapObj.removeLayer(layer)
+      }
+    },
+    toggleVectorLayerStyle(colors, source, oldColorName, newColorName, zIndex) {
+      const fillColor = `rgba(${colors.land.join(',')})`
+      const [r, g, b, strokeWidth] = colors.stroke
+      const layer = this.$mapCanvas.mapObj
+        .getLayers()
+        .getArray()
+        .find((l) => l.get('layerName') === `${source}-${oldColorName}`)
+      layer.setStyle({
+        'stroke-width': strokeWidth,
+        'stroke-color': `rgb(${r},${g},${b})`,
+        'fill-color': fillColor,
       })
+      layer.setProperties({
+        layerName: `${source}-${newColorName}`,
+      })
+      layer.setZIndex(zIndex)
+    },
+    createVectorLayer(colors, source, colorName) {
+      const fillColor = `rgba(${colors.land.join(',')})`
+      const [r, g, b, strokeWidth] = colors.stroke
+      return new VectorTileLayer({
+        declutter: true,
+        source: new VectorTileSource({
+          format: new MVT(),
+          url: this.sources[source].displayCondition,
+        }),
+        style: {
+          'stroke-width': strokeWidth,
+          'stroke-color': `rgb(${r},${g},${b})`,
+          'fill-color': fillColor,
+        },
+        layerName: `${this.sources[source].name}-${colorName}`,
+        zIndex: this.sources[source].zIndex,
+      })
+    },
+    noBasemapInit(previewMap, target, color, source) {
+      const targetRef = this.$refs[target][0]
+
+      const backgroundColor = color.rgb
+      targetRef.style.backgroundColor = `rgb(${backgroundColor[0]},${backgroundColor[1]},${backgroundColor[2]})`
+
+      const background = {
+        basemap: source,
+        name: color.name,
+        color: color.rgb,
+      }
+      previewMap.on('click', () => {
+        this.whiteBasemapHandler(false, background)
+      })
+
+      return previewMap
+    },
+    simplifiedInit(previewMap, target, color, source) {
+      const vtLayerTC = this.createVectorLayer(color.rgb, source, color.name)
+      previewMap.addLayer(vtLayerTC)
+      const targetRef = this.$refs[target][0]
+
+      const backgroundColor = color.rgb.water
+      targetRef.style.backgroundColor = `rgb(${backgroundColor[0]},${backgroundColor[1]},${backgroundColor[2]})`
+
+      const background = {
+        basemap: source,
+        name: color.name,
+        color: color.rgb.water,
+      }
+      previewMap.on('click', () => {
+        this.whiteBasemapHandler(false, background)
+      })
+
+      return previewMap
+    },
+    osmInit(previewMap, _, color, source) {
+      const osm = new TileLayer({ source: new OSM() })
+      previewMap.addLayer(osm)
 
       if (!color.rgb.every((item) => item === null)) {
         const callback = (evt) => {
@@ -287,14 +435,37 @@ export default {
         }
         this.selection = newSelection
       })
+      return previewMap
+    },
+    initMap(target, color, source, callback) {
+      const newProjection = getProjection(this.currentCRS)
+      const fromLonLat = getTransform('EPSG:4326', newProjection)
+      const worldExtent = this.crsList[this.currentCRS]
+      newProjection.setWorldExtent(worldExtent)
+      const projExtent = applyTransform(worldExtent, fromLonLat, undefined, 8)
+      newProjection.setExtent(projExtent)
+
+      let previewMap = new Map({
+        target: this.$refs[target][0],
+        layers: [],
+        view: new View({
+          center: fromLonLat([-90, 55]),
+          zoom: this.defaultZoomLevels[this.currentCRS],
+          minZoom: this.defaultZoomLevels[this.currentCRS],
+          maxZoom: this.defaultZoomLevels[this.currentCRS],
+          projection: this.currentCRS,
+        }),
+        pixelRatio: 1,
+        controls: [],
+        interactions: [],
+      })
+
+      previewMap = callback(previewMap, target, color, source)
 
       return previewMap
     },
     isSelected(source, colorName) {
       return this.selection === `${source}-${colorName}`
-    },
-    nullBasemap() {
-      this.basemap = null
     },
     setColor() {
       this.rgb = this.store.getRGB
@@ -321,16 +492,18 @@ export default {
       })
     },
     whiteBasemapHandler(visible, background = null) {
+      const basemap = this.$mapCanvas.mapObj.getLayers().getArray()[0]
+      basemap.setVisible(visible)
       if (background) {
         const rgb = background.color
         const cssColor = `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`
         document.getElementById('map').style.backgroundColor = cssColor
-        this.selection = `null-${background.name}`
+        this.selection = `${background.basemap}-${background.name}`
         this.store.setRGB(rgb)
+        this.store.setBasemap(background.basemap)
+      } else {
+        this.store.setBasemap('OSM')
       }
-      const activeBasemap = this.$mapCanvas.mapObj.getLayers().getArray()[0]
-      activeBasemap.setVisible(visible)
-      this.store.setIsBasemapVisible(visible)
       this.emitter.emit('updatePermalink')
       this.emitter.emit('calcFooterPreview')
     },
@@ -385,8 +558,6 @@ export default {
   overflow-y: auto;
   padding-right: 4px;
   margin-right: -4px;
-  padding-left: 2px;
-  margin-left: -2px;
 }
 
 .source-group {
