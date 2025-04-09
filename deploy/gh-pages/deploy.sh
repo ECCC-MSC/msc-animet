@@ -5,6 +5,10 @@ PYTHON_VENV=generate-tree-venv
 
 set -e
 
+# Ensure DEV environment variables are unset
+unset ANIMET_NIGHTLY
+unset GEOMET_WEATHER_NIGHTLY_URL
+
 # build
 
 git checkout --orphan gh-pages
