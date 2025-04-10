@@ -133,6 +133,7 @@ export default {
 }
 .menu-container {
   padding: 12px;
+  padding-right: 4px;
   padding-bottom: 4px;
   border-radius: 4px;
 }

@@ -12,7 +12,7 @@
             <div
               :ref="`${source}-${colorName}`"
               class="map-preview"
-              :class="{ selected: isSelected(source, colorName) }"
+              :class="{ selected: isSelected(source, colorName, params.type) }"
             ></div>
             <span>{{ $t(colorName) }}</span>
           </div>
@@ -25,9 +25,11 @@
 <script>
 import { applyTransform } from 'ol/extent.js'
 import { get as getProjection, getTransform } from 'ol/proj.js'
+import { Fill, Stroke, Style } from 'ol/style'
 import Map from 'ol/Map'
 import MVT from 'ol/format/MVT.js'
 import OSM from 'ol/source/OSM'
+import TileGrid from 'ol/tilegrid/TileGrid.js'
 import TileLayer from 'ol/layer/Tile'
 import VectorTileLayer from 'ol/layer/VectorTile.js'
 import VectorTileSource from 'ol/source/VectorTile.js'
@@ -37,170 +39,226 @@ export default {
   inject: ['store'],
   data() {
     return {
+      backgroundColor: null,
+      basemapSelection: null,
       darkOSMCallback: null,
       defaultZoomLevels: {
         'EPSG:3857': 0.2,
         'EPSG:3978': 3.3,
-        'EPSG:3995': 2.8,
+        'EPSG:3995': 3.0,
         'EPSG:4326': 0.95,
       },
       isMapColored: false,
       maps: {},
-      rgb: [255, 255, 255],
-      selection: null,
+      overlay: null,
+      selections: {
+        base: null,
+        background: null,
+        overlay: null,
+      },
       sources: {
         OSM: {
           name: 'OSM',
           callback: this.osmInit,
           displayCondition: true,
+          type: 'base',
           colors: {
-            Base: { rgb: [null, null, null] },
-            Light: { rgb: [255, 255, 255] },
-            Dark: { rgb: [0, 0, 0] },
+            Base: [null, null, null],
+            Grey: [255, 255, 255],
+            Dark: [0, 0, 0],
           },
         },
         Simplified: {
           name: 'Simplified',
           callback: this.simplifiedInit,
           displayCondition: import.meta.env.VITE_SIMPLIFIED_BOUNDARIES,
+          type: 'base',
           zIndex: -1,
           colors: {
-            Base: {
-              rgb: {
-                land: [255, 255, 255, 1],
-                water: [170, 211, 223],
-                stroke: [140, 140, 140, 0.6],
-              },
-            },
-            Grey: {
-              rgb: {
-                land: [223, 223, 223, 1],
-                water: [158, 158, 158],
-                stroke: [0, 0, 0, 0.6],
-              },
-            },
-            Dark: {
-              rgb: {
-                land: [0, 0, 0, 1],
-                water: [110, 110, 110],
-                stroke: [140, 140, 140, 0.6],
-              },
-            },
+            Base: [
+              new Style({
+                stroke: new Stroke({
+                  color: 'rgb(0,0,0)',
+                  width: 0.6,
+                }),
+                fill: new Fill({
+                  color: 'rgb(255,255,255)',
+                }),
+              }),
+            ],
+            Grey: [
+              new Style({
+                stroke: new Stroke({
+                  color: 'rgb(0,0,0)',
+                  width: 0.6,
+                }),
+                fill: new Fill({
+                  color: 'rgb(158,158,158)',
+                }),
+              }),
+            ],
+            Dark: [
+              new Style({
+                stroke: new Stroke({
+                  color: 'rgb(255,255,255)',
+                  width: 0.6,
+                }),
+                fill: new Fill({
+                  color: 'rgb(0,0,0)',
+                }),
+              }),
+            ],
           },
         },
-        Overlay: {
-          name: 'Simplified',
-          callback: this.simplifiedInit,
-          displayCondition: import.meta.env.VITE_SIMPLIFIED_BOUNDARIES,
-          zIndex: 1000,
-          colors: {
-            White: {
-              rgb: {
-                land: [255, 255, 255, 0],
-                water: [255, 255, 255],
-                stroke: [0, 0, 0, 1],
-              },
-            },
-            Grey: {
-              rgb: {
-                land: [255, 255, 255, 0],
-                water: [158, 158, 158],
-                stroke: [0, 0, 0, 1],
-              },
-            },
-            Dark: {
-              rgb: {
-                land: [255, 255, 255, 0],
-                water: [0, 0, 0],
-                stroke: [255, 255, 255, 1],
-              },
-            },
-          },
-        },
+        // Overlay: {
+        //   name: 'Simplified',
+        //   callback: this.simplifiedInit,
+        //   displayCondition: import.meta.env.VITE_SIMPLIFIED_BOUNDARIES,
+        //   type: 'overlay',
+        //   zIndex: 1000,
+        //   colors: {
+        //     White: [
+        //       new Style({
+        //         stroke: new Stroke({
+        //           color: 'white',
+        //           width: 3,
+        //         }),
+        //         fill: new Fill({
+        //           color: 'rgba(255,255,255,0)',
+        //         }),
+        //       }),
+        //       new Style({
+        //         stroke: new Stroke({
+        //           color: 'black',
+        //           width: 1.8,
+        //         }),
+        //       }),
+        //     ],
+        //   },
+        // },
         NoBasemap: {
           name: 'NoBasemap',
           callback: this.noBasemapInit,
           displayCondition: true,
+          type: 'background',
           colors: {
-            White: {
-              rgb: [255, 255, 255],
-            },
-            Grey: {
-              rgb: [158, 158, 158],
-            },
-            Black: {
-              rgb: [0, 0, 0],
-            },
+            Water: [170, 211, 223],
+            White: [255, 255, 255],
+            Grey: [158, 158, 158],
+            Dark: [0, 0, 0],
           },
         },
       },
+      tilegrids: {
+        'EPSG:3978': this.buildTilegrid([
+          -7192737.96, -3004297.73, 5183275.29, 4484204.83,
+        ]),
+        'EPSG:3995': this.buildTilegrid([
+          -3299207.53, -3333134.03, 3299207.53, 3333134.03,
+        ]),
+      },
+      vectorRefs: [],
     }
   },
   mounted() {
     this.emitter.on('permalinkColor', this.setMapIsColored)
     this.initializeMaps()
-    this.updateProjection()
   },
   beforeUnmount() {
     this.emitter.off('permalinkColor', this.setMapIsColored)
   },
   computed: {
-    crsList() {
-      return this.store.getCrsList
-    },
-    currentCRS() {
-      return this.store.getCurrentCRS
-    },
     activeBasemap() {
       const basemap = this.store.getBasemap
       const sources = Object.keys(this.sources).filter(
         (source) => this.sources[source].displayCondition,
       )
       for (const source of sources) {
-        if (source.toLowerCase() === basemap.toLowerCase()) {
-          return source
+        if (source === basemap.split('-')[0]) {
+          return basemap
         }
       }
       this.store.setBasemap('OSM')
       return this.store.getBasemap
+    },
+    crsList() {
+      return this.store.getCrsList
+    },
+    currentCRS() {
+      return this.store.getCurrentCRS
+    },
+    rgb() {
+      return this.store.getRGB
     },
   },
   watch: {
     currentCRS() {
       this.updateProjection()
     },
-    selection(newSel, oldSel) {
-      const newSource = newSel.split('-')[0]
-      const colorName = newSel.split('-')[1]
-      const colors = this.sources[newSource].colors[colorName]
-      if (this.sources[newSource].name === 'Simplified') {
-        if (
+    basemapSelection: {
+      deep: true,
+      handler(newSel, oldSel) {
+        const newSource = newSel.split('-')[0]
+        const colorName = newSel.split('-')[1]
+        const colors = this.sources[newSource].colors[colorName]
+        if (this.sources[newSource].name === 'Simplified') {
+          if (
+            oldSel !== null &&
+            this.sources[oldSel.split('-')[0]].name === 'Simplified'
+          ) {
+            this.toggleVectorLayerStyle(
+              colors,
+              this.sources[newSource].name,
+              oldSel.split('-')[1],
+              colorName,
+              this.sources[newSource].zIndex,
+            )
+          } else {
+            this.toggleVectorLayer(colors, newSource, colorName)
+          }
+        } else if (
           oldSel !== null &&
           this.sources[oldSel.split('-')[0]].name === 'Simplified'
         ) {
-          this.toggleVectorLayerStyle(
-            colors.rgb,
-            this.sources[newSource].name,
+          this.toggleVectorLayer(
+            null,
+            oldSel.split('-')[0],
             oldSel.split('-')[1],
-            colorName,
-            this.sources[newSource].zIndex,
           )
-        } else {
-          this.toggleVectorLayer(colors.rgb, newSource, colorName)
         }
-      } else if (
-        oldSel !== null &&
-        this.sources[oldSel.split('-')[0]].name === 'Simplified'
-      ) {
-        this.toggleVectorLayer(null, oldSel.split('-')[0], oldSel.split('-')[1])
-      }
-      if (newSource === 'OSM') {
-        if (newSel.split('-')[1] === 'Base') {
-          this.coloredBasemapHandler(false)
-        } else {
-          this.coloredBasemapHandler(true)
+        if (newSource === 'OSM') {
+          if (newSel.split('-')[1] === 'Base') {
+            this.coloredBasemapHandler(false)
+          } else {
+            this.coloredBasemapHandler(true)
+          }
         }
-      }
+        this.selections.base = newSel
+      },
+    },
+    selections: {
+      deep: true,
+      handler(newSel) {
+        let backgroundColor
+        if (newSel.background) {
+          const name = newSel.background.split('-')[1]
+          if (name === 'other') {
+            backgroundColor = this.rgb
+          } else {
+            backgroundColor =
+              this.sources.NoBasemap.colors[newSel.background.split('-')[1]]
+          }
+        } else {
+          backgroundColor = newSel.base.split('-')[1]
+          backgroundColor =
+            backgroundColor === 'Base'
+              ? this.sources.NoBasemap.colors['Water']
+              : this.sources.NoBasemap.colors[backgroundColor]
+        }
+        this.vectorRefs.forEach((targetRef) => {
+          targetRef.style.backgroundColor = `rgb(${backgroundColor[0]},${backgroundColor[1]},${backgroundColor[2]})`
+        })
+      },
     },
     '$mapCanvas.mapObj': {
       handler(newVal, oldVal) {
@@ -210,44 +268,71 @@ export default {
           this.activeBasemap === 'OSM'
         ) {
           if (this.isMapColored) {
-            this.setColor()
             for (const [colorName, values] of Object.entries(
               this.sources[this.activeBasemap].colors,
             )) {
-              if (
-                values.rgb.every((value, index) => value === this.rgb[index])
-              ) {
-                this.selection = `${this.activeBasemap}-${colorName}`
+              if (values.every((value, index) => value === this.rgb[index])) {
+                this.basemapSelection = `${this.activeBasemap}-${colorName}`
                 break
               }
             }
             this.coloredBasemapHandler(true)
           } else {
-            this.selection = 'OSM-Base'
+            this.basemapSelection = 'OSM-Base'
           }
         } else {
-          if (this.isMapColored) {
-            this.setColor()
-          }
-          const sourceColors = this.sources[this.activeBasemap].colors
+          const sourceColors = this.sources['NoBasemap'].colors
           const colorName =
             Object.keys(sourceColors).find((color) => {
-              const rgb = sourceColors[color].rgb
-              return (rgb.water ?? rgb).every(
+              return sourceColors[color].every(
                 (value, idx) => value === this.rgb[idx],
               )
-            }) || null
-          const backgroundObj = {
-            basemap: this.activeBasemap,
-            name: colorName,
-            color: this.rgb,
+            }) || 'other'
+
+          if (this.activeBasemap.includes('-')) {
+            const [basemap, name] = this.activeBasemap.split('-')
+            const backgroundObj = {
+              basemap: basemap,
+              name: name,
+            }
+            this.basemapSelection = this.activeBasemap
+            this.backgroundColor = {
+              name: colorName,
+              values: this.rgb,
+            }
+            this.whiteBasemapHandler(false, backgroundObj)
+          } else {
+            const backgroundObj = {
+              basemap: this.activeBasemap,
+              name: colorName,
+            }
+            this.basemapSelection = `${this.activeBasemap}-${colorName}`
+            this.whiteBasemapHandler(false, backgroundObj)
           }
-          this.whiteBasemapHandler(false, backgroundObj)
         }
       },
     },
   },
   methods: {
+    buildTilegrid(extent) {
+      const maxDimension = Math.max(
+        extent[2] - extent[0],
+        extent[3] - extent[1],
+      )
+      const tileSize = 256
+      const resolutions = Array.from(
+        { length: 15 },
+        (_, i) => maxDimension / tileSize / Math.pow(2, i),
+      )
+      const origin = [extent[0], extent[3]]
+
+      return new TileGrid({
+        extent,
+        origin,
+        resolutions,
+        tileSize: [tileSize, tileSize],
+      })
+    },
     coloredBasemapHandler(flag) {
       if (!this.$mapCanvas.mapObj.getLayers().getArray()[0].get('visible')) {
         this.whiteBasemapHandler(true)
@@ -314,11 +399,11 @@ export default {
     initializeMaps() {
       Object.entries(this.sources).forEach(([source, params]) => {
         if (params.displayCondition) {
-          Object.entries(params.colors).forEach(([colorName, values]) => {
+          Object.entries(params.colors).forEach(([colorName, value]) => {
             const targetRef = `${source}-${colorName}`
             const color = {
               name: colorName,
-              rgb: values.rgb,
+              value: value,
             }
             this.maps[`${source}-${colorName}`] = this.initMap(
               targetRef,
@@ -347,72 +432,90 @@ export default {
       }
     },
     toggleVectorLayerStyle(colors, source, oldColorName, newColorName, zIndex) {
-      const fillColor = `rgba(${colors.land.join(',')})`
-      const [r, g, b, strokeWidth] = colors.stroke
       const layer = this.$mapCanvas.mapObj
         .getLayers()
         .getArray()
         .find((l) => l.get('layerName') === `${source}-${oldColorName}`)
-      layer.setStyle({
-        'stroke-width': strokeWidth,
-        'stroke-color': `rgb(${r},${g},${b})`,
-        'fill-color': fillColor,
-      })
+      layer.setStyle(colors)
       layer.setProperties({
         layerName: `${source}-${newColorName}`,
       })
       layer.setZIndex(zIndex)
     },
+    tileLoadFunction(tile, url) {
+      let this_ = this
+      tile.setLoader(function (extent, resolution, projection) {
+        const crsURL = url.replace('CRS', this_.currentCRS.split(':')[1])
+        console.log(projection)
+        fetch(crsURL).then(function (response) {
+          response.arrayBuffer().then(function (data) {
+            const format = tile.getFormat()
+            const features = format.readFeatures(data, {
+              extent: extent,
+              featureProjection: projection,
+            })
+            tile.setFeatures(features)
+          })
+        })
+      })
+    },
     createVectorLayer(colors, source, colorName) {
-      const fillColor = `rgba(${colors.land.join(',')})`
-      const [r, g, b, strokeWidth] = colors.stroke
       return new VectorTileLayer({
         declutter: true,
         source: new VectorTileSource({
           format: new MVT(),
-          url: this.sources[source].displayCondition,
+          tileUrlFunction: (tileCoord) => {
+            return this.sources[source].displayCondition
+              .replace('CRS', this.currentCRS.split(':')[1])
+              .replace('{z}', tileCoord[0])
+              .replace('{x}', tileCoord[1])
+              .replace('{y}', tileCoord[2])
+          },
+          tileGrid: this.tilegrids[this.currentCRS],
+          projection: this.currentCRS,
         }),
-        style: {
-          'stroke-width': strokeWidth,
-          'stroke-color': `rgb(${r},${g},${b})`,
-          'fill-color': fillColor,
-        },
+        style: colors,
         layerName: `${this.sources[source].name}-${colorName}`,
         zIndex: this.sources[source].zIndex,
       })
     },
-    noBasemapInit(previewMap, target, color, source) {
+    noBasemapInit(previewMap, target, color, _) {
       const targetRef = this.$refs[target][0]
 
-      const backgroundColor = color.rgb
-      targetRef.style.backgroundColor = `rgb(${backgroundColor[0]},${backgroundColor[1]},${backgroundColor[2]})`
+      targetRef.style.backgroundColor = `rgb(${color.value[0]},${color.value[1]},${color.value[2]})`
 
-      const background = {
-        basemap: source,
-        name: color.name,
-        color: color.rgb,
-      }
       previewMap.on('click', () => {
+        this.backgroundColor = { name: color.name, values: color.value }
+        const background = {
+          basemap: this.basemapSelection.split('-')[0],
+          name: this.basemapSelection.split('-')[1],
+        }
         this.whiteBasemapHandler(false, background)
       })
 
       return previewMap
     },
     simplifiedInit(previewMap, target, color, source) {
-      const vtLayerTC = this.createVectorLayer(color.rgb, source, color.name)
+      const vtLayerTC = this.createVectorLayer(color.value, source, color.name)
       previewMap.addLayer(vtLayerTC)
-      const targetRef = this.$refs[target][0]
-
-      const backgroundColor = color.rgb.water
-      targetRef.style.backgroundColor = `rgb(${backgroundColor[0]},${backgroundColor[1]},${backgroundColor[2]})`
+      if (source === 'Simplified') {
+        this.vectorRefs.push(this.$refs[target][0])
+      }
 
       const background = {
         basemap: source,
         name: color.name,
-        color: color.rgb.water,
       }
       previewMap.on('click', () => {
-        this.whiteBasemapHandler(false, background)
+        const currentBase = this.selections.base
+        if (currentBase === `${source}-${color.name}`) {
+          this.selections.base = this.selections.background
+          this.basemapSelection = this.selections.background
+          this.store.setBasemap('NoBasemap')
+          this.emitter.emit('updatePermalink')
+        } else {
+          this.whiteBasemapHandler(false, background)
+        }
       })
 
       return previewMap
@@ -421,19 +524,19 @@ export default {
       const osm = new TileLayer({ source: new OSM() })
       previewMap.addLayer(osm)
 
-      if (!color.rgb.every((item) => item === null)) {
+      if (!color.value.every((item) => item === null)) {
         const callback = (evt) => {
-          this.createColoredBasemapCallback(color.rgb, evt)
+          this.createColoredBasemapCallback(color.value, evt)
         }
 
         previewMap.getLayers().getArray()[0].on('postrender', callback)
       }
       previewMap.on('click', () => {
         const newSelection = `${source}-${color.name}`
-        if (!color.rgb.every((item) => item === null)) {
-          this.rgb = color.rgb
+        if (!color.value.every((item) => item === null)) {
+          this.store.setRGB(color.value)
         }
-        this.selection = newSelection
+        this.basemapSelection = newSelection
       })
       return previewMap
     },
@@ -444,12 +547,18 @@ export default {
       newProjection.setWorldExtent(worldExtent)
       const projExtent = applyTransform(worldExtent, fromLonLat, undefined, 8)
       newProjection.setExtent(projExtent)
+      let center
+      if (this.currentCRS === 'EPSG:3995') {
+        center = [-44261.5, -152711]
+      } else {
+        center = fromLonLat([-90, 55])
+      }
 
       let previewMap = new Map({
         target: this.$refs[target][0],
         layers: [],
         view: new View({
-          center: fromLonLat([-90, 55]),
+          center: center,
           zoom: this.defaultZoomLevels[this.currentCRS],
           minZoom: this.defaultZoomLevels[this.currentCRS],
           maxZoom: this.defaultZoomLevels[this.currentCRS],
@@ -459,16 +568,14 @@ export default {
         controls: [],
         interactions: [],
       })
+      previewMap.sourceName = source
 
       previewMap = callback(previewMap, target, color, source)
 
       return previewMap
     },
-    isSelected(source, colorName) {
-      return this.selection === `${source}-${colorName}`
-    },
-    setColor() {
-      this.rgb = this.store.getRGB
+    isSelected(source, colorName, typeSel) {
+      return this.selections[typeSel] === `${source}-${colorName}`
     },
     setMapIsColored() {
       this.isMapColored = true
@@ -480,30 +587,100 @@ export default {
       newProjection.setWorldExtent(worldExtent)
       const projExtent = applyTransform(worldExtent, fromLonLat, undefined, 8)
       newProjection.setExtent(projExtent)
+      let center
+      if (this.currentCRS === 'EPSG:3995') {
+        center = [-44261.5, -152711]
+      } else {
+        center = fromLonLat([-90, 55])
+      }
 
       Object.values(this.maps).forEach((map) => {
         map.setView(
           new View({
-            center: fromLonLat([-90, 55]),
+            center: center,
             zoom: this.defaultZoomLevels[this.currentCRS],
             projection: newProjection,
           }),
         )
+        map
+          .getLayers()
+          .getArray()
+          .forEach((layer) => {
+            if (layer instanceof VectorTileLayer) {
+              const newSource = new VectorTileSource({
+                format: new MVT(),
+                tileUrlFunction: (tileCoord) => {
+                  return this.sources[
+                    layer.get('layerName').split('-')[0]
+                  ].displayCondition
+                    .replace('CRS', this.currentCRS.split(':')[1])
+                    .replace('{z}', tileCoord[0])
+                    .replace('{x}', tileCoord[1])
+                    .replace('{y}', tileCoord[2])
+                },
+                tileGrid: this.tilegrids[this.currentCRS],
+                projection: this.currentCRS,
+              })
+
+              layer.setSource(newSource)
+            }
+          })
       })
+
+      this.$mapCanvas.mapObj
+        .getLayers()
+        .getArray()
+        .forEach((layer) => {
+          if (layer instanceof VectorTileLayer) {
+            const newSource = new VectorTileSource({
+              format: new MVT(),
+              tileUrlFunction: (tileCoord) => {
+                return this.sources[
+                  layer.get('layerName').split('-')[0]
+                ].displayCondition
+                  .replace('CRS', this.currentCRS.split(':')[1])
+                  .replace('{z}', tileCoord[0])
+                  .replace('{x}', tileCoord[1])
+                  .replace('{y}', tileCoord[2])
+              },
+              tileGrid: this.tilegrids[this.currentCRS],
+              projection: this.currentCRS,
+            })
+
+            layer.setSource(newSource)
+          }
+        })
     },
     whiteBasemapHandler(visible, background = null) {
       const basemap = this.$mapCanvas.mapObj.getLayers().getArray()[0]
       basemap.setVisible(visible)
       if (background) {
-        const rgb = background.color
+        if (!this.backgroundColor) {
+          let currentColor = this.basemapSelection.split('-')[1]
+          currentColor = currentColor === 'Base' ? 'Water' : currentColor
+          this.backgroundColor = {
+            name: currentColor,
+            values: this.sources.NoBasemap.colors[currentColor],
+          }
+        }
+        const rgb = this.backgroundColor.values
         const cssColor = `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`
         document.getElementById('map').style.backgroundColor = cssColor
-        this.selection = `${background.basemap}-${background.name}`
+        if (background.basemap !== 'Simplified') {
+          this.basemapSelection = `NoBasemap-${this.backgroundColor.name}`
+          this.store.setBasemap('NoBasemap')
+        } else {
+          this.basemapSelection = `${background.basemap}-${background.name}`
+          this.store.setBasemap(this.basemapSelection)
+        }
         this.store.setRGB(rgb)
-        this.store.setBasemap(background.basemap)
+        this.selections.background = `NoBasemap-${this.backgroundColor.name}`
       } else {
         this.store.setBasemap('OSM')
+        this.selections.background = null
+        this.backgroundColor = null
       }
+      this.selections.base = this.basemapSelection
       this.emitter.emit('updatePermalink')
       this.emitter.emit('calcFooterPreview')
     },
@@ -556,8 +733,10 @@ export default {
   margin: 0 auto;
   max-height: 400px;
   overflow-y: auto;
-  padding-right: 4px;
+  padding-right: 8px;
   margin-right: -4px;
+  margin-left: -2px;
+  padding-left: 2px;
 }
 
 .source-group {
