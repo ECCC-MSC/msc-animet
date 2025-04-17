@@ -84,6 +84,9 @@ export default {
     activeLegends() {
       return this.store.getActiveLegends
     },
+    activeOverlays() {
+      return this.store.getOverlays
+    },
     currentCRS() {
       return this.store.getCurrentCRS
     },
@@ -203,6 +206,10 @@ export default {
           } else {
             permalinktemp += '&basemap=0'
           }
+        }
+
+        if (this.activeOverlays.length !== 0) {
+          permalinktemp += `&overlays=${this.activeOverlays.join(',')}`
         }
 
         if (this.rgb.length !== 0) {

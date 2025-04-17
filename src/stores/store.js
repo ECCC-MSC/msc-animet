@@ -72,6 +72,7 @@ export const useStore = defineStore('store', {
     outputDate: null,
     outputFormat: 'MP4',
     outputSize: null,
+    overlays: [],
     pendingErrorResolution: false,
     permalink: null,
     playState: 'pause',
@@ -118,6 +119,7 @@ export const useStore = defineStore('store', {
     getOutputDate: (state) => state.outputDate,
     getOutputFormat: (state) => state.outputFormat,
     getOutputSize: (state) => state.outputSize,
+    getOverlays: (state) => state.overlays,
     getPendingErrorResolution: (state) => state.pendingErrorResolution,
     getPermalink: (state) => state.permalink,
     getPlayState: (state) => state.playState,
@@ -283,6 +285,14 @@ export const useStore = defineStore('store', {
     },
     setWmsSourceURL(newWmsSource) {
       this.currentWmsSource = newWmsSource
+    },
+    toggleOverlay(overlay) {
+      const index = this.overlays.indexOf(overlay)
+      if (index !== -1) {
+        this.overlays.splice(index, 1)
+      } else {
+        this.overlays.push(overlay)
+      }
     },
   },
 })
