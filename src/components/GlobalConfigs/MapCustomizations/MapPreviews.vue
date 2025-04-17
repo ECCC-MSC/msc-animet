@@ -2,19 +2,33 @@
   <div class="map-previews-grid">
     <template v-for="(params, source) in sources" :key="source">
       <div v-if="params.displayCondition" class="source-group">
-        <h3>{{ $t(source) }}</h3>
-        <div class="color-options">
+        <h3 v-if="params.title">{{ $t(source) }}</h3>
+        <span class="text-subtitle-2 font-weight-bold" v-if="params.subtitle">{{
+          $t(params.subtitle)
+        }}</span>
+        <div
+          class="color-options"
+          :class="{
+            'four-items': Object.keys(sources[source].colors).length === 4,
+          }"
+        >
           <div
-            v-for="(_, colorName) in params.colors"
+            v-for="(colorValue, colorName) in params.colors"
             :key="`${source}-${colorName}`"
             class="map-preview-container"
           >
-            <div
-              :ref="`${source}-${colorName}`"
-              class="map-preview"
-              :class="{ selected: isSelected(source, colorName, params.type) }"
-            ></div>
-            <span>{{ $t(colorName) }}</span>
+            <template
+              v-if="Array.isArray(colorValue) || colorValue.displayCondition"
+            >
+              <div
+                :ref="`${source}-${colorName}`"
+                class="map-preview"
+                :class="{
+                  selected: isSelected(source, colorName, params.type),
+                }"
+              ></div>
+              <span>{{ $t(colorName) }}</span>
+            </template>
           </div>
         </div>
       </div>
@@ -25,7 +39,7 @@
 <script>
 import { applyTransform } from 'ol/extent.js'
 import { get as getProjection, getTransform } from 'ol/proj.js'
-import { Fill, Stroke, Style } from 'ol/style'
+import { Circle, Fill, Stroke, Style, Text } from 'ol/style'
 import Map from 'ol/Map'
 import MVT from 'ol/format/MVT.js'
 import OSM from 'ol/source/OSM'
@@ -45,7 +59,7 @@ export default {
       defaultZoomLevels: {
         'EPSG:3857': 0.2,
         'EPSG:3978': 3.3,
-        'EPSG:3995': 3.0,
+        'EPSG:3995': 2.95,
         'EPSG:4326': 0.95,
       },
       isMapColored: false,
@@ -54,13 +68,13 @@ export default {
       selections: {
         base: null,
         background: null,
-        overlay: null,
+        overlays: [],
       },
       sources: {
         OSM: {
-          name: 'OSM',
           callback: this.osmInit,
           displayCondition: true,
+          title: true,
           type: 'base',
           colors: {
             Base: [null, null, null],
@@ -69,9 +83,10 @@ export default {
           },
         },
         Simplified: {
-          name: 'Simplified',
           callback: this.simplifiedInit,
           displayCondition: import.meta.env.VITE_SIMPLIFIED_BOUNDARIES,
+          subtitle: 'Fill',
+          title: true,
           type: 'base',
           zIndex: -1,
           colors: {
@@ -110,42 +125,53 @@ export default {
             ],
           },
         },
-        // Overlay: {
-        //   name: 'Simplified',
-        //   callback: this.simplifiedInit,
-        //   displayCondition: import.meta.env.VITE_SIMPLIFIED_BOUNDARIES,
-        //   type: 'overlay',
-        //   zIndex: 1000,
-        //   colors: {
-        //     White: [
-        //       new Style({
-        //         stroke: new Stroke({
-        //           color: 'white',
-        //           width: 3,
-        //         }),
-        //         fill: new Fill({
-        //           color: 'rgba(255,255,255,0)',
-        //         }),
-        //       }),
-        //       new Style({
-        //         stroke: new Stroke({
-        //           color: 'black',
-        //           width: 1.8,
-        //         }),
-        //       }),
-        //     ],
-        //   },
-        // },
         NoBasemap: {
-          name: 'NoBasemap',
           callback: this.noBasemapInit,
           displayCondition: true,
+          subtitle: 'NoBasemap',
+          title: false,
           type: 'background',
           colors: {
             Water: [170, 211, 223],
             White: [255, 255, 255],
             Grey: [158, 158, 158],
             Dark: [0, 0, 0],
+          },
+        },
+        Overlay: {
+          callback: this.simplifiedInit,
+          displayCondition:
+            import.meta.env.VITE_SIMPLIFIED_BOUNDARIES ||
+            import.meta.env.VITE_PLACE_NAMES,
+          title: true,
+          type: 'overlays',
+          colors: {
+            Boundaries: {
+              style: [
+                new Style({
+                  stroke: new Stroke({
+                    color: 'white',
+                    width: 3,
+                  }),
+                  fill: new Fill({
+                    color: 'rgba(255,255,255,0)',
+                  }),
+                }),
+                new Style({
+                  stroke: new Stroke({
+                    color: 'black',
+                    width: 1.8,
+                  }),
+                }),
+              ],
+              displayCondition: import.meta.env.VITE_SIMPLIFIED_BOUNDARIES,
+              zIndex: 999,
+            },
+            Places: {
+              style: this.createPlacenameStyle(),
+              displayCondition: import.meta.env.VITE_PLACE_NAMES,
+              zIndex: 1000,
+            },
           },
         },
       },
@@ -181,6 +207,9 @@ export default {
       this.store.setBasemap('OSM')
       return this.store.getBasemap
     },
+    activeOverlays() {
+      return this.store.getOverlays
+    },
     crsList() {
       return this.store.getCrsList
     },
@@ -201,14 +230,11 @@ export default {
         const newSource = newSel.split('-')[0]
         const colorName = newSel.split('-')[1]
         const colors = this.sources[newSource].colors[colorName]
-        if (this.sources[newSource].name === 'Simplified') {
-          if (
-            oldSel !== null &&
-            this.sources[oldSel.split('-')[0]].name === 'Simplified'
-          ) {
+        if (newSource === 'Simplified') {
+          if (oldSel !== null && oldSel.split('-')[0] === newSource) {
             this.toggleVectorLayerStyle(
               colors,
-              this.sources[newSource].name,
+              newSource,
               oldSel.split('-')[1],
               colorName,
               this.sources[newSource].zIndex,
@@ -216,10 +242,7 @@ export default {
           } else {
             this.toggleVectorLayer(colors, newSource, colorName)
           }
-        } else if (
-          oldSel !== null &&
-          this.sources[oldSel.split('-')[0]].name === 'Simplified'
-        ) {
+        } else if (oldSel !== null && oldSel.split('-')[0] === 'Simplified') {
           this.toggleVectorLayer(
             null,
             oldSel.split('-')[0],
@@ -310,15 +333,33 @@ export default {
             this.whiteBasemapHandler(false, backgroundObj)
           }
         }
+        if (this.activeOverlays.length !== 0) {
+          this.activeOverlays.forEach((overlay) => {
+            const source = 'Overlay'
+            const overlayName = overlay
+            const overlayParams = this.sources[source].colors[overlayName]
+            const overlayStyle = overlayParams.style
+            const overlayCondition = overlayParams.displayCondition
+            if (!overlayCondition) {
+              return
+            }
+
+            this.selections.overlays.push(`Overlay-${overlay}`)
+            this.toggleVectorLayer(
+              overlayStyle,
+              source,
+              overlayName,
+              overlayCondition,
+            )
+          })
+          this.emitter.emit('updatePermalink')
+        }
       },
     },
   },
   methods: {
     buildTilegrid(extent) {
-      const maxDimension = Math.max(
-        extent[2] - extent[0],
-        extent[3] - extent[1],
-      )
+      const maxDimension = extent[2] - extent[0]
       const tileSize = 256
       const resolutions = Array.from(
         { length: 15 },
@@ -396,14 +437,314 @@ export default {
       )
       evt.context.globalCompositeOperation = 'source-over'
     },
+    createPlacenameStyle() {
+      const styleConfig = {
+        0: {
+          textSize: 16,
+          fontWeight: 'bold',
+          textColor: 'black',
+          haloColor: 'rgba(255, 255, 255, 0.9)',
+          haloWidth: 3,
+          offsetY: -15,
+          minZoom: 1,
+          dotRadius: 6,
+          dotColor: 'rgba(0, 0, 0, 0.8)',
+          dotStrokeWidth: 2,
+          dotStrokeColor: 'white',
+        },
+        1: {
+          textSize: 14,
+          fontWeight: 'bold',
+          textColor: 'black',
+          haloColor: 'rgba(255, 255, 255, 0.9)',
+          haloWidth: 2.5,
+          offsetY: -12,
+          minZoom: 3,
+          dotRadius: 5,
+          dotColor: 'rgba(0, 0, 0, 0.9)',
+          dotStrokeWidth: 1.5,
+          dotStrokeColor: 'white',
+        },
+        2: {
+          textSize: 13,
+          fontWeight: 'normal',
+          textColor: 'black',
+          haloColor: 'rgba(255, 255, 255, 0.9)',
+          haloWidth: 2,
+          offsetY: -10,
+          minZoom: 5,
+          dotRadius: 4,
+          dotColor: 'rgba(0, 0, 0, 0.6)',
+          dotStrokeWidth: 1.5,
+          dotStrokeColor: 'white',
+        },
+        3: {
+          textSize: 12,
+          fontWeight: 'normal',
+          textColor: 'black',
+          haloColor: 'rgba(255, 255, 255, 0.85)',
+          haloWidth: 1.5,
+          offsetY: -8,
+          minZoom: 7,
+          dotRadius: 3,
+          dotColor: 'rgba(0, 0, 0, 0.5)',
+          dotStrokeWidth: 1,
+          dotStrokeColor: 'white',
+        },
+        4: {
+          textSize: 11.5,
+          fontWeight: 'normal',
+          textColor: 'black',
+          haloColor: 'rgba(255, 255, 255, 0.85)',
+          haloWidth: 1,
+          offsetY: -6,
+          minZoom: 9,
+          dotRadius: 2,
+          dotColor: 'rgba(0, 0, 0, 0.4)',
+          dotStrokeWidth: 1,
+          dotStrokeColor: 'white',
+        },
+        5: {
+          textSize: 11,
+          fontWeight: 'normal',
+          textColor: 'black',
+          haloColor: 'rgba(255, 255, 255, 0.75)',
+          haloWidth: 1,
+          offsetY: -5,
+          minZoom: 10,
+          dotRadius: 1.5,
+          dotColor: 'rgba(0, 0, 0, 0.35)',
+          dotStrokeWidth: 0.5,
+          dotStrokeColor: 'white',
+        },
+        6: {
+          textSize: 10.5,
+          fontWeight: 'normal',
+          textColor: 'black',
+          haloColor: 'rgba(255, 255, 255, 0.7)',
+          haloWidth: 1,
+          offsetY: -4.5,
+          minZoom: 11,
+          dotRadius: 1.25,
+          dotColor: 'rgba(0, 0, 0, 0.3)',
+          dotStrokeWidth: 0.5,
+          dotStrokeColor: 'white',
+        },
+        7: {
+          textSize: 10,
+          fontWeight: 'normal',
+          textColor: 'black',
+          haloColor: 'rgba(255, 255, 255, 0.65)',
+          haloWidth: 1,
+          offsetY: -4,
+          minZoom: 12,
+          dotRadius: 1,
+          dotColor: 'rgba(0, 0, 0, 0.25)',
+          dotStrokeWidth: 0.5,
+          dotStrokeColor: 'white',
+        },
+        8: {
+          textSize: 9.5,
+          fontWeight: 'normal',
+          textColor: 'black',
+          haloColor: 'rgba(255, 255, 255, 0.6)',
+          haloWidth: 1,
+          offsetY: -3.5,
+          minZoom: 13,
+          dotRadius: 0.75,
+          dotColor: 'rgba(0, 0, 0, 0.2)',
+          dotStrokeWidth: 0.5,
+          dotStrokeColor: 'white',
+        },
+      }
+      const this_ = this
+      return function (feature, resolution) {
+        const properties = feature.getProperties()
+        const name = properties.NAME
+        let minZoom = properties.MIN_ZOOM
+        let scalerank = properties.SCALERANK
+
+        if (scalerank > 8) {
+          return null
+        }
+
+        const majorCanadianCities = [
+          'Montréal',
+          'Calgary',
+          'Winnipeg',
+          'Halifax',
+          'Regina',
+        ]
+        if (majorCanadianCities.includes(name)) {
+          scalerank = 1
+          minZoom = 1
+        }
+
+        const config = styleConfig[scalerank]
+
+        // Calculate current zoom level from resolution
+        // Needs to be double checked against the map's zoom level or it won't work on 4326
+        const zoom_resolution =
+          Math.log2(156543.03390625) - Math.log2(resolution)
+        const zoom = this_.$mapCanvas.mapObj.getView().getZoom()
+
+        if (zoom_resolution < minZoom || zoom < minZoom) {
+          return null
+        }
+
+        const textSizeAdjusted =
+          config.textSize + Math.max(0, (zoom - config.minZoom) / 2)
+        const dotRadiusAdjusted =
+          config.dotRadius + Math.max(0, (zoom - config.minZoom) / 4)
+
+        const dotStyle = new Style({
+          image: new Circle({
+            radius: dotRadiusAdjusted,
+            fill: new Fill({
+              color: config.dotColor,
+            }),
+            stroke: new Stroke({
+              color: config.dotStrokeColor,
+              width: config.dotStrokeWidth,
+            }),
+          }),
+        })
+
+        const textStyle = new Style({
+          text: new Text({
+            text: name,
+            font: `${config.fontWeight} ${textSizeAdjusted}px 'Open Sans', 'Arial', sans-serif`,
+            fill: new Fill({
+              color: config.textColor,
+            }),
+            stroke: new Stroke({
+              color: config.haloColor,
+              width: config.haloWidth,
+            }),
+            offsetY: config.offsetY,
+            overflow: true,
+            placement: 'point',
+          }),
+        })
+
+        return [dotStyle, textStyle]
+      }
+    },
+    createTinyPlacenameStyle() {
+      const styleConfig = {
+        0: {
+          textSize: 7,
+          fontWeight: 'bold',
+          textColor: 'black',
+          haloColor: 'rgba(255, 255, 255, 0.9)',
+          haloWidth: 3,
+          offsetY: -15,
+          minZoom: 1,
+          dotRadius: 6,
+          dotColor: 'rgba(0, 0, 0, 0.8)',
+          dotStrokeWidth: 2,
+          dotStrokeColor: 'white',
+        },
+        1: {
+          textSize: 7,
+          fontWeight: 'bold',
+          textColor: 'rgba(0, 0, 0, 0.9)',
+          haloColor: 'rgba(255, 255, 255, 0.85)',
+          haloWidth: 2.5,
+          offsetY: -12,
+          minZoom: 3,
+          dotRadius: 5,
+          dotColor: 'rgba(0, 0, 0, 0.7)',
+          dotStrokeWidth: 1.5,
+          dotStrokeColor: 'white',
+        },
+        2: {
+          textSize: 7,
+          fontWeight: 'normal',
+          textColor: 'rgba(0, 0, 0, 0.8)',
+          haloColor: 'rgba(255, 255, 255, 0.8)',
+          haloWidth: 2,
+          offsetY: -10,
+          minZoom: 5,
+          dotRadius: 4,
+          dotColor: 'rgba(0, 0, 0, 0.6)',
+          dotStrokeWidth: 1.5,
+          dotStrokeColor: 'white',
+        },
+      }
+      const this_ = this
+      return function (feature, resolution) {
+        const properties = feature.getProperties()
+        const name = properties.NAME
+        const scalerank = properties.SCALERANK
+
+        if (scalerank > 2) {
+          return null
+        }
+
+        const majorCanadianCities = [
+          'Toronto',
+          'Montreal',
+          'Vancouver',
+          'Calgary',
+          'Edmonton',
+          'Ottawa',
+          'Winnipeg',
+          'Québec',
+          'Hamilton',
+          'Halifax',
+        ]
+        if (
+          !(this_.currentCRS === 'EPSG:3995') &&
+          scalerank > 0 &&
+          !majorCanadianCities.includes(name)
+        ) {
+          return null
+        }
+
+        const config = styleConfig[scalerank]
+
+        if (!config) {
+          return null
+        }
+
+        const textStyle = new Style({
+          text: new Text({
+            text: name,
+            font: `${config.fontWeight} ${config.textSize}px 'Open Sans', 'Arial', sans-serif`,
+            fill: new Fill({
+              color: config.textColor,
+            }),
+            stroke: new Stroke({
+              color: config.haloColor,
+              width: config.haloWidth,
+            }),
+            offsetY: config.offsetY,
+            overflow: true,
+            placement: 'point',
+          }),
+        })
+
+        // Return both styles
+        return [textStyle]
+      }
+    },
     initializeMaps() {
       Object.entries(this.sources).forEach(([source, params]) => {
         if (params.displayCondition) {
           Object.entries(params.colors).forEach(([colorName, value]) => {
+            let colorValue = value
+            if (source === 'Overlay') {
+              if (value.displayCondition) {
+                colorValue = value.style
+              } else {
+                return
+              }
+            }
             const targetRef = `${source}-${colorName}`
             const color = {
               name: colorName,
-              value: value,
+              value: colorValue,
             }
             this.maps[`${source}-${colorName}`] = this.initMap(
               targetRef,
@@ -415,17 +756,14 @@ export default {
         }
       })
     },
-    toggleVectorLayer(colors, source, colorName) {
+    toggleVectorLayer(colors, source, colorName, displayCondition = undefined) {
       const layer = this.$mapCanvas.mapObj
         .getLayers()
         .getArray()
-        .find(
-          (l) =>
-            l.get('layerName') === `${this.sources[source].name}-${colorName}`,
-        )
+        .find((l) => l.get('layerName') === `${source}-${colorName}`)
       if (!layer) {
         this.$mapCanvas.mapObj.addLayer(
-          this.createVectorLayer(colors, source, colorName),
+          this.createVectorLayer(colors, source, colorName, displayCondition),
         )
       } else {
         this.$mapCanvas.mapObj.removeLayer(layer)
@@ -442,41 +780,22 @@ export default {
       })
       layer.setZIndex(zIndex)
     },
-    tileLoadFunction(tile, url) {
-      let this_ = this
-      tile.setLoader(function (extent, resolution, projection) {
-        const crsURL = url.replace('CRS', this_.currentCRS.split(':')[1])
-        console.log(projection)
-        fetch(crsURL).then(function (response) {
-          response.arrayBuffer().then(function (data) {
-            const format = tile.getFormat()
-            const features = format.readFeatures(data, {
-              extent: extent,
-              featureProjection: projection,
-            })
-            tile.setFeatures(features)
-          })
-        })
-      })
-    },
-    createVectorLayer(colors, source, colorName) {
+    createVectorLayer(colors, source, colorName, displayCondition = undefined) {
+      displayCondition =
+        displayCondition || this.sources[source].displayCondition
+      const sourceValues = this.sources[source]
+      const zIndex =
+        sourceValues.zIndex || sourceValues.colors[colorName].zIndex
       return new VectorTileLayer({
-        declutter: true,
         source: new VectorTileSource({
           format: new MVT(),
-          tileUrlFunction: (tileCoord) => {
-            return this.sources[source].displayCondition
-              .replace('CRS', this.currentCRS.split(':')[1])
-              .replace('{z}', tileCoord[0])
-              .replace('{x}', tileCoord[1])
-              .replace('{y}', tileCoord[2])
-          },
+          url: displayCondition.replace('CRS', this.currentCRS.split(':')[1]),
           tileGrid: this.tilegrids[this.currentCRS],
           projection: this.currentCRS,
         }),
         style: colors,
-        layerName: `${this.sources[source].name}-${colorName}`,
-        zIndex: this.sources[source].zIndex,
+        layerName: `${source}-${colorName}`,
+        zIndex: zIndex,
       })
     },
     noBasemapInit(previewMap, target, color, _) {
@@ -496,11 +815,22 @@ export default {
       return previewMap
     },
     simplifiedInit(previewMap, target, color, source) {
-      const vtLayerTC = this.createVectorLayer(color.value, source, color.name)
-      previewMap.addLayer(vtLayerTC)
-      if (source === 'Simplified') {
-        this.vectorRefs.push(this.$refs[target][0])
+      const sourceValues = this.sources[source]
+      const style = sourceValues.colors[color.name]
+      const displayCondition =
+        style.displayCondition || sourceValues.displayCondition
+      let colorValue = color.value
+      if (color.name === 'Places') {
+        colorValue = this.createTinyPlacenameStyle()
       }
+      const vtLayerTC = this.createVectorLayer(
+        colorValue,
+        source,
+        color.name,
+        displayCondition,
+      )
+      previewMap.addLayer(vtLayerTC)
+      this.vectorRefs.push(this.$refs[target][0])
 
       const background = {
         basemap: source,
@@ -508,7 +838,24 @@ export default {
       }
       previewMap.on('click', () => {
         const currentBase = this.selections.base
-        if (currentBase === `${source}-${color.name}`) {
+        if (source === 'Overlay') {
+          const index = this.selections.overlays.indexOf(
+            `${source}-${color.name}`,
+          )
+          if (index !== -1) {
+            this.selections.overlays.splice(index, 1)
+          } else {
+            this.selections.overlays.push(`${source}-${color.name}`)
+          }
+          this.toggleVectorLayer(
+            color.value,
+            source,
+            color.name,
+            displayCondition,
+          )
+          this.store.toggleOverlay(color.name)
+          this.emitter.emit('updatePermalink')
+        } else if (currentBase === `${source}-${color.name}`) {
           this.selections.base = this.selections.background
           this.basemapSelection = this.selections.background
           this.store.setBasemap('NoBasemap')
@@ -549,7 +896,7 @@ export default {
       newProjection.setExtent(projExtent)
       let center
       if (this.currentCRS === 'EPSG:3995') {
-        center = [-44261.5, -152711]
+        center = [-60000, -500000]
       } else {
         center = fromLonLat([-90, 55])
       }
@@ -575,10 +922,40 @@ export default {
       return previewMap
     },
     isSelected(source, colorName, typeSel) {
-      return this.selections[typeSel] === `${source}-${colorName}`
+      const value = `${source}-${colorName}`
+
+      if (typeSel === 'overlays') {
+        return this.selections[typeSel].includes(value)
+      } else {
+        return this.selections[typeSel] === value
+      }
     },
     setMapIsColored() {
       this.isMapColored = true
+    },
+    updateMap(map) {
+      map
+        .getLayers()
+        .getArray()
+        .forEach((layer) => {
+          if (layer instanceof VectorTileLayer) {
+            const source = this.sources[layer.get('layerName').split('-')[0]]
+            const style = source.colors[layer.get('layerName').split('-')[1]]
+            const displayCondition =
+              style.displayCondition || source.displayCondition
+            const newSource = new VectorTileSource({
+              format: new MVT(),
+              url: displayCondition.replace(
+                'CRS',
+                this.currentCRS.split(':')[1],
+              ),
+              tileGrid: this.tilegrids[this.currentCRS],
+              projection: this.currentCRS,
+            })
+
+            layer.setSource(newSource)
+          }
+        })
     },
     updateProjection() {
       const newProjection = getProjection(this.currentCRS)
@@ -602,54 +979,10 @@ export default {
             projection: newProjection,
           }),
         )
-        map
-          .getLayers()
-          .getArray()
-          .forEach((layer) => {
-            if (layer instanceof VectorTileLayer) {
-              const newSource = new VectorTileSource({
-                format: new MVT(),
-                tileUrlFunction: (tileCoord) => {
-                  return this.sources[
-                    layer.get('layerName').split('-')[0]
-                  ].displayCondition
-                    .replace('CRS', this.currentCRS.split(':')[1])
-                    .replace('{z}', tileCoord[0])
-                    .replace('{x}', tileCoord[1])
-                    .replace('{y}', tileCoord[2])
-                },
-                tileGrid: this.tilegrids[this.currentCRS],
-                projection: this.currentCRS,
-              })
-
-              layer.setSource(newSource)
-            }
-          })
+        this.updateMap(map)
       })
 
-      this.$mapCanvas.mapObj
-        .getLayers()
-        .getArray()
-        .forEach((layer) => {
-          if (layer instanceof VectorTileLayer) {
-            const newSource = new VectorTileSource({
-              format: new MVT(),
-              tileUrlFunction: (tileCoord) => {
-                return this.sources[
-                  layer.get('layerName').split('-')[0]
-                ].displayCondition
-                  .replace('CRS', this.currentCRS.split(':')[1])
-                  .replace('{z}', tileCoord[0])
-                  .replace('{x}', tileCoord[1])
-                  .replace('{y}', tileCoord[2])
-              },
-              tileGrid: this.tilegrids[this.currentCRS],
-              projection: this.currentCRS,
-            })
-
-            layer.setSource(newSource)
-          }
-        })
+      this.updateMap(this.$mapCanvas.mapObj)
     },
     whiteBasemapHandler(visible, background = null) {
       const basemap = this.$mapCanvas.mapObj.getLayers().getArray()[0]
@@ -666,7 +999,7 @@ export default {
         const rgb = this.backgroundColor.values
         const cssColor = `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`
         document.getElementById('map').style.backgroundColor = cssColor
-        if (background.basemap !== 'Simplified') {
+        if (['NoBasemap', 'OSM'].includes(background.basemap)) {
           this.basemapSelection = `NoBasemap-${this.backgroundColor.name}`
           this.store.setBasemap('NoBasemap')
         } else {
@@ -691,8 +1024,11 @@ export default {
 <style scoped>
 .color-options {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-gap: 3px;
+}
+
+.color-options {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .map-preview {
@@ -700,6 +1036,15 @@ export default {
   height: 80px;
   border: 1px solid #ccc;
   position: relative;
+}
+
+.color-options.four-items {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.color-options.four-items .map-preview {
+  width: 71px;
+  height: 62px;
 }
 
 .map-preview.selected {
@@ -737,6 +1082,18 @@ export default {
   margin-right: -4px;
   margin-left: -2px;
   padding-left: 2px;
+}
+
+@media (max-height: 600px) {
+  .map-previews-grid {
+    max-height: calc(100vh - 52px - 102px - 10px);
+  }
+}
+
+@media (max-width: 959px) and (max-height: 600px) {
+  .map-previews-grid {
+    max-height: calc(100vh - 94px - 102px - 10px);
+  }
 }
 
 .source-group {

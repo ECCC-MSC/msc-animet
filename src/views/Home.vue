@@ -14,7 +14,16 @@ import { register } from 'ol/proj/proj4'
 export default {
   inject: ['store'],
   name: 'Home',
-  props: ['layers', 'extent', 'color', 'basemap', 'proj', 'grat', 'play'],
+  props: [
+    'layers',
+    'extent',
+    'color',
+    'basemap',
+    'overlays',
+    'proj',
+    'grat',
+    'play',
+  ],
   data() {
     return {
       layerCount: null,
@@ -74,6 +83,12 @@ export default {
       } else {
         this.store.setBasemap(this.basemap)
       }
+    }
+    if (this.overlays !== undefined) {
+      const overlays = this.overlays.split(',')
+      overlays.forEach((overlay) => {
+        this.store.toggleOverlay(overlay)
+      })
     }
     if (this.color !== undefined) {
       let matchColor = /((\d{1,3}),(\d{1,3}),(\d{1,3}))/

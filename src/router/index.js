@@ -14,6 +14,7 @@ const routes = [
       extent: route.query.extent,
       color: route.query.color,
       basemap: route.query.basemap,
+      overlays: route.query.overlays,
       proj: route.query.proj,
       grat: route.query.grat,
       play: route.query.play,
