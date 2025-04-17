@@ -231,6 +231,8 @@ export default {
             source: new VectorTileSource({
               format: new MVT(),
               url: originalUrl,
+              tileGrid: originalSource.getTileGrid(),
+              projection: this.currentCRS,
             }),
             style: originalStyle,
             ...originalProperties,

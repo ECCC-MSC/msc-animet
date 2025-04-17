@@ -786,6 +786,12 @@ export default {
       const sourceValues = this.sources[source]
       const zIndex =
         sourceValues.zIndex || sourceValues.colors[colorName].zIndex
+      let extent
+      if (this.currentCRS === 'EPSG:3995') {
+        extent = [-3299207.53, -3333134.03, 3299207.53, 3333134.03]
+      } else if (this.currentCRS === 'EPSG:3978') {
+        extent = [-7192737.96, -3004297.73, 5183275.29, 4484204.83]
+      }
       return new VectorTileLayer({
         source: new VectorTileSource({
           format: new MVT(),
@@ -793,6 +799,7 @@ export default {
           tileGrid: this.tilegrids[this.currentCRS],
           projection: this.currentCRS,
         }),
+        extent: extent,
         style: colors,
         layerName: `${source}-${colorName}`,
         zIndex: zIndex,
