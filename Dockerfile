@@ -19,7 +19,8 @@ ENV ANIMET_NIGHTLY=${ANIMET_NIGHTLY} \
     GEOMET_CLIMATE_NIGHTLY_URL=${GEOMET_CLIMATE_NIGHTLY_URL} \
     GEOMET_WEATHER_NIGHTLY_URL=${GEOMET_WEATHER_NIGHTLY_URL} \
     GEOMET_MAPPROXY_NIGHTLY_URL=${GEOMET_MAPPROXY_NIGHTLY_URL} \
-    VITE_SIMPLIFIED_BOUNDARIES=${VITE_SIMPLIFIED_BOUNDARIES}
+    VITE_SIMPLIFIED_BOUNDARIES=${VITE_SIMPLIFIED_BOUNDARIES} \
+    VITE_PLACE_NAMES=${VITE_PLACE_NAMES}
 RUN python3 generate_trees_layers_list.py
 # Extract keys from wms_sources_configs.json while ignoring "Presets"
 RUN config_keys=$(jq -r 'keys[] | select(. | ascii_downcase != "presets") | ascii_downcase' "/app/src/assets/wms_sources_configs.json") && \
