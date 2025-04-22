@@ -556,6 +556,32 @@ export default {
           dotStrokeWidth: 0.5,
           dotStrokeColor: 'white',
         },
+        9: {
+          textSize: 9.5,
+          fontWeight: 'normal',
+          textColor: 'black',
+          haloColor: 'rgba(255, 255, 255, 0.6)',
+          haloWidth: 1,
+          offsetY: -3.5,
+          minZoom: 14,
+          dotRadius: 0.75,
+          dotColor: 'rgba(0, 0, 0, 0.2)',
+          dotStrokeWidth: 0.5,
+          dotStrokeColor: 'white',
+        },
+        10: {
+          textSize: 9.5,
+          fontWeight: 'normal',
+          textColor: 'black',
+          haloColor: 'rgba(255, 255, 255, 0.6)',
+          haloWidth: 1,
+          offsetY: -3.5,
+          minZoom: 15,
+          dotRadius: 0.75,
+          dotColor: 'rgba(0, 0, 0, 0.2)',
+          dotStrokeWidth: 0.5,
+          dotStrokeColor: 'white',
+        },
       }
       const this_ = this
       return function (feature, resolution) {
@@ -563,10 +589,6 @@ export default {
         const name = properties.NAME
         let minZoom = properties.MIN_ZOOM
         let scalerank = properties.SCALERANK
-
-        if (scalerank > 8) {
-          return null
-        }
 
         const majorCanadianCities = [
           'Montréal',
