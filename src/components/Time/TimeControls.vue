@@ -207,10 +207,15 @@ export default {
           imageLayer.setVisible(false)
         }
       }
-      this.setDateTime(
-        imageLayer,
-        this.mapTimeSettings.Extent[this.mapTimeSettings.DateIndex],
-      )
+      const layerDateIndex = imageLayer.get('layerDateIndex')
+      if (layerDateIndex < 0) {
+        this.setDateTime(imageLayer, imageLayer.get('layerDefaultTime'))
+      } else {
+        this.setDateTime(
+          imageLayer,
+          imageLayer.get('layerDateArray')[imageLayer.get('layerDateIndex')],
+        )
+      }
       this.emitter.emit('timeLayerAdded', imageLayer.get('layerName'))
       this.$mapCanvas.mapObj.addLayer(imageLayer)
       if (autoPlay) {

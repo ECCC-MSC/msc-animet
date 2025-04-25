@@ -70,7 +70,11 @@ export function useVectorShapes(mapObj) {
 
   mapObj.on('click', function (evt) {
     mapObj.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
-      if (feature && feature.getGeometry().getType() !== 'Point') {
+      if (
+        feature &&
+        feature.getGeometry().getType() !== 'Point' &&
+        !feature.getProperties()['layer']
+      ) {
         selectFeature(feature)
       }
     })

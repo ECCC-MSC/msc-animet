@@ -8,8 +8,14 @@ export const useStore = defineStore('store', {
     activeLegendsList: [],
     animationTitle: '',
     availableCRS: Object.keys(wmsSources).map((key) => {
-      const treeName = 'tree_en_' + key.toLowerCase()
-      const projections = 'proj_' + key.toLowerCase()
+      let treeName
+      const lowerCaseKey = key.toLowerCase()
+      if (lowerCaseKey === 'presets') {
+        treeName = lowerCaseKey
+      } else {
+        treeName = 'tree_en_' + lowerCaseKey
+      }
+      const projections = 'proj_' + lowerCaseKey
       const projList = layerTrees[treeName][projections].map((item) =>
         item.toUpperCase(),
       )
@@ -52,11 +58,23 @@ export const useStore = defineStore('store', {
     isLooping: true,
     lang: 'en',
     layerTreeItemsEn: Object.keys(wmsSources).map((key) => {
-      const treeName = 'tree_en_' + key.toLowerCase()
+      let treeName
+      const lowerCaseKey = key.toLowerCase()
+      if (lowerCaseKey === 'presets') {
+        treeName = lowerCaseKey
+      } else {
+        treeName = 'tree_en_' + lowerCaseKey
+      }
       return layerTrees[treeName][treeName]
     }),
     layerTreeItemsFr: Object.keys(wmsSources).map((key) => {
-      const treeName = 'tree_fr_' + key.toLowerCase()
+      let treeName
+      const lowerCaseKey = key.toLowerCase()
+      if (lowerCaseKey === 'presets') {
+        treeName = lowerCaseKey
+      } else {
+        treeName = 'tree_fr_' + lowerCaseKey
+      }
       return layerTrees[treeName][treeName]
     }),
     mapTimeSettings: {
