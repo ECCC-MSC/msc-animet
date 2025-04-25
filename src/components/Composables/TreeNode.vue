@@ -6,7 +6,7 @@
       :class="{ selected: presetSelected(node) }"
       @click="handleMultiAdd(node)"
     />
-    <span class="image-title">{{ node.Title }}</span>
+    <span class="image-title">{{ node[`Title_${$i18n.locale}`] }}</span>
   </div>
   <div v-else class="tree-node">
     <div @click="handleClick(node)" class="node-content">
@@ -100,32 +100,57 @@ const handleClick = (node) => {
 
 const presetSelected = (node) => {
   return node.children.every((childNode) =>
-    proxy.$mapLayers.arr.some(
-      (layer) => layer.get('layerName') === childNode.Name,
-    ),
+    proxy.$mapLayers.arr.some((layer) => {
+      let styleCheck = true
+      if (childNode.currentStyle) {
+        styleCheck = layer.get('layerCurrentStyle') === childNode.currentStyle
+      } else if (
+        layer.get('layerStyles').length !== 0 &&
+        layer.get('layerCurrentStyle') !== layer.get('layerStyles')[0].Name
+      ) {
+        styleCheck = false
+      }
+      return layer.get('layerName') === childNode.Name && styleCheck
+    }),
   )
 }
 
+const multiAddLock = ref(false)
 const handleMultiAdd = (node) => {
-  const missingNames = node.children.filter(
-    (childNode) =>
-      !proxy.$mapLayers.arr.some(
-        (layer) => layer.get('layerName') === childNode.Name,
-      ),
-  )
-  let index = proxy.$mapLayers.arr.length
-  if (missingNames.length > 0 && missingNames.length < node.children.length) {
-    for (const childNode of missingNames) {
-      childNode.zIndex = index
-      emit('request', childNode)
-      index++
+  if (!multiAddLock.value) {
+    multiAddLock.value = true
+    const selected = presetSelected(node)
+    const nodeChildren = node.children.map((child) => child.Name)
+
+    let toRemove = []
+    if (selected) {
+      for (const child of nodeChildren) {
+        toRemove.push(
+          proxy.$mapLayers.arr.find((l) => l.get('layerName') === child),
+        )
+      }
+    } else {
+      toRemove = [...proxy.$mapLayers.arr]
     }
-  } else {
-    for (const childNode of node.children) {
-      childNode.zIndex = index
-      emit('request', childNode)
-      index++
+
+    for (const layer of toRemove) {
+      const tempNode = {
+        Name: layer.get('layerName'),
+        isLeaf: true,
+      }
+      emit('request', tempNode)
     }
+    if (!selected) {
+      let index = proxy.$mapLayers.arr.length
+      for (const childNode of node.children) {
+        childNode.zIndex = index
+        emit('request', childNode)
+        index++
+      }
+    }
+    setTimeout(() => {
+      multiAddLock.value = false
+    }, 500)
   }
 }
 
@@ -161,8 +186,8 @@ const bubbleNodeRequest = (node) => {
   vertical-align: top;
 }
 .selected {
-  border: 2px solid #007bff;
-  transform: scale(1.05);
+  border: 3px solid #007bff;
+  transform: scale(1.08);
 }
 .image-grid {
   display: grid;
@@ -177,6 +202,8 @@ const bubbleNodeRequest = (node) => {
   text-align: center;
   font-size: 0.8em;
   padding-bottom: 5px;
+  padding-top: 5px;
+  line-height: 1.2;
   white-space: normal;
   word-break: break-word;
   width: 100%;

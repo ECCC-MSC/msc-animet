@@ -62,15 +62,17 @@ export default {
     'EPSG:900913',
     'AUTO2:42003',
   ],
-  tree_en_presets: [
+  presets: [
     {
-      Title: 'Precipitation',
+      Title_en: 'Precipitation',
+      Title_fr: 'Précipitation',
       Name: 'Precipitation',
       isLeaf: false,
       isOpen: true,
       children: [
         {
-          Title: 'Radar Rain',
+          Title_en: 'Radar Rain',
+          Title_fr: 'Pluie radar',
           Name: 'Radar Rain',
           Img: 'Radar Rain',
           isLeaf: false,
@@ -80,12 +82,14 @@ export default {
               Name: 'RADAR_COVERAGE_RRAI.INV',
               isLeaf: true,
               isTemporal: true,
+              legendDisplayed: false,
             },
             {
               Title: 'Dynamic radar coverage for rain',
               Name: 'RADAR_COVERAGE_RRAI',
               isLeaf: true,
               isTemporal: true,
+              legendDisplayed: false,
             },
             {
               Title: 'Radar precipitation rate for rain [mm/h]',
@@ -96,7 +100,8 @@ export default {
           ],
         },
         {
-          Title: 'Rain Accumulation',
+          Title_en: 'Rain Accumulation',
+          Title_fr: 'Accumulation de pluie',
           Name: 'Rain Accumulation',
           Img: 'Rain Accumulation',
           isLeaf: false,
@@ -110,7 +115,8 @@ export default {
           ],
         },
         {
-          Title: 'Radar Snow',
+          Title_en: 'Radar Snow',
+          Title_fr: 'Neige radar',
           Name: 'Radar Snow',
           Img: 'Radar Snow',
           isLeaf: false,
@@ -120,12 +126,14 @@ export default {
               Name: 'RADAR_COVERAGE_RSNO.INV',
               isLeaf: true,
               isTemporal: true,
+              legendDisplayed: false,
             },
             {
               Title: 'Dynamic radar coverage for snow',
               Name: 'RADAR_COVERAGE_RSNO',
               isLeaf: true,
               isTemporal: true,
+              legendDisplayed: false,
             },
             {
               Title: 'Radar precipitation rate for snow [cm/h]',
@@ -136,7 +144,8 @@ export default {
           ],
         },
         {
-          Title: 'Snow Accumulation',
+          Title_en: 'Snow Accumulation',
+          Title_fr: 'Accumulation de neige',
           Name: 'Snow Accumulation',
           Img: 'Snow Accumulation',
           isLeaf: false,
@@ -150,21 +159,8 @@ export default {
           ],
         },
         {
-          Title: 'Snow Depth',
-          Name: 'Snow Depth',
-          Img: 'Snow Depth',
-          isLeaf: false,
-          children: [
-            {
-              Title: 'HRDPS.CONTINENTAL - Snow depth [m]',
-              Name: 'HRDPS.CONTINENTAL_SD',
-              isLeaf: true,
-              isTemporal: true,
-            },
-          ],
-        },
-        {
-          Title: 'Precipitation Type',
+          Title_en: 'Precipitation Type',
+          Title_fr: 'Type de précipitation',
           Name: 'Precipitation Type',
           Img: 'Precipitation Type',
           isLeaf: false,
@@ -180,7 +176,8 @@ export default {
           ],
         },
         {
-          Title: 'Probability of Thunderstorm',
+          Title_en: 'Probability of Thunderstorm',
+          Title_fr: "Probabilité d'orage",
           Name: 'Probability of Thunderstorm',
           Img: 'Probability of Thunderstorm',
           isLeaf: false,
@@ -196,14 +193,16 @@ export default {
       ],
     },
     {
-      Title: 'Satellite',
-      Name: 'Satellite',
+      Title_en: 'Weather Conditions',
+      Title_fr: 'Conditions météo',
+      Name: 'Weather Conditions',
       isLeaf: false,
       isOpen: true,
       children: [
         {
-          Title: 'Natural + NightIR',
-          Name: 'Natural NightIR',
+          Title_en: 'Satellite',
+          Title_fr: 'Satellite',
+          Name: 'Satellite',
           Img: 'Sattelite Natural NightIR',
           isLeaf: false,
           children: [
@@ -223,18 +222,59 @@ export default {
             },
           ],
         },
+        {
+          Title_en: 'Alerts & Current Conditions',
+          Title_fr: 'Alertes & Conditions actuelles',
+          Name: 'Alerts Current Conditions',
+          Img: 'Alerts Current Conditions',
+          isLeaf: false,
+          children: [
+            {
+              Title: 'Weather Alerts [experimental]',
+              Name: 'ALERTS',
+              isLeaf: true,
+              isTemporal: true,
+              opacity: 1,
+            },
+            {
+              Title: 'Current Conditions',
+              Name: 'CURRENT_CONDITIONS',
+              isLeaf: true,
+              isTemporal: true,
+              opacity: 1,
+              legendDisplayed: false,
+            },
+          ],
+        },
+        {
+          Title_en: 'Temperature',
+          Title_fr: 'Température',
+          Name: 'Temperature',
+          Img: 'Temperature',
+          isLeaf: false,
+          children: [
+            {
+              Title: 'GDPS.ETA - Air temperature at 2m above ground [°C]',
+              Name: 'GDPS.ETA_TT',
+              isLeaf: true,
+              isTemporal: true,
+            },
+          ],
+        },
       ],
     },
     {
-      Title: 'Extreme Environmental Events',
+      Title_en: 'Extreme Environmental Events',
+      Title_fr: 'Événements environnementaux extrêmes',
       Name: 'Extreme Environmental Events',
       isLeaf: false,
       isOpen: true,
       children: [
         {
-          Title: 'Hurricane tracks',
-          Name: 'Hurricane tracks',
-          Img: 'Shrugging-Emojis',
+          Title_en: 'Hurricane Tracks',
+          Title_fr: "Trajectoires d'ouragans",
+          Name: 'Hurricane Tracks',
+          Img: 'Hurricanes',
           isLeaf: false,
           children: [
             {
@@ -243,6 +283,7 @@ export default {
               isLeaf: true,
               isTemporal: true,
               opacity: 1,
+              legendDisplayed: false,
             },
             {
               Title: 'Hurricane Track Forecast Error',
@@ -250,6 +291,7 @@ export default {
               isLeaf: true,
               isTemporal: true,
               opacity: 1,
+              legendDisplayed: false,
             },
             {
               Title: 'Hurricane Wind Forecast Wind Radii',
@@ -257,6 +299,7 @@ export default {
               isLeaf: true,
               isTemporal: true,
               opacity: 1,
+              legendDisplayed: false,
             },
             {
               Title: 'Hurricane Line Segments',
@@ -264,6 +307,7 @@ export default {
               isLeaf: true,
               isTemporal: true,
               opacity: 1,
+              legendDisplayed: false,
             },
             {
               Title: 'Hurricane Forecast Location',
@@ -271,6 +315,39 @@ export default {
               isLeaf: true,
               isTemporal: true,
               opacity: 1,
+            },
+          ],
+        },
+        {
+          Title_en: 'Wildfires (PM2.5)',
+          Title_fr: 'Feux de forêt (PM2.5)',
+          Name: 'Wildfires',
+          Img: 'Wildfires',
+          isLeaf: false,
+          children: [
+            {
+              Title:
+                'Total concentrations associated with forest fire and vegetation plumes: surface PM2.5 [kg/m³]',
+              Name: 'RAQDPS.Sfc_PM2.5-WildfireSmokePlume',
+              isLeaf: true,
+              isTemporal: true,
+              opacity: 1,
+            },
+          ],
+        },
+        {
+          Title_en: 'Heat Waves',
+          Title_fr: 'Vagues de chaleur',
+          Name: 'Heat Waves',
+          Img: 'Heat Waves',
+          isLeaf: false,
+          children: [
+            {
+              Title: 'GDPS.ETA - Air temperature at 2m above ground [°C]',
+              Name: 'GDPS.ETA_TT',
+              currentStyle: 'AirTemp_High_Dis',
+              isLeaf: true,
+              isTemporal: true,
             },
           ],
         },

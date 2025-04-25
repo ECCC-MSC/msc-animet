@@ -68,7 +68,11 @@
 
                 <template v-if="!node.Img" #title-slot="{ node }">
                   <v-tooltip
-                    :text="node.Title"
+                    :text="
+                      wmsSource === 'Presets'
+                        ? node[`Title_${$i18n.locale}`]
+                        : node.Title
+                    "
                     location="bottom"
                     open-delay="750"
                   >
@@ -83,7 +87,11 @@
                           ),
                         }"
                       >
-                        {{ node.Title }}
+                        {{
+                          wmsSource === 'Presets'
+                            ? node[`Title_${$i18n.locale}`]
+                            : node.Title
+                        }}
                         <template v-if="node.isLeaf">
                           <br />
                           <span class="subtitle">{{ node.Name }}</span>
