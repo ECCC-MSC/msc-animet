@@ -35,8 +35,6 @@
   "Fill": "Fill",
   "FPS": "FPS",
   "FramesPerSecond": "Frames per second",
-  "GeoMetSearchLabel": "Search {wmsSource} layers",
-  "GeoMetWms": "Add {wmsSource} layers",
   "GoToHomePage": "Go to MSC AniMet home page",
   "Grey": "Grey",
   "InvalidSRS": "CRS {CRS} is invalid for this data source.",
@@ -112,6 +110,7 @@
   "Standard": "Standard",
   "StyleError": "The WMS request failed with the style included in the request. The layer's style has thus been reset to the default style and may not match with the displayed legend.",
   "TimestepsDropdown": "Interval",
+  "TreeSearchLabel": "Search {wmsSource} layers",
   "UltraWideScreen": "Ultra-widescreen",
   "UnhandledError": "An unhandled error was encountered. The layer had to be removed.",
   "UserDoc": "User documentation",
@@ -123,5 +122,6 @@
   "WeatherNightly": "GeoMet-Weather Nightly",
   "White": "White",
   "Widescreen": "Widescreen",
+  "WmsSourceTitle": "Add {wmsSource} layers",
   "WrongTimeFormat": "The format used for time is not recognized by the application.\nThe WMS standard supports 4 ways of adding dates inside a WMS, which are:\n\tA single date;\n\tMultiple dates comma separated;\n\tStart/End/Interval;\n\tStart1/End1/Interval1,Start2/End2/Interval2,etc.\nIf you wish to add this layer to AniMet, you will need to update the WMS source accordingly."
 }

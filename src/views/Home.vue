@@ -116,10 +116,10 @@ export default {
       var baseURL
       const sourceContainingLayerName = this.findKeyInLocaleFiles(layerName)
       if (sourceContainingLayerName) {
-        const configName = Object.keys(this.geometWmsSources).find(
+        const configName = Object.keys(this.wmsSources).find(
           (key) => key.toLowerCase() === sourceContainingLayerName,
         )
-        baseURL = this.geometWmsSources[configName]['url']
+        baseURL = this.wmsSources[configName]['url']
       } else {
         return
       }
@@ -161,8 +161,8 @@ export default {
     crsList() {
       return this.store.getCrsList
     },
-    geometWmsSources() {
-      return this.store.getGeoMetWmsSources
+    wmsSources() {
+      return this.store.getWmsSources
     },
   },
 }

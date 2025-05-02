@@ -35,8 +35,6 @@
   "Fill": "Remplissage",
   "FPS": "IPS",
   "FramesPerSecond": "Images par seconde",
-  "GeoMetSearchLabel": "Chercher les couches {wmsSource}",
-  "GeoMetWms": "Ajouter des couches {wmsSource}",
   "GoToHomePage": "Aller à la page d'accueil AniMet du SMC",
   "Grey": "Grise",
   "InvalidSRS": "Le SRC {CRS} n'est pas valide pour cette source de données.",
@@ -112,6 +110,7 @@
   "Standard": "Standard",
   "StyleError": "La requête WMS n'a pas fonctionné en incluant le style dans la requête. Le style de la couche a donc été réinitialisé au style par défaut et peut ne pas correspondre à la légende affichée.",
   "TimestepsDropdown": "Pas de temps",
+  "TreeSearchLabel": "Chercher les couches {wmsSource}",
   "UltraWideScreen": "Ultra-large",
   "UnhandledError": "Une erreur non répertoriée a été rencontrée. La couche a dû être retirée.",
   "UserDoc": "Documentation usager",
@@ -123,5 +122,6 @@
   "WeatherNightly": "GeoMet-Météo Nightly",
   "White": "Blanche",
   "Widescreen": "Large",
+  "WmsSourceTitle": "Ajouter des couches {wmsSource}",
   "WrongTimeFormat": "Le format utilisé pour le temps n'est pas reconnu par l'application.\nLe standard WMS supporte 4 façons d'ajouter vos dates à l'intérieur d'un WMS, soit:\n\tUne seule date;\n\tPlusieurs dates séparées d'une virgule;\n\tDébut/Fin/Intervalle;\n\tDébut1/Fin1/Intervalle1,Début2/Fin2/Intervalle2,etc.\nSi vous souhaitez ajouter cette couche dans AniMet, veuillez faire les changements appropriés dans votre source WMS."
 }

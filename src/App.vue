@@ -22,10 +22,22 @@ export default {
     this.store.setLang(lang)
     this.$i18n.locale = lang
     document.title = 'MSC AniMet'
+
+    const userWmsSources = this.getSources()
+    if (userWmsSources) {
+      const activeSources = userWmsSources.split(',')
+      this.store.setActiveSources(activeSources)
+      this.store.setWmsSourceURL(
+        this.store.getWmsSources[activeSources[0]]['url'],
+      )
+    }
   },
   methods: {
     getLang() {
       return localStorage.getItem('user-lang')
+    },
+    getSources() {
+      return localStorage.getItem('user-sources')
     },
   },
 }
