@@ -6,6 +6,13 @@ import IntegerAssigner from '../utils/IntegerAssigner.js'
 export const useStore = defineStore('store', {
   state: () => ({
     activeLegendsList: [],
+    activeWmsSources: [
+      'Presets',
+      'Weather',
+      'Climate',
+      'WeatherNightly',
+      'ClimateNightly',
+    ],
     animationTitle: '',
     availableCRS: Object.keys(wmsSources).map((key) => {
       let treeName
@@ -57,17 +64,20 @@ export const useStore = defineStore('store', {
     isFullSize: false,
     isLooping: true,
     lang: 'en',
-    layerTreeItemsEn: Object.keys(wmsSources).map((key) => {
+    layerTreeItemsEn: Object.keys(wmsSources).reduce((acc, key) => {
       let treeName
       const lowerCaseKey = key.toLowerCase()
+
       if (lowerCaseKey === 'presets') {
         treeName = lowerCaseKey
       } else {
         treeName = 'tree_en_' + lowerCaseKey
       }
-      return layerTrees[treeName][treeName]
-    }),
-    layerTreeItemsFr: Object.keys(wmsSources).map((key) => {
+
+      acc[key] = layerTrees[treeName][treeName]
+      return acc
+    }, {}),
+    layerTreeItemsFr: Object.keys(wmsSources).reduce((acc, key) => {
       let treeName
       const lowerCaseKey = key.toLowerCase()
       if (lowerCaseKey === 'presets') {
@@ -75,8 +85,10 @@ export const useStore = defineStore('store', {
       } else {
         treeName = 'tree_fr_' + lowerCaseKey
       }
-      return layerTrees[treeName][treeName]
-    }),
+
+      acc[key] = layerTrees[treeName][treeName]
+      return acc
+    }, {}),
     mapTimeSettings: {
       SnappedLayer: null,
       Step: null,
@@ -105,6 +117,12 @@ export const useStore = defineStore('store', {
   }),
   getters: {
     getActiveLegends: (state) => state.activeLegendsList,
+    getActiveSources: (state) =>
+      Object.fromEntries(
+        Object.entries(wmsSources).filter(([key]) =>
+          state.activeWmsSources.includes(key),
+        ),
+      ),
     getAnimationTitle: (state) => state.animationTitle,
     getAvailableCRS: (state) => state.availableCRS,
     getCollapsedControls: (state) => state.collapseControls,
@@ -121,9 +139,8 @@ export const useStore = defineStore('store', {
     getBasemap: (state) => state.basemap,
     getIsLooping: (state) => state.isLooping,
     getIsFullSize: (state) => state.isFullSize,
-    getGeoMetTreeItems: (state) =>
+    getLayerTreeItems: (state) =>
       state.lang === 'en' ? state.layerTreeItemsEn : state.layerTreeItemsFr,
-    getGeoMetWmsSources: (state) => state.wmsSources,
     getImgURL: (state) => state.imgURL,
     getIntersectMessageDisplayed: (state) => state.intersectDict,
     getIsAnimating: (state) => state.isAnimating,
@@ -147,6 +164,7 @@ export const useStore = defineStore('store', {
     getTextBoxFocused: (state) => state.textBoxFocused,
     getTimeFormat: (state) => state.timeFormat,
     getUniqueTimestepsList: (state) => state.uniqueTimestepsList,
+    getWmsSources: (state) => state.wmsSources,
   },
   actions: {
     addActiveLegend(legend) {
@@ -184,6 +202,9 @@ export const useStore = defineStore('store', {
           1,
         )
       }
+    },
+    setActiveSources(sources) {
+      this.activeWmsSources = sources
     },
     setAnimationTitle(title) {
       this.animationTitle = title === null ? '' : title

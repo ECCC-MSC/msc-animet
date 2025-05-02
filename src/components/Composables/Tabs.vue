@@ -23,6 +23,31 @@
         >
           {{ sourceParameters.no_translations ? tab : $t(tab) }}
         </button>
+        <v-menu :close-on-content-click="false">
+          <template v-slot:activator="{ props }">
+            <v-btn icon="mdi-plus" variant="flat" v-bind="props"> </v-btn>
+          </template>
+          <v-list>
+            <v-list-item
+              v-for="(sourceParameters, item, index) in wmsSources"
+              :key="index"
+              :value="index"
+              @click="toggleWmsSource(item)"
+            >
+              <template v-slot:prepend>
+                <v-checkbox
+                  :model-value="isSourceActive(item)"
+                  hide-details
+                  readonly
+                  density="compact"
+                ></v-checkbox>
+              </template>
+              <v-list-item-title>{{
+                sourceParameters.no_translations ? item : $t(item)
+              }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </div>
       <v-btn
         @click="scrollRight"
@@ -48,7 +73,17 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, reactive, ref, watch } from 'vue'
+import {
+  computed,
+  inject,
+  onMounted,
+  onUnmounted,
+  reactive,
+  ref,
+  watch,
+} from 'vue'
+
+const store = inject('store')
 
 const props = defineProps({
   tabs: {
@@ -110,12 +145,76 @@ const scrollToTab = (index) => {
   checkScroll(scrollLeft)
 }
 
+const toggleWmsSource = (item) => {
+  const currentSources = [...activeWmsSources.value]
+  const index = currentSources.indexOf(item)
+
+  if (index === -1) {
+    currentSources.push(item)
+  } else {
+    if (currentSources.length === 1) return
+    currentSources.splice(index, 1)
+  }
+
+  activeWmsSources.value = currentSources
+  localStorage.setItem('user-sources', currentSources)
+}
+
+const wmsSources = computed(() => {
+  return store.getWmsSources
+})
+
+const activeWmsSources = computed({
+  get() {
+    return Object.keys(store.getActiveSources)
+  },
+  set(sources) {
+    store.setActiveSources(sources)
+  },
+})
+
+const isSourceActive = (item) => {
+  return activeWmsSources.value.includes(item)
+}
+
 watch(screenWidth, () => {
   const container = scrollContainer.value
   if (!container) return
 
   scrollToTab(activeTab.value)
 })
+
+watch(
+  () => activeWmsSources.value,
+  (newSources, oldSources) => {
+    const lengthDiff = newSources.length - oldSources.length
+    const minLength = Math.min(newSources.length, oldSources.length)
+    let changeIndex = minLength
+    for (let i = 0; i < minLength; i++) {
+      if (newSources[i] !== oldSources[i]) {
+        changeIndex = i
+        break
+      }
+    }
+    if (changeIndex <= activeTab.value) {
+      if (lengthDiff > 0) {
+        const newTab = activeTab.value + 1
+        nextTick(() => {
+          setActiveTab(newTab)
+        })
+      } else if (activeTab.value === 0) {
+        nextTick(() => {
+          setActiveTab(0)
+        })
+      } else {
+        const newTab = activeTab.value - 1
+        nextTick(() => {
+          setActiveTab(newTab)
+        })
+      }
+    }
+  },
+)
 
 onMounted(() => {
   window.addEventListener('resize', updateScreenWidth)

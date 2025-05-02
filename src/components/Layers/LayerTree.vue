@@ -1,11 +1,11 @@
 <template>
   <v-card class="radius" max-width="100%">
-    <tabs :tabs="geometWmsSources" @tab-change="setCurrentWMSSource">
+    <tabs :tabs="activeWMSSources" @tab-change="setCurrentWMSSource">
       <template v-slot:tab-content>
         <v-card flat>
           <v-card-title class="pt-2 pb-0 pl-3 pr-2">
             {{
-              $t('GeoMetWms', {
+              $t('WmsSourceTitle', {
                 wmsSource: sourceParameters.no_translations
                   ? wmsSource
                   : $t(wmsSource),
@@ -15,9 +15,9 @@
           <v-card-text class="pt-2 pb-2 pl-3 pr-2">
             <v-text-field
               autofocus
-              v-model="searchGeoMet[this.tab]"
+              v-model="searchTreeItems[this.tab]"
               :label="
-                $t('GeoMetSearchLabel', {
+                $t('TreeSearchLabel', {
                   wmsSource: sourceParameters.no_translations
                     ? wmsSource
                     : $t(wmsSource),
@@ -136,13 +136,15 @@ export default {
 
     this.debouncedFilterOnInput = debounce(this.filterOnInput, 500)
 
-    this.filteredTreeNodes.push(...this.geometTreeItems)
-    this.searchGeoMet = new Array(
-      Object.keys(this.geometWmsSources).length,
-    ).fill(null)
+    this.filteredTreeNodes.push(...Object.values(this.layerTreeItems))
+    this.searchTreeItems = new Array(Object.keys(this.wmsSources).length).fill(
+      null,
+    )
     this.emitter.on('layerRemoved', this.removeLayer)
     this.emitter.on('localeChange', this.resetSearchAndTree)
     this.emitter.on('permaLinkLayer', this.requestLayerData)
+
+    this.filterOnInput(0)
   },
   beforeUnmount() {
     this.emitter.off('layerRemoved', this.removeLayer)
@@ -157,7 +159,7 @@ export default {
       debouncedFilterOnInput: null,
       filteredTreeNodes: [],
       openedLevels: [],
-      searchGeoMet: [],
+      searchTreeItems: [],
       smAndDown: false,
       tab: 0,
     }
@@ -175,18 +177,18 @@ export default {
         let source = Object.hasOwn(layer, 'wmsSource')
           ? layer.wmsSource
           : this.currentWmsSource
-        const sources = Object.keys(this.geometWmsSources)
+        const sources = Object.keys(this.wmsSources)
         layer.wmsIndex = sources.findIndex(
-          (key) => this.geometWmsSources[key]['url'] === source,
+          (key) => this.wmsSources[key]['url'] === source,
         )
         if (
           Object.hasOwn(
-            this.geometWmsSources[sources[layer.wmsIndex]],
+            this.wmsSources[sources[layer.wmsIndex]],
             'query_pattern',
           )
         ) {
           let pattern =
-            this.geometWmsSources[sources[layer.wmsIndex]]['query_pattern']
+            this.wmsSources[sources[layer.wmsIndex]]['query_pattern']
           const querySplits = layer.Name.split(':')
           let layerPattern = ''
           for (let i = 0; i < querySplits.length; i++) {
@@ -312,14 +314,14 @@ export default {
       }, [])
     },
     filterOnInput(index) {
-      if (this.searchGeoMet[index] !== null) {
-        const searchLength = this.searchGeoMet[index].trim().length
+      if (this.searchTreeItems[index] !== null) {
+        const searchLength = this.searchTreeItems[index].trim().length
         if (searchLength >= 2) {
           this.activateNodeCheck = true
           this.filteredTreeNodes[index] = this.filterCallbackFunction(
-            this.geometTreeItems[index],
+            this.layerTreeItems[this.activeWMSSourcesNames[index]],
             (item) => {
-              const searchTerms = this.searchGeoMet[index]
+              const searchTerms = this.searchTreeItems[index]
                 .toLowerCase()
                 .split(' ')
               const itemText = `${item['Title']} ${item['Name']}`.toLowerCase()
@@ -329,11 +331,13 @@ export default {
           )
         } else {
           this.activateNodeCheck = false
-          this.filteredTreeNodes[index] = this.geometTreeItems[index]
+          this.filteredTreeNodes[index] =
+            this.layerTreeItems[this.activeWMSSourcesNames[index]]
         }
       } else {
         this.activateNodeCheck = false
-        this.filteredTreeNodes[index] = this.geometTreeItems[index]
+        this.filteredTreeNodes[index] =
+          this.layerTreeItems[this.activeWMSSourcesNames[index]]
       }
     },
     handleNodeToggle(nodeName, isOpen) {
@@ -348,18 +352,16 @@ export default {
       }
     },
     resetSearchAndTree() {
-      this.searchGeoMet.fill(null)
+      this.searchTreeItems.fill(null)
       for (let i = 0; i < Object.keys(this.filteredTreeNodes).length; i++) {
         this.filterOnInput(i)
       }
     },
     setCurrentWMSSource(newTab, oldTab) {
-      if (newTab !== Object.keys(this.geometWmsSources).length) {
+      if (newTab !== Object.keys(this.wmsSources).length) {
         this.tab = newTab
         this.store.setWmsSourceURL(
-          this.geometWmsSources[Object.keys(this.geometWmsSources)[newTab]][
-            'url'
-          ],
+          this.wmsSources[this.activeWMSSourcesNames[newTab]]['url'],
         )
         if (oldTab !== null) {
           this.resetSearchAndTree()
@@ -368,6 +370,20 @@ export default {
     },
   },
   computed: {
+    activeWMSSources() {
+      return this.store.getActiveSources
+    },
+    activeWMSSourcesNames() {
+      return Object.keys(this.activeWMSSources)
+    },
+    animationReversed: {
+      get() {
+        return this.store.getIsAnimationReversed
+      },
+      set(isReversed) {
+        this.store.setIsAnimationReversed(isReversed)
+      },
+    },
     availableCRS() {
       return this.store.getAvailableCRS
     },
@@ -377,11 +393,11 @@ export default {
     currentWmsSource() {
       return this.store.getCurrentWmsSource
     },
-    geometTreeItems() {
-      return this.store.getGeoMetTreeItems
+    layerTreeItems() {
+      return this.store.getLayerTreeItems
     },
-    geometWmsSources() {
-      return this.store.getGeoMetWmsSources
+    wmsSources() {
+      return this.store.getWmsSources
     },
     isAnimating() {
       return this.store.getIsAnimating
@@ -390,10 +406,10 @@ export default {
       return this.store.getPlayState
     },
     sourceParameters() {
-      return this.geometWmsSources[this.wmsSource]
+      return this.wmsSources[this.wmsSource]
     },
     wmsSource() {
-      return Object.keys(this.geometWmsSources)[this.tab]
+      return Object.keys(this.activeWMSSources)[this.tab]
     },
   },
 }
