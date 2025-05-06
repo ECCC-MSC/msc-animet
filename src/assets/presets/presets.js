@@ -176,6 +176,40 @@ export default {
           ],
         },
         {
+          Title_en: 'Significant Precipitation Type',
+          Title_fr: 'Type significatif de précipitations',
+          Name: 'Significant Precipitation Type',
+          Img: 'Significant Precipitation Type',
+          isLeaf: false,
+          children: [
+            {
+              Title:
+                'GDPS.DIAG_NW - Significant type of precipitation for 1 hour intervals [mm/h]',
+              Name: 'GDPS.DIAG_NW_PT1H',
+              isLeaf: true,
+              isTemporal: true,
+              opacity: 0.85,
+            },
+            {
+              Title: 'GDPS.ETA - Sea level pressure (contour) [Pa]',
+              Name: 'GDPS.ETA_PN',
+              isLeaf: true,
+              isTemporal: true,
+              opacity: 1,
+              legendDisplayed: false,
+            },
+            {
+              Title:
+                'GDPS.ETA - Thickness between 1000mb and 500mb (contour) [m]',
+              Name: 'GDPS.ETA_DZ-CONTOUR',
+              isLeaf: true,
+              isTemporal: true,
+              opacity: 1,
+              legendDisplayed: false,
+            },
+          ],
+        },
+        {
           Title_en: 'Probability of Thunderstorm',
           Title_fr: "Probabilité d'orage",
           Name: 'Probability of Thunderstorm',

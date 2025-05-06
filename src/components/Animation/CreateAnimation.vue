@@ -504,7 +504,7 @@ export default {
 
       canvasTxt.drawText(
         context,
-        textBox.textContent,
+        textBox.innerText.replace('\n', ' '),
         offsetLeft + 5,
         offsetTop + 2,
         textBoxWidth - 8,
@@ -848,7 +848,7 @@ export default {
             ctx,
             timeLayer.title.slice(0, 2),
             0.01 * infoCanvas.width,
-            hPos - 6,
+            hPos - 10,
             widths[0],
             30,
           )
