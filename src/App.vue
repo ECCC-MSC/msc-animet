@@ -61,6 +61,12 @@ export default {
 html {
   overflow-y: hidden !important;
 }
+@-moz-document url-prefix() {
+  * {
+    scrollbar-width: thin !important;
+    scrollbar-color: #99ddff transparent !important;
+  }
+}
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;

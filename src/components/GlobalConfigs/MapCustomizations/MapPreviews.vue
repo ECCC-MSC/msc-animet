@@ -1105,7 +1105,6 @@ export default {
   gap: 0;
   max-width: calc(100% + 4px);
   margin: 0 auto;
-  max-height: 400px;
   overflow-y: auto;
   padding-right: 8px;
   margin-right: -4px;
@@ -1113,13 +1112,13 @@ export default {
   padding-left: 2px;
 }
 
-@media (max-height: 600px) {
+@media (max-height: 730px) {
   .map-previews-grid {
     max-height: calc(100vh - 52px - 102px - 10px);
   }
 }
 
-@media (max-width: 959px) and (max-height: 600px) {
+@media (max-width: 959px) and (max-height: 730px) {
   .map-previews-grid {
     max-height: calc(100vh - 94px - 102px - 10px);
   }
