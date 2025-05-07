@@ -197,6 +197,7 @@ export default {
               isTemporal: true,
               opacity: 1,
               legendDisplayed: false,
+              currentStyle: 'SeaLevelPressure_4mb',
             },
             {
               Title:
