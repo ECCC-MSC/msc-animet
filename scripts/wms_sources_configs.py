@@ -35,33 +35,30 @@ wms_sources = {
     "ECMWF": {
         "url": "https://eccharts.ecmwf.int/wms/?token=public",
         "version": "1.3.0",
-        "no_translations": True,
         "display": True,
     },
-    "NASA": {
-        "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
-        "version": "1.3.0",
-        "ref_time": "REFERENCE_TIME",
-        "no_translations": True,
-        "display": True,
-    },
-    "Gebco": {
-        "url": "https://wms.gebco.net/mapserv",
-        "version": "1.3.0",
-        "no_translations": True,
-        "display": True,
-    },
-    "NOAA-Nowcoast": {
+    "NOAA - nowCOAST": {
         "url": "https://nowcoast.noaa.gov/geoserver/ows",
         "version": "1.3.0",
         "query_pattern": "https://nowcoast.noaa.gov/geoserver{LAYER}/ows",
         "no_translations": True,
         "display": True,
     },
-    "NOAA-NCEP": {
+    "NOAA - NCEP": {
         "url": "https://opengeo.ncep.noaa.gov/geoserver/ows",
         "version": "1.3.0",
         "query_pattern": "https://opengeo.ncep.noaa.gov/geoserver{LAYER}/ows",
+        "no_translations": True,
+        "display": True,
+    },
+    "NASA": {
+        "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+        "version": "1.3.0",
+        "display": True,
+    },
+    "GEBCO": {
+        "url": "https://wms.gebco.net/mapserv",
+        "version": "1.3.0",
         "no_translations": True,
         "display": True,
     },
@@ -71,10 +68,9 @@ wms_sources = {
         "version": "1.3.0",
         "display": True,
     },
-    "ServicesCarto": {
+    "MRNFTerritories": {
         "url": "https://servicescarto.mern.gouv.qc.ca/pes/services/Territoire/SDA_WMS/MapServer/WmsServer",
         "version": "1.3.0",
-        "no_translations": True,
         "display": True,
     }
 }
