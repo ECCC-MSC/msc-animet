@@ -29,22 +29,22 @@ wms_sources = {
     "WeatherDev": {
         "url": os.environ.get("GEOMET_WEATHER_DEV_URL", default=""),
         "version": "1.3.0",
-        "display": False,
+        "display": os.environ.get("ANIMET_NIGHTLY", default=False),
     },
     "ClimateDev": {
         "url": os.environ.get("GEOMET_CLIMATE_DEV_URL", default=""),
         "version": "1.3.0",
-        "display": False,
+        "display": os.environ.get("ANIMET_NIGHTLY", default=False),
     },
     "WeatherStage": {
         "url": os.environ.get("GEOMET_WEATHER_STAGE_URL", default=""),
         "version": "1.3.0",
-        "display": False,
+        "display": os.environ.get("ANIMET_NIGHTLY", default=False),
     },
     "ClimateStage": {
         "url": os.environ.get("GEOMET_CLIMATE_STAGE_URL", default=""),
         "version": "1.3.0",
-        "display": False,
+        "display": os.environ.get("ANIMET_NIGHTLY", default=False),
     },
     "MapProxy": {
         "url": os.environ.get("GEOMET_MAPPROXY_NIGHTLY_URL", default=""),
