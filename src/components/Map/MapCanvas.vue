@@ -246,9 +246,41 @@ export default {
       if (locExtent.length === 5) {
         rotation = locExtent.pop()
       }
+
       const currentView = this.$mapCanvas.mapObj.getView()
-      currentView.setRotation(rotation)
-      currentView.fit(locExtent, { size: this.$mapCanvas.mapObj.getSize() })
+
+      if (rotation !== 0) {
+        const centerX = (locExtent[0] + locExtent[2]) / 2
+        const centerY = (locExtent[1] + locExtent[3]) / 2
+
+        const width = locExtent[2] - locExtent[0]
+        const height = locExtent[3] - locExtent[1]
+
+        const cos = Math.abs(Math.cos(rotation))
+        const sin = Math.abs(Math.sin(rotation))
+
+        const originalWidth =
+          (width * cos - height * sin) / (cos * cos - sin * sin)
+        const originalHeight =
+          (height * cos - width * sin) / (cos * cos - sin * sin)
+
+        // Create the unrotated extent
+        const unrotatedExtent = [
+          centerX - originalWidth / 2,
+          centerY - originalHeight / 2,
+          centerX + originalWidth / 2,
+          centerY + originalHeight / 2,
+        ]
+
+        // First set rotation to 0, fit to unrotated extent, then apply rotation
+        currentView.setRotation(0)
+        currentView.fit(unrotatedExtent, {
+          size: this.$mapCanvas.mapObj.getSize(),
+        })
+        currentView.setRotation(rotation)
+      } else {
+        currentView.fit(locExtent, { size: this.$mapCanvas.mapObj.getSize() })
+      }
     },
     onKeyDown(event) {
       if (event.key === 'Delete') {

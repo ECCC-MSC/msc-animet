@@ -368,6 +368,14 @@ export default {
               isTemporal: true,
               opacity: 1,
             },
+            {
+              Title: 'Wildfire hotspots ingested by RAQDPS',
+              Name: 'WildfireHotspots',
+              isLeaf: true,
+              isTemporal: false,
+              opacity: 0.8,
+              legendDisplayed: false,
+            },
           ],
         },
         {
