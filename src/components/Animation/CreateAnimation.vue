@@ -426,51 +426,60 @@ export default {
     },
     addLegend(mapCanvas, mapLegend, rgbObject) {
       const context = mapCanvas.getContext('2d')
-      let animationRect = document.getElementById('animation-rect')
-      const ratioH = (animationRect.offsetHeight - 8) / mapCanvas.height
-      const ratioW = (animationRect.offsetWidth - 8) / mapCanvas.width
-      let borderWidth = 0
-      if (this.colorBorder) {
-        borderWidth = 2
-      }
-      const offsetLeft =
-        (mapLegend.offsetParent.offsetLeft - animationRect.offsetLeft) /
-          ratioW +
-        borderWidth -
-        4
-      const offsetTop =
-        50 +
-        (mapLegend.offsetParent.offsetTop -
-          animationRect.offsetTop -
-          (50 / this.currentAspect[this.currentResolution].height) *
-            animationRect.offsetHeight) /
-          ratioH +
-        borderWidth -
-        4
-      const legendWidth = mapLegend.clientWidth / ratioW
-      const legendHeight =
-        ((mapLegend.naturalHeight / mapLegend.naturalWidth) *
-          mapLegend.clientWidth) /
-        ratioH
-      context.drawImage(
-        mapLegend,
-        offsetLeft,
-        offsetTop,
-        legendWidth,
-        legendHeight,
-      ) // drawImage(image, dx, dy, dWidth, dHeight)
-      if (this.colorBorder) {
-        const borderWidth = 2
-        const borderColor = `rgb(${rgbObject.r}, ${rgbObject.g}, ${rgbObject.b})`
-        context.strokeStyle = borderColor
-        context.lineWidth = borderWidth
 
-        context.strokeRect(
-          offsetLeft - borderWidth / 2,
-          offsetTop - borderWidth / 2,
-          legendWidth + borderWidth,
-          legendHeight + borderWidth,
-        )
+      context.save()
+      context.setTransform(1, 0, 0, 1, 0, 0)
+      try {
+        let animationRect = document.getElementById('animation-rect')
+        const ratioH = (animationRect.offsetHeight - 8) / mapCanvas.height
+        const ratioW = (animationRect.offsetWidth - 8) / mapCanvas.width
+        let borderWidth = 0
+        if (this.colorBorder) {
+          borderWidth = 2
+        }
+        const offsetLeft =
+          (mapLegend.offsetParent.offsetLeft - animationRect.offsetLeft) /
+            ratioW +
+          borderWidth -
+          4
+        const offsetTop =
+          50 +
+          (mapLegend.offsetParent.offsetTop -
+            animationRect.offsetTop -
+            (50 / this.currentAspect[this.currentResolution].height) *
+              animationRect.offsetHeight) /
+            ratioH +
+          borderWidth -
+          4
+        const legendWidth = mapLegend.clientWidth / ratioW
+        const legendHeight =
+          ((mapLegend.naturalHeight / mapLegend.naturalWidth) *
+            mapLegend.clientWidth) /
+          ratioH
+        context.drawImage(
+          mapLegend,
+          offsetLeft,
+          offsetTop,
+          legendWidth,
+          legendHeight,
+        ) // drawImage(image, dx, dy, dWidth, dHeight)
+        if (this.colorBorder) {
+          const borderWidth = 2
+          const borderColor = `rgb(${rgbObject.r}, ${rgbObject.g}, ${rgbObject.b})`
+          context.strokeStyle = borderColor
+          context.lineWidth = borderWidth
+
+          context.strokeRect(
+            offsetLeft - borderWidth / 2,
+            offsetTop - borderWidth / 2,
+            legendWidth + borderWidth,
+            legendHeight + borderWidth,
+          )
+        }
+      } catch (error) {
+        console.warn('Failed to draw legend:', error.message)
+      } finally {
+        context.restore()
       }
     },
     addTextBox(mapCanvas, textBox) {
@@ -492,6 +501,10 @@ export default {
       const textBoxHeight = mapTextBox.height / ratioH
 
       const context = mapCanvas.getContext('2d')
+
+      context.save()
+      context.setTransform(1, 0, 0, 1, 0, 0)
+
       canvasTxt.fontSize = 16 / Math.max(ratioH, ratioW)
       context.font = canvasTxt.fontSize + 'px sans-serif'
       context.fillStyle = 'rgba(255,255,255,0.65)'
@@ -513,6 +526,8 @@ export default {
 
       canvasTxt.vAlign = 'middle'
       canvasTxt.lineHeight = null
+
+      context.restore()
     },
     async stitchCanvases(mapCanvas) {
       return new Promise((resolve) => {
@@ -696,7 +711,11 @@ export default {
           this.mapTimeSettings.Step,
         )
         let timeMetrics = ctx.measureText(timeLabel)
-
+        if (this.timeFormat === false) {
+          const largestUTC =
+            this.$i18n.locale === 'fr' ? 'Sam. 00:00Z' : 'Wed 00:00Z'
+          timeMetrics = ctx.measureText(largestUTC)
+        }
         canvasTxt.fontSize = dateFont
         ctx.font = canvasTxt.fontSize + 'px sans-serif'
         let dateMetrics = ctx.measureText(dateLabel)
@@ -1087,6 +1106,9 @@ export default {
     },
     textBoxes() {
       return this.store.textBoxes
+    },
+    timeFormat() {
+      return this.store.getTimeFormat
     },
     layersVisible() {
       let visibleLayers = this.$mapLayers.arr.filter((l) => {

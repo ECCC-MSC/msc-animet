@@ -132,13 +132,49 @@ export default {
       const extent = mapView.calculateExtent(size)
       const rotation = mapView.getRotation()
 
-      this.$animationCanvas.mapObj.getView().setRotation(rotation)
-      this.$animationCanvas.mapObj.getView().fit(extent, {
-        size: [
-          this.currentAspect[this.currentResolution].width,
-          this.currentAspect[this.currentResolution].height,
-        ],
-      })
+      const animationView = this.$animationCanvas.mapObj.getView()
+
+      if (rotation !== 0) {
+        const centerX = (extent[0] + extent[2]) / 2
+        const centerY = (extent[1] + extent[3]) / 2
+
+        const width = extent[2] - extent[0]
+        const height = extent[3] - extent[1]
+
+        const cos = Math.abs(Math.cos(rotation))
+        const sin = Math.abs(Math.sin(rotation))
+
+        const originalWidth =
+          (width * cos - height * sin) / (cos * cos - sin * sin)
+        const originalHeight =
+          (height * cos - width * sin) / (cos * cos - sin * sin)
+
+        // Create the unrotated extent
+        const unrotatedExtent = [
+          centerX - originalWidth / 2,
+          centerY - originalHeight / 2,
+          centerX + originalWidth / 2,
+          centerY + originalHeight / 2,
+        ]
+
+        // First set rotation to 0, fit to unrotated extent, then apply rotation
+        animationView.setRotation(0)
+        animationView.fit(unrotatedExtent, {
+          size: [
+            this.currentAspect[this.currentResolution].width,
+            this.currentAspect[this.currentResolution].height,
+          ],
+        })
+        animationView.setRotation(rotation)
+      } else {
+        animationView.setRotation(rotation)
+        animationView.fit(extent, {
+          size: [
+            this.currentAspect[this.currentResolution].width,
+            this.currentAspect[this.currentResolution].height,
+          ],
+        })
+      }
     },
     coloredBasemapHandler() {
       if (this.rgb.length === 0) return
