@@ -112,16 +112,24 @@ export default {
       isVisible,
       style,
       legendDisplayed,
+      source,
     ) {
-      var baseURL
-      const sourceContainingLayerName = this.findKeyInLocaleFiles(layerName)
-      if (sourceContainingLayerName) {
-        const configName = Object.keys(this.wmsSources).find(
-          (key) => key.toLowerCase() === sourceContainingLayerName,
-        )
-        baseURL = this.wmsSources[configName]['url']
-      } else {
-        return
+      let baseURL
+      if (source) {
+        if (Object.keys(this.wmsSources).includes(source)) {
+          baseURL = this.wmsSources[source]['url']
+        }
+      }
+      if (!baseURL) {
+        const sourceContainingLayerName = this.findKeyInLocaleFiles(layerName)
+        if (sourceContainingLayerName) {
+          const configName = Object.keys(this.wmsSources).find(
+            (key) => key.toLowerCase() === sourceContainingLayerName,
+          )
+          baseURL = this.wmsSources[configName]['url']
+        } else {
+          return
+        }
       }
       if (this.layerCount === 0) {
         if (this.play) {

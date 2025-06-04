@@ -368,7 +368,7 @@ export default {
         source: new ImageWMS({
           format: 'image/png',
           url: wmsSource,
-          params: { LAYERS: layerData.Name },
+          params: { LAYERS: layerData.Name.split(' ')[0] },
           transition: 0,
           crossOrigin: 'Anonymous',
           ratio: 1,
@@ -415,8 +415,18 @@ export default {
 
       imageLayer.getSource().on('imageloaderror', (e) => {
         if (this.isAnimating && this.playState !== 'play') return
+        const url = e.target.getUrl()
+        const [key, values] = Object.entries(this.wmsSources).find(
+          ([key, value]) => value.url === url,
+        )
+        let layerName
+        if (values['source_validation']) {
+          layerName = `${e.target.getParams()['LAYERS']} ${key}`
+        } else {
+          layerName = e.target.getParams()['LAYERS']
+        }
         const layer = this.$mapLayers.arr.find(
-          (l) => l.get('layerName') === e.target.getParams()['LAYERS'],
+          (l) => l.get('layerName') === layerName,
         )
         if (layer !== undefined)
           this.emitter.emit('loadingError', { layer: layer, error: e })
@@ -554,6 +564,9 @@ export default {
     },
     textBoxes() {
       return this.store.textBoxes
+    },
+    wmsSources() {
+      return this.store.getWmsSources
     },
     contextMenuItems() {
       return [

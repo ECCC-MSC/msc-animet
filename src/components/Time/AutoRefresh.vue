@@ -65,7 +65,7 @@ export default {
                 SERVICE: 'WMS',
                 VERSION: '1.3.0',
                 REQUEST: 'GetCapabilities',
-                LAYERS: layerName,
+                LAYERS: layerName.split(' ')[0],
                 t: new Date().getTime(),
               },
             })
@@ -74,7 +74,7 @@ export default {
                 response.data,
                 'text/xml',
               )
-              const layerName = layer.get('layerXmlName')
+              const layerName = layer.get('layerXmlName').split(' ')[0]
               const xpathExpression = `//wms:Layer[not(.//wms:Layer) and wms:Name='${layerName}']`
               function nsResolver(prefix) {
                 const ns = {

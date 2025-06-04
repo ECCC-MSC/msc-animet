@@ -5,15 +5,18 @@
         <arrow-controls action="first" class="button_group"></arrow-controls>
         <arrow-controls action="previous" class="button_group"></arrow-controls>
       </div>
-      <span class="text-wrap">
-        {{
-          localeDateFormat(
-            mapTimeSettings.Extent[mapTimeSettings.DateIndex],
-            mapTimeSettings.Step,
-            dateFormat,
-          )
-        }}
-      </span>
+      <v-tooltip location="top">
+        <template v-slot:activator="{ props }">
+          <span class="text-wrap" v-bind="props">{{
+            localeDateFormat(
+              mapTimeSettings.Extent[mapTimeSettings.DateIndex],
+              mapTimeSettings.Step,
+              dateFormat,
+            )
+          }}</span>
+        </template>
+        <span>{{ $t('Valid') }}</span>
+      </v-tooltip>
       <div>
         <arrow-controls action="next" class="button_group"></arrow-controls>
         <arrow-controls action="last" class="button_group"></arrow-controls>

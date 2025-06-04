@@ -86,7 +86,8 @@ export default {
         })
         let isLayerListShown = !(
           visibleLayers.length === 1 &&
-          this.animationTitle === this.t(visibleLayers[0].get('layerName'))
+          this.animationTitle ===
+            this.t(visibleLayers[0].get('layerName').split(' ')[0])
         )
         // Must be divisible by 2 otherwise encoder.initialize() will fail
         let ctx_h = 40
@@ -105,7 +106,7 @@ export default {
         if (isLayerListShown) {
           ctx_h = 0
           for (let i = visibleLayers.length - 1; i >= 0; i--) {
-            let layerTitle = `• ${this.t(visibleLayers[i].get('layerName'))}`
+            let layerTitle = `• ${this.t(visibleLayers[i].get('layerName').split(' ')[0])}`
             let fontSize = baseFont
             ctx.font = fontSize + 'px sans-serif'
             metrics = ctx.measureText(layerTitle)
