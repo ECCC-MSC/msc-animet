@@ -1,6 +1,6 @@
 # Release Notes
 
-## Version 2.3.0 (2025-05-22)
+## Version 2.3.0 (2025-06-05)
 
 ### New Features
 - Map Presets: Add groups of commonly used layers
