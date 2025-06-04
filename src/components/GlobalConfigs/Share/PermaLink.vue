@@ -81,6 +81,9 @@ export default {
     this.channel.close()
   },
   computed: {
+    activeBasemap() {
+      return this.store.getBasemap
+    },
     activeLegends() {
       return this.store.getActiveLegends
     },
@@ -113,9 +116,6 @@ export default {
     },
     showGraticules() {
       return this.store.getShowGraticules
-    },
-    activeBasemap() {
-      return this.store.getBasemap
     },
   },
   methods: {
@@ -158,18 +158,20 @@ export default {
             let legendDisplayed = this.activeLegends.includes(layerName)
               ? '1'
               : '0'
-            permalinktemp +=
-              layerName +
-              ';' +
-              layerOpacity +
-              ';' +
-              isSnapped +
-              ';' +
-              isVisible +
-              ';' +
-              layerStyle +
-              ';' +
-              legendDisplayed
+
+            const [name, source] = layerName.split(' ')
+            const layerParams = [
+              name,
+              layerOpacity,
+              isSnapped,
+              isVisible,
+              layerStyle,
+              legendDisplayed,
+            ]
+            if (source) {
+              layerParams.push(source)
+            }
+            permalinktemp += layerParams.join(';')
 
             if (i < this.$mapLayers.arr.length - 1) {
               permalinktemp += ','

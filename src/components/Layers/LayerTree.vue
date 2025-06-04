@@ -57,7 +57,11 @@
                     >
                       {{
                         $mapLayers.arr.some(
-                          (l) => l.get('layerName') === node.Name,
+                          (l) =>
+                            l.get('layerName') === node.Name &&
+                            Object.values(wmsSources)[l.get('layerWmsIndex')][
+                              'url'
+                            ] === currentWmsSource,
                         )
                           ? 'mdi-minus'
                           : 'mdi-plus'
@@ -83,7 +87,11 @@
                         :class="{
                           'title-leaf': node.isLeaf,
                           'text-primary': $mapLayers.arr.some(
-                            (l) => l.get('layerName') === node.Name,
+                            (l) =>
+                              l.get('layerName') === node.Name &&
+                              Object.values(wmsSources)[l.get('layerWmsIndex')][
+                                'url'
+                              ] === currentWmsSource,
                           ),
                         }"
                       >
@@ -173,7 +181,8 @@ export default {
       if (this.playState === 'play') {
         this.emitter.emit('toggleAnimation')
       }
-      if (layer.isLeaf && !this.addedLayers.includes(layer.Name)) {
+      if (layer.isLeaf) {
+        layer.Name = layer.Name.split(' ')[0]
         let source = Object.hasOwn(layer, 'wmsSource')
           ? layer.wmsSource
           : this.currentWmsSource
@@ -181,111 +190,112 @@ export default {
         layer.wmsIndex = sources.findIndex(
           (key) => this.wmsSources[key]['url'] === source,
         )
-        if (
-          Object.hasOwn(
-            this.wmsSources[sources[layer.wmsIndex]],
-            'query_pattern',
-          )
-        ) {
-          let pattern =
-            this.wmsSources[sources[layer.wmsIndex]]['query_pattern']
-          const querySplits = layer.Name.split(':')
-          let layerPattern = ''
-          for (let i = 0; i < querySplits.length; i++) {
-            layerPattern += `/${querySplits[i]}`
-          }
-          source = pattern.replace('{LAYER}', layerPattern)
-          layer.xmlName = querySplits[querySplits.length - 1]
-        } else {
-          layer.xmlName = layer.Name
+        const sourceValues = this.wmsSources[sources[layer.wmsIndex]]
+        if (sourceValues['source_validation']) {
+          layer.Name = `${layer.Name} ${sources[layer.wmsIndex]}`
         }
-        this.addedLayers.push(layer.Name)
-        let layerData = null
-        const api = axios.create({
-          baseURL: source,
-          params: {
-            SERVICE: 'WMS',
-            VERSION: '1.3.0',
-            REQUEST: 'GetCapabilities',
-            LAYERS: layer.Name,
-            t: new Date().getTime(),
-          },
-        })
-        await api.get().then((response) => {
-          const xmlDoc = new DOMParser().parseFromString(
-            response.data,
-            'text/xml',
-          )
-          const layerName = layer.xmlName
-          const xpathExpression = `//wms:Layer[not(.//wms:Layer) and wms:Name='${layerName}']`
-          function nsResolver(prefix) {
-            const ns = {
-              wms: 'http://www.opengis.net/wms',
-              xlink: 'http://www.w3.org/1999/xlink',
+        if (!this.addedLayers.includes(layer.Name)) {
+          if (Object.hasOwn(sourceValues, 'query_pattern')) {
+            let pattern = sourceValues['query_pattern']
+            const querySplits = layer.Name.split(':')
+            let layerPattern = ''
+            for (let i = 0; i < querySplits.length; i++) {
+              layerPattern += `/${querySplits[i]}`
             }
-            return ns[prefix] || null
-          }
-          const xpathResult = xmlDoc.evaluate(
-            xpathExpression,
-            xmlDoc,
-            nsResolver,
-            XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
-            null,
-          )
-          layerData = {}
-          if (xpathResult.snapshotLength > 0) {
-            const node = xpathResult.snapshotItem(0)
-            layerData.Name = node.getElementsByTagName('Name')[0].textContent
-            layerData.Title = node.getElementsByTagName('Title')[0].textContent
-
-            const dimension = {
-              Dimension_time: '',
-              Dimension_time_default: '',
-              Dimension_ref_time: '',
-            }
-            const timeDimension = node.getElementsByTagName('Dimension')
-            for (let i = 0; i < timeDimension.length; i++) {
-              const dim = timeDimension[i]
-              if (dim.getAttribute('name') === 'time') {
-                dimension.Dimension_time = dim.textContent
-                dimension.Dimension_time_default = dim.getAttribute('default')
-              } else if (dim.getAttribute('name') === 'reference_time') {
-                dimension.Dimension_ref_time = dim.textContent
-              }
-            }
-            layerData.Dimension = dimension
-
-            layerData.Style = []
-            const styles = node.getElementsByTagName('Style')
-            for (let i = 0; i < styles.length; i++) {
-              const style = styles[i]
-              layerData.Style.push({
-                Name: style.getElementsByTagName('Name')[0].textContent,
-                Title: style.getElementsByTagName('Title')[0].textContent,
-                LegendURL: style
-                  .getElementsByTagName('LegendURL')[0]
-                  .getElementsByTagName('OnlineResource')[0]
-                  .getAttributeNS('http://www.w3.org/1999/xlink', 'href'),
-              })
-            }
+            source = pattern.replace('{LAYER}', layerPattern)
+            layer.xmlName = querySplits[querySplits.length - 1]
           } else {
-            this.addedLayers = this.addedLayers.filter(
-              (added) => added !== layer.Name,
-            )
-            this.emitter.emit('layerQueryFailure')
-            throw new Error(`Query for ${layer.Name} failed`)
+            layer.xmlName = layer.Name
           }
-        })
-        layerData = { ...layerData, ...layer }
-        layerData.isTemporal = layerData.Dimension.Dimension_time !== ''
-        this.emitter.emit('buildLayer', { layerData, source, autoPlay })
-      } else if (
-        this.$mapLayers.arr.some((l) => l.get('layerName') === layer.Name)
-      ) {
-        this.emitter.emit(
-          'removeLayer',
-          this.$mapLayers.arr.find((l) => l.get('layerName') === layer.Name),
-        )
+          this.addedLayers.push(layer.Name)
+          let layerData = null
+          const api = axios.create({
+            baseURL: source,
+            params: {
+              SERVICE: 'WMS',
+              VERSION: '1.3.0',
+              REQUEST: 'GetCapabilities',
+              LAYERS: layer.Name.split(' ')[0],
+              t: new Date().getTime(),
+            },
+          })
+          await api.get().then((response) => {
+            const xmlDoc = new DOMParser().parseFromString(
+              response.data,
+              'text/xml',
+            )
+            const layerName = layer.xmlName.split(' ')[0]
+            const xpathExpression = `//wms:Layer[not(.//wms:Layer) and wms:Name='${layerName}']`
+            function nsResolver(prefix) {
+              const ns = {
+                wms: 'http://www.opengis.net/wms',
+                xlink: 'http://www.w3.org/1999/xlink',
+              }
+              return ns[prefix] || null
+            }
+            const xpathResult = xmlDoc.evaluate(
+              xpathExpression,
+              xmlDoc,
+              nsResolver,
+              XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+              null,
+            )
+            layerData = {}
+            if (xpathResult.snapshotLength > 0) {
+              const node = xpathResult.snapshotItem(0)
+              layerData.Name = node.getElementsByTagName('Name')[0].textContent
+              layerData.Title =
+                node.getElementsByTagName('Title')[0].textContent
+
+              const dimension = {
+                Dimension_time: '',
+                Dimension_time_default: '',
+                Dimension_ref_time: '',
+              }
+              const timeDimension = node.getElementsByTagName('Dimension')
+              for (let i = 0; i < timeDimension.length; i++) {
+                const dim = timeDimension[i]
+                if (dim.getAttribute('name') === 'time') {
+                  dimension.Dimension_time = dim.textContent
+                  dimension.Dimension_time_default = dim.getAttribute('default')
+                } else if (dim.getAttribute('name') === 'reference_time') {
+                  dimension.Dimension_ref_time = dim.textContent
+                }
+              }
+              layerData.Dimension = dimension
+
+              layerData.Style = []
+              const styles = node.getElementsByTagName('Style')
+              for (let i = 0; i < styles.length; i++) {
+                const style = styles[i]
+                layerData.Style.push({
+                  Name: style.getElementsByTagName('Name')[0].textContent,
+                  Title: style.getElementsByTagName('Title')[0].textContent,
+                  LegendURL: style
+                    .getElementsByTagName('LegendURL')[0]
+                    .getElementsByTagName('OnlineResource')[0]
+                    .getAttributeNS('http://www.w3.org/1999/xlink', 'href'),
+                })
+              }
+            } else {
+              this.addedLayers = this.addedLayers.filter(
+                (added) => added !== layer.Name,
+              )
+              this.emitter.emit('layerQueryFailure')
+              throw new Error(`Query for ${layer.Name} failed`)
+            }
+          })
+          layerData = { ...layerData, ...layer }
+          layerData.isTemporal = layerData.Dimension.Dimension_time !== ''
+          this.emitter.emit('buildLayer', { layerData, source, autoPlay })
+        } else if (
+          this.$mapLayers.arr.some((l) => l.get('layerName') === layer.Name)
+        ) {
+          this.emitter.emit(
+            'removeLayer',
+            this.$mapLayers.arr.find((l) => l.get('layerName') === layer.Name),
+          )
+        }
       }
     },
     filterCallbackFunction(array, fn, searchLength) {
