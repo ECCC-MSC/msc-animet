@@ -1,5 +1,42 @@
 # Release Notes
 
+## Version 2.3.0 (2025-05-22)
+
+### New Features
+- Map Presets: Add groups of commonly used layers
+- Simplified Basemap and Overlays: New simplified world boundaries (including Canadian provinces/territories and U.S. states) to use as a basemap or overlay
+- Map Markup Tools: Highlight or annotate your map with textboxes and shapes
+- New WMS Sources: Additional third-party WMS services, including those from ECMWF, NASA, NOAA-nowCOAST, NOAA-NCEP, and Quebec’s Ministry of Energy and Natural Resources CartoService
+
+### Enhancements
+- Upgraded to use Vue 3 JS framework
+- Upgraded Vuetify
+- Added new coordinates display for GetFeatureInfo
+- Improved styling for GetFeatureInfo
+- Improved layer tree sorting and filtering
+- Added debouncing for smoother layer tree searches
+- Added playback auto-pause
+- Playback controls now appear in the collapsed controller
+- Added keyboard navigation for moving between timesteps
+- Added persistent info tooltip when adding new layers or changing the map time
+- Added tooltip for Valid time/Heure valide
+- Mobile improvements
+- Improved handling of WMS sources with time dimensions comprised of multiple time intervals
+- Added new play query parameter to permalinks for automatically starting animation loop on page load
+- Added source_validation for internal validation purposes
+- Other minor code enhacements
+
+### Removal
+- Removed matamo analytics
+
+### Bug Fixes
+- Fixed Dark Mode, setPosition errors and side panel breaking on spacebar toggle
+- Fixed a GetFeatureInfo bug
+- Fixed some time edge cases, layer tree failure and range slider styling
+- Fixed nightly/internal deployment scripts and Docker build
+- Fixed invalid CRS handling and finicky auto tab switch
+- Fixed storage for 4-displays
+
 ## Version 2.2.2 (2024-10-16)
 
 ### Bug Fixes
