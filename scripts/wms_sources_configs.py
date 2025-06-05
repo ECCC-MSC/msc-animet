@@ -9,12 +9,12 @@ wms_sources = {
     "Weather": {
         "url": "https://geo.weather.gc.ca/geomet",
         "version": "1.3.0",
-        "display": not os.environ.get("ANIMET_NIGHTLY", default=False),
+        "display": True,
     },
     "Climate": {
         "url": "https://geo.weather.gc.ca/geomet-climate",
         "version": "1.3.0",
-        "display": not os.environ.get("ANIMET_NIGHTLY", default=False),
+        "display": True,
     },
     "WeatherNightly": {
         "url": os.environ.get("GEOMET_WEATHER_NIGHTLY_URL", default=""),
