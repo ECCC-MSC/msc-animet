@@ -5,11 +5,13 @@
         <v-card flat>
           <v-card-title class="pt-2 pb-0 pl-3 pr-2">
             {{
-              $t('WmsSourceTitle', {
-                wmsSource: sourceParameters.no_translations
-                  ? wmsSource
-                  : $t(wmsSource),
-              })
+              wmsSource === 'Presets'
+                ? $t('Presets')
+                : $t('WmsSourceTitle', {
+                    wmsSource: sourceParameters.no_translations
+                      ? wmsSource
+                      : $t(wmsSource),
+                  })
             }}
           </v-card-title>
           <v-card-text class="pt-2 pb-2 pl-3 pr-2">
