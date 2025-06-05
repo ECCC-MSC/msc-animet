@@ -137,6 +137,7 @@ const handleMultiAdd = (node) => {
       const tempNode = {
         Name: layer.get('layerName'),
         isLeaf: true,
+        wmsSource: layer.getSource().getUrl(),
       }
       emit('request', tempNode)
     }
