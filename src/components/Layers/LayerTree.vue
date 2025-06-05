@@ -188,7 +188,7 @@ export default {
           : this.currentWmsSource
         const sources = Object.keys(this.wmsSources)
         layer.wmsIndex = sources.findIndex(
-          (key) => this.wmsSources[key]['url'] === source,
+          (key) => key !== 'Presets' && this.wmsSources[key]['url'] === source,
         )
         const sourceValues = this.wmsSources[sources[layer.wmsIndex]]
         if (sourceValues['source_validation']) {
