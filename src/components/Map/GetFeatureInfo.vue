@@ -292,18 +292,20 @@ export default {
                       delete json.features[0].properties.value
                       index++
                     }
-                    feature.push({
-                      id: index,
-                      name: this.t('OtherProperties'),
-                      children: Object.entries(json.features[0].properties).map(
-                        ([key, value], childIndex) => {
+                    if (Object.keys(json.features[0].properties).length > 0) {
+                      feature.push({
+                        id: index,
+                        name: this.t('OtherProperties'),
+                        children: Object.entries(
+                          json.features[0].properties,
+                        ).map(([key, value], childIndex) => {
                           return {
                             id: `${index}-${childIndex}`,
                             name: `${key}: ${value}`,
                           }
-                        },
-                      ),
-                    })
+                        }),
+                      })
+                    }
                     index++
 
                     const item = {
