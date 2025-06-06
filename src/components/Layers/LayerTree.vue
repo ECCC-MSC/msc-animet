@@ -6,7 +6,7 @@
           <v-card-title class="pt-2 pb-0 pl-3 pr-2">
             {{
               wmsSource === 'Presets'
-                ? $t('Presets')
+                ? $t('AddPreset')
                 : $t('WmsSourceTitle', {
                     wmsSource: sourceParameters.no_translations
                       ? wmsSource
