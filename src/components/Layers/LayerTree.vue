@@ -60,7 +60,8 @@
                       {{
                         $mapLayers.arr.some(
                           (l) =>
-                            l.get('layerName') === node.Name &&
+                            l.get('layerName').split(' ')[0] ===
+                              node.Name.split(' ')[0] &&
                             Object.values(wmsSources)[l.get('layerWmsIndex')][
                               'url'
                             ] === currentWmsSource,
@@ -90,7 +91,8 @@
                           'title-leaf': node.isLeaf,
                           'text-primary': $mapLayers.arr.some(
                             (l) =>
-                              l.get('layerName') === node.Name &&
+                              l.get('layerName').split(' ')[0] ===
+                                node.Name.split(' ')[0] &&
                               Object.values(wmsSources)[l.get('layerWmsIndex')][
                                 'url'
                               ] === currentWmsSource,
@@ -104,7 +106,9 @@
                         }}
                         <template v-if="node.isLeaf">
                           <br />
-                          <span class="subtitle">{{ node.Name }}</span>
+                          <span class="subtitle">{{
+                            node.Name.split(' ')[0]
+                          }}</span>
                         </template>
                       </span>
                     </template>
