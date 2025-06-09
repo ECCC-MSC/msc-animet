@@ -96,12 +96,6 @@ export default {
                 "Name": "WildfireHotspots",
                 "isLeaf": true,
                 "isTemporal": false
-              },
-              {
-                "Title": "Wildfire hotspots ingested by RAQDPS-FireWork",
-                "Name": "FIREWORK.HOTSPOTS",
-                "isLeaf": true,
-                "isTemporal": false
               }
             ]
           },
@@ -111,13 +105,13 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "Concentration: entire column PM2.5 [kg/m2]",
+                "Title": "Concentration: entire column PM2.5 [kg/m\u00b2]",
                 "Name": "RAQDPS.EATM_PM2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "Concentration: entire column PM10 [kg/m2]",
+                "Title": "Concentration: entire column PM10 [kg/m\u00b2]",
                 "Name": "RAQDPS.EATM_PM10",
                 "isLeaf": true,
                 "isTemporal": true
@@ -141,13 +135,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "Concentration: surface PM2.5 [kg/m3]",
+                "Title": "Concentration: surface PM2.5 [kg/m\u00b3]",
                 "Name": "RAQDPS.SFC_PM2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "Concentration: surface PM10 [kg/m3]",
+                "Title": "Concentration: surface PM10 [kg/m\u00b3]",
                 "Name": "RAQDPS.SFC_PM10",
                 "isLeaf": true,
                 "isTemporal": true
@@ -183,6 +177,12 @@ export default {
                 "isTemporal": true
               }
             ]
+          },
+          {
+            "Title": "RAQDPS footprint",
+            "Name": "RAQDPS_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
           }
         ]
       },
@@ -276,6 +276,18 @@ export default {
                 "isTemporal": true
               }
             ]
+          },
+          {
+            "Title": "RAQDPS-FW footprint",
+            "Name": "RAQDPS-FW_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "RAQDPS-FW footprint (Cumulative Effects)",
+            "Name": "RAQDPS-FW.CE_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
           }
         ]
       },
@@ -501,14 +513,26 @@ export default {
                 "isTemporal": true
               }
             ]
+          },
+          {
+            "Title": "RDAQA footprint",
+            "Name": "RDAQA_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "RDAQA footprint (Cumulative Effects)",
+            "Name": "RDAQA.CE_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
           }
         ]
       }
     ]
   },
   {
-    "Title": "Canadian Land Data Assimilation System - National Surface and River Prediction System (CaLDAS-NSRPS) [2.5 km] [experimental]",
-    "Name": "Canadian Land Data Assimilation System - National Surface and River Prediction System (CaLDAS-NSRPS) [2.5 km] [experimental]",
+    "Title": "Canadian Land Data Assimilation System - National Surface and River Prediction System (CaLDAS-NSRPS) [2.5 km]",
+    "Name": "Canadian Land Data Assimilation System - National Surface and River Prediction System (CaLDAS-NSRPS) [2.5 km]",
     "isLeaf": false,
     "children": [
       {
@@ -589,6 +613,12 @@ export default {
             "isTemporal": true
           }
         ]
+      },
+      {
+        "Title": "CaLDAS-NSRPS footprint",
+        "Name": "CaLDAS-NSRPS_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
       }
     ]
   },
@@ -598,191 +628,2614 @@ export default {
     "isLeaf": false,
     "children": [
       {
-        "Title": "CanSIPS Products (3-month)",
-        "Name": "CanSIPS Products (3-month)",
+        "Title": "Forecast",
+        "Name": "Forecast",
         "isLeaf": false,
         "children": [
           {
-            "Title": "Probability of temperature above normal - Month 0-2 [%]",
-            "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P00M-P02M",
-            "isLeaf": true,
-            "isTemporal": false
+            "Title": "CanSIPS members",
+            "Name": "CanSIPS members",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "Air temperature at 2 m",
+                "Name": "Air temperature at 2 m",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 1 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem01",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 2 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem02",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 3 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem03",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 4 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem04",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 5 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem05",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 6 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem06",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 7 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem07",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 8 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem08",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 9 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem09",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 10 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem10",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 11 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem11",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 12 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem12",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 13 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem13",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 14 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem14",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 15 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem15",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 16 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem16",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 17 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem17",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 18 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem18",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 19 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem19",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 20 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem20",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 21 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem21",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 22 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem22",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 23 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem23",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 24 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem24",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 25 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem25",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 26 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem26",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 27 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem27",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 28 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem28",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 29 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem29",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 30 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem30",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 31 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem31",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 32 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem32",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 33 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem33",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 34 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem34",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 35 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem35",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 36 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem36",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 37 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem37",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 38 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem38",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 39 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem39",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 2 m above ground level - Member 40 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_2m_Mem40",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  }
+                ]
+              },
+              {
+                "Title": "Air temperature at 850 mb",
+                "Name": "Air temperature at 850 mb",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "Air temperature at 850 mb - Member 1 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem01",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 2 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem02",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 3 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem03",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 4 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem04",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 5 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem05",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 6 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem06",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 7 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem07",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 8 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem08",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 9 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem09",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 10 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem10",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 11 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem11",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 12 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem12",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 13 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem13",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 14 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem14",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 15 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem15",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 16 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem16",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 17 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem17",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 18 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem18",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 19 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem19",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 20 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem20",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 21 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem21",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 22 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem22",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 23 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem23",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 24 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem24",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 25 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem25",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 26 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem26",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 27 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem27",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 28 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem28",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 29 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem29",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 30 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem30",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 31 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem31",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 32 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem32",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 33 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem33",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 34 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem34",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 35 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem35",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 36 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem36",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 37 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem37",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 38 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem38",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 39 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem39",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Air temperature at 850 mb - Member 40 [\u00b0C]",
+                    "Name": "CanSIPS_100km_AirTemp_850mb_Mem40",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  }
+                ]
+              },
+              {
+                "Title": "Geopotential height at 500 mb",
+                "Name": "Geopotential height at 500 mb",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 1 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem01",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 2 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem02",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 3 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem03",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 4 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem04",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 5 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem05",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 6 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem06",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 7 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem07",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 8 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem08",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 9 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem09",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 10 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem10",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 11 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem11",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 12 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem12",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 13 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem13",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 14 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem14",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 15 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem15",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 16 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem16",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 17 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem17",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 18 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem18",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 19 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem19",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 20 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem20",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 21 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem21",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 22 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem22",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 23 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem23",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 24 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem24",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 25 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem25",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 26 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem26",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 27 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem27",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 28 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem28",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 29 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem29",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 30 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem30",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 31 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem31",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 32 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem32",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 33 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem33",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 34 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem34",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 35 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem35",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 36 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem36",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 37 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem37",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 38 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem38",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 39 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem39",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Geopotential height at 500 mb - Member 40 [gpm]",
+                    "Name": "CanSIPS_100km_GeopotentialHeight_500mb_Mem40",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  }
+                ]
+              },
+              {
+                "Title": "Precipitation rate",
+                "Name": "Precipitation rate",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "Surface precipitation rate - Member 1 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem01",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 2 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem02",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 3 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem03",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 4 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem04",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 5 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem05",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 6 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem06",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 7 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem07",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 8 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem08",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 9 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem09",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 10 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem10",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 11 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem11",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 12 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem12",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 13 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem13",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 14 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem14",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 15 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem15",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 16 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem16",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 17 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem17",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 18 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem18",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 19 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem19",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 20 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem20",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 21 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem21",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 22 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem22",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 23 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem23",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 24 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem24",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 25 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem25",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 26 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem26",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 27 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem27",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 28 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem28",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 29 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem29",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 30 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem30",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 31 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem31",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 32 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem32",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 33 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem33",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 34 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem34",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 35 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem35",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 36 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem36",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 37 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem37",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 38 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem38",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 39 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem39",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface precipitation rate - Member 40 [kg/(m\u00b2s)]",
+                    "Name": "CanSIPS_100km_PrecipRate_Mem40",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  }
+                ]
+              },
+              {
+                "Title": "Sea level pressure",
+                "Name": "Sea level pressure",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "Sea level pressure - Member 1 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem01",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 2 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem02",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 3 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem03",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 4 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem04",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 5 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem05",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 6 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem06",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 7 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem07",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 8 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem08",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 9 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem09",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 10 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem10",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 11 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem11",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 12 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem12",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 13 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem13",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 14 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem14",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 15 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem15",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 16 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem16",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 17 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem17",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 18 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem18",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 19 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem19",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 20 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem20",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 21 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem21",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 22 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem22",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 23 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem23",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 24 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem24",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 25 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem25",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 26 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem26",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 27 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem27",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 28 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem28",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 29 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem29",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 30 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem30",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 31 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem31",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 32 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem32",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 33 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem33",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 34 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem34",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 35 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem35",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 36 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem36",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 37 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem37",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 38 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem38",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 39 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem39",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea level pressure - Member 40 [Pa]",
+                    "Name": "CanSIPS_100km_Pressure_MSL_Mem40",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  }
+                ]
+              },
+              {
+                "Title": "Sea surface height relative to geoid",
+                "Name": "Sea surface height relative to geoid",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 1 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem01",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 2 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem02",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 3 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem03",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 4 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem04",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 5 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem05",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 6 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem06",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 7 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem07",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 8 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem08",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 9 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem09",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 10 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem10",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 11 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem11",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 12 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem12",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 13 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem13",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 14 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem14",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 15 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem15",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 16 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem16",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 17 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem17",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 18 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem18",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 19 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem19",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 20 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem20",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 21 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem21",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 22 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem22",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 23 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem23",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 24 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem24",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 25 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem25",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 26 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem26",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 27 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem27",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 28 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem28",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 29 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem29",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 30 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem30",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 31 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem31",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 32 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem32",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 33 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem33",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 34 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem34",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 35 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem35",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 36 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem36",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 37 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem37",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 38 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem38",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 39 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem39",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Sea surface height relative to geoid - Member 40 [m]",
+                    "Name": "CanSIPS_100km_SeaSfcHeight-Geoid_Mem40",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  }
+                ]
+              },
+              {
+                "Title": "Water temperature",
+                "Name": "Water temperature",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "Surface water temperature - Member 1 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem01",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 2 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem02",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 3 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem03",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 4 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem04",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 5 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem05",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 6 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem06",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 7 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem07",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 8 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem08",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 9 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem09",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 10 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem10",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 11 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem11",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 12 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem12",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 13 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem13",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 14 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem14",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 15 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem15",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 16 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem16",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 17 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem17",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 18 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem18",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 19 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem19",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 20 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem20",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 21 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem21",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 22 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem22",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 23 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem23",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 24 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem24",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 25 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem25",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 26 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem26",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 27 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem27",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 28 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem28",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 29 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem29",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 30 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem30",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 31 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem31",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 32 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem32",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 33 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem33",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 34 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem34",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 35 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem35",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 36 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem36",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 37 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem37",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 38 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem38",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 39 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem39",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Surface water temperature - Member 40 [K]",
+                    "Name": "CanSIPS_100km_WaterTemp_Mem40",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  }
+                ]
+              },
+              {
+                "Title": "Winds at 200 mb",
+                "Name": "Winds at 200 mb",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "Winds at 200 mb - Member 1 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem01",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 2 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem02",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 3 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem03",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 4 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem04",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 5 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem05",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 6 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem06",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 7 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem07",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 8 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem08",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 9 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem09",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 10 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem10",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 11 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem11",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 12 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem12",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 13 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem13",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 14 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem14",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 15 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem15",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 16 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem16",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 17 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem17",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 18 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem18",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 19 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem19",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 20 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem20",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 21 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem21",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 22 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem22",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 23 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem23",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 24 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem24",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 25 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem25",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 26 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem26",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 27 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem27",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 28 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem28",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 29 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem29",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 30 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem30",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 31 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem31",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 32 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem32",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 33 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem33",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 34 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem34",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 35 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem35",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 36 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem36",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 37 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem37",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 38 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem38",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 39 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem39",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 200 mb - Member 40 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_200mb_Mem40",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  }
+                ]
+              },
+              {
+                "Title": "Winds at 850 mb",
+                "Name": "Winds at 850 mb",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "Winds at 850 mb - Member 1 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem01",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 2 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem02",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 3 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem03",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 4 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem04",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 5 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem05",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 6 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem06",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 7 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem07",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 8 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem08",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 9 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem09",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 10 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem10",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 11 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem11",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 12 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem12",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 13 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem13",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 14 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem14",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 15 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem15",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 16 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem16",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 17 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem17",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 18 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem18",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 19 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem19",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 20 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem20",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 21 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem21",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 22 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem22",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 23 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem23",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 24 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem24",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 25 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem25",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 26 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem26",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 27 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem27",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 28 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem28",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 29 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem29",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 30 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem30",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 31 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem31",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 32 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem32",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 33 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem33",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 34 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem34",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 35 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem35",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 36 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem36",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 37 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem37",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 38 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem38",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 39 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem39",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "Winds at 850 mb - Member 40 [m/s]",
+                    "Name": "CanSIPS_100km_Winds_850mb_Mem40",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  }
+                ]
+              }
+            ]
           },
           {
-            "Title": "Probability of temperature above normal - Months 1-3 [%]",
-            "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P01M-P03M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of temperature above normal - Months 3-5 [%]",
-            "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P03M-P05M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of temperature above normal - Months 6-8 [%]",
-            "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P06M-P08M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of temperature above normal - Months 9-11 [%]",
-            "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P09M-P11M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of temperature below normal - Months 0-2 [%]",
-            "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P00M-P02M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of temperature below normal - Months 1-3 [%]",
-            "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P01M-P03M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of temperature below normal - Months 3-5 [%]",
-            "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P03M-P05M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of temperature below normal - Months 6-8 [%]",
-            "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P06M-P08M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of temperature below normal - Months 9-11 [%]",
-            "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P09M-P11M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of temperature near normal - Months 0-2 [%]",
-            "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P00M-P02M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of temperature near normal - Months 1-3 [%]",
-            "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P01M-P03M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of temperature near normal - Months 3-5 [%]",
-            "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P03M-P05M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of temperature near normal - Months 6-8 [%]",
-            "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P06M-P08M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of temperature near normal - Months 9-11 [%]",
-            "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P09M-P11M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation above normal - Months 0-2 [%]",
-            "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P00M-P02M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation above normal - Months 1-3 [%]",
-            "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P01M-P03M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation above normal - Months 3-5 [%]",
-            "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P03M-P05M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation above normal - Months 6-8 [%]",
-            "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P06M-P08M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation above normal - Months 9-11 [%]",
-            "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P09M-P11M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation below normal - Months 0-2 [%]",
-            "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P00M-P02M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation below normal - Months 1-3 [%]",
-            "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P01M-P03M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation below normal - Months 3-5 [%]",
-            "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P03M-P05M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation below normal - Months 6-8 [%]",
-            "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P06M-P08M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation below normal - Months 9-11 [%]",
-            "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P09M-P11M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation near normal - Months 0-2[%]",
-            "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P00M-P02M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation near normal - Months 1-3 [%]",
-            "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P01M-P03M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation near normal - Months 3-5 [%]",
-            "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P03M-P05M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation near normal - Months 6-8 [%]",
-            "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P06M-P08M",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "Probability of precipitation near normal - Months 9-11 [%]",
-            "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P09M-P11M",
-            "isLeaf": true,
-            "isTemporal": false
+            "Title": "CanSIPS Products (3-month)",
+            "Name": "CanSIPS Products (3-month)",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "Probability of temperature above normal - Month 0-2 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P00M-P02M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature above normal - Months 1-3 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P01M-P03M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature above normal - Months 2-4 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P02M-P04M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature above normal - Months 3-5 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P03M-P05M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature above normal - Months 4-6 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P04M-P06M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature above normal - Months 5-7 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P05M-P07M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature above normal - Months 6-8 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P06M-P08M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature above normal - Months 7-9 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P07M-P09M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature above normal - Months 8-10 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P08M-P10M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature above normal - Months 9-11 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P09M-P11M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature below normal - Months 0-2 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P00M-P02M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature below normal - Months 1-3 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P01M-P03M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature below normal - Months 2-4 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P02M-P04M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature below normal - Months 3-5 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P03M-P05M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature below normal - Months 4-6 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P04M-P06M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature below normal - Months 5-7 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P05M-P07M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature below normal - Months 6-8 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P06M-P08M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature below normal - Months 7-9 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P07M-P09M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature below normal - Months 8-10 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P08M-P10M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature below normal - Months 9-11 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P09M-P11M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature near normal - Months 0-2 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P00M-P02M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature near normal - Months 1-3 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P01M-P03M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature near normal - Months 2-4 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P02M-P04M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature near normal - Months 3-5 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P03M-P05M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature near normal - Months 4-6 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P04M-P06M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature near normal - Months 5-7 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P05M-P07M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature near normal - Months 6-8 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P06M-P08M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature near normal - Months 7-9 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P07M-P09M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature near normal - Months 8-10 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P08M-P10M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of temperature near normal - Months 9-11 [%]",
+                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P09M-P11M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation above normal - Months 0-2 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P00M-P02M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation above normal - Months 1-3 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P01M-P03M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation above normal - Months 2-4 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P02M-P04M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation above normal - Months 3-5 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P03M-P05M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation above normal - Months 4-6 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P04M-P06M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation above normal - Months 5-7 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P05M-P07M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation above normal - Months 6-8 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P06M-P08M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation above normal - Months 7-9 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P07M-P09M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation above normal - Months 8-10 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P08M-P10M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation above normal - Months 9-11 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P09M-P11M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation below normal - Months 0-2 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P00M-P02M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation below normal - Months 1-3 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P01M-P03M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation below normal - Months 2-4 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P02M-P04M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation below normal - Months 3-5 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P03M-P05M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation below normal - Months 4-6 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P04M-P06M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation below normal - Months 5-7 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P05M-P07M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation below normal - Months 6-8 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P06M-P08M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation below normal - Months 7-9 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P07M-P09M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation below normal - Months 8-10 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P08M-P10M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation below normal - Months 9-11 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P09M-P11M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation near normal - Months 0-2[%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P00M-P02M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation near normal - Months 1-3 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P01M-P03M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation near normal - Months 2-4 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P02M-P04M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation near normal - Months 3-5 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P03M-P05M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation near normal - Months 4-6 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P04M-P06M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation near normal - Months 5-7 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P05M-P07M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation near normal - Months 6-8 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P06M-P08M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation near normal - Months 7-9 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P07M-P09M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation near normal - Months 8-10 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P08M-P10M",
+                "isLeaf": true,
+                "isTemporal": false
+              },
+              {
+                "Title": "Probability of precipitation near normal - Months 9-11 [%]",
+                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P09M-P11M",
+                "isLeaf": true,
+                "isTemporal": false
+              }
+            ]
           }
         ]
+      },
+      {
+        "Title": "CanSIPS footprint",
+        "Name": "CanSIPS_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
       }
     ]
   },
@@ -791,6 +3244,31 @@ export default {
     "Name": "Canadian Weather",
     "isLeaf": false,
     "children": [
+      {
+        "Title": "Surface Weather Observations (SWOB) Stations",
+        "Name": "Surface Weather Observations (SWOB) Stations",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "SWOB Stations - Marine",
+            "Name": "SWOB-Marine-Stations",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "SWOB Stations - Partners",
+            "Name": "SWOB-Partner-Stations",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "SWOB Stations",
+            "Name": "SWOB-Surface-Stations",
+            "isLeaf": true,
+            "isTemporal": false
+          }
+        ]
+      },
       {
         "Title": "Current Conditions",
         "Name": "CURRENT_CONDITIONS",
@@ -830,6 +3308,32 @@ export default {
     ]
   },
   {
+    "Title": "Deterministic Hydrological Prediction System (DHPS) [1 km]",
+    "Name": "Deterministic Hydrological Prediction System (DHPS) [1 km]",
+    "isLeaf": false,
+    "children": [
+      {
+        "Title": "DHPS footprint",
+        "Name": "DHPS_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
+      }
+    ]
+  },
+  {
+    "Title": "Ensemble Hydrological Prediction System (EHPS) [1 km]",
+    "Name": "Ensemble Hydrological Prediction System (EHPS) [1 km]",
+    "isLeaf": false,
+    "children": [
+      {
+        "Title": "EHPS footprint",
+        "Name": "EHPS_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
+      }
+    ]
+  },
+  {
     "Title": "Global Deterministic Prediction System (GDPS) [15 km]",
     "Name": "Global Deterministic Prediction System (GDPS) [15 km]",
     "isLeaf": false,
@@ -846,8 +3350,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS.ETA - Air temperature at 2m above ground (contour) [\u00b0C]",
+            "Name": "GDPS.ETA_TT-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS.ETA - Air temperature at 2m above ground [\u00b0C]",
             "Name": "GDPS.ETA_TT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.ETA - Air temperature at 40m above ground (contour) [\u00b0C]",
+            "Name": "GDPS.ETA_TT_40m-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -858,8 +3374,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS.ETA - Air temperature at 80m above ground (contour) [\u00b0C]",
+            "Name": "GDPS.ETA_TT_80m-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS.ETA - Air temperature at 80m above ground [\u00b0C]",
             "Name": "GDPS.ETA_TT_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.ETA - Air temperature at 120m above ground (contour) [\u00b0C]",
+            "Name": "GDPS.ETA_TT_120m-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -914,6 +3442,12 @@ export default {
           {
             "Title": "GDPS.ETA - Dew point depression [\u00b0C]",
             "Name": "GDPS.ETA_ES",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.ETA - Dew point temperature (contour) [\u00b0C]",
+            "Name": "GDPS.ETA_TD-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -980,6 +3514,12 @@ export default {
           {
             "Title": "GDPS.ETA - Instantaneous precipitation rate [kg/(m\u00b2s)]",
             "Name": "GDPS.ETA_RT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.ETA - Land/water proportion",
+            "Name": "GDPS.ETA_MGB",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -1248,6 +3788,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS.ETA - Thickness between 1000mb and 500mb (contour) [m]",
+            "Name": "GDPS.ETA_DZ-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS.ETA - Thickness between 1000mb and 500mb [m]",
             "Name": "GDPS.ETA_DZ",
             "isLeaf": true,
@@ -1302,8 +3848,14 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS.ETA - Water/land proportion",
-            "Name": "GDPS.ETA_MGB",
+            "Title": "GDPS.ETA - Wind chill factor at surface (3 hourly forecast) [\u00b0C]",
+            "Name": "GDPS.ETA_RE.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.ETA - Wind chill factor at surface (6 hourly forecast) [\u00b0C]",
+            "Name": "GDPS.ETA_RE.6h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -1350,8 +3902,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS.ETA - Wind speed at 10m above surface (contour) [m/s]",
+            "Name": "GDPS.ETA_WSPD-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS.ETA - Wind speed at 10m above surface [m/s]",
             "Name": "GDPS.ETA_WSPD",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.ETA - Wind speed at 40m above surface (contour) [m/s]",
+            "Name": "GDPS.ETA_WSPD_40m-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -1362,8 +3926,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS.ETA - Wind speed at 80m above surface (contour) [m/s]",
+            "Name": "GDPS.ETA_WSPD_80m-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS.ETA - Wind speed at 80m above surface [m/s]",
             "Name": "GDPS.ETA_WSPD_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.ETA - Wind speed at 120m above surface (contour) [m/s]",
+            "Name": "GDPS.ETA_WSPD_120m-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -1410,43 +3986,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 1.0 mb [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 1 mb (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.1-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 1 mb [\u00b0C]",
                 "Name": "GDPS.PRES_TT.1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 1.0 mb (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 1 mb (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.1-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 1.0 mb [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 1 mb [gpm]",
                 "Name": "GDPS.PRES_GZ.1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 1.0 mb [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 1 mb [kg/kg]",
                 "Name": "GDPS.PRES_HU.1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 1.0 mb [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 1 mb [\u00b0]",
                 "Name": "GDPS.PRES_WD.1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 1.0 mb [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 1 mb (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.1-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 1 mb [m/s]",
                 "Name": "GDPS.PRES_WSPD.1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 1.0 mb [m/s]",
+                "Title": "GDPS.PRES - Winds at 1 mb [m/s]",
                 "Name": "GDPS.PRES_UU.1",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1459,43 +4047,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 5.0 mb [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 5 mb (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.5-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 5 mb [\u00b0C]",
                 "Name": "GDPS.PRES_TT.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 5.0 mb (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 5 mb (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.5-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 5.0 mb [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 5 mb [gpm]",
                 "Name": "GDPS.PRES_GZ.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 5.0 mb [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 5 mb [kg/kg]",
                 "Name": "GDPS.PRES_HU.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 5.0 mb [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 5 mb [\u00b0]",
                 "Name": "GDPS.PRES_WD.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 5.0 mb [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 5 mb (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.5-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 5 mb [m/s]",
                 "Name": "GDPS.PRES_WSPD.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 5.0 mb [m/s]",
+                "Title": "GDPS.PRES - Winds at 5 mb [m/s]",
                 "Name": "GDPS.PRES_UU.5",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1508,109 +4108,133 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 10.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 10 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.10.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 10 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.10.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Air temperature at 10.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 10 mb (6 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.10.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 10 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.10.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 10.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 10 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.10.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 10.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 10 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.10.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 10.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 10 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.10.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 10.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 10 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.10.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 10.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 10 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.10.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 10.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 10 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.10.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 10.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 10 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.10.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 10.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 10 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.10.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 10.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 10 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.10.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 10.0 mb (6 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 10 mb (6 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.10.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 10.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 10 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.10.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 10.0 mb (6 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 10 mb (6 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.10.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 10.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 10 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.10.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 10 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.10.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 10.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 10 mb (6 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.10.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 10 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.10.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 10.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 10 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.10.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 10.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 10 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.10.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1623,109 +4247,133 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 20.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 20 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.20.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 20 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.20.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Air temperature at 20.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 20 mb (6 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.20.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 20 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.20.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 20.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 20 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.20.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 20.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 20 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.20.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 20.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 20 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.20.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 20.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 20 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.20.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 20.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 20 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.20.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 20.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 20 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.20.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 20.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 20 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.20.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 20.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 20 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.20.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 20.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 20 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.20.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 20.0 mb (6 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 20 mb (6 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.20.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 20.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 20 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.20.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 20.0 mb (6 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 20 mb (6 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.20.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 20.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 20 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.20.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 20 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.20.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 20.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 20 mb (6 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.20.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 20 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.20.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 20.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 20 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.20.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 20.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 20 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.20.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1738,109 +4386,133 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 30.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 30 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.30.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 30 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.30.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Air temperature at 30.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 30 mb (6 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.30.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 30 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.30.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 30.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 30 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.30.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 30.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 30 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.30.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 30.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 30 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.30.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 30.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 30 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.30.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 30.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 30 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.30.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 30.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 30 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.30.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 30.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 30 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.30.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 30.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 30 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.30.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 30.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 30 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.30.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 30.0 mb (6 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 30 mb (6 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.30.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 30.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 30 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.30.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 30.0 mb (6 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 30 mb (6 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.30.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 30.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 30 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.30.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 30 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.30.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 30.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 30 mb (6 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.30.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 30 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.30.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 30.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 30 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.30.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 30.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 30 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.30.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1853,109 +4525,133 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 50.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 50 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.50.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 50 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.50.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Air temperature at 50.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 50 mb (6 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.50.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 50 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.50.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 50.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 50 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.50.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 50.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 50 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.50.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 50.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 50 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.50.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 50.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 50 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.50.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 50.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 50 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.50.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 50.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 50 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.50.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 50.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 50 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.50.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 50.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 50 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.50.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 50.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 50 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.50.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 50.0 mb (6 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 50 mb (6 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.50.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 50.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 50 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.50.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 50.0 mb (6 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 50 mb (6 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.50.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 50.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 50 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.50.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 50 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.50.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 50.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 50 mb (6 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.50.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 50 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.50.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 50.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 50 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.50.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 50.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 50 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.50.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1968,109 +4664,133 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 100.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 100 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.100.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 100 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.100.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Air temperature at 100.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 100 mb (6 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.100.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 100 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.100.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 100.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 100 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.100.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 100.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 100 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.100.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 100.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 100 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.100.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 100.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 100 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.100.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 100.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 100 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.100.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 100.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 100 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.100.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 100.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 100 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.100.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 100.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 100 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.100.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 100.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 100 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.100.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 100.0 mb (6 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 100 mb (6 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.100.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 100.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 100 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.100.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 100.0 mb (6 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 100 mb (6 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.100.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 100.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 100 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.100.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 100 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.100.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 100.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 100 mb (6 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.100.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 100 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.100.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 100.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 100 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.100.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 100.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 100 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.100.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2083,109 +4803,133 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 150.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 150 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.150.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 150 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.150.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Air temperature at 150.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 150 mb (6 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.150.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 150 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.150.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 150.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 150 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.150.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 150.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 150 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.150.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 150.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 150 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.150.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 150.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 150 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.150.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 150.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 150 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.150.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 150.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 150 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.150.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 150.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 150 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.150.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 150.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 150 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.150.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 150.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 150 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.150.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 150.0 mb (6 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 150 mb (6 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.150.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 150.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 150 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.150.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 150.0 mb (6 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 150 mb (6 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.150.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 150.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 150 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.150.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 150 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.150.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 150.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 150 mb (6 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.150.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 150 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.150.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 150.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 150 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.150.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 150.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 150 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.150.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2198,73 +4942,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 175.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 175 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.175.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 175 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.175.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 175.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 175 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.175.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 175.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 175 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.175.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 175.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 175 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.175.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 175.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 175 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.175.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 175.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 175 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.175.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 175.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 175 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.175.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 175.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 175 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.175.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 175.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 175 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.175.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 175.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 175 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.175.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 175.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 175 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.175.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 175 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.175.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 175.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 175 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.175.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2277,121 +5033,145 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Absolute vorticity at 200.0 mb (3 hourly forecast) [s-1]",
+                "Title": "GDPS.PRES - Absolute vorticity at 200 mb (3 hourly forecast) [s-1]",
                 "Name": "GDPS.PRES_QQ.200.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Absolute vorticity at 200.0 mb (6 hourly forecast) [s-1]",
+                "Title": "GDPS.PRES - Absolute vorticity at 200 mb (6 hourly forecast) [s-1]",
                 "Name": "GDPS.PRES_QQ.200.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Air temperature at 200.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 200 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.200.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 200 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.200.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Air temperature at 200.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 200 mb (6 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.200.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 200 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.200.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 200.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 200 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.200.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 200.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 200 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.200.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 200.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 200 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.200.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 200.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 200 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.200.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 200.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 200 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.200.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 200.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 200 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.200.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 200.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 200 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.200.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 200.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 200 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.200.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 200.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 200 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.200.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 200.0 mb (6 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 200 mb (6 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.200.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 200.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 200 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.200.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 200.0 mb (6 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 200 mb (6 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.200.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 200.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 200 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.200.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 200 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.200.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 200.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 200 mb (6 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.200.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 200 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.200.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 200.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 200 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.200.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 200.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 200 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.200.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2404,73 +5184,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 225.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 225 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.225.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 225 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.225.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 225.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 225 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.225.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 225.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 225 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.225.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 225.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 225 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.225.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 225.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 225 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.225.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 225.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 225 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.225.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 225.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 225 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.225.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 225.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 225 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.225.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 225.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 225 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.225.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 225.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 225 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.225.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 225.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 225 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.225.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 225 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.225.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 225.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 225 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.225.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2483,133 +5275,157 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Absolute vorticity at 250.0 mb (3 hourly forecast) [s-1]",
+                "Title": "GDPS.PRES - Absolute vorticity at 250 mb (3 hourly forecast) [s-1]",
                 "Name": "GDPS.PRES_QQ.250.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Absolute vorticity at 250.0 mb (6 hourly forecast) [s-1]",
+                "Title": "GDPS.PRES - Absolute vorticity at 250 mb (6 hourly forecast) [s-1]",
                 "Name": "GDPS.PRES_QQ.250.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Air temperature at 250.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 250 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.250.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 250 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.250.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Air temperature at 250.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 250 mb (6 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.250.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 250 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.250.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 250.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 250 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.250.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 250.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 250 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.250.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 250.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 250 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.250.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 250.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 250 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.250.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 250.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 250 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.250.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 250.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 250 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.250.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Isobaric vertical motion at 250.0 mb [Pa/s]",
+                "Title": "GDPS.PRES - Isobaric vertical motion at 250 mb [Pa/s]",
                 "Name": "GDPS.PRES_WP.250.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Isobaric vertical motion at 250.0 mb [Pa/s]",
+                "Title": "GDPS.PRES - Isobaric vertical motion at 250 mb [Pa/s]",
                 "Name": "GDPS.PRES_WP.250.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 250.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 250 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.250.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 250.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 250 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.250.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 250.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 250 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.250.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 250.0 mb (6 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 250 mb (6 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.250.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 250.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 250 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.250.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 250.0 mb (6 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 250 mb (6 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.250.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 250.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 250 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.250.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 250 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.250.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 250.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 250 mb (6 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.250.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 250 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.250.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 250.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 250 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.250.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 250.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 250 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.250.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2622,73 +5438,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 275.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 275 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.275.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 275 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.275.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 275.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 275 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.275.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 275.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 275 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.275.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 275.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 275 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.275.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 275.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 275 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.275.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 275.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 275 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.275.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 275.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 275 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.275.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 275.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 275 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.275.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 275.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 275 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.275.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 275.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 275 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.275.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 275.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 275 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.275.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 275 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.275.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 275.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 275 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.275.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2701,109 +5529,133 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 300.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 300 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.300.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 300 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.300.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Air temperature at 300.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 300 mb (6 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.300.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 300 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.300.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 300.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 300 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.300.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 300.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 300 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.300.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 300.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 300 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.300.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 300.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 300 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.300.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 300.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 300 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.300.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 300.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 300 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.300.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 300.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 300 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.300.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 300.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 300 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.300.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 300.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 300 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.300.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 300.0 mb (6 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 300 mb (6 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.300.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 300.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 300 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.300.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 300.0 mb (6 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 300 mb (6 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.300.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 300.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 300 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.300.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 300 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.300.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 300.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 300 mb (6 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.300.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 300 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.300.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 300.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 300 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.300.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 300.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 300 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.300.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2816,73 +5668,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 350.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 350 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.350.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 350 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.350.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 350.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 350 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.350.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 350.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 350 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.350.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 350.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 350 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.350.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 350.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 350 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.350.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 350.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 350 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.350.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 350.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 350 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.350.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 350.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 350 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.350.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 350.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 350 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.350.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 350.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 350 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.350.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 350.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 350 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.350.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 350 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.350.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 350.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 350 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.350.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2895,109 +5759,133 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 400.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 400 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.400.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 400 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.400.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Air temperature at 400.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 400 mb (6 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.400.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 400 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.400.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 400.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 400 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.400.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 400.0 mb (6 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 400 mb (6 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.400.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 400.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 400 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.400.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 400.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 400 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.400.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 400.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 400 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.400.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 400.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 400 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.400.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 400.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 400 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.400.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 400.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 400 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.400.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 400.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 400 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.400.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 400.0 mb (6 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 400 mb (6 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.400.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 400.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 400 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.400.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 400.0 mb (6 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 400 mb (6 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.400.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 400.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 400 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.400.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 400 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.400.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 400.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 400 mb (6 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.400.6h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 400 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.400.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 400.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 400 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.400.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 400.0 mb (6 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 400 mb (6 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.400.6h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3010,73 +5898,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 450.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 450 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.450.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 450 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.450.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 450.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 450 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.450.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 450.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 450 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.450.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 450.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 450 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.450.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 450.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 450 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.450.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 450.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 450 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.450.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 450.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 450 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.450.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 450.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 450 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.450.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 450.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 450 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.450.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 450.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 450 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.450.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 450.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 450 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.450.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 450 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.450.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 450.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 450 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.450.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3089,79 +5989,91 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Absolute vorticity at 500.0 mb (3 hourly forecast) [s-1]",
+                "Title": "GDPS.PRES - Absolute vorticity at 500 mb (3 hourly forecast) [s-1]",
                 "Name": "GDPS.PRES_QQ.500.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Absolute vorticity at 500.0 mb (6 hourly forecast) [s-1]",
+                "Title": "GDPS.PRES - Absolute vorticity at 500 mb (6 hourly forecast) [s-1]",
                 "Name": "GDPS.PRES_QQ.500.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 500 mb (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.500-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 500 mb [\u00b0C]",
                 "Name": "GDPS.PRES_TT.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 500.0 mb [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 500 mb [\u00b0C]",
                 "Name": "GDPS.PRES_ES.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 500.0 mb (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 500 mb (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.500-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 500.0 mb [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 500 mb [gpm]",
                 "Name": "GDPS.PRES_GZ.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Isobaric vertical motion at 500.0 mb [Pa/s]",
+                "Title": "GDPS.PRES - Isobaric vertical motion at 500 mb [Pa/s]",
                 "Name": "GDPS.PRES_WP.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 500.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 500 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.500.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 500.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 500 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.500.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 500.0 mb [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 500 mb [kg/kg]",
                 "Name": "GDPS.PRES_HU.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 500.0 mb [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 500 mb [\u00b0]",
                 "Name": "GDPS.PRES_WD.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 500.0 mb [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 500 mb (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.500-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 500 mb [m/s]",
                 "Name": "GDPS.PRES_WSPD.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 500.0 mb [m/s]",
+                "Title": "GDPS.PRES - Winds at 500 mb [m/s]",
                 "Name": "GDPS.PRES_UU.500",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3174,73 +6086,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 550.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 550 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.550.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 550 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.550.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 550.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 550 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.550.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 550.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 550 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.550.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 550.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 550 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.550.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 550.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 550 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.550.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 550.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 550 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.550.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 550.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 550 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.550.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 550.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 550 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.550.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 550.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 550 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.550.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 550.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 550 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.550.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 550.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 550 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.550.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 550 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.550.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 550.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 550 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.550.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3253,85 +6177,97 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 600.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 600 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.600.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 600 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.600.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 600.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 600 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.600.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 600.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 600 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.600.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 600.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 600 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.600.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 600.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 600 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.600.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 600.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 600 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.600.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Isobaric vertical motion at 600.0 mb [Pa/s]",
+                "Title": "GDPS.PRES - Isobaric vertical motion at 600 mb [Pa/s]",
                 "Name": "GDPS.PRES_WP.600.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Isobaric vertical motion at 600.0 mb [Pa/s]",
+                "Title": "GDPS.PRES - Isobaric vertical motion at 600 mb [Pa/s]",
                 "Name": "GDPS.PRES_WP.600.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 600.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 600 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.600.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 600.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 600 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.600.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 600.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 600 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.600.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 600.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 600 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.600.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 600.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 600 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.600.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 600 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.600.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 600.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 600 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.600.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3344,73 +6280,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 650.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 650 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.650.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 650 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.650.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 650.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 650 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.650.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 650.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 650 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.650.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 650.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 650 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.650.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 650.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 650 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.650.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 650.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 650 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.650.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 650.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 650 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.650.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 650.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 650 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.650.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 650.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 650 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.650.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 650.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 650 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.650.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 650.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 650 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.650.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 650 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.650.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 650.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 650 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.650.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3423,79 +6371,91 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Absolute vorticity at 700.0 mb (3 hourly forecast) [s-1]",
+                "Title": "GDPS.PRES - Absolute vorticity at 700 mb (3 hourly forecast) [s-1]",
                 "Name": "GDPS.PRES_QQ.700.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Absolute vorticity at 700.0 mb (6 hourly forecast) [s-1]",
+                "Title": "GDPS.PRES - Absolute vorticity at 700 mb (6 hourly forecast) [s-1]",
                 "Name": "GDPS.PRES_QQ.700.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 700 mb (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.700-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 700 mb [\u00b0C]",
                 "Name": "GDPS.PRES_TT.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 700.0 mb [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 700 mb [\u00b0C]",
                 "Name": "GDPS.PRES_ES.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 700.0 mb (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 700 mb (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.700-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 700.0 mb [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 700 mb [gpm]",
                 "Name": "GDPS.PRES_GZ.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Isobaric vertical motion at 700.0 mb [Pa/s]",
+                "Title": "GDPS.PRES - Isobaric vertical motion at 700 mb [Pa/s]",
                 "Name": "GDPS.PRES_WP.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 700.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 700 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.700.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 700.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 700 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.700.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 700.0 mb [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 700 mb [kg/kg]",
                 "Name": "GDPS.PRES_HU.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 700.0 mb [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 700 mb [\u00b0]",
                 "Name": "GDPS.PRES_WD.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 700.0 mb [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 700 mb (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.700-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 700 mb [m/s]",
                 "Name": "GDPS.PRES_WSPD.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 700.0 mb [m/s]",
+                "Title": "GDPS.PRES - Winds at 700 mb [m/s]",
                 "Name": "GDPS.PRES_UU.700",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3508,73 +6468,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 750.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 750 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.750.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 750 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.750.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 750.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 750 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.750.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 750.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 750 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.750.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 750.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 750 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.750.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 750.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 750 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.750.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 750.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 750 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.750.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 750.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 750 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.750.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 750.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 750 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.750.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 750.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 750 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.750.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 750.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 750 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.750.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 750.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 750 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.750.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 750 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.750.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 750.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 750 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.750.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3587,73 +6559,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 800.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 800 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.800.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 800 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.800.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 800.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 800 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.800.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 800.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 800 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.800.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 800.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 800 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.800.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 800.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 800 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.800.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 800.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 800 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.800.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 800.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 800 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.800.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 800.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 800 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.800.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 800.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 800 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.800.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 800.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 800 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.800.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 800.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 800 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.800.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 800 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.800.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 800.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 800 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.800.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3666,79 +6650,91 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Absolute vorticity at 850.0 mb (3 hourly forecast) [s-1]",
+                "Title": "GDPS.PRES - Absolute vorticity at 850 mb (3 hourly forecast) [s-1]",
                 "Name": "GDPS.PRES_QQ.850.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Absolute vorticity at 850.0 mb (6 hourly forecast) [s-1]",
+                "Title": "GDPS.PRES - Absolute vorticity at 850 mb (6 hourly forecast) [s-1]",
                 "Name": "GDPS.PRES_QQ.850.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 850 mb (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.850-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 850 mb [\u00b0C]",
                 "Name": "GDPS.PRES_TT.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 850.0 mb [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 850 mb [\u00b0C]",
                 "Name": "GDPS.PRES_ES.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 850.0 mb (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 850 mb (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.850-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 850.0 mb [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 850 mb [gpm]",
                 "Name": "GDPS.PRES_GZ.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Isobaric vertical motion at 850.0 mb [Pa/s]",
+                "Title": "GDPS.PRES - Isobaric vertical motion at 850 mb [Pa/s]",
                 "Name": "GDPS.PRES_WP.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 850.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 850 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.850.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 850.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 850 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.850.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 850.0 mb [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 850 mb [kg/kg]",
                 "Name": "GDPS.PRES_HU.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 850.0 mb [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 850 mb [\u00b0]",
                 "Name": "GDPS.PRES_WD.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 850.0 mb [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 850 mb (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.850-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 850 mb [m/s]",
                 "Name": "GDPS.PRES_WSPD.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 850.0 mb [m/s]",
+                "Title": "GDPS.PRES - Winds at 850 mb [m/s]",
                 "Name": "GDPS.PRES_UU.850",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3751,73 +6747,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 875.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 875 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.875.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 875 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.875.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 875.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 875 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.875.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 875.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 875 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.875.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 875.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 875 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.875.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 875.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 875 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.875.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 875.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 875 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.875.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 875.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 875 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.875.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 875.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 875 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.875.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 875.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 875 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.875.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 875.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 875 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.875.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 875.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 875 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.875.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 875 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.875.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 875.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 875 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.875.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3830,73 +6838,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 900.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 900 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.900.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 900 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.900.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 900.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 900 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.900.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 900.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 900 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.900.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 900.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 900 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.900.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 900.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 900 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.900.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 900.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 900 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.900.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 900.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 900 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.900.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 900.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 900 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.900.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 900.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 900 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.900.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 900.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 900 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.900.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 900.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 900 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.900.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 900 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.900.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 900.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 900 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.900.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3909,61 +6929,73 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 925 mb (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.925-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 925 mb [\u00b0C]",
                 "Name": "GDPS.PRES_TT.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 925.0 mb [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 925 mb [\u00b0C]",
                 "Name": "GDPS.PRES_ES.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 925.0 mb (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 925 mb (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.925-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 925.0 mb [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 925 mb [gpm]",
                 "Name": "GDPS.PRES_GZ.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 925.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 925 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.925.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 925.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 925 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.925.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 925.0 mb [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 925 mb [kg/kg]",
                 "Name": "GDPS.PRES_HU.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 925.0 mb [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 925 mb [\u00b0]",
                 "Name": "GDPS.PRES_WD.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 925.0 mb [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 925 mb (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.925-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 925 mb [m/s]",
                 "Name": "GDPS.PRES_WSPD.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 925.0 mb [m/s]",
+                "Title": "GDPS.PRES - Winds at 925 mb [m/s]",
                 "Name": "GDPS.PRES_UU.925",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3976,73 +7008,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 950.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 950 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.950.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 950 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.950.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 950.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 950 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.950.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 950.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 950 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.950.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 950.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 950 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.950.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 950.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 950 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.950.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 950.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 950 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.950.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 950.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 950 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.950.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 950.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 950 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.950.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 950.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 950 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.950.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 950.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 950 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.950.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 950.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 950 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.950.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 950 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.950.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 950.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 950 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.950.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4055,73 +7099,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 970.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 970 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.970.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 970 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.970.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 970.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 970 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.970.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 970.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 970 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.970.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 970.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 970 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.970.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 970.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 970 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.970.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 970.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 970 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.970.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 970.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 970 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.970.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 970.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 970 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.970.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 970.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 970 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.970.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 970.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 970 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.970.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 970.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 970 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.970.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 970 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.970.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 970.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 970 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.970.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4134,73 +7190,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 985.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 985 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.985.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 985 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.985.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 985.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 985 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.985.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 985.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 985 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.985.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 985.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 985 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.985.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 985.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 985 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.985.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 985.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 985 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.985.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 985.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 985 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.985.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 985.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 985 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.985.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 985.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 985 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.985.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 985.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 985 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.985.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 985.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 985 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.985.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 985 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.985.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 985.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 985 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.985.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4213,61 +7281,73 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 1000 mb (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.1000-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "GDPS.PRES_TT.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 1000.0 mb [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 1000 mb [\u00b0C]",
                 "Name": "GDPS.PRES_ES.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 1000.0 mb (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 1000 mb (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.1000-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 1000 mb [gpm]",
                 "Name": "GDPS.PRES_GZ.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 1000.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 1000 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.1000.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 1000.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 1000 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.1000.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 1000.0 mb [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 1000 mb [kg/kg]",
                 "Name": "GDPS.PRES_HU.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 1000.0 mb [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 1000 mb [\u00b0]",
                 "Name": "GDPS.PRES_WD.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 1000.0 mb [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 1000 mb (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.1000-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 1000 mb [m/s]",
                 "Name": "GDPS.PRES_WSPD.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 1000.0 mb [m/s]",
+                "Title": "GDPS.PRES - Winds at 1000 mb [m/s]",
                 "Name": "GDPS.PRES_UU.1000",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4280,73 +7360,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS.PRES - Air temperature at 1015.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Air temperature at 1015 mb (3 hourly forecast) (contour) [\u00b0C]",
+                "Name": "GDPS.PRES_TT.1015.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Air temperature at 1015 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_TT.1015.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Dew point depression at 1015.0 mb (3 hourly forecast) [\u00b0C]",
+                "Title": "GDPS.PRES - Dew point depression at 1015 mb (3 hourly forecast) [\u00b0C]",
                 "Name": "GDPS.PRES_ES.1015.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 1015.0 mb (3 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 1015 mb (3 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.1015.3h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 1015.0 mb (3 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 1015 mb (3 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.1015.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 1015.0 mb (6 hourly forecast) (contour) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 1015 mb (6 hourly forecast) (contour) [gpm]",
                 "Name": "GDPS.PRES_GZ.1015.6h-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Geopotential height at 1015.0 mb (6 hourly forecast) [gpm]",
+                "Title": "GDPS.PRES - Geopotential height at 1015 mb (6 hourly forecast) [gpm]",
                 "Name": "GDPS.PRES_GZ.1015.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 1015.0 mb (3 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 1015 mb (3 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.1015.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Relative humidity at 1015.0 mb (6 hourly forecast) [%]",
+                "Title": "GDPS.PRES - Relative humidity at 1015 mb (6 hourly forecast) [%]",
                 "Name": "GDPS.PRES_HR.1015.6h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Specific humidity at 1015.0 mb (3 hourly forecast) [kg/kg]",
+                "Title": "GDPS.PRES - Specific humidity at 1015 mb (3 hourly forecast) [kg/kg]",
                 "Name": "GDPS.PRES_HU.1015.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind direction at 1015.0 mb (3 hourly forecast) [\u00b0]",
+                "Title": "GDPS.PRES - Wind direction at 1015 mb (3 hourly forecast) [\u00b0]",
                 "Name": "GDPS.PRES_WD.1015.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Wind speed at 1015.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Wind speed at 1015 mb (3 hourly forecast) (contour) [m/s]",
+                "Name": "GDPS.PRES_WSPD.1015.3h-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS.PRES - Wind speed at 1015 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_WSPD.1015.3h",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS.PRES - Winds at 1015.0 mb (3 hourly forecast) [m/s]",
+                "Title": "GDPS.PRES - Winds at 1015 mb (3 hourly forecast) [m/s]",
                 "Name": "GDPS.PRES_UU.1015.3h",
                 "isLeaf": true,
                 "isTemporal": true
@@ -4913,217 +8005,217 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_SFC-VT-LI.500.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_SFC-VT-LI.500.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_SFC-VT-LI.500.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_SFC-VT-LI.500.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.400.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.400.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.400.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.400.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.500.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.500.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.500.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.500.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.600.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.600.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.600.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.600.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.650.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.650.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.650.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.650.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.700.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.700.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.700.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.700.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.800.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.800.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.800.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-VT-LI.800.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for the most unstable parcel using the virtual temperature correction [K], with reference level 500.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_MU-VT-LI.500.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for the most unstable parcel using the virtual temperature correction [K], with reference level 500.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_MU-VT-LI.500.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for the most unstable parcel using the virtual temperature correction [K], with reference level 500.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_MU-VT-LI.500.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for the most unstable parcel using the virtual temperature correction [K], with reference level 500.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_MU-VT-LI.500.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for the most unstable parcel, with reference level 500.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for the most unstable parcel, with reference level 500 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_MU-LI.500.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for the most unstable parcel, with reference level 500.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for the most unstable parcel, with reference level 500 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_MU-LI.500.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for the most unstable parcel, with reference level 500.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for the most unstable parcel, with reference level 500 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_MU-LI.500.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Lifted index for the most unstable parcel, with reference level 500.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Lifted index for the most unstable parcel, with reference level 500 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_MU-LI.500.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
@@ -5141,217 +8233,217 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Showalter Index using the virtual temperature correction, with reference level 500.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Showalter Index using the virtual temperature correction, with reference level 500 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_VT-SHWINX.500.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Showalter Index using the virtual temperature correction, with reference level 500.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Showalter Index using the virtual temperature correction, with reference level 500 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_VT-SHWINX.500.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Showalter Index using the virtual temperature correction, with reference level 500.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Showalter Index using the virtual temperature correction, with reference level 500 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_VT-SHWINX.500.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Showalter Index using the virtual temperature correction, with reference level 500.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Showalter Index using the virtual temperature correction, with reference level 500 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_VT-SHWINX.500.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Showalter Index, with reference level 500.0 mb (contour) [K] (3 hourly forecast)",
+            "Title": "GDPS.CONV - Showalter Index, with reference level 500 mb (contour) [K] (3 hourly forecast)",
             "Name": "GDPS.CONV_SHWINX.500.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Showalter Index, with reference level 500.0 mb [K] (3 hourly forecast)",
+            "Title": "GDPS.CONV - Showalter Index, with reference level 500 mb [K] (3 hourly forecast)",
             "Name": "GDPS.CONV_SHWINX.500.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Showalter Index, with reference level 500.0 mb [K] (6 hourly forecast)",
+            "Title": "GDPS.CONV - Showalter Index, with reference level 500 mb [K] (6 hourly forecast)",
             "Name": "GDPS.CONV_SHWINX.500.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Showalter Index, with reference level 500.0 mb [K] (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Showalter Index, with reference level 500 mb [K] (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_SHWINX.500.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 400.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 400 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.400.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 400.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 400 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.400.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 400.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 400 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.400.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 400.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 400 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.400.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 500.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 500 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.500.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 500.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 500 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_SFC-LI.500.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 500.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 500 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.500.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 500.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 500 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_SFC-LI.500.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 500.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 500 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.500.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 500.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 500 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_SFC-LI.500.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 500.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 500 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.500.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 500.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 500 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_SFC-LI.500.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 600.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 600 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.600.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 600.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 600 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.600.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 600.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 600 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.600.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 600.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 600 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.600.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 650.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 650 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.650.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 650.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 650 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.650.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 650.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 650 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.650.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 650.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 650 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.650.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 700.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 700 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.700.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 700.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 700 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.700.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 700.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 700 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.700.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 700.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 700 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.700.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 800.0 mb (3 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 800 mb (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.800.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 800.0 mb (6 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 800 mb (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.800.6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 800.0 mb (contour) (3 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 800 mb (contour) (3 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.800.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.CONV - Surface lifted index, with reference level 800.0 mb (contour) (6 hourly forecast)",
+            "Title": "GDPS.CONV - Surface lifted index, with reference level 800 mb (contour) (6 hourly forecast)",
             "Name": "GDPS.CONV_ML-LI.800.6h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
@@ -5563,13 +8655,25 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Dew point temperature [C]",
+            "Title": "GDPS-WEonG - Dew point temperature (contour) [\u00b0C]",
+            "Name": "GDPS-WEonG_15km_DewPointTemp-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Dew point temperature (contour) [\u00b0C] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_DewPointTemp.3h-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Dew point temperature [\u00b0C]",
             "Name": "GDPS-WEonG_15km_DewPointTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Dew point temperature [C] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Dew point temperature [\u00b0C] (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_DewPointTemp.3h",
             "isLeaf": true,
             "isTemporal": true
@@ -5600,13 +8704,13 @@ export default {
           },
           {
             "Title": "GDPS-WEonG - Height of snow level [m]",
-            "Name": "GDPS-WEonG_15km_SnowHeight",
+            "Name": "GDPS-WEonG_15km_SnowLevelHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
             "Title": "GDPS-WEonG - Height of snow level [m] (3 hourly forecast)",
-            "Name": "GDPS-WEonG_15km_SnowHeight.3h",
+            "Name": "GDPS-WEonG_15km_SnowLevelHeight.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -5619,6 +8723,18 @@ export default {
           {
             "Title": "GDPS-WEonG - Instantaneous precipitation type (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_InstantPrecipType.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Land/water proportion",
+            "Name": "GDPS-WEonG_15km_LandWater-Proportion",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Land/water proportion (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_LandWater-Proportion.3h",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -5863,18 +8979,6 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Water/land proportion",
-            "Name": "GDPS-WEonG_15km_WaterLand-Proportion",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "GDPS-WEonG - Water/land proportion (3 hourly forecast)",
-            "Name": "GDPS-WEonG_15km_WaterLand-Proportion.3h",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
             "Title": "GDPS-WEonG - Wind direction [deg true]",
             "Name": "GDPS-WEonG_15km_WindDir",
             "isLeaf": true,
@@ -5883,6 +8987,18 @@ export default {
           {
             "Title": "GDPS-WEonG - Wind direction [deg true] (3 hourly forecast)",
             "Name": "GDPS-WEonG_15km_WindDir.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Wind speed (contour) [m/s]",
+            "Name": "GDPS-WEonG_15km_WindSpeed-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Wind speed (contour) [m/s] (3 hourly forecast)",
+            "Name": "GDPS-WEonG_15km_WindSpeed.3h-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -5899,6 +9015,18 @@ export default {
             "isTemporal": true
           }
         ]
+      },
+      {
+        "Title": "GDPS footprint",
+        "Name": "GDPS_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
+      },
+      {
+        "Title": "GDPS-WEonG footprint",
+        "Name": "GDPS-WEonG_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
       }
     ]
   },
@@ -5925,6 +9053,12 @@ export default {
             "isTemporal": true
           }
         ]
+      },
+      {
+        "Title": "GDSPS footprint",
+        "Name": "GDPSP_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
       }
     ]
   },
@@ -6200,6 +9334,61 @@ export default {
                 "Name": "GEPS.DIAG.3_WSPD.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
+              },
+              {
+                "Title": "GEPS.DIAG.3_WSPD_250.ERMEAN - Wind speed at 250 mb [m/s] (mean)",
+                "Name": "GEPS.DIAG.3_WSPD_250.ERMEAN",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS.DIAG.3_WSPD_250.ERSSTD - Wind speed at 250 mb [m/s] (standard deviation)",
+                "Name": "GEPS.DIAG.3_WSPD_250.ERSSTD",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS.DIAG.3_WSPD_850.ERMEAN - Wind speed at 850 mb [m/s] (mean)",
+                "Name": "GEPS.DIAG.3_WSPD_850.ERMEAN",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS.DIAG.3_WSPD_850.ERSSTD - Wind speed at 850 mb [m/s] (standard deviation)",
+                "Name": "GEPS.DIAG.3_WSPD_850.ERSSTD",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "GEPS products at 6 hours intervals",
+            "Name": "GEPS products at 6 hours intervals",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GEPS.DIAG.6_WSPD_250.ERMEAN - Wind speed at 250 mb [m/s] (mean)",
+                "Name": "GEPS.DIAG.6_WSPD_250.ERMEAN",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS.DIAG.6_WSPD_250.ERSSTD - Wind speed at 250 mb [m/s] (standard deviation)",
+                "Name": "GEPS.DIAG.6_WSPD_250.ERSSTD",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS.DIAG.6_WSPD_850.ERMEAN - Wind speed at 850 mb [m/s] (mean)",
+                "Name": "GEPS.DIAG.6_WSPD_850.ERMEAN",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS.DIAG.6WSPD_850.ERSSTD - Wind speed at 850 mb [m/s] (standard deviation)",
+                "Name": "GEPS.DIAG.6_WSPD_850.ERSSTD",
+                "isLeaf": true,
+                "isTemporal": true
               }
             ]
           },
@@ -6323,13 +9512,19 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GEPS.DIAG.12_GZ.500.ERMEAN - Geopotential height at 500.0 mb (mean)",
+                "Title": "GEPS.DIAG.12_GZ.500.ERMEAN - Geopotential height at 500 mb (mean)",
                 "Name": "GEPS.DIAG.12_GZ.500.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS.DIAG.12_GZ.500.ERSSTD - Geopotential height at 500.0 mb (standard deviation)",
+                "Title": "GEPS.DIAG.12_GZ.500.ERMEAN - Geopotential height at 500 mb (mean) (contour)",
+                "Name": "GEPS.DIAG.12_GZ.500.ERMEAN-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS.DIAG.12_GZ.500.ERSSTD - Geopotential height at 500 mb (standard deviation)",
                 "Name": "GEPS.DIAG.12_GZ.500.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
@@ -6565,6 +9760,24 @@ export default {
               {
                 "Title": "GEPS.DIAG.12_UVMX.ERGE118 - Maximum wind modulus over a period >= 118 km/h [probability %]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE118",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS.DIAG.12_GUST - Probabilility of wind speed gusts over 10m/s at 10m [%]",
+                "Name": "GEPS.DIAG.12_GUST-10MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS.DIAG.12_GUST - Probabilility of wind speed gusts over 15m/s at 10m [%]",
+                "Name": "GEPS.DIAG.12_GUST-15MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS.DIAG.12_GUST - Probabilility of wind speed gusts over 25m/s at 10m [%]",
+                "Name": "GEPS.DIAG.12_GUST-25MS.PROB",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -7644,6 +10857,12 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "GEPS.DIAG.24_WCFMIN.ERGE10 - Minimum wind chill factor <= -10\u00b0C [probability %]",
+                "Name": "GEPS.DIAG.24_WCFMIN.ERGE10",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "GEPS.DIAG.24_WCFMIN.ERGE15 - Minimum wind chill factor <= -15\u00b0C [probability %]",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERGE15",
                 "isLeaf": true,
@@ -8084,12 +11303,6 @@ export default {
               {
                 "Title": "GEPS.DIAG.24_SNMM.ERGE100 - Snow >= 100 mm [probability %]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE100",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS.DIAG.24_WCFMIN.ERGE10 - Wind chill factor <= -10\u00b0C [probability %]",
-                "Name": "GEPS.DIAG.24_WCFMIN.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               }
@@ -8676,6 +11889,140 @@ export default {
             ]
           }
         ]
+      },
+      {
+        "Title": "GEPS footprint",
+        "Name": "GEPS_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
+      }
+    ]
+  },
+  {
+    "Title": "High Resolution Deterministic Land Surface Prediction System (HRDLPS) [2.5 km]",
+    "Name": "High Resolution Deterministic Land Surface Prediction System (HRDLPS) [2.5 km]",
+    "isLeaf": false,
+    "children": [
+      {
+        "Title": "HRDLPS",
+        "Name": "HRDLPS",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "HRDLPS - Aggregate Surface Radiative Temperature [K]",
+            "Name": "HRDLPS_2.5km_RadiativeTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Air Temperature [K]",
+            "Name": "HRDLPS_2.5km_AirTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Dew Point Temperature [K]",
+            "Name": "HRDLPS_2.5km_DewPointTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Drainage Amount Through Base of Soil Model [kg/m\u00b2]",
+            "Name": "HRDLPS_2.5km_DrainageAmountThroughBaseOfSoil",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Land Surface Evaporation Amount [kg/m\u00b2]",
+            "Name": "HRDLPS_2.5km_LandEvap",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Lateral Subsurface Runoff Amount [kg/m\u00b2]",
+            "Name": "HRDLPS_2.5km_LateralSubsurfaceRunoffAmt",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Model Orography [m]",
+            "Name": "HRDLPS_2.5km_Orography",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Surface Runoff Amount - All surface types [kg/m\u00b2]",
+            "Name": "HRDLPS_2.5km_SurfaceRunoffAmtAllSurfaceTypes",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Surface Runoff Amount - Glaciers [kg/m\u00b2]",
+            "Name": "HRDLPS_2.5km_SurfaceRunoffAmtGlaciers",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Surface Runoff Amount - Sea ice [kg/m\u00b2]",
+            "Name": "HRDLPS_2.5km_SurfaceRunoffAmtSeaIce",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Surface Runoff Amount - Soil [kg/m\u00b2]",
+            "Name": "HRDLPS_2.5km_SurfaceRunoffAmtSoil",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Surface Runoff Amount - Water [kg/m\u00b2]",
+            "Name": "HRDLPS_2.5km_SurfaceRunoffAmtWater",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Volumetric water content of liquid water in soil at 0.3m below the surface [m^3/m^3]",
+            "Name": "HRDLPS_2.5km_SoilLiquidWaterCont_0.3m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Volumetric water content of liquid water in soil at 0.7m below the surface [m^3/m^3]",
+            "Name": "HRDLPS_2.5km_SoilLiquidWaterCont_0.7m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Volumetric water content of liquid water in soil at 0.15m below the surface [m^3/m^3]",
+            "Name": "HRDLPS_2.5km_SoilLiquidWaterCont_0.15m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Volumetric water content of liquid water in soil at 0.025m below the surface [m^3/m^3]",
+            "Name": "HRDLPS_2.5km_SoilLiquidWaterCont_0.025m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Volumetric water content of liquid water in soil at 0.075m below the surface [m^3/m^3]",
+            "Name": "HRDLPS_2.5km_SoilLiquidWaterCont_0.075m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Volumetric water content of liquid water in soil at 1.5m below the surface [m^3/m^3]",
+            "Name": "HRDLPS_2.5km_SoilLiquidWaterCont_1.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDLPS - Volumetric water content of liquid water in soil at 2.5m below the surface [m^3/m^3]",
+            "Name": "HRDLPS_2.5km_SoilLiquidWaterCont_2.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          }
+        ]
       }
     ]
   },
@@ -8714,8 +12061,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "HRDPS.CONTINENTAL - Air temperature at 2m above ground (contour) [\u00b0C]",
+            "Name": "HRDPS.CONTINENTAL_TT-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "HRDPS.CONTINENTAL - Air temperature at 2m above ground [\u00b0C]",
             "Name": "HRDPS.CONTINENTAL_TT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Air temperature at 40m above ground (contour) [\u00b0C]",
+            "Name": "HRDPS.CONTINENTAL_TT_40m-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -8726,8 +12085,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "HRDPS.CONTINENTAL - Air temperature at 80m above ground (contour) [\u00b0C]",
+            "Name": "HRDPS.CONTINENTAL_TT_80m-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "HRDPS.CONTINENTAL - Air temperature at 80m above ground [\u00b0C]",
             "Name": "HRDPS.CONTINENTAL_TT_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Air temperature at 120m above ground (contour) [\u00b0C]",
+            "Name": "HRDPS.CONTINENTAL_TT_120m-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -8834,8 +12205,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "HRDPS.CONTINENTAL - Dew point temperature at 2m above ground (contour) [\u00b0C]",
+            "Name": "HRDPS.CONTINENTAL_TD-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "HRDPS.CONTINENTAL - Dew point temperature at 2m above ground [\u00b0C]",
             "Name": "HRDPS.CONTINENTAL_TD",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Dew point temperature at 40m above ground (contour) [\u00b0C]",
+            "Name": "HRDPS.CONTINENTAL_TD_40m-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -8846,8 +12229,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "HRDPS.CONTINENTAL - Dew point temperature at 80m above ground (contour) [\u00b0C]",
+            "Name": "HRDPS.CONTINENTAL_TD_80m-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "HRDPS.CONTINENTAL - Dew point temperature at 80m above ground [\u00b0C]",
             "Name": "HRDPS.CONTINENTAL_TD_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Dew point temperature at 120m above ground (contour) [\u00b0C]",
+            "Name": "HRDPS.CONTINENTAL_TD_120m-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -8888,6 +12283,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "HRDPS.CONTINENTAL - Humidex at 2 m above ground",
+            "Name": "HRDPS.CONTINENTAL_HMX",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "HRDPS.CONTINENTAL - Ice cover [Proportion]",
             "Name": "HRDPS.CONTINENTAL_ICEC",
             "isLeaf": true,
@@ -8908,6 +12309,12 @@ export default {
           {
             "Title": "HRDPS.CONTINENTAL - Instantaneous precipitation rate [kg/(m\u00b2s)]",
             "Name": "HRDPS.CONTINENTAL_RT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Land/water proportion",
+            "Name": "HRDPS.CONTINENTAL_MGB",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -9098,6 +12505,36 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "HRDPS.CONTINENTAL - Thickness between 850 mb and 700 mb (contour) [m]",
+            "Name": "HRDPS.CONTINENTAL_DZ_850-700mb-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Thickness between 850 mb and 700 mb [m]",
+            "Name": "HRDPS.CONTINENTAL_DZ_850-700mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Thickness between 1000 mb and 850 mb (contour) [m]",
+            "Name": "HRDPS.CONTINENTAL_DZ_1000-850mb-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Thickness between 1000 mb and 850 mb [m]",
+            "Name": "HRDPS.CONTINENTAL_DZ_1000-850mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Thickness between 1000mb and 500mb (contour) [m]",
+            "Name": "HRDPS.CONTINENTAL_DZ-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "HRDPS.CONTINENTAL - Thickness between 1000mb and 500mb [m]",
             "Name": "HRDPS.CONTINENTAL_DZ",
             "isLeaf": true,
@@ -9152,14 +12589,14 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.CONTINENTAL - Water temperature [C]",
+            "Title": "HRDPS.CONTINENTAL - Water temperature [K]",
             "Name": "HRDPS.CONTINENTAL_TM",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.CONTINENTAL - Water/land proportion",
-            "Name": "HRDPS.CONTINENTAL_MGB",
+            "Title": "HRDPS.CONTINENTAL - Wind chill factor at surface [\u00b0C]",
+            "Name": "HRDPS.CONTINENTAL_RE",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -9206,8 +12643,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "HRDPS.CONTINENTAL - Wind speed at 10m above surface (contour) [m/s]",
+            "Name": "HRDPS.CONTINENTAL_WSPD-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "HRDPS.CONTINENTAL - Wind speed at 10m above surface [m/s]",
             "Name": "HRDPS.CONTINENTAL_WSPD",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Wind speed at 40m above surface (contour) [m/s]",
+            "Name": "HRDPS.CONTINENTAL_WSPD_40m-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -9218,8 +12667,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "HRDPS.CONTINENTAL - Wind speed at 80m above surface (contour)[m/s]",
+            "Name": "HRDPS.CONTINENTAL_WSPD_80m-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "HRDPS.CONTINENTAL - Wind speed at 80m above surface [m/s]",
             "Name": "HRDPS.CONTINENTAL_WSPD_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Wind speed at 120m above surface (contour) [m/s]",
+            "Name": "HRDPS.CONTINENTAL_WSPD_120m-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -9266,55 +12727,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 50 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.50-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 50 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 50.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 50 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 50.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 50 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.50-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 50.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 50 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 50.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 50 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 50.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 50 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 50.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 50 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 50.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 50 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.50-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 50 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 50.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 50 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.50",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9327,55 +12800,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 100 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.100-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 100 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 100.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 100 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 100.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 100 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.100-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 100.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 100 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 100.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 100 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 100.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 100 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 100.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 100 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 100.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 100 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.100-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 100 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 100.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 100 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.100",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9388,55 +12873,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 150.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 150 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.150-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 150 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 150.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 150 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 150.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 150 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.150-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 150.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 150 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 150.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 150 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 150.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 150 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 150.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 150 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 150.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 150 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.150-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 150 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 150.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 150 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.150",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9449,55 +12946,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 175.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 175 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.175-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 175 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 175.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 175 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 175.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 175 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.175-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 175.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 175 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 175.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 175 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 175.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 175 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 175.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 175 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 175.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 175 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.175-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 175 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 175.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 175 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.175",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9510,55 +13019,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 200 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.200-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 200 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 200.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 200 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 200.0 mb (contour)",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 200 mb (contour)",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.200-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 200.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 200 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 200.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 200 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 200.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 200 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 200.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 200 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 200.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 200 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.200-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 200 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 200.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 200 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.200",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9571,55 +13092,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 225.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 225 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.225-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 225 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 225.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 225 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 225.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 225 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.225-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 225.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 225 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 225.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 225 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 225.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 225 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 225.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 225 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 225.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 225 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.225-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 225 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 225.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 225 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.225",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9632,67 +13165,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Absolute vorticity at 250.0 mb [s-1]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Absolute vorticity at 250 mb [s-1]",
                 "Name": "HRDPS.CONTINENTAL.PRES_QQ.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 250 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.250-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 250 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 250.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 250 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 250.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 250 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.250-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 250.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 250 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Isobaric vertical motion at 250.0 mb [Pa/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Isobaric vertical motion at 250 mb [Pa/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WP.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 250.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 250 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 250.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 250 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 250.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 250 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 250.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 250 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.250-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 250 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 250.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 250 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.250",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9705,55 +13250,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 275.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 275 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.275-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 275 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 275.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 275 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 275.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 275 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.275-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 275.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 275 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 275.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 275 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 275.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 275 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 275.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 275 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 275.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 275 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.275-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 275 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 275.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 275 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.275",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9766,55 +13323,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 300.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 300 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.300-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 300 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 300.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 300 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 300.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 300 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.300-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 300.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 300 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 300.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 300 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 300.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 300 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 300.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 300 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 300.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 300 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.300-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 300 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 300.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 300 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.300",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9827,55 +13396,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 350.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 350 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.350-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 350 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 350.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 350 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 350.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 350 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.350-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 350.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 350 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 350.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 350 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 350.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 350 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 350.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 350 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 350.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 350 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.350-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 350 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 350.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 350 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.350",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9888,55 +13469,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 400.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 400 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.400-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 400 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 400.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 400 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 400.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 400 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.400-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 400.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 400 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 400.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 400 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 400.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 400 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 400.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 400 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 400.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 400 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.400-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 400 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 400.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 400 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.400",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9949,55 +13542,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 450.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 450 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.450-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 450 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 450.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 450 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 450.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 450 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.450-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 450.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 450 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 450.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 450 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 450.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 450 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 450.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 450 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 450.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 450 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.450-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 450 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 450.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 450 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.450",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10010,67 +13615,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Absolute vorticity at 500.0 mb [s-1]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Absolute vorticity at 500 mb [s-1]",
                 "Name": "HRDPS.CONTINENTAL.PRES_QQ.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 500 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.500-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 500 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 500.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 500 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 500.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 500 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.500-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 500.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 500 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Isobaric vertical motion at 500.0 mb [Pa/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Isobaric vertical motion at 500 mb [Pa/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WP.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 500.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 500 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 500.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 500 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 500.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 500 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 500.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 500 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.500-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 500 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 500.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 500 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.500",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10083,55 +13700,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 550.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 550 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.550-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 550 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 550.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 550 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 550.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 550 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.550-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 550.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 550 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 550.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 550 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 550.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 550 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 550.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 550 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 550.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 550 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.550-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 550 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 550.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 550 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.550",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10144,55 +13773,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 600.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 600 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.600-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 600 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 600.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 600 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 600.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 600 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.600-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 600.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 600 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 600.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 600 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 600.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 600 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 600.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 600 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 600.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 600 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.600-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 600 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 600.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 600 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.600",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10205,55 +13846,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 650.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 650 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.650-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 650 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 650.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 650 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 650.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 650 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.650-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 650.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 650 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 650.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 650 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 650.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 650 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 650.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 650 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 650.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 650 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.650-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 650 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 650.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 650 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.650",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10266,67 +13919,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Absolute vorticity at 700.0 mb [s-1]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Absolute vorticity at 700 mb [s-1]",
                 "Name": "HRDPS.CONTINENTAL.PRES_QQ.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 700 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.700-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 700 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 700.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 700 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 700.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 700 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.700-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 700.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 700 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Isobaric vertical motion at 700.0 mb [Pa/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Isobaric vertical motion at 700 mb [Pa/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WP.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 700.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 700 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 700.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 700 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 700.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 700 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 700.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 700 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.700-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 700 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 700.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 700 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.700",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10339,55 +14004,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 750.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 750 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.750-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 750 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 750.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 750 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 750.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 750 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.750-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 750.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 750 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 750.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 750 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 750.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 750 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 750.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 750 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 750.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 750 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.750-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 750 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 750.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 750 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.750",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10400,55 +14077,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 800.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 800 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.800-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 800 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 800.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 800 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 800.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 800 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.800-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 800.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 800 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 800.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 800 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 800.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 800 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 800.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 800 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 800.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 800 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.800-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 800 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 800.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 800 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.800",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10461,67 +14150,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Absolute vorticity at 850.0 mb [s-1]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Absolute vorticity at 850 mb [s-1]",
                 "Name": "HRDPS.CONTINENTAL.PRES_QQ.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 850 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.850-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 850 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 850.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 850 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 850.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 850 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.850-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 850.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 850 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Isobaric vertical motion at 850.0 mb [Pa/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Isobaric vertical motion at 850 mb [Pa/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WP.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 850.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 850 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 850.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 850 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 850.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 850 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 850.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 850 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.850-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 850 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 850.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 850 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.850",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10534,55 +14235,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 875.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 875 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.875-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 875 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 875.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 875 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 875.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 875 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.875-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 875.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 875 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 875.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 875 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 875.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 875 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 875.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 875 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 875.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 875 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.875-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 875 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 875.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 875 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.875",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10595,55 +14308,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 900.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 900 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.900-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 900 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 900.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 900 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 900.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 900 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.900-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 900.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 900 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 900.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 900 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 900.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 900 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 900.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 900 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 900.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 900 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.900-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 900 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 900.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 900 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.900",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10656,55 +14381,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 925 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.925-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 925 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 925.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 925 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 925.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 925 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.925-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 925.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 925 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 925.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 925 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 925.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 925 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 925.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 925 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 925.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 925 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.925-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 925 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 925.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 925 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.925",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10717,55 +14454,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 950.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 950 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.950-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 950 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 950.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 950 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 950.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 950 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.950-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 950.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 950 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 950.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 950 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 950.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 950 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 950.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 950 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 950.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 950 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.950-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 950 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 950.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 950 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.950",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10778,55 +14527,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 970.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 970 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.970-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 970 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 970.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 970 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 970.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 970 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.970-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 970.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 970 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 970.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 970 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 970.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 970 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 970.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 970 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 970.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 970 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.970-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 970 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 970.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 970 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.970",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10839,55 +14600,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 985.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 985 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.985-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 985 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 985.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 985 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 985.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 985 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.985-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 985.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 985 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 985.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 985 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 985.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 985 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 985.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 985 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 985.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 985 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.985-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 985 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 985.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 985 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.985",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10900,67 +14673,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Absolute vorticity at 1000.0 mb [s-1]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Absolute vorticity at 1000 mb [s-1]",
                 "Name": "HRDPS.CONTINENTAL.PRES_QQ.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 1000 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.1000-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 1000.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 1000 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 1000.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 1000 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.1000-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 1000 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Isobaric vertical motion at 1000.0 mb [Pa/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Isobaric vertical motion at 1000 mb [Pa/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WP.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 1000.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 1000 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 1000.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 1000 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 1000.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 1000 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 1000.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 1000 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.1000-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 1000 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 1000.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 1000 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.1000",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10973,55 +14758,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 1015.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 1015 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.CONTINENTAL.PRES_TT.1015-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Air temperature at 1015 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_TT.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 1015.0 mb [\u00b0C]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Dew point depression at 1015 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 1015.0 mb (contour) [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 1015 mb (contour) [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.1015-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 1015.0 mb [gpm]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Geopotential height at 1015 mb [gpm]",
                 "Name": "HRDPS.CONTINENTAL.PRES_GZ.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 1015.0 mb [%]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Relative humidity at 1015 mb [%]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HR.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 1015.0 mb [kg/kg]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Specific humidity at 1015 mb [kg/kg]",
                 "Name": "HRDPS.CONTINENTAL.PRES_HU.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 1015.0 mb [\u00b0]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind direction at 1015 mb [\u00b0]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WD.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 1015.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 1015 mb (contour) [m/s]",
+                "Name": "HRDPS.CONTINENTAL.PRES_WSPD.1015-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.CONTINENTAL.PRES - Wind speed at 1015 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_WSPD.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 1015.0 mb [m/s]",
+                "Title": "HRDPS.CONTINENTAL.PRES - Winds at 1015 mb [m/s]",
                 "Name": "HRDPS.CONTINENTAL.PRES_UU.1015",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11036,26 +14833,236 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "HRDPS.CONTINENTAL - Lifted index for the most unstable parcel using the virtual temperature correction (contour) [K]",
-            "Name": "HRDPS.CONTINENTAL.CONV_MU-VT-LI.500-CONTOUR",
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_SFC-VT-LI.500",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.CONTINENTAL - Lifted index for the most unstable parcel using the virtual temperature correction [K]",
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_SFC-VT-LI.500-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-VT-LI.400",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-VT-LI.400-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-VT-LI.500",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-VT-LI.500-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-VT-LI.600",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-VT-LI.600-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-VT-LI.650",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-VT-LI.650-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-VT-LI.700",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-VT-LI.700-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-VT-LI.800",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-VT-LI.800-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer, with reference level 400 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-LI.400",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer, with reference level 400 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-LI.400-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer, with reference level 500 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-LI.500",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer, with reference level 500 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-LI.500-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer, with reference level 600 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-LI.600",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer, with reference level 600 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-LI.600-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer, with reference level 650 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-LI.650",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer, with reference level 650 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-LI.650-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer, with reference level 700 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-LI.700",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer, with reference level 700 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-LI.700-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer, with reference level 800 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-LI.800",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for a parcel representing the mean of a layer, with reference level 800 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_ML-LI.800-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb",
             "Name": "HRDPS.CONTINENTAL.CONV_MU-VT-LI.500",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.CONTINENTAL - Showalter Index, with reference level 500.0 mb (contour) [K]",
+            "Title": "HRDPS.CONTINENTAL - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_MU-VT-LI.500-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for the most unstable parcel, with reference level 500 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_MU-LI.500",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Lifted index for the most unstable parcel, with reference level 500 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_MU-LI.500-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Severe storm index",
+            "Name": "HRDPS.CONTINENTAL.CONV_SSI",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Severe weather threat index",
+            "Name": "HRDPS.CONTINENTAL.CONV_SWEAT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Showalter Index using the virtual temperature correction, with reference level 500 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_VT-SHWINX.500",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Showalter Index using the virtual temperature correction, with reference level 500 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_VT-SHWINX.500-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Showalter Index, with reference level 500 mb (contour) [K]",
             "Name": "HRDPS.CONTINENTAL.CONV_SHWINX.500-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.CONTINENTAL - Showalter Index, with reference level 500.0 mb [K]",
+            "Title": "HRDPS.CONTINENTAL - Showalter Index, with reference level 500 mb [K]",
             "Name": "HRDPS.CONTINENTAL.CONV_SHWINX.500",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Surface lifted index, with reference level 500 mb",
+            "Name": "HRDPS.CONTINENTAL.CONV_SFC-LI.500",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Surface lifted index, with reference level 500 mb (contour)",
+            "Name": "HRDPS.CONTINENTAL.CONV_SFC-LI.500-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - Vertical wind shear below 650 mb [1/s]",
+            "Name": "HRDPS.CONTINENTAL.CONV_VWSH.650",
             "isLeaf": true,
             "isTemporal": true
           }
@@ -11080,6 +15087,12 @@ export default {
         "isLeaf": false,
         "children": [
           {
+            "Title": "HRDPS.NORTH - Air temperature (contour) [\u00b0C]",
+            "Name": "HRDPS.NORTH_TT-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "HRDPS.NORTH - Air temperature [\u00b0C]",
             "Name": "HRDPS.NORTH_TT",
             "isLeaf": true,
@@ -11088,6 +15101,12 @@ export default {
           {
             "Title": "HRDPS.NORTH - Dew point depression [\u00b0C]",
             "Name": "HRDPS.NORTH_ES",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.NORTH - Dew point temperature (contour) [\u00b0C]",
+            "Name": "HRDPS.NORTH_TD-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -11200,6 +15219,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "HRDPS.NORTH - Wind speed (contour) [m/s]",
+            "Name": "HRDPS.NORTH_WSPD-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "HRDPS.NORTH - Wind speed [m/s]",
             "Name": "HRDPS.NORTH_WSPD",
             "isLeaf": true,
@@ -11224,55 +15249,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 50 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.50-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 50 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 50.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 50 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 50.0 mb (contour) [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 50 mb (contour) [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.50-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 50.0 mb [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 50 mb [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 50.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 50 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 50.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 50 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 50.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 50 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 50.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 50 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.50-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 50 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 50.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 50 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.50",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11285,55 +15322,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 100 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.100-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 100 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 100.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 100 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 100.0 mb (contour) [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 100 mb (contour) [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.100-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 100.0 mb [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 100 mb [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 100.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 100 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 100.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 100 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 100.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 100 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 100.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 100 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.100-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 100 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 100.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 100 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.100",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11346,43 +15395,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 150.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 150 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.150-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 150 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 150.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 150 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 150.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 150 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 150.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 150 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 150.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 150 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 150.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 150 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.150-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 150 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 150.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 150 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.150",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11395,43 +15456,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 175.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 175 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.175-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 175 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 175.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 175 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 175.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 175 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 175.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 175 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 175.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 175 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 175.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 175 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.175-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 175 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 175.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 175 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.175",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11444,55 +15517,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 200 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.200-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 200 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 200.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 200 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 200.0 mb (contour) [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 200 mb (contour) [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.200-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 200.0 mb [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 200 mb [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 200.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 200 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 200.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 200 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 200.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 200 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 200.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 200 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.200-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 200 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 200.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 200 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.200",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11505,43 +15590,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 225.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 225 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.225-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 225 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 225.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 225 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 225.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 225 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 225.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 225 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 225.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 225 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 225.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 225 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.225-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 225 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 225.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 225 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.225",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11554,67 +15651,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Absolute vorticity at 250.0 mb [s-1]",
+                "Title": "HRDPS.NORTH.PRES - Absolute vorticity at 250 mb [s-1]",
                 "Name": "HRDPS.NORTH.PRES_QQ.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 250 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.250-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 250 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 250.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 250 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 250.0 mb (contour) [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 250 mb (contour) [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.250-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 250.0 mb [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 250 mb [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Isobaric vertical motion at 250.0 mb [Pa/s]",
+                "Title": "HRDPS.NORTH.PRES - Isobaric vertical motion at 250 mb [Pa/s]",
                 "Name": "HRDPS.NORTH.PRES_WP.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 250.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 250 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 250.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 250 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 250.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 250 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 250.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 250 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.250-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 250 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 250.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 250 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.250",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11627,43 +15736,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 275.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 275 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.275-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 275 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 275.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 275 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 275.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 275 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 275.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 275 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 275.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 275 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 275.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 275 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.275-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 275 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 275.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 275 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.275",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11676,43 +15797,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 300.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 300 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.300-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 300 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 300.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 300 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 300.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 300 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 300.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 300 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 300.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 300 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 300.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 300 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.300-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 300 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 300.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 300 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.300",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11725,43 +15858,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 350.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 350 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.350-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 350 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 350.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 350 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 350.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 350 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 350.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 350 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 350.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 350 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 350.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 350 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.350-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 350 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 350.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 350 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.350",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11774,43 +15919,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 400.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 400 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.400-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 400 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 400.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 400 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 400.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 400 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 400.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 400 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 400.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 400 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 400.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 400 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.400-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 400 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 400.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 400 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.400",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11823,43 +15980,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 450.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 450 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.450-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 450 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 450.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 450 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 450.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 450 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 450.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 450 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 450.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 450 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 450.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 450 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.450-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 450 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 450.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 450 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.450",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11872,67 +16041,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Absolute vorticity at 500.0 mb [s-1]",
+                "Title": "HRDPS.NORTH.PRES - Absolute vorticity at 500 mb [s-1]",
                 "Name": "HRDPS.NORTH.PRES_QQ.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 500 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.500-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 500 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 500.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 500 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 500.0 mb (contour) [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 500 mb (contour) [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.500-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 500.0 mb [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 500 mb [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Isobaric vertical motion at 500.0 mb [Pa/s]",
+                "Title": "HRDPS.NORTH.PRES - Isobaric vertical motion at 500 mb [Pa/s]",
                 "Name": "HRDPS.NORTH.PRES_WP.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 500.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 500 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 500.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 500 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 500.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 500 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 500.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 500 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.500-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 500 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 500.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 500 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.500",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11945,43 +16126,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 550.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 550 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.550-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 550 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 550.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 550 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 550.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 550 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 550.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 550 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 550.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 550 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 550.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 550 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.550-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 550 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 550.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 550 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.550",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11994,43 +16187,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 600.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 600 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.600-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 600 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 600.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 600 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 600.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 600 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 600.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 600 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 600.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 600 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 600.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 600 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.600-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 600 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 600.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 600 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.600",
                 "isLeaf": true,
                 "isTemporal": true
@@ -12043,43 +16248,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 650.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 650 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.650-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 650 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 650.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 650 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 650.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 650 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 650.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 650 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 650.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 650 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 650.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 650 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.650-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 650 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 650.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 650 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.650",
                 "isLeaf": true,
                 "isTemporal": true
@@ -12092,67 +16309,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Absolute vorticity at 700.0 mb [s-1]",
+                "Title": "HRDPS.NORTH.PRES - Absolute vorticity at 700 mb [s-1]",
                 "Name": "HRDPS.NORTH.PRES_QQ.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 700 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.700-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 700 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 700.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 700 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 700.0 mb (contour) [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 700 mb (contour) [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.700-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 700.0 mb [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 700 mb [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Isobaric vertical motion at 700.0 mb [Pa/s]",
+                "Title": "HRDPS.NORTH.PRES - Isobaric vertical motion at 700 mb [Pa/s]",
                 "Name": "HRDPS.NORTH.PRES_WP.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 700.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 700 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 700.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 700 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 700.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 700 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 700.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 700 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.700-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 700 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 700.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 700 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.700",
                 "isLeaf": true,
                 "isTemporal": true
@@ -12165,43 +16394,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 750.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 750 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.750-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 750 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 750.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 750 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 750.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 750 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 750.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 750 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 750.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 750 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 750.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 750 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.750-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 750 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 750.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 750 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.750",
                 "isLeaf": true,
                 "isTemporal": true
@@ -12214,43 +16455,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 800.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 800 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.800-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 800 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 800.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 800 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 800.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 800 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 800.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 800 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 800.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 800 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 800.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 800 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.800-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 800 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 800.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 800 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.800",
                 "isLeaf": true,
                 "isTemporal": true
@@ -12263,67 +16516,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Absolute vorticity at 850.0 mb [s-1]",
+                "Title": "HRDPS.NORTH.PRES - Absolute vorticity at 850 mb [s-1]",
                 "Name": "HRDPS.NORTH.PRES_QQ.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 850 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.850-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 850 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 850.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 850 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 850.0 mb (contour) [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 850 mb (contour) [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.850-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 850.0 mb [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 850 mb [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Isobaric vertical motion at 850.0 mb [Pa/s]",
+                "Title": "HRDPS.NORTH.PRES - Isobaric vertical motion at 850 mb [Pa/s]",
                 "Name": "HRDPS.NORTH.PRES_WP.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 850.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 850 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 850.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 850 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 850.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 850 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 850.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 850 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.850-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 850 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 850.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 850 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.850",
                 "isLeaf": true,
                 "isTemporal": true
@@ -12336,43 +16601,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 875.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 875 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.875-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 875 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 875.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 875 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 875.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 875 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 875.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 875 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 875.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 875 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 875.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 875 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.875-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 875 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 875.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 875 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.875",
                 "isLeaf": true,
                 "isTemporal": true
@@ -12385,43 +16662,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 900.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 900 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.900-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 900 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 900.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 900 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 900.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 900 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 900.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 900 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 900.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 900 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 900.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 900 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.900-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 900 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 900.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 900 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.900",
                 "isLeaf": true,
                 "isTemporal": true
@@ -12434,55 +16723,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 925 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.925-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 925 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 925.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 925 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 925.0 mb (contour) [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 925 mb (contour) [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.925-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 925.0 mb [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 925 mb [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 925.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 925 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 925.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 925 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 925.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 925 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 925.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 925 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.925-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 925 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 925.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 925 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.925",
                 "isLeaf": true,
                 "isTemporal": true
@@ -12495,43 +16796,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 950.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 950 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.950-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 950 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 950.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 950 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 950.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 950 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 950.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 950 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 950.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 950 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 950.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 950 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.950-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 950 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 950.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 950 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.950",
                 "isLeaf": true,
                 "isTemporal": true
@@ -12544,43 +16857,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 970.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 970 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.970-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 970 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 970.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 970 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 970.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 970 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 970.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 970 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 970.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 970 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 970.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 970 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.970-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 970 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 970.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 970 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.970",
                 "isLeaf": true,
                 "isTemporal": true
@@ -12593,43 +16918,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 985.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 985 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.985-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 985 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 985.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 985 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 985.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 985 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 985.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 985 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 985.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 985 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 985.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 985 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.985-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 985 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 985.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 985 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.985",
                 "isLeaf": true,
                 "isTemporal": true
@@ -12642,67 +16979,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Absolute vorticity at 1000.0 mb [s-1]",
+                "Title": "HRDPS.NORTH.PRES - Absolute vorticity at 1000 mb [s-1]",
                 "Name": "HRDPS.NORTH.PRES_QQ.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 1000 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.1000-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 1000.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 1000 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 1000.0 mb (contour) [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 1000 mb (contour) [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.1000-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "HRDPS.NORTH.PRES - Geopotential height at 1000 mb [gpm]",
                 "Name": "HRDPS.NORTH.PRES_GZ.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Isobaric vertical motion at 1000.0 mb [Pa/s]",
+                "Title": "HRDPS.NORTH.PRES - Isobaric vertical motion at 1000 mb [Pa/s]",
                 "Name": "HRDPS.NORTH.PRES_WP.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 1000.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 1000 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 1000.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 1000 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 1000.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 1000 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 1000.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 1000 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.1000-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 1000 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 1000.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 1000 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.1000",
                 "isLeaf": true,
                 "isTemporal": true
@@ -12715,43 +17064,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "HRDPS.NORTH.PRES - Air temperature at 1015.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 1015 mb (contour) [\u00b0C]",
+                "Name": "HRDPS.NORTH.PRES_TT.1015-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Air temperature at 1015 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_TT.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Dew point depression at 1015.0 mb [\u00b0C]",
+                "Title": "HRDPS.NORTH.PRES - Dew point depression at 1015 mb [\u00b0C]",
                 "Name": "HRDPS.NORTH.PRES_ES.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Relative humidity at 1015.0 mb [%]",
+                "Title": "HRDPS.NORTH.PRES - Relative humidity at 1015 mb [%]",
                 "Name": "HRDPS.NORTH.PRES_HR.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Specific humidity at 1015.0 mb [kg/kg]",
+                "Title": "HRDPS.NORTH.PRES - Specific humidity at 1015 mb [kg/kg]",
                 "Name": "HRDPS.NORTH.PRES_HU.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind direction at 1015.0 mb [\u00b0]",
+                "Title": "HRDPS.NORTH.PRES - Wind direction at 1015 mb [\u00b0]",
                 "Name": "HRDPS.NORTH.PRES_WD.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Wind speed at 1015.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 1015 mb (contour) [m/s]",
+                "Name": "HRDPS.NORTH.PRES_WSPD.1015-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "HRDPS.NORTH.PRES - Wind speed at 1015 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_WSPD.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "HRDPS.NORTH.PRES - Winds at 1015.0 mb [m/s]",
+                "Title": "HRDPS.NORTH.PRES - Winds at 1015 mb [m/s]",
                 "Name": "HRDPS.NORTH.PRES_UU.1015",
                 "isLeaf": true,
                 "isTemporal": true
@@ -12766,25 +17127,25 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "HRDPS.NORTH - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500.0 mb (contour) [K]",
+            "Title": "HRDPS.NORTH - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb (contour) [K]",
             "Name": "HRDPS.NORTH.CONV_MU-VT-LI.500-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.NORTH - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500.0 mb [K]",
+            "Title": "HRDPS.NORTH - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb [K]",
             "Name": "HRDPS.NORTH.CONV_MU-VT-LI.500",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.NORTH - Showalter Index, with reference level 500.0 mb (contour) [K]",
+            "Title": "HRDPS.NORTH - Showalter Index, with reference level 500 mb (contour) [K]",
             "Name": "HRDPS.NORTH.CONV_SHWINX.500-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.NORTH - Showalter Index, with reference level 500.0 mb [K]",
+            "Title": "HRDPS.NORTH - Showalter Index, with reference level 500 mb [K]",
             "Name": "HRDPS.NORTH.CONV_SHWINX.500",
             "isLeaf": true,
             "isTemporal": true
@@ -12833,7 +17194,13 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Dew point temperature [C]",
+            "Title": "HRDPS-WEonG - Dew point temperature (contour) [\u00b0C]",
+            "Name": "HRDPS-WEonG_2.5km_DewPointTemp-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS-WEonG - Dew point temperature [\u00b0C]",
             "Name": "HRDPS-WEonG_2.5km_DewPointTemp",
             "isLeaf": true,
             "isTemporal": true
@@ -12852,13 +17219,25 @@ export default {
           },
           {
             "Title": "HRDPS-WEonG - Height of snow level [m]",
-            "Name": "HRDPS-WEonG_2.5km_SnowHeight",
+            "Name": "HRDPS-WEonG_2.5km_SnowLevelHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
             "Title": "HRDPS-WEonG - Instantaneous precipitation type",
             "Name": "HRDPS-WEonG_2.5km_InstantPrecipType",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS-WEonG - Land/water proportion",
+            "Name": "HRDPS-WEonG_2.5km_LandWater-Proportion",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS-WEonG - Land/water proportion",
+            "Name": "HRDPS-WEonG_2.5km_WaterLand-Proportion",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -12983,12 +17362,6 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Water/land proportion",
-            "Name": "HRDPS-WEonG_2.5km_WaterLand-Proportion",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
             "Title": "HRDPS-WEonG - Wind direction [deg true]",
             "Name": "HRDPS-WEonG_2.5km_WindDir",
             "isLeaf": true,
@@ -13001,6 +17374,18 @@ export default {
             "isTemporal": true
           }
         ]
+      },
+      {
+        "Title": "HRDPS footprint",
+        "Name": "HRDPS-Continental_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
+      },
+      {
+        "Title": "HRDPS-WEonG footprint",
+        "Name": "HRDPS-WEonG_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
       }
     ]
   },
@@ -14360,6 +18745,12 @@ export default {
                 ]
               }
             ]
+          },
+          {
+            "Title": "CIOPS-East footprint",
+            "Name": "CIOPS-East_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
           }
         ]
       },
@@ -15604,6 +19995,18 @@ export default {
                 ]
               }
             ]
+          },
+          {
+            "Title": "CIOPS-SalishSea footprint",
+            "Name": "CIOPS-SalishSea_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "CIOPS-West footprint",
+            "Name": "CIOPS-West_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
           }
         ]
       },
@@ -16856,6 +21259,12 @@ export default {
         "Name": "Global Ice Ocean Prediction System in 2 dimensions (GIOPS.2D) [24 km]",
         "isLeaf": false,
         "children": [
+          {
+            "Title": "GIOPS footprint",
+            "Name": "GIOPS_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
+          },
           {
             "Title": "OCEAN.GIOPS.2D - Ice velocity [m/s]",
             "Name": "OCEAN.GIOPS.2D_UUI",
@@ -19336,6 +23745,32 @@ export default {
     ]
   },
   {
+    "Title": "Operational Hydrodynamic Prediction System (OHPS) [100m]",
+    "Name": "Operational Hydrodynamic Prediction System (OHPS) [100m]",
+    "isLeaf": false,
+    "children": [
+      {
+        "Title": "OHPS",
+        "Name": "OHPS",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "OHPS - Magnitude of the depth-averaged river velocity [m/s]",
+            "Name": "OHPS_100m_RiverVelocity",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "OHPS - Water level of the river [m]",
+            "Name": "OHPS_100m_WaterLvlRiver",
+            "isLeaf": true,
+            "isTemporal": true
+          }
+        ]
+      }
+    ]
+  },
+  {
     "Title": "Other Weather Data",
     "Name": "Other Weather Data",
     "isLeaf": false,
@@ -19383,6 +23818,12 @@ export default {
             "isTemporal": false
           },
           {
+            "Title": "HRDPA footprint",
+            "Name": "HRDPA_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
             "Title": "HRDPA-Prelim.24 - Quantity of precipitation (preliminary) - T06Z [mm]",
             "Name": "HRDPA-Prelim_2.5km_Precip-Accum24h-T06Z",
             "isLeaf": true,
@@ -19415,6 +23856,175 @@ export default {
           {
             "Title": "HRDPA.06 - Quantity of precipitation [mm]",
             "Name": "HRDPA_2.5km_Precip-Accum6h",
+            "isLeaf": true,
+            "isTemporal": true
+          }
+        ]
+      },
+      {
+        "Title": "High Resolution Ensemble Precipitation Analysis (HREPA) [2.5 km]",
+        "Name": "High Resolution Ensemble Precipitation Analysis (HREPA) [2.5 km]",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "HREPA.6P_2.5km_PCT25 - 25th percentile estimated on the 25-member HREPA, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_PCT25",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_PCT75 - 75th percentile estimated on the 25-member HREPA, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_PCT75",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_01 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm] [control member]",
+            "Name": "HREPA.6P_2.5km_01",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_02 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_02",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_03 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_03",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_04 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_04",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_05 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_05",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_06 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_06",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_07 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_07",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_08 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_08",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_09 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_09",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_10 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_10",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_11 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_11",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_12 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_12",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_13 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_13",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_14 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_14",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_15 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_15",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_16 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_16",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_17 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_17",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_18 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_18",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_19 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_19",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_20 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_20",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_21 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_21",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_22 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_22",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_23 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_23",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_24 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_24",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HREPA.6P_2.5km_25 - 25-member ensemble of the 6-hour precipitation analyses, available at synoptic hours [mm]",
+            "Name": "HREPA.6P_2.5km_25",
             "isLeaf": true,
             "isTemporal": true
           }
@@ -19462,37 +24072,37 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "RDPA - Quantity of precipitation over a 6h hour interval (preliminary) [mm] [10 km]",
+            "Title": "RDPA-Prelim_Accum6h - Quantity of precipitation over a 6h hour interval (preliminary) [mm] [10 km]",
             "Name": "RDPA-Prelim_10km_Precip-Accum6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPA - Quantity of precipitation over a 6h hour interval [mm] [10 km] (archive)",
+            "Title": "RDPA_Accum6h - Quantity of precipitation over a 6h hour interval [mm] [10 km] (archive)",
             "Name": "RDPA_10km_Precip-Accum6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPA - Quantity of precipitation over a 24h hour interval (preliminary) - T06Z [mm] [10 km]",
+            "Title": "RDPA-Prelim_Accum24h - Quantity of precipitation over a 24h hour interval (preliminary) - T06Z [mm] [10 km]",
             "Name": "RDPA-Prelim_10km_Precip-Accum24h-T06Z",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPA - Quantity of precipitation over a 24h hour interval (preliminary) - T12Z [mm] [10 km]",
+            "Title": "RDPA-Prelim_Accum24h - Quantity of precipitation over a 24h hour interval (preliminary) - T12Z [mm] [10 km]",
             "Name": "RDPA-Prelim_10km_Precip-Accum24h-T12Z",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPA - Quantity of precipitation over a 24h hour interval [mm] - T06Z [10 km] (archive)",
+            "Title": "RDPA_Accum24h - Quantity of precipitation over a 24h hour interval [mm] - T06Z [10 km] (archive)",
             "Name": "RDPA_10km_Precip-Accum24h-T06Z",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPA - Quantity of precipitation over a 24h hour interval [mm] - T12Z [10 km] (archive)",
+            "Title": "RDPA_Accum24h - Quantity of precipitation over a 24h hour interval [mm] - T12Z [10 km] (archive)",
             "Name": "RDPA_10km_Precip-Accum24h-T12Z",
             "isLeaf": true,
             "isTemporal": true
@@ -19518,8 +24128,44 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS.ETA - Air temperature (contour) [\u00b0C]",
+            "Name": "RDPS.ETA_TT-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS.ETA - Air temperature [\u00b0C]",
             "Name": "RDPS.ETA_TT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Air temperature at 40m above ground [\u00b0C]",
+            "Name": "RDPS.ETA_TT_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Air temperature at 80m above ground [\u00b0C]",
+            "Name": "RDPS.ETA_TT_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Air temperature at 120m above ground [\u00b0C]",
+            "Name": "RDPS.ETA_TT_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Cloud water [kg/m\u00b2]",
+            "Name": "RDPS.ETA_IH",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Convective precipitation [kg/m\u00b2]",
+            "Name": "RDPS.ETA_PC",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -19578,6 +24224,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS.ETA - Dew point temperature (contour) [\u00b0C]",
+            "Name": "RDPS.ETA_TD-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS.ETA - Dew point temperature [\u00b0C]",
             "Name": "RDPS.ETA_TD",
             "isLeaf": true,
@@ -19614,8 +24266,56 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS.ETA - Humidex at 2 m above ground",
+            "Name": "RDPS.ETA_HMX",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Ice cover [Proportion]",
+            "Name": "RDPS.ETA_ICEC",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Ice pellets accumulation [kg/m\u00b2]",
+            "Name": "RDPS.ETA_PE",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Incoming visible accumulated flux at the top of atmosphere [J/m\u00b2]",
+            "Name": "RDPS.ETA_AB",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS.ETA - Instantaneous precipitation rate [kg/(m\u00b2s)]",
             "Name": "RDPS.ETA_RT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Land/water proportion",
+            "Name": "RDPS.ETA_MGB",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Latent heat net flux [W/m\u00b2]",
+            "Name": "RDPS.ETA_FV",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Net longwave accumulated radiation flux at the surface [J/m\u00b2]",
+            "Name": "RDPS.ETA_AI",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Net shortwave accumulated radiation flux at the surface [J/m\u00b2]",
+            "Name": "RDPS.ETA_AS",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -19668,6 +24368,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS.ETA - Pressure tendency [Pa/s]",
+            "Name": "RDPS.ETA_D3",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS.ETA - Rain accumulation [kg/m\u00b2]",
             "Name": "RDPS.ETA_RN",
             "isLeaf": true,
@@ -19692,8 +24398,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS.ETA - Sensible heat net flux [W/m\u00b2]",
+            "Name": "RDPS.ETA_FC",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS.ETA - Snow accumulation [kg/m\u00b2]",
             "Name": "RDPS.ETA_SN",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Snow density [kg/m\u00b3]",
+            "Name": "RDPS.ETA_DN",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -19716,8 +24434,38 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS.ETA - Soil volumetric water content (0-0.01m) [m\u00b3/m\u00b3]",
+            "Name": "RDPS.ETA_I1_0-0.01m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS.ETA - Specific Humidity [kg/kg]",
             "Name": "RDPS.ETA_HU",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Specific Humidity at 2m above ground [kg/kg]",
+            "Name": "RDPS.ETA_HU_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Specific Humidity at 40m above ground [kg/kg]",
+            "Name": "RDPS.ETA_HU_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Specific Humidity at 80m above ground [kg/kg]",
+            "Name": "RDPS.ETA_HU_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Specific Humidity at 120m above ground [kg/kg]",
+            "Name": "RDPS.ETA_HU_120m",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -19752,8 +24500,56 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS.ETA - Thickness between 850 mb and 700 mb (contour) [m]",
+            "Name": "RDPS.ETA_DZ_850-700mb-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Thickness between 850 mb and 700 mb [m]",
+            "Name": "RDPS.ETA_DZ_850-700mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Thickness between 1000 mb and 850 mb (contour) [m]",
+            "Name": "RDPS.ETA_DZ_1000-850mb-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Thickness between 1000 mb and 850 mb [m]",
+            "Name": "RDPS.ETA_DZ_1000-850mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Thickness between 1000mb and 500mb (contour) [m]",
+            "Name": "RDPS.ETA_DZ-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Thickness between 1000mb and 500mb [m]",
+            "Name": "RDPS.ETA_DZ",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS.ETA - Total cloud cover [%]",
             "Name": "RDPS.ETA_NT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+            "Name": "RDPS.ETA_EI",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Upward shortwave radiation flux at the top of atmosphere [W/m\u00b2]",
+            "Name": "RDPS.ETA_EV",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -19776,8 +24572,38 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS.ETA - Water temperature [K]",
+            "Name": "RDPS.ETA_TM",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Wind chill factor at surface [\u00b0C]",
+            "Name": "RDPS.ETA_RE",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS.ETA - Wind direction [\u00b0]",
             "Name": "RDPS.ETA_WD",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Wind direction at 40m above surface [\u00b0]",
+            "Name": "RDPS.ETA_WD_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Wind direction at 80m above surface [\u00b0]",
+            "Name": "RDPS.ETA_WD_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Wind direction at 120m above surface [\u00b0]",
+            "Name": "RDPS.ETA_WD_120m",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -19800,8 +24626,50 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS.ETA - Wind speed (contour) [m/s]",
+            "Name": "RDPS.ETA_WSPD-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS.ETA - Wind speed [m/s]",
             "Name": "RDPS.ETA_WSPD",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Wind speed at 40m above surface (contour) [m/s]",
+            "Name": "RDPS.ETA_WSPD_40m-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Wind speed at 40m above surface [m/s]",
+            "Name": "RDPS.ETA_WSPD_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Wind speed at 80m above surface (contour) [m/s]",
+            "Name": "RDPS.ETA_WSPD_80m-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Wind speed at 80m above surface [m/s]",
+            "Name": "RDPS.ETA_WSPD_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Wind speed at 120m above surface (contour) [m/s]",
+            "Name": "RDPS.ETA_WSPD_120m-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Wind speed at 120m above surface [m/s]",
+            "Name": "RDPS.ETA_WSPD_120m",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -19824,43 +24692,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 1.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 1 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.1-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 1 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 1.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 1 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.1-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 1.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 1 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 1.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 1 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 1.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 1 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 1.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 1 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.1-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 1 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 1.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 1 mb [m/s]",
                 "Name": "RDPS.PRES_UU.1",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19873,43 +24753,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 5.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 5 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.5-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 5 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 5.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 5 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.5-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 5.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 5 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 5.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 5 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 5.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 5 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 5.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 5 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.5-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 5 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 5.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 5 mb [m/s]",
                 "Name": "RDPS.PRES_UU.5",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19922,55 +24814,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 10.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 10 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.10-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 10 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 10.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 10 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 10.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 10 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.10-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 10.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 10 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 10.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 10 mb [%]",
                 "Name": "RDPS.PRES_HR.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 10.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 10 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 10.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 10 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 10.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 10 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.10-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 10 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 10.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 10 mb [m/s]",
                 "Name": "RDPS.PRES_UU.10",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19983,55 +24887,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 20.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 20 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.20-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 20 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 20.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 20 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 20.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 20 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.20-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 20.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 20 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 20.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 20 mb [%]",
                 "Name": "RDPS.PRES_HR.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 20.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 20 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 20.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 20 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 20.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 20 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.20-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 20 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 20.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 20 mb [m/s]",
                 "Name": "RDPS.PRES_UU.20",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20044,55 +24960,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 30.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 30 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.30-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 30 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 30.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 30 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 30.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 30 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.30-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 30.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 30 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 30.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 30 mb [%]",
                 "Name": "RDPS.PRES_HR.30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 30.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 30 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 30.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 30 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 30.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 30 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.30-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 30 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 30.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 30 mb [m/s]",
                 "Name": "RDPS.PRES_UU.30",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20105,55 +25033,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 50 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.50-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 50 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 50.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 50 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 50.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 50 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.50-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 50.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 50 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 50.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 50 mb [%]",
                 "Name": "RDPS.PRES_HR.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 50.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 50 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 50.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 50 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 50.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 50 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.50-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 50 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 50.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 50 mb [m/s]",
                 "Name": "RDPS.PRES_UU.50",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20166,55 +25106,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 100 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.100-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 100 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 100.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 100 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 100.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 100 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.100-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 100.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 100 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 100.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 100 mb [%]",
                 "Name": "RDPS.PRES_HR.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 100.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 100 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 100.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 100 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 100.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 100 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.100-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 100 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 100.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 100 mb [m/s]",
                 "Name": "RDPS.PRES_UU.100",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20227,55 +25179,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 150.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 150 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.150-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 150 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 150.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 150 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 150.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 150 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.150-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 150.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 150 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 150.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 150 mb [%]",
                 "Name": "RDPS.PRES_HR.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 150.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 150 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 150.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 150 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 150.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 150 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.150-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 150 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 150.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 150 mb [m/s]",
                 "Name": "RDPS.PRES_UU.150",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20288,55 +25252,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 175.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 175 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.175-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 175 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 175.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 175 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 175.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 175 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.175-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 175.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 175 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 175.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 175 mb [%]",
                 "Name": "RDPS.PRES_HR.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 175.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 175 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 175.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 175 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 175.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 175 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.175-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 175 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.175",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 175.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 175 mb [m/s]",
                 "Name": "RDPS.PRES_UU.175",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20349,55 +25325,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 200 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.200-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 200 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 200.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 200 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 200.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 200 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.200-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 200.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 200 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 200.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 200 mb [%]",
                 "Name": "RDPS.PRES_HR.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 200.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 200 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 200.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 200 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 200.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 200 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.200-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 200 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 200.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 200 mb [m/s]",
                 "Name": "RDPS.PRES_UU.200",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20410,55 +25398,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 225.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 225 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.225-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 225 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 225.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 225 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 225.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 225 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.225-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 225.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 225 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 225.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 225 mb [%]",
                 "Name": "RDPS.PRES_HR.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 225.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 225 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 225.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 225 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 225.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 225 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.225-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 225 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.225",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 225.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 225 mb [m/s]",
                 "Name": "RDPS.PRES_UU.225",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20471,67 +25471,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Absolute vorticity at 250.0 mb [s-1]",
+                "Title": "RDPS.PRES - Absolute vorticity at 250 mb [s-1]",
                 "Name": "RDPS.PRES_QQ.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 250 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.250-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 250 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 250.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 250 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 250.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 250 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.250-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 250.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 250 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Isobaric vertical motion at 250.0 mb [Pa/s]",
+                "Title": "RDPS.PRES - Isobaric vertical motion at 250 mb [Pa/s]",
                 "Name": "RDPS.PRES_WP.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 250.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 250 mb [%]",
                 "Name": "RDPS.PRES_HR.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 250.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 250 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 250.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 250 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 250.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 250 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.250-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 250 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.250",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 250.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 250 mb [m/s]",
                 "Name": "RDPS.PRES_UU.250",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20544,55 +25556,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 275.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 275 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.275-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 275 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 275.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 275 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 275.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 275 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.275-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 275.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 275 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 275.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 275 mb [%]",
                 "Name": "RDPS.PRES_HR.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 275.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 275 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 275.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 275 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 275.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 275 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.275-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 275 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.275",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 275.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 275 mb [m/s]",
                 "Name": "RDPS.PRES_UU.275",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20605,49 +25629,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 300.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 300 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.300-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 300 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 300.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 300 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 300.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 300 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.300-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 300.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 300 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 300.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Relative humidity at 300 mb [%]",
+                "Name": "RDPS.PRES_HR.300",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Specific humidity at 300 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 300.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 300 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 300.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 300 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.300-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 300 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.300",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 300.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 300 mb [m/s]",
                 "Name": "RDPS.PRES_UU.300",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20660,55 +25702,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 350.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 350 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.350-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 350 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 350.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 350 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 350.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 350 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.350-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 350.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 350 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 350.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 350 mb [%]",
                 "Name": "RDPS.PRES_HR.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 350.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 350 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 350.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 350 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 350.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 350 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.350-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 350 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.350",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 350.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 350 mb [m/s]",
                 "Name": "RDPS.PRES_UU.350",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20721,55 +25775,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 400.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 400 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.400-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 400 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 400.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 400 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 400.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 400 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.400-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 400.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 400 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 400.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 400 mb [%]",
                 "Name": "RDPS.PRES_HR.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 400.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 400 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 400.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 400 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 400.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 400 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.400-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 400 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.400",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 400.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 400 mb [m/s]",
                 "Name": "RDPS.PRES_UU.400",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20782,55 +25848,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 450.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 450 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.450-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 450 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 450.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 450 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 450.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 450 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.450-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 450.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 450 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 450.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 450 mb [%]",
                 "Name": "RDPS.PRES_HR.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 450.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 450 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 450.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 450 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 450.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 450 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.450-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 450 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.450",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 450.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 450 mb [m/s]",
                 "Name": "RDPS.PRES_UU.450",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20843,67 +25921,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Absolute vorticity at 500.0 mb [s-1]",
+                "Title": "RDPS.PRES - Absolute vorticity at 500 mb [s-1]",
                 "Name": "RDPS.PRES_QQ.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 500 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.500-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 500 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 500.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 500 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 500.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 500 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.500-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 500.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 500 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Isobaric vertical motion at 500.0 mb [Pa/s]",
+                "Title": "RDPS.PRES - Isobaric vertical motion at 500 mb [Pa/s]",
                 "Name": "RDPS.PRES_WP.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 500.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 500 mb [%]",
                 "Name": "RDPS.PRES_HR.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 500.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 500 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 500.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 500 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 500.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 500 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.500-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 500 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.500",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 500.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 500 mb [m/s]",
                 "Name": "RDPS.PRES_UU.500",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20916,55 +26006,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 550.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 550 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.550-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 550 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 550.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 550 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 550.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 550 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.550-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 550.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 550 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 550.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 550 mb [%]",
                 "Name": "RDPS.PRES_HR.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 550.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 550 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 550.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 550 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 550.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 550 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.550-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 550 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.550",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 550.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 550 mb [m/s]",
                 "Name": "RDPS.PRES_UU.550",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20977,55 +26079,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 600.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 600 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.600-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 600 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 600.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 600 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 600.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 600 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.600-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 600.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 600 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 600.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 600 mb [%]",
                 "Name": "RDPS.PRES_HR.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 600.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 600 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 600.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 600 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 600.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 600 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.600-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 600 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.600",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 600.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 600 mb [m/s]",
                 "Name": "RDPS.PRES_UU.600",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21038,55 +26152,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 650.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 650 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.650-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 650 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 650.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 650 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 650.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 650 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.650-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 650.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 650 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 650.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 650 mb [%]",
                 "Name": "RDPS.PRES_HR.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 650.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 650 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 650.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 650 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 650.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 650 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.650-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 650 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.650",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 650.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 650 mb [m/s]",
                 "Name": "RDPS.PRES_UU.650",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21099,67 +26225,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Absolute vorticity at 700.0 mb [s-1]",
+                "Title": "RDPS.PRES - Absolute vorticity at 700 mb [s-1]",
                 "Name": "RDPS.PRES_QQ.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 700 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.700-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 700 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 700.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 700 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 700.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 700 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.700-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 700.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 700 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Isobaric vertical motion at 700.0 mb [Pa/s]",
+                "Title": "RDPS.PRES - Isobaric vertical motion at 700 mb [Pa/s]",
                 "Name": "RDPS.PRES_WP.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 700.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 700 mb [%]",
                 "Name": "RDPS.PRES_HR.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 700.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 700 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 700.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 700 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 700.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 700 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.700-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 700 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.700",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 700.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 700 mb [m/s]",
                 "Name": "RDPS.PRES_UU.700",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21172,55 +26310,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 750.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 750 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.750-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 750 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 750.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 750 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 750.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 750 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.750-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 750.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 750 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 750.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 750 mb [%]",
                 "Name": "RDPS.PRES_HR.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 750.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 750 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 750.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 750 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 750.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 750 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.750-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 750 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.750",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 750.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 750 mb [m/s]",
                 "Name": "RDPS.PRES_UU.750",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21233,55 +26383,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 800.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 800 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.800-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 800 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 800.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 800 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 800.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 800 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.800-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 800.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 800 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 800.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 800 mb [%]",
                 "Name": "RDPS.PRES_HR.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 800.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 800 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 800.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 800 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 800.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 800 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.800-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 800 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.800",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 800.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 800 mb [m/s]",
                 "Name": "RDPS.PRES_UU.800",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21294,61 +26456,73 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 850 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.850-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 850 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 850.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 850 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 850.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 850 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.850-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 850.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 850 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Isobaric vertical motion at 850.0 mb [Pa/s]",
+                "Title": "RDPS.PRES - Isobaric vertical motion at 850 mb [Pa/s]",
                 "Name": "RDPS.PRES_WP.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 850.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 850 mb [%]",
                 "Name": "RDPS.PRES_HR.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 850.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 850 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 850.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 850 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 850.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 850 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.850-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 850 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 850.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 850 mb [m/s]",
                 "Name": "RDPS.PRES_UU.850",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21361,55 +26535,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 875.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 875 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 875.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 875 mb [\u00b0C]",
+                "Name": "RDPS.PRES_TT.875-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Dew point depression at 875 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 875.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 875 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.875-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 875.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 875 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 875.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 875 mb [%]",
                 "Name": "RDPS.PRES_HR.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 875.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 875 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 875.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 875 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 875.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 875 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.875-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 875 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.875",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 875.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 875 mb [m/s]",
                 "Name": "RDPS.PRES_UU.875",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21422,55 +26608,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 900.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 900 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.900-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 900 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 900.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 900 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 900.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 900 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.900-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 900.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 900 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 900.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 900 mb [%]",
                 "Name": "RDPS.PRES_HR.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 900.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 900 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 900.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 900 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 900.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 900 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.900-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 900 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.900",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 900.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 900 mb [m/s]",
                 "Name": "RDPS.PRES_UU.900",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21483,55 +26681,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 925 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.925-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 925 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 925.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 925 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 925.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 925 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.925-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 925.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 925 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 925.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 925 mb [%]",
                 "Name": "RDPS.PRES_HR.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 925.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 925 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 925.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 925 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 925.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 925 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.925-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 925 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.925",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 925.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 925 mb [m/s]",
                 "Name": "RDPS.PRES_UU.925",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21544,55 +26754,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 950.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 950 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.950-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 950 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 950.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 950 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 950.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 950 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.950-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 950.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 950 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 950.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 950 mb [%]",
                 "Name": "RDPS.PRES_HR.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 950.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 950 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 950.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 950 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 950.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 950 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.950-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 950 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.950",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 950.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 950 mb [m/s]",
                 "Name": "RDPS.PRES_UU.950",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21605,55 +26827,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 970.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 970 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.970-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 970 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 970.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 970 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 970.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 970 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.970-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 970.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 970 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 970.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 970 mb [%]",
                 "Name": "RDPS.PRES_HR.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 970.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 970 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 970.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 970 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 970.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 970 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.970-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 970 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.970",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 970.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 970 mb [m/s]",
                 "Name": "RDPS.PRES_UU.970",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21666,55 +26900,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 985.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 985 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.985-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 985 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 985.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 985 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 985.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 985 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.985-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 985.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 985 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 985.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 985 mb [%]",
                 "Name": "RDPS.PRES_HR.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 985.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 985 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 985.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 985 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 985.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 985 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.985-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 985 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.985",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 985.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 985 mb [m/s]",
                 "Name": "RDPS.PRES_UU.985",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21727,61 +26973,73 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Absolute vorticity at 850.0 mb [s-1]",
+                "Title": "RDPS.PRES - Absolute vorticity at 850 mb [s-1]",
                 "Name": "RDPS.PRES_QQ.850",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 1000 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.1000-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 1000.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 1000 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 1000.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 1000 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.1000-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 1000 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 1000.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 1000 mb [%]",
                 "Name": "RDPS.PRES_HR.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 1000.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 1000 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 1000.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 1000 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 1000.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 1000 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.1000-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 1000 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.1000",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 1000.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 1000 mb [m/s]",
                 "Name": "RDPS.PRES_UU.1000",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21794,55 +27052,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.PRES - Air temperature at 1015.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Air temperature at 1015 mb (contour) [\u00b0C]",
+                "Name": "RDPS.PRES_TT.1015-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Air temperature at 1015 mb [\u00b0C]",
                 "Name": "RDPS.PRES_TT.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Dew point depression at 1015.0 mb [\u00b0C]",
+                "Title": "RDPS.PRES - Dew point depression at 1015 mb [\u00b0C]",
                 "Name": "RDPS.PRES_ES.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 1015.0 mb (contour) [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 1015 mb (contour) [gpm]",
                 "Name": "RDPS.PRES_GZ.1015-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Geopotential height at 1015.0 mb [gpm]",
+                "Title": "RDPS.PRES - Geopotential height at 1015 mb [gpm]",
                 "Name": "RDPS.PRES_GZ.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Relative humidity at 1015.0 mb [%]",
+                "Title": "RDPS.PRES - Relative humidity at 1015 mb [%]",
                 "Name": "RDPS.PRES_HR.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Specific humidity at 1015.0 mb [kg/kg]",
+                "Title": "RDPS.PRES - Specific humidity at 1015 mb [kg/kg]",
                 "Name": "RDPS.PRES_HU.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind direction at 1015.0 mb [\u00b0]",
+                "Title": "RDPS.PRES - Wind direction at 1015 mb [\u00b0]",
                 "Name": "RDPS.PRES_WD.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Wind speed at 1015.0 mb [m/s]",
+                "Title": "RDPS.PRES - Wind speed at 1015 mb (contour) [m/s]",
+                "Name": "RDPS.PRES_WSPD.1015-CONTOUR",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.PRES - Wind speed at 1015 mb [m/s]",
                 "Name": "RDPS.PRES_WSPD.1015",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.PRES - Winds at 1015.0 mb [m/s]",
+                "Title": "RDPS.PRES - Winds at 1015 mb [m/s]",
                 "Name": "RDPS.PRES_UU.1015",
                 "isLeaf": true,
                 "isTemporal": true
@@ -22133,157 +27403,181 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500.0 mb",
+            "Title": "RDPS.CONV - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500 mb",
             "Name": "RDPS.CONV_SFC-VT-LI.500",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500.0 mb (contour)",
+            "Title": "RDPS.CONV - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500 mb (contour)",
             "Name": "RDPS.CONV_SFC-VT-LI.500-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400.0 mb",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400 mb",
             "Name": "RDPS.CONV_ML-VT-LI.400",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400.0 mb (contour)",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400 mb (contour)",
             "Name": "RDPS.CONV_ML-VT-LI.400-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500.0 mb",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500 mb",
             "Name": "RDPS.CONV_ML-VT-LI.500",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500.0 mb (contour)",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500 mb (contour)",
             "Name": "RDPS.CONV_ML-VT-LI.500-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600.0 mb",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600 mb",
             "Name": "RDPS.CONV_ML-VT-LI.600",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600.0 mb (contour)",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600 mb (contour)",
             "Name": "RDPS.CONV_ML-VT-LI.600-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650.0 mb",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650 mb",
             "Name": "RDPS.CONV_ML-VT-LI.650",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650.0 mb (contour)",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650 mb (contour)",
             "Name": "RDPS.CONV_ML-VT-LI.650-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700.0 mb",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700 mb",
             "Name": "RDPS.CONV_ML-VT-LI.700",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700.0 mb (contour)",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700 mb (contour)",
             "Name": "RDPS.CONV_ML-VT-LI.700-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800.0 mb",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800 mb",
             "Name": "RDPS.CONV_ML-VT-LI.800",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800.0 mb (contour)",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800 mb (contour)",
             "Name": "RDPS.CONV_ML-VT-LI.800-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 500.0 mb",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 400 mb",
+            "Name": "RDPS.CONV_ML-LI.400",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 400 mb (contour)",
+            "Name": "RDPS.CONV_ML-LI.400-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 500 mb",
             "Name": "RDPS.CONV_ML-LI.500",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 500.0 mb (contour)",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 500 mb (contour)",
             "Name": "RDPS.CONV_ML-LI.500-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 600.0 mb",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 600 mb",
             "Name": "RDPS.CONV_ML-LI.600",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 600.0 mb (contour)",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 600 mb (contour)",
             "Name": "RDPS.CONV_ML-LI.600-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 700.0 mb",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 650 mb",
+            "Name": "RDPS.CONV_ML-LI.650",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 650 mb (contour)",
+            "Name": "RDPS.CONV_ML-LI.650-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 700 mb",
             "Name": "RDPS.CONV_ML-LI.700",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 700.0 mb (contour)",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 700 mb (contour)",
             "Name": "RDPS.CONV_ML-LI.700-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 800.0 mb",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 800 mb",
             "Name": "RDPS.CONV_ML-LI.800",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 800.0 mb (contour)",
+            "Title": "RDPS.CONV - Lifted index for a parcel representing the mean of a layer, with reference level 800 mb (contour)",
             "Name": "RDPS.CONV_ML-LI.800-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500.0 mb (contour) [K]",
+            "Title": "RDPS.CONV - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb (contour) [K]",
             "Name": "RDPS.CONV_MU-VT-LI.500-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500.0 mb [K]",
+            "Title": "RDPS.CONV - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb [K]",
             "Name": "RDPS.CONV_MU-VT-LI.500",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for the most unstable parcel, with reference level 500.0 mb (contour)",
+            "Title": "RDPS.CONV - Lifted index for the most unstable parcel, with reference level 500 mb (contour)",
             "Name": "RDPS.CONV_MU-LI.500-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Lifted index for the most unstable parcel, with reference level  500.0 mb",
+            "Title": "RDPS.CONV - Lifted index for the most unstable parcel, with reference level  500 mb",
             "Name": "RDPS.CONV_MU-LI.500",
             "isLeaf": true,
             "isTemporal": true
@@ -22295,61 +27589,49 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV- Lifted index for a parcel representing the mean of a layer, with reference level 400.0 mb",
-            "Name": "RDPS.CONV_ML-LI.400",
+            "Title": "RDPS.CONV - Severe weather threat index",
+            "Name": "RDPS.CONV_SWEAT",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV- Lifted index for a parcel representing the mean of a layer, with reference level 400.0 mb (contour)",
-            "Name": "RDPS.CONV_ML-LI.400-CONTOUR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPS.CONV- Lifted index for a parcel representing the mean of a layer, with reference level 650.0 mb",
-            "Name": "RDPS.CONV_ML-LI.650",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPS.CONV- Lifted index for a parcel representing the mean of a layer, with reference level 650.0 mb (contour)",
-            "Name": "RDPS.CONV_ML-LI.650-CONTOUR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPS.CONV - Showalter Index using the virtual temperature correction, with reference level 500.0 mb",
+            "Title": "RDPS.CONV - Showalter Index using the virtual temperature correction, with reference level 500 mb",
             "Name": "RDPS.CONV_VT-SHWINX.500",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Showalter Index using the virtual temperature correction, with reference level 500.0 mb (contour)",
+            "Title": "RDPS.CONV - Showalter Index using the virtual temperature correction, with reference level 500 mb (contour)",
             "Name": "RDPS.CONV_VT-SHWINX.500-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Showalter Index, with reference level 500.0 mb (contour) [K]",
+            "Title": "RDPS.CONV - Showalter Index, with reference level 500 mb (contour) [K]",
             "Name": "RDPS.CONV_SHWINX.500-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Showalter Index, with reference level 500.0 mb [K]",
+            "Title": "RDPS.CONV - Showalter Index, with reference level 500 mb [K]",
             "Name": "RDPS.CONV_SHWINX.500",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Surface lifted index, with reference level 500.0 mb",
+            "Title": "RDPS.CONV - Storm Severity Index",
+            "Name": "RDPS.CONV_SSI",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.CONV - Surface lifted index, with reference level 500 mb",
             "Name": "RDPS.CONV_SFC-LI.500",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS.CONV - Surface lifted index, with reference level 500.0 mb (contour)",
+            "Title": "RDPS.CONV - Surface lifted index, with reference level 500 mb (contour)",
             "Name": "RDPS.CONV_SFC-LI.500-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
@@ -22389,6 +27671,12 @@ export default {
             "Name": "RDPS.CONV_TOTALX.PT3H-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Vertical wind shear below 650 mb  [1/s]",
+            "Name": "RDPS.CONV_VWSH.650",
+            "isLeaf": true,
+            "isTemporal": true
           }
         ]
       },
@@ -22397,6 +27685,191 @@ export default {
         "Name": "RDPS diagnostic fields",
         "isLeaf": false,
         "children": [
+          {
+            "Title": "RDPS products at 1 hour intervals",
+            "Name": "RDPS products at 1 hour intervals",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS.DIAG - 1h Freezing rain accumulation [mm]",
+                "Name": "RDPS.DIAG_FR_PT1H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 1h Ice pellets accumulation [mm]",
+                "Name": "RDPS.DIAG_PE_PT1H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 1h Precipitation accumulation [mm]",
+                "Name": "RDPS.DIAG_PR_PT1H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 1h Rain accumulation [mm]",
+                "Name": "RDPS.DIAG_RN_PT1H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 1h Snow accumulation [mm]",
+                "Name": "RDPS.DIAG_SN_PT1H",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "RDPS products at 3 hours intervals",
+            "Name": "RDPS products at 3 hours intervals",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS.DIAG - 3h Freezing rain accumulation [mm]",
+                "Name": "RDPS.DIAG_FR_PT3H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 3h Ice pellets accumulation [mm]",
+                "Name": "RDPS.DIAG_PE_PT3H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 3h Precipitation accumulation [mm]",
+                "Name": "RDPS.DIAG_PR_PT3H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 3h Rain accumulation [mm]",
+                "Name": "RDPS.DIAG_RN_PT3H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 3h Snow accumulation [mm]",
+                "Name": "RDPS.DIAG_SN_PT3H",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "RDPS products at 6 hours intervals",
+            "Name": "RDPS products at 6 hours intervals",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS.DIAG - 6h Freezing rain accumulation [mm]",
+                "Name": "RDPS.DIAG_FR_PT6H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 6h Ice pellets accumulation [mm]",
+                "Name": "RDPS.DIAG_PE_PT6H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 6h Precipitation accumulation [mm]",
+                "Name": "RDPS.DIAG_PR_PT6H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 6h Rain accumulation [mm]",
+                "Name": "RDPS.DIAG_RN_PT6H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 6h Snow accumulation [mm]",
+                "Name": "RDPS.DIAG_SN_PT6H",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "RDPS products at 12 hours intervals",
+            "Name": "RDPS products at 12 hours intervals",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS.DIAG - 12h Freezing rain accumulation [mm]",
+                "Name": "RDPS.DIAG_FR_PT12H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 12h Ice pellets accumulation [mm]",
+                "Name": "RDPS.DIAG_PE_PT12H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 12h Precipitation accumulation [mm]",
+                "Name": "RDPS.DIAG_PR_PT12H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 12h Rain accumulation [mm]",
+                "Name": "RDPS.DIAG_RN_PT12H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 12h Snow accumulation [mm]",
+                "Name": "RDPS.DIAG_SN_PT12H",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "RDPS products at 24 hours intervals",
+            "Name": "RDPS products at 24 hours intervals",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS.DIAG - 24h Freezing rain accumulation [mm]",
+                "Name": "RDPS.DIAG_FR_PT24H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 24h Ice pellets accumulation [mm]",
+                "Name": "RDPS.DIAG_PE_PT24H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 24h Precipitation accumulation [mm]",
+                "Name": "RDPS.DIAG_PR_PT24H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 24h Rain accumulation [mm]",
+                "Name": "RDPS.DIAG_RN_PT24H",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS.DIAG - 24h Snow accumulation [mm]",
+                "Name": "RDPS.DIAG_SN_PT24H",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
           {
             "Title": "RDPS.DIAG - Instantaneous precipitation type",
             "Name": "RDPS.DIAG_PTYPE.PT3H",
@@ -22477,7 +27950,13 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Dew point temperature [C]",
+            "Title": "RDPS-WEonG - Dew point temperature (contour) [\u00b0C]",
+            "Name": "RDPS-WEonG_10km_DewPointTemp-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS-WEonG - Dew point temperature [\u00b0C]",
             "Name": "RDPS-WEonG_10km_DewPointTemp",
             "isLeaf": true,
             "isTemporal": true
@@ -22496,13 +27975,19 @@ export default {
           },
           {
             "Title": "RDPS-WEonG - Height of snow level [m]",
-            "Name": "RDPS-WEonG_10km_SnowHeight",
+            "Name": "RDPS-WEonG_10km_SnowLevelHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
             "Title": "RDPS-WEonG - Instantaneous precipitation type",
             "Name": "RDPS-WEonG_10km_InstantPrecipType",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS-WEonG - Land/water proportion",
+            "Name": "RDPS-WEonG_10km_LandWater-Proportion",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -22627,14 +28112,14 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Water/land proportion",
-            "Name": "RDPS-WEonG_10km_WaterLand-Proportion",
+            "Title": "RDPS-WEonG - Wind direction [deg true]",
+            "Name": "RDPS-WEonG_10km_WindDir",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Wind direction [deg true]",
-            "Name": "RDPS-WEonG_10km_WindDir",
+            "Title": "RDPS-WEonG - Wind speed (contour) [m/s]",
+            "Name": "RDPS-WEonG_10km_WindSpeed-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -22645,6 +28130,12 @@ export default {
             "isTemporal": true
           }
         ]
+      },
+      {
+        "Title": "RDPS footprint",
+        "Name": "RDPS_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
       }
     ]
   },
@@ -28971,132 +34462,265 @@ export default {
             ]
           },
           {
+            "Title": "NTAT_EI",
+            "Name": "NTAT_EI",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "REPS.MEM.NTAT_EI.01 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2] [control member]",
+                "Name": "REPS.MEM.NTAT_EI.01",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.02 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.02",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.03 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.03",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.04 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.04",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.05 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.05",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.06 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.06",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.07 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.07",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.08 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.08",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.09 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.09",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.10 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.10",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.11 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.11",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.12 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.12",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.13 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.13",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.14 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.14",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.15 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.15",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.16 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.16",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.17 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.17",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.18 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.18",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.19 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.19",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.20 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.20",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "REPS.MEM.NTAT_EI.21 - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+                "Name": "REPS.MEM.NTAT_EI.21",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
             "Title": "PRES_GZ.50",
             "Name": "PRES_GZ.50",
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_GZ.50.01 - Geopotential height at 50.0 mb [gpm] [control member]",
+                "Title": "REPS.MEM.PRES_GZ.50.01 - Geopotential height at 50 mb [gpm] [control member]",
                 "Name": "REPS.MEM.PRES_GZ.50.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.02 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.02 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.03 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.03 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.04 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.04 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.05 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.05 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.06 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.06 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.07 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.07 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.08 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.08 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.09 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.09 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.10 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.10 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.11 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.11 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.12 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.12 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.13 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.13 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.14 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.14 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.15 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.15 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.16 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.16 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.17 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.17 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.18 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.18 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.19 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.19 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.20 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.20 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.50.21 - Geopotential height at 50.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.50.21 - Geopotential height at 50 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.50.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -29109,127 +34733,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_GZ.100.01 - Geopotential height at 100.0 mb [gpm] [control member]",
+                "Title": "REPS.MEM.PRES_GZ.100.01 - Geopotential height at 100 mb [gpm] [control member]",
                 "Name": "REPS.MEM.PRES_GZ.100.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.02 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.02 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.03 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.03 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.04 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.04 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.05 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.05 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.06 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.06 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.07 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.07 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.08 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.08 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.09 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.09 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.10 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.10 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.11 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.11 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.12 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.12 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.13 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.13 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.14 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.14 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.15 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.15 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.16 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.16 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.17 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.17 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.18 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.18 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.19 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.19 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.20 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.20 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.100.21 - Geopotential height at 100.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.100.21 - Geopotential height at 100 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.100.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -29242,127 +34866,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_GZ.200.01 - Geopotential height at 200.0 mb [gpm] [control member]",
+                "Title": "REPS.MEM.PRES_GZ.200.01 - Geopotential height at 200 mb [gpm] [control member]",
                 "Name": "REPS.MEM.PRES_GZ.200.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.02 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.02 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.03 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.03 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.04 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.04 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.05 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.05 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.06 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.06 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.07 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.07 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.08 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.08 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.09 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.09 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.10 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.10 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.11 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.11 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.12 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.12 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.13 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.13 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.14 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.14 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.15 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.15 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.16 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.16 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.17 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.17 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.18 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.18 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.19 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.19 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.20 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.20 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.200.21 - Geopotential height at 200.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.200.21 - Geopotential height at 200 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.200.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -29375,127 +34999,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_GZ.250.01 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.01 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.02 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.02 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.03 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.03 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.04 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.04 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.05 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.05 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.06 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.06 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.07 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.07 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.08 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.08 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.09 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.09 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.10 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.10 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.11 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.11 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.12 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.12 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.13 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.13 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.14 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.14 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.15 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.15 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.16 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.16 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.17 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.17 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.18 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.18 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.19 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.19 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.20 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.20 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.250.21 - Geopotential height at 250.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.250.21 - Geopotential height at 250 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.250.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -29508,127 +35132,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_GZ.500.01 - Geopotential height at 500.0 mb [gpm] [control member]",
+                "Title": "REPS.MEM.PRES_GZ.500.01 - Geopotential height at 500 mb [gpm] [control member]",
                 "Name": "REPS.MEM.PRES_GZ.500.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.02 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.02 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.03 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.03 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.04 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.04 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.05 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.05 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.06 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.06 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.07 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.07 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.08 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.08 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.09 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.09 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.10 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.10 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.11 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.11 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.12 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.12 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.13 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.13 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.14 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.14 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.15 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.15 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.16 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.16 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.17 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.17 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.18 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.18 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.19 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.19 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.20 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.20 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.500.21 - Geopotential height at 500.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.500.21 - Geopotential height at 500 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.500.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -29641,127 +35265,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_GZ.700.01 - Geopotential height at 700.0 mb [gpm] [control member]",
+                "Title": "REPS.MEM.PRES_GZ.700.01 - Geopotential height at 700 mb [gpm] [control member]",
                 "Name": "REPS.MEM.PRES_GZ.700.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.02 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.02 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.03 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.03 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.04 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.04 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.05 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.05 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.06 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.06 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.07 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.07 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.08 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.08 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.09 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.09 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.10 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.10 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.11 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.11 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.12 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.12 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.13 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.13 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.14 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.14 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.15 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.15 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.16 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.16 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.17 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.17 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.18 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.18 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.19 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.19 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.20 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.20 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.700.21 - Geopotential height at 700.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.700.21 - Geopotential height at 700 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.700.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -29774,127 +35398,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_GZ.850.01 - Geopotential height at 850.0 mb [gpm] [control member]",
+                "Title": "REPS.MEM.PRES_GZ.850.01 - Geopotential height at 850 mb [gpm] [control member]",
                 "Name": "REPS.MEM.PRES_GZ.850.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.02 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.02 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.03 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.03 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.04 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.04 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.05 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.05 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.06 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.06 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.07 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.07 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.08 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.08 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.09 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.09 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.10 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.10 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.11 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.11 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.12 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.12 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.13 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.13 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.14 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.14 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.15 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.15 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.16 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.16 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.17 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.17 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.18 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.18 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.19 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.19 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.20 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.20 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.850.21 - Geopotential height at 850.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.850.21 - Geopotential height at 850 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.850.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -29907,127 +35531,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_GZ.925.01 - Geopotential height at 925.0 mb [gpm] [control member]",
+                "Title": "REPS.MEM.PRES_GZ.925.01 - Geopotential height at 925 mb [gpm] [control member]",
                 "Name": "REPS.MEM.PRES_GZ.925.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.02 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.02 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.03 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.03 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.04 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.04 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.05 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.05 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.06 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.06 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.07 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.07 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.08 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.08 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.09 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.09 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.10 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.10 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.11 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.11 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.12 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.12 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.13 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.13 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.14 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.14 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.15 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.15 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.16 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.16 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.17 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.17 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.18 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.18 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.19 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.19 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.20 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.20 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.925.21 - Geopotential height at 925.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.925.21 - Geopotential height at 925 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.925.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -30040,127 +35664,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.01 - Geopotential height at 1000.0 mb [gpm] [control member]",
+                "Title": "REPS.MEM.PRES_GZ.1000.01 - Geopotential height at 1000 mb [gpm] [control member]",
                 "Name": "REPS.MEM.PRES_GZ.1000.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.02 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.02 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.03 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.03 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.04 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.04 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.05 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.05 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.06 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.06 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.07 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.07 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.08 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.08 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.09 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.09 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.10 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.10 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.11 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.11 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.12 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.12 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.13 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.13 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.14 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.14 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.15 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.15 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.16 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.16 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.17 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.17 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.18 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.18 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.19 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.19 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.20 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.20 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_GZ.1000.21 - Geopotential height at 1000.0 mb [gpm]",
+                "Title": "REPS.MEM.PRES_GZ.1000.21 - Geopotential height at 1000 mb [gpm]",
                 "Name": "REPS.MEM.PRES_GZ.1000.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -30173,127 +35797,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_HR.50.01 - Relative humidity at 50.0 mb [%] [control member]",
+                "Title": "REPS.MEM.PRES_HR.50.01 - Relative humidity at 50 mb [%] [control member]",
                 "Name": "REPS.MEM.PRES_HR.50.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.02 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.02 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.03 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.03 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.04 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.04 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.05 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.05 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.06 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.06 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.07 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.07 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.08 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.08 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.09 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.09 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.10 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.10 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.11 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.11 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.12 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.12 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.13 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.13 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.14 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.14 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.15 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.15 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.16 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.16 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.17 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.17 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.18 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.18 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.19 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.19 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.20 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.20 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.50.21 - Relative humidity at 50.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.50.21 - Relative humidity at 50 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.50.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -30306,127 +35930,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_HR.100.01 - Relative humidity at 100.0 mb [%] [control member]",
+                "Title": "REPS.MEM.PRES_HR.100.01 - Relative humidity at 100 mb [%] [control member]",
                 "Name": "REPS.MEM.PRES_HR.100.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.02 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.02 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.03 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.03 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.04 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.04 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.05 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.05 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.06 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.06 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.07 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.07 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.08 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.08 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.09 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.09 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.10 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.10 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.11 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.11 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.12 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.12 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.13 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.13 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.14 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.14 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.15 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.15 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.16 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.16 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.17 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.17 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.18 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.18 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.19 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.19 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.20 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.20 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.100.21 - Relative humidity at 100.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.100.21 - Relative humidity at 100 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.100.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -30439,127 +36063,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_HR.200.01 - Relative humidity at 200.0 mb [%] [control member]",
+                "Title": "REPS.MEM.PRES_HR.200.01 - Relative humidity at 200 mb [%] [control member]",
                 "Name": "REPS.MEM.PRES_HR.200.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.02 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.02 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.03 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.03 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.04 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.04 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.05 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.05 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.06 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.06 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.07 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.07 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.08 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.08 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.09 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.09 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.10 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.10 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.11 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.11 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.12 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.12 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.13 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.13 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.14 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.14 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.15 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.15 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.16 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.16 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.17 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.17 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.18 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.18 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.19 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.19 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.20 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.20 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.200.21 - Relative humidity at 200.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.200.21 - Relative humidity at 200 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.200.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -30572,127 +36196,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_HR.250.01 - Relative humidity at 250.0 mb [%] [control member]",
+                "Title": "REPS.MEM.PRES_HR.250.01 - Relative humidity at 250 mb [%] [control member]",
                 "Name": "REPS.MEM.PRES_HR.250.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.02 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.02 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.03 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.03 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.04 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.04 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.05 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.05 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.06 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.06 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.07 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.07 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.08 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.08 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.09 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.09 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.10 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.10 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.11 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.11 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.12 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.12 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.13 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.13 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.14 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.14 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.15 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.15 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.16 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.16 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.17 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.17 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.18 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.18 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.19 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.19 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.20 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.20 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.250.21 - Relative humidity at 250.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.250.21 - Relative humidity at 250 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.250.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -30705,127 +36329,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_HR.500.01 - Relative humidity at 500.0 mb [%] [control member]",
+                "Title": "REPS.MEM.PRES_HR.500.01 - Relative humidity at 500 mb [%] [control member]",
                 "Name": "REPS.MEM.PRES_HR.500.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.02 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.02 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.03 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.03 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.04 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.04 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.05 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.05 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.06 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.06 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.07 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.07 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.08 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.08 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.09 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.09 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.10 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.10 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.11 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.11 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.12 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.12 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.13 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.13 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.14 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.14 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.15 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.15 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.16 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.16 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.17 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.17 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.18 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.18 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.19 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.19 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.20 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.20 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.500.21 - Relative humidity at 500.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.500.21 - Relative humidity at 500 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.500.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -30838,127 +36462,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_HR.700.01 - Relative humidity at 700.0 mb [%] [control member]",
+                "Title": "REPS.MEM.PRES_HR.700.01 - Relative humidity at 700 mb [%] [control member]",
                 "Name": "REPS.MEM.PRES_HR.700.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.02 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.02 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.03 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.03 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.04 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.04 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.05 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.05 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.06 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.06 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.07 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.07 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.08 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.08 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.09 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.09 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.10 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.10 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.11 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.11 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.12 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.12 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.13 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.13 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.14 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.14 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.15 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.15 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.16 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.16 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.17 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.17 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.18 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.18 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.19 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.19 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.20 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.20 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.700.21 - Relative humidity at 700.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.700.21 - Relative humidity at 700 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.700.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -30971,127 +36595,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_HR.850.01 - Relative humidity at 850.0 mb [%] [control member]",
+                "Title": "REPS.MEM.PRES_HR.850.01 - Relative humidity at 850 mb [%] [control member]",
                 "Name": "REPS.MEM.PRES_HR.850.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.02 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.02 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.03 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.03 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.04 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.04 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.05 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.05 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.06 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.06 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.07 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.07 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.08 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.08 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.09 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.09 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.10 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.10 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.11 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.11 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.12 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.12 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.13 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.13 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.14 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.14 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.15 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.15 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.16 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.16 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.17 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.17 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.18 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.18 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.19 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.19 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.20 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.20 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.850.21 - Relative humidity at 850.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.850.21 - Relative humidity at 850 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.850.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -31104,127 +36728,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_HR.925.01 - Relative humidity at 925.0 mb [%] [control member]",
+                "Title": "REPS.MEM.PRES_HR.925.01 - Relative humidity at 925 mb [%] [control member]",
                 "Name": "REPS.MEM.PRES_HR.925.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.02 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.02 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.03 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.03 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.04 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.04 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.05 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.05 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.06 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.06 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.07 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.07 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.08 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.08 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.09 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.09 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.10 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.10 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.11 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.11 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.12 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.12 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.13 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.13 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.14 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.14 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.15 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.15 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.16 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.16 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.17 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.17 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.18 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.18 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.19 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.19 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.20 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.20 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.925.21 - Relative humidity at 925.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.925.21 - Relative humidity at 925 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.925.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -31237,127 +36861,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_HR.1000.01 - Relative humidity at 1000.0 mb [%] [control member]",
+                "Title": "REPS.MEM.PRES_HR.1000.01 - Relative humidity at 1000 mb [%] [control member]",
                 "Name": "REPS.MEM.PRES_HR.1000.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.02 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.02 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.03 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.03 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.04 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.04 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.05 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.05 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.06 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.06 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.07 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.07 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.08 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.08 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.09 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.09 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.10 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.10 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.11 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.11 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.12 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.12 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.13 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.13 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.14 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.14 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.15 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.15 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.16 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.16 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.17 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.17 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.18 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.18 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.19 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.19 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.20 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.20 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_HR.1000.21 - Relative humidity at 1000.0 mb [%]",
+                "Title": "REPS.MEM.PRES_HR.1000.21 - Relative humidity at 1000 mb [%]",
                 "Name": "REPS.MEM.PRES_HR.1000.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -31902,127 +37526,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_TT.50.01 - Air temperature at 50.0 mb [\u00b0C] [control member]",
+                "Title": "REPS.MEM.PRES_TT.50.01 - Air temperature at 50 mb [\u00b0C] [control member]",
                 "Name": "REPS.MEM.PRES_TT.50.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.02 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.02 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.03 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.03 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.04 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.04 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.05 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.05 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.06 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.06 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.07 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.07 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.08 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.08 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.09 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.09 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.10 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.10 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.11 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.11 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.12 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.12 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.13 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.13 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.14 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.14 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.15 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.15 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.16 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.16 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.17 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.17 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.18 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.18 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.19 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.19 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.20 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.20 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.50.21 - Air temperature at 50.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.50.21 - Air temperature at 50 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.50.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -32168,127 +37792,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_TT.100.01 - Air temperature at 100.0 mb [\u00b0C] [control member]",
+                "Title": "REPS.MEM.PRES_TT.100.01 - Air temperature at 100 mb [\u00b0C] [control member]",
                 "Name": "REPS.MEM.PRES_TT.100.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.02 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.02 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.03 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.03 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.04 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.04 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.05 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.05 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.06 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.06 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.07 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.07 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.08 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.08 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.09 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.09 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.10 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.10 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.11 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.11 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.12 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.12 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.13 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.13 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.14 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.14 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.15 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.15 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.16 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.16 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.17 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.17 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.18 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.18 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.19 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.19 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.20 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.20 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.100.21 - Air temperature at 100.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.100.21 - Air temperature at 100 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.100.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -32434,127 +38058,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_TT.200.01 - Air temperature at 200.0 mb [\u00b0C] [control member]",
+                "Title": "REPS.MEM.PRES_TT.200.01 - Air temperature at 200 mb [\u00b0C] [control member]",
                 "Name": "REPS.MEM.PRES_TT.200.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.02 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.02 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.03 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.03 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.04 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.04 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.05 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.05 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.06 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.06 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.07 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.07 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.08 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.08 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.09 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.09 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.10 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.10 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.11 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.11 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.12 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.12 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.13 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.13 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.14 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.14 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.15 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.15 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.16 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.16 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.17 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.17 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.18 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.18 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.19 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.19 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.20 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.20 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.200.21 - Air temperature at 200.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.200.21 - Air temperature at 200 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.200.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -32567,127 +38191,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_TT.250.01 - Air temperature at 250.0 mb [\u00b0C] [control member]",
+                "Title": "REPS.MEM.PRES_TT.250.01 - Air temperature at 250 mb [\u00b0C] [control member]",
                 "Name": "REPS.MEM.PRES_TT.250.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.02 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.02 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.03 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.03 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.04 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.04 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.05 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.05 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.06 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.06 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.07 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.07 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.08 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.08 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.09 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.09 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.10 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.10 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.11 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.11 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.12 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.12 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.13 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.13 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.14 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.14 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.15 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.15 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.16 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.16 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.17 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.17 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.18 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.18 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.19 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.19 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.20 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.20 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.250.21 - Air temperature at 250.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.250.21 - Air temperature at 250 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.250.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -32700,127 +38324,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_TT.500.01 - Air temperature at 500.0 mb [\u00b0C] [control member]",
+                "Title": "REPS.MEM.PRES_TT.500.01 - Air temperature at 500 mb [\u00b0C] [control member]",
                 "Name": "REPS.MEM.PRES_TT.500.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.02 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.02 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.03 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.03 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.04 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.04 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.05 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.05 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.06 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.06 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.07 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.07 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.08 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.08 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.09 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.09 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.10 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.10 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.11 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.11 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.12 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.12 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.13 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.13 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.14 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.14 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.15 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.15 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.16 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.16 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.17 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.17 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.18 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.18 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.19 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.19 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.20 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.20 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.500.21 - Air temperature at 500.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.500.21 - Air temperature at 500 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.500.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -32833,127 +38457,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_TT.700.01 - Air temperature at 700.0 mb [\u00b0C] [control member]",
+                "Title": "REPS.MEM.PRES_TT.700.01 - Air temperature at 700 mb [\u00b0C] [control member]",
                 "Name": "REPS.MEM.PRES_TT.700.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.02 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.02 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.03 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.03 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.04 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.04 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.05 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.05 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.06 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.06 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.07 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.07 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.08 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.08 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.09 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.09 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.10 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.10 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.11 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.11 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.12 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.12 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.13 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.13 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.14 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.14 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.15 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.15 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.16 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.16 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.17 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.17 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.18 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.18 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.19 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.19 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.20 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.20 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.700.21 - Air temperature at 700.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.700.21 - Air temperature at 700 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.700.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -32966,127 +38590,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_TT.850.01 - Air temperature at 850.0 mb [\u00b0C] [control member]",
+                "Title": "REPS.MEM.PRES_TT.850.01 - Air temperature at 850 mb [\u00b0C] [control member]",
                 "Name": "REPS.MEM.PRES_TT.850.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.02 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.02 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.03 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.03 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.04 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.04 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.05 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.05 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.06 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.06 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.07 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.07 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.08 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.08 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.09 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.09 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.10 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.10 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.11 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.11 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.12 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.12 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.13 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.13 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.14 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.14 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.15 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.15 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.16 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.16 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.17 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.17 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.18 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.18 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.19 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.19 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.20 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.20 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.850.21 - Air temperature at 850.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.850.21 - Air temperature at 850 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.850.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -33099,127 +38723,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_TT.925.01 - Air temperature at 925.0 mb [\u00b0C] [control member]",
+                "Title": "REPS.MEM.PRES_TT.925.01 - Air temperature at 925 mb [\u00b0C] [control member]",
                 "Name": "REPS.MEM.PRES_TT.925.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.02 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.02 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.03 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.03 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.04 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.04 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.05 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.05 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.06 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.06 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.07 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.07 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.08 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.08 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.09 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.09 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.10 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.10 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.11 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.11 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.12 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.12 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.13 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.13 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.14 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.14 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.15 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.15 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.16 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.16 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.17 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.17 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.18 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.18 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.19 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.19 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.20 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.20 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.925.21 - Air temperature at 925.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.925.21 - Air temperature at 925 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.925.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -33232,127 +38856,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS.MEM.PRES_TT.1000.01 - Air temperature at 1000.0 mb [\u00b0C] [control member]",
+                "Title": "REPS.MEM.PRES_TT.1000.01 - Air temperature at 1000 mb [\u00b0C] [control member]",
                 "Name": "REPS.MEM.PRES_TT.1000.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.02 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.02 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.03 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.03 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.04 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.04 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.05 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.05 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.06 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.06 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.07 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.07 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.08 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.08 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.09 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.09 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.10 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.10 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.11 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.11 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.12 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.12 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.13 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.13 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.14 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.14 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.15 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.15 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.16 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.16 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.17 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.17 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.18 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.18 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.19 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.19 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.20 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.20 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS.MEM.PRES_TT.1000.21 - Air temperature at 1000.0 mb [\u00b0C]",
+                "Title": "REPS.MEM.PRES_TT.1000.21 - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "REPS.MEM.PRES_TT.1000.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -34025,6 +39649,12 @@ export default {
             "isTemporal": true
           }
         ]
+      },
+      {
+        "Title": "RESPS footprint",
+        "Name": "RESPS_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
       }
     ]
   },
@@ -34355,6 +39985,18 @@ export default {
             "isTemporal": true
           }
         ]
+      },
+      {
+        "Title": "WCPS-Ocean-Atmosphere footprint",
+        "Name": "WCPS-Ocean-Atm_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
+      },
+      {
+        "Title": "WCPS-Rivers footprint",
+        "Name": "WCPS-Rivers_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
       }
     ]
   },
@@ -34379,6 +40021,12 @@ export default {
             "Name": "GDWPS_25km_WVDIR_PT1H",
             "isLeaf": true,
             "isTemporal": true
+          },
+          {
+            "Title": "GDWPS footprint",
+            "Name": "GDWPS_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
           },
           {
             "Title": "GDWPS - Ice fraction (3 hourly forecast)",
@@ -34555,6 +40203,12 @@ export default {
         "Name": "Global Ensemble Wave Prediction System (GEWPS) [25 km]",
         "isLeaf": false,
         "children": [
+          {
+            "Title": "GEWPS footprint",
+            "Name": "GEWPS_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
+          },
           {
             "Title": "GEWPS_25km_FirstSwellMeanWaveDir_01 - Mean wave direction of first swell partition [\u00b0] [control member]",
             "Name": "GEWPS_25km_FirstSwellMeanWaveDir_01",
@@ -36570,6 +42224,36 @@ export default {
                 ]
               }
             ]
+          },
+          {
+            "Title": "RDWPS footprint",
+            "Name": "RDWPS-National_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "RDWPS-Lake Erie footprint",
+            "Name": "RDWPS-Erie_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "RDWPS-Lake Huron-Michigan footprint",
+            "Name": "RDWPS-Huron-Michigan_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "RDWPS-Lake Ontario footprint",
+            "Name": "RDWPS-Ontario_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "RDWPS-Lake Superior footprint",
+            "Name": "RDWPS-Superior_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
           }
         ]
       },
@@ -36669,6 +42353,12 @@ export default {
         "Name": "Regional Ensemble Wave Prediction System (REWPS) [2.5 km]",
         "isLeaf": false,
         "children": [
+          {
+            "Title": "REWPS footprint",
+            "Name": "REWPS_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
+          },
           {
             "Title": "REWPS-Great-Lakes_2.5km_FirstSwellMeanWaveDir_01 - Mean wave direction of first swell partition [\u00b0] [control member]",
             "Name": "REWPS-Great-Lakes_2.5km_FirstSwellMeanWaveDir_01",
@@ -38365,19 +44055,19 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "Radar extrapolation precipitation rate [dBZ] [experimental]",
+            "Title": "Radar extrapolation precipitation rate [dBZ]",
             "Name": "Radar_1km_dBZ-Extrapolation",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "Radar extrapolation precipitation rate for rain [mm/h] [experimental]",
+            "Title": "Radar extrapolation precipitation rate for rain [mm/h]",
             "Name": "Radar_1km_RainPrecipRate-Extrapolation",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "Radar extrapolation precipitation rate for snow [cm/h] [experimental]",
+            "Title": "Radar extrapolation precipitation rate for snow [cm/h]",
             "Name": "Radar_1km_SnowPrecipRate-Extrapolation",
             "isLeaf": true,
             "isTemporal": true
@@ -38390,19 +44080,19 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "Dynamic radar coverage for surface precipitation type [experimental]",
+            "Title": "Dynamic radar coverage for surface precipitation type",
             "Name": "Radar-Coverage_SfcPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "Inverted dynamic radar coverage for surface precipitation type [experimental]",
+            "Title": "Inverted dynamic radar coverage for surface precipitation type",
             "Name": "Radar-Coverage_SfcPrecipType-Inverted",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "Radar surface precipitation type [experimental]",
+            "Title": "Radar surface precipitation type",
             "Name": "Radar_1km_SfcPrecipType",
             "isLeaf": true,
             "isTemporal": true
