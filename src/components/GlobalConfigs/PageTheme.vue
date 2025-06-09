@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import { onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { isDarkTheme } from '@/components/Composables/isDarkTheme'
 
@@ -50,15 +49,13 @@ export default {
       return localStorage.getItem('user-theme')
     }
 
-    onMounted(() => {
-      const userThemeChoice = getTheme()
-      if (userThemeChoice === null) {
-        theme.global.name.value = getMediaPreference()
-        localStorage.setItem('user-theme', theme.global.name.value)
-      } else {
-        theme.global.name.value = userThemeChoice
-      }
-    })
+    const userThemeChoice = getTheme()
+    if (!userThemeChoice) {
+      theme.global.name.value = getMediaPreference()
+      localStorage.setItem('user-theme', theme.global.name.value)
+    } else {
+      theme.global.name.value = userThemeChoice
+    }
 
     return {
       isDark,
