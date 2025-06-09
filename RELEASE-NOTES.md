@@ -1,5 +1,11 @@
 # Release Notes
 
+## Version 2.3.1 (2025-06-09)
+
+### Bug Fixes
+- Fixed an issue in Dark Mode
+- Fixed a legend width issue in mobile and other small screen sizes
+
 ## Version 2.3.0 (2025-06-05)
 
 ### New Features
