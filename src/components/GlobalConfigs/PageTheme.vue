@@ -33,7 +33,11 @@ export default {
     const theme = useTheme()
     const { t } = useI18n()
 
-    const isDark = computed(() => theme.global.current.value.dark)
+    const isDark = computed(() => {
+      return theme.global.current.value
+        ? theme.global.current.value.dark
+        : false
+    })
 
     const toggleThemeDarkMode = () => {
       theme.global.name.value = isDark.value ? 'light' : 'dark'

@@ -196,6 +196,11 @@ export default {
   computed: {
     activeBasemap() {
       const basemap = this.store.getBasemap
+      if (!basemap) {
+        this.store.setBasemap('OSM')
+        return this.store.getBasemap
+      }
+
       const sources = Object.keys(this.sources).filter(
         (source) => this.sources[source].displayCondition,
       )
