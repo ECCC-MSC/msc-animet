@@ -52,7 +52,11 @@ export default {
   inject: ['store'],
   setup() {
     const theme = useTheme()
-    const isDark = computed(() => theme.global.current.value.dark)
+    const isDark = computed(() => {
+      return theme.global.current.value
+        ? theme.global.current.value.dark
+        : false
+    })
     return { isDark }
   },
   props: {
