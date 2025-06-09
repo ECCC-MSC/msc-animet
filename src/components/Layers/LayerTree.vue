@@ -128,18 +128,13 @@ import axios from '../../utils/AxiosConfig.js'
 
 import { debounce } from 'lodash'
 
+import { isDarkTheme } from '@/components/Composables/isDarkTheme'
 import { useDisplay } from 'vuetify'
-import { useTheme } from 'vuetify'
 
 export default {
   inject: ['store'],
   setup() {
-    const theme = useTheme()
-    const isDark = computed(() => {
-      return theme.global.current.value
-        ? theme.global.current.value.dark
-        : false
-    })
+    const { isDark } = isDarkTheme()
     return { isDark }
   },
   created() {
