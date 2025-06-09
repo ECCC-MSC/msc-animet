@@ -44,21 +44,15 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import { isDarkTheme } from '@/components/Composables/isDarkTheme'
 import { useI18n } from 'vue-i18n'
-import { useTheme } from 'vuetify'
 
 import { transform } from 'ol/proj.js'
 
 export default {
   inject: ['store'],
   setup() {
-    const theme = useTheme()
-    const isDark = computed(() => {
-      return theme.global.current.value
-        ? theme.global.current.value.dark
-        : false
-    })
+    const { isDark } = isDarkTheme()
     return { isDark }
   },
   data() {
