@@ -50,7 +50,10 @@ export default {
     }
 
     const userThemeChoice = getTheme()
-    if (!userThemeChoice) {
+    if (
+      !userThemeChoice ||
+      (userThemeChoice !== 'light' && userThemeChoice !== 'dark')
+    ) {
       theme.global.name.value = getMediaPreference()
       localStorage.setItem('user-theme', theme.global.name.value)
     } else {
