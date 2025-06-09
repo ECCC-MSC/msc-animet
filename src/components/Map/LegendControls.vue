@@ -18,6 +18,7 @@
         :style="{ border: getStyle }"
         :title="name"
         crossorigin="anonymous"
+        @load="checkResize"
       />
       <button
         class="close-button mdi mdi-close"
@@ -43,6 +44,21 @@ const { locale } = useI18n()
 const activeLegends = computed(() => store.getActiveLegends)
 const colorBorder = computed(() => store.getColorBorder)
 const legendIndex = computed(() => store.getLegendIndex)
+
+const checkResize = (event) => {
+  const img = event.target
+
+  const isMobile = window.innerWidth <= 768
+
+  let maxWidth = isMobile ? window.innerWidth * 0.25 : window.innerWidth * 0.35
+
+  if (img.naturalWidth > maxWidth) {
+    const container = img.closest('.draggable-container')
+    if (container) {
+      container.style.width = maxWidth + 'px'
+    }
+  }
+}
 
 const getLegendHidden = computed(() => {
   const getVisible = proxy.$mapLayers.arr
