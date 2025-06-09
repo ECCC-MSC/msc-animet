@@ -24,20 +24,15 @@
 </template>
 
 <script>
-import { onMounted, computed } from 'vue'
-import { useTheme } from 'vuetify'
+import { onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { isDarkTheme } from '@/components/Composables/isDarkTheme'
 
 export default {
   setup() {
-    const theme = useTheme()
     const { t } = useI18n()
 
-    const isDark = computed(() => {
-      return theme.global.current.value
-        ? theme.global.current.value.dark
-        : false
-    })
+    const { isDark, theme } = isDarkTheme()
 
     const toggleThemeDarkMode = () => {
       theme.global.name.value = isDark.value ? 'light' : 'dark'
