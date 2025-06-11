@@ -238,4 +238,9 @@ const bubbleNodeRequest = (node) => {
   line-height: 1.8;
   position: relative;
 }
+@media (max-width: 500px) {
+  .image-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 </style>
