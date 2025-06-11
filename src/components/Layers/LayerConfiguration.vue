@@ -216,7 +216,7 @@ export default {
 @media (max-width: 565px) {
   .scroll {
     max-height: calc(
-      100vh - (34px + 0.5em * 2) - 0.5em - 158px - 48px - 42px - 10px
+      100dvh - (34px + 0.5em * 2) - 0.5em - 158px - 48px - 42px - 10px
     );
   }
 }

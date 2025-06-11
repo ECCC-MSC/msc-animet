@@ -472,7 +472,7 @@ export default {
 }
 @media (max-width: 565px) {
   .treeview {
-    max-height: calc(100vh - (34px + 0.5em * 2) - 158px - 190px - 42px - 10px);
+    max-height: calc(100dvh - (34px + 0.5em * 2) - 158px - 190px - 42px - 10px);
   }
 }
 </style>

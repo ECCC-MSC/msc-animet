@@ -277,7 +277,7 @@ export default {
 }
 @media (max-width: 565px) {
   .v-overlay-menu .v-overlay__content {
-    max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 158px - 42px - 10px);
+    max-height: calc(100dvh - (34px + 0.5em * 2) - 0.5em - 158px - 42px - 10px);
   }
 }
 </style>
@@ -303,7 +303,7 @@ export default {
 }
 @media (max-width: 959px) {
   .button-translated {
-    transform: translateY(calc(-50vh + 92px)) !important;
+    transform: translateY(calc(-50dvh + 92px)) !important;
   }
 }
 @media (max-width: 960px), (min-width: 959px) {
