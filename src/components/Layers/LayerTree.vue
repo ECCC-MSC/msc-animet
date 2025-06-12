@@ -212,87 +212,90 @@ export default {
           } else {
             layer.xmlName = layer.Name
           }
-          this.addedLayers.push(layer.Name)
-          let layerData = null
-          const api = axios.create({
-            baseURL: source,
-            params: {
-              SERVICE: 'WMS',
-              VERSION: '1.3.0',
-              REQUEST: 'GetCapabilities',
-              LAYERS: layer.Name.split(' ')[0],
-              t: new Date().getTime(),
-            },
-          })
-          await api.get().then((response) => {
-            const xmlDoc = new DOMParser().parseFromString(
-              response.data,
-              'text/xml',
-            )
-            const layerName = layer.xmlName.split(' ')[0]
-            const xpathExpression = `//wms:Layer[not(.//wms:Layer) and wms:Name='${layerName}']`
-            function nsResolver(prefix) {
-              const ns = {
-                wms: 'http://www.opengis.net/wms',
-                xlink: 'http://www.w3.org/1999/xlink',
-              }
-              return ns[prefix] || null
-            }
-            const xpathResult = xmlDoc.evaluate(
-              xpathExpression,
-              xmlDoc,
-              nsResolver,
-              XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
-              null,
-            )
-            layerData = {}
-            if (xpathResult.snapshotLength > 0) {
-              const node = xpathResult.snapshotItem(0)
-              layerData.Name = node.getElementsByTagName('Name')[0].textContent
-              layerData.Title =
-                node.getElementsByTagName('Title')[0].textContent
-
-              const dimension = {
-                Dimension_time: '',
-                Dimension_time_default: '',
-                Dimension_ref_time: '',
-              }
-              const timeDimension = node.getElementsByTagName('Dimension')
-              for (let i = 0; i < timeDimension.length; i++) {
-                const dim = timeDimension[i]
-                if (dim.getAttribute('name') === 'time') {
-                  dimension.Dimension_time = dim.textContent
-                  dimension.Dimension_time_default = dim.getAttribute('default')
-                } else if (dim.getAttribute('name') === 'reference_time') {
-                  dimension.Dimension_ref_time = dim.textContent
-                }
-              }
-              layerData.Dimension = dimension
-
-              layerData.Style = []
-              const styles = node.getElementsByTagName('Style')
-              for (let i = 0; i < styles.length; i++) {
-                const style = styles[i]
-                layerData.Style.push({
-                  Name: style.getElementsByTagName('Name')[0].textContent,
-                  Title: style.getElementsByTagName('Title')[0].textContent,
-                  LegendURL: style
-                    .getElementsByTagName('LegendURL')[0]
-                    .getElementsByTagName('OnlineResource')[0]
-                    .getAttributeNS('http://www.w3.org/1999/xlink', 'href'),
-                })
-              }
-            } else {
-              this.addedLayers = this.addedLayers.filter(
-                (added) => added !== layer.Name,
+          try {
+            this.addedLayers.push(layer.Name)
+            let layerData = null
+            const api = axios.create({
+              baseURL: source,
+              params: {
+                SERVICE: 'WMS',
+                VERSION: '1.3.0',
+                REQUEST: 'GetCapabilities',
+                LAYERS: layer.Name.split(' ')[0],
+                t: new Date().getTime(),
+              },
+            })
+            await api.get().then((response) => {
+              const xmlDoc = new DOMParser().parseFromString(
+                response.data,
+                'text/xml',
               )
-              this.emitter.emit('layerQueryFailure')
-              throw new Error(`Query for ${layer.Name} failed`)
-            }
-          })
-          layerData = { ...layerData, ...layer }
-          layerData.isTemporal = layerData.Dimension.Dimension_time !== ''
-          this.emitter.emit('buildLayer', { layerData, source, autoPlay })
+              const layerName = layer.xmlName.split(' ')[0]
+              const xpathExpression = `//wms:Layer[not(.//wms:Layer) and wms:Name='${layerName}']`
+              function nsResolver(prefix) {
+                const ns = {
+                  wms: 'http://www.opengis.net/wms',
+                  xlink: 'http://www.w3.org/1999/xlink',
+                }
+                return ns[prefix] || null
+              }
+              const xpathResult = xmlDoc.evaluate(
+                xpathExpression,
+                xmlDoc,
+                nsResolver,
+                XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+                null,
+              )
+              layerData = {}
+              if (xpathResult.snapshotLength > 0) {
+                const node = xpathResult.snapshotItem(0)
+                layerData.Name =
+                  node.getElementsByTagName('Name')[0].textContent
+                layerData.Title =
+                  node.getElementsByTagName('Title')[0].textContent
+
+                const dimension = {
+                  Dimension_time: '',
+                  Dimension_time_default: '',
+                  Dimension_ref_time: '',
+                }
+                const timeDimension = node.getElementsByTagName('Dimension')
+                for (let i = 0; i < timeDimension.length; i++) {
+                  const dim = timeDimension[i]
+                  if (dim.getAttribute('name') === 'time') {
+                    dimension.Dimension_time = dim.textContent
+                    dimension.Dimension_time_default =
+                      dim.getAttribute('default')
+                  } else if (dim.getAttribute('name') === 'reference_time') {
+                    dimension.Dimension_ref_time = dim.textContent
+                  }
+                }
+                layerData.Dimension = dimension
+
+                layerData.Style = []
+                const styles = node.getElementsByTagName('Style')
+                for (let i = 0; i < styles.length; i++) {
+                  const style = styles[i]
+                  layerData.Style.push({
+                    Name: style.getElementsByTagName('Name')[0].textContent,
+                    Title: style.getElementsByTagName('Title')[0].textContent,
+                    LegendURL: style
+                      .getElementsByTagName('LegendURL')[0]
+                      .getElementsByTagName('OnlineResource')[0]
+                      .getAttributeNS('http://www.w3.org/1999/xlink', 'href'),
+                  })
+                }
+              } else {
+                this.emitter.emit('layerQueryFailure')
+                throw new Error(`Query for ${layer.Name} failed`)
+              }
+            })
+            layerData = { ...layerData, ...layer }
+            layerData.isTemporal = layerData.Dimension.Dimension_time !== ''
+            this.emitter.emit('buildLayer', { layerData, source, autoPlay })
+          } catch (err) {
+            this.removeLayer(layer.Name)
+          }
         } else if (
           this.$mapLayers.arr.some((l) => l.get('layerName') === layer.Name)
         ) {
