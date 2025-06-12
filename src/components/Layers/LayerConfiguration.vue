@@ -18,8 +18,8 @@
             v-if="isAnimating && !configPanelHover && playState === 'play'"
             class="pa-0"
           >
-            <v-list-item-title :title="$t(item.get('layerName').split(' ')[0])">
-              {{ $t(item.get('layerName').split(' ')[0]) }}
+            <v-list-item-title :title="$t(item.get('layerName').split('/')[0])">
+              {{ $t(item.get('layerName').split('/')[0]) }}
             </v-list-item-title>
             <v-list-item-subtitle class="layer-subtitle">
               {{ item.get('layerName') }}
@@ -38,9 +38,9 @@
           <template v-else class="pa-0">
             <v-col class="pa-0">
               <v-list-item-title
-                :title="$t(item.get('layerName').split(' ')[0])"
+                :title="$t(item.get('layerName').split('/')[0])"
               >
-                {{ $t(item.get('layerName').split(' ')[0]) }}
+                {{ $t(item.get('layerName').split('/')[0]) }}
               </v-list-item-title>
               <v-list-item-subtitle class="layer-subtitle">
                 {{ item.get('layerName') }}

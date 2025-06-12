@@ -157,7 +157,7 @@ export default {
               ? '1'
               : '0'
 
-            const [name, source] = layerName.split(' ')
+            const [name, source] = layerName.split('/')
             const layerParams = [
               name,
               layerOpacity,

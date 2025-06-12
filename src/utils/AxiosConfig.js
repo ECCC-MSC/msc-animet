@@ -1,8 +1,6 @@
 import axios from 'axios'
 import axiosRetry from 'axios-retry'
 
-axios.defaults.withCredentials = true
-
 axiosRetry(axios, {
   retries: 4,
   retryDelay: (retryCount) => retryCount * 800,
