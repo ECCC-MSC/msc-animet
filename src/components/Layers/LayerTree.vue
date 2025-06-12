@@ -60,8 +60,8 @@
                       {{
                         $mapLayers.arr.some(
                           (l) =>
-                            l.get('layerName').split(' ')[0] ===
-                              node.Name.split(' ')[0] &&
+                            l.get('layerName').split('/')[0] ===
+                              node.Name.split('/')[0] &&
                             Object.values(wmsSources)[l.get('layerWmsIndex')][
                               'url'
                             ] === currentWmsSource,
@@ -91,8 +91,8 @@
                           'title-leaf': node.isLeaf,
                           'text-primary': $mapLayers.arr.some(
                             (l) =>
-                              l.get('layerName').split(' ')[0] ===
-                                node.Name.split(' ')[0] &&
+                              l.get('layerName').split('/')[0] ===
+                                node.Name.split('/')[0] &&
                               Object.values(wmsSources)[l.get('layerWmsIndex')][
                                 'url'
                               ] === currentWmsSource,
@@ -107,7 +107,7 @@
                         <template v-if="node.isLeaf">
                           <br />
                           <span class="subtitle">{{
-                            node.Name.split(' ')[0]
+                            node.Name.split('/')[0]
                           }}</span>
                         </template>
                       </span>
@@ -187,7 +187,7 @@ export default {
         this.emitter.emit('toggleAnimation')
       }
       if (layer.isLeaf) {
-        layer.Name = layer.Name.split(' ')[0]
+        layer.Name = layer.Name.split('/')[0]
         let source = Object.hasOwn(layer, 'wmsSource')
           ? layer.wmsSource
           : this.currentWmsSource
@@ -197,7 +197,7 @@ export default {
         )
         const sourceValues = this.wmsSources[sources[layer.wmsIndex]]
         if (sourceValues['source_validation']) {
-          layer.Name = `${layer.Name} ${sources[layer.wmsIndex]}`
+          layer.Name = `${layer.Name}/${sources[layer.wmsIndex]}`
         }
         if (!this.addedLayers.includes(layer.Name)) {
           if (Object.hasOwn(sourceValues, 'query_pattern')) {
@@ -221,7 +221,7 @@ export default {
                 SERVICE: 'WMS',
                 VERSION: '1.3.0',
                 REQUEST: 'GetCapabilities',
-                LAYERS: layer.Name.split(' ')[0],
+                LAYERS: layer.Name.split('/')[0],
                 t: new Date().getTime(),
               },
             })
@@ -230,7 +230,7 @@ export default {
                 response.data,
                 'text/xml',
               )
-              const layerName = layer.xmlName.split(' ')[0]
+              const layerName = layer.xmlName.split('/')[0]
               const xpathExpression = `//wms:Layer[not(.//wms:Layer) and wms:Name='${layerName}']`
               function nsResolver(prefix) {
                 const ns = {

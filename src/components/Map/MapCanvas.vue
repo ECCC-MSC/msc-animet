@@ -368,7 +368,7 @@ export default {
         source: new ImageWMS({
           format: 'image/png',
           url: wmsSource,
-          params: { LAYERS: layerData.Name.split(' ')[0] },
+          params: { LAYERS: layerData.Name.split('/')[0] },
           transition: 0,
           crossOrigin: 'Anonymous',
           ratio: 1,

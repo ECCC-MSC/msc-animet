@@ -261,7 +261,7 @@ export default {
               layer.get('layerTimeStep') === this.mapTimeSettings.Step
             ) {
               this.store.setAnimationTitle(
-                this.t(layer.get('layerName').split(' ')[0]),
+                this.t(layer.get('layerName').split('/')[0]),
               )
               break
             }
