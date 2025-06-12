@@ -1,11 +1,12 @@
-import axios from "axios";
-import axiosRetry from "axios-retry";
+import axios from 'axios'
+import axiosRetry from 'axios-retry'
+
+axios.defaults.withCredentials = true
 
 axiosRetry(axios, {
   retries: 4,
-  retryDelay: (retryCount) => {
-    return retryCount * 800;
-  },
-});
+  retryDelay: (retryCount) => retryCount * 800,
+  retryCondition: (error) => error.response && error.response.status === 401,
+})
 
-export default axios;
+export default axios
