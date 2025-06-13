@@ -1,5 +1,18 @@
 # Release Notes
 
+## Version 2.3.3 (2025-06-13)
+
+### Bug Fixes
+- Fixed authentication checks with retry
+- Fixed error handling during next page refresh
+- Fixed spaces and accents in variable names
+
+## Version 2.3.2 (2025-06-11)
+
+### Bug Fixes
+- Fixed display of presets in smaller displays
+- Update layer tree with GDPS-SN
+
 ## Version 2.3.1 (2025-06-09)
 
 ### Bug Fixes
