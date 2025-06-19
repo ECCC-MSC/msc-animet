@@ -1,5 +1,10 @@
 # Release Notes
 
+## Version 2.3.4 (2025-06-19)
+
+### Bug Fixes
+- Update layer tree with new CAPS layers and remove old HRPDS.NORTH layers
+
 ## Version 2.3.3 (2025-06-13)
 
 ### Bug Fixes
