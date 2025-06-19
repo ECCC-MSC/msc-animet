@@ -11840,6 +11840,2643 @@ export default {
     ]
   },
   {
+    "Title": "Syst\u00e8me canadien de pr\u00e9vision de l'Arctique (SCPA) [3 km]",
+    "Name": "Syst\u00e8me canadien de pr\u00e9vision de l'Arctique (SCPA) [3 km]",
+    "isLeaf": false,
+    "children": [
+      {
+        "Title": "Champs convectifs du SCPA [exp\u00e9rimental]",
+        "Name": "Champs convectifs du SCPA [exp\u00e9rimental]",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "SCPA_conv - Indice de Showalter, au niveau de r\u00e9f\u00e9rence 500 mb (contour) [K]",
+            "Name": "CAPS_3km_ShowalterIndex-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA_conv - Indice de Showalter, au niveau de r\u00e9f\u00e9rence 500 mb [K]",
+            "Name": "CAPS_3km_ShowalterIndex_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Indice de soul\u00e8vement pour la parcelle la plus instable utilisant la correction de la temp\u00e9rature virtuelle (contour) [K]",
+            "Name": "CAPS_3km_LiftedIndex-MU-VT-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA_conv - Indice de soul\u00e8vement pour la parcelle la plus instable utilisant la correction de la temp\u00e9rature virtuelle [K]",
+            "Name": "CAPS_3km_LiftedIndex-MU-VT_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          }
+        ]
+      },
+      {
+        "Title": "Champs diagnostiques du SCPA [exp\u00e9rimental]",
+        "Name": "Champs diagnostiques du SCPA [exp\u00e9rimental]",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "SCPA_diag - Type de pr\u00e9cipitation instantan\u00e9e",
+            "Name": "CAPS_3km_PrecipType",
+            "isLeaf": true,
+            "isTemporal": true
+          }
+        ]
+      },
+      {
+        "Title": "SCPA [exp\u00e9rimental]",
+        "Name": "SCPA [exp\u00e9rimental]",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "SCPA - Accumulation de ruissellement [mm]",
+            "Name": "CAPS_3km_Runoff-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Alb\u00e9do \u00e0 la surface [%]",
+            "Name": "CAPS_3km_Albedo",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Contenu volum\u00e9trique en eau du sol (0-1cm) [m\u00b3/m\u00b3]",
+            "Name": "CAPS_3km_SoilVolumetricWaterContent_0-1cm",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Contenu volum\u00e9trique en eau du sol (0-10cm) [m\u00b3/m\u00b3]",
+            "Name": "CAPS_3km_SoilVolumetricWaterContent_0-10cm",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Contenu volum\u00e9trique en glace du sol \u00e0 la surface [m\u00b3/m\u00b3]",
+            "Name": "CAPS_3km_SoilVolumetricIceContent",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Couverture nuageuse [%]",
+            "Name": "CAPS_3km_TotalCloudCover",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Densit\u00e9 de l'air \u00e0 40m au dessus de la surface [kg/m\u00b3]",
+            "Name": "CAPS_3km_AirDensity_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Densit\u00e9 de l'air \u00e0 80m au dessus de la surface [kg/m\u00b3]",
+            "Name": "CAPS_3km_AirDensity_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Densit\u00e9 de l'air \u00e0 120m au dessus de la surface [kg/m\u00b3]",
+            "Name": "CAPS_3km_AirDensity_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Densit\u00e9 de la neige [kg/m\u00b3]",
+            "Name": "CAPS_3km_SnowDensity",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Direction du vent \u00e0 10m au dessus de la surface [\u00b0]",
+            "Name": "CAPS_3km_WindDir_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Direction du vent \u00e0 40m au dessus de la surface [\u00b0]",
+            "Name": "CAPS_3km_WindDir_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Direction du vent \u00e0 80m au dessus de la surface [\u00b0]",
+            "Name": "CAPS_3km_WindDir_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Direction du vent \u00e0 120m au dessus de la surface [\u00b0]",
+            "Name": "CAPS_3km_WindDir_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Flux de chaleur sensible [W/m\u00b2]",
+            "Name": "CAPS_3km_SensibleHeatNetFlux",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Flux net de chaleur latente [W/m\u00b2]",
+            "Name": "CAPS_3km_LatentHeatNetFlux",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Flux radiatif accumul\u00e9 d'ondes courtes descendant \u00e0 la surface [J/m\u00b2]",
+            "Name": "CAPS_3km_DownwardShortwaveRadiationFlux-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Flux radiatif accumul\u00e9 d'ondes courtes net \u00e0 la surface [J/m\u00b2]",
+            "Name": "CAPS_3km_NetShortwaveRadiationFlux-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Flux radiatif accumul\u00e9 d'ondes longues descendant \u00e0 la surface [J/m\u00b2]",
+            "Name": "CAPS_3km_DownwardLongwaveRadiationFlux-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Flux radiatif accumul\u00e9 d'ondes longues net \u00e0 la surface [J/m\u00b2]",
+            "Name": "CAPS_3km_NetLongwaveRadiationFlux-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Flux radiatif d'ondes courtes ascendant au sommet de l'atmosph\u00e8re [W/m\u00b2]",
+            "Name": "CAPS_3km_UpwardShortwaveRadiationFlux_NTAtm",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Flux radiatif d'ondes longues ascendant au sommet de l'atmosph\u00e8re [W/m\u00b2]",
+            "Name": "CAPS_3km_UpwardLongwaveRadiationFlux_NTAtm",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Flux visible accumul\u00e9 entrant au sommet de l'atmosphere [J/m\u00b2]",
+            "Name": "CAPS_3km_DownwardShortwaveRadiationFlux-Accum_NTAtm",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Hauteur de la couche limite plan\u00e9taire [m]",
+            "Name": "CAPS_3km_PlanetaryBoundaryLayerHeight",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Hauteur g\u00e9opotentielle (contour) [gpm]",
+            "Name": "CAPS_3km_GeopotentialHeight-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Hauteur g\u00e9opotentielle [gpm]",
+            "Name": "CAPS_3km_GeopotentialHeight",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Humidit\u00e9 relative \u00e0 2m au dessus de la surface [%]",
+            "Name": "CAPS_3km_RelativeHumidity_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Humidit\u00e9 relative \u00e0 40m au dessus de la surface [%]",
+            "Name": "CAPS_3km_RelativeHumidity_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Humidit\u00e9 relative \u00e0 80m au dessus de la surface [%]",
+            "Name": "CAPS_3km_RelativeHumidity_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Humidit\u00e9 relative \u00e0 120m au dessus de la surface [%]",
+            "Name": "CAPS_3km_RelativeHumidity_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Humidit\u00e9 sp\u00e9cifique \u00e0 2m au dessus de la surface [kg/kg]",
+            "Name": "CAPS_3km_SpecificHumidity_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Humidit\u00e9 sp\u00e9cifique \u00e0 40m au dessus de la surface [kg/kg]",
+            "Name": "CAPS_3km_SpecificHumidity_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Humidit\u00e9 sp\u00e9cifique \u00e0 80m au dessus de la surface [kg/kg]",
+            "Name": "CAPS_3km_SpecificHumidity_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Humidit\u00e9 sp\u00e9cifique \u00e0 120m au dessus de la surface [kg/kg]",
+            "Name": "CAPS_3km_SpecificHumidity_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Humidit\u00e9 sp\u00e9cifique \u00e0 la surface [kg/kg]",
+            "Name": "CAPS_3km_SpecificHumidity",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - H\u00e9licit\u00e9 relative de la temp\u00eate [J/kg]",
+            "Name": "CAPS_3km_StormRelativeHelicity",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Maximum des rafales de vent [m/s]",
+            "Name": "CAPS_3km_WindGust-Max_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Minimum des rafales de vent [m/s]",
+            "Name": "CAPS_3km_WindGust-Min_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Pression au niveau de la mer (contour) [Pa]",
+            "Name": "CAPS_3km_Pressure_MSL-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Pression au niveau de la mer [Pa]",
+            "Name": "CAPS_3km_Pressure_MSL",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Pression \u00e0 la surface (contour) [Pa]",
+            "Name": "CAPS_3km_Pressure-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Pression \u00e0 la surface [Pa]",
+            "Name": "CAPS_3km_Pressure",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Pr\u00e9cipitations accumul\u00e9es [kg/m\u00b2]",
+            "Name": "CAPS_3km_Precip-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Taux de pr\u00e9cipitation instantan\u00e9 [kg/(m\u00b2s)]",
+            "Name": "CAPS_3km_PrecipRate",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 2m au dessus de la surface (contour) [\u00b0C]",
+            "Name": "CAPS_3km_AirTemp-Contour_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 2m au dessus de la surface [\u00b0C]",
+            "Name": "CAPS_3km_AirTemp_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 40m au dessus de la surface (contour) [\u00b0C]",
+            "Name": "CAPS_3km_AirTemp-Contour_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 40m au dessus de la surface [\u00b0C]",
+            "Name": "CAPS_3km_AirTemp_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 80m au dessus de la surface (contour) [\u00b0C]",
+            "Name": "CAPS_3km_AirTemp-Contour_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 80m au dessus de la surface [\u00b0C]",
+            "Name": "CAPS_3km_AirTemp_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 120m au dessus de la surface (contour) [\u00b0C]",
+            "Name": "CAPS_3km_AirTemp-Contour_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 120m au dessus de la surface [\u00b0C]",
+            "Name": "CAPS_3km_AirTemp_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature de la surface et du sol (Superficielle) [K]",
+            "Name": "CAPS_3km_SoilTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 2m au dessus de la surface (contour) [\u00b0C]",
+            "Name": "CAPS_3km_DewPoint-Contour_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 2m au dessus de la surface [\u00b0C]",
+            "Name": "CAPS_3km_DewPoint_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 40m au dessus de la surface (contour) [\u00b0C]",
+            "Name": "CAPS_3km_DewPoint-Contour_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 40m au dessus de la surface [\u00b0C]",
+            "Name": "CAPS_3km_DewPoint_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 80m au dessus de la surface (contour) [\u00b0C]",
+            "Name": "CAPS_3km_DewPoint-Contour_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 80m au dessus de la surface [\u00b0C]",
+            "Name": "CAPS_3km_DewPoint_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 120m au dessus de la surface (contour) [\u00b0C]",
+            "Name": "CAPS_3km_DewPoint-Contour_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 120m au dessus de la surface [\u00b0C]",
+            "Name": "CAPS_3km_DewPoint_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Temp\u00e9rature du sol pr\u00e8s de la surface (0-10cm) [K]",
+            "Name": "CAPS_3km_SoilTemp_0-10cm",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Vents \u00e0 10m au dessus de la surface [m/s]",
+            "Name": "CAPS_3km_Winds_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Vents \u00e0 40m au dessus de la surface [m/s]",
+            "Name": "CAPS_3km_Winds_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Vents \u00e0 80m au dessus de la surface [m/s]",
+            "Name": "CAPS_3km_Winds_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Vents \u00e0 120m au dessus de la surface [m/s]",
+            "Name": "CAPS_3km_Winds_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Vitesse du vent \u00e0 40m au dessus de la surface (contour) [m/s]",
+            "Name": "CAPS_3km_WindSpeed-Contour_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Vitesse du vent \u00e0 40m au dessus de la surface [m/s]",
+            "Name": "CAPS_3km_WindSpeed_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Vitesse du vent \u00e0 80m au dessus de la surface (contour) [m/s]",
+            "Name": "CAPS_3km_WindSpeed-Contour_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Vitesse du vent \u00e0 80m au dessus de la surface [m/s]",
+            "Name": "CAPS_3km_WindSpeed_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Vitesse du vent \u00e0 120m au dessus de la surface (contour) [m/s]",
+            "Name": "CAPS_3km_WindSpeed-Contour_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - Vitesse du vent \u00e0 120m au dessus de la surface [m/s]",
+            "Name": "CAPS_3km_WindSpeed_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - \u00c9cart du point de ros\u00e9e \u00e0 2m au dessus de la surface [\u00b0C]",
+            "Name": "CAPS_3km_DewPointDepression_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - \u00c9cart du point de ros\u00e9e \u00e0 40m au dessus de la surface [\u00b0C]",
+            "Name": "CAPS_3km_DewPointDepression_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - \u00c9cart du point de ros\u00e9e \u00e0 80m au dessus de la surface [\u00b0C]",
+            "Name": "CAPS_3km_DewPointDepression_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - \u00c9cart du point de ros\u00e9e \u00e0 120m au dessus de la surface [\u00b0C]",
+            "Name": "CAPS_3km_DewPointDepression_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - \u00c9nergie potentielle convective disponible [J/kg]",
+            "Name": "CAPS_3km_CAPE",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA - \u00c9paisseur de la neige [m]",
+            "Name": "CAPS_3km_SnowDepth",
+            "isLeaf": true,
+            "isTemporal": true
+          }
+        ]
+      },
+      {
+        "Title": "SCPA en niveaux de pression [exp\u00e9rimental]",
+        "Name": "SCPA en niveaux de pression [exp\u00e9rimental]",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "50",
+            "Name": "50",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 50 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 50 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 50 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 50 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 50 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 50 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 50 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 50 mb [m/s]",
+                "Name": "CAPS_3km_Winds_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 50 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA - Vitesse du vent \u00e0 50 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 50 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "100",
+            "Name": "100",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 100 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 100 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 100 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 100 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 100 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 100 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 100 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 100 mb [m/s]",
+                "Name": "CAPS_3km_Winds_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 100 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 100 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 100 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "150",
+            "Name": "150",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 150 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 150 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 150 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 150 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 150 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 150 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 150 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 150 mb [m/s]",
+                "Name": "CAPS_3km_Winds_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 150 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 150 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 150 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "175",
+            "Name": "175",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 175 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 175 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 175 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 175 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 175 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 175 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 175 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 175 mb [m/s]",
+                "Name": "CAPS_3km_Winds_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 175 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 175 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 175 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "200",
+            "Name": "200",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 200 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 200 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 200 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 200 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 200 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 200 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 200 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 200 mb [m/s]",
+                "Name": "CAPS_3km_Winds_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 200 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 200 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 200 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "225",
+            "Name": "225",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 225 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 225 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 225 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 225 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 225 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 225 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 225 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 225 mb [m/s]",
+                "Name": "CAPS_3km_Winds_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 225 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 225 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 225 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "250",
+            "Name": "250",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 250 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 250 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 250 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 250 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 250 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Mouvement vertical isobarique \u00e0 250 mb [Pa/s]",
+                "Name": "CAPS_3km_VerticalVelocity_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 250 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 250 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Tourbillon absolu \u00e0 250 mb [s-1]",
+                "Name": "CAPS_3km_AbsoluteVorticity_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 250 mb [m/s]",
+                "Name": "CAPS_3km_Winds_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 250 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 250 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 250 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "275",
+            "Name": "275",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 275 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 275 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 275 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 275 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 275 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 275 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 275 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 275 mb [m/s]",
+                "Name": "CAPS_3km_Winds_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 275 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 275 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 275 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "300",
+            "Name": "300",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 300 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 300 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 300 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 300 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 300 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 300 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 300 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 300 mb [m/s]",
+                "Name": "CAPS_3km_Winds_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 300 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 300 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 300 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "350",
+            "Name": "350",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 350 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 350 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 350 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 350 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 350 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 350 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 350 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 350 mb [m/s]",
+                "Name": "CAPS_3km_Winds_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 350 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 350 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 350 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "400",
+            "Name": "400",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 400 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 400 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 400 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 400 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 400 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 400 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 400 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 400 mb [m/s]",
+                "Name": "CAPS_3km_Winds_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 400 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 400 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 400 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "450",
+            "Name": "450",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 450 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 450 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 450 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 450 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 450 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 450 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 450 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 450 mb [m/s]",
+                "Name": "CAPS_3km_Winds_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 450 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 450 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 450 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "500",
+            "Name": "500",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 500 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 500 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 500 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 500 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Mouvement vertical isobarique \u00e0 500 mb [Pa/s]",
+                "Name": "CAPS_3km_VerticalVelocity_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 500 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 500 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Tourbillon absolu \u00e0 500 mb [s-1]",
+                "Name": "CAPS_3km_AbsoluteVorticity_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 500 mb [m/s]",
+                "Name": "CAPS_3km_Winds_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 500 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 500 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 500 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "550",
+            "Name": "550",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 550 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 550 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 550 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 550 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 550 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 550 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 550 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 550 mb [m/s]",
+                "Name": "CAPS_3km_Winds_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 550 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 550 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 550 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "600",
+            "Name": "600",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 600 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 600 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 600 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 600 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 600 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 600 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 600 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 600 mb [m/s]",
+                "Name": "CAPS_3km_Winds_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 600 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 600 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 600 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "650",
+            "Name": "650",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 650 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 650 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 650 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 650 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 650 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 650 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 650 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 650 mb [m/s]",
+                "Name": "CAPS_3km_Winds_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 650 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 650 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 650 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "700",
+            "Name": "700",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "CAPS_IsbL - Direction du vent \u00e0 700 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 700 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 700 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 700 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 700 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Mouvement vertical isobarique \u00e0 700 mb [Pa/s]",
+                "Name": "CAPS_3km_VerticalVelocity_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 700 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 700 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Tourbillon absolu \u00e0 700 mb [s-1]",
+                "Name": "CAPS_3km_AbsoluteVorticity_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 700 mb [m/s]",
+                "Name": "CAPS_3km_Winds_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 700 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 700 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 700 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "750",
+            "Name": "750",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 750 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 750 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 750 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 750 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 750 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 750 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 750 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 750 mb [m/s]",
+                "Name": "CAPS_3km_Winds_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 750 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 750 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 750 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "800",
+            "Name": "800",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 800 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 800 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 800 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 800 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 800 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 800 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 800 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 800 mb [m/s]",
+                "Name": "CAPS_3km_Winds_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 800 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 800 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 800 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "850",
+            "Name": "850",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 850 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 850 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 850 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 850 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 850 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Mouvement vertical isobarique \u00e0 850 mb [Pa/s]",
+                "Name": "CAPS_3km_VerticalVelocity_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 850 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 850 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Tourbillon absolu \u00e0 850 mb [s-1]",
+                "Name": "CAPS_3km_AbsoluteVorticity_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 850 mb [m/s]",
+                "Name": "CAPS_3km_Winds_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 850 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 850 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 850 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "875",
+            "Name": "875",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 875 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 875 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 875 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 875 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 875 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "CAPS_IsbL - Temp\u00e9rature de l'air \u00e0 875 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 875 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 875 mb [m/s]",
+                "Name": "CAPS_3km_Winds_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 875 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 875 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 875 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "900",
+            "Name": "900",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 900 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 900 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 900 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 900 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 900 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 900 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 900 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 900 mb [m/s]",
+                "Name": "CAPS_3km_Winds_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 900 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 900 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 900 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "925",
+            "Name": "925",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 925 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 925 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 925 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 925 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 925 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 925 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 925 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 925 mb [m/s]",
+                "Name": "CAPS_3km_Winds_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 925 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 925 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 925 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "950",
+            "Name": "950",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 950 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 950 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 950 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 950 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 950 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 950 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 950 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 950 mb [m/s]",
+                "Name": "CAPS_3km_Winds_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 950 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 950 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 950 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "970",
+            "Name": "970",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 970 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 970 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 970 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 970 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 970 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 970 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 970 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 970 mb [m/s]",
+                "Name": "CAPS_3km_Winds_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 970 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 970 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 970 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "985",
+            "Name": "985",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 985 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 985 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 985 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 985 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 985 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 985 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 985 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 985 mb [m/s]",
+                "Name": "CAPS_3km_Winds_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 985 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 985 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 985 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "1000",
+            "Name": "1000",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 1000 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 1000 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 1000 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 1000 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 1000 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Mouvement vertical isobarique \u00e0 1000 mb [Pa/s]",
+                "Name": "CAPS_3km_VerticalVelocity_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 1000 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 1000 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Tourbillon absolu \u00e0 1000 mb [s-1]",
+                "Name": "CAPS_3km_AbsoluteVorticity_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 1000 mb [m/s]",
+                "Name": "CAPS_3km_Winds_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 1000 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 1000 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 1000 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "1015",
+            "Name": "1015",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 1015 mb [\u00b0]",
+                "Name": "CAPS_3km_WindDir_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 1015 mb (contour) [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight-Contour_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 1015 mb [gpm]",
+                "Name": "CAPS_3km_GeopotentialHeight_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 1015 mb [%]",
+                "Name": "CAPS_3km_RelativeHumidity_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 1015 mb [kg/kg]",
+                "Name": "CAPS_3km_SpecificHumidity_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 1015 mb (contour) [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp-Contour_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 1015 mb [\u00b0C]",
+                "Name": "CAPS_3km_AirTemp_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vents \u00e0 1015 mb [m/s]",
+                "Name": "CAPS_3km_Winds_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 1015 mb (contour) [m/s]",
+                "Name": "CAPS_3km_WindSpeed-Contour_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 1015 mb [m/s]",
+                "Name": "CAPS_3km_WindSpeed_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 1015 mb [\u00b0C]",
+                "Name": "CAPS_3km_DewPointDepression_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "Title": "Syst\u00e8me de pr\u00e9vision du cycle de l'eau (SPCE) [1 km]",
     "Name": "Syst\u00e8me de pr\u00e9vision du cycle de l'eau (SPCE) [1 km]",
     "isLeaf": false,
@@ -42621,37 +45258,6 @@ export default {
         ]
       },
       {
-        "Title": "Champs convectifs du SHRPD-Nord [exp\u00e9rimental]",
-        "Name": "Champs convectifs du SHRPD-Nord [exp\u00e9rimental]",
-        "isLeaf": false,
-        "children": [
-          {
-            "Title": "HRDPS.NORTH - Indice de Showalter, au niveau de r\u00e9f\u00e9rence 500 mb (contour) [K]",
-            "Name": "HRDPS.NORTH.CONV_SHWINX.500-CONTOUR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Indice de Showalter, au niveau de r\u00e9f\u00e9rence 500 mb [K]",
-            "Name": "HRDPS.NORTH.CONV_SHWINX.500",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Indice de soul\u00e8vement pour la parcelle la plus instable utilisant la correction de la temp\u00e9rature virtuelle, au niveau de r\u00e9f\u00e9rence 500 mb (contour) [K]",
-            "Name": "HRDPS.NORTH.CONV_MU-VT-LI.500-CONTOUR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Indice de soul\u00e8vement pour la parcelle la plus instable utilisant la correction de la temp\u00e9rature virtuelle, au niveau de r\u00e9f\u00e9rence 500 mb [K]",
-            "Name": "HRDPS.NORTH.CONV_MU-VT-LI.500",
-            "isLeaf": true,
-            "isTemporal": true
-          }
-        ]
-      },
-      {
         "Title": "Champs diagnostiques du SHRPD",
         "Name": "Champs diagnostiques du SHRPD",
         "isLeaf": false,
@@ -45453,2046 +48059,6 @@ export default {
               {
                 "Title": "HRDPS.CONTINENTAL.PRES - \u00c9cart du point de ros\u00e9e \u00e0 1015 mb [\u00b0C]",
                 "Name": "HRDPS.CONTINENTAL.PRES_ES.1015",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "Title": "SHRPD-Nord [exp\u00e9rimental]",
-        "Name": "SHRPD-Nord [exp\u00e9rimental]",
-        "isLeaf": false,
-        "children": [
-          {
-            "Title": "HRDPS.NORTH - Alb\u00e9do \u00e0 la surface [%]",
-            "Name": "HRDPS.NORTH_AL",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Couverture nuageuse totale [%]",
-            "Name": "HRDPS.NORTH_NT",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Direction du vent [\u00b0]",
-            "Name": "HRDPS.NORTH_WD",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Humidit\u00e9 relative [%]",
-            "Name": "HRDPS.NORTH_HR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Humidit\u00e9 sp\u00e9cifique [kg/kg]",
-            "Name": "HRDPS.NORTH_HU",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Neige accumul\u00e9e [kg/m\u00b2]",
-            "Name": "HRDPS.NORTH_SN",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Pluie accumul\u00e9e [kg/m\u00b2]",
-            "Name": "HRDPS.NORTH_RN",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Pluie vergla\u00e7ante accumul\u00e9e [kg/m\u00b2]",
-            "Name": "HRDPS.NORTH_FR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Pression au niveau de la mer (contour) [Pa]",
-            "Name": "HRDPS.NORTH_PN",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Pression au niveau de la mer [Pa]",
-            "Name": "HRDPS.NORTH_PN-SLP",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Pression \u00e0 la surface (contour) [Pa]",
-            "Name": "HRDPS.NORTH_P0-CONTOUR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Pression \u00e0 la surface [Pa]",
-            "Name": "HRDPS.NORTH_P0",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Pr\u00e9cipitations accumul\u00e9es [kg/m\u00b2]",
-            "Name": "HRDPS.NORTH_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Taux de pr\u00e9cipitation instantan\u00e9 [kg/(m\u00b2s)]",
-            "Name": "HRDPS.NORTH_RT",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Temp\u00e9rature de l'air (contour) [\u00b0C]",
-            "Name": "HRDPS.NORTH_TT-CONTOUR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Temp\u00e9rature de l'air [\u00b0C]",
-            "Name": "HRDPS.NORTH_TT",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Temp\u00e9rature de la surface et du sol (Profondeur/moyenne) [K]",
-            "Name": "HRDPS.NORTH_I0.100",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "HRDPS.NORTH - Temp\u00e9rature de la surface et du sol (Superficielle) [K]",
-            "Name": "HRDPS.NORTH_I0",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "HRDPS.NORTH - Temp\u00e9rature du point de ros\u00e9e (contour) [\u00b0C]",
-            "Name": "HRDPS.NORTH_TD-CONTOUR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Temp\u00e9rature du point de ros\u00e9e [\u00b0C]",
-            "Name": "HRDPS.NORTH_TD",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Vents [m/s]",
-            "Name": "HRDPS.NORTH_UU",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Vitesse du vent (contour) [m/s]",
-            "Name": "HRDPS.NORTH_WSPD-CONTOUR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - Vitesse du vent [m/s]",
-            "Name": "HRDPS.NORTH_WSPD",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - \u00c9cart du point de ros\u00e9e [\u00b0C]",
-            "Name": "HRDPS.NORTH_ES",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS.NORTH - \u00c9paisseur de la neige [m]",
-            "Name": "HRDPS.NORTH_SD",
-            "isLeaf": true,
-            "isTemporal": true
-          }
-        ]
-      },
-      {
-        "Title": "SHRPD-Nord en niveaux de pression [experimental]",
-        "Name": "SHRPD-Nord en niveaux de pression [experimental]",
-        "isLeaf": false,
-        "children": [
-          {
-            "Title": "50",
-            "Name": "50",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 50 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.50",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 50 mb (contour) [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.50-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 50 mb [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.50",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 50 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.50",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 50 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.50-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 50 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.50",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 50 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.50",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 50 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.50",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 50 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.50-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 50 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.50",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 50 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.50",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "100",
-            "Name": "100",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 100 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.100",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 100 mb (contour) [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.100-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 100 mb [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.100",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 100 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.100",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 100 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.100-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 100 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.100",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 100 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.100",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 100 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.100",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 100 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.100-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 100 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.100",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 100 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.100",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "150",
-            "Name": "150",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 150 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.150",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 150 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.150",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 150 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.150",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 150 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.150-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 150 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.150",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 150 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.150",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 150 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.150-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 150 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.150",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 150 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.150",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "175",
-            "Name": "175",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 175 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.175",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 175 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.175",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 175 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.175",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 175 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.175-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 175 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.175",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 175 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.175",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 175 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.175-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 175 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.175",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 175 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.175",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "200",
-            "Name": "200",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 200 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.200",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 200 mb (contour) [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.200-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 200 mb [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.200",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 200 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.200",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 200 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.200",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 200 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.200-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 200 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.200",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 200 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.200",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 200 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.200-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 200 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.200",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 200 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.200",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "225",
-            "Name": "225",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 225 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.225",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 225 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.225",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 225 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.225",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 225 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.225-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 225 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.225",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 225 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.225",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 225 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.225-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 225 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.225",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 225 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.225",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "250",
-            "Name": "250",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 250 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.250",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 250 mb (contour) [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.250-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 250 mb [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.250",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 250 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.250",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 250 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.250",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Mouvement vertical isobarique \u00e0 250 mb [Pa/s]",
-                "Name": "HRDPS.NORTH.PRES_WP.250",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 250 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.250-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 250 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.250",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Tourbillon absolu \u00e0 250 mb [s-1]",
-                "Name": "HRDPS.NORTH.PRES_QQ.250",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 250 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.250",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 250 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.250-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 250 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.250",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 250 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.250",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "275",
-            "Name": "275",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 275 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.275",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 275 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.275",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 275 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.275",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 275 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.275-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 275 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.275",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 275 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.275",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 275 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.275-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 275 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.275",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 275 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.275",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "300",
-            "Name": "300",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 300 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.300",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 300 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.300",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 300 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.300",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 300 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.300-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 300 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.300",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 300 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.300",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 300 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.300-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 300 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.300",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 300 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.300",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "350",
-            "Name": "350",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 350 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.350",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 350 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.350",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 350 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.350",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 350 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.350-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 350 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.350",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 350 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.350",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 350 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.350-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 350 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.350",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 350 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.350",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "400",
-            "Name": "400",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 400 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.400",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 400 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.400",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 400 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.400",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 400 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.400-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 400 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.400",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 400 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.400",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 400 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.400-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 400 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.400",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 400 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.400",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "450",
-            "Name": "450",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 450 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.450",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 450 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.450",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 450 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.450",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 450 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.450-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 450 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.450",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 450 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.450",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 450 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.450-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 450 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.450",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 450 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.450",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "500",
-            "Name": "500",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 500 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.500",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 500 mb (contour) [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.500-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.500",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 500 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.500",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 500 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.500",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Mouvement vertical isobarique \u00e0 500 mb [Pa/s]",
-                "Name": "HRDPS.NORTH.PRES_WP.500",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 500 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.500-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 500 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.500",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Tourbillon absolu \u00e0 500 mb [s-1]",
-                "Name": "HRDPS.NORTH.PRES_QQ.500",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 500 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.500",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 500 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.500-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 500 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.500",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 500 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.500",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "550",
-            "Name": "550",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 550 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.550",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 550 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.550",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 550 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.550",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 550 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.550-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 550 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.550",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 550 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.550",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 550 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.550-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 550 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.550",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 550 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.550",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "600",
-            "Name": "600",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 600 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.600",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 600 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.600",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 600 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.600",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 600 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.600-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 600 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.600",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 600 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.600",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 600 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.600-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 600 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.600",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 600 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.600",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "650",
-            "Name": "650",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 650 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.650",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 650 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.650",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 650 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.650",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 650 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.650-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 650 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.650",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 650 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.650",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 650 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.650-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 650 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.650",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 650 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.650",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "700",
-            "Name": "700",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 700 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.700",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 700 mb (contour) [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.700-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 700 mb [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.700",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 700 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.700",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 700 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.700",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Mouvement vertical isobarique \u00e0 700 mb [Pa/s]",
-                "Name": "HRDPS.NORTH.PRES_WP.700",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 700 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.700-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 700 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.700",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Tourbillon absolu \u00e0 700 mb [s-1]",
-                "Name": "HRDPS.NORTH.PRES_QQ.700",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 700 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.700",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 700 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.700-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 700 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.700",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 700 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.700",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "750",
-            "Name": "750",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 750 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.750",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 750 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.750",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 750 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.750",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 750 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.750-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 750 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.750",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 750 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.750",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 750 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.750-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 750 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.750",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 750 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.750",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "800",
-            "Name": "800",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 800 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.800",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 800 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.800",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 800 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.800",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 800 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.800-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 800 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.800",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 800 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.800",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 800 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.800-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 800 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.800",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 800 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.800",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "850",
-            "Name": "850",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 850 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.850",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 850 mb (contour) [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.850-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 850 mb [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.850",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 850 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.850",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 850 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.850",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Mouvement vertical isobarique \u00e0 850 mb [Pa/s]",
-                "Name": "HRDPS.NORTH.PRES_WP.850",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 850 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.850-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 850 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.850",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Tourbillon absolu \u00e0 850 mb [s-1]",
-                "Name": "HRDPS.NORTH.PRES_QQ.850",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 850 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.850",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 850 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.850-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 850 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.850",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 850 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.850",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "875",
-            "Name": "875",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 875 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.875",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 875 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.875",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 875 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.875",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 875 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.875-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 875 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.875",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 875 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.875",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 875 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.875-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 875 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.875",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 875 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.875",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "900",
-            "Name": "900",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 900 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.900",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 900 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.900",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 900 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.900",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 900 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.900-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 900 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.900",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 900 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.900",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 900 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.900-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 900 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.900",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 900 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.900",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "925",
-            "Name": "925",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 925 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.925",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 925 mb (contour) [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.925-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 925 mb [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.925",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 925 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.925",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 925 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.925",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 925 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.925-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 925 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.925",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 925 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.925",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 925 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.925-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 925 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.925",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 925 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.925",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "950",
-            "Name": "950",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 950 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.950",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 950 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.950",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 950 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.950",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 950 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.950-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 950 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.950",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 950 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.950",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 950 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.950-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 950 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.950",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 950 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.950",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "970",
-            "Name": "970",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 970 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.970",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 970 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.970",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 970 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.970",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 970 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.970-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 970 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.970",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 970 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.970",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 970 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.970-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 970 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.970",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 970 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.970",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "985",
-            "Name": "985",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 985 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.985",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 985 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.985",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 985 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.985",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 985 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.985-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 985 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.985",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 985 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.985",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 985 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.985-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 985 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.985",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 985 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.985",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "1000",
-            "Name": "1000",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 1000 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.1000",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 1000 mb (contour) [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.1000-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Hauteur g\u00e9opotentielle \u00e0 1000 mb [gpm]",
-                "Name": "HRDPS.NORTH.PRES_GZ.1000",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 1000 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.1000",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 1000 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.1000",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Mouvement vertical isobarique \u00e0 1000 mb [Pa/s]",
-                "Name": "HRDPS.NORTH.PRES_WP.1000",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 1000 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.1000-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 1000 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.1000",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Tourbillon absolu \u00e0 1000 mb [s-1]",
-                "Name": "HRDPS.NORTH.PRES_QQ.1000",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 1000 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.1000",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 1000 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.1000-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 1000 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.1000",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 1000 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.1000",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
-          {
-            "Title": "1015",
-            "Name": "1015",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "HRDPS.NORTH.PRES - Direction du vent \u00e0 1015 mb [\u00b0]",
-                "Name": "HRDPS.NORTH.PRES_WD.1015",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 relative \u00e0 1015 mb [%]",
-                "Name": "HRDPS.NORTH.PRES_HR.1015",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Humidit\u00e9 sp\u00e9cifique \u00e0 1015 mb [kg/kg]",
-                "Name": "HRDPS.NORTH.PRES_HU.1015",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 1015 mb (contour) [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.1015-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Temp\u00e9rature de l'air \u00e0 1015 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_TT.1015",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vents \u00e0 1015 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_UU.1015",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 1015 mb (contour) [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.1015-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - Vitesse du vent \u00e0 1015 mb [m/s]",
-                "Name": "HRDPS.NORTH.PRES_WSPD.1015",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "HRDPS.NORTH.PRES - \u00c9cart du point de ros\u00e9e \u00e0 1015 mb [\u00b0C]",
-                "Name": "HRDPS.NORTH.PRES_ES.1015",
                 "isLeaf": true,
                 "isTemporal": true
               }
