@@ -186,8 +186,8 @@ export default {
           )
         }
         if (!this.pendingErrorResolution && this.playState === 'play') {
-          if (r < 1000) {
-            await this.delay(1000 - r)
+          if (r < 250) {
+            await this.delay(250 - r)
           }
           this.playLocked = false
           this.play()
