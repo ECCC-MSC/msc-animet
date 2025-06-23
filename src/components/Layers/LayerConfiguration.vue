@@ -12,6 +12,8 @@
               !isAnimating || configPanelHover || playState !== 'play',
             'pr-3': numLayers === 1,
             'pr-0': numLayers !== 0,
+            'text-disabled':
+              item.get('layerDateIndex') < 0 || !item.get('layerVisibilityOn'),
           }"
         >
           <template

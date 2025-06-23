@@ -92,6 +92,13 @@ export default {
               legendDisplayed: false,
             },
             {
+              Title: 'Radar extrapolation precipitation rate for rain [mm/h]',
+              Name: 'Radar_1km_RainPrecipRate-Extrapolation',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
+            },
+            {
               Title: 'Radar precipitation rate for rain [mm/h]',
               Name: 'RADAR_1KM_RRAI',
               isLeaf: true,
@@ -131,6 +138,13 @@ export default {
             {
               Title: 'Dynamic radar coverage for snow',
               Name: 'RADAR_COVERAGE_RSNO',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
+            },
+            {
+              Title: 'Radar extrapolation precipitation rate for snow [cm/h]',
+              Name: 'Radar_1km_SnowPrecipRate-Extrapolation',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
