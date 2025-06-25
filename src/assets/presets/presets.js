@@ -83,6 +83,7 @@ export default {
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
+              opacity: 0.9,
             },
             {
               Title: 'Dynamic radar coverage for rain',
@@ -90,6 +91,7 @@ export default {
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
+              opacity: 0.9,
             },
             {
               Title: 'Radar extrapolation precipitation rate for rain [mm/h]',
@@ -97,12 +99,14 @@ export default {
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
+              opacity: 0.9,
             },
             {
               Title: 'Radar precipitation rate for rain [mm/h]',
               Name: 'RADAR_1KM_RRAI',
               isLeaf: true,
               isTemporal: true,
+              opacity: 0.9,
             },
           ],
         },
@@ -134,6 +138,7 @@ export default {
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
+              opacity: 0.9,
             },
             {
               Title: 'Dynamic radar coverage for snow',
@@ -141,6 +146,7 @@ export default {
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
+              opacity: 0.9,
             },
             {
               Title: 'Radar extrapolation precipitation rate for snow [cm/h]',
@@ -148,12 +154,14 @@ export default {
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
+              opacity: 0.9,
             },
             {
               Title: 'Radar precipitation rate for snow [cm/h]',
               Name: 'RADAR_1KM_RSNO',
               isLeaf: true,
               isTemporal: true,
+              opacity: 0.9,
             },
           ],
         },

@@ -9,6 +9,7 @@
 <script>
 import localeData from '../locales/importLocaleFiles'
 import proj4 from 'proj4'
+import { Duration } from 'luxon'
 import { register } from 'ol/proj/proj4'
 
 export default {
@@ -23,6 +24,7 @@ export default {
     'proj',
     'grat',
     'play',
+    'range',
   ],
   data() {
     return {
@@ -131,11 +133,38 @@ export default {
           return
         }
       }
+      let range
       if (this.layerCount === 0) {
         if (this.play) {
           this.emitter.emit('changeTab')
         } else {
           this.emitter.emit('collapseMenu', true)
+        }
+        if (this.range !== undefined) {
+          let [first, current, last, step] = this.range.split(',')
+          first = Number(first)
+          current = Number(current)
+          last = Number(last)
+          step = step.trim()
+          if (
+            Number.isInteger(first) &&
+            Number.isInteger(current) &&
+            Number.isInteger(last)
+          ) {
+            try {
+              // Attempt Duration.fromISO to make sure the step is valid
+              Duration.fromISO(step)
+              if (!(0 <= first && first <= current && current <= last)) {
+                range = undefined
+              } else {
+                range = [first, current, last, step]
+              }
+            } catch {
+              range = undefined
+            }
+          } else {
+            range = undefined
+          }
         }
       }
       let layer = {}
@@ -154,7 +183,11 @@ export default {
         layer.legendDisplayed = legendDisplayed
       }
       const autoPlay = this.play && this.layerCount === 0
-      this.emitter.emit('permaLinkLayer', { layer, autoPlay })
+      this.emitter.emit('permaLinkLayer', {
+        layer,
+        autoPlay,
+        range,
+      })
     },
     findKeyInLocaleFiles(key) {
       for (const sourceName in localeData['enLocaleData']) {

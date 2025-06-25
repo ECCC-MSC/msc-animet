@@ -65,6 +65,7 @@ import Stroke from 'ol/style/Stroke.js'
 import TileLayer from 'ol/layer/Tile'
 import View from 'ol/View'
 
+import datetimeManipulations from '../../mixins/datetimeManipulations'
 import { useVectorShapes } from './VectorShapes'
 
 import ContextMenu from 'ol-contextmenu'
@@ -75,6 +76,7 @@ import { version } from '../../../package.json'
 
 export default {
   inject: ['store'],
+  mixins: [datetimeManipulations],
   mounted() {
     this.emitter.on('buildLayer', this.buildLayer)
     this.emitter.on('goToExtent', this.goToExtentHandler)
@@ -362,7 +364,7 @@ export default {
       }
     },
     async buildLayer(eventData) {
-      const { layerData, source: wmsSource, autoPlay } = eventData
+      const { layerData, source: wmsSource, autoPlay, range } = eventData
       let imageLayer = null
       imageLayer = new OLImage({
         source: new ImageWMS({
@@ -447,15 +449,39 @@ export default {
           imageLayer,
           layerData,
           autoPlay,
+          range,
         })
       } else {
         this.$mapCanvas.mapObj.addLayer(imageLayer)
-        if (autoPlay) {
+        if (autoPlay || range) {
           await new Promise((resolve) =>
             this.$mapCanvas.mapObj.once('rendercomplete', resolve),
           )
-          this.emitter.emit('toggleAnimation')
-          this.store.setCollapsedControls(true)
+          if (autoPlay) {
+            this.emitter.emit('toggleAnimation')
+            this.store.setCollapsedControls(true)
+          }
+          if (range) {
+            let [first, current, last, step] = range
+            if (this.uniqueTimestepsList.includes(step)) {
+              this.changeMapTime(step)
+              const extentLength = this.mapTimeSettings.Extent.length - 1
+              if (first > extentLength) {
+                first = extentLength
+              }
+              if (last > extentLength) {
+                last = extentLength
+              }
+              this.$nextTick(() => {
+                this.store.setDatetimeRangeSlider([first, last])
+                this.emitter.emit('updatePermalink')
+              })
+              if (current > extentLength) {
+                current = extentLength
+              }
+              this.store.setMapTimeIndex(current)
+            }
+          }
         }
       }
     },
@@ -564,6 +590,9 @@ export default {
     },
     textBoxes() {
       return this.store.textBoxes
+    },
+    uniqueTimestepsList() {
+      return this.store.getUniqueTimestepsList
     },
     wmsSources() {
       return this.store.getWmsSources

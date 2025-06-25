@@ -182,7 +182,7 @@ export default {
       this.addedLayers = this.addedLayers.filter((added) => added !== layerName)
     },
     async requestLayerData(eventData) {
-      const { layer, autoPlay = false } = eventData
+      const { layer, autoPlay = false, range = undefined } = eventData
       if (this.playState === 'play') {
         this.emitter.emit('toggleAnimation')
       }
@@ -292,7 +292,12 @@ export default {
             })
             layerData = { ...layerData, ...layer }
             layerData.isTemporal = layerData.Dimension.Dimension_time !== ''
-            this.emitter.emit('buildLayer', { layerData, source, autoPlay })
+            this.emitter.emit('buildLayer', {
+              layerData,
+              source,
+              autoPlay,
+              range,
+            })
           } catch (err) {
             this.removeLayer(layer.Name)
           }

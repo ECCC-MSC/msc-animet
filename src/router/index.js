@@ -18,6 +18,7 @@ const routes = [
       proj: route.query.proj,
       grat: route.query.grat,
       play: route.query.play,
+      range: route.query.range,
     }),
   },
   {

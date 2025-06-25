@@ -152,7 +152,7 @@ export default {
       )
     },
     async layerTimeManager(eventData) {
-      const { imageLayer, layerData, autoPlay } = eventData
+      const { imageLayer, layerData, autoPlay, range } = eventData
       const referenceTime =
         layerData.Dimension.Dimension_ref_time === ''
           ? null
@@ -218,12 +218,36 @@ export default {
       }
       this.emitter.emit('timeLayerAdded', imageLayer.get('layerName'))
       this.$mapCanvas.mapObj.addLayer(imageLayer)
-      if (autoPlay) {
+
+      if (autoPlay || range) {
         await new Promise((resolve) =>
           this.$mapCanvas.mapObj.once('rendercomplete', resolve),
         )
-        this.emitter.emit('toggleAnimation')
-        this.store.setCollapsedControls(true)
+        if (autoPlay) {
+          this.emitter.emit('toggleAnimation')
+          this.store.setCollapsedControls(true)
+        }
+        if (range) {
+          let [first, current, last, step] = range
+          if (this.uniqueTimestepsList.includes(step)) {
+            this.changeMapTime(step)
+            const extentLength = this.mapTimeSettings.Extent.length - 1
+            if (first > extentLength) {
+              first = extentLength
+            }
+            if (last > extentLength) {
+              last = extentLength
+            }
+            this.$nextTick(() => {
+              this.store.setDatetimeRangeSlider([first, last])
+              this.emitter.emit('updatePermalink')
+            })
+            if (current > extentLength) {
+              current = extentLength
+            }
+            this.store.setMapTimeIndex(current)
+          }
+        }
       }
     },
     async mapControls() {
@@ -340,8 +364,8 @@ export default {
         } else {
           this.onSnappedLayerChanged(this.mapTimeSettings.SnappedLayer)
         }
-        this.emitter.emit('updatePermalink')
       }
+      this.emitter.emit('updatePermalink')
     },
     onSnappedLayerChanged(newSnappedLayerName) {
       const newSnappedLayer = this.$mapLayers.arr.find(
@@ -363,6 +387,7 @@ export default {
         this.store.setMapTimeIndex(last)
       }
       this.store.setDatetimeRangeSlider([first, last])
+      this.emitter.emit('updatePermalink')
     },
     removedTimeLayerManager(imageLayer) {
       const timestep = imageLayer.get('layerTimeStep')
@@ -408,6 +433,7 @@ export default {
         if (newIndex !== null) {
           this.mapControls()
         }
+        this.emitter.emit('updatePermalink')
       },
     },
     extent: {
@@ -449,6 +475,7 @@ export default {
               last = newExtent.length - 1
             }
             this.store.setDatetimeRangeSlider([first, last])
+            this.emitter.emit('updatePermalink')
           }
         }
       },
@@ -484,7 +511,9 @@ export default {
     playState() {
       return this.store.getPlayState
     },
-
+    uniqueTimestepsList() {
+      return this.store.getUniqueTimestepsList
+    },
     dateIndex() {
       return [this.mapTimeSettings.DateIndex, this.mapTimeSettings.Extent]
     },
