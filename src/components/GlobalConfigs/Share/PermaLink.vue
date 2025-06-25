@@ -91,6 +91,9 @@ export default {
     currentCRS() {
       return this.store.getCurrentCRS
     },
+    datetimeRangeSlider() {
+      return this.store.getDatetimeRangeSlider
+    },
     extent() {
       return this.store.getExtent
     },
@@ -218,6 +221,10 @@ export default {
 
         if (this.playState === 'play') {
           permalinktemp += `&play=1`
+        }
+
+        if (this.mapTimeSettings.Step) {
+          permalinktemp += `&range=${this.datetimeRangeSlider[0]},${this.mapTimeSettings.DateIndex},${this.datetimeRangeSlider[1]},${this.mapTimeSettings.Step}`
         }
 
         this.router.replace({
