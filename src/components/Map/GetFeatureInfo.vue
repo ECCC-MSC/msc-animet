@@ -32,7 +32,7 @@
               content-class="custom-tooltip"
             >
               <template v-slot:activator="{ props }">
-                <span v-bind="props">{{ node.name }}</span>
+                <span v-bind="props">{{ node.name.split('/')[0] }}</span>
               </template>
               <span class="dont-break-out">{{ node.name }}</span>
             </v-tooltip>
@@ -202,7 +202,13 @@ export default {
         if (item.children[0].name.includes(':')) {
           const value = item.children[0].name.split(':')[1]
           item.children[0].name = `${this.t('Value')}${this.t('Colon')}${value}`
-          if (item.children[1]) {
+          if (item.name.includes('/')) {
+            item.children[1].name = `Source${this.t('Colon')} ${item.name.split('/')[1]}`
+
+            if (item.children[2]) {
+              item.children[2].name = this.t('OtherProperties')
+            }
+          } else if (item.children[1]) {
             item.children[1].name = this.t('OtherProperties')
           }
         } else {
@@ -290,6 +296,13 @@ export default {
                         }`,
                       })
                       delete json.features[0].properties.value
+                      index++
+                    }
+                    if (name.includes('/')) {
+                      feature.push({
+                        id: index,
+                        name: `Source${this.t('Colon')} ${name.split('/')[1]}`,
+                      })
                       index++
                     }
                     if (Object.keys(json.features[0].properties).length > 0) {
