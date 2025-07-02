@@ -291,7 +291,7 @@ export default {
               Name: 'ALERTS',
               isLeaf: true,
               isTemporal: true,
-              opacity: 1,
+              opacity: 0.6,
             },
             {
               Title: 'Current Conditions',
