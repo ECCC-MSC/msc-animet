@@ -78,6 +78,7 @@ export default {
         projection: newProjection,
       })
       this.$mapCanvas.mapObj.setView(newView)
+      localStorage.setItem('user-crs', newProjCode)
     },
   },
   computed: {

@@ -28,7 +28,9 @@ export default {
   ],
   data() {
     return {
+      allPropsUndefined: false,
       layerCount: null,
+      userCRS: undefined,
     }
   },
   created() {
@@ -42,9 +44,16 @@ export default {
     )
     register(proj4)
 
-    if (this.proj !== undefined) {
+    this.allPropsUndefined = Object.keys(this.$props).every(
+      (prop) => this[prop] === undefined,
+    )
+
+    this.userCRS = (this.allPropsUndefined && this.getCRS()) || undefined
+    const proj = this.proj || this.userCRS
+
+    if (proj !== undefined) {
       const foundCode = Object.keys(this.crsList).find((code) =>
-        code.includes(this.proj),
+        code.includes(proj),
       )
       if (foundCode) {
         this.store.setCurrentCRS(foundCode)
@@ -56,6 +65,14 @@ export default {
     }
   },
   async mounted() {
+    let userBasemap, userColor
+    if (this.allPropsUndefined) {
+      ;[userBasemap, userColor] = this.getBase() || []
+    }
+
+    const basemap = this.basemap || userBasemap
+    const color = this.color || userColor
+
     if (this.layers !== undefined) {
       const layersPassed = this.layers.split(',')
       this.layerCount = layersPassed.length
@@ -70,7 +87,7 @@ export default {
       extentPassed.forEach((element) => {
         castedExtent.push(parseFloat(element))
       })
-      if (this.basemap === '0') {
+      if (basemap === '0') {
         let rotation = 0
         if (castedExtent.length === 5) {
           rotation = castedExtent.pop()
@@ -78,23 +95,46 @@ export default {
         this.store.setExtent([castedExtent, rotation])
       }
       this.emitter.emit('goToExtent', castedExtent)
+    } else if (this.proj || (this.allPropsUndefined && this.userCRS)) {
+      const crs = this.proj || this.userCRS
+
+      const foundCode = Object.keys(this.crsList).find((code) =>
+        code.includes(crs),
+      )
+      if (foundCode) {
+        let extent
+        if (foundCode === 'EPSG:3995') {
+          extent = [-3249458, -3332154, 3287315, 3112652]
+        } else if (foundCode === 'EPSG:3978') {
+          extent = [-3844382, -2769810, 5183413, 4476288]
+        } else if (foundCode === 'EPSG:4326') {
+          extent = [-135, 15, -56, 79]
+        }
+        if (extent) {
+          this.store.setExtent([extent, 0])
+          this.emitter.emit('goToExtent', extent)
+        }
+      }
     }
-    if (this.basemap !== undefined) {
-      if (this.basemap === '0') {
+    if (basemap !== undefined) {
+      if (basemap === '0') {
         this.store.setBasemap('NoBasemap')
       } else {
-        this.store.setBasemap(this.basemap)
+        this.store.setBasemap(basemap)
       }
     }
     if (this.overlays !== undefined) {
-      const overlays = this.overlays.split(',')
-      overlays.forEach((overlay) => {
-        this.store.toggleOverlay(overlay)
-      })
+      if (this.overlays !== '0') {
+        this.overlays.split(',').forEach((overlay) => {
+          this.store.toggleOverlay(overlay)
+        })
+      }
+    } else {
+      this.store.toggleOverlay('Boundaries')
     }
-    if (this.color !== undefined) {
+    if (color !== undefined) {
       let matchColor = /((\d{1,3}),(\d{1,3}),(\d{1,3}))/
-      let match = matchColor.exec(this.color)
+      let match = matchColor.exec(color)
       if (match !== null) {
         this.store.setRGB([
           Number(match[2]),
@@ -196,6 +236,12 @@ export default {
         }
       }
       return null // Key not found in any file
+    },
+    getBase() {
+      return JSON.parse(localStorage.getItem('user-basemap'))
+    },
+    getCRS() {
+      return localStorage.getItem('user-crs')
     },
   },
   computed: {

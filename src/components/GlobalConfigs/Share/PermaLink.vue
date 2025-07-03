@@ -213,6 +213,8 @@ export default {
 
         if (this.activeOverlays.length !== 0) {
           permalinktemp += `&overlays=${this.activeOverlays.join(',')}`
+        } else {
+          permalinktemp += '&overlays=0'
         }
 
         if (this.rgb.length !== 0) {

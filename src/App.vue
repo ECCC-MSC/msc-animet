@@ -25,10 +25,13 @@ export default {
 
     const userWmsSources = this.getSources()
     if (userWmsSources) {
-      const activeSources = userWmsSources.split(',')
-      this.store.setActiveSources(activeSources)
+      const userSources = userWmsSources.split(',')
+      this.store.setActiveSources(userSources)
+      if (Object.keys(this.activeSources).length === 0) {
+        this.store.setActiveSources(Object.keys(this.wmsSources)[0])
+      }
       this.store.setWmsSourceURL(
-        this.store.getWmsSources[activeSources[0]]['url'],
+        this.wmsSources[Object.keys(this.activeSources)[0]]['url'],
       )
     }
   },
@@ -38,6 +41,14 @@ export default {
     },
     getSources() {
       return localStorage.getItem('user-sources')
+    },
+  },
+  computed: {
+    activeSources() {
+      return this.store.getActiveSources
+    },
+    wmsSources() {
+      return this.store.getWmsSources
     },
   },
 }

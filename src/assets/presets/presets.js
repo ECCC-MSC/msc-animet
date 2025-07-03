@@ -408,9 +408,9 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'GDPS.ETA - Air temperature at 2m above ground [°C]',
-              Name: 'GDPS.ETA_TT',
-              currentStyle: 'AirTemp_High_Dis',
+              Title: 'GDPS - Humidex at 2 m above ground [experimental]',
+              Name: 'GDPS_15km_Humidex',
+              currentStyle: 'Humidex_20to50_293to323_Dis',
               isLeaf: true,
               isTemporal: true,
             },

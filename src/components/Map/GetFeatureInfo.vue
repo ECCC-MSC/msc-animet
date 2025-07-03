@@ -32,7 +32,9 @@
               content-class="custom-tooltip"
             >
               <template v-slot:activator="{ props }">
-                <span v-bind="props">{{ node.name.split('/')[0] }}</span>
+                <span v-bind="props">{{
+                  node.children ? node.name.split('/')[0] : node.name
+                }}</span>
               </template>
               <span class="dont-break-out">{{ node.name }}</span>
             </v-tooltip>
