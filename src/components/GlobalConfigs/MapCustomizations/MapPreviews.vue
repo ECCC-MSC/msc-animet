@@ -63,6 +63,7 @@ export default {
         'EPSG:4326': 0.95,
       },
       isMapColored: false,
+      isUserInitiated: false,
       maps: {},
       overlay: null,
       selections: {
@@ -151,7 +152,7 @@ export default {
                 new Style({
                   stroke: new Stroke({
                     color: 'white',
-                    width: 3,
+                    width: 1.6,
                   }),
                   fill: new Fill({
                     color: 'rgba(255,255,255,0)',
@@ -160,7 +161,7 @@ export default {
                 new Style({
                   stroke: new Stroke({
                     color: 'black',
-                    width: 1.8,
+                    width: 1.2,
                   }),
                 }),
               ],
@@ -286,6 +287,11 @@ export default {
         this.vectorRefs.forEach((targetRef) => {
           targetRef.style.backgroundColor = `rgb(${backgroundColor[0]},${backgroundColor[1]},${backgroundColor[2]})`
         })
+
+        if (this.isUserInitiated) {
+          this.saveUserBasemapPreference(newSel, backgroundColor)
+          this.isUserInitiated = false
+        }
       },
     },
     '$mapCanvas.mapObj': {
@@ -783,6 +789,28 @@ export default {
         }
       })
     },
+    saveUserBasemapPreference(selections, backgroundColor) {
+      let basename
+      if (selections.base.includes('NoBasemap')) {
+        basename = '0'
+      } else if (!selections.base.includes('OSM')) {
+        basename = selections.base
+      }
+
+      if (selections.base === 'OSM-Base') {
+        localStorage.setItem('user-basemap', JSON.stringify(null))
+      } else if (selections.base === 'OSM-Grey') {
+        localStorage.setItem(
+          'user-basemap',
+          JSON.stringify([basename, '255,255,255']),
+        )
+      } else {
+        localStorage.setItem(
+          'user-basemap',
+          JSON.stringify([basename, backgroundColor.join()]),
+        )
+      }
+    },
     toggleVectorLayer(colors, source, colorName, displayCondition = undefined) {
       const layer = this.$mapCanvas.mapObj
         .getLayers()
@@ -838,6 +866,7 @@ export default {
       targetRef.style.backgroundColor = `rgb(${color.value[0]},${color.value[1]},${color.value[2]})`
 
       previewMap.on('click', () => {
+        this.isUserInitiated = true
         this.backgroundColor = { name: color.name, values: color.value }
         const background = {
           basemap: this.basemapSelection.split('-')[0],
@@ -890,11 +919,13 @@ export default {
           this.store.toggleOverlay(color.name)
           this.emitter.emit('updatePermalink')
         } else if (currentBase === `${source}-${color.name}`) {
+          this.isUserInitiated = true
           this.selections.base = this.selections.background
           this.basemapSelection = this.selections.background
           this.store.setBasemap('NoBasemap')
           this.emitter.emit('updatePermalink')
         } else {
+          this.isUserInitiated = true
           this.whiteBasemapHandler(false, background)
         }
       })
@@ -913,6 +944,7 @@ export default {
         previewMap.getLayers().getArray()[0].on('postrender', callback)
       }
       previewMap.on('click', () => {
+        this.isUserInitiated = true
         const newSelection = `${source}-${color.name}`
         if (!color.value.every((item) => item === null)) {
           this.store.setRGB(color.value)
@@ -987,7 +1019,15 @@ export default {
               projection: this.currentCRS,
             })
 
+            let extent
+            if (this.currentCRS === 'EPSG:3995') {
+              extent = [-3299207.53, -3333134.03, 3299207.53, 3333134.03]
+            } else if (this.currentCRS === 'EPSG:3978') {
+              extent = [-7192737.96, -3004297.73, 5183275.29, 4484204.83]
+            }
+
             layer.setSource(newSource)
+            layer.setExtent(extent)
           }
         })
     },
