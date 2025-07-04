@@ -34,6 +34,9 @@ export default {
         this.wmsSources[Object.keys(this.activeSources)[0]]['url'],
       )
     }
+    if (this.getUserSelectedOverlays() === undefined) {
+      localStorage.setItem('user-overlays', JSON.stringify(['Boundaries']))
+    }
   },
   methods: {
     getLang() {
@@ -41,6 +44,9 @@ export default {
     },
     getSources() {
       return localStorage.getItem('user-sources')
+    },
+    getUserSelectedOverlays() {
+      return localStorage.getItem('user-overlays') || undefined
     },
   },
   computed: {
