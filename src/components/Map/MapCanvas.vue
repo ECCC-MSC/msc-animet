@@ -312,7 +312,11 @@ export default {
         this.$mapCanvas.mapObj.removeLayer(removedLayer)
       }
 
-      this.$mapLayers.arr.splice(removedLayer.get('zIndex'), 1)
+      this.$mapLayers.arr = this.$mapLayers.arr.filter(
+        (layer) =>
+          layer && layer.get('layerName') !== removedLayer.get('layerName'),
+      )
+
       this.$mapLayers.arr.forEach((elem) =>
         elem.setZIndex(
           this.$mapLayers.arr.findIndex(
@@ -419,11 +423,11 @@ export default {
         if (this.isAnimating && this.playState !== 'play') return
         const url = e.target.getUrl()
         const [key, values] = Object.entries(this.wmsSources).find(
-          ([key, value]) => value.url === url,
+          ([key, value]) => key !== 'Presets' && value.url === url,
         )
         let layerName
         if (values['source_validation']) {
-          layerName = `${e.target.getParams()['LAYERS']} ${key}`
+          layerName = `${e.target.getParams()['LAYERS']}/${key}`
         } else {
           layerName = e.target.getParams()['LAYERS']
         }
