@@ -65,9 +65,10 @@ export default {
     }
   },
   async mounted() {
-    let userBasemap, userColor
+    let userBasemap, userColor, userOverlays
     if (this.allPropsUndefined) {
       ;[userBasemap, userColor] = this.getBase() || []
+      userOverlays = this.getUserSelectedOverlays() || undefined
     }
 
     const basemap = this.basemap || userBasemap
@@ -129,6 +130,10 @@ export default {
           this.store.toggleOverlay(overlay)
         })
       }
+    } else if (userOverlays !== undefined) {
+      userOverlays.forEach((overlay) => {
+        this.store.toggleOverlay(overlay)
+      })
     } else {
       this.store.toggleOverlay('Boundaries')
     }
@@ -242,6 +247,9 @@ export default {
     },
     getCRS() {
       return localStorage.getItem('user-crs')
+    },
+    getUserSelectedOverlays() {
+      return JSON.parse(localStorage.getItem('user-overlays'))
     },
   },
   computed: {

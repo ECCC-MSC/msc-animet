@@ -789,6 +789,10 @@ export default {
         }
       })
     },
+    getUserSelectedOverlays() {
+      const stored = localStorage.getItem('user-overlays')
+      return stored ? JSON.parse(stored) : []
+    },
     saveUserBasemapPreference(selections, backgroundColor) {
       let basename
       if (selections.base.includes('NoBasemap')) {
@@ -917,6 +921,21 @@ export default {
             displayCondition,
           )
           this.store.toggleOverlay(color.name)
+          const overlayPreferences = this.getUserSelectedOverlays()
+          const overlayPreferenceIndex = overlayPreferences.indexOf(color.name)
+          if (this.activeOverlays.includes(color.name)) {
+            if (overlayPreferenceIndex === -1) {
+              overlayPreferences.push(color.name)
+            }
+          } else {
+            if (overlayPreferenceIndex !== -1) {
+              overlayPreferences.splice(overlayPreferenceIndex, 1)
+            }
+          }
+          localStorage.setItem(
+            'user-overlays',
+            JSON.stringify(overlayPreferences),
+          )
           this.emitter.emit('updatePermalink')
         } else if (currentBase === `${source}-${color.name}`) {
           this.isUserInitiated = true

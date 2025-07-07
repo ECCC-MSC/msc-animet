@@ -21,10 +21,10 @@ app.config.globalProperties.$animationCanvas = reactive({ mapObj: {} })
 app.config.globalProperties.emitter = emitter
 
 const originalConsoleError = console.error
-function customLog(message) {
+function customLog(...args) {
   // OpenLayers added an annoying console.error everytime a WMS request
   // returns XML even if it's handled so this code is there to silence it
-  if (!(message instanceof DOMException)) originalConsoleError(message)
+  if (!(args[0] instanceof DOMException)) originalConsoleError(...args)
 }
 console.error = customLog
 

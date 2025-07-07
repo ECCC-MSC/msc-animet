@@ -306,7 +306,7 @@ export default {
         } else {
           this.emitter.emit('removeLayer', layer)
           this.expiredSnackBarMessage = this.t('UnhandledError')
-          console.error('Unhandled error case: ', response)
+          console.error('Unhandled error case: ', response, attrs)
           this.timeoutDuration = 12000
           this.errorLayersList.splice(
             this.errorLayersList.indexOf(layer.get('layerName')),
