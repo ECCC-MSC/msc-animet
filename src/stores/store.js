@@ -63,6 +63,7 @@ export const useStore = defineStore('store', {
     isAnimationReversed: false,
     isFullSize: false,
     isLooping: true,
+    isReversed: false,
     lang: 'en',
     layerTreeItemsEn: Object.keys(wmsSources).reduce((acc, key) => {
       let treeName
@@ -105,6 +106,7 @@ export const useStore = defineStore('store', {
     overlays: [],
     pendingErrorResolution: false,
     permalink: null,
+    playSpeed: 250,
     playState: 'pause',
     resolution: '1080p',
     rgb: [],
@@ -145,6 +147,7 @@ export const useStore = defineStore('store', {
     getIntersectMessageDisplayed: (state) => state.intersectDict,
     getIsAnimating: (state) => state.isAnimating,
     getIsAnimationReversed: (state) => state.isAnimationReversed,
+    getIsReversed: (state) => state.isReversed,
     getLegendIndex: (state) => state.legendIndex,
     getMapTimeSettings: (state) => state.mapTimeSettings,
     getMenusOpen: (state) => state.menusOpen,
@@ -157,6 +160,7 @@ export const useStore = defineStore('store', {
     getOverlays: (state) => state.overlays,
     getPendingErrorResolution: (state) => state.pendingErrorResolution,
     getPermalink: (state) => state.permalink,
+    getPlaySpeed: (state) => state.playSpeed,
     getPlayState: (state) => state.playState,
     getRGB: (state) => state.rgb,
     getShowGraticules: (state) => state.showGraticules,
@@ -209,6 +213,9 @@ export const useStore = defineStore('store', {
     setAnimationTitle(title) {
       this.animationTitle = title === null ? '' : title
     },
+    setBasemap(newStatus) {
+      this.basemap = newStatus
+    },
     setCollapsedControls(collapsed) {
       this.collapseControls = collapsed
     },
@@ -251,14 +258,14 @@ export const useStore = defineStore('store', {
     setIsAnimationReversed(isReversed) {
       this.isAnimationReversed = isReversed
     },
-    setBasemap(newStatus) {
-      this.basemap = newStatus
-    },
     setIsFullSize(fullSize) {
       this.isFullSize = fullSize
     },
     setIsLooping(looping) {
       this.isLooping = looping
+    },
+    setIsReversed(isReversed) {
+      this.isReversed = isReversed
     },
     setLang(lang) {
       this.lang = lang
@@ -304,6 +311,9 @@ export const useStore = defineStore('store', {
     },
     setPermalink(permalink) {
       this.permalink = permalink
+    },
+    setPlaySpeed(playSpeed) {
+      this.playSpeed = playSpeed
     },
     setPlayState(playState) {
       this.playState = playState

@@ -55,12 +55,14 @@ export default {
       killUnmountLoop: false,
       locked: false,
       loop: false,
-      playbackReversed: false,
       playLocked: false,
       showMenu: false,
     }
   },
   computed: {
+    currentSpeed() {
+      return this.store.getPlaySpeed
+    },
     datetimeRangeSlider() {
       return this.store.getDatetimeRangeSlider
     },
@@ -72,6 +74,9 @@ export default {
     },
     pendingErrorResolution() {
       return this.store.getPendingErrorResolution
+    },
+    playbackReversed() {
+      return this.store.getIsReversed
     },
     playState() {
       return this.store.getPlayState
@@ -100,10 +105,11 @@ export default {
   methods: {
     changeBehavior(action) {
       if (action === 'Reverse') {
-        this.playbackReversed = !this.playbackReversed
+        this.store.setIsReversed(!this.playbackReversed)
       } else if (action === 'Loop') {
         this.loop = !this.loop
         this.store.setIsLooping(this.loop)
+        localStorage.setItem('looping', this.loop)
       }
     },
     delay(time) {
@@ -194,8 +200,9 @@ export default {
                 ),
             )
           }
-          if (r < 250) {
-            await this.delay(250 - r)
+          const minDelay = this.currentSpeed
+          if (r < minDelay) {
+            await this.delay(minDelay - r)
           }
           this.playLocked = false
           this.play()
