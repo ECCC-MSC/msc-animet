@@ -470,17 +470,17 @@ export default {
             if (this.uniqueTimestepsList.includes(step)) {
               this.changeMapTime(step)
               const extentLength = this.mapTimeSettings.Extent.length - 1
-              if (first > extentLength) {
+              if (first === 'l' || first > extentLength) {
                 first = extentLength
               }
-              if (last > extentLength) {
+              if (last === 'l' || last > extentLength) {
                 last = extentLength
               }
               this.$nextTick(() => {
                 this.store.setDatetimeRangeSlider([first, last])
                 this.emitter.emit('updatePermalink')
               })
-              if (current > extentLength) {
+              if (current === 'l' || current > extentLength) {
                 current = extentLength
               }
               this.store.setMapTimeIndex(current)

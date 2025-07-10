@@ -187,22 +187,51 @@ export default {
         }
         if (this.range !== undefined) {
           let [first, current, last, step] = this.range.split(',')
-          first = Number(first)
-          current = Number(current)
-          last = Number(last)
           step = step.trim()
+
+          const isValidIndex = (value) => {
+            return value === 'l' || Number.isInteger(Number(value))
+          }
+          const parseIndex = (value) => {
+            return value === 'l' ? 'l' : Number(value)
+          }
+
           if (
-            Number.isInteger(first) &&
-            Number.isInteger(current) &&
-            Number.isInteger(last)
+            isValidIndex(first) &&
+            isValidIndex(current) &&
+            isValidIndex(last)
           ) {
+            first = parseIndex(first)
+            current = parseIndex(current)
+            last = parseIndex(last)
             try {
               // Attempt Duration.fromISO to make sure the step is valid
               Duration.fromISO(step)
-              if (!(0 <= first && first <= current && current <= last)) {
-                range = undefined
-              } else {
+              let rangeValid = false
+
+              const compareValues = (a, b) => {
+                if (a === 'l' && b === 'l') return 0
+                if (a === 'l') return 1
+                if (b === 'l') return -1
+                return a - b
+              }
+
+              if (
+                compareValues(first, current) <= 0 &&
+                compareValues(current, last) <= 0
+              ) {
+                // Also ensure numeric values are >= 0
+                const numericValues = [first, current, last].filter(
+                  (v) => v !== 'l',
+                )
+                if (numericValues.every((v) => v >= 0)) {
+                  rangeValid = true
+                }
+              }
+              if (rangeValid) {
                 range = [first, current, last, step]
+              } else {
+                range = undefined
               }
             } catch {
               range = undefined
