@@ -53,17 +53,26 @@
 import { applyTransform } from 'ol/extent.js'
 import { Attribution, Control, ScaleLine } from 'ol/control'
 import { get as getProjection, getTransform } from 'ol/proj.js'
+import { Overlay } from 'ol'
+import DragAndDrop from 'ol/interaction/DragAndDrop.js'
+import GeoJSON from 'ol/format/GeoJSON.js'
+import GPX from 'ol/format/GPX.js'
 import Graticule from 'ol/layer/Graticule.js'
+import IGC from 'ol/format/IGC.js'
 import ImageWMS from 'ol/source/ImageWMS'
+import KML from 'ol/format/KML.js'
 import Map from 'ol/Map'
-import 'ol/ol.css'
 import OLImage from 'ol/layer/Image'
 import OSM from 'ol/source/OSM'
-import { Overlay } from 'ol'
 import Rotate from 'ol/control/Rotate.js'
 import Stroke from 'ol/style/Stroke.js'
 import TileLayer from 'ol/layer/Tile'
+import TopoJSON from 'ol/format/TopoJSON.js'
+import VectorLayer from 'ol/layer/Vector.js'
+import VectorSource from 'ol/source/Vector.js'
 import View from 'ol/View'
+
+import 'ol/ol.css'
 
 import datetimeManipulations from '../../mixins/datetimeManipulations'
 import { useVectorShapes } from './VectorShapes'
@@ -119,6 +128,42 @@ export default {
       pixelRatio: 1,
       controls: [scaleControl],
     })
+
+    let dragAndDropInteraction = new DragAndDrop({
+      formatConstructors: [
+        GPX,
+        GeoJSON,
+        IGC,
+        new KML({ extractStyles: true }),
+        TopoJSON,
+      ],
+    })
+    dragAndDropInteraction.on('addfeatures', (event) => {
+      const vectorSource = new VectorSource({
+        features: event.features,
+      })
+      const vectorLayer = new VectorLayer({
+        source: vectorSource,
+      })
+      const baseName = event.file.name.split('.')[0]
+      const uniqueName = this.getUniqueLayerName(baseName)
+
+      vectorLayer.setProperties({
+        layerCurrentStyle: null,
+        layerDateIndex: 0,
+        layerIsTemporal: false,
+        layerName: uniqueName,
+        layerStyles: [],
+        layerVisibilityOn: true,
+        layerWmsIndex: -1,
+        layerXmlName: uniqueName,
+        legendColor: null,
+      })
+      this.setLayerZIndex(vectorLayer)
+      this.$mapCanvas.mapObj.addLayer(vectorLayer)
+      this.$mapCanvas.mapObj.getView().fit(vectorSource.getExtent())
+    })
+    this.$mapCanvas.mapObj.addInteraction(dragAndDropInteraction)
 
     const attribution = new Attribution()
     const legendMapOverlay = new Control({
@@ -242,6 +287,29 @@ export default {
         coord: evt.coordinate,
       })
       this.textBoxId++
+    },
+    getUniqueLayerName(baseName) {
+      const existingNames = new Set()
+
+      this.$mapLayers.arr.forEach((layer) => {
+        const layerName = layer.get('layerName')
+        if (layerName) {
+          existingNames.add(layerName)
+        }
+      })
+
+      if (!existingNames.has(baseName)) {
+        return baseName
+      }
+
+      let counter = 1
+      let candidateName
+      do {
+        candidateName = `${baseName} (${counter})`
+        counter++
+      } while (existingNames.has(candidateName))
+
+      return candidateName
     },
     async goToExtentHandler(locExtent) {
       let rotation = 0

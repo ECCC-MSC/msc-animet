@@ -7,6 +7,7 @@ import canvasTxt from 'canvas-txt'
 import { useI18n } from 'vue-i18n'
 
 import datetimeManipulations from '../../mixins/datetimeManipulations'
+import OLImage from 'ol/layer/Image'
 
 export default {
   inject: ['store'],
@@ -82,7 +83,7 @@ export default {
         let ctx_w = mapWidth
 
         let visibleLayers = this.$mapLayers.arr.filter((l) => {
-          return l.get('layerVisibilityOn')
+          return l instanceof OLImage && l.get('layerVisibilityOn')
         })
         let isLayerListShown = !(
           visibleLayers.length === 1 &&

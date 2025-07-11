@@ -55,6 +55,7 @@
 <script>
 import { isDarkTheme } from '@/components/Composables/isDarkTheme'
 import { useRouter, useRoute } from 'vue-router'
+import OLImage from 'ol/layer/Image'
 
 export default {
   inject: ['store'],
@@ -138,44 +139,44 @@ export default {
           permalinktemp += 'layers='
           const numLayers = this.$mapLayers.arr.length
           for (let i = 0; i < numLayers; i++) {
-            let layerName = this.$mapLayers.arr[i].get('layerName')
-            let layerOpacity = this.$mapLayers.arr[i].get('opacity').toString()
-            let isSnapped =
-              this.$mapLayers.arr[i].get('layerName') ===
-              this.mapTimeSettings.SnappedLayer
+            let layer = this.$mapLayers.arr[i]
+            if (layer instanceof OLImage) {
+              let layerName = layer.get('layerName')
+              let layerOpacity = layer.get('opacity').toString()
+              let isSnapped =
+                layer.get('layerName') === this.mapTimeSettings.SnappedLayer
+                  ? '1'
+                  : '0'
+              let isVisible = layer.get('layerVisibilityOn') ? '1' : '0'
+              let layerStyle = '0'
+              if (
+                layer.get('layerCurrentStyle') &&
+                layer.get('layerCurrentStyle') !==
+                  layer.get('layerStyles')[0].Name
+              ) {
+                layerStyle = layer.get('layerCurrentStyle')
+              }
+              let legendDisplayed = this.activeLegends.includes(layerName)
                 ? '1'
                 : '0'
-            let isVisible = this.$mapLayers.arr[i].get('layerVisibilityOn')
-              ? '1'
-              : '0'
-            let layerStyle = '0'
-            if (
-              this.$mapLayers.arr[i].get('layerCurrentStyle') &&
-              this.$mapLayers.arr[i].get('layerCurrentStyle') !==
-                this.$mapLayers.arr[i].get('layerStyles')[0].Name
-            ) {
-              layerStyle = this.$mapLayers.arr[i].get('layerCurrentStyle')
-            }
-            let legendDisplayed = this.activeLegends.includes(layerName)
-              ? '1'
-              : '0'
 
-            const [name, source] = layerName.split('/')
-            const layerParams = [
-              name,
-              layerOpacity,
-              isSnapped,
-              isVisible,
-              layerStyle,
-              legendDisplayed,
-            ]
-            if (source) {
-              layerParams.push(source)
-            }
-            permalinktemp += layerParams.join(';')
+              const [name, source] = layerName.split('/')
+              const layerParams = [
+                name,
+                layerOpacity,
+                isSnapped,
+                isVisible,
+                layerStyle,
+                legendDisplayed,
+              ]
+              if (source) {
+                layerParams.push(source)
+              }
+              permalinktemp += layerParams.join(';')
 
-            if (i < this.$mapLayers.arr.length - 1) {
-              permalinktemp += ','
+              if (i < this.$mapLayers.arr.length - 1) {
+                permalinktemp += ','
+              }
             }
           }
           permalinktemp += '&'
