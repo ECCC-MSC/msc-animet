@@ -49,6 +49,7 @@
 <script setup>
 import { computed, inject, ref, watch } from 'vue'
 import { getCurrentInstance } from 'vue'
+import OLImage from 'ol/layer/Image'
 
 const { proxy } = getCurrentInstance()
 const store = inject('store')
@@ -101,16 +102,18 @@ const handleClick = (node) => {
 const presetSelected = (node) => {
   return node.children.every((childNode) =>
     proxy.$mapLayers.arr.some((layer) => {
-      let styleCheck = true
-      if (childNode.currentStyle) {
-        styleCheck = layer.get('layerCurrentStyle') === childNode.currentStyle
-      } else if (
-        layer.get('layerStyles').length !== 0 &&
-        layer.get('layerCurrentStyle') !== layer.get('layerStyles')[0].Name
-      ) {
-        styleCheck = false
+      if (layer instanceof OLImage) {
+        let styleCheck = true
+        if (childNode.currentStyle) {
+          styleCheck = layer.get('layerCurrentStyle') === childNode.currentStyle
+        } else if (
+          layer.get('layerStyles').length !== 0 &&
+          layer.get('layerCurrentStyle') !== layer.get('layerStyles')[0].Name
+        ) {
+          styleCheck = false
+        }
+        return layer.get('layerName') === childNode.Name && styleCheck
       }
-      return layer.get('layerName') === childNode.Name && styleCheck
     }),
   )
 }

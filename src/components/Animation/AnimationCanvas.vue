@@ -223,35 +223,37 @@ export default {
     },
     copyLayers() {
       this.$mapLayers.arr.forEach((layer) => {
-        if (layer.get('layerVisibilityOn')) {
-          const originalSource = layer.getSource()
-          const originalUrl = originalSource.getUrl()
-          const originalParams = originalSource.getParams()
-          let originalProperties = Object.assign({}, layer.getProperties())
-          delete originalProperties.map
-          delete originalProperties.source
+        if (layer instanceof OLImage) {
+          if (layer.get('layerVisibilityOn')) {
+            const originalSource = layer.getSource()
+            const originalUrl = originalSource.getUrl()
+            const originalParams = originalSource.getParams()
+            let originalProperties = Object.assign({}, layer.getProperties())
+            delete originalProperties.map
+            delete originalProperties.source
 
-          const newSource = new ImageWMS({
-            format: 'image/png',
-            url: originalUrl,
-            params: originalParams,
-            transition: 0,
-            crossOrigin: 'Anonymous',
-            ratio: 1,
-          })
-          const newLayer = new OLImage({
-            source: newSource,
-          })
-          newLayer.setProperties(originalProperties)
-          newLayer.getSource().on('imageloaderror', (e) => {
-            const layer = this.$mapLayers.arr.find(
-              (l) => l.get('layerName') === newLayer.get('layerName'),
-            )
-            this.emitter.emit('loadingError', { layer: layer, error: e })
-            this.emitter.emit('loadingError', { layer: newLayer, error: e })
-          })
-          this.copiedLayers.push(newLayer)
-          this.$animationCanvas.mapObj.addLayer(newLayer)
+            const newSource = new ImageWMS({
+              format: 'image/png',
+              url: originalUrl,
+              params: originalParams,
+              transition: 0,
+              crossOrigin: 'Anonymous',
+              ratio: 1,
+            })
+            const newLayer = new OLImage({
+              source: newSource,
+            })
+            newLayer.setProperties(originalProperties)
+            newLayer.getSource().on('imageloaderror', (e) => {
+              const layer = this.$mapLayers.arr.find(
+                (l) => l.get('layerName') === newLayer.get('layerName'),
+              )
+              this.emitter.emit('loadingError', { layer: layer, error: e })
+              this.emitter.emit('loadingError', { layer: newLayer, error: e })
+            })
+            this.copiedLayers.push(newLayer)
+            this.$animationCanvas.mapObj.addLayer(newLayer)
+          }
         }
       })
       this.$mapCanvas.mapObj.getLayers().forEach((layer) => {

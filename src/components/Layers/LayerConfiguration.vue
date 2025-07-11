@@ -40,9 +40,17 @@
           <template v-else class="pa-0">
             <v-col class="pa-0">
               <v-list-item-title
-                :title="$t(item.get('layerName').split('/')[0])"
+                :title="
+                  item.get('layerWmsIndex') !== -1
+                    ? $t(item.get('layerName').split('/')[0])
+                    : item.get('layerName')
+                "
               >
-                {{ $t(item.get('layerName').split('/')[0]) }}
+                {{
+                  item.get('layerWmsIndex') !== -1
+                    ? $t(item.get('layerName').split('/')[0])
+                    : item.get('layerName')
+                }}
               </v-list-item-title>
               <v-list-item-subtitle class="layer-subtitle">
                 {{ item.get('layerName') }}

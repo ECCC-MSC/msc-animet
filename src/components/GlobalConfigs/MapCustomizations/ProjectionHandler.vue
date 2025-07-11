@@ -41,6 +41,7 @@ export default {
       if (!newProjCode) {
         newProjCode = this.currentCRS
       }
+
       const currentView = this.$mapCanvas.mapObj.getView()
       const currentProjection = currentView.getProjection()
       const newProjection = getProjection(newProjCode)
@@ -78,6 +79,20 @@ export default {
         projection: newProjection,
       })
       this.$mapCanvas.mapObj.setView(newView)
+      this.$mapLayers.arr.forEach((layer) => {
+        if (layer.get('layerWmsIndex') === -1) {
+          const source = layer.getSource()
+          const features = source.getFeatures()
+          features.forEach((feature) => {
+            const geometry = feature.getGeometry()
+            if (geometry) {
+              geometry.transform(currentProjection, newProjection)
+            }
+          })
+
+          source.changed()
+        }
+      })
       localStorage.setItem('user-crs', newProjCode)
     },
   },
