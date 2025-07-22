@@ -46,10 +46,10 @@ export default {
         )
 
       if (
-        newModelRun ===
-        this.item.get('layerModelRuns')[
-          this.item.get('layerModelRuns').length - 1
-        ]
+        newModelRun.getTime() ===
+        this.item
+          .get('layerModelRuns')
+          [this.item.get('layerModelRuns').length - 1].getTime()
       ) {
         this.item.getSource().updateParams({
           DIM_REFERENCE_TIME: undefined,
@@ -63,11 +63,15 @@ export default {
         })
       }
 
+      let layerDefaultTime = this.item.get('layerDefaultTime')
+      if (layerDefaultTime > newDateArray[newDateArray.length - 1]) {
+        layerDefaultTime = newDateArray[newDateArray.length - 1]
+      } else if (layerDefaultTime < newDateArray[0]) {
+        layerDefaultTime = newDateArray[0]
+      }
       this.item.setProperties({
         layerDateArray: newDateArray,
-        layerDefaultTime: new Date(
-          this.item.get('layerDefaultTime').getTime() + timeDiff,
-        ),
+        layerDefaultTime: layerDefaultTime,
         layerCurrentMR: newModelRun,
         layerStartTime: newDateArray[0],
         layerEndTime: newDateArray[newDateArray.length - 1],
