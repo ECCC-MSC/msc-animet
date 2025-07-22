@@ -169,10 +169,23 @@ export default {
                 layerStyle,
                 legendDisplayed,
               ]
-              if (source) {
-                layerParams.push(source)
+
+              const currentMR = layer.get('layerCurrentMR')
+              if (
+                currentMR &&
+                currentMR !==
+                  layer.get('layerModelRuns')[
+                    layer.get('layerModelRuns').length - 1
+                  ]
+              ) {
+                layerParams.push(currentMR.getTime().toString())
               }
+
               permalinktemp += layerParams.join(';')
+
+              if (source) {
+                permalinktemp += `:${source}`
+              }
 
               if (i < this.$mapLayers.arr.length - 1) {
                 permalinktemp += ','

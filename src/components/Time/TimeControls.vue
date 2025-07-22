@@ -160,6 +160,43 @@ export default {
       const config = this.createTimeLayerConfig(
         layerData.Dimension.Dimension_time,
       )
+      let layerDefaultTime = new Date(
+        layerData.Dimension.Dimension_time_default,
+      )
+      let layerCurrentMR =
+        referenceTime === null ? null : referenceTime[referenceTime.length - 1]
+
+      let layerStartTime = new Date(config.layerStartTime)
+      let layerEndTime = new Date(config.layerEndTime)
+      if (layerData.currentMR) {
+        const mrInt = parseInt(layerData.currentMR)
+        if (referenceTime.some((date) => date.getTime() === mrInt)) {
+          let newDateArray = []
+          let timeDiff = mrInt - layerCurrentMR.getTime()
+          config.layerDateArray.forEach((date) =>
+            newDateArray.push(new Date(date.getTime() + timeDiff)),
+          )
+
+          const newModelRun = new Date(mrInt)
+          if (newModelRun.getTime() !== layerCurrentMR.getTime()) {
+            imageLayer.getSource().updateParams({
+              DIM_REFERENCE_TIME: this.getProperDateString(
+                newModelRun,
+                config.layerDateFormat,
+              ),
+            })
+            config.layerDateArray = newDateArray
+            if (layerDefaultTime > newDateArray[newDateArray.length - 1]) {
+              layerDefaultTime = newDateArray[newDateArray.length - 1]
+            } else if (layerDefaultTime < newDateArray[0]) {
+              layerDefaultTime = newDateArray[0]
+            }
+            layerCurrentMR = newModelRun
+            layerStartTime = newDateArray[0]
+            layerEndTime = newDateArray[newDateArray.length - 1]
+          }
+        }
+      }
       if (config === null) {
         this.emitter.emit('notifyWrongFormat')
         this.emitter.emit('removeLayer', imageLayer)
@@ -169,17 +206,14 @@ export default {
         layerDateArray: config.layerDateArray,
         layerDateFormat: config.layerDateFormat,
         layerDateIndex: 0,
-        layerDefaultTime: new Date(layerData.Dimension.Dimension_time_default),
+        layerDefaultTime: layerDefaultTime,
         layerDimensionRefTime: layerData.Dimension.Dimension_ref_time,
         layerDimensionTime: layerData.Dimension.Dimension_time,
         layerIndexOOB: false,
         layerModelRuns: referenceTime,
-        layerCurrentMR:
-          referenceTime === null
-            ? null
-            : referenceTime[referenceTime.length - 1],
-        layerStartTime: new Date(config.layerStartTime),
-        layerEndTime: new Date(config.layerEndTime),
+        layerCurrentMR: layerCurrentMR,
+        layerStartTime: layerStartTime,
+        layerEndTime: layerEndTime,
         layerTimeStep: config.layerTimeStep,
         layerTrueTimeStep: config.layerTrueTimeStep,
       })
@@ -254,7 +288,7 @@ export default {
       // Prevents a bug that triggers play twice
       const playStateBuffer = this.playState
 
-      const numLayers = this.$mapLayers.arr.length
+      let numLayers = this.$mapLayers.arr.length
 
       let mapTime
       if (this.mapTimeSettings.Extent !== null) {

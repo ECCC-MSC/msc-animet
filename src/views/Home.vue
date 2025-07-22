@@ -78,8 +78,30 @@ export default {
       const layersPassed = this.layers.split(',')
       this.layerCount = layersPassed.length
       layersPassed.forEach((layer, index) => {
+        const layerParams = layer.split(';')
+        const [lastValue, sourceSpecified] = layerParams.pop().split(':')
+        const [
+          layerName,
+          opacity,
+          isSnapped,
+          isVisible,
+          style,
+          legendDisplayed,
+          modelRun,
+        ] = [...layerParams, lastValue]
+
         this.layerCount--
-        this.addLayerEvent(index, ...layer.split(';'))
+
+        const params = {
+          layerName,
+          opacity,
+          isSnapped,
+          isVisible,
+          style,
+          legendDisplayed,
+          modelRun,
+        }
+        this.addLayerEvent({ index, ...params, source: sourceSpecified })
       })
     }
     if (this.extent !== undefined) {
@@ -151,7 +173,7 @@ export default {
     }
   },
   methods: {
-    async addLayerEvent(
+    async addLayerEvent({
       index,
       layerName,
       opacity,
@@ -159,8 +181,9 @@ export default {
       isVisible,
       style,
       legendDisplayed,
+      modelRun,
       source,
-    ) {
+    } = {}) {
       let baseURL
       if (source) {
         if (Object.keys(this.wmsSources).includes(source)) {
@@ -255,6 +278,9 @@ export default {
       }
       if (legendDisplayed !== undefined) {
         layer.legendDisplayed = legendDisplayed
+      }
+      if (modelRun !== undefined) {
+        layer.currentMR = modelRun
       }
       const autoPlay = this.play && this.layerCount === 0
       this.emitter.emit('permaLinkLayer', {
