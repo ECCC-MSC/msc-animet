@@ -483,4 +483,11 @@ export default {
     max-height: calc(100dvh - (34px + 0.5em * 2) - 158px - 190px - 42px - 10px);
   }
 }
+@media (max-height: 565px) {
+  .treeview {
+    max-height: calc(
+      100dvh - (34px + 0.5em * 2) - 190px - 42px - 10px
+    ) !important;
+  }
+}
 </style>

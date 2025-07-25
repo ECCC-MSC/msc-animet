@@ -51,11 +51,16 @@ const checkResize = (event) => {
   const isMobile = window.innerWidth <= 768
 
   let maxWidth = isMobile ? window.innerWidth * 0.25 : window.innerWidth * 0.35
+  let maxHeight = window.innerHeight * 0.7
 
-  if (img.naturalWidth > maxWidth) {
-    const container = img.closest('.draggable-container')
-    if (container) {
-      container.style.width = maxWidth + 'px'
+  const container = img.closest('.draggable-container')
+  if (container) {
+    const excessRatio = Math.max(
+      img.naturalWidth / maxWidth,
+      img.naturalHeight / maxHeight,
+    )
+    if (excessRatio > 1) {
+      container.style.width = img.naturalWidth / excessRatio + 'px'
     }
   }
 }
