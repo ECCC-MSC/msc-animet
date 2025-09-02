@@ -286,6 +286,18 @@ export default {
 /* Pre-defined elements */
 .v-container {
   padding: 0;
+  overflow-y: auto;
+}
+@media (max-height: 565px) and (max-width: 959px) {
+  .v-container {
+    max-height: calc(100dvh - (34px + 0.5em * 2) - 42px - 10px) !important;
+  }
+}
+
+@media (max-height: 565px) and (min-width: 960px) {
+  .v-container {
+    max-height: calc(100dvh - (34px + 0.5em * 2) - 10px) !important;
+  }
 }
 .fade-enter-active,
 .fade-leave-active {

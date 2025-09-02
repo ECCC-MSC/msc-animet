@@ -30,6 +30,7 @@ export default {
     return {
       allPropsUndefined: false,
       layerCount: null,
+      layerSnapped: false,
       userCRS: undefined,
     }
   },
@@ -201,6 +202,10 @@ export default {
           return
         }
       }
+      const snapped = isSnapped !== '0' ? true : false
+      if (snapped) {
+        this.layerSnapped = true
+      }
       let range
       if (this.layerCount === 0) {
         if (this.play) {
@@ -208,7 +213,7 @@ export default {
         } else {
           this.emitter.emit('collapseMenu', true)
         }
-        if (this.range !== undefined) {
+        if (this.range !== undefined && !this.layerSnapped) {
           let [first, current, last, step] = this.range.split(',')
           step = step.trim()
 
@@ -269,7 +274,7 @@ export default {
       layer.isLeaf = true
       layer.zIndex = index
       layer.wmsSource = baseURL
-      layer.isSnapped = isSnapped !== '0' ? true : false
+      layer.isSnapped = snapped
       let op = parseFloat(opacity)
       layer.opacity = isNaN(op) || op > 1 || op < 0 ? 0.75 : op
       layer.visible = isVisible === '0' ? false : true

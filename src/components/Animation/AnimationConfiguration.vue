@@ -251,7 +251,7 @@ export default {
       } else {
         if (this.mapTimeSettings.SnappedLayer !== null) {
           this.store.setAnimationTitle(
-            this.t(this.mapTimeSettings.SnappedLayer),
+            this.t(this.mapTimeSettings.SnappedLayer.split('/')[0]),
           )
         } else if (this.mapTimeSettings.Step !== null) {
           for (let i = this.$mapLayers.arr.length - 1; i >= 0; i--) {
@@ -481,6 +481,19 @@ export default {
     max-height: calc(
       100dvh - (34px + 0.5em * 2) - 0.5em - 158px - 48px - 42px - 10px
     );
+  }
+}
+@media (max-height: 565px) and (max-width: 959px) {
+  .scroll {
+    max-height: calc(
+      100dvh - (34px + 0.5em * 2) - 48px - 42px - 10px
+    ) !important;
+  }
+}
+
+@media (max-height: 565px) and (min-width: 960px) {
+  .scroll {
+    max-height: calc(100dvh - (34px + 0.5em * 2) - 48px - 10px) !important;
   }
 }
 </style>
