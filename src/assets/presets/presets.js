@@ -274,6 +274,7 @@ export default {
               Title: 'GOES-East Natural Color [1 km]',
               Name: 'GOES-East_1km_NaturalColor',
               isLeaf: true,
+              isSnapped: true,
               isTemporal: true,
               opacity: 1,
             },

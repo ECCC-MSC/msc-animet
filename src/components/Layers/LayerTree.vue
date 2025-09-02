@@ -483,11 +483,17 @@ export default {
     max-height: calc(100dvh - (34px + 0.5em * 2) - 158px - 190px - 42px - 10px);
   }
 }
-@media (max-height: 565px) {
+@media (max-height: 565px) and (max-width: 959px) {
   .treeview {
     max-height: calc(
-      100dvh - (34px + 0.5em * 2) - 190px - 42px - 10px
+      100dvh - (34px + 0.5em * 2) - 182px - 42px - 10px
     ) !important;
+    min-height: 160px;
+  }
+}
+@media (max-height: 565px) and (min-width: 960px) {
+  .treeview {
+    max-height: calc(100dvh - (34px + 0.5em * 2) - 182px - 10px) !important;
   }
 }
 </style>

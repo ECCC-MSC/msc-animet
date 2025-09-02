@@ -230,4 +230,17 @@ export default {
     );
   }
 }
+@media (max-height: 565px) and (max-width: 959px) {
+  .scroll {
+    max-height: calc(
+      100dvh - (34px + 0.5em * 2) - 48px - 42px - 10px
+    ) !important;
+  }
+}
+
+@media (max-height: 565px) and (min-width: 960px) {
+  .scroll {
+    max-height: calc(100dvh - (34px + 0.5em * 2) - 48px - 10px) !important;
+  }
+}
 </style>
