@@ -127,6 +127,7 @@ export default {
     startDrag(event) {
       if (this.isAnimating) return
 
+      this.emitter.emit('playheadDrag')
       this.isDragging = true
       this.updateThumbPosition(event)
 
@@ -137,6 +138,7 @@ export default {
       }
 
       const endHandler = () => {
+        this.emitter.emit('playheadDrag')
         this.isDragging = false
         document.removeEventListener('mousemove', moveHandler)
         document.removeEventListener('touchmove', moveHandler)

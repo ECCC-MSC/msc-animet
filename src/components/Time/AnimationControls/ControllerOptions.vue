@@ -118,9 +118,12 @@ const formattedSpeedOptions = computed(() =>
 
 function formatSpeedLabel(ms) {
   const perSec = Math.round(1000 / ms)
-  return t('PlaySpeedLabel', {
-    speed: perSec,
-  })
+
+  if (perSec === 1) {
+    return `${perSec} image/s`
+  } else {
+    return `${perSec} images/s`
+  }
 }
 
 onMounted(() => {
