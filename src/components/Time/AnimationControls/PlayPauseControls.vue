@@ -192,14 +192,6 @@ export default {
           )
         }
         if (!this.pendingErrorResolution && this.playState === 'play') {
-          if (restore) {
-            r = await this.measurePromise(
-              () =>
-                new Promise((resolve) =>
-                  this.$mapCanvas.mapObj.once('rendercomplete', resolve),
-                ),
-            )
-          }
           const minDelay = this.currentSpeed
           if (r < minDelay) {
             await this.delay(minDelay - r)

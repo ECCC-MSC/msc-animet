@@ -120,6 +120,8 @@
 </template>
 
 <script>
+import OLImage from 'ol/layer/Image'
+
 import datetimeManipulations from '../../mixins/datetimeManipulations'
 
 export default {
@@ -127,18 +129,22 @@ export default {
   mixins: [datetimeManipulations],
   data() {
     return {
+      prefetchTimeouts: [],
       screenWidth: window.innerWidth,
+      stopPrefetch: false,
     }
   },
   mounted() {
     this.emitter.on('addTemporalLayer', this.layerTimeManager)
     this.emitter.on('fixLayerTimes', this.mapControls)
+    this.emitter.on('playheadDrag', this.toggleDrag)
     this.emitter.on('timeLayerRemoved', this.removedTimeLayerManager)
     window.addEventListener('resize', this.updateScreenSize)
   },
   beforeUnmount() {
     this.emitter.off('addTemporalLayer', this.layerTimeManager)
     this.emitter.off('fixLayerTimes', this.mapControls)
+    this.emitter.off('playheadDrag', this.toggleDrag)
     this.emitter.off('timeLayerRemoved', this.removedTimeLayerManager)
     window.removeEventListener('resize', this.updateScreenSize)
   },
@@ -287,6 +293,9 @@ export default {
     async mapControls() {
       // Prevents a bug that triggers play twice
       const playStateBuffer = this.playState
+      this.$nextTick(() => {
+        this.togglePrefetch()
+      })
 
       let numLayers = this.$mapLayers.arr.length
 
@@ -456,6 +465,184 @@ export default {
         TIME: this.getProperDateString(date, layer.get('layerDateFormat')),
       })
     },
+    toggleDrag() {
+      this.stopPrefetch = !this.stopPrefetch
+      if (!this.stopPrefetch) {
+        this.togglePrefetch()
+      }
+    },
+    togglePrefetch() {
+      this.prefetchTimeouts.forEach((timeout) => clearTimeout(timeout))
+      this.prefetchTimeouts = []
+      if (!this.stopPrefetch) {
+        this.$mapLayers.arr.forEach((layer) => {
+          if (layer instanceof OLImage) {
+            if (
+              layer.get('layerVisibilityOn') &&
+              layer.get('layerIsTemporal')
+            ) {
+              const dateArray = layer.get('layerDateArray')
+              const globalCurrentIndex = this.mapTimeSettings.DateIndex
+              const globalStartIndex = this.datetimeRangeSlider[0]
+              const globalEndIndex = this.datetimeRangeSlider[1]
+
+              // Build URL params
+              const view = this.$mapCanvas.mapObj.getView()
+              const extent = view.calculateExtent()
+              const [width, height] = this.$mapCanvas.mapObj.getSize()
+              const currentStyle = layer.get('layerCurrentStyle')
+
+              // Destructured like this to keep exact parameter order for caching
+              let urlParams = {
+                REQUEST: 'GetMap',
+                SERVICE: 'WMS',
+                VERSION: '1.3.0',
+                FORMAT: 'image/png',
+              }
+              if (currentStyle !== null) {
+                urlParams.STYLES = currentStyle
+              }
+              urlParams.TRANSPARENT = 'true'
+              urlParams.LAYERS = layer.get('layerName').split('/')[0]
+              urlParams.TIME = ''
+              if (
+                layer.getSource().getParams().DIM_REFERENCE_TIME !== undefined
+              ) {
+                urlParams.DIM_REFERENCE_TIME = this.getProperDateString(
+                  layer.get('layerCurrentMR'),
+                  layer.get('layerDateFormat'),
+                )
+              }
+              urlParams.WIDTH = width
+              urlParams.HEIGHT = height
+              urlParams.CRS = view.getProjection().getCode()
+              urlParams.BBOX = extent.join(',')
+
+              const indicesToCache = []
+              if (this.playState === 'play') {
+                if (!this.playbackReversed) {
+                  for (let i = 1; i <= 5; i++) {
+                    let globalTargetIndex = globalCurrentIndex + i
+                    if (globalTargetIndex > globalEndIndex) {
+                      globalTargetIndex =
+                        globalStartIndex +
+                        (globalTargetIndex - globalEndIndex - 1)
+                    }
+
+                    const globalTime =
+                      this.mapTimeSettings.Extent[globalTargetIndex]
+                    const layerTargetIndex = this.findLayerIndex(
+                      globalTime,
+                      dateArray,
+                      layer.get('layerTimeStep'),
+                    )
+
+                    if (layerTargetIndex >= 0) {
+                      indicesToCache.push(layerTargetIndex)
+                    }
+                  }
+                } else {
+                  for (let i = 1; i <= 5; i++) {
+                    let globalTargetIndex = globalCurrentIndex - i
+                    if (globalTargetIndex < globalStartIndex) {
+                      globalTargetIndex =
+                        globalEndIndex -
+                        (globalStartIndex - globalTargetIndex - 1)
+                    }
+
+                    const globalTime =
+                      this.mapTimeSettings.Extent[globalTargetIndex]
+                    const layerTargetIndex = this.findLayerIndex(
+                      globalTime,
+                      dateArray,
+                      layer.get('layerTimeStep'),
+                    )
+
+                    if (layerTargetIndex >= 0) {
+                      indicesToCache.push(layerTargetIndex)
+                    }
+                  }
+                }
+              } else {
+                // Cache both directions when paused
+                for (let i = 1; i <= 5; i++) {
+                  // Forward
+                  let globalTargetIndex = globalCurrentIndex + i
+                  if (globalTargetIndex > globalEndIndex) {
+                    globalTargetIndex =
+                      globalStartIndex +
+                      (globalTargetIndex - globalEndIndex - 1)
+                  }
+
+                  const globalTime =
+                    this.mapTimeSettings.Extent[globalTargetIndex]
+                  const layerTargetIndex = this.findLayerIndex(
+                    globalTime,
+                    dateArray,
+                    layer.get('layerTimeStep'),
+                  )
+
+                  if (layerTargetIndex >= 0) {
+                    indicesToCache.push(layerTargetIndex)
+                  }
+
+                  // Backward
+                  globalTargetIndex = globalCurrentIndex - i
+                  if (globalTargetIndex < globalStartIndex) {
+                    globalTargetIndex =
+                      globalEndIndex -
+                      (globalStartIndex - globalTargetIndex - 1)
+                  }
+
+                  const globalTimeBackward =
+                    this.mapTimeSettings.Extent[globalTargetIndex]
+                  const layerTargetIndexBackward = this.findLayerIndex(
+                    globalTimeBackward,
+                    dateArray,
+                    layer.get('layerTimeStep'),
+                  )
+
+                  if (layerTargetIndexBackward >= 0) {
+                    indicesToCache.push(layerTargetIndexBackward)
+                  }
+                }
+              }
+              indicesToCache.forEach((targetIndex, i) => {
+                const timeoutId = setTimeout(() => {
+                  this.cacheTimestep(
+                    layer,
+                    dateArray[targetIndex],
+                    urlParams,
+                    targetIndex,
+                  )
+                }, i * 50)
+
+                this.prefetchTimeouts.push(timeoutId)
+              })
+            }
+          }
+        })
+      }
+    },
+    cacheTimestep(layer, date, urlParams) {
+      urlParams['TIME'] = this.getProperDateString(
+        date,
+        layer.get('layerDateFormat'),
+      )
+
+      const queryString = Object.keys(urlParams)
+        .map(
+          (key) =>
+            `${encodeURIComponent(key)}=${encodeURIComponent(urlParams[key])}`,
+        )
+        .join('&')
+
+      const wmsUrl = `${layer.getSource().getUrl()}?${queryString}`
+
+      const img = new Image()
+      img.crossOrigin = 'anonymous'
+      img.src = wmsUrl
+    },
     updateScreenSize() {
       this.screenWidth = window.innerWidth
     },
@@ -538,6 +725,9 @@ export default {
     },
     mapTimeSettings() {
       return this.store.getMapTimeSettings
+    },
+    playbackReversed() {
+      return this.store.getIsReversed
     },
     playState() {
       return this.store.getPlayState

@@ -96,7 +96,6 @@
   "Overlay": "Overlays",
   "Places": "Places",
   "PlaySpeed": "Play speed",
-  "PlaySpeedLabel": "{speed} per second",
   "PlaySpeedTooltip": "Actual speed may be slower if images take longer to load",
   "Portrait": "Portrait",
   "Presets": "Presets",
