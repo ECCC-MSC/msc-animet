@@ -83,12 +83,6 @@ wms_sources = {
         "version": "1.3.0",
         "display": True,
     },
-    "GEBCO": {
-        "url": "https://wms.gebco.net/mapserv",
-        "version": "1.3.0",
-        "no_translations": True,
-        "display": True,
-    },
     "NRCan": {
         "url": "https://maps.geogratis.gc.ca/wms/canvec_en",
         "url_fr": "https://maps.geogratis.gc.ca/wms/canvec_fr",
