@@ -56,7 +56,7 @@
                   $t('LayerControlsTitle')
                 }}</span>
               </v-tab>
-              <v-tab v-if="mapTimeSettings.Step !== null">
+              <v-tab v-if="$mapLayers.arr.length !== 0">
                 <v-icon left>mdi-movie-open-play</v-icon>
                 <span v-if="tab === 2 && screenWidth >= 500">{{
                   $t('MP4CreateTitle')
@@ -91,7 +91,7 @@
           <v-tabs-window-item eager>
             <animation-configuration
               id="animation-configuration"
-              v-show="mapTimeSettings.Step !== null"
+              v-show="$mapLayers.arr.length !== 0"
             />
           </v-tabs-window-item>
         </v-tabs-window>

@@ -5,11 +5,7 @@
         <div v-bind="props">
           <v-btn
             v-if="!isAnimating || playState === 'play'"
-            :disabled="
-              mapTimeSettings.Step === null ||
-              playState === 'play' ||
-              !layersVisible
-            "
+            :disabled="playState === 'play' || !layersVisible"
             block
             color="primary"
             @click="createMP4"
@@ -162,9 +158,11 @@ export default {
       this.emitter.emit('setAnimationTitle')
       this.createMP4Handler()
       this.outputDate = this.storeOutputDate
-      this.store.setOutputDate(
-        this.getAnimationDateTitle(this.mapTimeSettings.Step),
-      )
+      if (this.mapTimeSettings.DateIndex !== null) {
+        this.store.setOutputDate(
+          this.getAnimationDateTitle(this.mapTimeSettings.Step),
+        )
+      }
     },
     async createMP4Handler() {
       this.imgURL = this.storeImgURL
@@ -191,7 +189,9 @@ export default {
         widths,
         this.animationTitle,
       )
-      this.dateCanvas = this.getDateCanvas()
+      if (this.mapTimeSettings.DateIndex !== null) {
+        this.dateCanvas = this.getDateCanvas()
+      }
       const encoder = await HME.createH264MP4Encoder()
       // This is to prevent encoder from becoming a proxy object through Vue 3
       // Otherwise this code would fail when trying to set the width saying:
@@ -203,7 +203,10 @@ export default {
       this.encoder.quantizationParameter = 30
       this.encoder.initialize()
 
-      if (this.outputFormat === 'MP4') {
+      if (
+        this.mapTimeSettings.DateIndex !== null &&
+        this.outputFormat === 'MP4'
+      ) {
         this.MP4Length =
           this.datetimeRangeSlider[1] - this.datetimeRangeSlider[0] + 1
       } else {
@@ -211,11 +214,14 @@ export default {
       }
 
       let progressCounter = 1
-      const initialState = this.mapTimeSettings.DateIndex
+      const initialState = this.mapTimeSettings.DateIndex || 0
 
       let startIndex
       let endIndex
-      if (this.outputFormat === 'MP4') {
+      if (
+        this.mapTimeSettings.DateIndex !== null &&
+        this.outputFormat === 'MP4'
+      ) {
         if (!this.isAnimationReversed) {
           startIndex = this.datetimeRangeSlider[0]
           endIndex = this.datetimeRangeSlider[1]
@@ -224,8 +230,8 @@ export default {
           endIndex = this.datetimeRangeSlider[0]
         }
       } else {
-        startIndex = initialState
-        endIndex = initialState
+        startIndex = initialState || 0
+        endIndex = initialState || 0
       }
       let increment = this.isAnimationReversed ? -1 : 1
       for (
@@ -237,7 +243,9 @@ export default {
           break
         }
         if (this.generating === true) {
-          this.store.setMapTimeIndex(i)
+          if (this.mapTimeSettings.DateIndex !== null) {
+            this.store.setMapTimeIndex(i)
+          }
           if (i === this.datetimeRangeSlider[0]) {
             this.animationController = new AbortController()
             let animationRendered = new Promise((resolve, reject) => {
@@ -330,7 +338,10 @@ export default {
             this.generating = false
             return
           }
-          await this.composeCanvas(this.mapTimeSettings.Extent[i], this.encoder)
+          await this.composeCanvas(
+            this.mapTimeSettings.Extent?.[i],
+            this.encoder,
+          )
           this.store.setMP4Percent(
             Math.round((progressCounter / this.MP4Length) * 100),
           )
@@ -340,17 +351,22 @@ export default {
     },
     async redoAnimation() {
       this.createMP4Handler()
-      this.store.setOutputDate(
-        this.getAnimationDateTitle(this.mapTimeSettings.Step),
-      )
+      if (this.mapTimeSettings.DateIndex !== null) {
+        this.store.setOutputDate(
+          this.getAnimationDateTitle(this.mapTimeSettings.Step),
+        )
+      }
     },
     restoreState(initialState = null) {
-      if (initialState === null) {
+      if (this.mapTimeSettings.DateIndex === null || initialState === null) {
         initialState = 0
       } else if (initialState > this.datetimeRangeSlider[1]) {
         initialState = this.datetimeRangeSlider[1]
       }
-      this.store.setMapTimeIndex(initialState)
+
+      if (this.mapTimeSettings.DateIndex !== null) {
+        this.store.setMapTimeIndex(initialState)
+      }
 
       this.store.setMP4Percent(0)
       this.encoder.finalize()
@@ -403,7 +419,9 @@ export default {
           document.getElementById(`text-box-${textBoxObj.id}`),
         )
       })
-      await this.updateInfoCanvas(date)
+      if (this.mapTimeSettings.DateIndex !== null) {
+        await this.updateInfoCanvas(date)
+      }
       const composedCnv = await this.stitchCanvases(mapCnv)
       if (this.MP4Length === 1) {
         this.imgURL = composedCnv.toDataURL('image/jpeg', 0.9)
@@ -536,7 +554,8 @@ export default {
 
         composedCnv.width = mapCanvas.width
         composedCnv.height = mapCanvas.height
-        ;[
+
+        const canvasesToStitch = [
           {
             cnv: mapCanvas,
             x: 0,
@@ -552,12 +571,17 @@ export default {
             x: mapCanvas.width - this.infoCanvas.width,
             y: mapCanvas.height - this.infoCanvas.height,
           },
-          {
+        ]
+
+        if (this.mapTimeSettings.DateIndex !== null) {
+          canvasesToStitch.push({
             cnv: this.outputDateCanvas,
             x: mapCanvas.width - this.outputDateCanvas.width - 10,
             y: this.outputHeader.height + 10,
-          },
-        ].forEach((n) => {
+          })
+        }
+
+        canvasesToStitch.forEach((n) => {
           ctx.beginPath()
           ctx.drawImage(n.cnv, n.x, n.y, n.cnv.width, n.cnv.height)
         })
@@ -857,27 +881,27 @@ export default {
       )
 
       let hPos = 0
-      fontArray.forEach((timeLayer) => {
+      fontArray.forEach((canvasLayer) => {
         let offsetX = 0
-        if (this.colorBorder && this.activeLegends.includes(timeLayer.name)) {
-          let color = `rgb(${timeLayer.color.r}, ${timeLayer.color.g}, ${timeLayer.color.b})`
+        if (this.colorBorder && this.activeLegends.includes(canvasLayer.name)) {
+          let color = `rgb(${canvasLayer.color.r}, ${canvasLayer.color.g}, ${canvasLayer.color.b})`
           canvasTxt.fontSize = 40
           ctx.fillStyle = color
           canvasTxt.drawText(
             ctx,
-            timeLayer.title.slice(0, 2),
+            canvasLayer.title.slice(0, 2),
             0.01 * infoCanvas.width,
             hPos - 10,
             widths[0],
             30,
           )
-          offsetX = ctx.measureText(timeLayer.title.slice(0, 2)).width
+          offsetX = ctx.measureText(canvasLayer.title.slice(0, 2)).width
         }
-        canvasTxt.fontSize = timeLayer.fontSize
+        canvasTxt.fontSize = canvasLayer.fontSize
         ctx.fillStyle = 'black'
         canvasTxt.drawText(
           ctx,
-          timeLayer.title.slice(2),
+          canvasLayer.title.slice(2),
           0.01 * infoCanvas.width + offsetX,
           hPos - 6,
           widths[0],

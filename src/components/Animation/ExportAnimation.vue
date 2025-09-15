@@ -1,5 +1,5 @@
 <template>
-  <v-card flat v-if="mapTimeSettings.Step !== null">
+  <v-card flat>
     <v-card-title class="text-subtitle-2 pb-0">
       {{ $t('MP4ExportTitle') }}
     </v-card-title>
@@ -79,7 +79,11 @@ export default {
         title = '_' + title
       }
       const outputFormat = this.mp4URL ? '.mp4' : '.jpeg'
-      return `MSC-AniMet_${this.outputDate}${title}${outputFormat}`
+      if (this.outputDate) {
+        return `MSC-AniMet_${this.outputDate}${title}${outputFormat}`
+      } else {
+        return `MSC-AniMet${title}${outputFormat}`
+      }
     },
   },
   methods: {

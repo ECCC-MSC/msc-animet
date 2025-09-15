@@ -1,14 +1,43 @@
 <template>
-  <div class="progress" v-if="loading">
+  <div class="progress" v-if="showLoading">
     <div class="indeterminate"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "LoadingBar",
-  props: ["loading"],
-};
+  name: 'LoadingBar',
+  props: ['loading'],
+  data() {
+    return {
+      showLoading: false,
+      timeoutId: null,
+    }
+  },
+  watch: {
+    loading: {
+      handler(newVal) {
+        if (newVal) {
+          this.timeoutId = setTimeout(() => {
+            this.showLoading = true
+          }, 100)
+        } else {
+          if (this.timeoutId) {
+            clearTimeout(this.timeoutId)
+            this.timeoutId = null
+          }
+          this.showLoading = false
+        }
+      },
+      immediate: true,
+    },
+  },
+  beforeUnmount() {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId)
+    }
+  },
+}
 </script>
 
 <style scoped>
@@ -31,7 +60,7 @@ export default {
 
 .indeterminate:before,
 .indeterminate:after {
-  content: "";
+  content: '';
   position: absolute;
   background-color: inherit;
   top: 0;

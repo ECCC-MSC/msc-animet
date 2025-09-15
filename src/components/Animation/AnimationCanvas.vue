@@ -122,7 +122,10 @@ export default {
           .setVisible(isBasemapVisible)
       }
       this.copyLayers()
-      if (this.mapTimeSettings.DateIndex === this.datetimeRangeSlider[0])
+      if (
+        this.mapTimeSettings.DateIndex !== null &&
+        this.mapTimeSettings.DateIndex === this.datetimeRangeSlider[0]
+      )
         this.mapControls()
 
       this.addLayersListeners()
