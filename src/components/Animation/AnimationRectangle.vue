@@ -72,10 +72,7 @@ export default {
       }
     },
     getInfoCanvas() {
-      if (
-        this.$mapLayers.arr.length !== 0 &&
-        this.mapTimeSettings.Extent !== null
-      ) {
+      if (this.$mapLayers.arr.length !== 0) {
         this.emitter.emit('setAnimationTitle')
         let infoCanvas = document.createElement('canvas')
         let ctx = infoCanvas.getContext('2d')
@@ -216,22 +213,25 @@ export default {
         (headerH / this.currentAspect[this.currentResolution].height) * 100
 
       let styleSheet = document.styleSheets[0]
-      const percentageTopDate =
-        ((headerH + 10) / this.currentAspect[this.currentResolution].height) *
-        100
-      const percentageRightDate =
-        (10 / this.currentAspect[this.currentResolution].width) * 100
-      let [dateWidth, dateHeight] = this.getDateCanvas()
-      const percentageWidthDate =
-        (dateWidth / this.currentAspect[this.currentResolution].width) * 100
-      const percentageHeightDate =
-        (dateHeight / this.currentAspect[this.currentResolution].height) * 100
+      if (this.mapTimeSettings.Step) {
+        const percentageTopDate =
+          ((headerH + 10) / this.currentAspect[this.currentResolution].height) *
+          100
+        const percentageRightDate =
+          (10 / this.currentAspect[this.currentResolution].width) * 100
+        let [dateWidth, dateHeight] = this.getDateCanvas()
+        const percentageWidthDate =
+          (dateWidth / this.currentAspect[this.currentResolution].width) * 100
+        const percentageHeightDate =
+          (dateHeight / this.currentAspect[this.currentResolution].height) * 100
+        const footerRule = `#animation-rect::after { top: ${percentageTopDate}% !important; right: ${percentageRightDate}% !important; width: ${percentageWidthDate}% !important;  height: ${percentageHeightDate}% !important; }`
+        styleSheet.insertRule(footerRule, styleSheet.cssRules.length)
+      } else {
+        const footerRule = `#animation-rect::after { top: 0% !important; right: 0% !important; width: 0% !important;  height: 0% !important; }`
+        styleSheet.insertRule(footerRule, styleSheet.cssRules.length)
+      }
 
       const element = document.getElementById('animation-rect')
-      const footerRule = `#animation-rect::after { top: ${percentageTopDate}% !important; right: ${percentageRightDate}% !important; width: ${percentageWidthDate}% !important;  height: ${percentageHeightDate}% !important; }`
-
-      styleSheet.insertRule(footerRule, styleSheet.cssRules.length)
-
       if (footerW !== mapW) {
         element.style.background = `linear-gradient(to bottom, rgba(255, 255, 255, 0.75) ${percentageHeader}%, transparent ${percentageHeader}%, transparent 0%)`
         const percFooterWidth = (footerW / mapW) * 100

@@ -272,7 +272,7 @@ export default {
               'layerName',
             ),
           )
-          this.store.setAnimationTitle(firstLayerTitle)
+          this.store.setAnimationTitle(firstLayerTitle.split('/')[0])
         }
       }
     },

@@ -278,11 +278,9 @@ export default {
       let op = parseFloat(opacity)
       layer.opacity = isNaN(op) || op > 1 || op < 0 ? 0.75 : op
       layer.visible = isVisible === '0' ? false : true
+      layer.legendDisplayed = legendDisplayed === '1' ? true : false
       if (style !== '0') {
         layer.currentStyle = style
-      }
-      if (legendDisplayed !== undefined) {
-        layer.legendDisplayed = legendDisplayed
       }
       if (modelRun !== undefined) {
         layer.currentMR = modelRun
