@@ -510,7 +510,7 @@ export default {
         STYLES: imageLayer.get('layerCurrentStyle'),
       })
       if (Object.hasOwn(layerData, 'legendDisplayed')) {
-        if (layerData.legendDisplayed === '1') {
+        if (layerData.legendDisplayed === true) {
           this.store.addActiveLegend(imageLayer.get('layerName'))
         }
       } else if (imageLayer.get('layerStyles').length !== 0) {
