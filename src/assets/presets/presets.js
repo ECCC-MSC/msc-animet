@@ -1,3 +1,14 @@
+const isNodeOpen = (nodeName) => {
+  try {
+    const closedNodes = JSON.parse(
+      localStorage.getItem('user-closed-nodes') || '[]',
+    )
+    return !closedNodes.includes(nodeName)
+  } catch (error) {
+    return true
+  }
+}
+
 export default {
   proj_presets: [
     'EPSG:4326',
@@ -64,14 +75,15 @@ export default {
   ],
   presets: [
     {
-      Title_en: 'Alerts/current weather',
-      Title_fr: 'Alertes/météo actuelle',
-      Name: 'Alerts/current weather',
+      Title_en: 'Alerts / Current Weather',
+      Title_fr: 'Alertes / Météo actuelle',
+      Name: 'Alerts / Current weather',
       isLeaf: false,
-      isOpen: true,
+      isOpen: isNodeOpen('Alerts / Current weather'),
+      isPreset: true,
       children: [
         {
-          Title_en: 'Alerts & Current conditions',
+          Title_en: 'Alerts & Current Conditions',
           Title_fr: 'Alertes & Conditions actuelles',
           Name: 'Alerts Current conditions',
           Img: 'Alerts Current conditions',
@@ -103,17 +115,67 @@ export default {
             },
           ],
         },
+        {
+          Title_en: 'Hurricane Tracks',
+          Title_fr: "Trajectoires d'ouragans",
+          Name: 'Hurricane tracks',
+          Img: 'Hurricane tracks',
+          isLeaf: false,
+          children: [
+            {
+              Title: 'Hurricane Response Zone',
+              Name: 'HURRICANE_RESPONSE_ZONE',
+              isLeaf: true,
+              isTemporal: true,
+              opacity: 1,
+              legendDisplayed: false,
+            },
+            {
+              Title: 'Hurricane Track Forecast Error',
+              Name: 'HURRICANE_ERR',
+              isLeaf: true,
+              isTemporal: true,
+              opacity: 1,
+              legendDisplayed: false,
+            },
+            {
+              Title: 'Hurricane Wind Forecast Wind Radii',
+              Name: 'HURRICANE_RAD',
+              isLeaf: true,
+              isTemporal: true,
+              opacity: 1,
+              legendDisplayed: false,
+            },
+            {
+              Title: 'Hurricane Line Segments',
+              Name: 'HURRICANE_LINE',
+              isLeaf: true,
+              isTemporal: true,
+              opacity: 1,
+              legendDisplayed: false,
+            },
+            {
+              Title: 'Hurricane Forecast Location',
+              Name: 'HURRICANE_CENTRE',
+              isLeaf: true,
+              isTemporal: true,
+              opacity: 1,
+              legendDisplayed: true,
+            },
+          ],
+        },
       ],
     },
     {
-      Title_en: 'Remote sensing',
+      Title_en: 'Remote Sensing',
       Title_fr: 'Télédétection',
       Name: 'Remote sensing',
       isLeaf: false,
-      isOpen: true,
+      isOpen: isNodeOpen('Remote sensing'),
+      isPreset: true,
       children: [
         {
-          Title_en: 'Radar rain (obs. & extrap.)',
+          Title_en: 'Radar Rain (obs. & extrap.)',
           Title_fr: 'Radar pluie (obs. & extrap.)',
           Name: 'Radar rain',
           Img: 'Radar rain',
@@ -154,7 +216,7 @@ export default {
           ],
         },
         {
-          Title_en: 'Radar snow (obs. & extrap.)',
+          Title_en: 'Radar Snow (obs. & extrap.)',
           Title_fr: 'Radar neige (obs. & extrap)',
           Name: 'Radar snow',
           Img: 'Radar snow',
@@ -195,7 +257,7 @@ export default {
           ],
         },
         {
-          Title_en: 'Radar surface precipitation type',
+          Title_en: 'Radar Surface Precipitation Type',
           Title_fr: 'Type de précipitation à la surface radar',
           Name: 'Radar surface precipitation type',
           Img: 'Radar surface precipitation type',
@@ -253,15 +315,15 @@ export default {
           ],
         },
         {
-          Title_en: 'GOES-East Snow-Fog/Night Microphysics',
-          Title_fr: 'GOES-Est Neige-brouillard/Microphysique de nuit',
-          Name: 'GOES-East Snow-Fog Night Microphysics',
-          Img: 'GOES-East Snow-Fog Night Microphysics',
+          Title_en: 'GOES-East Day Cloud Type/Night Microphysics',
+          Title_fr: 'GOES-Est Type de nuage de jour/Microphysique de nuit',
+          Name: 'GOES-East Day Cloud Type Night Microphysics',
+          Img: 'GOES-East Day Cloud Type Night Microphysics',
           isLeaf: false,
           children: [
             {
-              Title: 'GOES-East Snow-Fog/Night Microphysics [1 km]',
-              Name: 'GOES-East_1km_SnowFog-NightMicrophysics',
+              Title: 'GOES-East Day Cloud Type/Night Microphysics [1 km]',
+              Name: 'GOES-East_1km_DayCloudType-NightMicrophysics',
               isLeaf: true,
               isTemporal: true,
               opacity: 1,
@@ -271,14 +333,15 @@ export default {
       ],
     },
     {
-      Title_en: 'Classic synoptic',
+      Title_en: 'Classic Synoptic',
       Title_fr: 'Synoptique classique',
       Name: 'Classic synoptic',
       isLeaf: false,
-      isOpen: true,
+      isOpen: isNodeOpen('Classic synoptic'),
+      isPreset: true,
       children: [
         {
-          Title_en: 'Absolute vorticity at 500 mb',
+          Title_en: 'Absolute Vorticity at 500 mb',
           Title_fr: 'Tourbillon absolu à 500 mb',
           Name: 'Absolute vorticity 500mb',
           Img: 'Absolute vorticity 500mb',
@@ -317,7 +380,7 @@ export default {
           ],
         },
         {
-          Title_en: 'Relative humidity at 700 mb',
+          Title_en: 'Relative Humidity at 700 mb',
           Title_fr: 'Humidité relative à 700 mb',
           Name: 'Relative humidity 700mb',
           Img: 'Relative humidity 700mb',
@@ -356,7 +419,7 @@ export default {
           ],
         },
         {
-          Title_en: 'Vertical motion at 700 mb',
+          Title_en: 'Vertical Motion at 700 mb',
           Title_fr: 'Mouvement vertical à 700 mb',
           Name: 'Vertical motion 700mb',
           Img: 'Vertical motion 700mb',
@@ -393,7 +456,7 @@ export default {
           ],
         },
         {
-          Title_en: 'Air temperature at 850 mb',
+          Title_en: 'Air Temperature at 850 mb',
           Title_fr: "Température de l'air à 850 mb",
           Name: 'Air temperature 850mb',
           Img: 'Air temperature 850mb',
@@ -466,7 +529,7 @@ export default {
           ],
         },
         {
-          Title_en: 'Precipitation accumulation',
+          Title_en: 'Precipitation Accumulation',
           Title_fr: 'Précipitations accumulées',
           Name: 'Precipitation accumulation',
           Img: 'Precipitation accumulation',
@@ -494,7 +557,7 @@ export default {
           ],
         },
         {
-          Title_en: 'Air temperature at 2 m',
+          Title_en: 'Air Temperature at 2 m',
           Title_fr: 'Température à 2 m',
           Name: 'Air temperature 2m',
           Img: 'Air temperature 2m',
@@ -522,14 +585,15 @@ export default {
       ],
     },
     {
-      Title_en: 'Winter weather',
+      Title_en: 'Winter Weather',
       Title_fr: 'Météo en hiver',
       Name: 'Winter weather',
       isLeaf: false,
-      isOpen: true,
+      isOpen: isNodeOpen('Winter weather'),
+      isPreset: true,
       children: [
         {
-          Title_en: 'Instantaneous precipitation types',
+          Title_en: 'Instantaneous Precipitation Types',
           Title_fr: 'Types de précipitations instantanées',
           Name: 'Instantaneous precipitation types',
           Img: 'Instantaneous precipitation types',
@@ -556,7 +620,7 @@ export default {
           ],
         },
         {
-          Title_en: 'Significant precipitation type',
+          Title_en: 'Significant Precipitation Type',
           Title_fr: 'Type significatif de précipitations',
           Name: 'Significant precipitation type',
           Img: 'Significant precipitation type',
@@ -593,7 +657,7 @@ export default {
           ],
         },
         {
-          Title_en: 'Snow accumulation',
+          Title_en: 'Snow Accumulation',
           Title_fr: 'Neige accumulée',
           Name: 'Snow accumulation',
           Img: 'Snow accumulation',
@@ -650,11 +714,12 @@ export default {
       ],
     },
     {
-      Title_en: 'Summer weather',
+      Title_en: 'Summer Weather',
       Title_fr: 'Météo en été',
       Name: 'Summer weather',
       isLeaf: false,
-      isOpen: true,
+      isOpen: isNodeOpen('Summer weather'),
+      isPreset: true,
       children: [
         {
           Title_en: 'Humidex at 2 m (experimental)',
@@ -736,69 +801,38 @@ export default {
             },
           ],
         },
-        {
-          Title_en: 'Hurricane tracks',
-          Title_fr: "Trajectoires d'ouragans",
-          Name: 'Hurricane tracks',
-          Img: 'Hurricane tracks',
-          isLeaf: false,
-          children: [
-            {
-              Title: 'Hurricane Response Zone',
-              Name: 'HURRICANE_RESPONSE_ZONE',
-              isLeaf: true,
-              isTemporal: true,
-              opacity: 1,
-              legendDisplayed: false,
-            },
-            {
-              Title: 'Hurricane Track Forecast Error',
-              Name: 'HURRICANE_ERR',
-              isLeaf: true,
-              isTemporal: true,
-              opacity: 1,
-              legendDisplayed: false,
-            },
-            {
-              Title: 'Hurricane Wind Forecast Wind Radii',
-              Name: 'HURRICANE_RAD',
-              isLeaf: true,
-              isTemporal: true,
-              opacity: 1,
-              legendDisplayed: false,
-            },
-            {
-              Title: 'Hurricane Line Segments',
-              Name: 'HURRICANE_LINE',
-              isLeaf: true,
-              isTemporal: true,
-              opacity: 1,
-              legendDisplayed: false,
-            },
-            {
-              Title: 'Hurricane Forecast Location',
-              Name: 'HURRICANE_CENTRE',
-              isLeaf: true,
-              isTemporal: true,
-              opacity: 1,
-              legendDisplayed: true,
-            },
-          ],
-        },
       ],
     },
     {
-      Title_en: 'Air quality',
+      Title_en: 'Air Quality',
       Title_fr: "Qualité de l'air",
       Name: 'Air quality',
       isLeaf: false,
-      isOpen: true,
+      isOpen: isNodeOpen('Air quality'),
+      isPreset: true,
       children: [
         {
-          Title_en: 'PM2.5 wildfire smoke plume',
-          Title_fr: 'PM2.5 des panaches de feux de forêt',
-          Name: 'PM2_5 wildfire smoke plume',
-          Img: 'PM2_5 wildfire smoke plume',
+          Title_en: 'Air Quality Health Index',
+          Title_fr: 'Cote air santé',
+          Name: 'AQHI',
+          Img: 'AQHI',
+          isLeaf: false,
+          children: [
+            {
+              Title: 'AQHI - Observations',
+              Name: 'AQHI-OBS',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: true,
+              opacity: 0.75,
+            },
+          ],
+        },
+        {
+          Title_en: 'PM<sub>2.5</sub> Concentration (Wildfires)',
+          Title_fr: 'Concentration de PM<sub>2.5</sub> (Feux de forêt)',
+          Name: 'PM2_5 wildfires',
+          Img: 'PM2_5 wildfires',
           isLeaf: false,
           children: [
             {
@@ -832,10 +866,10 @@ export default {
           ],
         },
         {
-          Title_en: 'PM10 wildfire smoke plume',
-          Title_fr: 'PM10 des panaches de feux de forêt',
-          Name: 'PM10 wildfire smoke plume',
-          Img: 'PM10 wildfire smoke plume',
+          Title_en: 'PM<sub>10</sub> Concentration (Wildfires)',
+          Title_fr: 'Concentration de PM<sub>10</sub> (Feux de forêt)',
+          Name: 'PM10 wildfires',
+          Img: 'PM10 wildfires',
           isLeaf: false,
           children: [
             {
@@ -869,25 +903,8 @@ export default {
           ],
         },
         {
-          Title_en: 'Air Quality Health Index',
-          Title_fr: 'Cote air santé',
-          Name: 'AQHI',
-          Img: 'AQHI',
-          isLeaf: false,
-          children: [
-            {
-              Title: 'AQHI - Observations',
-              Name: 'AQHI-OBS',
-              isLeaf: true,
-              isTemporal: true,
-              legendDisplayed: true,
-              opacity: 0.75,
-            },
-          ],
-        },
-        {
-          Title_en: 'O3 concentration',
-          Title_fr: "Concentration d'O3",
+          Title_en: 'O<sub>3</sub> Concentration',
+          Title_fr: "Concentration d'O<sub>3</sub>",
           Name: 'O3 concentration',
           Img: 'O3 concentration',
           isLeaf: false,
@@ -914,8 +931,8 @@ export default {
           ],
         },
         {
-          Title_en: 'NO2 concentration',
-          Title_fr: 'Concentration de NO2',
+          Title_en: 'NO<sub>2</sub> Concentration',
+          Title_fr: 'Concentration de NO<sub>2</sub>',
           Name: 'NO2 concentration',
           Img: 'NO2 concentration',
           isLeaf: false,

@@ -6,7 +6,10 @@
       :class="{ selected: presetSelected(node) }"
       @click="handleMultiAdd(node)"
     />
-    <span class="image-title">{{ node[`Title_${$i18n.locale}`] }}</span>
+    <span
+      class="image-title"
+      v-html="DOMPurify.sanitize(node[`Title_${$i18n.locale}`])"
+    ></span>
   </div>
   <div v-else class="tree-node">
     <div @click="handleClick(node)" class="node-content">
@@ -50,6 +53,8 @@
 import { computed, inject, ref, watch } from 'vue'
 import { getCurrentInstance } from 'vue'
 import OLImage from 'ol/layer/Image'
+
+import DOMPurify from 'dompurify'
 
 const { proxy } = getCurrentInstance()
 const store = inject('store')
@@ -162,6 +167,26 @@ const toggle = () => {
   if (props.node.children) {
     isOpen.value = !isOpen.value
     props.node.isOpen = isOpen.value
+    if (props.node.isPreset) {
+      const closedNodes = JSON.parse(
+        localStorage.getItem('user-closed-nodes') || '[]',
+      )
+
+      if (!isOpen.value) {
+        // Node is now closed - add to closed list if not already there
+        if (!closedNodes.includes(props.node.Name)) {
+          closedNodes.push(props.node.Name)
+        }
+      } else {
+        // Node is now open - remove from closed list
+        const index = closedNodes.indexOf(props.node.Name)
+        if (index > -1) {
+          closedNodes.splice(index, 1)
+        }
+      }
+
+      localStorage.setItem('user-closed-nodes', JSON.stringify(closedNodes))
+    }
     emit('nodeToggled', props.node.name, isOpen.value)
   }
 }
