@@ -76,7 +76,7 @@ export default {
       let l = Duration.fromISO(timestep)
       l.loc.locale = this.$i18n.locale
       l.loc.intl = this.$i18n.locale
-      return l.toHuman()
+      return l.mapUnits(Math.round).toHuman()
     },
     updateScreenSize() {
       this.screenWidth = window.innerWidth

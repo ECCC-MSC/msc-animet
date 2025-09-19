@@ -51,7 +51,7 @@ export const useStore = defineStore('store', {
       aspect: '[16:9]',
     },
     currentCRS: 'EPSG:3857',
-    currentWmsSource: Object.values(wmsSources)[0]['url'],
+    currentWmsSource: Object.values(wmsSources)[0]['urls'][0],
     datetimeRangeSlider: [null, null],
     extent: null,
     framesPerSecond: 3,

@@ -51,21 +51,18 @@ export default {{
 """
 
 
-def slugify_title(str):
-    return str.lower().strip().replace(" ", "-")
-
-
-def generate_layer_dict(list_layer_metadata):
+def generate_layer_dict(list_layer_metadata, source=None):
     items = []
     for layer_metadata in list_layer_metadata:
         layer_dict = {
-            # "key": slugify_title(layer_metadata.name),
             "Title": layer_metadata.title,
             "Name": layer_metadata.name,
         }
+        if source:
+            layer_dict["wmsSource"] = source
         if layer_metadata.layers:
             layer_dict["isLeaf"] = False
-            layer_dict["children"] = generate_layer_dict(layer_metadata.layers)
+            layer_dict["children"] = generate_layer_dict(layer_metadata.layers, source)
         if len(layer_metadata.layers) == 0:
             layer_dict["isLeaf"] = True
             if layer_metadata.timepositions:
@@ -202,57 +199,92 @@ for name, params in wms_sources.items():
         sources_to_remove.append(name)
         continue
     for lang in langs:
-        if f"url_{lang}" in params:
-            base_url = params[f"url_{lang}"]
+        combined_crs_values = []
+        combined_layers = []
+        combined_layers_dict = {}
+
+        if f"urls_{lang}" in params:
+            urls = params[f"urls_{lang}"]
         else:
-            base_url = params["url"]
-        if "?" in base_url:
-            base_url = f"{base_url}&lang={lang}"
-        else:
-            base_url = f"{base_url}?lang={lang}"
-        try:
-            wms = WebMapService(base_url, version=params["version"])
-        except Exception as e:
-            LOGGER.warning(f"Ignoring source {name} due to error: {e}")
-            # remove source from wms sources configurations
-            sources_to_remove.append(name)
-            break
+            urls = params["urls"]
+
+        multi_source = False
+        if len(urls) > 1:
+            multi_source = True
+
+        for i, url in enumerate(urls):
+
+            if "?" in url:
+                base_url = f"{url}&lang={lang}"
+            else:
+                base_url = f"{url}?lang={lang}"
+
+            try:
+                wms = WebMapService(base_url, version=params["version"])
+            except Exception as e:
+                LOGGER.warning(f"Ignoring source {name} due to error: {e}")
+                # remove source from wms sources configurations
+                sources_to_remove.append(name)
+                break
+
+            if name != "Presets":
+                # get all top level layer metadata objects
+                _, metadata = wms.items()[0]
+                top_level_items = findTopLevel(metadata)
+
+                get_capa_url = f"{base_url}&SERVICE=WMS&VERSION={params['version']}&REQUEST=GetCapabilities"
+                crs_values = extract_wms_crs(get_capa_url)
+                for crs in crs_values:
+                    if crs not in combined_crs_values:
+                        combined_crs_values.append(crs)
+
+                # iterate through top level items and recursively generate children as needed
+                if params.get("names"):
+                    wrapper_name = params["names"][lang][i]
+                    all_children = []
+                    for layer_metadata in top_level_items:
+                        if multi_source:
+                            all_children.extend(generate_layer_dict([layer_metadata], url))
+                        else:
+                            all_children.extend(generate_layer_dict([layer_metadata]))
+                    wrapper_layer = {
+                        "Title": wrapper_name,
+                        "Name": wrapper_name,
+                        "isLeaf": False,
+                        "children": all_children
+                    }
+                    combined_layers.append(wrapper_layer)
+                else:
+                    for layer_metadata in top_level_items:
+                        if multi_source:
+                            combined_layers.extend(generate_layer_dict([layer_metadata], url))
+                        else:
+                            combined_layers.extend(generate_layer_dict([layer_metadata]))
+
+                for _, metadata in wms.items():
+                    if not metadata.layers:
+                        combined_layers_dict[metadata.name] = metadata.title
 
         if name != "Presets":
-            # get all top level layer metadata objects
-            _, metadata = wms.items()[0]
-            top_level_items = findTopLevel(metadata)
-
-            get_capa_url = f"{base_url}&SERVICE=WMS&VERSION={params['version']}&REQUEST=GetCapabilities"
-            crs_values = extract_wms_crs(get_capa_url)
-
-            layers = []
-            # iterate through top level items and recursively generate children as needed
-            for layer_metadata in top_level_items:
-                layers += generate_layer_dict([layer_metadata])
-            layers_sorted = recursive_sort(layers)
-
             name = name.lower()
+            
+            sorted_layers = recursive_sort(combined_layers)
+            sorted_layers_dict = dict(sorted(combined_layers_dict.items()))
+
             with open(f"../src/assets/trees/tree_{lang}_{name}.js", "w+") as f:
                 f.write(
                     TREE_JS_TEMPLATE.format(
                         f"proj_{name}",
-                        json.dumps(crs_values, indent=2),
+                        json.dumps(combined_crs_values, indent=2),
                         f"tree_{lang}_{name}",
-                        json.dumps(layers_sorted, indent=2),
+                        json.dumps(sorted_layers, indent=2),
                     )
                 )
 
-            layers_dict = {}
-            for _, metadata in wms.items():
-                if not metadata.layers:
-                    layers_dict[metadata.name] = metadata.title
-            layers_dict_sorted = dict(sorted(layers_dict.items()))
-
-            with open(f"../src/locales/{lang}/layers_{name}.json", "w") as f:
+            with open(f"../src/locales/{lang}/layers_{name}.json", "w", encoding="utf-8") as f:
                 # write layers_dict_sorted to json file
                 f.write(
-                    json.dumps(layers_dict_sorted, indent=2, ensure_ascii=False)
+                    json.dumps(sorted_layers_dict, indent=2, ensure_ascii=False)
                 )
 
 # writing wms sources list to assets directory with failed sources removed

@@ -63,8 +63,8 @@
                             l.get('layerName').split('/')[0] ===
                               node.Name.split('/')[0] &&
                             Object.values(wmsSources)[l.get('layerWmsIndex')][
-                              'url'
-                            ] === currentWmsSource,
+                              'urls'
+                            ].includes(currentWmsSource),
                         )
                           ? 'mdi-minus'
                           : 'mdi-plus'
@@ -94,8 +94,8 @@
                               l.get('layerName').split('/')[0] ===
                                 node.Name.split('/')[0] &&
                               Object.values(wmsSources)[l.get('layerWmsIndex')][
-                                'url'
-                              ] === currentWmsSource,
+                                'urls'
+                              ].includes(currentWmsSource),
                           ),
                         }"
                       >
@@ -181,6 +181,17 @@ export default {
     removeLayer(layerName) {
       this.addedLayers = this.addedLayers.filter((added) => added !== layerName)
     },
+    replaceQueryPattern(source, layerName) {
+      let pattern = source['query_pattern']
+      const querySplits = layerName.split(':')
+      let layerPattern = ''
+      for (let j = 0; j < querySplits.length; j++) {
+        layerPattern += `/${querySplits[j]}`
+      }
+      const queryUrl = pattern.replace('{LAYER}', layerPattern)
+      const xmlName = querySplits[querySplits.length - 1]
+      return [queryUrl, xmlName]
+    },
     async requestLayerData(eventData) {
       const { layer, autoPlay = false, range = undefined } = eventData
       if (this.playState === 'play') {
@@ -193,22 +204,33 @@ export default {
           : this.currentWmsSource
         const sources = Object.keys(this.wmsSources)
         layer.wmsIndex = sources.findIndex(
-          (key) => key !== 'Presets' && this.wmsSources[key]['url'] === source,
+          (key) =>
+            key !== 'Presets' && this.wmsSources[key]['urls'].includes(source),
         )
+        if (layer.wmsIndex === -1) {
+          for (let i = 0; i < sources.length; i++) {
+            if (Object.hasOwn(this.wmsSources[sources[i]], 'query_pattern')) {
+              const [queryUrl] = this.replaceQueryPattern(
+                this.wmsSources[sources[i]],
+                layer.Name,
+              )
+              if (queryUrl === layer.wmsSource) {
+                layer.wmsIndex = i
+                source = queryUrl
+              }
+            }
+          }
+        }
         const sourceValues = this.wmsSources[sources[layer.wmsIndex]]
         if (sourceValues['source_validation']) {
           layer.Name = `${layer.Name}/${sources[layer.wmsIndex]}`
         }
         if (!this.addedLayers.includes(layer.Name)) {
           if (Object.hasOwn(sourceValues, 'query_pattern')) {
-            let pattern = sourceValues['query_pattern']
-            const querySplits = layer.Name.split(':')
-            let layerPattern = ''
-            for (let i = 0; i < querySplits.length; i++) {
-              layerPattern += `/${querySplits[i]}`
-            }
-            source = pattern.replace('{LAYER}', layerPattern)
-            layer.xmlName = querySplits[querySplits.length - 1]
+            ;[source, layer.xmlName] = this.replaceQueryPattern(
+              sourceValues,
+              layer.Name,
+            )
           } else {
             layer.xmlName = layer.Name
           }
@@ -384,7 +406,7 @@ export default {
       if (newTab !== Object.keys(this.wmsSources).length) {
         this.tab = newTab
         this.store.setWmsSourceURL(
-          this.wmsSources[this.activeWMSSourcesNames[newTab]]['url'],
+          this.wmsSources[this.activeWMSSourcesNames[newTab]]['urls'][0],
         )
         if (oldTab !== null) {
           this.resetSearchAndTree()
