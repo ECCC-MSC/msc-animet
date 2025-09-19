@@ -31,7 +31,7 @@ export default {
         this.store.setActiveSources(Object.keys(this.wmsSources)[0])
       }
       this.store.setWmsSourceURL(
-        this.wmsSources[Object.keys(this.activeSources)[0]]['url'],
+        this.wmsSources[Object.keys(this.activeSources)[0]]['urls'][0],
       )
     }
     if (this.getUserSelectedOverlays() === undefined) {

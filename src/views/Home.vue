@@ -188,16 +188,19 @@ export default {
       let baseURL
       if (source) {
         if (Object.keys(this.wmsSources).includes(source)) {
-          baseURL = this.wmsSources[source]['url']
+          baseURL = this.wmsSources[source]['urls'][0]
         }
       }
       if (!baseURL) {
-        const sourceContainingLayerName = this.findKeyInLocaleFiles(layerName)
-        if (sourceContainingLayerName) {
+        const [sourceContainingLayerName, wmsSourceUrl] =
+          this.findKeyInLocaleFiles(layerName)
+        if (wmsSourceUrl) {
+          baseURL = wmsSourceUrl
+        } else if (sourceContainingLayerName) {
           const configName = Object.keys(this.wmsSources).find(
             (key) => key.toLowerCase() === sourceContainingLayerName,
           )
-          baseURL = this.wmsSources[configName]['url']
+          baseURL = this.wmsSources[configName]['urls'][0]
         } else {
           return
         }
@@ -292,13 +295,38 @@ export default {
         range,
       })
     },
+    findInTree(items, key) {
+      for (const item of items) {
+        if (item.Name === key) {
+          return item
+        }
+        if (item.children && item.children.length > 0) {
+          const found = this.findInTree(item.children, key)
+          if (found) {
+            return found
+          }
+        }
+      }
+      return null
+    },
     findKeyInLocaleFiles(key) {
       for (const sourceName in localeData['enLocaleData']) {
         if (Object.hasOwn(localeData['enLocaleData'][sourceName], key)) {
-          return sourceName
+          const sourceConfigName = Object.keys(this.layerTreeItems).find(
+            (originalName) => originalName.toLowerCase() === sourceName,
+          )
+          if (this.wmsSources[sourceConfigName]['urls'].length > 1) {
+            const layerFound = this.findInTree(
+              this.layerTreeItems[sourceConfigName],
+              key,
+            )
+            return [sourceName, layerFound?.wmsSource]
+          } else {
+            return [sourceName, null]
+          }
         }
       }
-      return null // Key not found in any file
+      return [null, null] // Key not found in any file
     },
     getBase() {
       return JSON.parse(localStorage.getItem('user-basemap'))
@@ -313,6 +341,9 @@ export default {
   computed: {
     crsList() {
       return this.store.getCrsList
+    },
+    layerTreeItems() {
+      return this.store.getLayerTreeItems
     },
     wmsSources() {
       return this.store.getWmsSources

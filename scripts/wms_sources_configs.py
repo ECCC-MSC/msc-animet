@@ -2,96 +2,116 @@ import os
 
 wms_sources = {
     "Presets": {
-        "url": os.environ.get("GEOMET_WEATHER_NIGHTLY_URL", default="https://geo.weather.gc.ca/geomet"),
+        "urls": [os.environ.get("GEOMET_WEATHER_NIGHTLY_URL", default="https://geo.weather.gc.ca/geomet")],
         "version": "1.3.0",
         "display": True,
     },
     "Weather": {
-        "url": "https://geo.weather.gc.ca/geomet",
+        "urls": ["https://geo.weather.gc.ca/geomet"],
         "version": "1.3.0",
         "display": True,
     },
     "Climate": {
-        "url": "https://geo.weather.gc.ca/geomet-climate",
+        "urls": ["https://geo.weather.gc.ca/geomet-climate"],
         "version": "1.3.0",
         "display": True,
     },
     "WeatherNightly": {
-        "url": os.environ.get("GEOMET_WEATHER_NIGHTLY_URL", default=""),
+        "urls": [os.environ.get("GEOMET_WEATHER_NIGHTLY_URL", default="")],
         "version": "1.3.0",
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
         "source_validation": True,
     },
     "ClimateNightly": {
-        "url": os.environ.get("GEOMET_CLIMATE_NIGHTLY_URL", default=""),
+        "urls": [os.environ.get("GEOMET_CLIMATE_NIGHTLY_URL", default="")],
         "version": "1.3.0",
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
         "source_validation": True,
     },
     "WeatherDev": {
-        "url": os.environ.get("GEOMET_WEATHER_DEV_URL", default=""),
+        "urls": [os.environ.get("GEOMET_WEATHER_DEV_URL", default="")],
         "version": "1.3.0",
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
         "source_validation": True,
     },
     "ClimateDev": {
-        "url": os.environ.get("GEOMET_CLIMATE_DEV_URL", default=""),
+        "urls": [os.environ.get("GEOMET_CLIMATE_DEV_URL", default="")],
         "version": "1.3.0",
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
         "source_validation": True,
     },
     "WeatherStage": {
-        "url": os.environ.get("GEOMET_WEATHER_STAGE_URL", default=""),
+        "urls": [os.environ.get("GEOMET_WEATHER_STAGE_URL", default="")],
         "version": "1.3.0",
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
         "source_validation": True,
     },
     "ClimateStage": {
-        "url": os.environ.get("GEOMET_CLIMATE_STAGE_URL", default=""),
+        "urls": [os.environ.get("GEOMET_CLIMATE_STAGE_URL", default="")],
         "version": "1.3.0",
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
         "source_validation": True,
     },
     "MapProxy": {
-        "url": os.environ.get("GEOMET_MAPPROXY_NIGHTLY_URL", default=""),
+        "urls": [os.environ.get("GEOMET_MAPPROXY_NIGHTLY_URL", default="")],
         "version": "1.3.0",
         "no_translations": True,
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
         "source_validation": True,
     },
     "ECMWF": {
-        "url": "https://eccharts.ecmwf.int/wms/?token=public",
+        "urls": ["https://eccharts.ecmwf.int/wms/?token=public"],
         "version": "1.3.0",
         "display": True,
     },
     "NOAA - nowCOAST": {
-        "url": "https://nowcoast.noaa.gov/geoserver/ows",
+        "urls": ["https://nowcoast.noaa.gov/geoserver/ows"],
         "version": "1.3.0",
         "query_pattern": "https://nowcoast.noaa.gov/geoserver{LAYER}/ows",
         "no_translations": True,
         "display": True,
     },
     "NOAA - NCEP": {
-        "url": "https://opengeo.ncep.noaa.gov/geoserver/ows",
+        "urls": ["https://opengeo.ncep.noaa.gov/geoserver/ows"],
+        "names": {
+            "fr": ["Centres nationaux de prédiction environnementale (NCEP)"],
+            "en": ["National Centers for Environmental Prediction (NCEP)"],
+        },
         "version": "1.3.0",
         "query_pattern": "https://opengeo.ncep.noaa.gov/geoserver{LAYER}/ows",
         "no_translations": True,
         "display": True,
     },
     "NASA": {
-        "url": "https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi",
+        "urls": ["https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi"],
         "version": "1.3.0",
         "display": True,
     },
     "NRCan": {
-        "url": "https://maps.geogratis.gc.ca/wms/canvec_en",
-        "url_fr": "https://maps.geogratis.gc.ca/wms/canvec_fr",
+        "urls": ["https://maps.geogratis.gc.ca/wms/canvec_en"],
+        "urls_fr": ["https://maps.geogratis.gc.ca/wms/canvec_fr"],
         "version": "1.3.0",
         "display": True,
     },
-    "MRNFTerritories": {
-        "url": "https://servicescarto.mern.gouv.qc.ca/pes/services/Territoire/SDA_WMS/MapServer/WmsServer",
+    "Others": {
+        "urls": [
+            "https://maps-cartes.services.geo.ca/server_serveur/services/TC/canadian_airports_w_air_navigation_services_en/MapServer/WMSServer",
+            "https://datacube.services.geo.ca/wrapper/ogc/elevation-hrdem-mosaic",
+            "https://servicescarto.mern.gouv.qc.ca/pes/services/Territoire/SDA_WMS/MapServer/WmsServer"
+        ],
+        "names": {
+            "fr": [
+                "Aéroports canadiens",
+                "Modèle numérique d'élévation de moyenne résolution (MNEMR) - Série CanÉlévation",
+                "QC MRNF - Territory",
+            ],
+            "en": [
+                "Canadian Airports",
+                "Medium Resolution Digital Elevation Model (MRDEM) - CanElevation Series",
+                "QC MRNF - Territoire",
+            ]
+        },
         "version": "1.3.0",
         "display": True,
-    }
+    },
 }
