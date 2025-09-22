@@ -212,58 +212,59 @@ for name, params in wms_sources.items():
         if len(urls) > 1:
             multi_source = True
 
-        for i, url in enumerate(urls):
+        try:
+            for i, url in enumerate(urls):
 
-            if "?" in url:
-                base_url = f"{url}&lang={lang}"
-            else:
-                base_url = f"{url}?lang={lang}"
-
-            try:
-                wms = WebMapService(base_url, version=params["version"])
-            except Exception as e:
-                LOGGER.warning(f"Ignoring source {name} due to error: {e}")
-                # remove source from wms sources configurations
-                sources_to_remove.append(name)
-                break
-
-            if name != "Presets":
-                # get all top level layer metadata objects
-                _, metadata = wms.items()[0]
-                top_level_items = findTopLevel(metadata)
-
-                get_capa_url = f"{base_url}&SERVICE=WMS&VERSION={params['version']}&REQUEST=GetCapabilities"
-                crs_values = extract_wms_crs(get_capa_url)
-                for crs in crs_values:
-                    if crs not in combined_crs_values:
-                        combined_crs_values.append(crs)
-
-                # iterate through top level items and recursively generate children as needed
-                if params.get("names"):
-                    wrapper_name = params["names"][lang][i]
-                    all_children = []
-                    for layer_metadata in top_level_items:
-                        if multi_source:
-                            all_children.extend(generate_layer_dict([layer_metadata], url))
-                        else:
-                            all_children.extend(generate_layer_dict([layer_metadata]))
-                    wrapper_layer = {
-                        "Title": wrapper_name,
-                        "Name": wrapper_name,
-                        "isLeaf": False,
-                        "children": all_children
-                    }
-                    combined_layers.append(wrapper_layer)
+                if "?" in url:
+                    base_url = f"{url}&lang={lang}"
                 else:
-                    for layer_metadata in top_level_items:
-                        if multi_source:
-                            combined_layers.extend(generate_layer_dict([layer_metadata], url))
-                        else:
-                            combined_layers.extend(generate_layer_dict([layer_metadata]))
+                    base_url = f"{url}?lang={lang}"
 
-                for _, metadata in wms.items():
-                    if not metadata.layers:
-                        combined_layers_dict[metadata.name] = metadata.title
+                wms = WebMapService(base_url, version=params["version"])
+
+                if name != "Presets":
+                    # get all top level layer metadata objects
+                    _, metadata = wms.items()[0]
+                    top_level_items = findTopLevel(metadata)
+
+                    get_capa_url = f"{base_url}&SERVICE=WMS&VERSION={params['version']}&REQUEST=GetCapabilities"
+                    crs_values = extract_wms_crs(get_capa_url)
+                    for crs in crs_values:
+                        if crs not in combined_crs_values:
+                            combined_crs_values.append(crs)
+
+                    # iterate through top level items and recursively generate children as needed
+                    if params.get("names"):
+                        wrapper_name = params["names"][lang][i]
+                        all_children = []
+                        for layer_metadata in top_level_items:
+                            if multi_source:
+                                all_children.extend(generate_layer_dict([layer_metadata], url))
+                            else:
+                                all_children.extend(generate_layer_dict([layer_metadata]))
+                        wrapper_layer = {
+                            "Title": wrapper_name,
+                            "Name": wrapper_name,
+                            "isLeaf": False,
+                            "children": all_children
+                        }
+                        combined_layers.append(wrapper_layer)
+                    else:
+                        for layer_metadata in top_level_items:
+                            if multi_source:
+                                combined_layers.extend(generate_layer_dict([layer_metadata], url))
+                            else:
+                                combined_layers.extend(generate_layer_dict([layer_metadata]))
+
+                    for _, metadata in wms.items():
+                        if not metadata.layers:
+                            combined_layers_dict[metadata.name] = metadata.title
+
+        except Exception as e:
+            LOGGER.warning(f"Ignoring source {name} due to error: {e}")
+            # remove source from wms sources configurations
+            sources_to_remove.append(name)
+            break
 
         if name != "Presets":
             name = name.lower()
