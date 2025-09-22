@@ -101,12 +101,12 @@ wms_sources = {
         ],
         "names": {
             "fr": [
-                "Aéroports canadiens",
+                "Aéroports canadiens (NRCan)",
                 "Modèle numérique d'élévation de moyenne résolution (MNEMR) - Série CanÉlévation",
                 "QC MRNF - Territory",
             ],
             "en": [
-                "Canadian Airports",
+                "Canadian Airports (NRCan)",
                 "Medium Resolution Digital Elevation Model (MRDEM) - CanElevation Series",
                 "QC MRNF - Territoire",
             ]
