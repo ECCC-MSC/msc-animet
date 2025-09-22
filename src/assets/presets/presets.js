@@ -775,6 +775,32 @@ export default {
           ],
         },
         {
+          Title_en: 'CIN',
+          Title_fr: 'CIN',
+          Name: 'CIN',
+          Img: 'CIN',
+          isLeaf: false,
+          children: [
+            {
+              Title: 'RDPS.CONV - CIN for a surface based parcel [J/kg]',
+              Name: 'RDPS.CONV_SFC-CIN',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: true,
+              opacity: 0.75,
+            },
+            {
+              Title: 'RDPS.ETA - Sea level pressure (contour) [Pa]',
+              Name: 'RDPS.ETA_PN',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
+              currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.75,
+            },
+          ],
+        },
+        {
           Title_en: 'LI',
           Title_fr: 'LI',
           Name: 'LI',
