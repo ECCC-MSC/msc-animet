@@ -722,8 +722,8 @@ export default {
       isPreset: true,
       children: [
         {
-          Title_en: 'Humidex at 2 m (experimental)',
-          Title_fr: 'Humidex à 2 m (expérimental)',
+          Title_en: 'Humidex at 2 m',
+          Title_fr: 'Humidex à 2 m',
           Name: 'Humidex 2m',
           Img: 'Humidex 2m',
           isLeaf: false,
