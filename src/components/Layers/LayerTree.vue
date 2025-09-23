@@ -193,7 +193,7 @@ export default {
       return [queryUrl, xmlName]
     },
     async requestLayerData(eventData) {
-      const { layer, autoPlay = false, range = undefined } = eventData
+      const { layer, autoPlay = false, rangeValues = undefined } = eventData
       if (this.playState === 'play') {
         this.emitter.emit('toggleAnimation')
       }
@@ -318,7 +318,7 @@ export default {
               layerData,
               source,
               autoPlay,
-              range,
+              rangeValues,
             })
           } catch (err) {
             this.removeLayer(layer.Name)

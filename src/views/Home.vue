@@ -209,7 +209,7 @@ export default {
       if (snapped) {
         this.layerSnapped = true
       }
-      let range
+      let rangeValues
       if (this.layerCount === 0) {
         if (this.play) {
           this.emitter.emit('changeTab')
@@ -217,58 +217,40 @@ export default {
           this.emitter.emit('collapseMenu', true)
         }
         if (this.range !== undefined && !this.layerSnapped) {
-          let [first, current, last, step] = this.range.split(',')
+          let [range, current, last, step] = this.range.split(',')
           step = step.trim()
 
           const isValidIndex = (value) => {
-            return value === 'l' || Number.isInteger(Number(value))
+            if (value === 'l') return true
+            const num = Number(value)
+            return Number.isInteger(num) && num >= 0
           }
           const parseIndex = (value) => {
             return value === 'l' ? 'l' : Number(value)
           }
 
           if (
-            isValidIndex(first) &&
+            isValidIndex(range) &&
             isValidIndex(current) &&
             isValidIndex(last)
           ) {
-            first = parseIndex(first)
+            range = parseIndex(range)
             current = parseIndex(current)
             last = parseIndex(last)
+
+            if (range === 'l') {
+              range = 0
+            }
+
+            rangeValues = [range, current, last, step]
             try {
               // Attempt Duration.fromISO to make sure the step is valid
               Duration.fromISO(step)
-              let rangeValid = false
-
-              const compareValues = (a, b) => {
-                if (a === 'l' && b === 'l') return 0
-                if (a === 'l') return 1
-                if (b === 'l') return -1
-                return a - b
-              }
-
-              if (
-                compareValues(first, current) <= 0 &&
-                compareValues(current, last) <= 0
-              ) {
-                // Also ensure numeric values are >= 0
-                const numericValues = [first, current, last].filter(
-                  (v) => v !== 'l',
-                )
-                if (numericValues.every((v) => v >= 0)) {
-                  rangeValid = true
-                }
-              }
-              if (rangeValid) {
-                range = [first, current, last, step]
-              } else {
-                range = undefined
-              }
             } catch {
-              range = undefined
+              rangeValues = undefined
             }
           } else {
-            range = undefined
+            rangeValues = undefined
           }
         }
       }
@@ -292,7 +274,7 @@ export default {
       this.emitter.emit('permaLinkLayer', {
         layer,
         autoPlay,
-        range,
+        rangeValues,
       })
     },
     findInTree(items, key) {
