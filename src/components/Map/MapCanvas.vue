@@ -436,7 +436,7 @@ export default {
       }
     },
     async buildLayer(eventData) {
-      const { layerData, source: wmsSource, autoPlay, range } = eventData
+      const { layerData, source: wmsSource, autoPlay, rangeValues } = eventData
       let imageLayer = null
       imageLayer = new OLImage({
         source: new ImageWMS({
@@ -521,11 +521,11 @@ export default {
           imageLayer,
           layerData,
           autoPlay,
-          range,
+          rangeValues,
         })
       } else {
         this.$mapCanvas.mapObj.addLayer(imageLayer)
-        if (autoPlay || range) {
+        if (autoPlay || rangeValues) {
           await new Promise((resolve) =>
             this.$mapCanvas.mapObj.once('rendercomplete', resolve),
           )
@@ -533,16 +533,21 @@ export default {
             this.emitter.emit('toggleAnimation')
             this.store.setCollapsedControls(true)
           }
-          if (range) {
-            let [first, current, last, step] = range
+          if (rangeValues) {
+            let [range, current, last, step] = rangeValues
             if (this.uniqueTimestepsList.includes(step)) {
               this.changeMapTime(step)
               const extentLength = this.mapTimeSettings.Extent.length - 1
-              if (first === 'l' || first > extentLength) {
-                first = extentLength
-              }
               if (last === 'l' || last > extentLength) {
                 last = extentLength
+              }
+              let first = last - range
+              if (first < 0) {
+                first = 0
+                last = range
+                if (last > extentLength) {
+                  last = extentLength
+                }
               }
               this.$nextTick(() => {
                 this.store.setDatetimeRangeSlider([first, last])
@@ -550,6 +555,8 @@ export default {
               })
               if (current === 'l' || current > extentLength) {
                 current = extentLength
+              } else if (current < first) {
+                current = first
               }
               this.store.setMapTimeIndex(current)
             }

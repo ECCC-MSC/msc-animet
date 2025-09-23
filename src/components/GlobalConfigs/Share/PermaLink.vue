@@ -243,18 +243,17 @@ export default {
           let first = this.datetimeRangeSlider[0]
           let current = this.mapTimeSettings.DateIndex
           let last = this.datetimeRangeSlider[1]
+          let range = last - first
           const extentLength = this.mapTimeSettings.Extent.length - 1
-          if (first === extentLength) {
-            first = 'l'
-            current = 'l'
-            last = 'l'
-          } else if (current === extentLength) {
+
+          if (current === extentLength) {
             current = 'l'
             last = 'l'
           } else if (last === extentLength) {
             last = 'l'
           }
-          permalinktemp += `&range=${first},${current},${last},${this.mapTimeSettings.Step}`
+
+          permalinktemp += `&range=${range},${current},${last},${this.mapTimeSettings.Step}`
         }
 
         this.router.replace({
