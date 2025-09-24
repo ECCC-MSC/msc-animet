@@ -26,12 +26,28 @@
 <script>
 import { useI18n } from 'vue-i18n'
 import { isDarkTheme } from '@/components/Composables/isDarkTheme'
+import { onMounted, onBeforeUnmount } from 'vue'
 
 export default {
   setup() {
     const { t } = useI18n()
-
     const { isDark, theme } = isDarkTheme()
+
+    const channel = new BroadcastChannel('theme-channel')
+
+    const checkTheme = (event) => {
+      if (event.data.type === 'theme-change') {
+        const requestedTheme = event.data.theme
+        const currentTheme = theme.global.name.value
+
+        if (
+          requestedTheme !== currentTheme &&
+          ['light', 'dark'].includes(requestedTheme)
+        ) {
+          toggleThemeDarkMode()
+        }
+      }
+    }
 
     const toggleThemeDarkMode = () => {
       theme.global.name.value = isDark.value ? 'light' : 'dark'
@@ -59,6 +75,16 @@ export default {
     } else {
       theme.global.name.value = userThemeChoice
     }
+
+    onMounted(() => {
+      channel.addEventListener('message', checkTheme)
+      channel.postMessage({ type: 'get-theme' })
+    })
+
+    onBeforeUnmount(() => {
+      channel.removeEventListener('message', checkTheme)
+      channel.close()
+    })
 
     return {
       isDark,
