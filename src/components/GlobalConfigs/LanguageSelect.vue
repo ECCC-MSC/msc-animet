@@ -14,6 +14,19 @@
 <script>
 export default {
   inject: ['store'],
+  data() {
+    return {
+      channel: new BroadcastChannel('language-channel'),
+    }
+  },
+  mounted() {
+    this.channel.addEventListener('message', this.checkLang)
+    this.channel.postMessage({ type: 'get-language' })
+  },
+  beforeUnmount() {
+    this.channel.removeEventListener('message', this.checkLang)
+    this.channel.close()
+  },
   methods: {
     changeLang() {
       if (this.$i18n.locale === 'en') {
@@ -25,6 +38,16 @@ export default {
       }
       localStorage.setItem('user-lang', this.$i18n.locale)
       this.emitter.emit('localeChange')
+    },
+    checkLang(event) {
+      if (event.data.type === 'language-change') {
+        const requestedLang = event.data.language
+        const currentLang = this.$i18n.locale
+
+        if (requestedLang !== currentLang) {
+          this.changeLang()
+        }
+      }
     },
   },
   computed: {
