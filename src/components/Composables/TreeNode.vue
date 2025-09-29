@@ -123,10 +123,12 @@ const presetSelected = (node) => {
   )
 }
 
-const multiAddLock = ref(false)
+const multiAddLock = computed(() => store.getMultiAddLock)
+const setMultiAddLock = (value) => store.setMultiAddLock(value)
+
 const handleMultiAdd = (node) => {
   if (!multiAddLock.value) {
-    multiAddLock.value = true
+    setMultiAddLock(true)
     const selected = presetSelected(node)
     const nodeChildren = node.children.map((child) => child.Name)
 
@@ -158,7 +160,7 @@ const handleMultiAdd = (node) => {
       }
     }
     setTimeout(() => {
-      multiAddLock.value = false
+      setMultiAddLock(false)
     }, 500)
   }
 }

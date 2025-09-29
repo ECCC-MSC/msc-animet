@@ -100,6 +100,7 @@ export const useStore = defineStore('store', {
     modelRunMessages: null,
     MP4ProgressPercent: 0,
     MP4URL: null,
+    multiAddLock: false,
     outputDate: null,
     outputFormat: 'MP4',
     outputSize: null,
@@ -154,6 +155,7 @@ export const useStore = defineStore('store', {
     getModelRunMessages: (state) => state.modelRunMessages,
     getMP4ProgressPercent: (state) => state.MP4ProgressPercent,
     getMP4URL: (state) => state.MP4URL,
+    getMultiAddLock: (state) => state.multiAddLock,
     getOutputDate: (state) => state.outputDate,
     getOutputFormat: (state) => state.outputFormat,
     getOutputSize: (state) => state.outputSize,
@@ -296,6 +298,9 @@ export const useStore = defineStore('store', {
     },
     setMP4URL(URL) {
       this.MP4URL = URL
+    },
+    setMultiAddLock(locked) {
+      this.multiAddLock = locked
     },
     setOutputDate(newOutputDate) {
       this.outputDate = newOutputDate
