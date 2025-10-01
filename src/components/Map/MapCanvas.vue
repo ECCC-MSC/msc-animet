@@ -491,7 +491,7 @@ export default {
         if (this.isAnimating && this.playState !== 'play') return
         const url = e.target.getUrl()
         const [key, values] = Object.entries(this.wmsSources).find(
-          ([key, value]) => key !== 'Presets' && value.url === url,
+          ([key, value]) => key !== 'Presets' && value.urls.includes(url),
         )
         let layerName
         if (values['source_validation']) {
