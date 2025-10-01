@@ -1,5 +1,59 @@
 # Release Notes
 
+## Version 2.4.0 (2025-10-02)
+
+### New Features
+- Pre-fetching of images
+- New and improved presets with preset opacities
+- Drag and drop GeoJSON, GPX, IGC, KML and TopoJSON onto any AniMet display
+- Customize the playback speed
+
+### Enhancements
+- Extrapolation layers added to radar Snow and radar Rain presets
+- Layers that are not showed because they are out of bounds will also be greyed out in the config panel
+- Reduced minimum time between time jumps from 1 sec to 250ms when playing
+- Added "range" permalink that remebers indices of time controls
+- Moved GFI source name to its own property
+- Added basemap+color and projection preferences if AniMet loads from a URL without any parameters
+- Improved centering when AniMet is loaded from a permalink with a projection but without an extent
+- Boundaries overlay now added by default and reduced its line thickness
+- Overlays selection now added to localstorage handling
+- Various Vue3 Composition API changes and minor code changes
+- Added playback speed and looping to localstorage parameters
+- Added model run inside the permalink
+- Layer's default time no longer changed according to model run, now it only changes if its default time is lower/higher than the time range's min/max
+- Legend size automatically decreased based on height compared to screen size as well
+- Side panel now has a bigger minimum size for vertically small displays
+- LayerTree, LayerConfig and AnimationConfig modifications to adjust menu height to make them fully usable on smaller displays
+- SidePanel modifications to add a secondary scrollbar for the treeview on smaller screens to allow for a min-height on the treeview
+- Removed permalink range check when a layer is snapped
+- Animation configuration panel now enabled as soon as any layers are added
+- Loading bar now only showing if the loading time is at least 100ms to prevent flashing
+- Remove GEBCO from list of available WMS sources due to frequent query fails
+- There can now be more than one source per config
+- Added airports and NRCan medium resolution DEM layers as new sources
+- Added broadcast channels to change theme and language from an iframe
+
+### Bug Fixes
+- Fixed permalink with `play=1` affecting playback
+- Fixed permalink projection that caused issues when switching back to EPSG:3857
+- Fixed localstorage (cookies) issue with presets when there is an updated AniMet build
+- Added attrs in the unhandled error log for debugging
+- Changed splice to filter to fix potential race condition when multiple layers fail at once
+- Fixed layer loading error for internal WMS sources
+- Fixed EPSG:3857 not having a defined tilegrid for simplified basemaps causing contours to be slightly off
+- Fixed permalink last index issue caused by a refresh
+- Fixed bug where the controller option switches would not remember their position after closing and re-opening the menu
+- Fixed bug that would stop animation when collapsing/opening the time controls while looping
+- Fixed legendDisplayed parameter not performing a proper boolean check
+- Fixed bug where the animation rectangle preview would not adjust correctly when no time enabled layers were added
+- Fixed bug where the image output would still contain the source because the check wasn't being made for non time-enabled layers
+- Fixed bug where layers with a query pattern would fail to be removed when a preset was added
+- Fixed interval display to be rounded in the UI in case of weird timesteps like 1.911111
+- Fixed generate script error handling
+- Fixed an issue with `multiAddLock` not working with presets
+- Fixed `url` to `urls` in error handler after the multi-source changes for the Others section
+
 ## Version 2.3.4 (2025-06-19)
 
 ### Bug Fixes
