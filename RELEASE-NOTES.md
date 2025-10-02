@@ -1,5 +1,10 @@
 # Release Notes
 
+## Version 2.4.1 (2025-10-02)
+
+### Bug Fixes
+- Changed deprecated styles for certain presets
+
 ## Version 2.4.0 (2025-10-02)
 
 ### New Features
