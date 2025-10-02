@@ -542,7 +542,7 @@ export default {
               isTemporal: true,
               isSnapped: true,
               legendDisplayed: true,
-              currentStyle: 'Precip-Accum_0-1000mm_Dis',
+              currentStyle: 'Precip-Accum_0to1000mm_Dis',
               opacity: 0.75,
             },
             {
@@ -869,7 +869,7 @@ export default {
               isTemporal: true,
               isSnapped: true,
               legendDisplayed: true,
-              currentStyle: 'FW-SFC-PM-DIFF_UGM3',
+              currentStyle: 'PM2.5_1to250ugm3',
               opacity: 1,
             },
             {
@@ -906,7 +906,7 @@ export default {
               isTemporal: true,
               isSnapped: true,
               legendDisplayed: true,
-              currentStyle: 'FW-SFC-PM-DIFF_UGM3',
+              currentStyle: 'PM10_1to250ugm3',
               opacity: 1,
             },
             {
