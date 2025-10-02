@@ -13,6 +13,7 @@ export default {
   "EPSG:3574",
   "EPSG:3575",
   "EPSG:3576",
+  "EPSG:3776",
   "EPSG:3857",
   "EPSG:3978",
   "EPSG:3995",
@@ -531,8 +532,8 @@ export default {
     ]
   },
   {
-    "Title": "Canadian Arctic Prediction System (CAPS) [3 km]",
-    "Name": "Canadian Arctic Prediction System (CAPS) [3 km]",
+    "Title": "Canadian Arctic Prediction System (CAPS) [3 km] [experimental]",
+    "Name": "Canadian Arctic Prediction System (CAPS) [3 km] [experimental]",
     "isLeaf": false,
     "children": [
       {
@@ -540,6 +541,12 @@ export default {
         "Name": "CAPS [experimental]",
         "isLeaf": false,
         "children": [
+          {
+            "Title": "CAPS - Aggregate land surface skin temperature [\u00b0C]",
+            "Name": "CAPS_3km_RadiativeTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
           {
             "Title": "CAPS - Air Density at 40m above ground [kg/m\u00b3]",
             "Name": "CAPS_3km_AirDensity_40m",
@@ -607,8 +614,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "CAPS - Cloud water [kg/m\u00b2]",
+            "Name": "CAPS_3km_CloudWater",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "CAPS - Convective available potential energy [J/kg]",
             "Name": "CAPS_3km_CAPE",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS - Convective precipitation accumulation [kg/m\u00b2]",
+            "Name": "CAPS_3km_ConvectivePrecip-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -697,6 +716,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "CAPS - Freezing rain accumulation [kg/m\u00b2]",
+            "Name": "CAPS_3km_FreezingRain-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "CAPS - Geopotential height (contour) [gpm]",
             "Name": "CAPS_3km_GeopotentialHeight-Contour",
             "isLeaf": true,
@@ -709,6 +734,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "CAPS - Ice pellets accumulation [kg/m\u00b2]",
+            "Name": "CAPS_3km_IcePellets-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "CAPS - Incoming visible accumulated flux at the top of atmosphere [J/m\u00b2]",
             "Name": "CAPS_3km_DownwardShortwaveRadiationFlux-Accum_NTAtm",
             "isLeaf": true,
@@ -717,6 +748,12 @@ export default {
           {
             "Title": "CAPS - Instantaneous precipitation rate [kg/(m\u00b2s)]",
             "Name": "CAPS_3km_PrecipRate",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS - Land/water proportion",
+            "Name": "CAPS_3km_LandWater-Proportion",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -751,6 +788,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "CAPS - Rain accumulation [kg/m\u00b2]",
+            "Name": "CAPS_3km_Rain-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "CAPS - Relative humidity at 2m above ground [%]",
             "Name": "CAPS_3km_RelativeHumidity_2m",
             "isLeaf": true,
@@ -775,6 +818,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "CAPS - Sea ice cover [Proportion]",
+            "Name": "CAPS_3km_SeaIceFraction",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "CAPS - Sea level pressure (contour) [Pa]",
             "Name": "CAPS_3km_Pressure_MSL-Contour",
             "isLeaf": true,
@@ -787,8 +836,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "CAPS - Sea water temperature [K]",
+            "Name": "CAPS_3km_SeaWaterTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "CAPS - Sensible heat net flux [W/m\u00b2]",
             "Name": "CAPS_3km_SensibleHeatNetFlux",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS - Snow accumulation [kg/m\u00b2]",
+            "Name": "CAPS_3km_Snow-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -801,6 +862,12 @@ export default {
           {
             "Title": "CAPS - Snow depth [m]",
             "Name": "CAPS_3km_SnowDepth",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS - Snow depth water equivalent [kg/m\u00b2]",
+            "Name": "CAPS_3km_SnowDepthWaterEquivalent",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -889,6 +956,18 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "CAPS - Thickness between 1000mb and 500mb (contour) [m]",
+            "Name": "CAPS_3km_Thickness-Contour_1000to500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS - Thickness between 1000mb and 500mb [m]",
+            "Name": "CAPS_3km_Thickness_1000to500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "CAPS - Total cloud cover [%]",
             "Name": "CAPS_3km_TotalCloudCover",
             "isLeaf": true,
@@ -937,6 +1016,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "CAPS - Wind gust estimate at 10m above surface [m/s]",
+            "Name": "CAPS_3km_WindGust_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "CAPS - Wind gust maximum [m/s]",
             "Name": "CAPS_3km_WindGust-Max_10m",
             "isLeaf": true,
@@ -945,6 +1030,18 @@ export default {
           {
             "Title": "CAPS - Wind gust minimum [m/s]",
             "Name": "CAPS_3km_WindGust-Min_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS - Wind speed at 10m above surface (contour) [m/s]",
+            "Name": "CAPS_3km_WindSpeed-Contour_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS - Wind speed at 10m above surface [m/s]",
+            "Name": "CAPS_3km_WindSpeed_10m",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -974,13 +1071,13 @@ export default {
           },
           {
             "Title": "CAPS - Wind speed at 120m above surface (contour) [m/s]",
-            "Name": "CAPS_3km_WindSpeed-Contour_10m",
+            "Name": "CAPS_3km_WindSpeed-Contour_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
             "Title": "CAPS - Wind speed at 120m above surface [m/s]",
-            "Name": "CAPS_3km_WindSpeed_10m",
+            "Name": "CAPS_3km_WindSpeed_120m",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -3162,6 +3259,217 @@ export default {
                 "isTemporal": true
               }
             ]
+          }
+        ]
+      },
+      {
+        "Title": "CAPS WEonG [experimental]",
+        "Name": "CAPS WEonG [experimental]",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "CAPS-WEonG - Character of precipitation",
+            "Name": "CAPS-WEonG_3km_PrecipCharacter",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Conditional amount of liquid precipitation [m]",
+            "Name": "CAPS-WEonG_3km_LiquidPrecipCondAmt",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Conditional amount of precipitation [m]",
+            "Name": "CAPS-WEonG_3km_PrecipCondAmt",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Conditional amount of solid ice pellets [m]",
+            "Name": "CAPS-WEonG_3km_IcePelletsCondAmt",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Conditional amount of solid snow [m]",
+            "Name": "CAPS-WEonG_3km_SolidSnowCondAmt",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Dew point temperature (contour) [\u00b0C]",
+            "Name": "CAPS-WEonG_3km_DewPointTemp-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Dew point temperature [\u00b0C]",
+            "Name": "CAPS-WEonG_3km_DewPointTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Dominant precipitation type",
+            "Name": "CAPS-WEonG_3km_DominantPrecipType",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Gust [m/s]",
+            "Name": "CAPS-WEonG_3km_WindGust",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Height of snow level [m]",
+            "Name": "CAPS-WEonG_3km_SnowLevelHeight",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Instantaneous precipitation type",
+            "Name": "CAPS-WEonG_3km_InstantPrecipType",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Land/water proportion",
+            "Name": "CAPS-WEonG_3km_LandWater-Proportion",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Model orography [m]",
+            "Name": "CAPS-WEonG_3km_Orography",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Presence of blowing snow",
+            "Name": "CAPS-WEonG_3km_BlowingSnowPresence",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Probability of blowing snow [%]",
+            "Name": "CAPS-WEonG_3km_BlowingSnow-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Probability of drizzle [%]",
+            "Name": "CAPS-WEonG_3km_Drizzle-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Probability of freezing drizzle [%]",
+            "Name": "CAPS-WEonG_3km_FreezingDrizzle-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Probability of freezing precipitation [%]",
+            "Name": "CAPS-WEonG_3km_FreezingPrecip-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Probability of freezing rain [%]",
+            "Name": "CAPS-WEonG_3km_FreezingRain-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Probability of ice pellets [%]",
+            "Name": "CAPS-WEonG_3km_IcePellets-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Probability of liquid precipitation [%]",
+            "Name": "CAPS-WEonG_3km_LiquidPrecip-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Probability of precipitation [%]",
+            "Name": "CAPS-WEonG_3km_Precip-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Probability of rain [%]",
+            "Name": "CAPS-WEonG_3km_Rain-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Probability of snow [%]",
+            "Name": "CAPS-WEonG_3km_Snow-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Probability of snow squalls [%]",
+            "Name": "CAPS-WEonG_3km_SnowSqualls-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Probability of thunderstorm occurence [%]",
+            "Name": "CAPS-WEonG_3km_Thunderstorm-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Sky state day/night (combined cloud cover and opacity)",
+            "Name": "CAPS-WEonG_3km_SkyState",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Temperature [\u00b0C]",
+            "Name": "CAPS-WEonG_3km_AirTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - The second most common precipitation type",
+            "Name": "CAPS-WEonG_3km_SecondMostCommonPrecipType",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Total precipitation intensity index",
+            "Name": "CAPS-WEonG_3km_TotalPrecipIntensityIndex",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Visibility through ice fog [m]",
+            "Name": "CAPS-WEonG_3km_IceFogVisibility",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Visibility through liquid fog [m]",
+            "Name": "CAPS-WEonG_3km_LiquidFogVisibility",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Wind direction [deg true]",
+            "Name": "CAPS-WEonG_3km_WindDir",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-WEonG - Wind speed [m/s]",
+            "Name": "CAPS-WEonG_3km_WindSpeed",
+            "isLeaf": true,
+            "isTemporal": true
           }
         ]
       }
@@ -5907,6 +6215,12 @@ export default {
         ]
       },
       {
+        "Title": "Coastal Flooding Risk Index",
+        "Name": "CoastalFloodRiskIndex",
+        "isLeaf": true,
+        "isTemporal": false
+      },
+      {
         "Title": "Current Conditions",
         "Name": "CURRENT_CONDITIONS",
         "isLeaf": true,
@@ -5939,32 +6253,6 @@ export default {
       {
         "Title": "Weather Alerts [experimental]",
         "Name": "ALERTS",
-        "isLeaf": true,
-        "isTemporal": false
-      }
-    ]
-  },
-  {
-    "Title": "Deterministic Hydrological Prediction System (DHPS) [1 km]",
-    "Name": "Deterministic Hydrological Prediction System (DHPS) [1 km]",
-    "isLeaf": false,
-    "children": [
-      {
-        "Title": "DHPS footprint",
-        "Name": "DHPS_Footprint",
-        "isLeaf": true,
-        "isTemporal": false
-      }
-    ]
-  },
-  {
-    "Title": "Ensemble Hydrological Prediction System (EHPS) [1 km]",
-    "Name": "Ensemble Hydrological Prediction System (EHPS) [1 km]",
-    "isLeaf": false,
-    "children": [
-      {
-        "Title": "EHPS footprint",
-        "Name": "EHPS_Footprint",
         "isLeaf": true,
         "isTemporal": false
       }
@@ -6107,7 +6395,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS.ETA - Freezing rain accumulation",
+            "Title": "GDPS.ETA - Freezing rain accumulation [kg/m\u00b2]",
             "Name": "GDPS.ETA_FR",
             "isLeaf": true,
             "isTemporal": true
@@ -11165,6 +11453,66 @@ export default {
         "isLeaf": false,
         "children": [
           {
+            "Title": "GDPS.DIAG - Freezing rain - 1-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_FR_PT1H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Freezing rain - 3-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_FR_PT3H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Freezing rain - 6-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_FR_PT6H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Freezing rain - 12-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_FR_PT12H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Freezing rain - 24-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_FR_PT24H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Ice pellets - 1-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_PE_PT1H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Ice pellets - 3-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_PE_PT3H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Ice pellets - 6-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_PE_PT6H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Ice pellets - 12-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_PE_PT12H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Ice pellets - 24-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_PE_PT24H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS.DIAG - Instantaneous precipitation type (3 hourly forecast)",
             "Name": "GDPS.DIAG_PTYPE.PT3H",
             "isLeaf": true,
@@ -11177,38 +11525,128 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG_NW - Significant type of precipitation for 1 hour intervals [mm/h]",
+            "Title": "GDPS.DIAG - Precipitation - 1-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_PR_PT1H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Precipitation - 3-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_PR_PT3H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Precipitation - 6-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_PR_PT6H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Precipitation - 12-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_PR_PT12H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Precipitation - 24-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_PR_PT24H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Rain - 1-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_RN_PT1H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Rain - 3-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_RN_PT3H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Rain - 6-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_RN_PT6H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Rain - 12-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_RN_PT12H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Rain - 24-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_RN_PT24H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Significant type of precipitation - 1-hour accumulation [mm]",
             "Name": "GDPS.DIAG_NW_PT1H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG_NW - Significant type of precipitation for 3 hour intervals [mm/3h]",
+            "Title": "GDPS.DIAG - Significant type of precipitation - 3-hour accumulation [mm]",
             "Name": "GDPS.DIAG_NW_PT3H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG_NW - Significant type of precipitation for 6 hour intervals [mm/6h]",
+            "Title": "GDPS.DIAG - Significant type of precipitation - 6-hour accumulation [mm]",
             "Name": "GDPS.DIAG_NW_PT6H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG_NW - Significant type of precipitation for 12 hour intervals [mm/12h]",
+            "Title": "GDPS.DIAG - Significant type of precipitation - 12-hour accumulation [mm]",
             "Name": "GDPS.DIAG_NW_PT12H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG_NW - Significant type of precipitation for 24 hour intervals [mm/24h]",
+            "Title": "GDPS.DIAG - Significant type of precipitation - 24-hour accumulation [mm]",
             "Name": "GDPS.DIAG_NW_PT24H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG_NW - Significant type of precipitation for 120 hour intervals [mm/120h]",
+            "Title": "GDPS.DIAG - Significant type of precipitation - 120-hour accumulation [mm]",
             "Name": "GDPS.DIAG_NW_PT120H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Snow - 1-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_SN_PT1H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Snow - 3-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_SN_PT3H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Snow - 6-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_SN_PT6H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Snow - 12-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_SN_PT12H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.DIAG - Snow - 24-hour accumulation [mm]",
+            "Name": "GDPS.DIAG_SN_PT24H",
             "isLeaf": true,
             "isTemporal": true
           }
@@ -12188,8 +12626,38 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDPS - Thickness between 850mb and 700mb (contour) [m] [experimental]",
+            "Name": "GDPS_15km_Thickness-Contour_850to700mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS - Thickness between 850mb and 700mb [m] [experimental]",
+            "Name": "GDPS_15km_Thickness_850to700mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS - Thickness between 1000mb and 500mb (contour) [m] [experimental]",
+            "Name": "GDPS_15km_Thickness-Contour_1000to500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDPS - Thickness between 1000mb and 500mb [m] [experimental]",
             "Name": "GDPS_15km_Thickness_1000to500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS - Thickness between 1000mb and 850mb (contour) [m] [experimental]",
+            "Name": "GDPS_15km_Thickness-Contour_1000to850mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS - Thickness between 1000mb and 850mb [m] [experimental]",
+            "Name": "GDPS_15km_Thickness_1000to850mb",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -12435,6 +12903,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "GDPS - Geopotential height at 5 mb (contour) [gpm] [experimental]",
+                "Name": "GDPS_15km_GeopotentialHeight-Contour_5mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS - Geopotential height at 5 mb [gpm] [experimental]",
+                "Name": "GDPS_15km_GeopotentialHeight_5mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "GDPS - Specific humidity at 5 mb [kg/kg] [experimental]",
                 "Name": "GDPS_15km_SpecificHumidity_5mb",
                 "isLeaf": true,
@@ -12491,13 +12971,13 @@ export default {
               },
               {
                 "Title": "GDPS - Geopotential height at 10 mb (contour) [gpm] [experimental]",
-                "Name": "GDPS_15km_GeopotentialHeight-Contour_5mb",
+                "Name": "GDPS_15km_GeopotentialHeight-Contour_10mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
                 "Title": "GDPS - Geopotential height at 10 mb [gpm] [experimental]",
-                "Name": "GDPS_15km_GeopotentialHeight_5mb",
+                "Name": "GDPS_15km_GeopotentialHeight_10mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -14876,6 +15356,12 @@ export default {
           },
           {
             "Title": "GDPS - CAPE using the virtual temperature correction for parcel lifted from the surface (contour) [J/kg] [experimental]",
+            "Name": "GDPS_15km_SFC-VT-CAPE-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS - CAPE using the virtual temperature correction for parcel lifted from the surface [J/kg] [experimental]",
             "Name": "GDPS_15km_SFC-VT-CAPE",
             "isLeaf": true,
             "isTemporal": true
@@ -15266,7 +15752,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Significant type of precipitation for 120 hour intervals [mm/120h] [experimental]",
+            "Title": "GDPS - Significant type of precipitation - 120-hour accumulation [mm] [experimental]",
             "Name": "GDPS_15km_PrecipType-Significant120h",
             "isLeaf": true,
             "isTemporal": true
@@ -18140,6 +18626,694 @@ export default {
         "Name": "GEPS_Footprint",
         "isLeaf": true,
         "isTemporal": false
+      }
+    ]
+  },
+  {
+    "Title": "Global Environmental eMuLator (GDPS-GEML) [25 km] [experimental]",
+    "Name": "Global Environmental eMuLator (GDPS-GEML) [25 km] [experimental]",
+    "isLeaf": false,
+    "children": [
+      {
+        "Title": "GDPS-GEML",
+        "Name": "GDPS-GEML",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "GDPS-GEML - Air temperature at 2m above ground (contour) [\u00b0C] [experimental]",
+            "Name": "GDPS-GEML_25km_AirTemp-Contour_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-GEML - Air temperature at 2m above ground [\u00b0C] [experimental]",
+            "Name": "GDPS-GEML_25km_AirTemp_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-GEML - Sea level pressure (contour) [Pa] [experimental]",
+            "Name": "GDPS-GEML_25km_Pressure_MSL-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-GEML - Sea level pressure [Pa] [experimental]",
+            "Name": "GDPS-GEML_25km_Pressure_MSL",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-GEML - Winds at 10m above surface [m/s] [experimental]",
+            "Name": "GDPS-GEML_25km_Winds_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          }
+        ]
+      },
+      {
+        "Title": "GDPS-GEML at pressure levels",
+        "Name": "GDPS-GEML at pressure levels",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "50",
+            "Name": "50",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GDPS-GEML - Air temperature at 50 mb (contour) [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp-Contour_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Air temperature at 50 mb [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 50 mb (contour) [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential-Contour_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential height at 50 mb [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Specific humidity at 50 mb [kg/kg] [experimental]",
+                "Name": "GDPS-GEML_25km_SpecificHumidity_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Vertical velocity at 50mb [Pa/s] [experimental]",
+                "Name": "GDPS-GEML_25km_VerticalVelocity_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Winds at 50 mb [m/s] [experimental]",
+                "Name": "GDPS-GEML_25km_Winds_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "100",
+            "Name": "100",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GDPS-GEML - Air temperature at 100 mb (contour) [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp-Contour_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Air temperature at 100 mb [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 100 mb (contour) [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential-Contour_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 100 mb [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Specific humidity at 100 mb [kg/kg] [experimental]",
+                "Name": "GDPS-GEML_25km_SpecificHumidity_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Vertical velocity at 100mb [Pa/s] [experimental]",
+                "Name": "GDPS-GEML_25km_VerticalVelocity_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Winds at 100 mb [m/s] [experimental]",
+                "Name": "GDPS-GEML_25km_Winds_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "150",
+            "Name": "150",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GDPS-GEML - Air temperature at 150 mb (contour) [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp-Contour_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Air temperature at 150 mb [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 150 mb (contour) [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential-Contour_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 150 mb [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Specific humidity at 150 mb [kg/kg] [experimental]",
+                "Name": "GDPS-GEML_25km_SpecificHumidity_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Vertical velocity at 150mb [Pa/s] [experimental]",
+                "Name": "GDPS-GEML_25km_VerticalVelocity_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Winds at 150 mb [m/s] [experimental]",
+                "Name": "GDPS-GEML_25km_Winds_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "200",
+            "Name": "200",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GDPS-GEML - Air temperature at 200 mb (contour) [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp-Contour_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Air temperature at 200 mb [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 200 mb (contour) [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential-Contour_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 200 mb [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Specific humidity at 200 mb [kg/kg] [experimental]",
+                "Name": "GDPS-GEML_25km_SpecificHumidity_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Vertical velocity at 200mb [Pa/s] [experimental]",
+                "Name": "GDPS-GEML_25km_VerticalVelocity_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Winds at 200 mb [m/s] [experimental]",
+                "Name": "GDPS-GEML_25km_Winds_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "250",
+            "Name": "250",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GDPS-GEML - Air temperature at 250 mb (contour) [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp-Contour_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Air temperature at 250 mb [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 250 mb (contour) [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential-Contour_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 250 mb [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Specific humidity at 250 mb [kg/kg] [experimental]",
+                "Name": "GDPS-GEML_25km_SpecificHumidity_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Vertical velocity at 250mb [Pa/s] [experimental]",
+                "Name": "GDPS-GEML_25km_VerticalVelocity_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Winds at 250 mb [m/s] [experimental]",
+                "Name": "GDPS-GEML_25km_Winds_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "300",
+            "Name": "300",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GDPS-GEML - Air temperature at 300 mb (contour) [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp-Contour_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Air temperature at 300 mb [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 300 mb (contour) [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential-Contour_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 300 mb [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Specific humidity at 300 mb [kg/kg] [experimental]",
+                "Name": "GDPS-GEML_25km_SpecificHumidity_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Vertical velocity at 300mb [Pa/s] [experimental]",
+                "Name": "GDPS-GEML_25km_VerticalVelocity_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Winds at 300 mb [m/s] [experimental]",
+                "Name": "GDPS-GEML_25km_Winds_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "400",
+            "Name": "400",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GDPS-GEML - Air temperature at 400 mb (contour) [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp-Contour_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Air temperature at 400 mb [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 400 mb (contour) [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential-Contour_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 400 mb [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Specific humidity at 400 mb [kg/kg] [experimental]",
+                "Name": "GDPS-GEML_25km_SpecificHumidity_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Vertical velocity at 400mb [Pa/s] [experimental]",
+                "Name": "GDPS-GEML_25km_VerticalVelocity_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Winds at 400 mb [m/s] [experimental]",
+                "Name": "GDPS-GEML_25km_Winds_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "500",
+            "Name": "500",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GDPS-GEML - Air temperature at 500 mb (contour) [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp-Contour_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Air temperature at 500 mb [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 500 mb (contour) [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential-Contour_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 500 mb [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Specific humidity at 500 mb [kg/kg] [experimental]",
+                "Name": "GDPS-GEML_25km_SpecificHumidity_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Vertical velocity at 500mb [Pa/s] [experimental]",
+                "Name": "GDPS-GEML_25km_VerticalVelocity_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Winds at 500 mb [m/s] [experimental]",
+                "Name": "GDPS-GEML_25km_Winds_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "600",
+            "Name": "600",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GDPS-GEML - Air temperature at 600 mb (contour) [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp-Contour_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Air temperature at 600 mb [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 600 mb (contour) [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential-Contour_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 600 mb [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Specific humidity at 600 mb [kg/kg] [experimental]",
+                "Name": "GDPS-GEML_25km_SpecificHumidity_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Vertical velocity at 600mb [Pa/s] [experimental]",
+                "Name": "GDPS-GEML_25km_VerticalVelocity_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Winds at 600 mb [m/s] [experimental]",
+                "Name": "GDPS-GEML_25km_Winds_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "700",
+            "Name": "700",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GDPS-GEML - Air temperature at 700 mb (contour) [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp-Contour_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Air temperature at 700 mb [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 700 mb (contour) [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential-Contour_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 700 mb [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Specific humidity at 700 mb [kg/kg] [experimental]",
+                "Name": "GDPS-GEML_25km_SpecificHumidity_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Vertical velocity at 700mb [Pa/s] [experimental]",
+                "Name": "GDPS-GEML_25km_VerticalVelocity_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Winds at 700 mb [m/s] [experimental]",
+                "Name": "GDPS-GEML_25km_Winds_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "850",
+            "Name": "850",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GDPS-GEML - Air temperature at 850 mb (contour) [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp-Contour_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Air temperature at 850 mb [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 850 mb (contour) [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential-Contour_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 850 mb [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Specific humidity at 850 mb [kg/kg] [experimental]",
+                "Name": "GDPS-GEML_25km_SpecificHumidity_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Vertical velocity at 850mb [Pa/s] [experimental]",
+                "Name": "GDPS-GEML_25km_VerticalVelocity_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Winds at 850 mb [m/s] [experimental]",
+                "Name": "GDPS-GEML_25km_Winds_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "925",
+            "Name": "925",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GDPS-GEML - Air temperature at 925 mb (contour) [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp-Contour_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Air temperature at 925 mb [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 925 mb (contour) [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential-Contour_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 925 mb [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Specific humidity at 925 mb [kg/kg] [experimental]",
+                "Name": "GDPS-GEML_25km_SpecificHumidity_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Vertical velocity at 925mb [Pa/s] [experimental]",
+                "Name": "GDPS-GEML_25km_VerticalVelocity_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Winds at 925 mb [m/s] [experimental]",
+                "Name": "GDPS-GEML_25km_Winds_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "1000",
+            "Name": "1000",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GDPS-GEML - Air temperature at 1000 mb (contour) [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp-Contour_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Air temperature at 1000 mb [\u00b0C] [experimental]",
+                "Name": "GDPS-GEML_25km_AirTemp_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 1000 mb (contour) [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential-Contour_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Geopotential at 1000 mb [gpm] [experimental]",
+                "Name": "GDPS-GEML_25km_Geopotential_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Specific humidity at 1000 mb [kg/kg] [experimental]",
+                "Name": "GDPS-GEML_25km_SpecificHumidity_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Vertical velocity at 1000mb [Pa/s] [experimental]",
+                "Name": "GDPS-GEML_25km_VerticalVelocity_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GDPS-GEML - Winds at 1000 mb [m/s] [experimental]",
+                "Name": "GDPS-GEML_25km_Winds_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -21319,8 +22493,158 @@ export default {
         "isLeaf": false,
         "children": [
           {
+            "Title": "HRDPS.DIAG - Freezing rain - 1-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_FR_PT1H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Freezing rain - 3-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_FR_PT3H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Freezing rain - 6-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_FR_PT6H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Freezing rain - 12-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_FR_PT12H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Freezing rain - 24-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_FR_PT24H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Ice pellets - 1-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_PE_PT1H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Ice pellets - 3-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_PE_PT3H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Ice pellets - 6-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_PE_PT6H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Ice pellets - 12-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_PE_PT12H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Ice pellets - 24-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_PE_PT24H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "HRDPS.DIAG - Instantaneous precipitation type",
             "Name": "HRDPS.CONTINENTAL.DIAG_PTYPE",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Precipitation - 1-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_PR_PT1H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Precipitation - 3-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_PR_PT3H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Precipitation - 6-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_PR_PT6H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Precipitation - 12-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_PR_PT12H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Precipitation - 24-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_PR_PT24H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Rain - 1-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_RN_PT1H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Rain - 3-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_RN_PT3H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Rain - 6-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_RN_PT6H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Rain - 12-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_RN_PT12H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Rain - 24-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_RN_PT24H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Snow - 1-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_SN_PT1H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Snow - 3-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_SN_PT3H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Snow - 6-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_SN_PT6H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Snow - 12-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_SN_PT12H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.DIAG - Snow - 24-hour accumulation [mm]",
+            "Name": "HRDPS.CONTINENTAL.DIAG_SN_PT24H",
             "isLeaf": true,
             "isTemporal": true
           }
@@ -21406,12 +22730,6 @@ export default {
           {
             "Title": "HRDPS-WEonG - Land/water proportion",
             "Name": "HRDPS-WEonG_2.5km_LandWater-Proportion",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "HRDPS-WEonG - Land/water proportion",
-            "Name": "HRDPS-WEonG_2.5km_WaterLand-Proportion",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -28296,6 +29614,547 @@ export default {
         "isLeaf": false,
         "children": [
           {
+            "Title": "RDPS - Aggregate surface radiative temperature [\u00b0C]",
+            "Name": "RDPS_10km_RadiativeTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Air temperature at 2m above ground (contour) [\u00b0C]",
+            "Name": "RDPS_10km_AirTemp-Contour_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Air temperature at 2m above ground [\u00b0C]",
+            "Name": "RDPS_10km_AirTemp_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Air temperature at 40m above ground (contour) [\u00b0C]",
+            "Name": "RDPS_10km_AirTemp-Contour_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Air temperature at 40m above ground [\u00b0C]",
+            "Name": "RDPS_10km_AirTemp_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Air temperature at 80m above ground (contour) [\u00b0C]",
+            "Name": "RDPS_10km_AirTemp-Contour_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Air temperature at 80m above ground [\u00b0C]",
+            "Name": "RDPS_10km_AirTemp_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Air temperature at 120m above ground (contour) [\u00b0C]",
+            "Name": "RDPS_10km_AirTemp-Contour_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Air temperature at 120m above ground [\u00b0C]",
+            "Name": "RDPS_10km_AirTemp_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Cloud water [kg/m\u00b2]",
+            "Name": "RDPS_10km_CloudWater_EAtm",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Convective precipitation accumulation [kg/m\u00b2]",
+            "Name": "RDPS_10km_ConvectivePrecip-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Dew point (contour) [\u00b0C]",
+            "Name": "RDPS_10km_DewPoint-Contour_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Dew point [\u00b0C]",
+            "Name": "RDPS_10km_DewPoint_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Dew point depression [\u00b0C]",
+            "Name": "RDPS_10km_DewPointDepression_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Downward longwave accumulated radiation flux at the surface [J/m\u00b2]",
+            "Name": "RDPS_10km_DownwardLongwaveRadiationFlux-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Downward shortwave accumulated radiation flux at the surface [J/m\u00b2]",
+            "Name": "RDPS_10km_DownwardShortwaveRadiationFlux-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Geopotential Height (contour) [gpm]",
+            "Name": "RDPS_10km_GeopotentialHeight-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Geopotential Height [gpm]",
+            "Name": "RDPS_10km_GeopotentialHeight",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Humidex at 2 m above ground",
+            "Name": "RDPS_10km_Humidex",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Incoming visible accumulated flux at the top of atmosphere [J/m\u00b2]",
+            "Name": "RDPS_10km_DownwardShortwaveRadiationFlux-Accum_NTAtm",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Instantaneous precipitation rate [kg/(m\u00b2s)]",
+            "Name": "RDPS_10km_PrecipRate",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Land/water proportion",
+            "Name": "RDPS_10km_LandWater-Proportion",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Latent heat net flux [W/m\u00b2]",
+            "Name": "RDPS_10km_LatentHeatNetFlux",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Net longwave accumulated radiation flux at the surface [J/m\u00b2]",
+            "Name": "RDPS_10km_NetLongwaveRadiationFlux-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Net shortwave accumulated radiation flux at the surface [J/m\u00b2]",
+            "Name": "RDPS_10km_NetShortwaveRadiationFlux-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Planetary boundary layer height [m]",
+            "Name": "RDPS_10km_PlanetaryBoundaryLayerHeight",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Pressure at 1 Potential Vorticity Unit (PVU) (contour) [Pa]",
+            "Name": "RDPS_10km_Pressure-PVU-1-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Pressure at 1 Potential Vorticity Unit (PVU) [Pa]",
+            "Name": "RDPS_10km_Pressure-PVU-1",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Pressure at 1.5 Potential Vorticity Unit (PVU) (contour) [Pa]",
+            "Name": "RDPS_10km_Pressure-PVU-1.5-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Pressure at 1.5 Potential Vorticity Unit (PVU) [Pa]",
+            "Name": "RDPS_10km_Pressure-PVU-1.5",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Pressure at 2 Potential Vorticity Unit (PVU) (contour) [Pa]",
+            "Name": "RDPS_10km_Pressure-PVU-2-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Pressure at 2 Potential Vorticity Unit (PVU) [Pa]",
+            "Name": "RDPS_10km_Pressure-PVU-2",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS.ETA - Pressure tendency [Pa/s]",
+            "Name": "RDPS_10km_Pressure-Trend_PT3H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Relative humidity [%]",
+            "Name": "RDPS_10km_RelativeHumidity_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Sea ice fraction",
+            "Name": "RDPS_10km_SeaIceFraction",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Sea level pressure (contour) [Pa]",
+            "Name": "RDPS_10km_Pressure_MSL-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Sea level pressure [Pa]",
+            "Name": "RDPS_10km_Pressure_MSL",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Sea water potential temperature at surface [K]",
+            "Name": "RDPS_10km_SeaWaterTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Sensible heat net flux [W/m\u00b2]",
+            "Name": "RDPS_10km_SensibleHeatNetFlux",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Snow density [kg/m\u00b3]",
+            "Name": "RDPS_10km_SnowDensity",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Snow depth [m]",
+            "Name": "RDPS_10km_SnowDepth",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Soil temperature near surface (0-10cm) [K]",
+            "Name": "RDPS_10km_SoilTemp_0-10cm",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Soil volumetric ice content at surface [m\u00b3/m\u00b3]",
+            "Name": "RDPS_10km_SoilVolumetricIceContent",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Soil volumetric water content (0-1cm) [m\u00b3/m\u00b3]",
+            "Name": "RDPS_10km_SoilVolumetricWaterContent_0-1cm",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Soil volumetric water content (0-10cm) [m\u00b3/m\u00b3]",
+            "Name": "RDPS_10km_SoilVolumetricWaterContent_0-10cm",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Specific Humidity at 2m above ground [kg/kg]",
+            "Name": "RDPS_10km_SpecificHumidity_2m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Specific Humidity at 40m above ground [kg/kg]",
+            "Name": "RDPS_10km_SpecificHumidity_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Specific Humidity at 80m above ground [kg/kg]",
+            "Name": "RDPS_10km_SpecificHumidity_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Specific Humidity at 120m above ground [kg/kg]",
+            "Name": "RDPS_10km_SpecificHumidity_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Specific humidity at the surface [kg/kg]",
+            "Name": "RDPS_10km_SpecificHumidity",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface albedo [%]",
+            "Name": "RDPS_10km_Albedo",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface and soil temperatures (Superficial) [K]",
+            "Name": "RDPS_10km_SoilTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface pressure (contour) [Pa]",
+            "Name": "RDPS_10km_Pressure-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface pressure [Pa]",
+            "Name": "RDPS_10km_Pressure",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Thickness between 850mb and 700mb (contour) [m]",
+            "Name": "RDPS_10km_Thickness-Contour_850to700mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Thickness between 850mb and 700mb [m]",
+            "Name": "RDPS_10km_Thickness_850to700mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Thickness between 1000mb and 500mb (contour) [m]",
+            "Name": "RDPS_10km_Thickness-Contour_1000to500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Thickness between 1000mb and 500mb [m]",
+            "Name": "RDPS_10km_Thickness_1000to500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Thickness between 1000mb and 850mb (contour) [m]",
+            "Name": "RDPS_10km_Thickness-Contour_1000to850mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Thickness between 1000mb and 850mb [m]",
+            "Name": "RDPS_10km_Thickness_1000to850mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Thunderstorm potential index George K",
+            "Name": "RDPS_10km_KIndex",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Thunderstorm potential index George K (contour)",
+            "Name": "RDPS_10km_KIndex-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Thunderstorm potential index total totals",
+            "Name": "RDPS_10km_TotalTotalsIndex",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Thunderstorm potential index total totals (contour)",
+            "Name": "RDPS_10km_TotalTotalsIndex-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Total cloud cover [%]",
+            "Name": "RDPS_10km_TotalCloudCover",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+            "Name": "RDPS_10km_UpwardLongwaveRadiationFlux_NTAtm",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - UV index",
+            "Name": "RDPS_10km_UVIndex",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - UV Index for clear-sky conditions",
+            "Name": "RDPS_10km_UVIndex-ClearSky",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Water runoff accumulation [mm]",
+            "Name": "RDPS_10km_Runoff-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind chill factor at surface [\u00b0C]",
+            "Name": "RDPS_10km_WindChill",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind direction at 10m above surface [deg true]",
+            "Name": "RDPS_10km_WindDir_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind direction at 40m above surface [deg true]",
+            "Name": "RDPS_10km_WindDir_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind direction at 80m above surface [deg true]",
+            "Name": "RDPS_10km_WindDir_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind direction at 120m above surface [deg true]",
+            "Name": "RDPS_10km_WindDir_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind gust estimate at 10m above surface [m/s]",
+            "Name": "RDPS_10km_WindGust_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind gust maximum [m/s]",
+            "Name": "RDPS_10km_WindGust-Max_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind gust minimum [m/s]",
+            "Name": "RDPS_10km_WindGust-Min_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind speed at 10m above surface (contour) [m/s]",
+            "Name": "RDPS_10km_WindSpeed-Contour_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind speed at 10m above surface [m/s]",
+            "Name": "RDPS_10km_WindSpeed_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind speed at 40m above surface (contour) [m/s]",
+            "Name": "RDPS_10km_WindSpeed-Contour_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind speed at 40m above surface [m/s]",
+            "Name": "RDPS_10km_WindSpeed_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind speed at 80m above surface (contour) [m/s]",
+            "Name": "RDPS_10km_WindSpeed-Contour_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind speed at 80m above surface [m/s]",
+            "Name": "RDPS_10km_WindSpeed_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind speed at 120m above surface (contour) [m/s]",
+            "Name": "RDPS_10km_WindSpeed-Contour_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Wind speed at 120m above surface [m/s]",
+            "Name": "RDPS_10km_WindSpeed_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Winds at 10m above surface [m/s]",
+            "Name": "RDPS_10km_Winds_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Winds at 40m above surface [m/s]",
+            "Name": "RDPS_10km_Winds_40m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Winds at 80m above surface [m/s]",
+            "Name": "RDPS_10km_Winds_80m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Winds at 120m above surface [m/s]",
+            "Name": "RDPS_10km_Winds_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          }
+        ]
+      },
+      {
+        "Title": "RDPS (legacy)",
+        "Name": "RDPS (legacy)",
+        "isLeaf": false,
+        "children": [
+          {
             "Title": "RDPS.ETA - Aggregate land surface skin temperature [\u00b0C]",
             "Name": "RDPS.ETA_SKINT",
             "isLeaf": true,
@@ -28858,6 +30717,2440 @@ export default {
       {
         "Title": "RDPS at pressure levels",
         "Name": "RDPS at pressure levels",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "1",
+            "Name": "1",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 1 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_1mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 1 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_1mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 1 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_1mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 1 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_1mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 1 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_1mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 1 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_1mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 1 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_1mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 1 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_1mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 1 mb [m/s]",
+                "Name": "RDPS_10km_Winds_1mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "5",
+            "Name": "5",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 5 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_5mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 5 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_5mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 5 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_5mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 5 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_5mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 5 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_5mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 5 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_5mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 5 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_5mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 5 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_5mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 5 mb [m/s]",
+                "Name": "RDPS_10km_Winds_5mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "10",
+            "Name": "10",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 10 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_10mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 10 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_10mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 10 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_10mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 10 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_10mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 10 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_10mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 10 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_10mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 10 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_10mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 10 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_10mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 10 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_10mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 10 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_10mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 10 mb [m/s]",
+                "Name": "RDPS_10km_Winds_10mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "20",
+            "Name": "20",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 20 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_20mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 20 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_20mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 20 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_20mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 20 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_20mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 20 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_20mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 20 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_20mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 20 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_20mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 20 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_20mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 20 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_20mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 20 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_20mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 20 mb [m/s]",
+                "Name": "RDPS_10km_Winds_20mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "30",
+            "Name": "30",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 30 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_30mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 30 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_30mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 30 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_30mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 30 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_30mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 30 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_30mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 30 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_30mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 30 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_30mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 30 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_30mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 30 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_30mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 30 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_30mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 30 mb [m/s]",
+                "Name": "RDPS_10km_Winds_30mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "50",
+            "Name": "50",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 50 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 50 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 50 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 50 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 50 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 50 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 50 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 50 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 50 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 50 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 50 mb [m/s]",
+                "Name": "RDPS_10km_Winds_50mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "100",
+            "Name": "100",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 100 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 100 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 100 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 100 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 100 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 100 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 100 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 100 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 100 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 100 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 100 mb [m/s]",
+                "Name": "RDPS_10km_Winds_100mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "150",
+            "Name": "150",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 150 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 150 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 150 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 150 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 150 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 150 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 150 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 150 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 150 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 150 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 150 mb [m/s]",
+                "Name": "RDPS_10km_Winds_150mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "175",
+            "Name": "175",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 175 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 175 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 175 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 175 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 175 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 175 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 175 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 175 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 175 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 175 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 175 mb [m/s]",
+                "Name": "RDPS_10km_Winds_175mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "200",
+            "Name": "200",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 200 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 200 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 200 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 200 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 200 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 200 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 200 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 200 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 200 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 200 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 200 mb [m/s]",
+                "Name": "RDPS_10km_Winds_200mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "225",
+            "Name": "225",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 225 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 225 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 225 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 225 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 225 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 225 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 225 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 225 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 225 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 225 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 225 mb [m/s]",
+                "Name": "RDPS_10km_Winds_225mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "250",
+            "Name": "250",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Absolute vorticity at 250 mb [s-1]",
+                "Name": "RDPS_10km_AbsoluteVorticity_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 250 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 250 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 250 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 250 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 250 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Isobaric vertical motion at 250 mb [Pa/s]",
+                "Name": "RDPS_10km_VerticalVelocity_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 250 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 250 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 250 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 250 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 250 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 250 mb [m/s]",
+                "Name": "RDPS_10km_Winds_250mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "275",
+            "Name": "275",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 275 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 275 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 275 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 275 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 275 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 275 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 275 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 275 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 275 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 275 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 275 mb [m/s]",
+                "Name": "RDPS_10km_Winds_275mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "300",
+            "Name": "300",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 300 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 300 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 300 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 300 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 300 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 300 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 300 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 300 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 300 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 300 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 300 mb [m/s]",
+                "Name": "RDPS_10km_Winds_300mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "350",
+            "Name": "350",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 350 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 350 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 350 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 350 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 350 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 350 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 350 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 350 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 350 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 350 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 350 mb [m/s]",
+                "Name": "RDPS_10km_Winds_350mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "400",
+            "Name": "400",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 400 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 400 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 400 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 400 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 400 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 400 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 400 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 400 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 400 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 400 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 400 mb [m/s]",
+                "Name": "RDPS_10km_Winds_400mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "450",
+            "Name": "450",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 450 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 450 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 450 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 450 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 450 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 450 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 450 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 450 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 450 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 450 mb [m/s]",
+                "Name": "RDPS_10km_Winds_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "500",
+            "Name": "500",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Absolute vorticity at 500 mb [s-1]",
+                "Name": "RDPS_10km_AbsoluteVorticity_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 500 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 500 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 500 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 500 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 500 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Isobaric vertical motion at 500 mb [Pa/s]",
+                "Name": "RDPS_10km_VerticalVelocity_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 500 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 500 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 500 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 500 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 500 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 500 mb [m/s]",
+                "Name": "RDPS_10km_Winds_500mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "550",
+            "Name": "550",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 550 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 550 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 550 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 550 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 550 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 550 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 550 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 550 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 550 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 550 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 550 mb [m/s]",
+                "Name": "RDPS_10km_Winds_550mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "600",
+            "Name": "600",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 600 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 600 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 600 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 600 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 600 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 600 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 600 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 600 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 600 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 600 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 600 mb [m/s]",
+                "Name": "RDPS_10km_Winds_600mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "650",
+            "Name": "650",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 650 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 650 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 650 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 650 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 650 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 650 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 650 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 650 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 650 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 650 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 650 mb [m/s]",
+                "Name": "RDPS_10km_Winds_650mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "700",
+            "Name": "700",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Absolute vorticity at 700 mb [s-1]",
+                "Name": "RDPS_10km_AbsoluteVorticity_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 700 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 700 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 700 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 700 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 700 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Isobaric vertical motion at 700 mb [Pa/s]",
+                "Name": "RDPS_10km_VerticalVelocity_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 700 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 700 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 700 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 700 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 700 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 700 mb [m/s]",
+                "Name": "RDPS_10km_Winds_700mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "750",
+            "Name": "750",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 750 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 750 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 750 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 750 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 750 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 750 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 750 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 750 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 750 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 750 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 750 mb [m/s]",
+                "Name": "RDPS_10km_Winds_750mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "800",
+            "Name": "800",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 800 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 800 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 800 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 800 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 800 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 800 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 800 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 800 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 800 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 800 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 800 mb [m/s]",
+                "Name": "RDPS_10km_Winds_800mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "850",
+            "Name": "850",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Absolute vorticity at 850 mb [s-1]",
+                "Name": "RDPS_10km_AbsoluteVorticity_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 850 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 850 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 850 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 850 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 850 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Isobaric vertical motion at 850 mb [Pa/s]",
+                "Name": "RDPS_10km_VerticalVelocity_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 850 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 850 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 850 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 850 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 850 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 850 mb [m/s]",
+                "Name": "RDPS_10km_Winds_850mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "875",
+            "Name": "875",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 875 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 875 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 875 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 875 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 875 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 875 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 875 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 875 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 875 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 875 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 875 mb [m/s]",
+                "Name": "RDPS_10km_Winds_875mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "900",
+            "Name": "900",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 900 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 900 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 900 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 900 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 900 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 900 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 900 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 900 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 900 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 900 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 900 mb [m/s]",
+                "Name": "RDPS_10km_Winds_900mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "925",
+            "Name": "925",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 925 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 925 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 925 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 925 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 925 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 925 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 925 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 925 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 925 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 925 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 925 mb [m/s]",
+                "Name": "RDPS_10km_Winds_925mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "950",
+            "Name": "950",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 950 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 950 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 950 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 950 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 950 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 950 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 950 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 950 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 950 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 950 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 950 mb [m/s]",
+                "Name": "RDPS_10km_Winds_950mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "970",
+            "Name": "970",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 970 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 970 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 970 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 970 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 970 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 970 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 970 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 970 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 970 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 970 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 970 mb [m/s]",
+                "Name": "RDPS_10km_Winds_970mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "985",
+            "Name": "985",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 985 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 985 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 985 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 985 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 985 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 985 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 985 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 985 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 985 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 985 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 985 mb [m/s]",
+                "Name": "RDPS_10km_Winds_985mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "1000",
+            "Name": "1000",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 1000 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 1000 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 1000 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 1000 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 1000 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 1000 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 1000 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 1000 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 1000 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 1000 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 1000 mb [m/s]",
+                "Name": "RDPS_10km_Winds_1000mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "1015",
+            "Name": "1015",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Air temperature at 1015 mb (contour) [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp-Contour_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Air temperature at 1015 mb [\u00b0C]",
+                "Name": "RDPS_10km_AirTemp_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 1015 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 1015 mb (contour) [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight-Contour_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Geopotential height at 1015 mb [gpm]",
+                "Name": "RDPS_10km_GeopotentialHeight_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Relative humidity at 1015 mb [%]",
+                "Name": "RDPS_10km_RelativeHumidity_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Specific humidity at 1015 mb [kg/kg]",
+                "Name": "RDPS_10km_SpecificHumidity_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind direction at 1015 mb [\u00b0]",
+                "Name": "RDPS_10km_WindDir_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 1015 mb (contour) [m/s]",
+                "Name": "RDPS_10km_WindSpeed-Contour_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Wind speed at 1015 mb [m/s]",
+                "Name": "RDPS_10km_WindSpeed_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Winds at 1015 mb [m/s]",
+                "Name": "RDPS_10km_Winds_1015mb",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Title": "RDPS at pressure levels (legacy)",
+        "Name": "RDPS at pressure levels (legacy)",
         "isLeaf": false,
         "children": [
           {
@@ -31301,6 +35594,391 @@ export default {
         "isLeaf": false,
         "children": [
           {
+            "Title": "RDPS - CAPE for a parcel representing the mean of a layer (contour) [J/kg]",
+            "Name": "RDPS_10km_ML-CAPE-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - CAPE for a parcel representing the mean of a layer [J/kg]",
+            "Name": "RDPS_10km_ML-CAPE",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - CAPE for a surface based parcel (contour) [J/kg]",
+            "Name": "RDPS_10km_CAPE-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - CAPE for a surface based parcel [J/kg]",
+            "Name": "RDPS_10km_CAPE",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - CAPE for the most unstable parcel (contour) [J/kg]",
+            "Name": "RDPS_10km_MU-CAPE-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - CAPE for the most unstable parcel [J/kg]",
+            "Name": "RDPS_10km_MU-CAPE",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - CAPE for the most unstable parcel using the virtual temperature correction (contour) [J/kg]",
+            "Name": "RDPS_10km_MU-VT-CAPE-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - CAPE for the most unstable parcel using the virtual temperature correction [J/kg]",
+            "Name": "RDPS_10km_MU-VT-CAPE",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - CAPE using the virtual temperature correction for parcel lifted from the surface (contour) [J/kg]",
+            "Name": "RDPS_10km_SFC-VT-CAPE-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - CAPE using the virtual temperature correction for parcel lifted from the surface [J/kg]",
+            "Name": "RDPS_10km_SFC-VT-CAPE",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - CIN for a parcel representing the mean of a layer [J/kg]",
+            "Name": "RDPS_10km_ML-CIN",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - CIN for a surface based parcel [J/kg]",
+            "Name": "RDPS_10km_CIN",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - CIN for the most unstable parcel [J/kg]",
+            "Name": "RDPS_10km_MU-CIN",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - CIN for the most unstable parcel using the virtual temperature correction [J/kg]",
+            "Name": "RDPS_10km_MU-VT-CIN",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - CIN using the virtual temperature correction for parcel lifted from the surface [J/kg]",
+            "Name": "RDPS_10km_SFC-VT-CIN",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Dew point temperature of the most unstable parcel [\u00b0C]",
+            "Name": "RDPS_10km_MU-PRC-DPT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the equilibrium level for a parcel lifted from the surface [m AGL]",
+            "Name": "RDPS_10km_SFC-EL-HGT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the equilibrium level for a parcel representing the mean of a layer [m AGL]",
+            "Name": "RDPS_10km_ML-EL_HGT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the equilibrium level for the most unstable parcel [m AGL]",
+            "Name": "RDPS_10km_MU-EL",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the equilibrium level for the most unstable parcel using the virtual temperature correction [m AGL]",
+            "Name": "RDPS_10km_MU-VT-EL-HGT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the equilibrium level using the virtual temperature correction for a parcel lifted from the surface [m AGL]",
+            "Name": "RDPS_10km_SFC-VT-EL-HGT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the LCL for a parcel lifted from the surface (contour) [m AGL]",
+            "Name": "RDPS_10km_SFC-LCL-HGT-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the LCL for a parcel lifted from the surface [m AGL]",
+            "Name": "RDPS_10km_SFC-LCL-HGT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the LCL for a parcel representing the mean of a layer (contour) [m AGL]",
+            "Name": "RDPS_10km_ML-LCL_HGT-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the LCL for a parcel representing the mean of a layer [m AGL]",
+            "Name": "RDPS_10km_ML-LCL_HGT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the LCL for the most unstable parcel (contour) [m AGL]",
+            "Name": "RDPS_10km_MU-LCL-HGT-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the LCL for the most unstable parcel [m AGL]",
+            "Name": "RDPS_10km_MU-LCL-HGT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the level of free convection for a parcel lifted from the surface (contour) [m AGL]",
+            "Name": "RDPS_10km_SFC-LFC-HGT-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the level of free convection for a parcel lifted from the surface [m AGL]",
+            "Name": "RDPS_10km_SFC-LFC-HGT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the level of free convection for a parcel representing the mean of a layer (contour) [m AGL]",
+            "Name": "RDPS_10km_ML-LFC_HGT-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the level of free convection for a parcel representing the mean of a layer [m AGL]",
+            "Name": "RDPS_10km_ML-LFC_HGT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the level of free convection for the most unstable parcel (contour) [m AGL]",
+            "Name": "RDPS_10km_MU-LFC-HGT-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the level of free convection for the most unstable parcel [m AGL]",
+            "Name": "RDPS_10km_MU-LFC-HGT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the level of free convection for the most unstable parcel using the virtual temperature correction (contour) [m AGL]",
+            "Name": "RDPS_10km_MU-VT-LFC-HGT-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the level of free convection for the most unstable parcel using the virtual temperature correction [m AGL]",
+            "Name": "RDPS_10km_MU-VT-LFC-HGT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the level of free convection using the virtual temperature correction for a parcel lifted from the surface (contour) [m AGL]",
+            "Name": "RDPS_10km_SFC-VT-LFC-HGT-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the level of free convection using the virtual temperature correction for a parcel lifted from the surface [m AGL]",
+            "Name": "RDPS_10km_SFC-VT-LFC-HGT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the most unstable parcel (contour) [m AGL]",
+            "Name": "RDPS_10km_MU-PRC-HGT-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the most unstable parcel [m AGL]",
+            "Name": "RDPS_10km_MU-PRC-HGT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500 mb",
+            "Name": "RDPS_10km_SFC-VT-LI_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500 mb (contour)",
+            "Name": "RDPS_10km_SFC-VT-LI-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb",
+            "Name": "RDPS_10km_LiftedIndex-MU-VT_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb (contour)",
+            "Name": "RDPS_10km_LiftedIndex-MU-VT-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for the most unstable parcel, with reference level 500 mb",
+            "Name": "RDPS_10km_MU-LI_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for the most unstable parcel, with reference level 500 mb (contour)",
+            "Name": "RDPS_10km_MU-LI-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Pressure of the most unstable parcel [hPa]",
+            "Name": "RDPS_10km_MU-PRC-PRES",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Showalter Index using the virtual temperature correction, with reference level 500 mb",
+            "Name": "RDPS_10km_VT-SHWINX_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Showalter Index using the virtual temperature correction, with reference level 500 mb (contour)",
+            "Name": "RDPS_10km_VT-SHWINX-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Showalter Index, with reference level 500 mb (contour) [K]",
+            "Name": "RDPS_10km_ShowalterIndex-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Showalter Index, with reference level 500 mb [K]",
+            "Name": "RDPS_10km_ShowalterIndex_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface lifted index, with reference level 400 mb",
+            "Name": "RDPS_10km_ML-LI_400mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface lifted index, with reference level 400 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_400mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface lifted index, with reference level 500 mb",
+            "Name": "RDPS_10km_ML-LI_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface lifted index, with reference level 500 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface lifted index, with reference level 600 mb",
+            "Name": "RDPS_10km_ML-LI_600mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface lifted index, with reference level 600 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_600mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface lifted index, with reference level 650 mb",
+            "Name": "RDPS_10km_ML-LI_650mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface lifted index, with reference level 650 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_650mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface lifted index, with reference level 700 mb",
+            "Name": "RDPS_10km_ML-LI_700mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface lifted index, with reference level 700 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_700mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface lifted index, with reference level 800 mb",
+            "Name": "RDPS_10km_ML-LI_800mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Surface lifted index, with reference level 800 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_800mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Temperature of the most unstable parcel [\u00b0C]",
+            "Name": "RDPS_10km_MU-PRC-TMP",
+            "isLeaf": true,
+            "isTemporal": true
+          }
+        ]
+      },
+      {
+        "Title": "RDPS convective fields (legacy)",
+        "Name": "RDPS convective fields (legacy)",
+        "isLeaf": false,
+        "children": [
+          {
             "Title": "RDPS.CONV - CAPE for a parcel representing the mean of a layer (contour) [J/kg]",
             "Name": "RDPS.CONV_ML-CAPE-CONTOUR",
             "isLeaf": true,
@@ -31857,6 +36535,234 @@ export default {
       {
         "Title": "RDPS diagnostic fields",
         "Name": "RDPS diagnostic fields",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "RDPS products at 1 hour intervals",
+            "Name": "RDPS products at 1 hour intervals",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Freezing rain - 1-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_FreezingRain-Accum-1h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Ice pellets - 1-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_IcePellets-Accum-1h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Precipitation - 1-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_Precip-Accum1h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Rain - 1-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_Rain-Accum1h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Snow - 1-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_Snow-Accum1h",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "RDPS products at 3 hours intervals",
+            "Name": "RDPS products at 3 hours intervals",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Freezing rain - 3-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_FreezingRain-Accum-3h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Ice pellets - 3-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_IcePellets-Accum-3h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Precipitation - 3-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_Precip-Accum3h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Rain - 3-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_Rain-Accum3h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Snow - 3-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_Snow-Accum3h",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "RDPS products at 6 hours intervals",
+            "Name": "RDPS products at 6 hours intervals",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Freezing rain - 6-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_FreezingRain-Accum-6h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Ice pellets - 6-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_IcePellets-Accum-6h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Precipitation - 6-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_Precip-Accum6h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Rain - 6-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_Rain-Accum6h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Snow - 6-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_Snow-Accum6h",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "RDPS products at 12 hours intervals",
+            "Name": "RDPS products at 12 hours intervals",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Freezing rain - 12-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_FreezingRain-Accum-12h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Ice pellets - 12-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_IcePellets-Accum-12h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Precipitation - 12-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_Precip-Accum12h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Rain - 12-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_Rain-Accum12h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Snow - 12-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_Snow-Accum12h",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "RDPS products at 24 hours intervals",
+            "Name": "RDPS products at 24 hours intervals",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "RDPS - Freezing rain - 24-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_FreezingRain-Accum-24h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Ice pellets - 24-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_IcePellets-Accum-24h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Precipitation - 24-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_Precip-Accum24h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Rain - 24-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_Rain-Accum24h",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Snow - 24-hour accumulation [kg/m\u00b2]",
+                "Name": "RDPS_10km_Snow-Accum24h",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "RDPS - Freezing rain accumulation [kg/m\u00b2]",
+            "Name": "RDPS_10km_FreezingRain-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Ice pellets accumulation [kg/m\u00b2]",
+            "Name": "RDPS_10km_IcePellets-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Instantaneous precipitation type",
+            "Name": "RDPS_10km_PrecipType-Instant",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Precipitation accumulation [kg/m\u00b2]",
+            "Name": "RDPS_10km_Precip-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Rain accumulation [kg/m\u00b2]",
+            "Name": "RDPS_10km_Rain-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Snow accumulation [kg/m\u00b2]",
+            "Name": "RDPS_10km_Snow-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          }
+        ]
+      },
+      {
+        "Title": "RDPS diagnostic fields (legacy)",
+        "Name": "RDPS diagnostic fields (legacy)",
         "isLeaf": false,
         "children": [
           {
@@ -44163,12 +49069,6 @@ export default {
       {
         "Title": "WCPS-Ocean-Atmosphere footprint",
         "Name": "WCPS-Ocean-Atm_Footprint",
-        "isLeaf": true,
-        "isTemporal": false
-      },
-      {
-        "Title": "WCPS-Rivers footprint",
-        "Name": "WCPS-Rivers_Footprint",
         "isLeaf": true,
         "isTemporal": false
       }
