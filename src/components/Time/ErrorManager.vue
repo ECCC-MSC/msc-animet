@@ -213,7 +213,8 @@ export default {
         ) {
           this.updateTimeInformation(layer, e)
         } else if (
-          serviceException.textContent.includes('Unable to access file')
+          serviceException.textContent.includes('Unable to access file') ||
+          serviceException.textContent.includes('File not found')
         ) {
           if (layer.get('layerIsTemporal')) {
             this.expiredTimestepList.push(layer.get('layerTimeStep'))
