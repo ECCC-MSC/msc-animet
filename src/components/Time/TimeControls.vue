@@ -123,19 +123,22 @@
 import OLImage from 'ol/layer/Image'
 
 import datetimeManipulations from '../../mixins/datetimeManipulations'
+import WMSTileCache from '@/utils/WMSTileCache'
 
 export default {
   inject: ['store'],
   mixins: [datetimeManipulations],
   data() {
     return {
-      prefetchTimeouts: [],
       screenWidth: window.innerWidth,
       stopPrefetch: false,
+      tileCache: new WMSTileCache(),
+      currentExtent: null,
     }
   },
   mounted() {
     this.emitter.on('addTemporalLayer', this.layerTimeManager)
+    this.emitter.on('clearLayerCache', this.clearLayerCache)
     this.emitter.on('fixLayerTimes', this.mapControls)
     this.emitter.on('playheadDrag', this.toggleDrag)
     this.emitter.on('timeLayerRemoved', this.removedTimeLayerManager)
@@ -143,6 +146,7 @@ export default {
   },
   beforeUnmount() {
     this.emitter.off('addTemporalLayer', this.layerTimeManager)
+    this.emitter.off('clearLayerCache', this.clearLayerCache)
     this.emitter.off('fixLayerTimes', this.mapControls)
     this.emitter.off('playheadDrag', this.toggleDrag)
     this.emitter.off('timeLayerRemoved', this.removedTimeLayerManager)
@@ -256,8 +260,18 @@ export default {
           imageLayer.get('layerDateArray')[imageLayer.get('layerDateIndex')],
         )
       }
+
       this.emitter.emit('timeLayerAdded', imageLayer.get('layerName'))
       this.$mapCanvas.mapObj.addLayer(imageLayer)
+
+      imageLayer
+        .getSource()
+        .setImageLoadFunction(
+          this.createImageLoaderWithCache(
+            this.tileCache,
+            imageLayer.get('layerName'),
+          ),
+        )
 
       if (autoPlay || rangeValues) {
         await new Promise((resolve) =>
@@ -479,11 +493,17 @@ export default {
       }
     },
     togglePrefetch() {
-      this.prefetchTimeouts.forEach((timeout) => clearTimeout(timeout))
-      this.prefetchTimeouts = []
       if (!this.stopPrefetch) {
         this.$mapLayers.arr.forEach((layer) => {
           if (layer instanceof OLImage) {
+            const view = this.$mapCanvas.mapObj.getView()
+            const extent = view.calculateExtent()
+            const extentKey = extent.join(',')
+
+            if (this.currentExtent !== extentKey) {
+              this.tileCache.clear()
+              this.currentExtent = extentKey
+            }
             if (
               layer.get('layerVisibilityOn') &&
               layer.get('layerIsTemporal')
@@ -495,7 +515,9 @@ export default {
 
               // Build URL params
               const view = this.$mapCanvas.mapObj.getView()
-              const extent = view.calculateExtent()
+              const extent = view
+                .calculateExtent()
+                .map((coord) => Math.round(coord * 1e6) / 1e6)
               const [width, height] = this.$mapCanvas.mapObj.getSize()
               const currentStyle = layer.get('layerCurrentStyle')
 
@@ -615,23 +637,21 @@ export default {
                 }
               }
               indicesToCache.forEach((targetIndex, i) => {
-                const timeoutId = setTimeout(() => {
-                  this.cacheTimestep(
-                    layer,
-                    dateArray[targetIndex],
-                    urlParams,
-                    targetIndex,
-                  )
-                }, i * 50)
-
-                this.prefetchTimeouts.push(timeoutId)
+                this.cacheTimestep(
+                  layer,
+                  dateArray[targetIndex],
+                  urlParams,
+                  targetIndex,
+                )
               })
             }
           }
         })
       }
     },
-    cacheTimestep(layer, date, urlParams) {
+    async cacheTimestep(layer, date, urlParams) {
+      const layerName = layer.get('layerName')
+
       urlParams['TIME'] = this.getProperDateString(
         date,
         layer.get('layerDateFormat'),
@@ -646,9 +666,63 @@ export default {
 
       const wmsUrl = `${layer.getSource().getUrl()}?${queryString}`
 
-      const img = new Image()
-      img.crossOrigin = 'anonymous'
-      img.src = wmsUrl
+      await this.tileCache.preload(layerName, wmsUrl)
+    },
+    createImageLoaderWithCache(tileCache, layerName) {
+      return function (image, src) {
+        const normalizedSrc = src.replace(/BBOX=([^&]+)/g, (_, bbox) => {
+          const decoded = decodeURIComponent(bbox)
+          const coords = decoded.split(',').map((coord) => {
+            const num = parseFloat(coord)
+            return Math.round(num * 1e6) / 1e6
+          })
+          return `BBOX=${encodeURIComponent(coords.join(','))}`
+        })
+        const imageElement = image.getImage()
+        const cachedBlob = tileCache.get(layerName, normalizedSrc)
+        if (cachedBlob) {
+          const objectUrl = URL.createObjectURL(cachedBlob)
+          imageElement.src = objectUrl
+          imageElement.onload = function () {
+            URL.revokeObjectURL(objectUrl)
+          }
+        } else if (tileCache.has(layerName, normalizedSrc)) {
+          const pendingRequest = tileCache.pendingRequests.get(normalizedSrc)
+
+          if (pendingRequest && pendingRequest.promise) {
+            pendingRequest.promise
+              .then(() => {
+                const blob = tileCache.get(layerName, normalizedSrc)
+                if (blob) {
+                  const objectUrl = URL.createObjectURL(blob)
+                  imageElement.src = objectUrl
+                  imageElement.onload = function () {
+                    URL.revokeObjectURL(objectUrl)
+                  }
+                } else {
+                  imageElement.src = src
+                }
+              })
+              .catch(() => {
+                imageElement.src = src
+              })
+          } else {
+            imageElement.src = src
+          }
+        } else {
+          imageElement.src = src
+        }
+      }
+    },
+    clearLayerCache(layerInfo) {
+      const { layerName, date } = layerInfo
+      if (layerName === undefined) {
+        this.tileCache.clear()
+      } else if (date) {
+        this.tileCache.deleteTile(layerName, date)
+      } else {
+        this.tileCache.clearLayer(layerName)
+      }
     },
     updateScreenSize() {
       this.screenWidth = window.innerWidth
