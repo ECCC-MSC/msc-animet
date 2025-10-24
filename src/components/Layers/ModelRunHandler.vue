@@ -91,6 +91,9 @@ export default {
         })
         this.emitter.emit('fixLayerTimes')
       }
+      this.emitter.emit('clearLayerCache', {
+        layerName: this.item.get('layerName'),
+      })
     },
   },
   computed: {

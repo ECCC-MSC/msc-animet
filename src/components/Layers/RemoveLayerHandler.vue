@@ -26,6 +26,9 @@ export default {
   methods: {
     removeLayerHandler(removedLayer) {
       this.emitter.emit('removeLayer', removedLayer)
+      this.emitter.emit('clearLayerCache', {
+        layerName: removedLayer.get('layerName'),
+      })
     },
   },
   computed: {
