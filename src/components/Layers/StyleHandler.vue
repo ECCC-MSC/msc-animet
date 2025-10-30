@@ -98,6 +98,10 @@ export default {
         layerCurrentStyle: styleName,
       })
       layer.getSource().updateParams({ STYLES: styleName })
+
+      this.emitter.emit('clearLayerCache', {
+        layerName: layer.get('layerName'),
+      })
       this.emitter.emit('updatePermalink')
     },
     getImgSrc(legendUrl) {

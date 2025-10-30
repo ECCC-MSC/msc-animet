@@ -433,6 +433,19 @@ export default {
           layer.getSource().getParams().DIM_REFERENCE_TIME === undefined ||
           !sameMR
         ) {
+          if (newMRs === null) {
+            this.emitter.emit('clearLayerCache', {
+              layerName: layer.get('layerName'),
+              date: this.getProperDateString(
+                layer.get('layerDateArray')[0],
+                layer.get('layerDateFormat'),
+              ),
+            })
+          } else {
+            this.emitter.emit('clearLayerCache', {
+              layerName: layer.get('layerName'),
+            })
+          }
           config = this.createTimeLayerConfig(
             layerData.Dimension.Dimension_time,
           )

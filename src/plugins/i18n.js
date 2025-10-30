@@ -1,3 +1,12 @@
+// Prevent i18n from spamming performance measurements
+const originalMeasure = performance.measure.bind(performance)
+performance.measure = function (name, ...args) {
+  if (typeof name === 'string' && name.includes('intlify')) {
+    return
+  }
+  return originalMeasure(name, ...args)
+}
+
 import { createI18n } from 'vue-i18n'
 import localeData from '../locales/importLocaleFiles'
 
@@ -34,4 +43,5 @@ export default createI18n({
   fallbackLocale: 'en',
   messages,
   silentFallbackWarn: true,
+  measurementWarning: false,
 })

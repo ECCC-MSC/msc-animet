@@ -79,6 +79,8 @@ export default {
         projection: newProjection,
       })
       this.$mapCanvas.mapObj.setView(newView)
+
+      this.emitter.emit('clearLayerCache')
       this.$mapLayers.arr.forEach((layer) => {
         if (layer.get('layerWmsIndex') === -1) {
           const source = layer.getSource()
