@@ -1,5 +1,13 @@
 # Release Notes
 
+## Version 2.4.2 (2025-10-30)
+
+### Bug Fixes
+- Updated layer tree with GeoMet-Weather 2.36.4
+- Renamed "Animate" to "Export" tab for clarity
+- Added another case for error handling if one of the timesteps isn't accessible
+- Removed unusable channels for the theme and language that only work for same-origin domain
+
 ## Version 2.4.1 (2025-10-02)
 
 ### Bug Fixes
