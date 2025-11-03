@@ -12,6 +12,10 @@
         <template v-slot:activator="{ props: tooltipProps }">
           <v-btn
             class="icon-size"
+            :class="{
+              'icon-highlight-dark': isDark,
+              'icon-highlight-light': !isDark,
+            }"
             variant="text"
             :color="color"
             v-bind="{ ...menuProps, ...tooltipProps }"
@@ -82,11 +86,11 @@ import { isDarkTheme } from '@/components/Composables/isDarkTheme'
 
 export default {
   inject: ['store'],
+  props: ['item', 'color'],
   setup() {
     const { isDark } = isDarkTheme()
     return { isDark }
   },
-  props: ['item', 'color'],
   data() {
     return {
       menuVisible: false,
