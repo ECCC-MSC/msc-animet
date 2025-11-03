@@ -3,6 +3,10 @@
     <template v-slot:activator="{ props }">
       <v-btn
         class="icon-size"
+        :class="{
+          'icon-highlight-dark': isDark,
+          'icon-highlight-light': !isDark,
+        }"
         icon="mdi-opacity"
         variant="text"
         v-bind="props"
@@ -40,9 +44,15 @@
 </template>
 
 <script>
+import { isDarkTheme } from '@/components/Composables/isDarkTheme'
+
 export default {
   inject: ['store'],
   props: ['item', 'color'],
+  setup() {
+    const { isDark } = isDarkTheme()
+    return { isDark }
+  },
   computed: {
     isAnimating() {
       return this.store.getIsAnimating

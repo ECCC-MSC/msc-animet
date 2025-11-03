@@ -3,6 +3,10 @@
     <template v-slot:activator="{ props }">
       <v-btn
         class="icon-size"
+        :class="{
+          'icon-highlight-dark': isDark,
+          'icon-highlight-light': !isDark,
+        }"
         variant="text"
         :color="color"
         icon="mdi-close"
@@ -18,11 +22,16 @@
 
 <script>
 import datetimeManipulations from '../../mixins/datetimeManipulations'
+import { isDarkTheme } from '@/components/Composables/isDarkTheme'
 
 export default {
   inject: ['store'],
-  mixins: [datetimeManipulations],
   props: ['item', 'color'],
+  mixins: [datetimeManipulations],
+  setup() {
+    const { isDark } = isDarkTheme()
+    return { isDark }
+  },
   methods: {
     removeLayerHandler(removedLayer) {
       this.emitter.emit('removeLayer', removedLayer)

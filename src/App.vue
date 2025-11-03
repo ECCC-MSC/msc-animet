@@ -72,6 +72,13 @@ export default {
   background-color: rgb(var(--v-theme-snackbarBackground)) !important;
   color: rgb(var(--v-theme-snackbarText)) !important;
 }
+
+.icon-highlight-dark:hover {
+  background-color: #505050;
+}
+.icon-highlight-light:hover {
+  background-color: #cacaca;
+}
 </style>
 
 <style lang="scss">
