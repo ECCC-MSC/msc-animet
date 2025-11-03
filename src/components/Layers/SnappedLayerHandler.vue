@@ -10,6 +10,10 @@
         :icon="color !== '' ? 'mdi-clock-check' : 'mdi-clock'"
         :color="color"
         :disabled="isAnimating"
+        :class="{
+          'icon-highlight-dark': isDark,
+          'icon-highlight-light': !isDark,
+        }"
         class="icon-size"
         variant="text"
         @click="snapLayerToAnimation(item)"
@@ -81,11 +85,16 @@
 
 <script>
 import datetimeManipulations from '../../mixins/datetimeManipulations'
+import { isDarkTheme } from '@/components/Composables/isDarkTheme'
 
 export default {
   inject: ['store'],
-  mixins: [datetimeManipulations],
   props: ['item', 'color'],
+  mixins: [datetimeManipulations],
+  setup() {
+    const { isDark } = isDarkTheme()
+    return { isDark }
+  },
   data() {
     return {
       showTooltip: false,

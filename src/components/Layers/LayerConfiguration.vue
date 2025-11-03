@@ -6,7 +6,7 @@
           v-for="(item, index) in layerListReversed"
           :key="item.get('layerName')"
           outlined
-          class="pl-0"
+          class="pl-0 layer-item"
           :class="{
             'item-padding':
               !isAnimating || configPanelHover || playState !== 'play',
@@ -14,6 +14,8 @@
             'pr-0': numLayers !== 0,
             'text-disabled':
               item.get('layerDateIndex') < 0 || !item.get('layerVisibilityOn'),
+            'layer-item-dark': isDark,
+            'layer-item-light': !isDark,
           }"
         >
           <template
@@ -91,6 +93,10 @@
               <v-btn
                 v-if="index !== 0"
                 :disabled="isAnimating"
+                :class="{
+                  'icon-highlight-dark': isDark,
+                  'icon-highlight-light': !isDark,
+                }"
                 @click="changeLayerOrder(index - 1)"
                 icon="mdi-arrow-up"
                 variant="text"
@@ -99,6 +105,10 @@
               <v-btn
                 v-if="index + 1 < numLayers"
                 :disabled="isAnimating"
+                :class="{
+                  'icon-highlight-dark': isDark,
+                  'icon-highlight-light': !isDark,
+                }"
                 @click="changeLayerOrder(index)"
                 icon="mdi-arrow-down"
                 variant="text"
@@ -114,10 +124,15 @@
 
 <script>
 import datetimeManipulations from '../../mixins/datetimeManipulations'
+import { isDarkTheme } from '@/components/Composables/isDarkTheme'
 
 export default {
   inject: ['store'],
   mixins: [datetimeManipulations],
+  setup() {
+    const { isDark } = isDarkTheme()
+    return { isDark }
+  },
   methods: {
     changeLayerOrder(index) {
       let reverseIndex = this.numLayers - index - 1
@@ -173,6 +188,17 @@ export default {
 .item-padding {
   padding-bottom: 2px;
   padding-top: 2px;
+}
+.layer-item {
+  transition: background-color 0.2s ease;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+.layer-item-light:hover {
+  background-color: #e0e0e0;
+}
+.layer-item-dark:hover {
+  background-color: #404040;
 }
 .layer-subtitle {
   margin-top: -4px;
