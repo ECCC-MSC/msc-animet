@@ -1,12 +1,12 @@
 <template>
   <v-card class="radius">
-    <div class="ml-4 pa-0 scroll">
+    <div class="pa-0 scroll">
       <transition-group name="list" tag="div">
         <v-list-item
           v-for="(item, index) in layerListReversed"
           :key="item.get('layerName')"
           outlined
-          class="pl-0 layer-item"
+          class="ml-4 pl-0 layer-item"
           :class="{
             'item-padding':
               !isAnimating || configPanelHover || playState !== 'play',
@@ -195,9 +195,30 @@ export default {
   margin-bottom: 4px;
 }
 .layer-item-light:hover {
-  background-color: #e0e0e0;
+  background-color: transparent;
 }
 .layer-item-dark:hover {
+  background-color: transparent;
+}
+.layer-item {
+  position: relative;
+}
+.layer-item-light:hover::before,
+.layer-item-dark:hover::before {
+  content: '';
+  position: absolute;
+  left: -16px;
+  right: 0;
+  top: 0;
+  bottom: -4px;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 4px;
+}
+.layer-item-light:hover::before {
+  background-color: #e0e0e0;
+}
+.layer-item-dark:hover::before {
   background-color: #404040;
 }
 .layer-subtitle {
