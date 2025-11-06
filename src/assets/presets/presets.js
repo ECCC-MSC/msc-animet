@@ -291,8 +291,8 @@ export default {
           ],
         },
         {
-          Title_en: 'GOES-East Natural Color & NightIR',
-          Title_fr: 'GOES-Est Couleur naturelle & IR de nuit',
+          Title_en: 'GOES-E Natural Color & NightIR',
+          Title_fr: 'GOES-E Couleur naturelle & IR de nuit',
           Name: 'GOES-East Natural Color NightIR',
           Img: 'GOES-East Natural Color NightIR',
           isLeaf: false,
@@ -315,8 +315,8 @@ export default {
           ],
         },
         {
-          Title_en: 'GOES-East Day Cloud Type/Night Microphysics',
-          Title_fr: 'GOES-Est Type de nuage de jour/Microphysique de nuit',
+          Title_en: 'GOES-E Day Cloud Type/Night Microphysics',
+          Title_fr: 'GOES-E Type nuages jour/Microphysique nuit',
           Name: 'GOES-East Day Cloud Type Night Microphysics',
           Img: 'GOES-East Day Cloud Type Night Microphysics',
           isLeaf: false,
@@ -324,6 +324,39 @@ export default {
             {
               Title: 'GOES-East Day Cloud Type/Night Microphysics [1 km]',
               Name: 'GOES-East_1km_DayCloudType-NightMicrophysics',
+              isLeaf: true,
+              isTemporal: true,
+              opacity: 1,
+            },
+          ],
+        },
+        {
+          Title_en: 'GOES-W Day Visibility/Night IR',
+          Title_fr: 'GOES-O Visibilité de jour/IR de nuit',
+          Name: 'GOES-West Day Visibility Night IR',
+          Img: 'GOES-West Day Visibility Night IR',
+          isLeaf: false,
+          children: [
+            {
+              Title: 'GOES-West Day visibility/Night IR [1 km]',
+              Name: 'GOES-West_1km_DayVis-NightIR',
+              isLeaf: true,
+              isTemporal: true,
+              opacity: 1,
+            },
+          ],
+        },
+        {
+          Title_en: 'GOES-W Sandwich Vis-IR/Night Microphysics IR',
+          Title_fr: 'GOES-O Sandwich vis-IR/Microphysique nuit IR',
+          Name: 'GOES-West Visible IR Sandwich Night Microphysics IR',
+          Img: 'GOES-West Visible IR Sandwich Night Microphysics IR',
+          isLeaf: false,
+          children: [
+            {
+              Title:
+                'GOES-West Visible IR Sandwich/Night Microphysics IR [1 km]',
+              Name: 'GOES-West_1km_VisibleIRSandwich-NightMicrophysicsIR',
               isLeaf: true,
               isTemporal: true,
               opacity: 1,
@@ -643,7 +676,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_4mb',
-              opacity: 0.75,
+              opacity: 0.5,
             },
             {
               Title:
@@ -652,7 +685,7 @@ export default {
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
-              opacity: 0.75,
+              opacity: 0.5,
             },
           ],
         },
