@@ -21,12 +21,12 @@ app.config.globalProperties.$animationCanvas = reactive({ mapObj: {} })
 app.config.globalProperties.emitter = emitter
 
 const originalConsoleError = console.error
-function customLog(...args) {
-  // OpenLayers added an annoying console.error everytime a WMS request
-  // returns XML even if it's handled so this code is there to silence it
-  if (!(args[0] instanceof DOMException)) originalConsoleError(...args)
+console.error = function (firstArg) {
+  // OpenLayers adds console.error for WMS XML responses - ignore these
+  if (!(firstArg instanceof DOMException)) {
+    Function.prototype.apply.call(originalConsoleError, console, arguments)
+  }
 }
-console.error = customLog
 
 const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
 const country = ct.getCountryForTimezone(timeZone)
