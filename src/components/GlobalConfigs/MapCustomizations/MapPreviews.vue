@@ -178,6 +178,9 @@ export default {
       },
       tilegrids: {
         'EPSG:3857': this.buildTilegrid([
+          -20037508.34, -20048966.1, 20037508.34, 20048966.1,
+        ]),
+        'EPSG:3857-Boundaries': this.buildTilegrid([
           -20037508.34, -20037508.34, 20037508.34, 20037508.34,
         ]),
         'EPSG:3978': this.buildTilegrid([
@@ -849,16 +852,24 @@ export default {
       const zIndex =
         sourceValues.zIndex || sourceValues.colors[colorName].zIndex
       let extent
+      let tileGrid = this.tilegrids[this.currentCRS]
       if (this.currentCRS === 'EPSG:3995') {
         extent = [-3299207.53, -3333134.03, 3299207.53, 3333134.03]
       } else if (this.currentCRS === 'EPSG:3978') {
         extent = [-7192737.96, -3004297.73, 5183275.29, 4484204.83]
+      } else if (this.currentCRS === 'EPSG:3857') {
+        if (
+          (source === 'Overlay' && colorName !== 'Places') ||
+          source === 'Simplified'
+        ) {
+          tileGrid = this.tilegrids['EPSG:3857-Boundaries']
+        }
       }
       return new VectorTileLayer({
         source: new VectorTileSource({
           format: new MVT(),
           url: displayCondition.replace('CRS', this.currentCRS.split(':')[1]),
-          tileGrid: this.tilegrids[this.currentCRS],
+          tileGrid: tileGrid,
           projection: this.currentCRS,
         }),
         extent: extent,
@@ -1027,26 +1038,36 @@ export default {
         .getArray()
         .forEach((layer) => {
           if (layer instanceof VectorTileLayer) {
-            const source = this.sources[layer.get('layerName').split('-')[0]]
-            const style = source.colors[layer.get('layerName').split('-')[1]]
+            const [layerSource, layerColor] = layer.get('layerName').split('-')
+            const source = this.sources[layerSource]
+            const style = source.colors[layerColor]
             const displayCondition =
               style.displayCondition || source.displayCondition
+
+            let extent
+            let tileGrid = this.tilegrids[this.currentCRS]
+            if (this.currentCRS === 'EPSG:3995') {
+              extent = [-3299207.53, -3333134.03, 3299207.53, 3333134.03]
+            } else if (this.currentCRS === 'EPSG:3978') {
+              extent = [-7192737.96, -3004297.73, 5183275.29, 4484204.83]
+            } else if (this.currentCRS === 'EPSG:3857') {
+              if (
+                (layerSource === 'Overlay' && layerColor !== 'Places') ||
+                layerSource === 'Simplified'
+              ) {
+                tileGrid = this.tilegrids['EPSG:3857-Boundaries']
+              }
+            }
+
             const newSource = new VectorTileSource({
               format: new MVT(),
               url: displayCondition.replace(
                 'CRS',
                 this.currentCRS.split(':')[1],
               ),
-              tileGrid: this.tilegrids[this.currentCRS],
+              tileGrid: tileGrid,
               projection: this.currentCRS,
             })
-
-            let extent
-            if (this.currentCRS === 'EPSG:3995') {
-              extent = [-3299207.53, -3333134.03, 3299207.53, 3333134.03]
-            } else if (this.currentCRS === 'EPSG:3978') {
-              extent = [-7192737.96, -3004297.73, 5183275.29, 4484204.83]
-            }
 
             layer.setSource(newSource)
             layer.setExtent(extent)
