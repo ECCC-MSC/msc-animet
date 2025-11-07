@@ -13,10 +13,12 @@
         </v-btn>
       </template>
       <v-card>
-        <v-toolbar dark color="black" density="comfortable">
-          <v-toolbar-title>{{ $t('Share') }}</v-toolbar-title>
+        <v-toolbar density="comfortable">
+          <v-toolbar-title class="on-surface">{{
+            $t('Share')
+          }}</v-toolbar-title>
           <v-spacer></v-spacer>
-          <v-btn icon="mdi-close" dark @click="closeAll"> </v-btn>
+          <v-btn class="on-surface" icon="mdi-close" @click="closeAll"> </v-btn>
         </v-toolbar>
         <v-card-text class="dialog-content">
           <v-spacer></v-spacer>
