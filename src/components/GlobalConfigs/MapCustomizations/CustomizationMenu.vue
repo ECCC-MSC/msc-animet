@@ -17,7 +17,7 @@
           <span>{{ $t('MapCustomizations') }}</span>
         </v-tooltip>
       </template>
-      <v-container @click.stop :class="getCurrentTheme" class="menu-container">
+      <v-container @click.stop class="menu-container bg-surface">
         <projection-handler />
         <v-switch
           v-model="graticules"
@@ -34,14 +34,8 @@
 </template>
 
 <script>
-import { isDarkTheme } from '@/components/Composables/isDarkTheme'
-
 export default {
   inject: ['store'],
-  setup() {
-    const { isDark } = isDarkTheme()
-    return { isDark }
-  },
   mounted() {
     window.addEventListener('keydown', this.closeMenu)
   },
@@ -59,9 +53,6 @@ export default {
   computed: {
     isAnimating() {
       return this.store.getIsAnimating
-    },
-    getCurrentTheme() {
-      return this.isDark ? 'bg-grey-darken-4' : 'bg-white'
     },
     graticules: {
       get() {

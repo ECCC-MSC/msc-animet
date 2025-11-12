@@ -26,17 +26,15 @@
         </template>
         <v-container
           @click.stop
-          :class="getCurrentTheme"
-          class="px-3 pt-3 pb-0 locale-treeview"
+          class="px-3 pt-3 pb-0 locale-treeview bg-surface"
         >
-          <div class="content-overlay" :class="getCurrentTheme"></div>
+          <div class="content-overlay bg-surface"></div>
           <v-text-field
             autofocus
             v-model="search"
             :label="$t('SearchTZ')"
             hide-details
-            class="ma-0 sticky"
-            :class="getCurrentTheme"
+            class="ma-0 sticky bg-surface"
             clearable
             clear-icon="mdi-close-circle-outline"
             density="compact"
@@ -76,15 +74,10 @@
 </template>
 
 <script>
-import { isDarkTheme } from '@/components/Composables/isDarkTheme'
 import { useI18n } from 'vue-i18n'
 
 export default {
   inject: ['store'],
-  setup() {
-    const { isDark } = isDarkTheme()
-    return { isDark }
-  },
   data() {
     return {
       activateNodeCheck: false,
@@ -238,9 +231,6 @@ export default {
     },
   },
   computed: {
-    getCurrentTheme() {
-      return this.isDark ? 'bg-grey-darken-4' : 'bg-white'
-    },
     getLabel() {
       if (this.timeFormat) return this.t('LocalTime')
       return 'UTC'
@@ -299,6 +289,16 @@ export default {
   min-width: 260px;
   max-height: 500px;
   overflow-y: auto;
+}
+.locale-treeview,
+.locale-treeview .v-icon,
+.locale-treeview .v-label,
+.locale-treeview .v-input,
+.locale-treeview .v-field {
+  color: rgba(
+    var(--v-theme-on-surface),
+    var(--v-high-emphasis-opacity)
+  ) !important;
 }
 .revert-button {
   position: absolute;

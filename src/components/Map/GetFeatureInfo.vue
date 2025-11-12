@@ -2,8 +2,7 @@
   <div
     id="popupGFI"
     ref="popupGFI"
-    class="ol-popup"
-    :class="getCurrentTheme"
+    class="ol-popup bg-surface"
     :style="popupStyle"
     v-show="items.length !== 0"
   >
@@ -146,9 +145,6 @@ export default {
         rep = rep.replace('W', 'O')
       }
       return rep
-    },
-    getCurrentTheme() {
-      return this.isDark ? 'custom-dark' : 'bg-white'
     },
     maplayersLength() {
       return this.$mapLayers.arr.length
@@ -471,6 +467,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
   width: v-bind(dividerWidth);
+  opacity: 0.3;
 }
 .divider-container {
   padding-left: 20px;

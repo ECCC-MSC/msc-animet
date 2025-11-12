@@ -32,7 +32,7 @@
         <span>{{ $t('LayerStyle') }}</span>
       </v-tooltip>
     </template>
-    <v-container @click.stop :class="getCurrentTheme" class="styles-container">
+    <v-container @click.stop class="styles-container bg-surface">
       <v-checkbox
         :disabled="isAnimating"
         :model-value="activeLegends.includes(item.get('layerName'))"
@@ -46,7 +46,7 @@
         :label="$t('DisplayLegend')"
       >
         <template v-slot:label>
-          <span :class="getCurrentTheme">{{ $t('DisplayLegend') }}</span>
+          <span class="bg-surface">{{ $t('DisplayLegend') }}</span>
         </template>
       </v-checkbox>
       <v-list
@@ -140,9 +140,6 @@ export default {
     },
     isAnimating() {
       return this.store.getIsAnimating
-    },
-    getCurrentTheme() {
-      return this.isDark ? 'bg-grey-darken-4' : 'bg-white'
     },
     selectedStyle() {
       return this.item
