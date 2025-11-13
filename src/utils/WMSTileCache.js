@@ -2,6 +2,8 @@ class WMSTileCache {
   constructor() {
     this.cache = new Map()
     this.pendingRequests = new Map()
+    this.ANOMALY_NEIGHBORS = 3 // Check 3 neighbors on each side
+    this.ANOMALY_THRESHOLD = 0.4 // 60% smaller than both neighbors
   }
 
   _getLayerCache(layerName) {
@@ -9,6 +11,36 @@ class WMSTileCache {
       this.cache.set(layerName, new Map())
     }
     return this.cache.get(layerName)
+  }
+
+  _getNeighborAverages(entries, index, neighborCount) {
+    const prevSizes = []
+    const nextSizes = []
+
+    for (let i = 1; i <= neighborCount; i++) {
+      const prev = entries[index - i]
+      if (prev) prevSizes.push(prev.size)
+      else break
+    }
+
+    for (let i = 1; i <= neighborCount; i++) {
+      const next = entries[index + i]
+      if (next) nextSizes.push(next.size)
+      else break
+    }
+
+    const avg = (arr) =>
+      arr.length > 0 ? arr.reduce((a, b) => a + b, 0) / arr.length : null
+
+    return {
+      prev: avg(prevSizes),
+      next: avg(nextSizes),
+    }
+  }
+
+  _extractTimestamp(url) {
+    const match = url.match(/TIME=([^&]+)/)
+    return match ? match[1] : null
   }
 
   has(layerName, url) {
@@ -91,13 +123,74 @@ class WMSTileCache {
 
     const layerCache = this.cache.get(layerName)
     let deleted = false
+
     if (layerCache) {
       const encoded = encodeURIComponent(dateSubstring)
+
       for (const key of Array.from(layerCache.keys())) {
-        if (key.includes(dateSubstring) || key.includes(encoded)) {
+        const timestamp = this._extractTimestamp(key)
+        const decodedTimestamp = decodeURIComponent(timestamp)
+        // Delete if exact match OR older than dateSubstring
+        if (
+          key.includes(dateSubstring) ||
+          key.includes(encoded) ||
+          (decodedTimestamp && decodedTimestamp <= dateSubstring)
+        ) {
           layerCache.delete(key)
           deleted = true
         }
+      }
+
+      const timeEntries = Array.from(layerCache.entries()).map(
+        ([url, blob]) => ({
+          time: this._extractTimestamp(url),
+          url,
+          size: blob.size,
+        }),
+      )
+      timeEntries.sort((a, b) => (a.time < b.time ? -1 : 1))
+
+      const toDelete = []
+      for (let i = 0; i < timeEntries.length; i++) {
+        const current = timeEntries[i]
+        const { prev, next } = this._getNeighborAverages(
+          timeEntries,
+          i,
+          this.ANOMALY_NEIGHBORS,
+        )
+
+        // Need at least one neighbor to compare
+        if (prev === null && next === null) continue
+
+        let isAnomalous = false
+
+        if (prev !== null && next !== null) {
+          const prevThreshold = prev * this.ANOMALY_THRESHOLD
+          const nextThreshold = next * this.ANOMALY_THRESHOLD
+          isAnomalous =
+            current.size < prevThreshold && current.size < nextThreshold
+        } else if (prev !== null || next !== null) {
+          const neighborSize = prev ?? next
+          const threshold = neighborSize * this.ANOMALY_THRESHOLD
+          isAnomalous = current.size < threshold
+        }
+
+        if (isAnomalous) {
+          console.warn(
+            `Detected anomalous timestep ${current.time}: ${current.size.toFixed(
+              0,
+            )} bytes (prev: ${prev?.toFixed(0) || 'N/A'}, next: ${
+              next?.toFixed(0) || 'N/A'
+            })`,
+          )
+          toDelete.push(current.url)
+        }
+      }
+
+      // Delete anomalous tiles so they can be re-queried
+      for (const url of toDelete) {
+        layerCache.delete(url)
+        deleted = true
       }
     }
 

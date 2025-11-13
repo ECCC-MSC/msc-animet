@@ -364,6 +364,9 @@ export default {
       this.updateContextMenu()
     },
     async removeLayerHandler(removedLayer) {
+      this.emitter.emit('clearLayerCache', {
+        layerName: removedLayer.get('layerName'),
+      })
       if (this.activeLegends.includes(removedLayer.get('layerName'))) {
         this.store.removeActiveLegend(removedLayer.get('layerName'))
       }

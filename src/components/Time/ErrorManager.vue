@@ -434,10 +434,14 @@ export default {
           !sameMR
         ) {
           if (newMRs === null) {
+            let dateDeletionIndex = 0
+            if (this.datetimeRangeSlider[0] > 0) {
+              dateDeletionIndex = this.datetimeRangeSlider[0] - 1
+            }
             this.emitter.emit('clearLayerCache', {
               layerName: layer.get('layerName'),
               date: this.getProperDateString(
-                layer.get('layerDateArray')[0],
+                this.mapTimeSettings.Extent[dateDeletionIndex],
                 layer.get('layerDateFormat'),
               ),
             })
