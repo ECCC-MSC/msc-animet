@@ -1,5 +1,17 @@
 # Release Notes
 
+## Version 2.4.3 (2025-11-14)
+
+### Bug Fixes
+- Fixed many caching issue related to cache clearing checks and caching strategy
+- Fixed GetFeatureInfo popup timing and triggering on Add panel
+- Fixed a small memory leak related to caching, i18n and error handling
+- Fixed hover effects in configuration and icon highlights
+- Fixed preset for significant precipitation type and GOES presets
+- Fixed placenames misplaced on map
+- Fixed dark mode and light mode color schemes
+
+
 ## Version 2.4.2 (2025-10-30)
 
 ### Bug Fixes
