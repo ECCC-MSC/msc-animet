@@ -495,107 +495,62 @@ export default {
     togglePrefetch() {
       if (!this.stopPrefetch) {
         this.$mapLayers.arr.forEach((layer) => {
-          if (layer instanceof OLImage) {
+          if (
+            layer instanceof OLImage &&
+            layer.get('layerVisibilityOn') &&
+            layer.get('layerIsTemporal')
+          ) {
             const view = this.$mapCanvas.mapObj.getView()
-            const extent = view.calculateExtent()
-            const extentKey = extent.join(',')
+            const calculatedExtent = view.calculateExtent()
+            const extentKey = calculatedExtent.join(',')
 
             if (this.currentExtent !== extentKey) {
               this.tileCache.clear()
               this.currentExtent = extentKey
             }
+
+            const dateArray = layer.get('layerDateArray')
+            const globalCurrentIndex = this.mapTimeSettings.DateIndex
+            const globalStartIndex = this.datetimeRangeSlider[0]
+            const globalEndIndex = this.datetimeRangeSlider[1]
+
+            // Build URL params
+            const extent = view
+              .calculateExtent()
+              .map((coord) => Math.round(coord * 1e6) / 1e6)
+            const [width, height] = this.$mapCanvas.mapObj.getSize()
+            const currentStyle = layer.get('layerCurrentStyle')
+
+            // Destructured like this to keep exact parameter order for caching
+            let urlParams = {
+              REQUEST: 'GetMap',
+              SERVICE: 'WMS',
+              VERSION: '1.3.0',
+              FORMAT: 'image/png',
+            }
+            if (currentStyle !== null) {
+              urlParams.STYLES = currentStyle
+            }
+            urlParams.TRANSPARENT = 'true'
+            urlParams.LAYERS = layer.get('layerName').split('/')[0]
+            urlParams.TIME = ''
             if (
-              layer.get('layerVisibilityOn') &&
-              layer.get('layerIsTemporal')
+              layer.getSource().getParams().DIM_REFERENCE_TIME !== undefined
             ) {
-              const dateArray = layer.get('layerDateArray')
-              const globalCurrentIndex = this.mapTimeSettings.DateIndex
-              const globalStartIndex = this.datetimeRangeSlider[0]
-              const globalEndIndex = this.datetimeRangeSlider[1]
+              urlParams.DIM_REFERENCE_TIME = this.getProperDateString(
+                layer.get('layerCurrentMR'),
+                layer.get('layerDateFormat'),
+              )
+            }
+            urlParams.WIDTH = width
+            urlParams.HEIGHT = height
+            urlParams.CRS = view.getProjection().getCode()
+            urlParams.BBOX = extent.join(',')
 
-              // Build URL params
-              const view = this.$mapCanvas.mapObj.getView()
-              const extent = view
-                .calculateExtent()
-                .map((coord) => Math.round(coord * 1e6) / 1e6)
-              const [width, height] = this.$mapCanvas.mapObj.getSize()
-              const currentStyle = layer.get('layerCurrentStyle')
-
-              // Destructured like this to keep exact parameter order for caching
-              let urlParams = {
-                REQUEST: 'GetMap',
-                SERVICE: 'WMS',
-                VERSION: '1.3.0',
-                FORMAT: 'image/png',
-              }
-              if (currentStyle !== null) {
-                urlParams.STYLES = currentStyle
-              }
-              urlParams.TRANSPARENT = 'true'
-              urlParams.LAYERS = layer.get('layerName').split('/')[0]
-              urlParams.TIME = ''
-              if (
-                layer.getSource().getParams().DIM_REFERENCE_TIME !== undefined
-              ) {
-                urlParams.DIM_REFERENCE_TIME = this.getProperDateString(
-                  layer.get('layerCurrentMR'),
-                  layer.get('layerDateFormat'),
-                )
-              }
-              urlParams.WIDTH = width
-              urlParams.HEIGHT = height
-              urlParams.CRS = view.getProjection().getCode()
-              urlParams.BBOX = extent.join(',')
-
-              const indicesToCache = []
-              if (this.playState === 'play') {
-                if (!this.playbackReversed) {
-                  for (let i = 1; i <= 5; i++) {
-                    let globalTargetIndex = globalCurrentIndex + i
-                    if (globalTargetIndex > globalEndIndex) {
-                      globalTargetIndex =
-                        globalStartIndex +
-                        (globalTargetIndex - globalEndIndex - 1)
-                    }
-
-                    const globalTime =
-                      this.mapTimeSettings.Extent[globalTargetIndex]
-                    const layerTargetIndex = this.findLayerIndex(
-                      globalTime,
-                      dateArray,
-                      layer.get('layerTimeStep'),
-                    )
-
-                    if (layerTargetIndex >= 0) {
-                      indicesToCache.push(layerTargetIndex)
-                    }
-                  }
-                } else {
-                  for (let i = 1; i <= 5; i++) {
-                    let globalTargetIndex = globalCurrentIndex - i
-                    if (globalTargetIndex < globalStartIndex) {
-                      globalTargetIndex =
-                        globalEndIndex -
-                        (globalStartIndex - globalTargetIndex - 1)
-                    }
-
-                    const globalTime =
-                      this.mapTimeSettings.Extent[globalTargetIndex]
-                    const layerTargetIndex = this.findLayerIndex(
-                      globalTime,
-                      dateArray,
-                      layer.get('layerTimeStep'),
-                    )
-
-                    if (layerTargetIndex >= 0) {
-                      indicesToCache.push(layerTargetIndex)
-                    }
-                  }
-                }
-              } else {
-                // Cache both directions when paused
+            const indicesToCache = []
+            if (this.playState === 'play') {
+              if (!this.playbackReversed) {
                 for (let i = 1; i <= 5; i++) {
-                  // Forward
                   let globalTargetIndex = globalCurrentIndex + i
                   if (globalTargetIndex > globalEndIndex) {
                     globalTargetIndex =
@@ -614,37 +569,79 @@ export default {
                   if (layerTargetIndex >= 0) {
                     indicesToCache.push(layerTargetIndex)
                   }
-
-                  // Backward
-                  globalTargetIndex = globalCurrentIndex - i
+                }
+              } else {
+                for (let i = 1; i <= 5; i++) {
+                  let globalTargetIndex = globalCurrentIndex - i
                   if (globalTargetIndex < globalStartIndex) {
                     globalTargetIndex =
                       globalEndIndex -
                       (globalStartIndex - globalTargetIndex - 1)
                   }
 
-                  const globalTimeBackward =
+                  const globalTime =
                     this.mapTimeSettings.Extent[globalTargetIndex]
-                  const layerTargetIndexBackward = this.findLayerIndex(
-                    globalTimeBackward,
+                  const layerTargetIndex = this.findLayerIndex(
+                    globalTime,
                     dateArray,
                     layer.get('layerTimeStep'),
                   )
 
-                  if (layerTargetIndexBackward >= 0) {
-                    indicesToCache.push(layerTargetIndexBackward)
+                  if (layerTargetIndex >= 0) {
+                    indicesToCache.push(layerTargetIndex)
                   }
                 }
               }
-              indicesToCache.forEach((targetIndex, i) => {
-                this.cacheTimestep(
-                  layer,
-                  dateArray[targetIndex],
-                  urlParams,
-                  targetIndex,
+            } else {
+              // Cache both directions when paused
+              for (let i = 1; i <= 5; i++) {
+                // Forward
+                let globalTargetIndex = globalCurrentIndex + i
+                if (globalTargetIndex > globalEndIndex) {
+                  globalTargetIndex =
+                    globalStartIndex + (globalTargetIndex - globalEndIndex - 1)
+                }
+
+                const globalTime =
+                  this.mapTimeSettings.Extent[globalTargetIndex]
+                const layerTargetIndex = this.findLayerIndex(
+                  globalTime,
+                  dateArray,
+                  layer.get('layerTimeStep'),
                 )
-              })
+
+                if (layerTargetIndex >= 0) {
+                  indicesToCache.push(layerTargetIndex)
+                }
+
+                // Backward
+                globalTargetIndex = globalCurrentIndex - i
+                if (globalTargetIndex < globalStartIndex) {
+                  globalTargetIndex =
+                    globalEndIndex - (globalStartIndex - globalTargetIndex - 1)
+                }
+
+                const globalTimeBackward =
+                  this.mapTimeSettings.Extent[globalTargetIndex]
+                const layerTargetIndexBackward = this.findLayerIndex(
+                  globalTimeBackward,
+                  dateArray,
+                  layer.get('layerTimeStep'),
+                )
+
+                if (layerTargetIndexBackward >= 0) {
+                  indicesToCache.push(layerTargetIndexBackward)
+                }
+              }
             }
+            indicesToCache.forEach((targetIndex, i) => {
+              this.cacheTimestep(
+                layer,
+                dateArray[targetIndex],
+                urlParams,
+                targetIndex,
+              )
+            })
           }
         })
       }
