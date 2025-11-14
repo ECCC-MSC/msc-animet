@@ -225,6 +225,9 @@ export default {
     layersLength() {
       return this.$mapLayers.arr.length
     },
+    preventGFI() {
+      return this.menuOpen && this.tab === 0
+    },
     toggleMenu: {
       get() {
         return this.menuOpen
@@ -239,6 +242,9 @@ export default {
       if (newLength === 0) {
         this.tab = 0
       }
+    },
+    preventGFI(newVal) {
+      this.store.setMenusOpen(newVal)
     },
     tab(newTab, oldTab) {
       if (newTab === 2) {

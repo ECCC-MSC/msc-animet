@@ -253,14 +253,14 @@ export default {
     async onSingleClick(eventGFI, pan = true) {
       if (!this.locked) {
         this.locked = true
-        this.eventGFI = eventGFI
-        const { event: evt, overlay } = eventGFI
-        let itemsGFI = []
         if (
           this.$mapLayers.arr.length > 0 &&
           this.menusOpen === 0 &&
           this.textBoxFocused === false
         ) {
+          this.eventGFI = eventGFI
+          const { event: evt, overlay } = eventGFI
+          let itemsGFI = []
           let urls = {}
           this.$mapLayers.arr.toReversed().forEach((layer) => {
             if (layer.get('visible')) {
