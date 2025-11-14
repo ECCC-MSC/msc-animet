@@ -181,7 +181,7 @@ class WMSTileCache {
               0,
             )} bytes (prev: ${prev?.toFixed(0) || 'N/A'}, next: ${
               next?.toFixed(0) || 'N/A'
-            })`,
+            }) for layer ${layerName}`,
           )
           toDelete.push(current.url)
         }
