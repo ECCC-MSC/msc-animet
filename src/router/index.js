@@ -19,6 +19,7 @@ const routes = [
       grat: route.query.grat,
       play: route.query.play,
       range: route.query.range,
+      lang: route.query.lang,
     }),
   },
   {
