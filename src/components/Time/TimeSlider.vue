@@ -53,6 +53,16 @@
           @touchstart="startDrag"
         >
           <div class="play-head-slider-track"></div>
+          <v-tooltip location="top" v-if="currentTimePosition !== null">
+            <template v-slot:activator="{ props }">
+              <div
+                class="current-time-line"
+                v-bind="props"
+                :style="{ left: `${currentTimePosition}%` }"
+              ></div>
+            </template>
+            <span>{{ formatCurrentUtcTime }}</span>
+          </v-tooltip>
           <div
             class="play-head-slider-thumb"
             :style="{ left: `${thumbPosition}%` }"
@@ -85,15 +95,34 @@ export default {
       isDragging: false,
       screenWidth: window.innerWidth,
       throttle: false,
+      currentUtcTime: new Date(),
+      timeUpdateInterval: null,
     }
   },
   mounted() {
     window.addEventListener('keydown', this.movePlayHead)
     window.addEventListener('resize', this.updateScreenSize)
+
+    // Wait until the next full minute, then update every minute
+    const now = new Date()
+    const msUntilNextMinute =
+      (60 - now.getSeconds()) * 1000 - now.getMilliseconds()
+
+    setTimeout(() => {
+      this.currentUtcTime = new Date()
+
+      this.timeUpdateInterval = setInterval(() => {
+        this.currentUtcTime = new Date()
+      }, 60000)
+    }, msUntilNextMinute)
   },
   beforeUnmount() {
     window.removeEventListener('keydown', this.movePlayHead)
     window.removeEventListener('resize', this.updateScreenSize)
+
+    if (this.timeUpdateInterval) {
+      clearInterval(this.timeUpdateInterval)
+    }
   },
   methods: {
     handleEnd() {
@@ -256,6 +285,42 @@ export default {
       if (max === 0) return 0
       return (this.mapTimeSettings.DateIndex / max) * 100
     },
+    currentTimePosition() {
+      if (
+        !this.mapTimeSettings.Extent ||
+        this.mapTimeSettings.Extent.length === 0
+      ) {
+        return 0
+      }
+
+      const extent = this.mapTimeSettings.Extent
+      const firstTime = new Date(extent[0]).getTime()
+      const lastTime = new Date(extent[extent.length - 1]).getTime()
+      const currentTime = this.currentUtcTime.getTime()
+
+      // If current time is outside the range, return null to hide the line
+      if (currentTime < firstTime || currentTime > lastTime) {
+        return null
+      }
+
+      const totalRange = lastTime - firstTime
+      const currentOffset = currentTime - firstTime
+      return (currentOffset / totalRange) * 100
+    },
+    formatCurrentUtcTime() {
+      const hours = String(this.currentUtcTime.getUTCHours()).padStart(2, '0')
+      const minutes = String(this.currentUtcTime.getUTCMinutes()).padStart(
+        2,
+        '0',
+      )
+      const year = this.currentUtcTime.getUTCFullYear()
+      const month = String(this.currentUtcTime.getUTCMonth() + 1).padStart(
+        2,
+        '0',
+      )
+      const day = String(this.currentUtcTime.getUTCDate()).padStart(2, '0')
+      return `${year}-${month}-${day} ${hours}:${minutes} UTC`
+    },
   },
 }
 </script>
@@ -317,6 +382,18 @@ export default {
   height: 2px;
   background-color: rgba(0, 0, 0, 0);
   transform: translateY(-50%);
+}
+
+.current-time-line {
+  position: absolute;
+  top: 50%;
+  width: 2px;
+  height: 12px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: auto;
 }
 
 .play-head-slider-thumb {
