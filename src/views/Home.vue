@@ -25,6 +25,7 @@ export default {
     'grat',
     'play',
     'range',
+    'lang',
   ],
   data() {
     return {
@@ -170,6 +171,12 @@ export default {
           Number(match[4]),
         ])
         this.emitter.emit('permalinkColor', true)
+      }
+    }
+    if (this.lang !== undefined) {
+      if (this.lang === 'fr' || this.lang === 'en') {
+        this.store.setLang(this.lang)
+        this.$i18n.locale = this.lang
       }
     }
   },
