@@ -138,6 +138,7 @@ export default {
   inject: ['store'],
   mounted() {
     this.emitter.on('setAnimationTitle', this.setAnimationTitle)
+    this.setResolution()
   },
   beforeUnmount() {
     this.emitter.off('setAnimationTitle', this.setAnimationTitle)
@@ -148,81 +149,8 @@ export default {
       animationTitle: '',
       intersectMessage: false,
       outputOptions: ['JPEG', 'MP4'],
-      resDict: {
-        Widescreen: {
-          name: 'Widescreen',
-          '720p': {
-            height: 720,
-            width: 1280,
-          },
-          '1080p': {
-            height: 1080,
-            width: 1920,
-          },
-          aspect: '[16:9]',
-        },
-        Square: {
-          name: 'Square',
-          '720p': {
-            height: 720,
-            width: 720,
-          },
-          '1080p': {
-            height: 1080,
-            width: 1080,
-          },
-          aspect: '[1:1]',
-        },
-        Portrait: {
-          name: 'Portrait',
-          '720p': {
-            height: 1280,
-            width: 720,
-          },
-          '1080p': {
-            height: 1920,
-            width: 1080,
-          },
-          aspect: '[9:16]',
-        },
-        PortaitSmall: {
-          name: 'Portrait',
-          '720p': {
-            height: 900,
-            width: 720,
-          },
-          '1080p': {
-            height: 1350,
-            width: 1080,
-          },
-          aspect: '[4:5]',
-        },
-        Standard: {
-          name: 'Standard',
-          '720p': {
-            height: 720,
-            width: 960,
-          },
-          '1080p': {
-            height: 1080,
-            width: 1440,
-          },
-          aspect: '[4:3]',
-        },
-        UltraWideScreen: {
-          name: 'UltraWideScreen',
-          '720p': {
-            height: 720,
-            width: 1680,
-          },
-          '1080p': {
-            height: 1080,
-            width: 2520,
-          },
-          aspect: '[21:9]',
-        },
-      },
-      resOptions: ['720p', '1080p'],
+      resDict: this.store.getResDict,
+      resOptions: this.store.getResOptions,
       t: useI18n().t,
     }
   },
@@ -330,6 +258,15 @@ export default {
         return this.currentAspect.name
       },
       set(name) {
+        localStorage.setItem(
+          'user-export',
+          JSON.stringify([
+            this.currentResolution,
+            name,
+            this.framesPerSecond,
+            this.outputFormat,
+          ]),
+        )
         this.store.setCurrentAspect(this.resDict[name])
       },
     },
@@ -346,6 +283,15 @@ export default {
         return this.store.getCurrentResolution
       },
       set(res) {
+        localStorage.setItem(
+          'user-export',
+          JSON.stringify([
+            res,
+            this.aspectRatio,
+            this.framesPerSecond,
+            this.outputFormat,
+          ]),
+        )
         this.store.setCurrentResolution(res)
       },
     },
@@ -355,7 +301,22 @@ export default {
       },
       set(fps) {
         if (fps !== '') {
-          this.store.setFramesPerSecond(parseInt(fps))
+          let fpsInt = parseInt(fps)
+          if (fpsInt > 30) {
+            fpsInt = 30
+          } else if (fpsInt < 1) {
+            fpsInt = 1
+          }
+          localStorage.setItem(
+            'user-export',
+            JSON.stringify([
+              this.currentResolution,
+              this.aspectRatio,
+              fpsInt,
+              this.outputFormat,
+            ]),
+          )
+          this.store.setFramesPerSecond(fpsInt)
         }
       },
     },
@@ -364,6 +325,15 @@ export default {
         return this.store.getOutputFormat
       },
       set(format) {
+        localStorage.setItem(
+          'user-export',
+          JSON.stringify([
+            this.currentResolution,
+            this.aspectRatio,
+            this.framesPerSecond,
+            format,
+          ]),
+        )
         this.store.setOutputFormat(format)
       },
     },

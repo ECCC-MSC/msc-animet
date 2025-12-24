@@ -109,7 +109,82 @@ export const useStore = defineStore('store', {
     permalink: null,
     playSpeed: 250,
     playState: 'pause',
+    resDict: {
+      Widescreen: {
+        name: 'Widescreen',
+        '720p': {
+          height: 720,
+          width: 1280,
+        },
+        '1080p': {
+          height: 1080,
+          width: 1920,
+        },
+        aspect: '[16:9]',
+      },
+      Square: {
+        name: 'Square',
+        '720p': {
+          height: 720,
+          width: 720,
+        },
+        '1080p': {
+          height: 1080,
+          width: 1080,
+        },
+        aspect: '[1:1]',
+      },
+      Portrait: {
+        name: 'Portrait',
+        '720p': {
+          height: 1280,
+          width: 720,
+        },
+        '1080p': {
+          height: 1920,
+          width: 1080,
+        },
+        aspect: '[9:16]',
+      },
+      PortraitSmall: {
+        name: 'PortraitSmall',
+        '720p': {
+          height: 900,
+          width: 720,
+        },
+        '1080p': {
+          height: 1350,
+          width: 1080,
+        },
+        aspect: '[4:5]',
+      },
+      Standard: {
+        name: 'Standard',
+        '720p': {
+          height: 720,
+          width: 960,
+        },
+        '1080p': {
+          height: 1080,
+          width: 1440,
+        },
+        aspect: '[4:3]',
+      },
+      UltraWideScreen: {
+        name: 'UltraWideScreen',
+        '720p': {
+          height: 720,
+          width: 1680,
+        },
+        '1080p': {
+          height: 1080,
+          width: 2520,
+        },
+        aspect: '[21:9]',
+      },
+    },
     resolution: '1080p',
+    resOptions: ['720p', '1080p'],
     rgb: [],
     showGraticules: false,
     textBoxes: [],
@@ -164,6 +239,8 @@ export const useStore = defineStore('store', {
     getPermalink: (state) => state.permalink,
     getPlaySpeed: (state) => state.playSpeed,
     getPlayState: (state) => state.playState,
+    getResDict: (state) => state.resDict,
+    getResOptions: (state) => state.resOptions,
     getRGB: (state) => state.rgb,
     getShowGraticules: (state) => state.showGraticules,
     getTextBoxes: (state) => state.textBoxes,
