@@ -37,8 +37,28 @@ export default {
     if (this.getUserSelectedOverlays() === undefined) {
       localStorage.setItem('user-overlays', JSON.stringify(['Boundaries']))
     }
+    if (this.getExportSettings() !== undefined) {
+      const [resolution, aspect, fps, format] = JSON.parse(
+        this.getExportSettings(),
+      )
+      if (this.store.getResOptions.includes(resolution)) {
+        this.store.setCurrentResolution(resolution)
+      }
+      if (aspect in this.store.getResDict) {
+        this.store.setCurrentAspect(this.store.getResDict[aspect])
+      }
+      if (Number.isInteger(fps) && fps <= 30 && fps >= 1) {
+        this.store.setFramesPerSecond(fps)
+      }
+      if (['MP4', 'JPEG'].includes(format)) {
+        this.store.setOutputFormat(format)
+      }
+    }
   },
   methods: {
+    getExportSettings() {
+      return localStorage.getItem('user-export') || undefined
+    },
     getLang() {
       return localStorage.getItem('user-lang')
     },

@@ -98,6 +98,7 @@
   "PlaySpeed": "Play speed",
   "PlaySpeedTooltip": "Actual speed may be slower if images take longer to load",
   "Portrait": "Portrait",
+  "PortraitSmall": "Portrait",
   "Presets": "Presets",
   "ResetRotation": "Reset rotation",
   "RevertColor": "Revert to original color",
