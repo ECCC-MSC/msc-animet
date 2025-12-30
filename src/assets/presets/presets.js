@@ -816,8 +816,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'RDPS.DIAG - Instantaneous precipitation type',
-              Name: 'RDPS.DIAG_PTYPE.PT3H',
+              Title: 'RDPS - Instantaneous precipitation type',
+              Name: 'RDPS_10km_PrecipType-Instant',
               isLeaf: true,
               isTemporal: true,
               isSnapped: true,
@@ -825,8 +825,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'RDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'RDPS.ETA_PN',
+              Title: 'RDPS - Sea level pressure (contour) [Pa]',
+              Name: 'RDPS_10km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -844,8 +844,8 @@ export default {
           children: [
             {
               Title:
-                'RDPS.DIAG_NW - Significant type of precipitation for 1 hour intervals [mm/h]',
-              Name: 'RDPS.DIAG_NW_PT1H',
+                'RDPS - Significant type of precipitation - 1-hour accumulation [mm]',
+              Name: 'RDPS_10km_PrecipType-Significant1h',
               isLeaf: true,
               isTemporal: true,
               isSnapped: true,
@@ -853,8 +853,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'RDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'RDPS.ETA_PN',
+              Title: 'RDPS - Sea level pressure (contour) [Pa]',
+              Name: 'RDPS_10km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -862,9 +862,8 @@ export default {
               opacity: 0.5,
             },
             {
-              Title:
-                'RDPS.ETA - Thickness between 1000mb and 500mb (contour) [m]',
-              Name: 'RDPS.ETA_DZ-CONTOUR',
+              Title: 'RDPS - Thickness between 1000mb and 500mb (contour) [m]',
+              Name: 'RDPS_10km_Thickness-Contour_1000to500mb',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -880,8 +879,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'RDPS.ETA - Snow accumulation [kg/m²]',
-              Name: 'RDPS.ETA_SN',
+              Title: 'RDPS - Snow accumulation [mm]',
+              Name: 'RDPS_10km_Snow-Accum',
               isLeaf: true,
               isTemporal: true,
               isSnapped: true,
@@ -890,8 +889,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'RDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'RDPS.ETA_PN',
+              Title: 'RDPS - Sea level pressure (contour) [Pa]',
+              Name: 'RDPS_10km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -908,8 +907,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'RDPS.ETA - Wind chill factor at surface [°C]',
-              Name: 'RDPS.ETA_RE',
+              Title: 'RDPS - Wind chill factor at surface [°C]',
+              Name: 'RDPS_10km_WindChill',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: true,
@@ -917,8 +916,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'RDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'RDPS.ETA_PN',
+              Title: 'RDPS - Sea level pressure (contour) [Pa]',
+              Name: 'RDPS_10km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -945,8 +944,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'RDPS.ETA - Humidex at 2 m above ground',
-              Name: 'RDPS.ETA_HMX',
+              Title: 'RDPS - Humidex at 2 m above ground',
+              Name: 'RDPS_10km_Humidex',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: true,
@@ -954,8 +953,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'RDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'RDPS.ETA_PN',
+              Title: 'RDPS - Sea level pressure (contour) [Pa]',
+              Name: 'RDPS_10km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -972,16 +971,16 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'RDPS.CONV - CAPE for a surface based parcel [J/kg]',
-              Name: 'RDPS.CONV_SFC-CAPE',
+              Title: 'RDPS - CAPE for a surface based parcel [J/kg]',
+              Name: 'RDPS_10km_CAPE',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: true,
               opacity: 0.75,
             },
             {
-              Title: 'RDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'RDPS.ETA_PN',
+              Title: 'RDPS - Sea level pressure (contour) [Pa]',
+              Name: 'RDPS_10km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -998,16 +997,16 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'RDPS.CONV - CIN for a surface based parcel [J/kg]',
-              Name: 'RDPS.CONV_SFC-CIN',
+              Title: 'RDPS - CIN for a surface based parcel [J/kg]',
+              Name: 'RDPS_10km_CIN',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: true,
               opacity: 0.75,
             },
             {
-              Title: 'RDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'RDPS.ETA_PN',
+              Title: 'RDPS - Sea level pressure (contour) [Pa]',
+              Name: 'RDPS_10km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -1025,16 +1024,16 @@ export default {
           children: [
             {
               Title:
-                'RDPS.CONV - Surface lifted index, with reference level 500 mb',
-              Name: 'RDPS.CONV_SFC-LI.500',
+                'RDPS - Lifted index for a parcel lifted from the surface, with reference level 500 mb',
+              Name: 'RDPS_10km_SFC-LI_500mb',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: true,
               opacity: 0.75,
             },
             {
-              Title: 'RDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'RDPS.ETA_PN',
+              Title: 'RDPS - Sea level pressure (contour) [Pa]',
+              Name: 'RDPS_10km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -1089,8 +1088,8 @@ export default {
               opacity: 1,
             },
             {
-              Title: 'RDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'RDPS.ETA_PN',
+              Title: 'RDPS - Sea level pressure (contour) [Pa]',
+              Name: 'RDPS_10km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -1126,8 +1125,8 @@ export default {
               opacity: 1,
             },
             {
-              Title: 'RDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'RDPS.ETA_PN',
+              Title: 'RDPS - Sea level pressure (contour) [Pa]',
+              Name: 'RDPS_10km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -1162,8 +1161,8 @@ export default {
               opacity: 1,
             },
             {
-              Title: 'RDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'RDPS.ETA_PN',
+              Title: 'RDPS - Sea level pressure (contour) [Pa]',
+              Name: 'RDPS_10km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -1190,8 +1189,8 @@ export default {
               opacity: 1,
             },
             {
-              Title: 'RDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'RDPS.ETA_PN',
+              Title: 'RDPS - Sea level pressure (contour) [Pa]',
+              Name: 'RDPS_10km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,

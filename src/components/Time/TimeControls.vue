@@ -326,29 +326,45 @@ export default {
       } else {
         numLayers = 0
       }
+
       let noChange = true
       for (let i = 0; i < numLayers; i++) {
-        if (
-          this.$mapLayers.arr[i].get('layerVisibilityOn') &&
-          this.$mapLayers.arr[i].get('layerIsTemporal')
-        ) {
-          const dateArray = this.$mapLayers.arr[i].get('layerDateArray')
+        const layer = this.$mapLayers.arr[i]
+        if (layer.get('layerVisibilityOn') && layer.get('layerIsTemporal')) {
+          const dateArray = layer.get('layerDateArray')
           const layerDateIndex = this.findLayerIndex(
             mapTime,
             dateArray,
-            this.$mapLayers.arr[i].get('layerTimeStep'),
+            layer.get('layerTimeStep'),
           )
-          this.$mapLayers.arr[i].setProperties({
+          layer.setProperties({
             layerDateIndex: layerDateIndex,
           })
+          const isVisible = layer.get('visible')
           if (layerDateIndex >= 0) {
-            this.setDateTime(this.$mapLayers.arr[i], dateArray[layerDateIndex])
+            this.setDateTime(layer, dateArray[layerDateIndex])
             noChange = false
-            if (!this.$mapLayers.arr[i].get('visible')) {
-              this.$mapLayers.arr[i].setVisible(true)
+            if (!isVisible) {
+              const originalOpacity = layer.getOpacity()
+              const source = layer.getSource()
+
+              let restored = false
+              const restoreOpacity = () => {
+                if (!restored) {
+                  restored = true
+                  layer.setOpacity(originalOpacity)
+                  source.un('imageloadend', restoreOpacity)
+                  source.un('imageloaderror', restoreOpacity)
+                }
+              }
+
+              source.once('imageloadend', restoreOpacity)
+              source.once('imageloaderror', restoreOpacity)
+              layer.setOpacity(0)
+              layer.setVisible(true)
             }
-          } else {
-            this.$mapLayers.arr[i].setVisible(false)
+          } else if (isVisible) {
+            layer.setVisible(false)
           }
         }
       }
