@@ -1,6 +1,6 @@
 <template>
-  <div id="animet_logo" :class="getLangCSS">
-    <span class="animet">{{ $t("MSCAnimet") }}</span>
+  <div id="animet_logo" :class="getLangCSS" @click="handleLogoClick">
+    <span class="animet">{{ $t('MSCAnimet') }}</span>
     <transition-group tag="span" name="fade" class="img-transition">
       <img
         v-if="$i18n.locale === 'fr'"
@@ -24,19 +24,28 @@
 export default {
   computed: {
     img() {
-      const locale = this.$i18n.locale;
-      const isFirefox = window.navigator.userAgent.indexOf("Firefox") !== -1;
-      const extension = isFirefox ? "png" : "svg";
-      return new URL(`../../assets/eccc_c_${locale}.${extension}`, import.meta.url).href;
+      const locale = this.$i18n.locale
+      const isFirefox = window.navigator.userAgent.indexOf('Firefox') !== -1
+      const extension = isFirefox ? 'png' : 'svg'
+      return new URL(
+        `../../assets/eccc_c_${locale}.${extension}`,
+        import.meta.url,
+      ).href
     },
     getLangCSS() {
       return {
-        width_en: this.$i18n.locale === "en",
-        width_fr: this.$i18n.locale === "fr",
-      };
+        width_en: this.$i18n.locale === 'en',
+        width_fr: this.$i18n.locale === 'fr',
+      }
     },
   },
-};
+  methods: {
+    handleLogoClick() {
+      const baseUrl = `${window.location.origin}/${window.location.pathname.split('/')[1]}`
+      window.location.href = baseUrl
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -77,6 +86,7 @@ export default {
   pointer-events: auto;
   position: relative;
   z-index: 2;
+  cursor: pointer;
 }
 #eccc_logo_en {
   height: 22px;
