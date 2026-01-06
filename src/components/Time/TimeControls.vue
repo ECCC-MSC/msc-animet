@@ -120,6 +120,7 @@
 </template>
 
 <script>
+import { DateTime } from 'luxon'
 import OLImage from 'ol/layer/Image'
 
 import datetimeManipulations from '../../mixins/datetimeManipulations'
@@ -181,17 +182,30 @@ export default {
       if (layerData.currentMR) {
         const mrInt = parseInt(layerData.currentMR)
         if (referenceTime.some((date) => date.getTime() === mrInt)) {
-          let newDateArray = []
-          let timeDiff = mrInt - layerCurrentMR.getTime()
-          config.layerDateArray.forEach((date) =>
-            newDateArray.push(new Date(date.getTime() + timeDiff)),
-          )
+          if (mrInt !== layerCurrentMR.getTime()) {
+            const newModelRun = DateTime.fromMillis(mrInt, { zone: 'utc' })
+            const oldModelRun = DateTime.fromJSDate(layerCurrentMR, {
+              zone: 'utc',
+            })
 
-          const newModelRun = new Date(mrInt)
-          if (newModelRun.getTime() !== layerCurrentMR.getTime()) {
+            const diff = newModelRun.diff(oldModelRun, [
+              'years',
+              'months',
+              'days',
+              'hours',
+              'minutes',
+              'seconds',
+            ])
+
+            const newDateArray = config.layerDateArray.map((date) =>
+              DateTime.fromJSDate(date, { zone: 'utc' }).plus(diff).toJSDate(),
+            )
+
+            layerCurrentMR = newModelRun.toJSDate()
+
             imageLayer.getSource().updateParams({
               DIM_REFERENCE_TIME: this.getProperDateString(
-                newModelRun,
+                layerCurrentMR,
                 config.layerDateFormat,
               ),
             })
@@ -201,7 +215,6 @@ export default {
             } else if (layerDefaultTime < newDateArray[0]) {
               layerDefaultTime = newDateArray[0]
             }
-            layerCurrentMR = newModelRun
             layerStartTime = newDateArray[0]
             layerEndTime = newDateArray[newDateArray.length - 1]
           }

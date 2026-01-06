@@ -14,20 +14,34 @@
     :items="item.get('layerModelRuns')"
     :disabled="isAnimating"
   >
-    <template v-slot:item="{ props, item }">
+    <template v-slot:item="{ props, item: selectItem }">
       <v-list-item
         v-bind="props"
-        :title="localeDateFormat(item.raw, null, 'DATETIME_MED')"
+        :title="
+          localeDateFormat(
+            selectItem.raw,
+            item.get('layerTimeStep'),
+            'DATETIME_MED',
+          )
+        "
       >
       </v-list-item>
     </template>
-    <template v-slot:selection="{ item }">
-      {{ localeDateFormat(item.raw, null, 'DATETIME_MED') }}
+    <template v-slot:selection="{ item: selectItem }">
+      {{
+        localeDateFormat(
+          selectItem.raw,
+          item.get('layerTimeStep'),
+          'DATETIME_MED',
+        )
+      }}
     </template>
   </v-select>
 </template>
 
 <script>
+import { DateTime } from 'luxon'
+
 import datetimeManipulations from '../../mixins/datetimeManipulations'
 
 export default {
@@ -36,13 +50,25 @@ export default {
   props: ['item'],
   methods: {
     changeModelRun(newModelRun) {
-      let newDateArray = []
-      let timeDiff =
-        newModelRun.getTime() - this.item.get('layerCurrentMR').getTime()
-      this.item
+      const newModelRunDT = DateTime.fromJSDate(newModelRun, { zone: 'utc' })
+      const oldModelRunDT = DateTime.fromJSDate(
+        this.item.get('layerCurrentMR'),
+        { zone: 'utc' },
+      )
+
+      const diff = newModelRunDT.diff(oldModelRunDT, [
+        'years',
+        'months',
+        'days',
+        'hours',
+        'minutes',
+        'seconds',
+      ])
+
+      const newDateArray = this.item
         .get('layerDateArray')
-        .forEach((date) =>
-          newDateArray.push(new Date(date.getTime() + timeDiff)),
+        .map((date) =>
+          DateTime.fromJSDate(date, { zone: 'utc' }).plus(diff).toJSDate(),
         )
 
       if (
