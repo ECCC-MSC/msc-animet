@@ -478,6 +478,7 @@ export default {
         imageLayer.setProperties({
           layerModelRuns: null,
           layerCurrentMR: null,
+          layerIsRefTimeOnly: layerData.isRefTimeOnly || false,
         })
       }
 

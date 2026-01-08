@@ -280,6 +280,7 @@ export default {
                   Dimension_time: '',
                   Dimension_time_default: '',
                   Dimension_ref_time: '',
+                  Dimension_ref_time_default: '',
                 }
                 const timeDimension = node.getElementsByTagName('Dimension')
                 for (let i = 0; i < timeDimension.length; i++) {
@@ -290,7 +291,19 @@ export default {
                       dim.getAttribute('default')
                   } else if (dim.getAttribute('name') === 'reference_time') {
                     dimension.Dimension_ref_time = dim.textContent
+                    dimension.Dimension_ref_time_default =
+                      dim.getAttribute('default')
                   }
+                }
+                if (
+                  dimension.Dimension_time === '' &&
+                  dimension.Dimension_ref_time !== ''
+                ) {
+                  dimension.Dimension_time = dimension.Dimension_ref_time
+                  dimension.Dimension_time_default =
+                    dimension.Dimension_ref_time_default
+                  dimension.Dimension_ref_time = ''
+                  layerData.isRefTimeOnly = true
                 }
                 layerData.Dimension = dimension
 

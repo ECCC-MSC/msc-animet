@@ -511,9 +511,18 @@ export default {
       }
     },
     async setDateTime(layer, date) {
-      layer.getSource().updateParams({
-        TIME: this.getProperDateString(date, layer.get('layerDateFormat')),
-      })
+      if (layer.get('layerIsRefTimeOnly')) {
+        layer.getSource().updateParams({
+          DIM_REFERENCE_TIME: this.getProperDateString(
+            date,
+            layer.get('layerDateFormat'),
+          ),
+        })
+      } else {
+        layer.getSource().updateParams({
+          TIME: this.getProperDateString(date, layer.get('layerDateFormat')),
+        })
+      }
     },
     toggleDrag() {
       this.stopPrefetch = !this.stopPrefetch
@@ -562,14 +571,20 @@ export default {
             }
             urlParams.TRANSPARENT = 'true'
             urlParams.LAYERS = layer.get('layerName').split('/')[0]
-            urlParams.TIME = ''
+            if (!layer.get('layerIsRefTimeOnly')) {
+              urlParams.TIME = ''
+            }
             if (
               layer.getSource().getParams().DIM_REFERENCE_TIME !== undefined
             ) {
-              urlParams.DIM_REFERENCE_TIME = this.getProperDateString(
-                layer.get('layerCurrentMR'),
-                layer.get('layerDateFormat'),
-              )
+              if (layer.get('layerIsRefTimeOnly')) {
+                urlParams.DIM_REFERENCE_TIME = ''
+              } else {
+                urlParams.DIM_REFERENCE_TIME = this.getProperDateString(
+                  layer.get('layerCurrentMR'),
+                  layer.get('layerDateFormat'),
+                )
+              }
             }
             urlParams.WIDTH = width
             urlParams.HEIGHT = height
@@ -678,10 +693,17 @@ export default {
     async cacheTimestep(layer, date, urlParams) {
       const layerName = layer.get('layerName')
 
-      urlParams['TIME'] = this.getProperDateString(
-        date,
-        layer.get('layerDateFormat'),
-      )
+      if (layer.get('layerIsRefTimeOnly')) {
+        urlParams['DIM_REFERENCE_TIME'] = this.getProperDateString(
+          date,
+          layer.get('layerDateFormat'),
+        )
+      } else {
+        urlParams['TIME'] = this.getProperDateString(
+          date,
+          layer.get('layerDateFormat'),
+        )
+      }
 
       const queryString = Object.keys(urlParams)
         .map(
@@ -741,11 +763,11 @@ export default {
       }
     },
     clearLayerCache(layerInfo) {
-      const { layerName, date } = layerInfo
+      const { layerName, date, isRefTimeOnly } = layerInfo
       if (layerName === undefined) {
         this.tileCache.clear()
       } else if (date) {
-        this.tileCache.deleteTile(layerName, date)
+        this.tileCache.deleteTile(layerName, date, isRefTimeOnly)
       } else {
         this.tileCache.clearLayer(layerName)
       }
