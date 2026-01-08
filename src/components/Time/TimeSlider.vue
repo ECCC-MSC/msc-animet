@@ -61,7 +61,9 @@
                 :style="{ left: `${currentTimePosition}%` }"
               ></div>
             </template>
-            <span>{{ formatCurrentUtcTime }}</span>
+            <span>{{
+              localeDateFormat(currentTime, null, 'DATETIME_MED')
+            }}</span>
           </v-tooltip>
           <div
             class="play-head-slider-thumb"
@@ -95,7 +97,7 @@ export default {
       isDragging: false,
       screenWidth: window.innerWidth,
       throttle: false,
-      currentUtcTime: new Date(),
+      currentTime: new Date(),
       timeUpdateInterval: null,
     }
   },
@@ -109,10 +111,10 @@ export default {
       (60 - now.getSeconds()) * 1000 - now.getMilliseconds()
 
     setTimeout(() => {
-      this.currentUtcTime = new Date()
+      this.currentTime = new Date()
 
       this.timeUpdateInterval = setInterval(() => {
-        this.currentUtcTime = new Date()
+        this.currentTime = new Date()
       }, 60000)
     }, msUntilNextMinute)
   },
@@ -292,34 +294,37 @@ export default {
       ) {
         return 0
       }
-
       const extent = this.mapTimeSettings.Extent
-      const firstTime = new Date(extent[0]).getTime()
-      const lastTime = new Date(extent[extent.length - 1]).getTime()
-      const currentTime = this.currentUtcTime.getTime()
 
+      const timeIndex = this.findLayerIndex(
+        this.currentTime,
+        extent,
+        this.mapTimeSettings.Step,
+      )
       // If current time is outside the range, return null to hide the line
-      if (currentTime < firstTime || currentTime > lastTime) {
+      if (timeIndex < 0) {
+        return null
+      } else if (timeIndex === extent.length - 1) {
+        if (
+          new Date(extent[timeIndex]).getTime() === this.currentTime.getTime()
+        ) {
+          return 100
+        }
         return null
       }
 
+      const firstTime = new Date(extent[timeIndex]).getTime()
+      const lastTime = new Date(extent[timeIndex + 1]).getTime()
+
       const totalRange = lastTime - firstTime
-      const currentOffset = currentTime - firstTime
-      return (currentOffset / totalRange) * 100
-    },
-    formatCurrentUtcTime() {
-      const hours = String(this.currentUtcTime.getUTCHours()).padStart(2, '0')
-      const minutes = String(this.currentUtcTime.getUTCMinutes()).padStart(
-        2,
-        '0',
-      )
-      const year = this.currentUtcTime.getUTCFullYear()
-      const month = String(this.currentUtcTime.getUTCMonth() + 1).padStart(
-        2,
-        '0',
-      )
-      const day = String(this.currentUtcTime.getUTCDate()).padStart(2, '0')
-      return `${year}-${month}-${day} ${hours}:${minutes} UTC`
+      const currentOffset = this.currentTime.getTime() - firstTime
+      const progress = currentOffset / totalRange
+
+      const segmentStart = timeIndex / (extent.length - 1)
+      const segmentWidth = 1 / (extent.length - 1)
+      const position = segmentStart + progress * segmentWidth
+
+      return position * 100
     },
   },
 }
@@ -388,9 +393,8 @@ export default {
   position: absolute;
   top: 50%;
   width: 2px;
-  height: 12px;
-  background-color: #4caf50;
-  border-radius: 50%;
+  height: 14px;
+  background-color: rgb(252, 201, 63);
   transform: translate(-50%, -50%);
   z-index: 2;
   pointer-events: auto;
