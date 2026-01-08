@@ -107,7 +107,13 @@ export default {
                     dimension.Dimension_time_default =
                       dim.getAttribute('default')
                   } else if (dim.getAttribute('name') === 'reference_time') {
-                    dimension.Dimension_ref_time = dim.textContent
+                    if (layer.get('layerIsRefTimeOnly')) {
+                      dimension.Dimension_time = dim.textContent
+                      dimension.Dimension_time_default =
+                        dim.getAttribute('default')
+                    } else {
+                      dimension.Dimension_ref_time = dim.textContent
+                    }
                   }
                 }
                 layerData.Dimension = dimension

@@ -358,9 +358,18 @@ export default {
       })
     },
     async setDateTime(layer, date) {
-      layer.getSource().updateParams({
-        TIME: this.getProperDateString(date, layer.get('layerDateFormat')),
-      })
+      if (layer.get('layerIsRefTimeOnly')) {
+        layer.getSource().updateParams({
+          DIM_REFERENCE_TIME: this.getProperDateString(
+            date,
+            layer.get('layerDateFormat'),
+          ),
+        })
+      } else {
+        layer.getSource().updateParams({
+          TIME: this.getProperDateString(date, layer.get('layerDateFormat')),
+        })
+      }
     },
   },
   computed: {

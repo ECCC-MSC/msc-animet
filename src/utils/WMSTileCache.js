@@ -38,7 +38,11 @@ class WMSTileCache {
     }
   }
 
-  _extractTimestamp(url) {
+  _extractTimestamp(url, isRefTimeOnly) {
+    if (isRefTimeOnly) {
+      const matchRef = url.match(/DIM_REFERENCE_TIME=([^&]+)/)
+      return matchRef ? matchRef[1] : null
+    }
     const match = url.match(/TIME=([^&]+)/)
     return match ? match[1] : null
   }
@@ -118,7 +122,7 @@ class WMSTileCache {
     }
   }
 
-  deleteTile(layerName, dateSubstring) {
+  deleteTile(layerName, dateSubstring, isRefTimeOnly = false) {
     if (!dateSubstring || typeof dateSubstring !== 'string') return false
 
     const layerCache = this.cache.get(layerName)
@@ -128,7 +132,7 @@ class WMSTileCache {
       const encoded = encodeURIComponent(dateSubstring)
 
       for (const key of Array.from(layerCache.keys())) {
-        const timestamp = this._extractTimestamp(key)
+        const timestamp = this._extractTimestamp(key, isRefTimeOnly)
         const decodedTimestamp = decodeURIComponent(timestamp)
         // Delete if exact match OR older than dateSubstring
         if (
@@ -143,7 +147,7 @@ class WMSTileCache {
 
       const timeEntries = Array.from(layerCache.entries()).map(
         ([url, blob]) => ({
-          time: this._extractTimestamp(url),
+          time: this._extractTimestamp(url, isRefTimeOnly),
           url,
           size: blob.size,
         }),
