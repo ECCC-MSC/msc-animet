@@ -68,6 +68,7 @@ export default {
   mixins: [datetimeManipulations],
   mounted() {
     this.emitter.on('cancelAnimationResize', this.onCancelAnimationResize)
+    this.emitter.on('crsBasemapMismatch', this.onCrsBasemapMismatch)
     this.emitter.on('layerQueryFailure', this.onLayerQueryFailure)
     this.emitter.on('loadingError', this.errorDispatcher)
     this.emitter.on('notifyWrongFormat', this.onNotifyWrongFormat)
@@ -75,6 +76,7 @@ export default {
   },
   beforeUnmount() {
     this.emitter.off('cancelAnimationResize', this.onCancelAnimationResize)
+    this.emitter.off('crsBasemapMismatch', this.onCrsBasemapMismatch)
     this.emitter.off('layerQueryFailure', this.onLayerQueryFailure)
     this.emitter.off('loadingError', this.errorDispatcher)
     this.emitter.off('notifyWrongFormat', this.onNotifyWrongFormat)
@@ -347,6 +349,14 @@ export default {
     },
     onCancelAnimationResize() {
       this.notifyCancelAnimateResize = true
+    },
+    onCrsBasemapMismatch(basemap) {
+      this.expiredSnackBarMessage = this.t('CrsBasemapMismatch', {
+        basemap: this.t(basemap),
+        projection: this.currentCRS,
+      })
+      this.timeoutDuration = 12000
+      this.notifyExtentRebuilt = true
     },
     onLayerQueryFailure() {
       this.expiredSnackBarMessage = this.t('BrokenLayer')

@@ -13,6 +13,8 @@ import { Point } from 'ol/geom'
 import RegularShape from 'ol/style/RegularShape'
 import { getCenter, getHeight, getWidth } from 'ol/extent.js'
 
+const VECTOR_SHAPE_PROPERTY = 'isVectorShape'
+
 export function useVectorShapes(mapObj) {
   const blockSelect = ref(false)
   const selectedFeature = ref(null)
@@ -30,11 +32,14 @@ export function useVectorShapes(mapObj) {
   })
 
   function selectFeature(feature) {
+    if (!feature || !feature.get(VECTOR_SHAPE_PROPERTY)) {
+      return
+    }
+
     if (!blockSelect.value) {
       if (
-        feature &&
-        (!selectedFeature.value ||
-          selectedFeature.value.ol_uid !== feature.ol_uid)
+        !selectedFeature.value ||
+        selectedFeature.value.ol_uid !== feature.ol_uid
       ) {
         selectedFeature.value = feature
         if (selectedFeature.value) {
@@ -263,6 +268,8 @@ export function useVectorShapes(mapObj) {
       cancelDrawing()
 
       interaction.feature = evt.feature
+      interaction.feature.set(VECTOR_SHAPE_PROPERTY, true)
+
       interaction.modify = new Modify(modifyParams(source, interaction.feature))
 
       interaction.snap = new Snap({
@@ -623,7 +630,10 @@ export function useVectorShapes(mapObj) {
 
       const feature = mapObj.forEachFeatureAtPixel(pixel, (feature) => feature)
 
-      if (!feature && activeFeatureIndex.value) {
+      if (
+        (!feature || !feature.get(VECTOR_SHAPE_PROPERTY)) &&
+        activeFeatureIndex.value
+      ) {
         selectedFeature.value = undefined
         const interaction = interactions.value[activeFeatureIndex.value]
         if (interaction && interaction['translate']) {

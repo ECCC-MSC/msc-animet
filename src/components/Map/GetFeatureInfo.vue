@@ -264,14 +264,15 @@ export default {
           let urls = {}
           this.$mapLayers.arr.toReversed().forEach((layer) => {
             if (layer.get('visible')) {
-              urls[layer.get('layerName')] = layer
-                .getSource()
-                .getFeatureInfoUrl(
+              const source = layer.getSource()
+              if (source && typeof source.getFeatureInfoUrl === 'function') {
+                urls[layer.get('layerName')] = source.getFeatureInfoUrl(
                   evt.coordinate,
                   evt.map.getView().getResolution(),
                   evt.map.getView().getProjection().getCode(),
                   { INFO_FORMAT: 'application/json', FEATURE_COUNT: 1 },
                 )
+              }
             }
           })
           this.overlay = overlay
