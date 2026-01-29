@@ -21,12 +21,27 @@
               v-if="Array.isArray(colorValue) || colorValue.displayCondition"
             >
               <div
+                v-if="source !== 'Others'"
                 :ref="`${source}-${colorName}`"
                 class="map-preview"
                 :class="{
                   selected: isSelected(source, colorName, params.type),
                 }"
               ></div>
+              <div
+                v-else
+                class="map-preview"
+                :class="{
+                  selected: isSelected(source, colorName, params.type),
+                }"
+                @click="handleOthersSelection(colorName)"
+              >
+                <img
+                  :src="getPreviewImage()"
+                  :alt="$t(colorName)"
+                  class="map-preview-image"
+                />
+              </div>
               <span>{{ $t(colorName) }}</span>
             </template>
           </div>
@@ -37,6 +52,7 @@
 </template>
 
 <script>
+import { apply as olmsApply } from 'ol-mapbox-style'
 import { applyTransform } from 'ol/extent.js'
 import { get as getProjection, getTransform } from 'ol/proj.js'
 import { Circle, Fill, Stroke, Style, Text } from 'ol/style'
@@ -71,6 +87,7 @@ export default {
         background: null,
         overlays: [],
       },
+      styleApplied: false,
       sources: {
         OSM: {
           callback: this.osmInit,
@@ -137,6 +154,17 @@ export default {
             White: [255, 255, 255],
             Grey: [158, 158, 158],
             Dark: [0, 0, 0],
+          },
+        },
+        Others: {
+          callback: null,
+          displayCondition: ['EPSG:3857', 'EPSG:3978'].includes(
+            this.store.getCurrentCRS,
+          ),
+          title: true,
+          type: 'base',
+          colors: {
+            CBMT: [null, null, null],
           },
         },
         Overlay: {
@@ -214,6 +242,8 @@ export default {
       for (const source of sources) {
         if (source === basemap.split('-')[0]) {
           return basemap
+        } else if (Object.keys(this.sources[source].colors).includes(basemap)) {
+          return basemap
         }
       }
       this.store.setBasemap('OSM')
@@ -234,6 +264,10 @@ export default {
   },
   watch: {
     currentCRS() {
+      this.sources.Others.displayCondition = [
+        'EPSG:3857',
+        'EPSG:3978',
+      ].includes(this.currentCRS)
       this.updateProjection()
     },
     basemapSelection: {
@@ -242,6 +276,9 @@ export default {
         const newSource = newSel.split('-')[0]
         const colorName = newSel.split('-')[1]
         const colors = this.sources[newSource].colors[colorName]
+        if (oldSel !== null && oldSel.split('-')[1] === 'CBMT') {
+          this.removeCBMTStyle(this.$mapCanvas.mapObj)
+        }
         if (newSource === 'Simplified') {
           if (oldSel !== null && oldSel.split('-')[0] === newSource) {
             this.toggleVectorLayerStyle(
@@ -267,6 +304,8 @@ export default {
           } else {
             this.coloredBasemapHandler(true)
           }
+        } else if (newSource === 'Others' && colorName === 'CBMT') {
+          this.cbmtStyle(this.$mapCanvas.mapObj)
         }
         this.selections.base = newSel
       },
@@ -284,9 +323,12 @@ export default {
               this.sources.NoBasemap.colors[newSel.background.split('-')[1]]
           }
         } else {
+          if (!newSel.background && !newSel.base) {
+            return
+          }
           backgroundColor = newSel.base.split('-')[1]
           backgroundColor =
-            backgroundColor === 'Base'
+            backgroundColor === 'Base' || newSel.base.split('-')[0] === 'Others'
               ? this.sources.NoBasemap.colors['Water']
               : this.sources.NoBasemap.colors[backgroundColor]
         }
@@ -340,6 +382,13 @@ export default {
               name: colorName,
               values: this.rgb,
             }
+            this.whiteBasemapHandler(false, backgroundObj)
+          } else if (!Object.keys(this.sources).includes(this.activeBasemap)) {
+            const backgroundObj = {
+              basemap: 'Others',
+              name: this.activeBasemap,
+            }
+            this.basemapSelection = `Others-${this.activeBasemap}`
             this.whiteBasemapHandler(false, backgroundObj)
           } else {
             const backgroundObj = {
@@ -768,9 +817,16 @@ export default {
         return [textStyle]
       }
     },
+    getPreviewImage() {
+      const crsNumber = this.currentCRS.split(':')[1]
+      return new URL(
+        `../../../assets/previews/CBMT-${crsNumber}.png`,
+        import.meta.url,
+      ).href
+    },
     initializeMaps() {
       Object.entries(this.sources).forEach(([source, params]) => {
-        if (params.displayCondition) {
+        if (params.displayCondition && params.callback) {
           Object.entries(params.colors).forEach(([colorName, value]) => {
             let colorValue = value
             if (source === 'Overlay') {
@@ -813,6 +869,11 @@ export default {
         localStorage.setItem(
           'user-basemap',
           JSON.stringify([basename, '255,255,255']),
+        )
+      } else if (selections.base === 'Others-CBMT') {
+        localStorage.setItem(
+          'user-basemap',
+          JSON.stringify([basename.split('-')[1], null]),
         )
       } else {
         localStorage.setItem(
@@ -886,9 +947,17 @@ export default {
       previewMap.on('click', () => {
         this.isUserInitiated = true
         this.backgroundColor = { name: color.name, values: color.value }
-        const background = {
-          basemap: this.basemapSelection.split('-')[0],
-          name: this.basemapSelection.split('-')[1],
+        let background
+        if (this.basemapSelection.split('-')[0] !== 'Others') {
+          background = {
+            basemap: this.basemapSelection.split('-')[0],
+            name: this.basemapSelection.split('-')[1],
+          }
+        } else {
+          background = {
+            basemap: 'NoBasemap',
+            name: color.name,
+          }
         }
         this.whiteBasemapHandler(false, background)
       })
@@ -986,6 +1055,100 @@ export default {
       })
       return previewMap
     },
+    cbmtStyle(map) {
+      const tileServerUrl =
+        this.currentCRS === 'EPSG:3857'
+          ? 'https://tiles.arcgis.com/tiles/HsjBaDykC1mjhXz9/arcgis/rest/services/CBMT_CBCT_3857_V_OSM/VectorTileServer'
+          : 'https://tiles.arcgis.com/tiles/HsjBaDykC1mjhXz9/arcgis/rest/services/CBMT_CBCT_3978_V_OSM/VectorTileServer'
+      const styleURL =
+        this.currentCRS === 'EPSG:3857'
+          ? 'https://www.arcgis.com/sharing/rest/content/items/800d755712e8415aab301b9d55bc2800/resources/styles/root.json'
+          : 'https://www.arcgis.com/sharing/rest/content/items/708e92c1f00941e3af3dd3c092ae4a0a/resources/styles/root.json'
+
+      fetch(tileServerUrl + '?f=json')
+        .then((response) => response.json())
+        .then((metadata) => {
+          const tileInfo = metadata.tileInfo
+          const fullExtent = metadata.fullExtent
+          const resolutions = tileInfo.lods.map((lod) => lod.resolution)
+
+          const tileGrid = new TileGrid({
+            extent: [
+              fullExtent.xmin,
+              fullExtent.ymin,
+              fullExtent.xmax,
+              fullExtent.ymax,
+            ],
+            origin: [tileInfo.origin.x, tileInfo.origin.y],
+            resolutions: resolutions,
+            tileSize: [tileInfo.rows, tileInfo.cols],
+          })
+
+          return fetch(styleURL)
+            .then((response) => response.json())
+            .then((styleJson) => {
+              return olmsApply(map, styleJson, {
+                resolutions: tileInfo.lods.map((lod) => lod.resolution),
+              }).then((appliedMap) => {
+                const layer = this.findCBMTLayer(appliedMap)
+                if (layer instanceof VectorTileLayer) {
+                  const newSource = new VectorTileSource({
+                    format: new MVT(),
+                    url: tileServerUrl + '/tile/{z}/{y}/{x}.pbf',
+                    tileGrid: tileGrid,
+                  })
+                  layer.setSource(newSource)
+                  layer.setZIndex(-1)
+                }
+              })
+            })
+        })
+        .catch((error) => {
+          console.error('Error loading vector tile style:', error)
+
+          const fallbackLayer = new VectorTileLayer({
+            source: new VectorTileSource({
+              format: new MVT(),
+              url: tileServerUrl + '/tile/{z}/{y}/{x}.pbf',
+            }),
+          })
+          fallbackLayer.setZIndex(-1)
+          map.addLayer(fallbackLayer)
+        })
+      const target = map.getTargetElement()
+      target.style.backgroundColor = 'rgb(191,233,255)'
+    },
+    findCBMTLayer(map) {
+      const layers = map.getLayers().getArray()
+      return layers.find((layer) => {
+        const source = layer.getSource()
+        if (source && source.getUrls) {
+          const urls = source.getUrls()
+          return urls && urls.some((url) => url.includes('CBMT_CBCT'))
+        }
+        return false
+      })
+    },
+    removeCBMTStyle(map) {
+      const layerToRemove = this.findCBMTLayer(map)
+      if (layerToRemove) {
+        map.removeLayer(layerToRemove)
+        this.styleApplied = false
+      }
+    },
+    handleOthersSelection(colorName) {
+      if (this.styleApplied) return
+      this.isUserInitiated = true
+      const newSelection = `Others-${colorName}`
+      this.basemapSelection = newSelection
+
+      const background = {
+        basemap: 'Others',
+        name: colorName,
+      }
+      this.whiteBasemapHandler(false, background)
+      this.styleApplied = true
+    },
     initMap(target, color, source, callback) {
       const newProjection = getProjection(this.currentCRS)
       const fromLonLat = getTransform('EPSG:4326', newProjection)
@@ -993,6 +1156,7 @@ export default {
       newProjection.setWorldExtent(worldExtent)
       const projExtent = applyTransform(worldExtent, fromLonLat, undefined, 8)
       newProjection.setExtent(projExtent)
+
       let center
       if (this.currentCRS === 'EPSG:3995') {
         center = [-60000, -500000]
@@ -1005,10 +1169,10 @@ export default {
         layers: [],
         view: new View({
           center: center,
-          zoom: this.defaultZoomLevels[this.currentCRS],
           minZoom: this.defaultZoomLevels[this.currentCRS],
           maxZoom: this.defaultZoomLevels[this.currentCRS],
           projection: this.currentCRS,
+          zoom: this.defaultZoomLevels[this.currentCRS],
         }),
         pixelRatio: 1,
         controls: [],
@@ -1038,7 +1202,11 @@ export default {
         .getArray()
         .forEach((layer) => {
           if (layer instanceof VectorTileLayer) {
-            const [layerSource, layerColor] = layer.get('layerName').split('-')
+            const layerName = layer.get('layerName')
+            if (!layerName) {
+              return
+            }
+            const [layerSource, layerColor] = layerName.split('-')
             const source = this.sources[layerSource]
             const style = source.colors[layerColor]
             const displayCondition =
@@ -1088,14 +1256,27 @@ export default {
         center = fromLonLat([-90, 55])
       }
 
+      if (this.selections.base === 'Others-CBMT') {
+        this.removeCBMTStyle(this.$mapCanvas.mapObj)
+        if (this.sources.Others.displayCondition) {
+          this.cbmtStyle(this.$mapCanvas.mapObj)
+          this.styleApplied = true
+        } else {
+          this.emitter.emit('crsBasemapMismatch', 'CBMT')
+          this.isUserInitiated = true
+          const newSelection = 'OSM-Base'
+          this.basemapSelection = newSelection
+        }
+      }
       Object.values(this.maps).forEach((map) => {
         map.setView(
           new View({
             center: center,
             zoom: this.defaultZoomLevels[this.currentCRS],
-            projection: newProjection,
+            projection: this.currentCRS,
           }),
         )
+
         this.updateMap(map)
       })
 
@@ -1105,26 +1286,38 @@ export default {
       const basemap = this.$mapCanvas.mapObj.getLayers().getArray()[0]
       basemap.setVisible(visible)
       if (background) {
-        if (!this.backgroundColor) {
-          let currentColor = this.basemapSelection.split('-')[1]
-          currentColor = currentColor === 'Base' ? 'Water' : currentColor
-          this.backgroundColor = {
-            name: currentColor,
-            values: this.sources.NoBasemap.colors[currentColor],
-          }
-        }
-        const rgb = this.backgroundColor.values
-        const cssColor = `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`
-        document.getElementById('map').style.backgroundColor = cssColor
-        if (['NoBasemap', 'OSM'].includes(background.basemap)) {
-          this.basemapSelection = `NoBasemap-${this.backgroundColor.name}`
-          this.store.setBasemap('NoBasemap')
+        if (background.basemap === 'Others') {
+          this.store.setBasemap(background.name)
+          this.selections.background = null
+          this.backgroundColor = null
+          this.store.setRGB([])
         } else {
-          this.basemapSelection = `${background.basemap}-${background.name}`
-          this.store.setBasemap(this.basemapSelection)
+          if (!this.backgroundColor) {
+            let currentColor = this.basemapSelection.split('-')[1]
+            if (
+              currentColor === 'Base' ||
+              this.basemapSelection.split('-')[0] === 'Others'
+            ) {
+              currentColor = 'Water'
+            }
+            this.backgroundColor = {
+              name: currentColor,
+              values: this.sources.NoBasemap.colors[currentColor],
+            }
+          }
+          const rgb = this.backgroundColor.values
+          const cssColor = `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`
+          document.getElementById('map').style.backgroundColor = cssColor
+          if (['NoBasemap', 'OSM'].includes(background.basemap)) {
+            this.basemapSelection = `NoBasemap-${this.backgroundColor.name}`
+            this.store.setBasemap('NoBasemap')
+          } else {
+            this.basemapSelection = `${background.basemap}-${background.name}`
+            this.store.setBasemap(this.basemapSelection)
+          }
+          this.store.setRGB(rgb)
+          this.selections.background = `NoBasemap-${this.backgroundColor.name}`
         }
-        this.store.setRGB(rgb)
-        this.selections.background = `NoBasemap-${this.backgroundColor.name}`
       } else {
         this.store.setBasemap('OSM')
         this.selections.background = null

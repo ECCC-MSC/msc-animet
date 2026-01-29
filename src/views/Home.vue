@@ -108,27 +108,29 @@ export default {
     }
     if (this.extent !== undefined) {
       let extentPassed = this.extent.split(',')
-      let castedExtent = []
+      let castExtent = []
       extentPassed.forEach((element) => {
-        castedExtent.push(parseFloat(element))
+        castExtent.push(parseFloat(element))
       })
       if (basemap === '0') {
         let rotation = 0
-        if (castedExtent.length === 5) {
-          rotation = castedExtent.pop()
+        if (castExtent.length === 5) {
+          rotation = castExtent.pop()
         }
-        this.store.setExtent([castedExtent, rotation])
+        this.store.setExtent([castExtent, rotation])
       }
-      this.emitter.emit('goToExtent', castedExtent)
-    } else if (this.proj || (this.allPropsUndefined && this.userCRS)) {
-      const crs = this.proj || this.userCRS
+      this.emitter.emit('goToExtent', castExtent)
+    } else {
+      const crs = this.proj || this.userCRS || 'EPSG:3857'
 
       const foundCode = Object.keys(this.crsList).find((code) =>
         code.includes(crs),
       )
       if (foundCode) {
         let extent
-        if (foundCode === 'EPSG:3995') {
+        if (foundCode === 'EPSG:3857') {
+          extent = [-19416707, 2902733, -620801, 11820999]
+        } else if (foundCode === 'EPSG:3995') {
           extent = [-3249458, -3332154, 3287315, 3112652]
         } else if (foundCode === 'EPSG:3978') {
           extent = [-3844382, -2769810, 5183413, 4476288]

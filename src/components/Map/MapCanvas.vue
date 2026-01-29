@@ -118,7 +118,7 @@ export default {
 
     this.$mapCanvas.mapObj = new Map({
       target: this.$refs['map'],
-      layers: [this.osm, this.graticule],
+      layers: [new TileLayer({ source: new OSM() }), this.graticule],
       view: new View({
         center: fromLonLat([-90, 55]),
         zoom: 4,
@@ -246,6 +246,7 @@ export default {
     this.$mapCanvas.mapObj.addOverlay(popupGFI)
 
     this.$mapCanvas.mapObj.on('moveend', () => {
+      this.emitter.emit('clearLayerCache', {})
       const view = this.$mapCanvas.mapObj.getView()
       const extent = view.calculateExtent(this.$mapCanvas.mapObj.getSize())
       const rotation = view.getRotation()
@@ -804,7 +805,6 @@ export default {
       v: 0.75,
       graticule: null,
       loading: 0,
-      osm: new TileLayer({ source: new OSM() }),
       rotateArrow: null,
       selectedLegendLayerName: null,
       t: useI18n().t,

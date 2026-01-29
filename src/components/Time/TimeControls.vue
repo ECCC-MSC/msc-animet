@@ -134,7 +134,6 @@ export default {
       screenWidth: window.innerWidth,
       stopPrefetch: false,
       tileCache: new WMSTileCache(),
-      currentExtent: null,
     }
   },
   mounted() {
@@ -368,6 +367,7 @@ export default {
                   layer.setOpacity(originalOpacity)
                   source.un('imageloadend', restoreOpacity)
                   source.un('imageloaderror', restoreOpacity)
+                  this.emitter.emit('updatePermalink')
                 }
               }
 
@@ -539,14 +539,6 @@ export default {
             layer.get('layerIsTemporal')
           ) {
             const view = this.$mapCanvas.mapObj.getView()
-            const calculatedExtent = view.calculateExtent()
-            const extentKey = calculatedExtent.join(',')
-
-            if (this.currentExtent !== extentKey) {
-              this.tileCache.clear()
-              this.currentExtent = extentKey
-            }
-
             const dateArray = layer.get('layerDateArray')
             const globalCurrentIndex = this.mapTimeSettings.DateIndex
             const globalStartIndex = this.datetimeRangeSlider[0]

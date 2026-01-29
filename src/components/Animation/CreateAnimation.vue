@@ -350,6 +350,8 @@ export default {
       this.restoreState(initialState)
     },
     async redoAnimation() {
+      // Wait a little to avoid race condition during error handling
+      await new Promise((resolve) => setTimeout(resolve, 1000))
       this.createMP4Handler()
       if (this.mapTimeSettings.DateIndex !== null) {
         this.store.setOutputDate(
