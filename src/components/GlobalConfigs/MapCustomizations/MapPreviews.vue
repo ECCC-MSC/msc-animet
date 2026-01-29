@@ -1380,6 +1380,13 @@ export default {
   align-items: center;
 }
 
+.map-preview-container span {
+  word-break: break-word;
+  text-align: center;
+  font-size: 0.95rem;
+  max-width: 98px;
+}
+
 .map-previews-grid {
   display: flex;
   flex-direction: column;

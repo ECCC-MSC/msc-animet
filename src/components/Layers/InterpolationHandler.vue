@@ -9,14 +9,18 @@
         }"
         variant="text"
         :color="color"
-        icon="mdi-close"
+        :icon="
+          item.getSource().getParams().INTERPOLATION
+            ? 'mdi-creation'
+            : 'mdi-creation-outline'
+        "
         v-bind="props"
-        @click="removeLayerHandler(item)"
+        @click="interpolate(item)"
         :disabled="isAnimating"
       >
       </v-btn>
     </template>
-    <span>{{ $t('LayerBarRemoveTooltip') }}</span>
+    <span>{{ $t('LayerBarInterpolateTooltip') }}</span>
   </v-tooltip>
 </template>
 
@@ -33,8 +37,17 @@ export default {
     return { isDark }
   },
   methods: {
-    removeLayerHandler(removedLayer) {
-      this.emitter.emit('removeLayer', removedLayer)
+    interpolate(layer) {
+      const isInterpolated = layer.getSource().getParams().INTERPOLATION
+
+      layer.getSource().updateParams({
+        INTERPOLATION: !isInterpolated,
+      })
+
+      this.emitter.emit('clearLayerCache', {
+        layerName: layer.get('layerName'),
+      })
+      this.emitter.emit('updatePermalink')
     },
   },
   computed: {

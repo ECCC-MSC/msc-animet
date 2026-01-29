@@ -78,6 +78,15 @@
                   :item="item"
                   :color="isSnapped(item.get('layerName'))"
                 />
+                <interpolation-handler
+                  v-if="
+                    Object.values(wmsSources)[item.get('layerWmsIndex')]
+                      .hasInterpolation &&
+                    !item.get('layerInterpolationFailure')
+                  "
+                  :item="item"
+                  :color="isSnapped(item.get('layerName'))"
+                />
                 <remove-layer-handler
                   :item="item"
                   :color="isSnapped(item.get('layerName'))"
@@ -172,6 +181,9 @@ export default {
     },
     numLayers() {
       return this.$mapLayers.arr.length
+    },
+    wmsSources() {
+      return this.store.getWmsSources
     },
   },
 }

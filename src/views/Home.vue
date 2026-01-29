@@ -88,7 +88,7 @@ export default {
           isSnapped,
           isVisible,
           style,
-          legendDisplayed,
+          styleInfo,
           modelRun,
         ] = [...layerParams, lastValue]
 
@@ -100,7 +100,7 @@ export default {
           isSnapped,
           isVisible,
           style,
-          legendDisplayed,
+          styleInfo,
           modelRun,
         }
         this.addLayerEvent({ index, ...params, source: sourceSpecified })
@@ -190,7 +190,7 @@ export default {
       isSnapped,
       isVisible,
       style,
-      legendDisplayed,
+      styleInfo,
       modelRun,
       source,
     } = {}) {
@@ -272,7 +272,10 @@ export default {
       let op = parseFloat(opacity)
       layer.opacity = isNaN(op) || op > 1 || op < 0 ? 0.75 : op
       layer.visible = isVisible === '0' ? false : true
-      layer.legendDisplayed = legendDisplayed === '1' ? true : false
+      layer.legendDisplayed = styleInfo[0] === '1' ? true : false
+      if (styleInfo.length > 1 && styleInfo[1] === '1') {
+        layer.layerInterpolated = true
+      }
       if (style !== '0') {
         layer.currentStyle = style
       }
