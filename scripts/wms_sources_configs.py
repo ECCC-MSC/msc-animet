@@ -10,6 +10,7 @@ wms_sources = {
         "urls": ["https://geo.weather.gc.ca/geomet"],
         "version": "1.3.0",
         "display": True,
+        "hasInterpolation": True,
     },
     "Climate": {
         "urls": ["https://geo.weather.gc.ca/geomet-climate"],
@@ -21,6 +22,7 @@ wms_sources = {
         "version": "1.3.0",
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
         "source_validation": True,
+        "hasInterpolation": True,
     },
     "ClimateNightly": {
         "urls": [os.environ.get("GEOMET_CLIMATE_NIGHTLY_URL", default="")],
@@ -33,6 +35,7 @@ wms_sources = {
         "version": "1.3.0",
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
         "source_validation": True,
+        "hasInterpolation": True,
     },
     "ClimateDev": {
         "urls": [os.environ.get("GEOMET_CLIMATE_DEV_URL", default="")],
@@ -45,6 +48,7 @@ wms_sources = {
         "version": "1.3.0",
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
         "source_validation": True,
+        "hasInterpolation": True,
     },
     "ClimateStage": {
         "urls": [os.environ.get("GEOMET_CLIMATE_STAGE_URL", default="")],

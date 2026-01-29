@@ -158,9 +158,11 @@ export default {
               ) {
                 layerStyle = layer.get('layerCurrentStyle')
               }
-              let legendDisplayed = this.activeLegends.includes(layerName)
-                ? '1'
-                : '0'
+              let styleInfo = this.activeLegends.includes(layerName) ? '1' : '0'
+              const isInterpolated = layer.getSource().getParams().INTERPOLATION
+              if (isInterpolated) {
+                styleInfo += '1'
+              }
 
               const [name, source] = layerName.split('/')
               const layerParams = [
@@ -169,7 +171,7 @@ export default {
                 isSnapped,
                 isVisible,
                 layerStyle,
-                legendDisplayed,
+                styleInfo,
               ]
 
               const currentMR = layer.get('layerCurrentMR')

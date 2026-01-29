@@ -283,6 +283,22 @@ export default {
             this.notifyExtentRebuilt = true
           }
         } else if (
+          serviceException.textContent.includes(
+            'Resampling not supported for this layer',
+          )
+        ) {
+          layer.getSource().updateParams({ INTERPOLATION: false })
+          layer.setProperties({
+            layerInterpolationFailure: true,
+          })
+          this.expiredSnackBarMessage = this.t('InterpolationError')
+          this.timeoutDuration = 8000
+          this.errorLayersList.splice(
+            this.errorLayersList.indexOf(layer.get('layerName')),
+            1,
+          )
+          this.emitter.emit('updatePermalink')
+        } else if (
           'code' in attrs &&
           attrs['code'].nodeValue === 'StyleNotDefined'
         ) {

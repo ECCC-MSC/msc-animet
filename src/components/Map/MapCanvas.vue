@@ -514,6 +514,12 @@ export default {
       imageLayer.getSource().updateParams({
         STYLES: imageLayer.get('layerCurrentStyle'),
       })
+
+      if (Object.hasOwn(layerData, 'layerInterpolated')) {
+        imageLayer.getSource().updateParams({
+          INTERPOLATION: true,
+        })
+      }
       if (Object.hasOwn(layerData, 'legendDisplayed')) {
         if (layerData.legendDisplayed === true) {
           this.store.addActiveLegend(imageLayer.get('layerName'))
