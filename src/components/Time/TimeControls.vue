@@ -566,6 +566,9 @@ export default {
             if (!layer.get('layerIsRefTimeOnly')) {
               urlParams.TIME = ''
             }
+            if (layer.getSource().getParams().INTERPOLATION) {
+              urlParams.INTERPOLATION = 'true'
+            }
             if (
               layer.getSource().getParams().DIM_REFERENCE_TIME !== undefined
             ) {

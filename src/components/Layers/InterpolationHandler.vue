@@ -16,7 +16,7 @@
         "
         v-bind="props"
         @click="interpolate(item)"
-        :disabled="isAnimating"
+        :disabled="isAnimating || item.get('layerInterpolationFailure')"
       >
       </v-btn>
     </template>

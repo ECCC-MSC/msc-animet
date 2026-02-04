@@ -43,7 +43,7 @@
   "FramesPerSecond": "Frames per second",
   "GoToHomePage": "Go to MSC AniMet home page",
   "Grey": "Grey",
-  "InterpolationError": "Interpolation failed, functionality has been disabled on this layer.",
+  "InterpolationError": "Interpolation is not available for this layer. Disabling...",
   "InvalidSRS": "CRS {CRS} is invalid for this data source.",
   "JPEGCreateButtonLabel": "Create image",
   "JPEGExportDownload": "Download as JPEG",

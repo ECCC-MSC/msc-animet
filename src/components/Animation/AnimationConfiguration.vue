@@ -196,11 +196,11 @@ export default {
           }
         } else {
           const firstLayerTitle = this.t(
-            this.$mapLayers.arr[this.$mapLayers.arr.length - 1].get(
-              'layerName',
-            ),
+            this.$mapLayers.arr[this.$mapLayers.arr.length - 1]
+              .get('layerName')
+              .split('/')[0],
           )
-          this.store.setAnimationTitle(firstLayerTitle.split('/')[0])
+          this.store.setAnimationTitle(firstLayerTitle)
         }
       }
     },
