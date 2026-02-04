@@ -43,7 +43,7 @@
   "FramesPerSecond": "Images par seconde",
   "GoToHomePage": "Aller à la page d'accueil AniMet du SMC",
   "Grey": "Grise",
-  "InterpolationError": "L'interpolation a échoué, la fonctionalité a été désactivée pour cette couche.",
+  "InterpolationError": "L'interpolation n'est pas disponible pour cette couche. Désactivation...",
   "InvalidSRS": "Le SRC {CRS} n'est pas valide pour cette source de données.",
   "JPEGCreateButtonLabel": "Créer l'image",
   "JPEGExportDownload": "Télécharger au format JPEG",
