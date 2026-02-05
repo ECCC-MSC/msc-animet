@@ -563,11 +563,11 @@ export default {
             }
             urlParams.TRANSPARENT = 'true'
             urlParams.LAYERS = layer.get('layerName').split('/')[0]
-            if (!layer.get('layerIsRefTimeOnly')) {
-              urlParams.TIME = ''
-            }
             if (layer.getSource().getParams().INTERPOLATION) {
               urlParams.INTERPOLATION = 'true'
+            }
+            if (!layer.get('layerIsRefTimeOnly')) {
+              urlParams.TIME = ''
             }
             if (
               layer.getSource().getParams().DIM_REFERENCE_TIME !== undefined
@@ -701,6 +701,7 @@ export default {
       }
 
       const queryString = Object.keys(urlParams)
+        .sort()
         .map(
           (key) =>
             `${encodeURIComponent(key)}=${encodeURIComponent(urlParams[key])}`,
@@ -712,8 +713,19 @@ export default {
       await this.tileCache.preload(layerName, wmsUrl)
     },
     createImageLoaderWithCache(tileCache, layerName) {
+      const normalizeUrl = (url) => {
+        const [baseUrl, queryString] = url.split('?')
+        if (!queryString) return url
+
+        const params = new URLSearchParams(queryString)
+        const sortedParams = new URLSearchParams(
+          [...params.entries()].sort(([a], [b]) => a.localeCompare(b)),
+        )
+
+        return `${baseUrl}?${sortedParams.toString()}`
+      }
       return function (image, src) {
-        const normalizedSrc = src.replace(/BBOX=([^&]+)/g, (_, bbox) => {
+        const bboxNormalized = src.replace(/BBOX=([^&]+)/g, (_, bbox) => {
           const decoded = decodeURIComponent(bbox)
           const coords = decoded.split(',').map((coord) => {
             const num = parseFloat(coord)
@@ -721,6 +733,7 @@ export default {
           })
           return `BBOX=${encodeURIComponent(coords.join(','))}`
         })
+        const normalizedSrc = normalizeUrl(bboxNormalized)
         const imageElement = image.getImage()
         const cachedBlob = tileCache.get(layerName, normalizedSrc)
         if (cachedBlob) {

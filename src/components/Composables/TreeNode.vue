@@ -117,7 +117,9 @@ const presetSelected = (node) => {
         ) {
           styleCheck = false
         }
-        return layer.get('layerName') === childNode.Name && styleCheck
+        return (
+          layer.get('layerName').split('/')[0] === childNode.Name && styleCheck
+        )
       }
     }),
   )
