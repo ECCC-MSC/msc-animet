@@ -41,7 +41,7 @@ export default {
       const isInterpolated = layer.getSource().getParams().INTERPOLATION
 
       layer.getSource().updateParams({
-        INTERPOLATION: !isInterpolated,
+        INTERPOLATION: isInterpolated === undefined ? true : undefined,
       })
 
       this.emitter.emit('clearLayerCache', {

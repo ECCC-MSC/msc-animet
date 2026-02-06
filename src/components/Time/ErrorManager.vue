@@ -287,7 +287,7 @@ export default {
             'Resampling not supported for this layer',
           )
         ) {
-          layer.getSource().updateParams({ INTERPOLATION: false })
+          layer.getSource().updateParams({ INTERPOLATION: undefined })
           layer.setProperties({
             layerInterpolationFailure: true,
           })

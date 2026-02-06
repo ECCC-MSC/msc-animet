@@ -18,8 +18,8 @@
             'layer-item-light': !isDark,
           }"
         >
-          <template
-            v-if="isAnimating && !configPanelHover && playState === 'play'"
+          <div
+            v-show="isAnimating && !configPanelHover && playState === 'play'"
             class="pa-0"
           >
             <v-list-item-title :title="$t(item.get('layerName').split('/')[0])">
@@ -38,8 +38,11 @@
               v-text="$t('ModelRun')"
             ></div>
             <model-run-handler class="mr-text" :item="item" />
-          </template>
-          <template v-else class="pa-0">
+          </div>
+          <div
+            v-show="!isAnimating || configPanelHover || playState !== 'play'"
+            class="pa-0"
+          >
             <v-col class="pa-0">
               <v-list-item-title
                 :title="
@@ -92,7 +95,7 @@
                 />
               </v-row>
             </v-col>
-          </template>
+          </div>
           <template v-slot:append>
             <v-list-item-action
               v-if="!isAnimating || configPanelHover || playState !== 'play'"
