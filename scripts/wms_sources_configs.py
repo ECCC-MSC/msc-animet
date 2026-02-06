@@ -5,6 +5,7 @@ wms_sources = {
         "urls": [os.environ.get("GEOMET_WEATHER_NIGHTLY_URL", default="https://geo.weather.gc.ca/geomet")],
         "version": "1.3.0",
         "display": True,
+        "source_validation": "GEOMET_WEATHER_NIGHTLY_URL" in os.environ,
     },
     "Weather": {
         "urls": ["https://geo.weather.gc.ca/geomet"],
