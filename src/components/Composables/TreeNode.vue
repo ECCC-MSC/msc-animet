@@ -89,6 +89,9 @@ const isAnimating = computed(() => {
 const playState = computed(() => {
   return store.getPlayState
 })
+const wmsSources = computed(() => {
+  return store.getWmsSources
+})
 
 const img = computed(() => {
   return new URL(
@@ -117,9 +120,16 @@ const presetSelected = (node) => {
         ) {
           styleCheck = false
         }
-        return (
-          layer.get('layerName').split('/')[0] === childNode.Name && styleCheck
-        )
+        if (
+          !childNode.Name.includes('/') &&
+          Object.values(wmsSources.value)[0].source_validation
+        ) {
+          return (
+            layer.get('layerName').split('/')[0] === childNode.Name &&
+            styleCheck
+          )
+        }
+        return layer.get('layerName') === childNode.Name && styleCheck
       }
     }),
   )
@@ -137,9 +147,27 @@ const handleMultiAdd = (node) => {
     let toRemove = []
     if (selected) {
       for (const child of nodeChildren) {
-        toRemove.push(
-          proxy.$mapLayers.arr.find((l) => l.get('layerName') === child),
-        )
+        if (
+          !child.includes('/') &&
+          Object.values(wmsSources.value)[0].source_validation
+        ) {
+          const sourceKey = Object.keys(wmsSources.value).find(
+            (key) =>
+              key !== 'Presets' &&
+              wmsSources.value[key]['urls'].includes(
+                Object.values(wmsSources.value)[0].urls[0],
+              ),
+          )
+          toRemove.push(
+            proxy.$mapLayers.arr.find(
+              (l) => l.get('layerName') === `${child}/${sourceKey}`,
+            ),
+          )
+        } else {
+          toRemove.push(
+            proxy.$mapLayers.arr.find((l) => l.get('layerName') === child),
+          )
+        }
       }
     } else {
       toRemove = [...proxy.$mapLayers.arr]
