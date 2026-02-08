@@ -28,6 +28,7 @@
         </v-btn>
       </template>
       <v-container
+        :class="{ 'compact-panel': !!mapId }"
         @click.stop
         @mouseover="
           () => {
@@ -79,20 +80,26 @@
           }"
         >
           <v-tabs-window-item eager>
-            <layer-tree :id="'layer-tree-' + mapId" />
+            <layer-tree 
+              :id="'layer-tree-' + mapId" 
+              :class="{ 'layer-tree-compact': !!mapId }"
+            />
           </v-tabs-window-item>
           <v-tabs-window-item eager @click="stopLoop">
             <layer-configuration
               :id="'layer-configuration-' + mapId"
+              :class="{ 'layer-configuration-compact': !!mapId }"
               v-show="$mapLayers.arr.length !== 0"
             />
           </v-tabs-window-item>
           <v-tabs-window-item eager>
             <animation-configuration
               :id="'animation-configuration-' + mapId"
+              :class="{ 'animation-configuration-compact': !!mapId }"
               v-show="$mapLayers.arr.length !== 0"
             />
           </v-tabs-window-item>
+
         </v-tabs-window>
       </v-container>
     </v-menu>
@@ -110,6 +117,7 @@ export default {
   props: ['mapId'],
 
   mounted() {
+    this.panelRoot = this.$refs.panelRoot
     this.emitter.on('changeTab', this.onChangeTab)
     this.emitter.on('collapseMenu', this.onCollapseMenu)
     this.emitter.on('openPanel', this.onOpenPanel)
@@ -129,6 +137,7 @@ export default {
       buttonShown: true,
       color: null,
       menuOpen: false,
+      panelRoot: null,
       screenWidth: window.innerWidth,
       tab: null,
     }
@@ -379,17 +388,42 @@ export default {
   padding: 0;
 }
 /* Custom ids */
-#animation-configuration {
+#animation-configuration, .animation-configuration-compact {
   padding: 4px 10px 6px 10px;
   width: 390px;
   max-width: 390px;
 }
-#layer-configuration {
+#layer-configuration, .layer-configuration-compact {
   max-width: 390px;
 }
-#layer-tree {
+#layer-tree, .layer-tree-compact {
   width: 700px;
 }
+
+/* Compact Overrides */
+.compact-panel #animation-configuration, 
+.compact-panel .animation-configuration-compact,
+.compact-panel #layer-configuration, 
+.compact-panel .layer-configuration-compact {
+  width: 320px;
+  max-width: 320px;
+}
+
+.compact-panel #layer-tree, 
+.compact-panel .layer-tree-compact {
+  width: 320px;
+}
+
+.compact-panel :deep(.v-tab) {
+  min-width: 60px !important;
+  padding: 0 8px !important;
+}
+
+.compact-panel :deep(.v-btn--icon.v-btn--density-default) {
+  width: 36px;
+  height: 36px;
+}
+
 .side-panel {
   position: absolute;
   top: 50%;

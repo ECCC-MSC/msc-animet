@@ -9,14 +9,7 @@
         ref="mapContainers"
       />
     </div>
-    <!-- Global Controls Overlay could go here -->
-    <v-card class="sync-controls" elevation="4">
-        <v-card-text class="pa-2 d-flex align-center">
-            <span class="text-subtitle-2 mr-2">Sync:</span>
-            <v-btn icon="mdi-play" size="small" @click="syncPlay" class="mr-1" title="Play All"></v-btn>
-            <v-btn icon="mdi-pause" size="small" @click="syncPause" title="Pause All"></v-btn>
-        </v-card-text>
-    </v-card>
+
   </div>
 </template>
 
@@ -26,24 +19,8 @@ import MapContainer from '@/components/MapContainer.vue'
 
 const mapContainers = ref([])
 const isSyncingExtent = ref(false)
-const isSyncingTime = ref(false)
 
-const syncPlay = () => {
-  mapContainers.value.forEach((container) => {
-    if (container && container.store) {
-      container.store.setIsAnimating(true)
-      container.store.setPlayState('play')
-    }
-  })
-}
 
-const syncPause = () => {
-  mapContainers.value.forEach((container) => {
-    if (container && container.store) {
-      container.store.setPlayState('pause')
-    }
-  })
-}
 
 onMounted(() => {
   // Wait for map instances to be ready
@@ -107,12 +84,5 @@ onMounted(() => {
   position: relative;
 }
 
-.sync-controls {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    opacity: 0.9;
-}
+
 </style>
