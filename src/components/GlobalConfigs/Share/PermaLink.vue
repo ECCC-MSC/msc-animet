@@ -265,12 +265,14 @@ export default {
           permalinktemp += `&range=${range},${current},${last},${this.mapTimeSettings.Step}`
         }
 
-        this.router.replace({
-          path: this.route.path,
-          query: Object.fromEntries(
-            new URLSearchParams(permalinktemp.split('?')[1]),
-          ),
-        })
+        if (!this.mapId) {
+          this.router.replace({
+            path: this.route.path,
+            query: Object.fromEntries(
+              new URLSearchParams(permalinktemp.split('?')[1]),
+            ),
+          })
+        }
 
         this.store.setPermalink(permalinktemp)
 
