@@ -6,102 +6,82 @@
       class="v-overlay-menu"
       transition="scale-transition"
       no-click-animation
+      location="top right"
+      offset="10"
     >
       <template v-slot:activator="{ props }">
         <v-btn
           class="panel_button"
           :class="{
-            'button-color': buttonShown,
-            'button-translated': !buttonShown,
+            'button-active': !buttonShown,
+            'button-hidden': !buttonShown && screenWidth < 960,
           }"
-          elevation="4"
+          elevation="8"
           icon
           hide-details
           v-bind="props"
         >
-          <transition name="fade">
-            <v-icon v-if="buttonShown" key="0" class="panel-icon">
+          <transition name="rotate-fade" mode="out-in">
+            <v-icon v-if="buttonShown" key="open" class="panel-icon" size="28">
               {{ getIcon() }}
             </v-icon>
-            <v-icon v-else key="1" class="panel-icon">mdi-close</v-icon>
+            <v-icon v-else key="close" class="panel-icon" size="28">mdi-close</v-icon>
           </transition>
         </v-btn>
       </template>
-      <v-container
+      <div
+        class="glass-panel-container"
         :class="{ 'compact-panel': !!mapId }"
         @click.stop
-        @mouseover="
-          () => {
-            store.setConfigPanelHover(true)
-          }
-        "
-        @mouseleave="
-          () => {
-            this.store.setConfigPanelHover(false)
-          }
-        "
+        @mouseover="store.setConfigPanelHover(true)"
+        @mouseleave="store.setConfigPanelHover(false)"
       >
-        <v-toolbar class="toolbar">
-          <template v-slot:extension>
-            <v-tabs v-model="tab" color="primary" center-active>
-              <v-tab>
-                <v-icon left>mdi-layers-plus</v-icon>
-                <span v-if="tab === 0 && screenWidth >= 500">{{
-                  $t('LayerTree')
-                }}</span>
-              </v-tab>
-              <v-tab v-if="$mapLayers.arr.length !== 0">
-                <v-icon left>mdi-layers-edit</v-icon>
-                <span v-if="tab === 1 && screenWidth >= 500">{{
-                  $t('LayerControlsTitle')
-                }}</span>
-              </v-tab>
-              <v-tab v-if="$mapLayers.arr.length !== 0">
-                <v-icon left>mdi-movie-open-play</v-icon>
-                <span v-if="tab === 2 && screenWidth >= 500">{{
-                  $t('MP4CreateTitle')
-                }}</span>
-              </v-tab>
-            </v-tabs>
-            <v-spacer></v-spacer>
-            <v-btn icon @click="onMenuToggle">
-              <v-icon>mdi-close</v-icon>
-            </v-btn>
-          </template>
+        <v-toolbar flat class="glass-toolbar">
+          <v-tabs v-model="tab" color="primary" align-tabs="start" class="modern-tabs">
+            <v-tab value="0">
+              <v-icon start>mdi-layers-plus</v-icon>
+              <span v-if="screenWidth >= 600">{{ $t('LayerTree') }}</span>
+            </v-tab>
+            <v-tab v-if="$mapLayers.arr.length !== 0" value="1">
+              <v-icon start>mdi-layers-edit</v-icon>
+              <span v-if="screenWidth >= 600">{{ $t('LayerControlsTitle') }}</span>
+            </v-tab>
+            <v-tab v-if="$mapLayers.arr.length !== 0" value="2">
+              <v-icon start>mdi-movie-open-play</v-icon>
+              <span v-if="screenWidth >= 600">{{ $t('MP4CreateTitle') }}</span>
+            </v-tab>
+          </v-tabs>
+          <v-spacer></v-spacer>
+          <v-btn icon variant="text" @click="onMenuToggle" class="close-btn">
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
         </v-toolbar>
-        <v-tabs-window
-          v-model="tab"
-          :class="{
-            'hide-header':
-              isAnimating &&
-              !configPanelHover &&
-              playState === 'play' &&
-              tab === 1,
-          }"
-        >
-          <v-tabs-window-item eager>
-            <layer-tree 
-              :id="'layer-tree-' + mapId" 
-              :class="{ 'layer-tree-compact': !!mapId }"
-            />
-          </v-tabs-window-item>
-          <v-tabs-window-item eager @click="stopLoop">
-            <layer-configuration
-              :id="'layer-configuration-' + mapId"
-              :class="{ 'layer-configuration-compact': !!mapId }"
-              v-show="$mapLayers.arr.length !== 0"
-            />
-          </v-tabs-window-item>
-          <v-tabs-window-item eager>
-            <animation-configuration
-              :id="'animation-configuration-' + mapId"
-              :class="{ 'animation-configuration-compact': !!mapId }"
-              v-show="$mapLayers.arr.length !== 0"
-            />
-          </v-tabs-window-item>
 
-        </v-tabs-window>
-      </v-container>
+        <div class="panel-content">
+          <v-window v-model="tab">
+            <v-window-item value="0" eager>
+              <layer-tree 
+                :id="'layer-tree-' + mapId" 
+                :class="{ 'layer-tree-compact': !!mapId }"
+              />
+            </v-window-item>
+            <v-window-item value="1" eager @click="stopLoop">
+              <layer-configuration
+                :id="'layer-configuration-' + mapId"
+                :class="{ 'layer-configuration-compact': !!mapId }"
+                v-show="$mapLayers.arr.length !== 0"
+              />
+            </v-window-item>
+            <v-window-item value="2" eager>
+              <animation-configuration
+                :id="'animation-configuration-' + mapId"
+                :class="{ 'animation-configuration-compact': !!mapId }"
+                v-show="$mapLayers.arr.length !== 0"
+              />
+            </v-window-item>
+          </v-window>
+        </div>
+      </div>
     </v-menu>
   </div>
 </template>
@@ -139,7 +119,7 @@ export default {
       menuOpen: false,
       panelRoot: null,
       screenWidth: window.innerWidth,
-      tab: null,
+      tab: '0',
     }
   },
   methods: {
@@ -151,11 +131,11 @@ export default {
     },
     getIcon() {
       switch (this.tab) {
-        case 1:
+        case '1':
           return 'mdi-layers-edit'
-        case 2:
+        case '2':
           return 'mdi-movie-open-play'
-        case 0:
+        case '0':
         default:
           return 'mdi-layers-plus'
       }
@@ -175,7 +155,7 @@ export default {
       }
     },
     onChangeTab() {
-      if (this.tab === 0 && this.$mapLayers.arr.length !== 0) this.tab = 1
+      if (this.tab === '0' && this.$mapLayers.arr.length !== 0) this.tab = '1'
     },
     onCollapseMenu(permalinkSetup) {
       if (permalinkSetup) {
@@ -183,7 +163,7 @@ export default {
           'layersLength',
           (_, oldVal) => {
             if (oldVal !== undefined) {
-              this.tab = 1
+              this.tab = '1'
               unwatch()
             }
           },
@@ -246,7 +226,7 @@ export default {
       return this.$mapLayers.arr.length
     },
     preventGFI() {
-      return this.menuOpen && this.tab === 0
+      return this.menuOpen && this.tab === '0'
     },
     toggleMenu: {
       get() {
@@ -260,16 +240,16 @@ export default {
   watch: {
     layersLength(newLength) {
       if (newLength === 0) {
-        this.tab = 0
+        this.tab = '0'
       }
     },
     preventGFI(newVal) {
       this.store.setMenusOpen(newVal)
     },
     tab(newTab, oldTab) {
-      if (newTab === 2) {
+      if (newTab === '2') {
         this.togglePreview(true)
-      } else if (oldTab === 2) {
+      } else if (oldTab === '2') {
         this.togglePreview(false)
       }
     },
@@ -279,155 +259,105 @@ export default {
 
 <style>
 .v-overlay-menu .v-overlay__content {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  left: auto !important;
-  right: 0 !important;
-  top: 0 !important;
-  min-width: 350px !important;
-  max-width: calc(100vw - 1em) !important;
-  max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px);
-  overflow: hidden;
-  transform-origin: right top !important;
-}
-@media (max-width: 1120px) {
-  .v-overlay-menu .v-overlay__content {
-    max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px + 24px);
-  }
-}
-@media (max-width: 959px) {
-  .v-overlay-menu .v-overlay__content {
-    top: calc(34px + 42px + 0.5em * 2) !important;
-    max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px - 42px + 24px);
-  }
-}
-@media (max-width: 565px) {
-  .v-overlay-menu .v-overlay__content {
-    max-height: calc(100dvh - (34px + 0.5em * 2) - 0.5em - 158px - 42px - 10px);
-  }
+  box-shadow: none !important;
+  background: transparent !important;
+  overflow: visible !important;
+  margin: 0 !important;
+  display: flex;
+  justify-content: flex-end;
 }
 </style>
 
 <style scoped>
-/* Pre-defined elements */
-.v-container {
-  padding: 0;
-  overflow-y: auto;
-}
-@media (max-height: 565px) and (max-width: 959px) {
-  .v-container {
-    max-height: calc(100dvh - (34px + 0.5em * 2) - 42px - 10px) !important;
-  }
-}
-
-@media (max-height: 565px) and (min-width: 960px) {
-  .v-container {
-    max-height: calc(100dvh - (34px + 0.5em * 2) - 10px) !important;
-  }
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition:
-    color 0.25s,
-    opacity 0.45s ease;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-.hide-header {
-  margin-top: -56px;
-  padding-top: 8px;
-}
-@media (max-width: 959px) {
-  .button-translated {
-    transform: translateY(calc(-50dvh + 92px)) !important;
-  }
-}
-@media (max-width: 960px), (min-width: 959px) {
-  .panel_button {
-    transition: none;
-  }
-}
-.v-tabs:not(.v-tabs--vertical):not(.v-tabs--right):deep(
-    .v-slide-group--is-overflowing.v-tabs-bar--is-mobile:not(
-        .v-slide-group--has-affixes
-      )
-  )
-  .v-slide-group__prev {
-  display: none !important;
-}
-/* Custom classes */
-.button-color {
-  background-color: #1689e7 !important;
-  color: white;
-}
-.button-translated {
-  transform: translateY(calc(-50vh + 50px));
-}
-.panel_button {
-  width: 48px;
-  height: 48px;
-  transition:
-    background-color 0.35s,
-    color 0.25s,
-    opacity 0.45s,
-    transform 0.45s;
-}
-.panel_button:before {
-  transition-duration: 0.45s;
-}
-.panel-icon {
-  position: absolute;
-}
-.toolbar {
-  height: 48px !important;
-}
-.toolbar:deep(.v-toolbar__content) {
-  height: 0 !important;
-  padding: 0;
-}
-/* Custom ids */
-#animation-configuration, .animation-configuration-compact {
-  padding: 4px 10px 6px 10px;
-  width: 390px;
-  max-width: 390px;
-}
-#layer-configuration, .layer-configuration-compact {
-  max-width: 390px;
-}
-#layer-tree, .layer-tree-compact {
-  width: 700px;
-}
-
-/* Compact Overrides */
-.compact-panel #animation-configuration, 
-.compact-panel .animation-configuration-compact,
-.compact-panel #layer-configuration, 
-.compact-panel .layer-configuration-compact {
-  width: 320px;
-  max-width: 320px;
-}
-
-.compact-panel #layer-tree, 
-.compact-panel .layer-tree-compact {
-  width: 320px;
-}
-
-.compact-panel :deep(.v-tab) {
-  min-width: 60px !important;
-  padding: 0 8px !important;
-}
-
-.compact-panel :deep(.v-btn--icon.v-btn--density-default) {
-  width: 36px;
-  height: 36px;
-}
-
 .side-panel {
   position: absolute;
   top: 50%;
   right: 0.5em;
   z-index: 4;
+  transform: translateY(-50%);
+}
+
+.panel_button {
+  width: 56px !important;
+  height: 56px !important;
+  background: rgba(var(--v-theme-primary), 0.9) !important;
+  color: white !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.panel_button:hover {
+  transform: scale(1.1);
+  background: rgb(var(--v-theme-primary)) !important;
+}
+
+.button-active {
+  transform: rotate(90deg);
+}
+
+.glass-panel-container {
+  background: rgba(var(--v-theme-surface), 0.75);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+  width: 420px;
+  max-width: calc(100vw - 2rem);
+  max-height: calc(100vh - 100px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.compact-panel {
+  width: 360px;
+}
+
+.glass-toolbar {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.modern-tabs :deep(.v-tab) {
+  text-transform: none;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.panel-content {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.rotate-fade-enter-active,
+.rotate-fade-leave-active {
+  transition: all 0.3s ease;
+}
+
+.rotate-fade-enter-from {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+
+.rotate-fade-leave-to {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+
+.close-btn {
+  color: rgba(var(--v-theme-on-surface), 0.5);
+}
+
+.close-btn:hover {
+  color: rgb(var(--v-theme-error));
+}
+
+@media (max-width: 959px) {
+  .side-panel {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    transform: none;
+  }
 }
 </style>

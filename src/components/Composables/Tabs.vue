@@ -5,34 +5,39 @@
         @click="scrollLeft"
         class="scroll-button left"
         icon="mdi-chevron-left"
-        variant="flat"
+        variant="text"
         v-show="arrowLeft"
+        density="compact"
       >
       </v-btn>
       <div class="tabs-scroll-container" ref="scrollContainer">
-        <button
-          v-for="(sourceParameters, tab, index) in tabs"
-          :key="index"
-          @click="setActiveTab(index)"
-          :class="{ active: activeTab === index }"
-          :ref="
-            (el) => {
-              if (el) tabRefs[index] = el
-            }
-          "
-        >
-          {{ sourceParameters.no_translations ? tab : $t(tab) }}
-        </button>
-        <v-menu :close-on-content-click="false">
+        <div class="tabs-wrapper">
+          <button
+            v-for="(sourceParameters, tab, index) in tabs"
+            :key="index"
+            @click="setActiveTab(index)"
+            :class="{ active: activeTab === index }"
+            :ref="
+              (el) => {
+                if (el) tabRefs[index] = el
+              }
+            "
+          >
+            {{ sourceParameters.no_translations ? tab : $t(tab) }}
+          </button>
+          <div class="active-pill" :style="pillStyle"></div>
+        </div>
+        <v-menu :close-on-content-click="false" location="bottom end">
           <template v-slot:activator="{ props }">
-            <v-btn icon="mdi-plus" variant="flat" v-bind="props"> </v-btn>
+            <v-btn icon="mdi-plus" variant="text" v-bind="props" density="compact" class="add-source-btn"> </v-btn>
           </template>
-          <v-list>
+          <v-list class="glass-list">
             <v-list-item
               v-for="(sourceParameters, item, index) in wmsSources"
               :key="index"
               :value="index"
               @click="toggleWmsSource(item)"
+              class="glass-list-item"
             >
               <template v-slot:prepend>
                 <v-checkbox
@@ -40,6 +45,7 @@
                   hide-details
                   readonly
                   density="compact"
+                  color="primary"
                 ></v-checkbox>
               </template>
               <v-list-item-title>{{
@@ -53,17 +59,19 @@
         @click="scrollRight"
         class="scroll-button right"
         icon="mdi-chevron-right"
-        variant="flat"
+        variant="text"
         v-show="arrowRight"
+        density="compact"
       >
       </v-btn>
     </div>
     <div class="tabs-content">
-      <TransitionGroup name="slide" tag="div">
+      <TransitionGroup name="fade-slide" tag="div">
         <div
           v-for="index in Object.keys(tabs).length"
           :key="index - 1"
           v-show="activeTab === index - 1"
+          class="tab-pane"
         >
           <slot v-if="activeTab === index - 1" name="tab-content"></slot>
         </div>
@@ -81,6 +89,7 @@ import {
   reactive,
   ref,
   watch,
+  nextTick,
 } from 'vue'
 
 const store = inject('store')
@@ -105,12 +114,18 @@ const arrowRight = ref(false)
 
 const screenWidth = ref(window.innerWidth)
 
+const pillStyle = ref({
+  left: '0px',
+  width: '0px',
+})
+
 const updateScreenWidth = () => {
   screenWidth.value = window.innerWidth
 }
 
 const checkScroll = (scrollLeft) => {
   const container = scrollContainer.value
+  if (!container) return
   arrowLeft.value = scrollLeft > 0
   arrowRight.value = scrollLeft < container.scrollWidth - container.clientWidth
 }
@@ -119,30 +134,45 @@ const setActiveTab = (index) => {
   const oldIndex = activeTab.value
   activeTab.value = index
   scrollToTab(index)
+  updatePill()
   emit('tabChange', index, oldIndex)
+}
+
+const updatePill = () => {
+  nextTick(() => {
+    const activeEl = tabRefs[activeTab.value]
+    if (activeEl) {
+      pillStyle.value = {
+        left: `${activeEl.offsetLeft}px`,
+        width: `${activeEl.offsetWidth}px`,
+      }
+    }
+  })
 }
 
 const scrollLeft = () => {
   scrollContainer.value.scrollLeft -= arrowMouvementAmount
-  checkScroll(scrollContainer.value.scrollLeft - arrowMouvementAmount)
+  setTimeout(() => checkScroll(scrollContainer.value.scrollLeft), 300)
 }
 
 const scrollRight = () => {
   scrollContainer.value.scrollLeft += arrowMouvementAmount
-  checkScroll(scrollContainer.value.scrollLeft + arrowMouvementAmount)
+  setTimeout(() => checkScroll(scrollContainer.value.scrollLeft), 300)
 }
 
 const scrollToTab = (index) => {
   const tab = tabRefs[index]
   const container = scrollContainer.value
+  if (!tab || !container) return
+  
   if (container.scrollWidth === container.offsetWidth) {
     checkScroll(0)
     return
   }
-  const scrollLeft =
+  const targetScroll =
     tab.offsetLeft - container.offsetWidth / 2 + tab.offsetWidth / 2
-  container.scrollTo({ left: scrollLeft, behavior: 'smooth' })
-  checkScroll(scrollLeft)
+  container.scrollTo({ left: targetScroll, behavior: 'smooth' })
+  setTimeout(() => checkScroll(container.scrollLeft), 300)
 }
 
 const toggleWmsSource = (item) => {
@@ -178,11 +208,20 @@ const isSourceActive = (item) => {
 }
 
 watch(screenWidth, () => {
-  const container = scrollContainer.value
-  if (!container) return
-
   scrollToTab(activeTab.value)
+  updatePill()
 })
+
+watch(
+  () => props.tabs,
+  () => {
+    nextTick(() => {
+      updatePill()
+      scrollToTab(activeTab.value)
+    })
+  },
+  { deep: true }
+)
 
 watch(
   () => activeWmsSources.value,
@@ -220,6 +259,7 @@ onMounted(() => {
   window.addEventListener('resize', updateScreenWidth)
   nextTick(() => {
     scrollToTab(activeTab.value)
+    updatePill()
   })
 })
 
@@ -229,26 +269,17 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.tabs-content {
-  position: relative;
-  overflow: hidden;
-}
-.slide-leave-active {
-  position: absolute;
-}
-.slide-enter-active {
-  transition: all 0.25s ease-in-out;
-}
-.slide-enter-from,
-.slide-leave-to {
-  opacity: 0;
-  transform: translateX(-100%);
-}
 .tabs-header {
   display: flex;
   align-items: center;
   position: relative;
+  background: rgba(var(--v-theme-surface), 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(var(--v-border-color), 0.1);
+  padding: 4px;
 }
+
 .tabs-scroll-container {
   display: flex;
   overflow-x: auto;
@@ -256,82 +287,117 @@ onUnmounted(() => {
   -ms-overflow-style: none;
   scroll-behavior: smooth;
   position: relative;
+  flex-grow: 1;
+  padding: 0 4px;
 }
+
 .tabs-scroll-container::-webkit-scrollbar {
   display: none;
 }
-.tabs-scroll-container button {
-  max-width: 200px;
-  height: 46px;
+
+.tabs-wrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1.1;
+  position: relative;
+  background: rgba(var(--v-border-color), 0.05);
+  border-radius: 12px;
+  padding: 2px;
 }
-.tabs-header button {
-  padding: 10px 20px;
+
+.tabs-wrapper button {
+  padding: 8px 16px;
   border: none;
   cursor: pointer;
-  transition:
-    background-color 0.3s ease,
-    opacity 0.3s ease,
-    color 0.3s ease;
-  flex-shrink: 0;
-  transform: scale(1);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(var(--v-theme-on-surface), 0.7);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10px;
+  z-index: 2;
+  white-space: nowrap;
+  min-width: 100px;
 }
-.tabs-header button::after {
-  content: '';
+
+.tabs-wrapper button:hover {
+  color: rgba(var(--v-theme-on-surface), 1);
+  background: rgba(var(--v-theme-primary), 0.05);
+}
+
+.tabs-wrapper button.active {
+  color: rgb(var(--v-theme-primary));
+}
+
+.active-pill {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: rgb(var(--v-theme-primary));
-  transition: width 0.3s ease;
+  top: 2px;
+  bottom: 2px;
+  background: rgba(var(--v-theme-surface), 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 
+              0 0 0 1px rgba(var(--v-theme-primary), 0.1);
+  border-radius: 10px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 1;
+  pointer-events: none;
 }
-.tabs-header button:not(.active) {
-  opacity: 0.85;
+
+.add-source-btn {
+  margin-left: 8px;
+  color: rgba(var(--v-theme-on-surface), 0.6);
+  transition: all 0.3s ease;
 }
-.tabs-header button.active::after {
+
+.add-source-btn:hover {
+  color: rgb(var(--v-theme-primary));
+  transform: rotate(90deg);
+}
+
+.scroll-button {
+  background: transparent;
+  width: 24px;
+  height: 24px;
+  z-index: 3;
+}
+
+.tabs-content {
+  position: relative;
+  overflow: hidden;
+  padding: 12px;
+}
+
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.tab-pane {
   width: 100%;
 }
-.tabs-header button.active {
-  opacity: 1;
-  color: rgb(var(--v-theme-primary));
-  box-shadow: inset 0 0 0 100vmax rgba(var(--v-theme-primary), 0.05);
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    box-shadow 0.3s ease;
-  animation: highlightBackground 0.5s ease forwards;
+
+.glass-list {
+  background: rgba(var(--v-theme-surface), 0.8) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(var(--v-border-color), 0.1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 16px !important;
+  padding: 8px !important;
 }
-@keyframes highlightBackground {
-  0% {
-    background-color: transparent;
-  }
-  50% {
-    background-color: rgba(var(--v-theme-primary), 0.1);
-  }
-  100% {
-    background-color: rgba(var(--v-theme-primary), 0.05);
-  }
+
+.glass-list-item {
+  border-radius: 10px !important;
+  margin-bottom: 2px;
+  transition: all 0.2s ease;
 }
-.scroll-button {
-  border-radius: 0px;
-  position: absolute;
-  z-index: 1;
-  height: 46px;
-  width: 20px;
-}
-.scroll-button.left,
-.scroll-button.right {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-.scroll-button.left {
-  left: 0;
-}
-.scroll-button.right {
-  right: 0;
+
+.glass-list-item:hover {
+  background: rgba(var(--v-theme-primary), 0.08) !important;
 }
 </style>

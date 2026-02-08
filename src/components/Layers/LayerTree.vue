@@ -1,126 +1,111 @@
 <template>
-  <v-card class="radius" max-width="100%">
+  <div class="layer-tree-container">
     <tabs :tabs="activeWMSSources" @tab-change="setCurrentWMSSource">
       <template v-slot:tab-content>
-        <v-card flat>
-          <v-card-title class="pt-2 pb-0 pl-3 pr-2">
-            {{
-              wmsSource === 'Presets'
-                ? $t('AddPreset')
-                : $t('WmsSourceTitle', {
-                    wmsSource: sourceParameters.no_translations
-                      ? wmsSource
-                      : $t(wmsSource),
-                  })
-            }}
-          </v-card-title>
-          <v-card-text class="pt-2 pb-2 pl-3 pr-2">
+        <div class="tab-content-wrapper">
+          <div class="search-header">
             <v-text-field
               autofocus
               v-model="searchTreeItems[this.tab]"
-              :label="
-                $t('TreeSearchLabel', {
-                  wmsSource: sourceParameters.no_translations
-                    ? wmsSource
-                    : $t(wmsSource),
-                })
-              "
+              :placeholder="$t('TreeSearchLabel', {
+                wmsSource: sourceParameters.no_translations
+                  ? wmsSource
+                  : $t(wmsSource),
+              })"
               clearable
               hide-details
-              color="primary"
-              density="compact"
-              variant="underlined"
+              variant="solo"
+              density="comfortable"
+              class="glass-search"
+              prepend-inner-icon="mdi-magnify"
               @keydown.left.right.space.enter.stop
               @input="debouncedFilterOnInput(this.tab)"
               @click:clear="filterOnInput(this.tab)"
             >
             </v-text-field>
-            <div class="treeview pr-0">
-              <tree-node
-                v-for="node in filteredTreeNodes[this.tab]"
-                :key="`${node.Name}`"
-                :node="node"
-                key-prop="Name"
-                title-prop="Title"
-                @node-toggled="handleNodeToggle"
-                @request="requestLayerData({ layer: $event })"
-              >
-                <template #node-icon="{ node }">
-                  <v-btn
-                    icon
-                    class="icon-only-btn"
-                    density="comfortable"
-                    variant="text"
-                    :disabled="isAnimating && playState !== 'play'"
-                  >
-                    <v-icon
-                      color="primary"
-                      :disabled="isAnimating && playState !== 'play'"
-                    >
-                      {{
-                        $mapLayers.arr.some(
+          </div>
+          
+          <div class="tree-content scrollable">
+            <tree-node
+              v-for="node in filteredTreeNodes[this.tab]"
+              :key="`${node.Name}`"
+              :node="node"
+              key-prop="Name"
+              title-prop="Title"
+              @node-toggled="handleNodeToggle"
+              @request="requestLayerData({ layer: $event })"
+            >
+              <template #node-icon="{ node }">
+                <v-btn
+                  icon
+                  class="action-btn"
+                  density="compact"
+                  variant="text"
+                  :disabled="isAnimating && playState !== 'play'"
+                  color="primary"
+                >
+                  <v-icon size="24">
+                    {{
+                      $mapLayers.arr.some(
+                        (l) =>
+                          l.get('layerName').split('/')[0] ===
+                            node.Name.split('/')[0] &&
+                          Object.values(wmsSources)[l.get('layerWmsIndex')][
+                            'urls'
+                          ].includes(currentWmsSource),
+                      )
+                        ? 'mdi-minus-box-outline'
+                        : 'mdi-plus-box-outline'
+                    }}
+                  </v-icon>
+                </v-btn>
+              </template>
+
+              <template v-if="!node.Img" #title-slot="{ node }">
+                <v-tooltip
+                  :text="
+                    wmsSource === 'Presets'
+                      ? node[`Title_${$i18n.locale}`]
+                      : node.Title
+                  "
+                  location="bottom"
+                  open-delay="750"
+                >
+                  <template v-slot:activator="{ props }">
+                    <div
+                      class="title-container"
+                      v-bind="props"
+                      :class="{
+                        'is-active': $mapLayers.arr.some(
                           (l) =>
                             l.get('layerName').split('/')[0] ===
                               node.Name.split('/')[0] &&
                             Object.values(wmsSources)[l.get('layerWmsIndex')][
                               'urls'
                             ].includes(currentWmsSource),
-                        )
-                          ? 'mdi-minus'
-                          : 'mdi-plus'
-                      }}
-                    </v-icon>
-                  </v-btn>
-                </template>
-
-                <template v-if="!node.Img" #title-slot="{ node }">
-                  <v-tooltip
-                    :text="
-                      wmsSource === 'Presets'
-                        ? node[`Title_${$i18n.locale}`]
-                        : node.Title
-                    "
-                    location="bottom"
-                    open-delay="750"
-                  >
-                    <template v-slot:activator="{ props }">
-                      <span
-                        class="title"
-                        v-bind="props"
-                        :class="{
-                          'title-leaf': node.isLeaf,
-                          'text-primary': $mapLayers.arr.some(
-                            (l) =>
-                              l.get('layerName').split('/')[0] ===
-                                node.Name.split('/')[0] &&
-                              Object.values(wmsSources)[l.get('layerWmsIndex')][
-                                'urls'
-                              ].includes(currentWmsSource),
-                          ),
-                        }"
-                      >
+                        ),
+                      }"
+                    >
+                      <span class="main-title">
                         {{
                           wmsSource === 'Presets'
                             ? node[`Title_${$i18n.locale}`]
                             : node.Title
                         }}
-                        <template v-if="node.isLeaf">
-                          <br />
-                          <span class="subtitle">{{
-                            node.Name.split('/')[0]
-                          }}</span>
-                        </template>
                       </span>
-                    </template>
-                  </v-tooltip>
-                </template>
-              </tree-node>
-            </div>
-          </v-card-text>
-        </v-card>
+                      <span v-if="node.isLeaf" class="technical-id">
+                        {{ node.Name.split('/')[0] }}
+                      </span>
+                    </div>
+                  </template>
+                </v-tooltip>
+              </template>
+            </tree-node>
+          </div>
+        </div>
       </template>
     </tabs>
-  </v-card>
+  </div>
 </template>
 
 <script>
@@ -478,61 +463,97 @@ export default {
 </script>
 
 <style scoped>
-.icon-only-btn {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-}
-.icon-only-btn:hover {
-  background-color: rgba(211, 211, 211, 0.2);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.radius {
-  border-radius: 0px;
-}
-.subtitle {
-  color: grey;
-  display: block;
-  font-size: 0.8em;
-  margin-top: -4px;
-}
-.title-leaf {
-  display: block;
-  line-height: 1.4;
+.layer-tree-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
-.treeview {
-  font-size: 1.11em;
-  max-height: calc(100vh - (34px + 0.5em * 2) - 138px - 190px);
+
+.tab-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.search-header {
+  padding: 8px 16px;
+  background: rgba(var(--v-theme-surface), 0.4);
+}
+
+.glass-search :deep(.v-field) {
+  background: rgba(var(--v-theme-surface), 0.6) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 12px !important;
+  border: 1px solid rgba(var(--v-border-color), 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.3s ease;
+}
+
+.glass-search :deep(.v-field--focused) {
+  background: rgba(var(--v-theme-surface), 0.9) !important;
+  border-color: rgba(var(--v-theme-primary), 0.5);
+  box-shadow: 0 8px 20px rgba(var(--v-theme-primary), 0.1) !important;
+}
+
+.tree-content {
+  flex-grow: 1;
+  padding: 8px;
   overflow-y: auto;
+  max-height: calc(100vh - 350px);
 }
-@media (max-width: 1120px) {
-  .treeview {
-    max-height: calc(100vh - (34px + 0.5em * 2) - 138px - 190px + 24px);
-  }
+
+.scrollable::-webkit-scrollbar {
+  width: 6px;
 }
+
+.scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: rgba(var(--v-border-color), 0.2);
+  border-radius: 10px;
+}
+
+.action-btn {
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0;
+  width: 100%;
+}
+
+.main-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(var(--v-theme-on-surface), 0.9);
+  line-height: 1.2;
+}
+
+.technical-id {
+  font-size: 0.75rem;
+  color: rgba(var(--v-theme-on-surface), 0.5);
+  font-family: monospace;
+  margin-top: 2px;
+}
+
+.is-active .main-title {
+  color: rgb(var(--v-theme-primary));
+}
+
 @media (max-width: 959px) {
-  .treeview {
-    max-height: calc(100vh - (34px + 0.5em * 2) - 138px - 190px - 42px + 24px);
-  }
-}
-@media (max-width: 565px) {
-  .treeview {
-    max-height: calc(100dvh - (34px + 0.5em * 2) - 158px - 190px - 42px - 10px);
-  }
-}
-@media (max-height: 565px) and (max-width: 959px) {
-  .treeview {
-    max-height: calc(
-      100dvh - (34px + 0.5em * 2) - 182px - 42px - 10px
-    ) !important;
-    min-height: 160px;
-  }
-}
-@media (max-height: 565px) and (min-width: 960px) {
-  .treeview {
-    max-height: calc(100dvh - (34px + 0.5em * 2) - 182px - 10px) !important;
+  .tree-content {
+    max-height: calc(100vh - 400px);
   }
 }
 </style>
