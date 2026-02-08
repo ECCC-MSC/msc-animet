@@ -42,7 +42,7 @@ export default {
 
 <style scoped>
 .progress {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   height: 2px;

@@ -32,7 +32,10 @@
 
 <script>
 export default {
-  inject: ['store'],
+  inject: {
+    store: { from: 'store' },
+    $mapCanvas: { from: 'mapCanvas' },
+  },
   props: {
     hide: Boolean,
   },

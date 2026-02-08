@@ -1,15 +1,15 @@
 <template>
   <div
-    id="popupGFI"
+    :id="`popupGFI-${mapId}`"
     ref="popupGFI"
     class="ol-popup bg-surface"
     :style="popupStyle"
     v-show="items.length !== 0"
   >
-    <a href="#" id="popupGFI-closer" class="ol-popup-closer"></a>
+    <a href="#" :id="`popupGFI-closer-${mapId}`" class="ol-popup-closer"></a>
     <v-card flat class="tree-container">
       <span
-        id="coordinates"
+        :id="`coordinates-${mapId}`"
         class="coordinates"
         @click="changeRepresentation"
         >{{ coordinatesRepresentation }}</span
@@ -17,7 +17,7 @@
       <div class="divider-container">
         <v-divider class="divider"></v-divider>
       </div>
-      <div id="treeviewGFI">
+      <div :id="`treeviewGFI-${mapId}`">
         <tree-node
           v-for="node in items"
           :key="`${node.name}`"
@@ -51,7 +51,13 @@ import { useI18n } from 'vue-i18n'
 import { transform } from 'ol/proj.js'
 
 export default {
-  inject: ['store'],
+  props: ['mapId'],
+  inject: {
+    store: { from: 'store' },
+    $mapCanvas: { from: 'mapCanvas' },
+    $mapLayers: { from: 'mapLayers' },
+    emitter: { from: 'emitter' },
+  },
   setup() {
     const { isDark } = isDarkTheme()
     return { isDark }
@@ -111,7 +117,7 @@ export default {
     this.emitter.on('modelRunChanged', this.onModelRunChange)
     this.emitter.on('onMapClicked', this.onSingleClick)
 
-    this.closer = document.getElementById('popupGFI-closer')
+    this.closer = document.getElementById(`popupGFI-closer-${this.mapId}`)
     this.closer.onclick = this.closePopup
   },
   beforeUnmount() {
@@ -166,7 +172,7 @@ export default {
       const canvas = document.createElement('canvas')
       const context = canvas.getContext('2d')
       context.font = window.getComputedStyle(
-        document.getElementById('coordinates'),
+        document.getElementById(`coordinates-${this.mapId}`),
       ).fontSize
       this.dividerWidth = `${context.measureText(text).width + 20}px`
     },

@@ -1,11 +1,10 @@
 <template>
-  <div id="side_panel">
+  <div :id="panelId" class="side-panel" ref="panelRoot">
     <v-menu
-      eager
       v-model="toggleMenu"
+      :attach="panelRoot"
       class="v-overlay-menu"
       transition="scale-transition"
-      persistent
       no-click-animation
     >
       <template v-slot:activator="{ props }">
@@ -80,17 +79,17 @@
           }"
         >
           <v-tabs-window-item eager>
-            <layer-tree id="layer-tree" />
+            <layer-tree :id="'layer-tree-' + mapId" />
           </v-tabs-window-item>
           <v-tabs-window-item eager @click="stopLoop">
             <layer-configuration
-              id="layer-configuration"
+              :id="'layer-configuration-' + mapId"
               v-show="$mapLayers.arr.length !== 0"
             />
           </v-tabs-window-item>
           <v-tabs-window-item eager>
             <animation-configuration
-              id="animation-configuration"
+              :id="'animation-configuration-' + mapId"
               v-show="$mapLayers.arr.length !== 0"
             />
           </v-tabs-window-item>
@@ -103,7 +102,13 @@
 <script>
 export default {
   name: 'SidePanel',
-  inject: ['store'],
+  inject: {
+    store: { from: 'store' },
+    $mapLayers: { from: 'mapLayers' },
+    emitter: { from: 'emitter' },
+  },
+  props: ['mapId'],
+
   mounted() {
     this.emitter.on('changeTab', this.onChangeTab)
     this.emitter.on('collapseMenu', this.onCollapseMenu)
@@ -121,9 +126,9 @@ export default {
   data() {
     return {
       buttonAnimation: false,
-      buttonShown: false,
+      buttonShown: true,
       color: null,
-      menuOpen: true,
+      menuOpen: false,
       screenWidth: window.innerWidth,
       tab: null,
     }
@@ -192,7 +197,7 @@ export default {
       }
     },
     togglePreview(on) {
-      let controlElement = document.getElementById('animation-rect')
+      let controlElement = document.getElementById(this.rectId)
       if (on) {
         controlElement.style.visibility = 'visible'
         this.emitter.emit('checkIntersect')
@@ -203,13 +208,19 @@ export default {
     updateScreenSize() {
       this.screenWidth = window.innerWidth
       if (
-        document.getElementById('animation-rect').style.visibility === 'visible'
+        document.getElementById(this.rectId).style.visibility === 'visible'
       ) {
         this.emitter.emit('checkIntersect')
       }
     },
   },
   computed: {
+    panelId() {
+      return `side_panel-${this.mapId}`
+    },
+    rectId() {
+      return `animation-rect-${this.mapId}`
+    },
     configPanelHover() {
       return this.store.getConfigPanelHover
     },
@@ -262,8 +273,8 @@ export default {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: absolute;
   left: auto !important;
-  right: 0.5em;
-  top: calc(34px + 0.5em * 2) !important;
+  right: 0 !important;
+  top: 0 !important;
   min-width: 350px !important;
   max-width: calc(100vw - 1em) !important;
   max-height: calc(100vh - (34px + 0.5em * 2) - 0.5em - 138px);
@@ -379,7 +390,7 @@ export default {
 #layer-tree {
   width: 700px;
 }
-#side_panel {
+.side-panel {
   position: absolute;
   top: 50%;
   right: 0.5em;

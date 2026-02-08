@@ -1,5 +1,5 @@
 <template>
-  <div ref="animation-canvas" id="animation-canvas"></div>
+  <div ref="animation-canvas" :id="canvasId" class="animation-canvas"></div>
 </template>
 
 <script>
@@ -24,7 +24,13 @@ import VectorTileSource from 'ol/source/VectorTile.js'
 import 'ol/ol.css'
 
 export default {
-  inject: ['store'],
+  props: ['mapId'],
+  inject: {
+    store: { from: 'store' },
+    $mapCanvas: { from: 'mapCanvas' },
+    $mapLayers: { from: 'mapLayers' },
+    $animationCanvas: { from: 'animationCanvas' },
+  },
   data() {
     return {
       copiedLayers: [],
@@ -33,6 +39,7 @@ export default {
       loading: 0,
     }
   },
+
   mixins: [datetimeManipulations],
   mounted() {
     this.emitter.on('animationCanvasReset', this.mapControls)
@@ -67,13 +74,13 @@ export default {
       })
     },
     animationCanvasSetup() {
-      let theMap = document.getElementById('map')
+      let theMap = document.getElementById(this.mapElemId)
       theMap.style.height = `${theMap.offsetHeight}px`
       theMap.style.width = `${theMap.offsetWidth}px`
-      document.getElementById('animation-canvas').style.height = `${
+      document.getElementById(this.canvasId).style.height = `${
         this.currentAspect[this.currentResolution].height
       }px`
-      document.getElementById('animation-canvas').style.width = `${
+      document.getElementById(this.canvasId).style.width = `${
         this.currentAspect[this.currentResolution].width
       }px`
 
@@ -129,7 +136,7 @@ export default {
         this.mapControls()
 
       this.addLayersListeners()
-      const previewRect = document.getElementById('animation-rect')
+      const previewRect = document.getElementById(this.rectId)
       const size = [previewRect.offsetWidth, previewRect.offsetHeight]
       const mapView = this.$mapCanvas.mapObj.getView()
       const extent = mapView.calculateExtent(size)
@@ -373,6 +380,15 @@ export default {
     },
   },
   computed: {
+    canvasId() {
+      return `animation-canvas-${this.mapId}`
+    },
+    mapElemId() {
+      return `map-${this.mapId}`
+    },
+    rectId() {
+      return `animation-rect-${this.mapId}`
+    },
     crsList() {
       return this.store.getCrsList
     },
@@ -436,7 +452,7 @@ export default {
 </script>
 
 <style scoped>
-#animation-canvas {
+.animation-canvas {
   position: absolute;
   top: -100%;
   visibility: hidden;

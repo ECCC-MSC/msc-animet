@@ -38,12 +38,13 @@
         <v-icon class="ml-4"> mdi-download </v-icon>
       </v-btn>
     </v-card-actions>
-    <a id="output-download" :download="exportName"></a>
+    <a :id="`output-download-${mapId}`" :download="exportName"></a>
   </v-card>
 </template>
 
 <script>
 export default {
+  props: ['mapId'],
   inject: ['store'],
   computed: {
     animationTitle() {
@@ -88,7 +89,7 @@ export default {
   },
   methods: {
     downloadOutput: function () {
-      let outputLink = document.getElementById('output-download')
+      let outputLink = document.getElementById(`output-download-${this.mapId}`)
       outputLink.href = this.mp4URL ? this.mp4URL : this.imgURL
       outputLink.click()
     },

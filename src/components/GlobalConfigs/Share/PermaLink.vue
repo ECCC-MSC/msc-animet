@@ -1,5 +1,5 @@
 <template>
-  <div id="permaLink">
+  <div :id="`permaLink-${mapId}`" class="perma-link">
     <v-dialog v-model="dialog" max-width="600px">
       <template v-slot:activator="{ props }">
         <v-btn
@@ -24,7 +24,7 @@
           <v-spacer></v-spacer>
           <ShareSocialLinks id="sharesocial" />
           <v-text-field
-            id="permalinktext"
+            :id="`permalinktext-${mapId}`"
             :bg-color="getCurrentTheme"
             class="permalinktext"
             density="compact"
@@ -60,7 +60,12 @@ import { useRouter, useRoute } from 'vue-router'
 import OLImage from 'ol/layer/Image'
 
 export default {
-  inject: ['store'],
+  props: ['mapId'],
+  inject: {
+    store: { from: 'store' },
+    $mapLayers: { from: 'mapLayers' },
+    emitter: { from: 'emitter' },
+  },
   setup() {
     const { isDark } = isDarkTheme()
     return { isDark }
@@ -306,7 +311,7 @@ export default {
 .share-icon {
   margin-bottom: 2px;
 }
-#permaLink {
+.perma-link {
   pointer-events: auto;
   z-index: 4;
 }

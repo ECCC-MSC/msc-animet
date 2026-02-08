@@ -132,7 +132,11 @@ import { isDarkTheme } from '@/components/Composables/isDarkTheme'
 import { useDisplay } from 'vuetify'
 
 export default {
-  inject: ['store'],
+  inject: {
+    store: { from: 'store' },
+    $mapLayers: { from: 'mapLayers' },
+    emitter: { from: 'emitter' },
+  },
   setup() {
     const { isDark } = isDarkTheme()
     return { isDark }

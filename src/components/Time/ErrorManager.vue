@@ -1,5 +1,5 @@
 <template>
-  <div id="time-snackbar">
+  <div :id="`time-snackbar-${mapId}`">
     <v-snackbar
       class="snackbar"
       location="top"
@@ -64,7 +64,11 @@ import { useI18n } from 'vue-i18n'
 import datetimeManipulations from '../../mixins/datetimeManipulations'
 
 export default {
-  inject: ['store'],
+  props: ['mapId'],
+  inject: {
+    store: { from: 'store' },
+    $mapLayers: { from: 'mapLayers' },
+  },
   mixins: [datetimeManipulations],
   mounted() {
     this.emitter.on('cancelAnimationResize', this.onCancelAnimationResize)

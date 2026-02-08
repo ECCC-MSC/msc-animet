@@ -58,6 +58,7 @@ import DOMPurify from 'dompurify'
 
 const { proxy } = getCurrentInstance()
 const store = inject('store')
+const $mapLayers = inject('mapLayers')
 
 const props = defineProps({
   node: {
@@ -109,7 +110,7 @@ const handleClick = (node) => {
 
 const presetSelected = (node) => {
   return node.children.every((childNode) =>
-    proxy.$mapLayers.arr.some((layer) => {
+    $mapLayers.arr.some((layer) => {
       if (layer instanceof OLImage) {
         let styleCheck = true
         if (childNode.currentStyle) {
@@ -159,18 +160,18 @@ const handleMultiAdd = (node) => {
               ),
           )
           toRemove.push(
-            proxy.$mapLayers.arr.find(
+            $mapLayers.arr.find(
               (l) => l.get('layerName') === `${child}/${sourceKey}`,
             ),
           )
         } else {
           toRemove.push(
-            proxy.$mapLayers.arr.find((l) => l.get('layerName') === child),
+            $mapLayers.arr.find((l) => l.get('layerName') === child),
           )
         }
       }
     } else {
-      toRemove = [...proxy.$mapLayers.arr]
+      toRemove = [...$mapLayers.arr]
     }
 
     for (const layer of toRemove) {
@@ -182,7 +183,7 @@ const handleMultiAdd = (node) => {
       emit('request', tempNode)
     }
     if (!selected) {
-      let index = proxy.$mapLayers.arr.length
+      let index = $mapLayers.arr.length
       for (const childNode of node.children) {
         childNode.zIndex = index
         emit('request', childNode)

@@ -85,7 +85,10 @@
 import { isDarkTheme } from '@/components/Composables/isDarkTheme'
 
 export default {
-  inject: ['store'],
+  inject: {
+    store: { from: 'store' },
+    $mapLayers: { from: 'mapLayers' },
+  },
   props: ['item', 'color'],
   setup() {
     const { isDark } = isDarkTheme()

@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-btn
-      id="zoomPlus"
+      :id="`zoomPlus-${mapId}`"
       class="zoom-plus rounded-circle"
       :class="
         mapTimeSettings.Step !== null
@@ -20,7 +20,7 @@
     </v-btn>
 
     <v-btn
-      id="zoomMinus"
+      :id="`zoomMinus-${mapId}`"
       class="zoom-minus rounded-circle"
       :class="
         mapTimeSettings.Step !== null
@@ -43,7 +43,11 @@
 
 <script>
 export default {
-  inject: ['store'],
+  props: ['mapId'],
+  inject: {
+    store: { from: 'store' },
+    $mapCanvas: { from: 'mapCanvas' },
+  },
   methods: {
     zoomIn() {
       let currentZoom = this.$mapCanvas.mapObj.getView().getZoom()

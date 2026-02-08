@@ -1,18 +1,20 @@
 <template>
-  <div id="animet_logo" :class="getLangCSS" @click="handleLogoClick">
+  <div :id="`animet_logo-${mapId}`" :class="[getLangCSS, 'animet-logo-container']" @click="handleLogoClick">
     <span class="animet">{{ $t('MSCAnimet') }}</span>
     <transition-group tag="span" name="fade" class="img-transition">
       <img
         v-if="$i18n.locale === 'fr'"
         key="fr"
-        id="eccc_logo_fr"
+        :id="`eccc_logo_fr-${mapId}`"
+        class="eccc-logo-fr"
         :src="img"
         alt="Logo d'Environnement et Changement climatique Canada"
       />
       <img
         v-else
         key="en"
-        id="eccc_logo_en"
+        :id="`eccc_logo_en-${mapId}`"
+        class="eccc-logo-en"
         :src="img"
         alt="Logo of Environment and Climate Change Canada"
       />
@@ -22,6 +24,7 @@
 
 <script>
 export default {
+  props: ['mapId'],
   computed: {
     img() {
       const locale = this.$i18n.locale
@@ -70,7 +73,7 @@ export default {
 .width_fr {
   width: 380px;
 }
-#animet_logo {
+.animet-logo-container {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -88,7 +91,7 @@ export default {
   z-index: 2;
   cursor: pointer;
 }
-#eccc_logo_en {
+.eccc-logo-en {
   height: 22px;
   width: 171px;
   padding-right: 10px;
@@ -96,7 +99,7 @@ export default {
   object-position: 0 100%;
   position: absolute;
 }
-#eccc_logo_fr {
+.eccc-logo-fr {
   height: 22px;
   width: 206px;
   padding-right: 10px;

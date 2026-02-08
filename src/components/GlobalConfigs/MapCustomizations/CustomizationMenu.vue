@@ -27,7 +27,7 @@
           hide-details
           class="mt-0 grat"
         ></v-switch>
-        <map-previews></map-previews>
+        <map-previews :mapId="mapId"></map-previews>
       </v-container>
     </v-menu>
   </div>
@@ -35,7 +35,11 @@
 
 <script>
 export default {
-  inject: ['store'],
+  props: ['mapId'],
+  inject: {
+      store: { from: 'store' },
+      emitter: { from: 'emitter' },
+  },
   mounted() {
     window.addEventListener('keydown', this.closeMenu)
   },

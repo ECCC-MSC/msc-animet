@@ -5,7 +5,11 @@ import axios from '../../utils/AxiosConfig.js'
 import OLImage from 'ol/layer/Image'
 
 export default {
-  inject: ['store'],
+  inject: {
+    store: { from: 'store' },
+    $mapCanvas: { from: 'mapCanvas' },
+    $mapLayers: { from: 'mapLayers' },
+  },
   data() {
     return {
       interval: setInterval(this.fetchLayerData, 90000),

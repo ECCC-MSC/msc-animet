@@ -138,7 +138,11 @@ import datetimeManipulations from '../../mixins/datetimeManipulations'
 import { isDarkTheme } from '@/components/Composables/isDarkTheme'
 
 export default {
-  inject: ['store'],
+  inject: {
+    store: { from: 'store' },
+    $mapLayers: { from: 'mapLayers' },
+    emitter: { from: 'emitter' },
+  },
   mixins: [datetimeManipulations],
   setup() {
     const { isDark } = isDarkTheme()

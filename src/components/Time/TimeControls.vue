@@ -1,6 +1,7 @@
 <template>
   <v-card
-    id="time-controls"
+    :id="`time-controls-${mapId}`"
+    class="time-controls-root"
     :class="{
       'time-controls-collapsed': collapsedControls,
       'time-controls': !collapsedControls || screenWidth < 565,
@@ -115,7 +116,7 @@
         </div>
       </div>
     </div>
-    <error-manager />
+    <error-manager :mapId="mapId" />
   </v-card>
 </template>
 
@@ -127,7 +128,13 @@ import datetimeManipulations from '../../mixins/datetimeManipulations'
 import WMSTileCache from '@/utils/WMSTileCache'
 
 export default {
-  inject: ['store'],
+  props: ['mapId'],
+  inject: {
+    store: { from: 'store' },
+    $mapCanvas: { from: 'mapCanvas' },
+    $mapLayers: { from: 'mapLayers' },
+    emitter: { from: 'emitter' },
+  },
   mixins: [datetimeManipulations],
   data() {
     return {
@@ -974,7 +981,7 @@ export default {
 #collapse-button {
   font-size: 0.75rem;
 }
-#time-controls {
+.time-controls-root {
   border-radius: 20px;
   bottom: 24px;
   left: 50%;
@@ -1017,7 +1024,7 @@ export default {
   .controller-padding {
     pointer-events: auto;
   }
-  #time-controls {
+  .time-controls-root {
     padding-top: 0;
   }
 }

@@ -135,10 +135,17 @@
 import { useI18n } from 'vue-i18n'
 
 export default {
-  inject: ['store'],
+  props: ['mapId'],
+  inject: {
+    store: { from: 'store' },
+    $mapLayers: { from: 'mapLayers' },
+    emitter: { from: 'emitter' },
+  },
   mounted() {
     this.emitter.on('setAnimationTitle', this.setAnimationTitle)
-    this.setResolution()
+    this.$nextTick(() => {
+      this.setResolution()
+    })
   },
   beforeUnmount() {
     this.emitter.off('setAnimationTitle', this.setAnimationTitle)
@@ -205,7 +212,8 @@ export default {
       }
     },
     setResolution() {
-      let controlElement = document.getElementById('animation-rect')
+      let controlElement = document.getElementById(`animation-rect-${this.mapId}`)
+      if (!controlElement) return
       const newHeight = this.currentAspect[this.currentResolution].height
       const newWidth = this.currentAspect[this.currentResolution].width
       controlElement.style.height = `${

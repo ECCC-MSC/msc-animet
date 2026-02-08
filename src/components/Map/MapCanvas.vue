@@ -1,48 +1,51 @@
 <template>
-  <div>
+  <div class="map-canvas-root">
     <img
       v-if="imgUrl && isFullSize"
       :src="imgUrl"
       @click="exitFullscreenOnClick"
       class="full-size"
     />
-    <animation-canvas v-if="isAnimating && playState !== 'play'" />
-    <div ref="map" class="map" id="map" :disabled="isAnimating">
-      <animation-rectangle />
-      <o-l-controls />
-      <global-configs />
-      <side-panel id="side_panel" />
-      <div id="legendMapOverlay">
+    <animation-canvas v-if="isAnimating && playState !== 'play'" :mapId="mapId" />
+    <div ref="map" class="map" :id="`map-${mapId}`" :disabled="isAnimating">
+      <animation-rectangle :mapId="mapId" />
+      <o-l-controls :mapId="mapId" />
+      <global-configs :mapId="mapId" />
+      <side-panel :mapId="mapId" />
+      <div :id="`legendMapOverlay-${mapId}`">
         <legend-controls
           v-for="name in activeLegends"
           :key="name"
           :name="name"
+          :mapId="mapId"
           @legend-click="selectImage"
           @legend-remove="removeLegend"
         />
       </div>
-      <div id="textBoxOverlay">
+      <div :id="`textBoxOverlay-${mapId}`">
         <editable-text-box
           v-for="textBox in textBoxes"
           :key="textBox.id"
           :id="textBox.id"
           :coord="textBox.coord"
+          :mapId="mapId"
         />
       </div>
-      <time-controls />
+      <time-controls :mapId="mapId" />
     </div>
     <loading-bar :loading="loading > 0" />
-    <get-feature-info />
+    <get-feature-info :mapId="mapId" />
     <span
       color="primary"
-      id="animet_version"
-      :class="
+      :id="`animet_version-${mapId}`"
+      :class="[
+        'animet-version',
         mapTimeSettings.Step !== null
           ? collapsedControls
             ? 'animet-version-collapsed'
             : 'animet-version-open'
           : ''
-      "
+      ]"
       >{{ `${$t('MSCAnimet')} ${version}` }}</span
     >
     <auto-refresh />
@@ -84,7 +87,18 @@ import { useI18n } from 'vue-i18n'
 import { version } from '../../../package.json'
 
 export default {
-  inject: ['store'],
+  props: {
+    mapId: {
+      type: String,
+      default: 'default',
+    },
+  },
+  inject: {
+    store: { from: 'store' },
+    $mapCanvas: { from: 'mapCanvas' },
+    $mapLayers: { from: 'mapLayers' },
+    emitter: { from: 'emitter' },
+  },
   mixins: [datetimeManipulations],
   mounted() {
     this.emitter.on('buildLayer', this.buildLayer)
@@ -93,186 +107,9 @@ export default {
     this.emitter.on('removeLayer', this.removeLayerHandler)
     window.addEventListener('keydown', this.onKeyDown)
 
-    const scaleControl = new ScaleLine({
-      units: 'metric',
+    this.$nextTick(() => {
+      this.initMap()
     })
-
-    this.graticule = new Graticule({
-      strokeStyle: new Stroke({
-        color: 'rgba(0,0,0,0.85)',
-        width: 1.2,
-        lineDash: [0.5, 4],
-      }),
-      showLabels: true,
-      wrapX: true,
-      zIndex: 8000,
-      visible: this.showGraticules,
-    })
-
-    const newProjection = getProjection(this.currentCRS)
-    const fromLonLat = getTransform('EPSG:4326', newProjection)
-    const worldExtent = this.crsList[this.currentCRS]
-    newProjection.setWorldExtent(worldExtent)
-    const projExtent = applyTransform(worldExtent, fromLonLat, undefined, 8)
-    newProjection.setExtent(projExtent)
-
-    this.$mapCanvas.mapObj = new Map({
-      target: this.$refs['map'],
-      layers: [new TileLayer({ source: new OSM() }), this.graticule],
-      view: new View({
-        center: fromLonLat([-90, 55]),
-        zoom: 4,
-        maxZoom: 12,
-        projection: this.currentCRS,
-      }),
-      pixelRatio: 1,
-      controls: [scaleControl],
-    })
-
-    let dragAndDropInteraction = new DragAndDrop({
-      formatConstructors: [
-        GPX,
-        GeoJSON,
-        IGC,
-        new KML({ extractStyles: true }),
-        TopoJSON,
-      ],
-    })
-    dragAndDropInteraction.on('addfeatures', (event) => {
-      const vectorSource = new VectorSource({
-        features: event.features,
-      })
-      const vectorLayer = new VectorLayer({
-        source: vectorSource,
-      })
-      const baseName = event.file.name.split('.')[0]
-      const uniqueName = this.getUniqueLayerName(baseName)
-
-      vectorLayer.setProperties({
-        layerCurrentStyle: null,
-        layerDateIndex: 0,
-        layerIsTemporal: false,
-        layerName: uniqueName,
-        layerStyles: [],
-        layerVisibilityOn: true,
-        layerWmsIndex: -1,
-        layerXmlName: uniqueName,
-        legendColor: null,
-      })
-      this.setLayerZIndex(vectorLayer)
-      this.$mapCanvas.mapObj.addLayer(vectorLayer)
-      this.$mapCanvas.mapObj.getView().fit(vectorSource.getExtent())
-    })
-    this.$mapCanvas.mapObj.addInteraction(dragAndDropInteraction)
-
-    const attribution = new Attribution()
-    const legendMapOverlay = new Control({
-      element: document.getElementById('legendMapOverlay'),
-    })
-    const textBoxOverlay = new Control({
-      element: document.getElementById('textBoxOverlay'),
-    })
-    const timeControls = new Control({
-      element: document.getElementById('time-controls'),
-    })
-    this.rotateArrow = new Rotate({ tipLabel: this.t('ResetRotation') })
-    const sidePanel = new Control({
-      element: document.getElementById('side_panel'),
-    })
-    const globalConfigs = new Control({
-      element: document.getElementById('global_configs'),
-    })
-    const zoomPlus = new Control({
-      element: document.getElementById('zoomPlus'),
-    })
-    const zoomMinus = new Control({
-      element: document.getElementById('zoomMinus'),
-    })
-    const animetVersion = new Control({
-      element: document.getElementById('animet_version'),
-    })
-    const timeSnackbar = new Control({
-      element: document.getElementById('time-snackbar'),
-    })
-    const animationRect = new Control({
-      element: document.getElementById('animation-rect'),
-    })
-
-    const popupGFI = new Overlay({
-      id: 'popupGFI',
-      element: document.getElementById('popupGFI'),
-      autoPan: {
-        animation: {
-          duration: 250,
-        },
-      },
-    })
-
-    const { addArrow, addBox, addCircle, addPolygon, selectedFeature } =
-      useVectorShapes(this.$mapCanvas.mapObj)
-    this.selectedFeature = selectedFeature
-    this.addArrowFunction = addArrow
-    this.addBoxFunction = addBox
-    this.addCircleFunction = addCircle
-    this.addPolygonFunction = addPolygon
-
-    this.contextMenu = new ContextMenu({
-      width: 170,
-      defaultItems: false,
-      items: this.contextMenuItems,
-    })
-    this.contextMenu.on('open', () => {
-      this.contextMenuOpen = true
-    })
-    this.contextMenu.on('close', () => {
-      this.contextMenuOpen = false
-    })
-
-    this.$mapCanvas.mapObj.addControl(animationRect)
-    this.$mapCanvas.mapObj.addControl(animetVersion)
-    this.$mapCanvas.mapObj.addControl(attribution)
-    this.$mapCanvas.mapObj.addControl(this.contextMenu)
-    this.$mapCanvas.mapObj.addControl(globalConfigs)
-    this.$mapCanvas.mapObj.addControl(legendMapOverlay)
-    this.$mapCanvas.mapObj.addControl(sidePanel)
-    this.$mapCanvas.mapObj.addControl(textBoxOverlay)
-    this.$mapCanvas.mapObj.addControl(timeControls)
-    this.$mapCanvas.mapObj.addControl(timeSnackbar)
-    this.$mapCanvas.mapObj.addControl(zoomMinus)
-    this.$mapCanvas.mapObj.addControl(zoomPlus)
-
-    this.$mapCanvas.mapObj.addControl(this.rotateArrow)
-
-    this.$mapCanvas.mapObj.addOverlay(popupGFI)
-
-    this.$mapCanvas.mapObj.on('moveend', () => {
-      this.emitter.emit('clearLayerCache', {})
-      const view = this.$mapCanvas.mapObj.getView()
-      const extent = view.calculateExtent(this.$mapCanvas.mapObj.getSize())
-      const rotation = view.getRotation()
-      this.store.setExtent([extent, rotation])
-      this.emitter.emit('updatePermalink')
-    })
-
-    this.$mapCanvas.mapObj.on('singleclick', (evt) => {
-      this.selectedLegendLayerName = null
-      if (!this.selectedFeature && !this.contextMenuOpen) {
-        this.emitter.emit('onMapClicked', { event: evt, overlay: popupGFI })
-      }
-    })
-    this.$mapCanvas.mapObj
-      .getViewport()
-      .addEventListener('pointerdown', (evt) => {
-        if (evt.target.tagName === 'CANVAS' || evt.target.tagName === 'IMG') {
-          this.emitter.emit('changeTab')
-        }
-      })
-    this.$mapCanvas.mapObj.on('movestart', (evt) => {
-      this.emitter.emit('changeTab')
-    })
-    new ResizeObserver(() => {
-      this.$mapCanvas.mapObj.updateSize()
-    }).observe(this.$refs.map)
   },
   beforeUnmount() {
     this.emitter.off('buildLayer', this.buildLayer)
@@ -282,6 +119,188 @@ export default {
     window.removeEventListener('keydown', this.onKeyDown)
   },
   methods: {
+    initMap() {
+      const scaleControl = new ScaleLine({
+        units: 'metric',
+      })
+
+      this.graticule = new Graticule({
+        strokeStyle: new Stroke({
+          color: 'rgba(0,0,0,0.85)',
+          width: 1.2,
+          lineDash: [0.5, 4],
+        }),
+        showLabels: true,
+        wrapX: true,
+        zIndex: 8000,
+        visible: this.showGraticules,
+      })
+
+      const newProjection = getProjection(this.currentCRS)
+      const fromLonLat = getTransform('EPSG:4326', newProjection)
+      const worldExtent = this.crsList[this.currentCRS]
+      newProjection.setWorldExtent(worldExtent)
+      const projExtent = applyTransform(worldExtent, fromLonLat, undefined, 8)
+      newProjection.setExtent(projExtent)
+
+      this.$mapCanvas.mapObj = new Map({
+        target: this.$refs['map'],
+        layers: [new TileLayer({ source: new OSM() }), this.graticule],
+        view: new View({
+          center: fromLonLat([-90, 55]),
+          zoom: 4,
+          maxZoom: 12,
+          projection: this.currentCRS,
+        }),
+        pixelRatio: 1,
+        controls: [scaleControl],
+      })
+
+      let dragAndDropInteraction = new DragAndDrop({
+        formatConstructors: [
+          GPX,
+          GeoJSON,
+          IGC,
+          new KML({ extractStyles: true }),
+          TopoJSON,
+        ],
+      })
+      dragAndDropInteraction.on('addfeatures', (event) => {
+        const vectorSource = new VectorSource({
+          features: event.features,
+        })
+        const vectorLayer = new VectorLayer({
+          source: vectorSource,
+        })
+        const baseName = event.file.name.split('.')[0]
+        const uniqueName = this.getUniqueLayerName(baseName)
+
+        vectorLayer.setProperties({
+          layerCurrentStyle: null,
+          layerDateIndex: 0,
+          layerIsTemporal: false,
+          layerName: uniqueName,
+          layerStyles: [],
+          layerVisibilityOn: true,
+          layerWmsIndex: -1,
+          layerXmlName: uniqueName,
+          legendColor: null,
+        })
+        this.setLayerZIndex(vectorLayer)
+        this.$mapCanvas.mapObj.addLayer(vectorLayer)
+        this.$mapCanvas.mapObj.getView().fit(vectorSource.getExtent())
+      })
+      this.$mapCanvas.mapObj.addInteraction(dragAndDropInteraction)
+
+      const attribution = new Attribution()
+      const legendMapOverlay = new Control({
+        element: document.getElementById(`legendMapOverlay-${this.mapId}`),
+      })
+      const textBoxOverlay = new Control({
+        element: document.getElementById(`textBoxOverlay-${this.mapId}`),
+      })
+      const timeControls = new Control({
+        element: document.getElementById(`time-controls-${this.mapId}`),
+      })
+      this.rotateArrow = new Rotate({ tipLabel: this.t('ResetRotation') })
+      const sidePanel = new Control({
+        element: document.getElementById(`side_panel-${this.mapId}`),
+      })
+      const globalConfigs = new Control({
+        element: document.getElementById(`global_configs-${this.mapId}`),
+      })
+      const zoomPlus = new Control({
+        element: document.getElementById(`zoomPlus-${this.mapId}`),
+      })
+      const zoomMinus = new Control({
+        element: document.getElementById(`zoomMinus-${this.mapId}`),
+      })
+      const animetVersion = new Control({
+        element: document.getElementById(`animet_version-${this.mapId}`),
+      })
+      const timeSnackbar = new Control({
+        element: document.getElementById(`time-snackbar-${this.mapId}`),
+      })
+      const animationRect = new Control({
+        element: document.getElementById(`animation-rect-${this.mapId}`),
+      })
+
+      const popupGFI = new Overlay({
+        id: `popupGFI-${this.mapId}`,
+        element: document.getElementById(`popupGFI-${this.mapId}`),
+        autoPan: {
+          animation: {
+            duration: 250,
+          },
+        },
+      })
+
+      const { addArrow, addBox, addCircle, addPolygon, selectedFeature } =
+        useVectorShapes(this.$mapCanvas.mapObj)
+      this.selectedFeature = selectedFeature
+      this.addArrowFunction = addArrow
+      this.addBoxFunction = addBox
+      this.addCircleFunction = addCircle
+      this.addPolygonFunction = addPolygon
+
+      this.contextMenu = new ContextMenu({
+        width: 170,
+        defaultItems: false,
+        items: this.contextMenuItems,
+      })
+      this.contextMenu.on('open', () => {
+        this.contextMenuOpen = true
+      })
+      this.contextMenu.on('close', () => {
+        this.contextMenuOpen = false
+      })
+
+      this.$mapCanvas.mapObj.addControl(animationRect)
+      this.$mapCanvas.mapObj.addControl(animetVersion)
+      this.$mapCanvas.mapObj.addControl(attribution)
+      this.$mapCanvas.mapObj.addControl(this.contextMenu)
+      this.$mapCanvas.mapObj.addControl(globalConfigs)
+      this.$mapCanvas.mapObj.addControl(legendMapOverlay)
+      this.$mapCanvas.mapObj.addControl(sidePanel)
+      this.$mapCanvas.mapObj.addControl(textBoxOverlay)
+      this.$mapCanvas.mapObj.addControl(timeControls)
+      this.$mapCanvas.mapObj.addControl(timeSnackbar)
+      this.$mapCanvas.mapObj.addControl(zoomMinus)
+      this.$mapCanvas.mapObj.addControl(zoomPlus)
+
+      this.$mapCanvas.mapObj.addControl(this.rotateArrow)
+
+      this.$mapCanvas.mapObj.addOverlay(popupGFI)
+
+      this.$mapCanvas.mapObj.on('moveend', () => {
+        this.emitter.emit('clearLayerCache', {})
+        const view = this.$mapCanvas.mapObj.getView()
+        const extent = view.calculateExtent(this.$mapCanvas.mapObj.getSize())
+        const rotation = view.getRotation()
+        this.store.setExtent([extent, rotation])
+        this.emitter.emit('updatePermalink')
+      })
+
+      this.$mapCanvas.mapObj.on('singleclick', (evt) => {
+        this.selectedLegendLayerName = null
+        if (!this.selectedFeature && !this.contextMenuOpen) {
+          this.emitter.emit('onMapClicked', { event: evt, overlay: popupGFI })
+        }
+      })
+      this.$mapCanvas.mapObj
+        .getViewport()
+        .addEventListener('pointerdown', (evt) => {
+          if (evt.target.tagName === 'CANVAS' || evt.target.tagName === 'IMG') {
+            this.emitter.emit('changeTab')
+          }
+        })
+      this.$mapCanvas.mapObj.on('movestart', (evt) => {
+        this.emitter.emit('changeTab')
+      })
+      new ResizeObserver(() => {
+        this.$mapCanvas.mapObj.updateSize()
+      }).observe(this.$refs.map)
+    },
     addTextBox(evt) {
       this.store.addTextBox({
         id: this.textBoxId,
@@ -634,7 +653,7 @@ export default {
           '.ol-rotate',
         ]
         let allExist = selectors.every(
-          (selector) => document.querySelector(selector) !== null,
+          (selector) => this.$el.querySelector(selector) !== null,
         )
 
         if (!allExist) {
@@ -730,11 +749,11 @@ export default {
   watch: {
     async collapsedControls(collapsed) {
       await this.waitForElements()
-      const scaleLineElement = document.querySelector('.ol-scale-line')
-      const attributionElement = document.querySelector(
+      const scaleLineElement = this.$el.querySelector('.ol-scale-line')
+      const attributionElement = this.$el.querySelector(
         '.ol-attribution.ol-uncollapsible',
       )
-      const rotateElement = document.querySelector('.ol-rotate')
+      const rotateElement = this.$el.querySelector('.ol-rotate')
       if (collapsed) {
         attributionElement.classList.add('attribution-collapsed')
         attributionElement.classList.remove('attribution-open')
@@ -765,11 +784,11 @@ export default {
     },
     async timeStep(newStep, oldStep) {
       await this.waitForElements()
-      const scaleLineElement = document.querySelector('.ol-scale-line')
-      const attributionElement = document.querySelector(
+      const scaleLineElement = this.$el.querySelector('.ol-scale-line')
+      const attributionElement = this.$el.querySelector(
         '.ol-attribution.ol-uncollapsible',
       )
-      const rotateElement = document.querySelector('.ol-rotate')
+      const rotateElement = this.$el.querySelector('.ol-rotate')
       if (newStep !== null && oldStep === null) {
         if (this.collapsedControls) {
           attributionElement.classList.add('attribution-collapsed')
@@ -879,8 +898,12 @@ export default {
   font-size: 1.3em;
 }
 </style>
-
 <style scoped>
+.map-canvas-root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 .full-size {
   width: 100%;
   height: 100%;
@@ -896,14 +919,14 @@ export default {
   cursor: pointer;
 }
 .map {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   z-index: 0;
 }
-#animet_version {
+.animet-version {
   position: absolute;
   bottom: 2px;
   left: 8px;

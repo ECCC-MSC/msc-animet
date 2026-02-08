@@ -1,5 +1,5 @@
 <template>
-  <div id="animation-rect"></div>
+  <div :id="rectId" class="animation-rect"></div>
 </template>
 
 <script>
@@ -10,12 +10,18 @@ import datetimeManipulations from '../../mixins/datetimeManipulations'
 import OLImage from 'ol/layer/Image'
 
 export default {
-  inject: ['store'],
+  inject: {
+    store: { from: 'store' },
+    $mapCanvas: { from: 'mapCanvas' },
+    $mapLayers: { from: 'mapLayers' },
+  },
+  props: ['mapId'],
   data() {
     return {
       t: useI18n().t,
     }
   },
+
   mounted() {
     this.emitter.on('calcFooterPreview', this.getInfoCanvas)
   },
@@ -178,7 +184,7 @@ export default {
           mapWidth,
         )
         if (
-          document.getElementById('animation-rect').style.visibility ===
+          document.getElementById(this.rectId).style.visibility ===
           'visible'
         ) {
           this.emitter.emit('checkIntersect')
@@ -224,27 +230,30 @@ export default {
           (dateWidth / this.currentAspect[this.currentResolution].width) * 100
         const percentageHeightDate =
           (dateHeight / this.currentAspect[this.currentResolution].height) * 100
-        const footerRule = `#animation-rect::after { top: ${percentageTopDate}% !important; right: ${percentageRightDate}% !important; width: ${percentageWidthDate}% !important;  height: ${percentageHeightDate}% !important; }`
+        const footerRule = `#${this.rectId}::after { top: ${percentageTopDate}% !important; right: ${percentageRightDate}% !important; width: ${percentageWidthDate}% !important;  height: ${percentageHeightDate}% !important; }`
         styleSheet.insertRule(footerRule, styleSheet.cssRules.length)
       } else {
-        const footerRule = `#animation-rect::after { top: 0% !important; right: 0% !important; width: 0% !important;  height: 0% !important; }`
+        const footerRule = `#${this.rectId}::after { top: 0% !important; right: 0% !important; width: 0% !important;  height: 0% !important; }`
         styleSheet.insertRule(footerRule, styleSheet.cssRules.length)
       }
 
-      const element = document.getElementById('animation-rect')
+      const element = document.getElementById(this.rectId)
       if (footerW !== mapW) {
         element.style.background = `linear-gradient(to bottom, rgba(255, 255, 255, 0.75) ${percentageHeader}%, transparent ${percentageHeader}%, transparent 0%)`
         const percFooterWidth = (footerW / mapW) * 100
-        const headerRule = `#animation-rect::before { width: ${percFooterWidth}% !important; height: ${percentageFooter}% !important; }`
+        const headerRule = `#${this.rectId}::before { width: ${percFooterWidth}% !important; height: ${percentageFooter}% !important; }`
         styleSheet.insertRule(headerRule, styleSheet.cssRules.length)
       } else {
         element.style.background = `linear-gradient(to bottom, rgba(255, 255, 255, 0.75) ${percentageHeader}%, transparent ${percentageHeader}%, transparent ${invPercentageFooter}%, rgba(255, 255, 255, 0.75) ${invPercentageFooter}%)`
-        const headerRule = `#animation-rect::before { width: 0 !important; height: 0 !important; }`
+        const headerRule = `#${this.rectId}::before { width: 0 !important; height: 0 !important; }`
         styleSheet.insertRule(headerRule, styleSheet.cssRules.length)
       }
     },
   },
   computed: {
+    rectId() {
+      return `animation-rect-${this.mapId}`
+    },
     animationTitle() {
       return this.store.getAnimationTitle
     },
@@ -262,7 +271,7 @@ export default {
 </script>
 
 <style scoped>
-#animation-rect {
+.animation-rect {
   display: block;
   width: 100vw;
   height: 56.25vw; /* height:width ratio = 9/16 = .5625  */
@@ -279,14 +288,14 @@ export default {
   pointer-events: none !important;
   visibility: hidden;
 }
-#animation-rect::before {
+.animation-rect::before {
   content: '';
   position: absolute;
   bottom: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 0.75);
 }
-#animation-rect::after {
+.animation-rect::after {
   content: '';
   position: absolute;
   background-color: rgba(255, 255, 255, 0.75);

@@ -6,7 +6,7 @@
   >
     <div class="text-box-container">
       <div
-        :id="`text-box-${id}`"
+        :id="textBoxElemId"
         class="text-box"
         contentEditable="true"
         spellcheck="false"
@@ -27,11 +27,15 @@
 import { computed, onMounted, ref } from 'vue'
 import { getCurrentInstance } from 'vue'
 
-const props = defineProps(['id', 'coord'])
+const props = defineProps(['id', 'coord', 'mapId'])
 const { proxy } = getCurrentInstance()
 const element = ref(null)
 
+const rectId = computed(() => `animation-rect-${props.mapId}`)
+const textBoxElemId = computed(() => `text-box-${props.id}-${props.mapId}`)
+
 const store = inject('store')
+const $mapCanvas = inject('mapCanvas')
 const isAnimating = computed(() => store.getIsAnimating)
 const playState = computed(() => store.getPlayState)
 
@@ -41,7 +45,7 @@ const destroyTextbox = () => {
 
 onMounted(() => {
   proxy.emitter.on('checkIntersect', checkIntersect)
-  element.value = document.getElementById(`text-box-${props.id}`)
+  element.value = document.getElementById(textBoxElemId.value)
   element.value.focus()
   checkIntersect()
 })
@@ -72,7 +76,7 @@ const handlePaste = (evt) => {
 }
 
 const initialPosStyle = () => {
-  const pixelPosition = proxy.$mapCanvas.mapObj.getPixelFromCoordinate(
+  const pixelPosition = $mapCanvas.mapObj.getPixelFromCoordinate(
     props.coord,
   )
   return {
@@ -83,10 +87,10 @@ const initialPosStyle = () => {
 
 const checkIntersect = () => {
   const previewDims = document
-    .getElementById('animation-rect')
+    .getElementById(rectId.value)
     .getBoundingClientRect()
   const imgDims = document
-    .getElementById(`text-box-${props.id}`)
+    .getElementById(textBoxElemId.value)
     .getBoundingClientRect()
   if (
     imgDims.top < previewDims.top ||

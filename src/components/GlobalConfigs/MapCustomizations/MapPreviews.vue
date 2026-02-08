@@ -66,7 +66,12 @@ import VectorTileSource from 'ol/source/VectorTile.js'
 import View from 'ol/View'
 
 export default {
-  inject: ['store'],
+  props: ['mapId'],
+  inject: {
+    store: { from: 'store' },
+    $mapCanvas: { from: 'mapCanvas' },
+    emitter: { from: 'emitter' },
+  },
   data() {
     return {
       backgroundColor: null,
@@ -1307,7 +1312,7 @@ export default {
           }
           const rgb = this.backgroundColor.values
           const cssColor = `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`
-          document.getElementById('map').style.backgroundColor = cssColor
+          document.getElementById(`map-${this.mapId}`).style.backgroundColor = cssColor
           if (['NoBasemap', 'OSM'].includes(background.basemap)) {
             this.basemapSelection = `NoBasemap-${this.backgroundColor.name}`
             this.store.setBasemap('NoBasemap')

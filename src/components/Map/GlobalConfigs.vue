@@ -1,9 +1,9 @@
 <template>
-  <v-container fluid id="global_configs">
+  <v-container fluid :id="configId" class="global-configs">
     <v-row class="align-center ma-0 justify-space-between">
       <v-col cols="0" md="4" class="pa-0"></v-col>
       <v-col cols="12" md="4" class="pa-0 pt-2">
-        <animet-logo />
+        <animet-logo :mapId="mapId" />
       </v-col>
       <v-col
         cols="12"
@@ -11,10 +11,10 @@
         class="d-flex pa-0 pt-2 justify-center align-center"
       >
         <v-spacer v-if="mdAndUp"></v-spacer>
-        <customization-menu class="mr-3" />
+        <customization-menu :mapId="mapId" class="mr-3" />
         <page-theme class="mr-3" />
         <language-select class="mr-3" />
-        <perma-link class="mr-3" />
+        <perma-link :mapId="mapId" class="mr-3" />
         <v-tooltip location="bottom">
           <template v-slot:activator="{ props }">
             <v-btn
@@ -36,6 +36,11 @@
 
 <script setup>
 import { useDisplay } from 'vuetify'
+import { computed } from 'vue'
+
+const props = defineProps(['mapId'])
+
+const configId = computed(() => `global_configs-${props.mapId}`)
 
 const { mdAndUp } = useDisplay()
 </script>
@@ -45,7 +50,7 @@ const { mdAndUp } = useDisplay()
   pointer-events: auto;
   z-index: 4;
 }
-#global_configs {
+.global-configs {
   padding: 0 0.5em 0 0.5em;
   pointer-events: none !important;
   position: absolute;

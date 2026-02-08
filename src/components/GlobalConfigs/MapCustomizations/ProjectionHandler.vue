@@ -35,7 +35,12 @@ import {
 import View from 'ol/View.js'
 
 export default {
-  inject: ['store'],
+  inject: {
+    store: { from: 'store' },
+    $mapCanvas: { from: 'mapCanvas' },
+    $mapLayers: { from: 'mapLayers' },
+    emitter: { from: 'emitter' },
+  },
   methods: {
     changeProjectionHandler(newProjCode = null) {
       if (!newProjCode) {

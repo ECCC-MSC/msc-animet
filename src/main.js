@@ -12,11 +12,21 @@ const emitter = mitt()
 const app = createApp(App)
 
 registerPlugins(app)
-app.provide('store', useStore())
+const store = useStore()
+app.provide('store', store)
+app.provide('emitter', emitter)
 
-app.config.globalProperties.$mapLayers = reactive({ arr: [] })
-app.config.globalProperties.$mapCanvas = reactive({ mapObj: {} })
-app.config.globalProperties.$animationCanvas = reactive({ mapObj: {} })
+const mapLayers = reactive({ arr: [] })
+const mapCanvas = reactive({ mapObj: {} })
+const animationCanvas = reactive({ mapObj: {} })
+
+app.provide('mapLayers', mapLayers)
+app.provide('mapCanvas', mapCanvas)
+app.provide('animationCanvas', animationCanvas)
+
+app.config.globalProperties.$mapLayers = mapLayers
+app.config.globalProperties.$mapCanvas = mapCanvas
+app.config.globalProperties.$animationCanvas = animationCanvas
 
 app.config.globalProperties.emitter = emitter
 

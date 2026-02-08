@@ -7,12 +7,13 @@
     @checkIntersect="checkIntersect"
     @dblclick="emitter.emit('openPanel')"
     @click="emit('legend-click', name)"
+    :mapId="mapId"
   >
     <div class="image-container">
       <img
         class="white"
         :class="getLegendHidden"
-        :id="name"
+        :id="legendId"
         :name="name"
         :src="getMapLegendURL"
         :style="{ border: getStyle }"
@@ -35,15 +36,20 @@ import { useI18n } from 'vue-i18n'
 
 const { proxy } = getCurrentInstance()
 
-const props = defineProps(['name'])
+const props = defineProps(['name', 'mapId'])
 const emit = defineEmits(['legend-click', 'legend-remove'])
 
 const store = inject('store')
+const $mapLayers = inject('mapLayers')
+const emitter = inject('emitter')
 const { locale } = useI18n()
 
 const activeLegends = computed(() => store.getActiveLegends)
 const colorBorder = computed(() => store.getColorBorder)
 const legendIndex = computed(() => store.getLegendIndex)
+
+const rectId = computed(() => `animation-rect-${props.mapId}`)
+const legendId = computed(() => `${props.name}-${props.mapId}`)
 
 const checkResize = (event) => {
   const img = event.target
@@ -66,7 +72,7 @@ const checkResize = (event) => {
 }
 
 const getLegendHidden = computed(() => {
-  const getVisible = proxy.$mapLayers.arr
+  const getVisible = $mapLayers.arr
     .find((l) => l.get('layerName') === props.name)
     .get('layerVisibilityOn')
   return {
@@ -78,7 +84,7 @@ const getMapLegendURL = computed(() => {
   if (props.name === null) {
     return null
   }
-  let layer = proxy.$mapLayers.arr.find(
+  let layer = $mapLayers.arr.find(
     (l) => l.get('layerName') === props.name,
   )
   if (layer.get('layerStyles').length === 0) {
@@ -101,7 +107,7 @@ const getStyle = computed(() => {
 })
 
 const getLegendStyle = () => {
-  const legendRGB = proxy.$mapLayers.arr
+  const legendRGB = $mapLayers.arr
     .find((l) => l.get('layerName') === props.name)
     .get('legendColor')
   return `rgb(${legendRGB.r}, ${legendRGB.g}, ${legendRGB.b})`
@@ -123,7 +129,7 @@ const initialPosStyle = () => {
 }
 
 const checkIntersect = () => {
-  let layer = proxy.$mapLayers.arr.find(
+  let layer = $mapLayers.arr.find(
     (l) => l.get('layerName') === props.name,
   )
   if (!layer.get('layerVisibilityOn')) {
@@ -132,9 +138,9 @@ const checkIntersect = () => {
   }
 
   const previewDims = document
-    .getElementById('animation-rect')
+    .getElementById(rectId.value)
     .getBoundingClientRect()
-  const imgDims = document.getElementById(props.name).getBoundingClientRect()
+  const imgDims = document.getElementById(legendId.value).getBoundingClientRect()
   if (
     imgDims.top < previewDims.top ||
     imgDims.bottom > previewDims.bottom ||

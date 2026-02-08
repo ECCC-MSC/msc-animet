@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router/auto'
 import Home from '@/views/Home.vue'
 import MultiDisplay from '@/views/MultiDisplay.vue'
 import NotFound from '@/views/NotFound.vue'
+import QuadView from '@/views/QuadView.vue'
 
 const routes = [
   {
@@ -29,6 +30,11 @@ const routes = [
     props: (route) => ({
       disp: route.query.disp,
     }),
+  },
+  {
+    path: '/quad-view',
+    name: 'QuadView',
+    component: QuadView,
   },
   {
     path: '/:pathMatch(.*)*',

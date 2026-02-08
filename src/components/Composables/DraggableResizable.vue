@@ -16,6 +16,7 @@ const props = defineProps([
   'initialPosition',
   'resizeDirection',
   'preventDefault',
+  'mapId',
 ])
 const emit = defineEmits(['checkIntersect'])
 
@@ -39,8 +40,9 @@ const dragMouseDown = (event) => {
   }
 
   if (event.target.classList.contains('resizable')) {
+    const animRect = document.getElementById(`animation-rect-${props.mapId}`)
     if (
-      document.getElementById('animation-rect').style.visibility === 'visible'
+      animRect && animRect.style.visibility === 'visible'
     ) {
       if (event.type === 'touchstart') {
         document.addEventListener('touchend', onResizeEnd)
@@ -92,8 +94,9 @@ const closeDragElement = () => {
   document.onmousemove = null
   document.ontouchmove = null
   document.ontouchend = null
+  const animRect = document.getElementById(`animation-rect-${props.mapId}`)
   if (
-    document.getElementById('animation-rect').style.visibility === 'visible'
+    animRect && animRect.style.visibility === 'visible'
   ) {
     emit('checkIntersect')
   }

@@ -62,7 +62,12 @@ import * as HME from 'h264-mp4-encoder'
 import datetimeManipulations from '../../mixins/datetimeManipulations'
 
 export default {
-  inject: ['store'],
+  props: ['mapId'],
+  inject: {
+    store: { from: 'store' },
+    $mapCanvas: { from: 'mapCanvas' },
+    $mapLayers: { from: 'mapLayers' },
+  },
   mounted() {
     this.emitter.on('redoAnimation', this.redoAnimation)
     this.emitter.on('restoreState', this.restoreState)
@@ -392,7 +397,7 @@ export default {
       this.encoder.delete()
 
       this.$mapCanvas.mapObj.getInteractions().forEach((x) => x.setActive(true)) // Enables all map interactions such as drag or zoom
-      let theMap = document.getElementById('map')
+      let theMap = document.getElementById(`map-${this.mapId}`)
       theMap.style.height = '100%'
       theMap.style.width = '100%'
     },
@@ -408,7 +413,7 @@ export default {
         ) {
           this.addLegend(
             mapCnv,
-            document.getElementById(layerName),
+            document.getElementById(`${layerName}-${this.mapId}`),
             this.$mapLayers.arr
               .find((l) => l.get('layerName') === layerName)
               .get('legendColor'),
@@ -418,7 +423,7 @@ export default {
       this.textBoxes.forEach((textBoxObj) => {
         this.addTextBox(
           mapCnv,
-          document.getElementById(`text-box-${textBoxObj.id}`),
+          document.getElementById(`text-box-${textBoxObj.id}-${this.mapId}`),
         )
       })
       if (this.mapTimeSettings.DateIndex !== null) {
@@ -450,7 +455,7 @@ export default {
       context.save()
       context.setTransform(1, 0, 0, 1, 0, 0)
       try {
-        let animationRect = document.getElementById('animation-rect')
+        let animationRect = document.getElementById(`animation-rect-${this.mapId}`)
         const ratioH = (animationRect.offsetHeight - 8) / mapCanvas.height
         const ratioW = (animationRect.offsetWidth - 8) / mapCanvas.width
         let borderWidth = 0
@@ -504,7 +509,7 @@ export default {
     },
     addTextBox(mapCanvas, textBox) {
       const mapTextBox = textBox.getBoundingClientRect()
-      let animationRect = document.getElementById('animation-rect')
+      let animationRect = document.getElementById(`animation-rect-${this.mapId}`)
       const ratioH = (animationRect.offsetHeight - 8) / mapCanvas.height
       const ratioW = (animationRect.offsetWidth - 8) / mapCanvas.width
       const offsetLeft =
@@ -600,11 +605,11 @@ export default {
         mapContext.fillStyle = 'white'
       } else {
         mapContext.fillStyle =
-          document.getElementById('map').style.backgroundColor
+          document.getElementById(`map-${this.mapId}`).style.backgroundColor
       }
       mapContext.fillRect(0, 0, mapCanvas.width, mapCanvas.height)
       Array.prototype.forEach.call(
-        document.querySelectorAll('#animation-canvas .ol-layer canvas'),
+        document.querySelectorAll(`#animation-canvas-${this.mapId} .ol-layer canvas`),
         function (canvas) {
           if (canvas.width > 0) {
             const opacity = canvas.parentNode.style.opacity
@@ -638,7 +643,7 @@ export default {
       ctx.strokeStyle = 'black'
       ctx.fillStyle = 'black'
       const logo_canvas = document.getElementById(
-        `eccc_logo_${this.$i18n.locale}`,
+        `eccc_logo_${this.$i18n.locale}-${this.mapId}`,
       )
       let ratio = logo_canvas.naturalWidth / logo_canvas.naturalHeight
       let width = null
