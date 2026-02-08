@@ -1,0 +1,14 @@
+[workspace]
+authors = ["Yordan Radev <asofficialasitgets@gmail.com>"]
+channels = ["conda-forge"]
+name = "msc-animet"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+generate-layers = { cmd = "python generate_trees_layers_list.py", cwd = "scripts" }
+
+[dependencies]
+python = ">=3.14.3,<3.15"
+owslib = ">=0.35.0,<0.36"
+requests = ">=2.32.5,<3"

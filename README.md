@@ -52,25 +52,14 @@ Bugs, enhancements and issues may be posted on [GitHub](https://github.com/ECCC-
 
 ### Updating GeoMet-Weather layer tree names
 
-A static list of layer names and titles is generated for ease of translation and reference without needing to make a large request for the global WMS GetCapabilities document on application load. A Python script is used to update the `/src/locales/{lang}/layers` and the `/src/assets/trees/tree` json files for GeoMet Weather and GeoMet Climate. To update the layer name files, do the following (instructions for Linux):
+A static list of layer names and titles is generated for ease of translation and reference without needing to make a large request for the global WMS GetCapabilities document on application load. A Python script is used to update the `/src/locales/{lang}/layers` and the `/src/assets/trees/tree` json files for GeoMet Weather and GeoMet Climate. To update the layer name files, do the following:
+
+Install [pixi](https://pixi.sh), then run:
 
 ```bash
-# Set directory name of your Python virtual environment
-PYTHON_VENV=generate-tree-venv
-
-# Create Python virtual environment
-python3 -m venv --system-site-packages $PYTHON_VENV
-
-# Activate virtual env
-. $PYTHON_VENV/bin/activate
-
-# Install deps
-pip install owslib
-
-# Update layers_en|fr.json
-cd ./scripts
-python3 generate_trees_layers_list.py
+pixi run generate-layers
 ```
+
 
 ### Adding custom WMS sources
 

@@ -29,3 +29,7 @@ pnpm-debug.log*
 src/assets/trees/tree_*
 src/locales/en/layers_*
 src/locales/fr/layers_*
+
+# pixi environments
+.pixi
+*.egg-info
