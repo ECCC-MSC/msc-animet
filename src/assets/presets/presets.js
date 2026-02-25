@@ -98,8 +98,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'Weather Alerts [experimental]',
-              Name: 'ALERTS',
+              Title: 'Current Weather Alerts',
+              Name: 'Current-Alerts',
               isLeaf: true,
               isTemporal: false,
               legendDisplayed: true,
