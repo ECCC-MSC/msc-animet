@@ -1,8 +1,57 @@
 # Release Notes
 
+## Version 2.5.0 (2026-02-26)
+
+### New Features
+
+- Added NRCan basemap
+- Added 4 new classic synoptic presets
+- Added option to show interpolation from supported layers
+- Added a current time notch in the time slider that displays the current UTC time in a tooltip when hovered over
+
+### Enhancements
+
+#### User Interface & Experience
+
+- AniMet logo now links back to the default page
+- Added a snackbar notification when the projection switches to an unsupported for the current basemap
+- Simplified display of model runs for monthly/yearly options in the configuration dropdown menu to be more human readable
+
+#### Presets & Layers
+
+- Updated presets to use updated RLatLon RDPS layers
+- Improved various preset images
+- Updated all presets to have interpolation by default when possible
+- Renamed preset for Air Temperature at 850 mb to 0°C Isotherm 850mb
+- Updated certain preset names
+
+#### Functionality & Performance
+
+- Allow layers with only a ref time to be animated
+- Remember resolution, FPS, output format, and aspect ratio preferences via cache/localstorage
+- Updated model run handling to maintain proper year/month/day/minute/second quantities
+- Updated OpenLayers to version 10 for new basemap handling
+
+#### Other Enhancements
+
+- Added language flag permalink for forced language change
+- Minor refactoring of some layer handling code
+
+### Bug Fixes
+
+- Fixed an animation restart issue showing a failed timestep frame when an expired timestep was in the middle of creating the animation
+- Fixed caching issues when special parameters are added like specific model run or interpolation
+- Fixed a styles re-querying issue in the layer configuration every time the menu re-opens after an animation
+- Fixed a reappearing image frame of a layer after being out of bounds
+- Fixed GetFeatureInfo not triggering if a vector feature was added on top of the map
+- Fixed a GetFeatureInfo issue attempting to query layers without a GFI
+- Fixed a translation text misplacement inside the animation configuration
+- Fixed preset handling for nightly deployment
+
 ## Version 2.4.3 (2025-11-14)
 
 ### Bug Fixes
+
 - Fixed many caching issue related to cache clearing checks and caching strategy
 - Fixed GetFeatureInfo popup timing and triggering on Add panel
 - Fixed a small memory leak related to caching, i18n and error handling
@@ -11,10 +60,10 @@
 - Fixed placenames misplaced on map
 - Fixed dark mode and light mode color schemes
 
-
 ## Version 2.4.2 (2025-10-30)
 
 ### Bug Fixes
+
 - Updated layer tree with GeoMet-Weather 2.36.4
 - Renamed "Animate" to "Export" tab for clarity
 - Added another case for error handling if one of the timesteps isn't accessible
@@ -23,17 +72,20 @@
 ## Version 2.4.1 (2025-10-02)
 
 ### Bug Fixes
+
 - Changed deprecated styles for certain presets
 
 ## Version 2.4.0 (2025-10-02)
 
 ### New Features
+
 - Pre-fetching of images
 - New and improved presets with preset opacities
 - Drag and drop GeoJSON, GPX, IGC, KML and TopoJSON onto any AniMet display
 - Customize the playback speed
 
 ### Enhancements
+
 - Extrapolation layers added to radar Snow and radar Rain presets
 - Layers that are not showed because they are out of bounds will also be greyed out in the config panel
 - Reduced minimum time between time jumps from 1 sec to 250ms when playing
@@ -60,6 +112,7 @@
 - Added broadcast channels to change theme and language from an iframe
 
 ### Bug Fixes
+
 - Fixed permalink with `play=1` affecting playback
 - Fixed permalink projection that caused issues when switching back to EPSG:3857
 - Fixed localstorage (cookies) issue with presets when there is an updated AniMet build
@@ -82,11 +135,13 @@
 ## Version 2.3.4 (2025-06-19)
 
 ### Bug Fixes
+
 - Update layer tree with new CAPS layers and remove old HRPDS.NORTH layers
 
 ## Version 2.3.3 (2025-06-13)
 
 ### Bug Fixes
+
 - Fixed authentication checks with retry
 - Fixed error handling during next page refresh
 - Fixed spaces and accents in variable names
@@ -94,24 +149,28 @@
 ## Version 2.3.2 (2025-06-11)
 
 ### Bug Fixes
+
 - Fixed display of presets in smaller displays
 - Update layer tree with GDPS-SN
 
 ## Version 2.3.1 (2025-06-09)
 
 ### Bug Fixes
+
 - Fixed an issue in Dark Mode
 - Fixed a legend width issue in mobile and other small screen sizes
 
 ## Version 2.3.0 (2025-06-05)
 
 ### New Features
+
 - Map Presets: Add groups of commonly used layers
 - Simplified Basemap and Overlays: New simplified world boundaries (including Canadian provinces/territories and U.S. states) to use as a basemap or overlay
 - Map Markup Tools: Highlight or annotate your map with textboxes and shapes
 - New WMS Sources: Additional third-party WMS services, including those from ECMWF, NASA, NOAA-nowCOAST, NOAA-NCEP, and Quebec’s Ministry of Energy and Natural Resources CartoService
 
 ### Enhancements
+
 - Upgraded to use Vue 3 JS framework
 - Upgraded Vuetify
 - Added new coordinates display for GetFeatureInfo
@@ -130,9 +189,11 @@
 - Other minor code enhacements
 
 ### Removal
+
 - Removed matamo analytics
 
 ### Bug Fixes
+
 - Fixed Dark Mode, setPosition errors and side panel breaking on spacebar toggle
 - Fixed a GetFeatureInfo bug
 - Fixed some time edge cases, layer tree failure and range slider styling
@@ -143,11 +204,13 @@
 ## Version 2.2.2 (2024-10-16)
 
 ### Bug Fixes
+
 - Update GeoMet-Weather layer list with removed layers
 
 ## Version 2.2.1 (2024-07-04)
 
 ### Bug Fixes
+
 - Update GeoMet-Weather 2.30.0 layer list
 - Fixed panels freezing during a loop if the connection is particularly unstable
 - Fixed animation creation crashing during error handling
@@ -162,6 +225,7 @@
 ## Version 2.2.0 (2024-06-17)
 
 ### New Features
+
 - Added a time zone selection, saving preference to browser cache
 - Added ability to save an animation frame as a JPEG
 - [Experimental] 4-Displays page will now remember each panel's permalink (cannot be used on smaller screens)
@@ -169,6 +233,7 @@
 - Updated layers list to display new GOES satellite layers
 
 ### Enhancements
+
 - Improved file naming when downloading animation
 - Upgraded OpenLayers to version 9.1
 - Upgrade luxon to version 3.4.x
@@ -181,6 +246,7 @@
 - Added many other quality of life improvements
 
 ### Bug Fixes
+
 - Fixed 404 handling in nightly deployments
 - Fixed various event handling issues while animation is looping
 - Fixed a memory leak issue caused by use of Vuetify's progress bar
@@ -200,16 +266,19 @@
 ## Version 2.1.3 (2024-06-12)
 
 ### Bug Fixes
+
 - Re-update GeoMet-Weather 2.28.0 layer list due to timing with refreshed global get capabilities
 
 ## Version 2.1.2 (2024-06-12)
 
 ### Bug Fixes
+
 - Update GeoMet-Weather 2.28.0 layer list
 
 ## Version 2.1.1 (2024-05-13)
 
 ### Bug Fixes
+
 - Fixed a memory leak issue
 - Fixed an issue with loading NRCan overlay in EPSG:3995
 - Fixed an issue with the warning message not showing for legend placement
@@ -222,6 +291,7 @@
 ## Version 2.1.0 (2024-04-10)
 
 ### New Features
+
 - Added new map projections: EPSG 4326, 3978 and 3995
 - Added option to display map graticules
 - Ability to loop animations
@@ -231,6 +301,7 @@
 - Added a 4-display view for big TV displays
 
 ### Enhancements
+
 - Changed to a cog icon for the controller playback options
 - Language change is now remembered via the user's browser cache
 - Updated OpenLayers from 6.13 to 6.15.1
@@ -254,6 +325,7 @@
 - Changed zoom buttons to have 10x smaller increments for improved precision
 
 ### Bug Fixes
+
 - Fixed a specific issue when clicking on the play button would trigger twice during a layer's rendering
 - Fixed a bug where a layer would crash in Firefox on missing timestep
 - Fixed an issue when translating a GetFeatureInfo "value" property
@@ -265,11 +337,13 @@
 ## Version 2.0.2 (2024-03-26)
 
 ### Bug Fixes
+
 - Update GeoMet-Weather 2.26.2 layer list
 
 ## Version 2.0.1 (2024-01-08)
 
 ### Bug Fixes
+
 - Fixed issue with UTC locale display
 - Fixed issue with playback pausing on minimize
 - Fixed missing space after Ref time
@@ -277,30 +351,36 @@
 ## Version 2.0.0 (2023-12-21)
 
 ### New Features
+
 - Complete redesign and overhaul of the user interface
 - Fully-functional mobile support
 - Addition of wall clock on outputted animations
 - Improved animation generation workflow with support for multiple aspect ratios and resolutions
 
 ### Enhancements
+
 - User time preference (UTC/Local) now persists between sessions
 - Permalink now updates directly in the browser's address bar
 
 ### Bug Fixes
+
 - Fixed issue where playhead would be located outside of temporal bounds
 - Fixed issue where legend resize handle would be misaligned
 
 ## Version 1.3.1 (2023-12-07)
 
 ### Bug Fixes
+
 - Update GeoMet-Weather layer list
 
 ## Version 1.3.0 (2023-10-18)
 
 ### New Features
+
 - Display raw values for displayed layers on map clicks
 
 ### Enhancements
+
 - Add support for building AniMet using custom WMS sources
   - Add instructions in the README on how to change WMS sources
 - Reduce filename length by keeping only the "begin" timestamp
@@ -315,6 +395,7 @@
 - Improved error handling for missing timesteps or bad requests
 
 ### Bug Fixes
+
 - Non-default model runs to update correctly in output animation
 - Fixed a time formatting issue
 - Fixed various colour issues when changing to dark mode
@@ -327,16 +408,19 @@
 ## Version 1.2.2 (2023-07-11)
 
 ### Bug Fixes
+
 - Remove use of LANG query when fetching dimensions from GetCapabilities
 
 ## Version 1.2.1 (2023-07-06)
 
 ### Bug Fixes
+
 - Fixed generation script, layer tree collapse and null title
 
 ## Version 1.2.0 (2023-07-06)
 
 ### New Features
+
 - Support for selecting NWP model runs
   - Users can now select between all available NWP model runs for a given layer
 - New centralized temporal controller
@@ -348,11 +432,13 @@
   - Support displaying multiple legends in output animation
 
 ### Enhancements
+
 - Scale line is now shown on the map
 - New tooltip for non-temporal clock icon
 - Major code cleanup and refactoring
 
 ### Bug Fixes
+
 - Permalinks now retain chosen WMS style/legend
 - Layer visibility now applied via permalink
 - Layers with time interval of PT0H now supported
@@ -364,11 +450,13 @@
 ## Version 1.1.2 (2023-05-17)
 
 ### Bug Fixes
+
 - Added matomo analytics tracking of user clicks
 
 ## Version 1.1.1 (2023-05-01)
 
 ### Bug Fixes
+
 - Fixed a colour issue where it would not revert inside a permalink when making a new one.
 - Fixed a typo.
 
@@ -380,11 +468,14 @@
 - Added several map overlays from NRCan: boundaries, placenames and waterbodies.
 
 ### Enhancements
+
 - Permalinks now work when only layer names are specified.
 - Added basemap colour picker via new OpenLayers control.
 
 ### Bug Fixes
+
 - Fixed a situation where a layer's legend would not be removed from the map when the layer was removed.
 
 ## Version 1.0.0 (2023-03-24)
+
 Initial release of MSC-AniMet.
