@@ -1454,6 +1454,12 @@ export default {
         "isTemporal": false
       },
       {
+        "Title": "Alertes m\u00e9t\u00e9o en cours",
+        "Name": "Current-Alerts",
+        "isLeaf": true,
+        "isTemporal": false
+      },
+      {
         "Title": "Conditions actuelles",
         "Name": "CURRENT_CONDITIONS",
         "isLeaf": true,
@@ -6370,12 +6376,6 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "RIOPS - Courant oc\u00e9anique [m/s]",
-            "Name": "RIOPS_UU2W_DBS-0.5m",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
             "Title": "RIOPS - Divergence de la glace de mer [%/jour]",
             "Name": "RIOPS_IICEDIVERGENCE_SFC",
             "isLeaf": true,
@@ -6452,12 +6452,6 @@ export default {
             "Name": "RIOPS_ISNOWVOL_SFC",
             "isLeaf": true,
             "isTemporal": true
-          },
-          {
-            "Title": "RIOPS - V\u00e9locit\u00e9 de la glace [m/s]",
-            "Name": "RIOPS_UUI_SFC",
-            "isLeaf": true,
-            "isTemporal": true
           }
         ]
       },
@@ -6466,457 +6460,6 @@ export default {
         "Name": "Syst\u00e8me r\u00e9gional de pr\u00e9vision oc\u00e9an-glace non coupl\u00e9 en 3 dimensions (SRPOG.3D) [5 km]",
         "isLeaf": false,
         "children": [
-          {
-            "Title": "Courant oc\u00e9anique",
-            "Name": "Courant oc\u00e9anique",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0001.6m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1.6m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0002.7m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-2.7m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0003.9m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-3.9m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0005.1m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-5.1m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0006.5m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-6.5m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0008.1m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-8.1m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0009.8m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-9.8m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0012m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-12m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0014m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-14m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0017m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-17m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0019m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-19m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0023m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-23m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0027m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-27m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0031m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-31m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0036m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-36m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0041m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-41m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0047m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-47m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0054m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-54m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0061m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-61m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0069m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-69m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0078m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-78m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0087m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-87m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0097m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-97m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0108m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-108m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0120m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-120m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0133m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-133m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0147m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-147m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0163m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-163m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0181m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-181m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0200m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-200m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0221m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-221m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0245m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-245m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0271m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-271m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0301m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-301m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0334m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-334m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0371m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-371m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0412m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-412m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0458m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-458m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0509m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-509m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0565m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-565m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0628m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-628m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0697m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-697m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0773m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-773m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0857m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-857m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 0947m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-947m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 1046m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1046m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 1152m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1152m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 1266m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1266m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 1387m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1387m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 1516m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1516m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 1653m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1653m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 1796m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1796m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 1945m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1945m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 2101m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-2101m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 2262m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-2262m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 2429m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-2429m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 2600m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-2600m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 2776m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-2776m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 2956m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-2956m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 3139m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-3139m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 3325m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-3325m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 3513m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-3513m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 3705m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-3705m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 3898m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-3898m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 4093m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-4093m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 4290m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-4290m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 4488m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-4488m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 4688m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-4688m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 4888m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-4888m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 5089m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-5089m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 5292m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-5292m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 5495m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-5495m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 5698m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-5698m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Courant oc\u00e9anique - 5902m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-5902m",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
           {
             "Title": "Salinit\u00e9 de l'eau de mer",
             "Name": "Salinit\u00e9 de l'eau de mer",
@@ -12202,6 +11745,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "Concentration maximale quotidienne associ\u00e9e aux panaches de feux de for\u00eat et de v\u00e9g\u00e9tation : PM2,5 en surface [kg/m\u00b3]",
+                "Name": "RAQDPS.Sfc_PM2.5-WildireSmokePlume-DMax",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Concentration moyenne quotidienne associ\u00e9e aux panaches de feux de for\u00eat et de v\u00e9g\u00e9tation : PM2,5 en surface [kg/m\u00b3]",
+                "Name": "RAQDPS.Sfc_PM2.5-WildireSmokePlume-DAvg",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "Concentrations totales associ\u00e9es aux panaches de feux de for\u00eat et de v\u00e9g\u00e9tation : int\u00e9gral de la colonne PM2.5 [kg/m\u00b2]",
                 "Name": "RAQDPS.EAtm_PM2.5-WildfireSmokePlume",
                 "isLeaf": true,
@@ -12295,6 +11850,30 @@ export default {
                   {
                     "Title": "Produits d'Effets Cumulatifs des points chauds de feux de for\u00eats (2020)",
                     "Name": "RAQDPS-FW.CE_HOTSPOTS.2020",
+                    "isLeaf": true,
+                    "isTemporal": false
+                  },
+                  {
+                    "Title": "Produits d'Effets Cumulatifs des points chauds de feux de for\u00eats (2021)",
+                    "Name": "RAQDPS-FW.CE_HOTSPOTS.2021",
+                    "isLeaf": true,
+                    "isTemporal": false
+                  },
+                  {
+                    "Title": "Produits d'Effets Cumulatifs des points chauds de feux de for\u00eats (2022)",
+                    "Name": "RAQDPS-FW.CE_HOTSPOTS.2022",
+                    "isLeaf": true,
+                    "isTemporal": false
+                  },
+                  {
+                    "Title": "Produits d'Effets Cumulatifs des points chauds de feux de for\u00eats (2023)",
+                    "Name": "RAQDPS-FW.CE_HOTSPOTS.2023",
+                    "isLeaf": true,
+                    "isTemporal": false
+                  },
+                  {
+                    "Title": "Produits d'Effets Cumulatifs des points chauds de feux de for\u00eats (2024)",
+                    "Name": "RAQDPS-FW.CE_HOTSPOTS.2024",
                     "isLeaf": true,
                     "isTemporal": false
                   }
@@ -12540,30 +12119,30 @@ export default {
     "isLeaf": false,
     "children": [
       {
-        "Title": "Champs convectifs du SCPA [exp\u00e9rimental]",
-        "Name": "Champs convectifs du SCPA [exp\u00e9rimental]",
+        "Title": "Champs convectifs du SCPA",
+        "Name": "Champs convectifs du SCPA",
         "isLeaf": false,
         "children": [
           {
-            "Title": "SCPA_conv - Indice de Showalter, au niveau de r\u00e9f\u00e9rence 500 mb (contour) [K]",
+            "Title": "SCPA_conv - Indice de Showalter, au niveau de r\u00e9f\u00e9rence 500 mb (contour) [K] [exp\u00e9rimental]",
             "Name": "CAPS_3km_ShowalterIndex-Contour_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA_conv - Indice de Showalter, au niveau de r\u00e9f\u00e9rence 500 mb [K]",
+            "Title": "SCPA_conv - Indice de Showalter, au niveau de r\u00e9f\u00e9rence 500 mb [K] [exp\u00e9rimental]",
             "Name": "CAPS_3km_ShowalterIndex_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Indice de soul\u00e8vement pour la parcelle la plus instable utilisant la correction de la temp\u00e9rature virtuelle (contour) [K]",
+            "Title": "SCPA - Indice de soul\u00e8vement pour la parcelle la plus instable utilisant la correction de la temp\u00e9rature virtuelle (contour) [K] [exp\u00e9rimental]",
             "Name": "CAPS_3km_LiftedIndex-MU-VT-Contour_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA_conv - Indice de soul\u00e8vement pour la parcelle la plus instable utilisant la correction de la temp\u00e9rature virtuelle [K]",
+            "Title": "SCPA_conv - Indice de soul\u00e8vement pour la parcelle la plus instable utilisant la correction de la temp\u00e9rature virtuelle [K] [exp\u00e9rimental]",
             "Name": "CAPS_3km_LiftedIndex-MU-VT_500mb",
             "isLeaf": true,
             "isTemporal": true
@@ -12571,12 +12150,12 @@ export default {
         ]
       },
       {
-        "Title": "Champs diagnostiques du SCPA [exp\u00e9rimental]",
-        "Name": "Champs diagnostiques du SCPA [exp\u00e9rimental]",
+        "Title": "Champs diagnostiques du SCPA",
+        "Name": "Champs diagnostiques du SCPA",
         "isLeaf": false,
         "children": [
           {
-            "Title": "SCPA_diag - Type de pr\u00e9cipitation instantan\u00e9e",
+            "Title": "SCPA_diag - Type de pr\u00e9cipitation instantan\u00e9e [exp\u00e9rimental]",
             "Name": "CAPS_3km_PrecipType",
             "isLeaf": true,
             "isTemporal": true
@@ -12584,570 +12163,570 @@ export default {
         ]
       },
       {
-        "Title": "SCPA [exp\u00e9rimental]",
-        "Name": "SCPA [exp\u00e9rimental]",
+        "Title": "SCPA",
+        "Name": "SCPA",
         "isLeaf": false,
         "children": [
           {
-            "Title": "SCPA - Accumulation de ruissellement [mm]",
+            "Title": "SCPA - Accumulation de ruissellement [mm] [exp\u00e9rimental]",
             "Name": "CAPS_3km_Runoff-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Alb\u00e9do \u00e0 la surface [%]",
+            "Title": "SCPA - Alb\u00e9do \u00e0 la surface [%] [exp\u00e9rimental]",
             "Name": "CAPS_3km_Albedo",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Contenu volum\u00e9trique en eau du sol (0-1cm) [m\u00b3/m\u00b3]",
+            "Title": "SCPA - Contenu volum\u00e9trique en eau du sol (0-1cm) [m\u00b3/m\u00b3] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SoilVolumetricWaterContent_0-1cm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Contenu volum\u00e9trique en eau du sol (0-10cm) [m\u00b3/m\u00b3]",
+            "Title": "SCPA - Contenu volum\u00e9trique en eau du sol (0-10cm) [m\u00b3/m\u00b3] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SoilVolumetricWaterContent_0-10cm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Contenu volum\u00e9trique en glace du sol \u00e0 la surface [m\u00b3/m\u00b3]",
+            "Title": "SCPA - Contenu volum\u00e9trique en glace du sol \u00e0 la surface [m\u00b3/m\u00b3] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SoilVolumetricIceContent",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Couverture nuageuse [%]",
+            "Title": "SCPA - Couverture nuageuse [%] [exp\u00e9rimental]",
             "Name": "CAPS_3km_TotalCloudCover",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Densit\u00e9 de l'air \u00e0 40m au dessus de la surface [kg/m\u00b3]",
+            "Title": "SCPA - Densit\u00e9 de l'air \u00e0 40m au dessus de la surface [kg/m\u00b3] [exp\u00e9rimental]",
             "Name": "CAPS_3km_AirDensity_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Densit\u00e9 de l'air \u00e0 80m au dessus de la surface [kg/m\u00b3]",
+            "Title": "SCPA - Densit\u00e9 de l'air \u00e0 80m au dessus de la surface [kg/m\u00b3] [exp\u00e9rimental]",
             "Name": "CAPS_3km_AirDensity_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Densit\u00e9 de l'air \u00e0 120m au dessus de la surface [kg/m\u00b3]",
+            "Title": "SCPA - Densit\u00e9 de l'air \u00e0 120m au dessus de la surface [kg/m\u00b3] [exp\u00e9rimental]",
             "Name": "CAPS_3km_AirDensity_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Densit\u00e9 de la neige [kg/m\u00b3]",
+            "Title": "SCPA - Densit\u00e9 de la neige [kg/m\u00b3] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SnowDensity",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Direction du vent \u00e0 10m au dessus de la surface [\u00b0]",
+            "Title": "SCPA - Direction du vent \u00e0 10m au dessus de la surface [\u00b0] [exp\u00e9rimental]",
             "Name": "CAPS_3km_WindDir_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Direction du vent \u00e0 40m au dessus de la surface [\u00b0]",
+            "Title": "SCPA - Direction du vent \u00e0 40m au dessus de la surface [\u00b0] [exp\u00e9rimental]",
             "Name": "CAPS_3km_WindDir_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Direction du vent \u00e0 80m au dessus de la surface [\u00b0]",
+            "Title": "SCPA - Direction du vent \u00e0 80m au dessus de la surface [\u00b0] [exp\u00e9rimental]",
             "Name": "CAPS_3km_WindDir_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Direction du vent \u00e0 120m au dessus de la surface [\u00b0]",
+            "Title": "SCPA - Direction du vent \u00e0 120m au dessus de la surface [\u00b0] [exp\u00e9rimental]",
             "Name": "CAPS_3km_WindDir_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Eau pr\u00e9cipitable [mm]",
+            "Title": "SCPA - Eau pr\u00e9cipitable [mm] [exp\u00e9rimental]",
             "Name": "CAPS_3km_CloudWater",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Estimation des rafales de vent \u00e0 10m au dessus de la surface [m/s]",
+            "Title": "SCPA - Estimation des rafales de vent \u00e0 10m au dessus de la surface [m/s] [exp\u00e9rimental]",
             "Name": "CAPS_3km_WindGust_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Flux de chaleur sensible [W/m\u00b2]",
+            "Title": "SCPA - Flux de chaleur sensible [W/m\u00b2] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SensibleHeatNetFlux",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Flux net de chaleur latente [W/m\u00b2]",
+            "Title": "SCPA - Flux net de chaleur latente [W/m\u00b2] [exp\u00e9rimental]",
             "Name": "CAPS_3km_LatentHeatNetFlux",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Flux radiatif accumul\u00e9 d'ondes courtes descendant \u00e0 la surface [J/m\u00b2]",
+            "Title": "SCPA - Flux radiatif accumul\u00e9 d'ondes courtes descendant \u00e0 la surface [J/m\u00b2] [exp\u00e9rimental]",
             "Name": "CAPS_3km_DownwardShortwaveRadiationFlux-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Flux radiatif accumul\u00e9 d'ondes courtes net \u00e0 la surface [J/m\u00b2]",
+            "Title": "SCPA - Flux radiatif accumul\u00e9 d'ondes courtes net \u00e0 la surface [J/m\u00b2] [exp\u00e9rimental]",
             "Name": "CAPS_3km_NetShortwaveRadiationFlux-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Flux radiatif accumul\u00e9 d'ondes longues descendant \u00e0 la surface [J/m\u00b2]",
+            "Title": "SCPA - Flux radiatif accumul\u00e9 d'ondes longues descendant \u00e0 la surface [J/m\u00b2] [exp\u00e9rimental]",
             "Name": "CAPS_3km_DownwardLongwaveRadiationFlux-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Flux radiatif accumul\u00e9 d'ondes longues net \u00e0 la surface [J/m\u00b2]",
+            "Title": "SCPA - Flux radiatif accumul\u00e9 d'ondes longues net \u00e0 la surface [J/m\u00b2] [exp\u00e9rimental]",
             "Name": "CAPS_3km_NetLongwaveRadiationFlux-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Flux radiatif d'ondes courtes ascendant au sommet de l'atmosph\u00e8re [W/m\u00b2]",
+            "Title": "SCPA - Flux radiatif d'ondes courtes ascendant au sommet de l'atmosph\u00e8re [W/m\u00b2] [exp\u00e9rimental]",
             "Name": "CAPS_3km_UpwardShortwaveRadiationFlux_NTAtm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Flux radiatif d'ondes longues ascendant au sommet de l'atmosph\u00e8re [W/m\u00b2]",
+            "Title": "SCPA - Flux radiatif d'ondes longues ascendant au sommet de l'atmosph\u00e8re [W/m\u00b2] [exp\u00e9rimental]",
             "Name": "CAPS_3km_UpwardLongwaveRadiationFlux_NTAtm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Flux visible accumul\u00e9 entrant au sommet de l'atmosphere [J/m\u00b2]",
+            "Title": "SCPA - Flux visible accumul\u00e9 entrant au sommet de l'atmosphere [J/m\u00b2] [exp\u00e9rimental]",
             "Name": "CAPS_3km_DownwardShortwaveRadiationFlux-Accum_NTAtm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Fraction de la glace marine [Proportion]",
+            "Title": "SCPA - Fraction de la glace marine [Proportion] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SeaIceFraction",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Granules de glace accumul\u00e9es [mm]",
+            "Title": "SCPA - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "CAPS_3km_IcePellets-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Hauteur de la couche limite plan\u00e9taire [m]",
+            "Title": "SCPA - Hauteur de la couche limite plan\u00e9taire [m] [exp\u00e9rimental]",
             "Name": "CAPS_3km_PlanetaryBoundaryLayerHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Hauteur g\u00e9opotentielle (contour) [gpm]",
+            "Title": "SCPA - Hauteur g\u00e9opotentielle (contour) [gpm] [exp\u00e9rimental]",
             "Name": "CAPS_3km_GeopotentialHeight-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Hauteur g\u00e9opotentielle [gpm]",
+            "Title": "SCPA - Hauteur g\u00e9opotentielle [gpm] [exp\u00e9rimental]",
             "Name": "CAPS_3km_GeopotentialHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Humidit\u00e9 relative \u00e0 2m au dessus de la surface [%]",
+            "Title": "SCPA - Humidit\u00e9 relative \u00e0 2m au dessus de la surface [%] [exp\u00e9rimental]",
             "Name": "CAPS_3km_RelativeHumidity_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Humidit\u00e9 relative \u00e0 40m au dessus de la surface [%]",
+            "Title": "SCPA - Humidit\u00e9 relative \u00e0 40m au dessus de la surface [%] [exp\u00e9rimental]",
             "Name": "CAPS_3km_RelativeHumidity_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Humidit\u00e9 relative \u00e0 80m au dessus de la surface [%]",
+            "Title": "SCPA - Humidit\u00e9 relative \u00e0 80m au dessus de la surface [%] [exp\u00e9rimental]",
             "Name": "CAPS_3km_RelativeHumidity_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Humidit\u00e9 relative \u00e0 120m au dessus de la surface [%]",
+            "Title": "SCPA - Humidit\u00e9 relative \u00e0 120m au dessus de la surface [%] [exp\u00e9rimental]",
             "Name": "CAPS_3km_RelativeHumidity_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Humidit\u00e9 sp\u00e9cifique \u00e0 2m au dessus de la surface [kg/kg]",
+            "Title": "SCPA - Humidit\u00e9 sp\u00e9cifique \u00e0 2m au dessus de la surface [kg/kg] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SpecificHumidity_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Humidit\u00e9 sp\u00e9cifique \u00e0 40m au dessus de la surface [kg/kg]",
+            "Title": "SCPA - Humidit\u00e9 sp\u00e9cifique \u00e0 40m au dessus de la surface [kg/kg] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SpecificHumidity_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Humidit\u00e9 sp\u00e9cifique \u00e0 80m au dessus de la surface [kg/kg]",
+            "Title": "SCPA - Humidit\u00e9 sp\u00e9cifique \u00e0 80m au dessus de la surface [kg/kg] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SpecificHumidity_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Humidit\u00e9 sp\u00e9cifique \u00e0 120m au dessus de la surface [kg/kg]",
+            "Title": "SCPA - Humidit\u00e9 sp\u00e9cifique \u00e0 120m au dessus de la surface [kg/kg] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SpecificHumidity_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Humidit\u00e9 sp\u00e9cifique \u00e0 la surface [kg/kg]",
+            "Title": "SCPA - Humidit\u00e9 sp\u00e9cifique \u00e0 la surface [kg/kg] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SpecificHumidity",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - H\u00e9licit\u00e9 relative de la temp\u00eate [J/kg]",
+            "Title": "SCPA - H\u00e9licit\u00e9 relative de la temp\u00eate [J/kg] [exp\u00e9rimental]",
             "Name": "CAPS_3km_StormRelativeHelicity",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Maximum des rafales de vent [m/s]",
+            "Title": "SCPA - Maximum des rafales de vent [m/s] [exp\u00e9rimental]",
             "Name": "CAPS_3km_WindGust-Max_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Minimum des rafales de vent [m/s]",
+            "Title": "SCPA - Minimum des rafales de vent [m/s] [exp\u00e9rimental]",
             "Name": "CAPS_3km_WindGust-Min_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Neige accumul\u00e9e [mm]",
+            "Title": "SCPA - Neige accumul\u00e9e (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "CAPS_3km_Snow-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Pluie accumul\u00e9e [mm]",
+            "Title": "SCPA - Pluie accumul\u00e9e [mm] [exp\u00e9rimental]",
             "Name": "CAPS_3km_Rain-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Pluie vergla\u00e7ante accumul\u00e9e [mm]",
+            "Title": "SCPA - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "CAPS_3km_FreezingRain-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Pression au niveau de la mer (contour) [Pa]",
+            "Title": "SCPA - Pression au niveau de la mer (contour) [Pa] [exp\u00e9rimental]",
             "Name": "CAPS_3km_Pressure_MSL-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Pression au niveau de la mer [Pa]",
+            "Title": "SCPA - Pression au niveau de la mer [Pa] [exp\u00e9rimental]",
             "Name": "CAPS_3km_Pressure_MSL",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Pression \u00e0 la surface (contour) [Pa]",
+            "Title": "SCPA - Pression \u00e0 la surface (contour) [Pa] [exp\u00e9rimental]",
             "Name": "CAPS_3km_Pressure-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Pression \u00e0 la surface [Pa]",
+            "Title": "SCPA - Pression \u00e0 la surface [Pa] [exp\u00e9rimental]",
             "Name": "CAPS_3km_Pressure",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Proportion terre/eau",
+            "Title": "SCPA - Proportion terre/eau [exp\u00e9rimental]",
             "Name": "CAPS_3km_LandWater-Proportion",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Pr\u00e9cipitations accumul\u00e9es [mm]",
+            "Title": "SCPA - Pr\u00e9cipitations accumul\u00e9es [mm] [exp\u00e9rimental]",
             "Name": "CAPS_3km_Precip-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Pr\u00e9cipitations convectives accumul\u00e9es [mm]",
+            "Title": "SCPA - Pr\u00e9cipitations convectives accumul\u00e9es [mm] [exp\u00e9rimental]",
             "Name": "CAPS_3km_ConvectivePrecip-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Taux de pr\u00e9cipitation instantan\u00e9 [kg/(m\u00b2s)]",
+            "Title": "SCPA - Taux de pr\u00e9cipitation instantan\u00e9 [kg/(m\u00b2s)] [exp\u00e9rimental]",
             "Name": "CAPS_3km_PrecipRate",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 2m au dessus de la surface (contour) [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 2m au dessus de la surface (contour) [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_AirTemp-Contour_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 2m au dessus de la surface [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 2m au dessus de la surface [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_AirTemp_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 40m au dessus de la surface (contour) [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 40m au dessus de la surface (contour) [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_AirTemp-Contour_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 40m au dessus de la surface [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 40m au dessus de la surface [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_AirTemp_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 80m au dessus de la surface (contour) [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 80m au dessus de la surface (contour) [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_AirTemp-Contour_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 80m au dessus de la surface [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 80m au dessus de la surface [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_AirTemp_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 120m au dessus de la surface (contour) [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 120m au dessus de la surface (contour) [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_AirTemp-Contour_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 120m au dessus de la surface [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature de l'air \u00e0 120m au dessus de la surface [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_AirTemp_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature de l'eau \u00e0 la surface [K]",
+            "Title": "SCPA - Temp\u00e9rature de l'eau \u00e0 la surface [K] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SeaWaterTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature de la surface et du sol (Superficielle) [K]",
+            "Title": "SCPA - Temp\u00e9rature de la surface et du sol (Superficielle) [K] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SoilTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature de peau agreg\u00e9e de la surface terrestre [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature de peau agreg\u00e9e de la surface terrestre [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_RadiativeTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 2m au dessus de la surface (contour) [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 2m au dessus de la surface (contour) [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_DewPoint-Contour_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 2m au dessus de la surface [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 2m au dessus de la surface [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_DewPoint_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 40m au dessus de la surface (contour) [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 40m au dessus de la surface (contour) [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_DewPoint-Contour_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 40m au dessus de la surface [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 40m au dessus de la surface [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_DewPoint_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 80m au dessus de la surface (contour) [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 80m au dessus de la surface (contour) [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_DewPoint-Contour_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 80m au dessus de la surface [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 80m au dessus de la surface [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_DewPoint_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 120m au dessus de la surface (contour) [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 120m au dessus de la surface (contour) [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_DewPoint-Contour_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 120m au dessus de la surface [\u00b0C]",
+            "Title": "SCPA - Temp\u00e9rature du point de ros\u00e9e \u00e0 120m au dessus de la surface [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_DewPoint_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Temp\u00e9rature du sol pr\u00e8s de la surface (0-10cm) [K]",
+            "Title": "SCPA - Temp\u00e9rature du sol pr\u00e8s de la surface (0-10cm) [K] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SoilTemp_0-10cm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Vents \u00e0 10m au dessus de la surface [m/s]",
+            "Title": "SCPA - Vents \u00e0 10m au dessus de la surface [m/s] [exp\u00e9rimental]",
             "Name": "CAPS_3km_Winds_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Vents \u00e0 40m au dessus de la surface [m/s]",
+            "Title": "SCPA - Vents \u00e0 40m au dessus de la surface [m/s] [exp\u00e9rimental]",
             "Name": "CAPS_3km_Winds_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Vents \u00e0 80m au dessus de la surface [m/s]",
+            "Title": "SCPA - Vents \u00e0 80m au dessus de la surface [m/s] [exp\u00e9rimental]",
             "Name": "CAPS_3km_Winds_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Vents \u00e0 120m au dessus de la surface [m/s]",
+            "Title": "SCPA - Vents \u00e0 120m au dessus de la surface [m/s] [exp\u00e9rimental]",
             "Name": "CAPS_3km_Winds_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Vitesse du vent \u00e0 10m au dessus de la surface (contour) [m/s]",
+            "Title": "SCPA - Vitesse du vent \u00e0 10m au dessus de la surface (contour) [m/s] [exp\u00e9rimental]",
             "Name": "CAPS_3km_WindSpeed-Contour_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Vitesse du vent \u00e0 10m au dessus de la surface [m/s]",
+            "Title": "SCPA - Vitesse du vent \u00e0 10m au dessus de la surface [m/s] [exp\u00e9rimental]",
             "Name": "CAPS_3km_WindSpeed_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Vitesse du vent \u00e0 40m au dessus de la surface (contour) [m/s]",
+            "Title": "SCPA - Vitesse du vent \u00e0 40m au dessus de la surface (contour) [m/s] [exp\u00e9rimental]",
             "Name": "CAPS_3km_WindSpeed-Contour_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Vitesse du vent \u00e0 40m au dessus de la surface [m/s]",
+            "Title": "SCPA - Vitesse du vent \u00e0 40m au dessus de la surface [m/s] [exp\u00e9rimental]",
             "Name": "CAPS_3km_WindSpeed_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Vitesse du vent \u00e0 80m au dessus de la surface (contour) [m/s]",
+            "Title": "SCPA - Vitesse du vent \u00e0 80m au dessus de la surface (contour) [m/s] [exp\u00e9rimental]",
             "Name": "CAPS_3km_WindSpeed-Contour_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Vitesse du vent \u00e0 80m au dessus de la surface [m/s]",
+            "Title": "SCPA - Vitesse du vent \u00e0 80m au dessus de la surface [m/s] [exp\u00e9rimental]",
             "Name": "CAPS_3km_WindSpeed_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Vitesse du vent \u00e0 120m au dessus de la surface (contour) [m/s]",
+            "Title": "SCPA - Vitesse du vent \u00e0 120m au dessus de la surface (contour) [m/s] [exp\u00e9rimental]",
             "Name": "CAPS_3km_WindSpeed-Contour_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - Vitesse du vent \u00e0 120m au dessus de la surface [m/s]",
+            "Title": "SCPA - Vitesse du vent \u00e0 120m au dessus de la surface [m/s] [exp\u00e9rimental]",
             "Name": "CAPS_3km_WindSpeed_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - \u00c9cart du point de ros\u00e9e \u00e0 2m au dessus de la surface [\u00b0C]",
+            "Title": "SCPA - \u00c9cart du point de ros\u00e9e \u00e0 2m au dessus de la surface [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_DewPointDepression_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - \u00c9cart du point de ros\u00e9e \u00e0 40m au dessus de la surface [\u00b0C]",
+            "Title": "SCPA - \u00c9cart du point de ros\u00e9e \u00e0 40m au dessus de la surface [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_DewPointDepression_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - \u00c9cart du point de ros\u00e9e \u00e0 80m au dessus de la surface [\u00b0C]",
+            "Title": "SCPA - \u00c9cart du point de ros\u00e9e \u00e0 80m au dessus de la surface [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_DewPointDepression_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - \u00c9cart du point de ros\u00e9e \u00e0 120m au dessus de la surface [\u00b0C]",
+            "Title": "SCPA - \u00c9cart du point de ros\u00e9e \u00e0 120m au dessus de la surface [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS_3km_DewPointDepression_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - \u00c9nergie potentielle convective disponible [J/kg]",
+            "Title": "SCPA - \u00c9nergie potentielle convective disponible [J/kg] [exp\u00e9rimental]",
             "Name": "CAPS_3km_CAPE",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - \u00c9paisseur de la neige [m]",
+            "Title": "SCPA - \u00c9paisseur de la neige [m] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SnowDepth",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - \u00c9paisseur de la neige \u00e9quivalente en eau [mm]",
+            "Title": "SCPA - \u00c9paisseur de la neige \u00e9quivalente en eau [mm] [exp\u00e9rimental]",
             "Name": "CAPS_3km_SnowDepthWaterEquivalent",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - \u00c9paisseur entre 1000mb et 500mb (contour) [m]",
+            "Title": "SCPA - \u00c9paisseur entre 1000mb et 500mb (contour) [m] [exp\u00e9rimental]",
             "Name": "CAPS_3km_Thickness-Contour_1000to500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA - \u00c9paisseur entre 1000mb et 500mb [m]",
+            "Title": "SCPA - \u00c9paisseur entre 1000mb et 500mb [m] [exp\u00e9rimental]",
             "Name": "CAPS_3km_Thickness_1000to500mb",
             "isLeaf": true,
             "isTemporal": true
@@ -13155,8 +12734,8 @@ export default {
         ]
       },
       {
-        "Title": "SCPA en niveaux de pression [exp\u00e9rimental]",
-        "Name": "SCPA en niveaux de pression [exp\u00e9rimental]",
+        "Title": "SCPA en niveaux de pression",
+        "Name": "SCPA en niveaux de pression",
         "isLeaf": false,
         "children": [
           {
@@ -13165,67 +12744,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 50 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 50 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 50 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 50 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 50 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 50 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 50 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 50 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 50 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 50 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 50 mb [%]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 50 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 50 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 50 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 50 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 50 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 50 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 50 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA - Vitesse du vent \u00e0 50 mb [m/s]",
+                "Title": "SCPA - Vitesse du vent \u00e0 50 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 50 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 50 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_50mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -13238,67 +12817,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 100 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 100 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 100 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 100 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 100 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 100 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 100 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 100 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 100 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 100 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 100 mb [%]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 100 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 100 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 100 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 100 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 100 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 100 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 100 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 100 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 100 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 100 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 100 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_100mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -13311,67 +12890,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 150 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 150 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 150 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 150 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 150 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 150 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 150 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 150 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 150 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 150 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 150 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 150 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 150 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 150 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 150 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 150 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 150 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 150 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 150 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 150 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 150 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 150 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_150mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -13384,67 +12963,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 175 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 175 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 175 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 175 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 175 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 175 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 175 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 175 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 175 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 175 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 175 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 175 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 175 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 175 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 175 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 175 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 175 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 175 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 175 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 175 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 175 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 175 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_175mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -13457,67 +13036,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 200 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 200 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 200 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 200 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 200 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 200 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 200 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 200 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 200 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 200 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 200 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 200 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 200 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 200 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 200 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 200 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 200 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 200 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 200 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 200 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 200 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 200 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_200mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -13530,67 +13109,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 225 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 225 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 225 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 225 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 225 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 225 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 225 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 225 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 225 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 225 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 225 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 225 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 225 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 225 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 225 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 225 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 225 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 225 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 225 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 225 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 225 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 225 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_225mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -13603,79 +13182,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 250 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 250 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 250 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 250 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 250 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 250 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 250 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 250 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 250 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 250 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Mouvement vertical isobarique \u00e0 250 mb [Pa/s]",
+                "Title": "SCPA_IsbL - Mouvement vertical isobarique \u00e0 250 mb [Pa/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_VerticalVelocity_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 250 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 250 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 250 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 250 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Tourbillon absolu \u00e0 250 mb [s-1]",
+                "Title": "SCPA_IsbL - Tourbillon absolu \u00e0 250 mb [s-1] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AbsoluteVorticity_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 250 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 250 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 250 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 250 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 250 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 250 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 250 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 250 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_250mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -13688,67 +13267,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 275 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 275 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 275 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 275 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 275 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 275 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 275 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 275 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 275 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 275 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 275 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 275 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 275 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 275 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 275 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 275 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 275 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 275 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 275 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 275 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 275 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 275 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_275mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -13761,67 +13340,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 300 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 300 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 300 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 300 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 300 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 300 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 300 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 300 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 300 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 300 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 300 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 300 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 300 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 300 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 300 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 300 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 300 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 300 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 300 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 300 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 300 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 300 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_300mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -13834,67 +13413,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 350 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 350 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 350 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 350 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 350 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 350 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 350 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 350 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 350 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 350 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 350 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 350 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 350 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 350 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 350 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 350 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 350 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 350 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 350 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 350 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 350 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 350 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_350mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -13907,67 +13486,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 400 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 400 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 400 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 400 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 400 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 400 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 400 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 400 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 400 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 400 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 400 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 400 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 400 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 400 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 400 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 400 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 400 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 400 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 400 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 400 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 400 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 400 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_400mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -13980,67 +13559,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 450 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 450 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 450 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 450 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 450 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 450 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 450 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 450 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 450 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 450 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 450 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 450 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 450 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 450 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 450 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 450 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 450 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 450 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 450 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 450 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 450 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 450 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_450mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -14053,79 +13632,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 500 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 500 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 500 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 500 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 500 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 500 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 500 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 500 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Mouvement vertical isobarique \u00e0 500 mb [Pa/s]",
+                "Title": "SCPA_IsbL - Mouvement vertical isobarique \u00e0 500 mb [Pa/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_VerticalVelocity_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 500 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 500 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 500 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 500 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Tourbillon absolu \u00e0 500 mb [s-1]",
+                "Title": "SCPA_IsbL - Tourbillon absolu \u00e0 500 mb [s-1] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AbsoluteVorticity_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 500 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 500 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 500 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 500 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 500 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 500 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 500 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 500 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_500mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -14138,67 +13717,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 550 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 550 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 550 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 550 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 550 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 550 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 550 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 550 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 550 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 550 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 550 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 550 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 550 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 550 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 550 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 550 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 550 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 550 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 550 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 550 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 550 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 550 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_550mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -14211,67 +13790,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 600 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 600 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 600 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 600 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 600 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 600 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 600 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 600 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 600 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 600 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 600 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 600 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 600 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 600 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 600 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 600 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 600 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 600 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 600 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 600 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 600 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 600 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_600mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -14284,67 +13863,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 650 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 650 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 650 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 650 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 650 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 650 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 650 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 650 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 650 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 650 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 650 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 650 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 650 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 650 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 650 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 650 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 650 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 650 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 650 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 650 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 650 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 650 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_650mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -14357,79 +13936,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Direction du vent \u00e0 700 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Direction du vent \u00e0 700 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 700 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 700 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 700 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 700 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 700 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 700 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 700 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 700 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Mouvement vertical isobarique \u00e0 700 mb [Pa/s]",
+                "Title": "SCPA_IsbL - Mouvement vertical isobarique \u00e0 700 mb [Pa/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_VerticalVelocity_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 700 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 700 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 700 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 700 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Tourbillon absolu \u00e0 700 mb [s-1]",
+                "Title": "SCPA_IsbL - Tourbillon absolu \u00e0 700 mb [s-1] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AbsoluteVorticity_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 700 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 700 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 700 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 700 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 700 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 700 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 700 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 700 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_700mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -14442,67 +14021,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 750 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 750 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 750 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 750 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 750 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 750 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 750 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 750 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 750 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 750 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 750 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 750 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 750 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 750 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 750 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 750 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 750 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 750 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 750 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 750 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 750 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 750 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_750mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -14515,67 +14094,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 800 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 800 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 800 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 800 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 800 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 800 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 800 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 800 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 800 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 800 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 800 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 800 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 800 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 800 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 800 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 800 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 800 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 800 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 800 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 800 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 800 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 800 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_800mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -14588,79 +14167,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 850 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 850 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 850 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 850 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 850 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 850 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 850 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 850 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 850 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 850 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Mouvement vertical isobarique \u00e0 850 mb [Pa/s]",
+                "Title": "SCPA_IsbL - Mouvement vertical isobarique \u00e0 850 mb [Pa/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_VerticalVelocity_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 850 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 850 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 850 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 850 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Tourbillon absolu \u00e0 850 mb [s-1]",
+                "Title": "SCPA_IsbL - Tourbillon absolu \u00e0 850 mb [s-1] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AbsoluteVorticity_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 850 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 850 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 850 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 850 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 850 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 850 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 850 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 850 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_850mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -14673,67 +14252,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 875 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 875 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 875 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 875 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 875 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 875 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 875 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 875 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 875 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 875 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Temp\u00e9rature de l'air \u00e0 875 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Temp\u00e9rature de l'air \u00e0 875 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 875 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 875 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 875 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 875 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 875 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 875 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 875 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 875 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 875 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 875 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_875mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -14746,67 +14325,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 900 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 900 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 900 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 900 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 900 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 900 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 900 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 900 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 900 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 900 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 900 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 900 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 900 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 900 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 900 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 900 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 900 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 900 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 900 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 900 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 900 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 900 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_900mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -14819,67 +14398,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 925 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 925 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 925 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 925 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 925 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 925 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 925 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 925 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 925 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 925 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 925 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 925 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 925 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 925 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 925 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 925 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 925 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 925 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 925 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 925 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 925 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 925 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_925mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -14892,67 +14471,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 950 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 950 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 950 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 950 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 950 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 950 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 950 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 950 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 950 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 950 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 950 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 950 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 950 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 950 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 950 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 950 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 950 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 950 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 950 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 950 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 950 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 950 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_950mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -14965,67 +14544,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 970 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 970 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 970 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 970 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 970 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 970 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 970 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 970 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 970 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 970 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 970 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 970 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 970 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 970 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 970 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 970 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 970 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 970 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 970 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 970 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 970 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 970 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_970mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -15038,67 +14617,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 985 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 985 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 985 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 985 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 985 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 985 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 985 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 985 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 985 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 985 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 985 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 985 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 985 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 985 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 985 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 985 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 985 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 985 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 985 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 985 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 985 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 985 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_985mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -15111,79 +14690,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 1000 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 1000 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 1000 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 1000 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 1000 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 1000 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 1000 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 1000 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 1000 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 1000 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Mouvement vertical isobarique \u00e0 1000 mb [Pa/s]",
+                "Title": "SCPA_IsbL - Mouvement vertical isobarique \u00e0 1000 mb [Pa/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_VerticalVelocity_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 1000 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 1000 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 1000 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 1000 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Tourbillon absolu \u00e0 1000 mb [s-1]",
+                "Title": "SCPA_IsbL - Tourbillon absolu \u00e0 1000 mb [s-1] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AbsoluteVorticity_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 1000 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 1000 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 1000 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 1000 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 1000 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 1000 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 1000 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 1000 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -15196,67 +14775,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SCPA_IsbL - Direction du vent \u00e0 1015 mb [\u00b0]",
+                "Title": "SCPA_IsbL - Direction du vent \u00e0 1015 mb [\u00b0] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindDir_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 1015 mb (contour) [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 1015 mb (contour) [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 1015 mb [gpm]",
+                "Title": "SCPA_IsbL - Hauteur g\u00e9opotentielle \u00e0 1015 mb [gpm] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 1015 mb [%]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 relative \u00e0 1015 mb [%] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_RelativeHumidity_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 1015 mb [kg/kg]",
+                "Title": "SCPA_IsbL - Humidit\u00e9 sp\u00e9cifique \u00e0 1015 mb [kg/kg] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_SpecificHumidity_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 1015 mb (contour) [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 1015 mb (contour) [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 1015 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - Temp\u00e9rature de l'air \u00e0 1015 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_AirTemp_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vents \u00e0 1015 mb [m/s]",
+                "Title": "SCPA_IsbL - Vents \u00e0 1015 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_Winds_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 1015 mb (contour) [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 1015 mb (contour) [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 1015 mb [m/s]",
+                "Title": "SCPA_IsbL - Vitesse du vent \u00e0 1015 mb [m/s] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_WindSpeed_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 1015 mb [\u00b0C]",
+                "Title": "SCPA_IsbL - \u00c9cart du point de ros\u00e9e \u00e0 1015 mb [\u00b0C] [exp\u00e9rimental]",
                 "Name": "CAPS_3km_DewPointDepression_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -15266,211 +14845,2552 @@ export default {
         ]
       },
       {
-        "Title": "SCPA WEonG [exp\u00e9rimental]",
-        "Name": "SCPA WEonG [exp\u00e9rimental]",
+        "Title": "SCPA-ETsurG",
+        "Name": "SCPA-ETsurG",
         "isLeaf": false,
         "children": [
           {
-            "Title": "SCPA-WEonG - Caract\u00e8re de la pr\u00e9cipitation",
+            "Title": "SCPA-ETsurG - Caract\u00e8re de la pr\u00e9cipitation [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_PrecipCharacter",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Deuxi\u00e8me type de pr\u00e9cipitation le plus commun",
+            "Title": "SCPA-ETsurG - Deuxi\u00e8me type de pr\u00e9cipitation le plus commun [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_SecondMostCommonPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Direction du vent [deg true]",
+            "Title": "SCPA-ETsurG - Direction du vent [deg true] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_WindDir",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Etat du ciel jour/nuit (couverture et opacit\u00e9 nuageuse combin\u00e9es)",
+            "Title": "SCPA-ETsurG - Etat du ciel jour/nuit (couverture et opacit\u00e9 nuageuse combin\u00e9es) [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_SkyState",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Hauteur du niveau de la neige [m]",
+            "Title": "SCPA-ETsurG - Hauteur du niveau de la neige [m] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_SnowLevelHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Indice d'intensit\u00e9 des pr\u00e9cipitations totales",
+            "Title": "SCPA-ETsurG - Indice d'intensit\u00e9 des pr\u00e9cipitations totales [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_TotalPrecipIntensityIndex",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Orographie du mod\u00e8le [m]",
+            "Title": "SCPA-ETsurG - Orographie du mod\u00e8le [m] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_Orography",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Probabilit\u00e9 d'occurence d'orage [%]",
+            "Title": "SCPA-ETsurG - Probabilit\u00e9 d'occurence d'orage [%] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_Thunderstorm-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Probabilit\u00e9 de bourrasque de neige [%]",
+            "Title": "SCPA-ETsurG - Probabilit\u00e9 de bourrasque de neige [%] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_SnowSqualls-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Probabilit\u00e9 de bruine [%]",
+            "Title": "SCPA-ETsurG - Probabilit\u00e9 de bruine [%] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_Drizzle-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Probabilit\u00e9 de bruine vergla\u00e7ante [%]",
+            "Title": "SCPA-ETsurG - Probabilit\u00e9 de bruine vergla\u00e7ante [%] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_FreezingDrizzle-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Probabilit\u00e9 de gr\u00e9sil [%]",
+            "Title": "SCPA-ETsurG - Probabilit\u00e9 de gr\u00e9sil [%] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_IcePellets-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Probabilit\u00e9 de neige [%]",
+            "Title": "SCPA-ETsurG - Probabilit\u00e9 de neige [%] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_Snow-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Probabilit\u00e9 de pluie [%]",
+            "Title": "SCPA-ETsurG - Probabilit\u00e9 de pluie [%] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_Rain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Probabilit\u00e9 de pluie vergla\u00e7ante [%]",
+            "Title": "SCPA-ETsurG - Probabilit\u00e9 de pluie vergla\u00e7ante [%] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_FreezingRain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Probabilit\u00e9 de poudrerie [%]",
+            "Title": "SCPA-ETsurG - Probabilit\u00e9 de poudrerie [%] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_BlowingSnow-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Probabilit\u00e9 de pr\u00e9cipitation [%]",
+            "Title": "SCPA-ETsurG - Probabilit\u00e9 de pr\u00e9cipitation [%] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_Precip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Probabilit\u00e9 de pr\u00e9cipitation liquide [%]",
+            "Title": "SCPA-ETsurG - Probabilit\u00e9 de pr\u00e9cipitation liquide [%] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_LiquidPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Probabilit\u00e9 de pr\u00e9cipitation vergla\u00e7ante [%]",
+            "Title": "SCPA-ETsurG - Probabilit\u00e9 de pr\u00e9cipitation vergla\u00e7ante [%] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_FreezingPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Proportion terre/eau",
+            "Title": "SCPA-ETsurG - Proportion terre/eau [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_LandWater-Proportion",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Pr\u00e9sence de poudrerie",
+            "Title": "SCPA-ETsurG - Pr\u00e9sence de poudrerie [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_BlowingSnowPresence",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Quantit\u00e9 conditionnelle de granul\u00e9s de glace solide [m]",
+            "Title": "SCPA-ETsurG - Quantit\u00e9 conditionnelle de granul\u00e9s de glace solide [m] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_IcePelletsCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Quantit\u00e9 conditionnelle de neige solide [m]",
+            "Title": "SCPA-ETsurG - Quantit\u00e9 conditionnelle de neige solide [m] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_SolidSnowCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation [m]",
+            "Title": "SCPA-ETsurG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation [m] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_PrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation liquide [m]",
+            "Title": "SCPA-ETsurG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation liquide [m] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_LiquidPrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Rafale de vents [m/s]",
+            "Title": "SCPA-ETsurG - Rafale de vents [m/s] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_WindGust",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Temp\u00e9rature [\u00b0C]",
+            "Title": "SCPA-ETsurG - Temp\u00e9rature [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_AirTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Temp\u00e9rature du point de ros\u00e9e (contour) [\u00b0C]",
+            "Title": "SCPA-ETsurG - Temp\u00e9rature du point de ros\u00e9e (contour) [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_DewPointTemp-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Temp\u00e9rature du point de ros\u00e9e [\u00b0C]",
+            "Title": "SCPA-ETsurG - Temp\u00e9rature du point de ros\u00e9e [\u00b0C] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_DewPointTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Type de pr\u00e9cipitation instantan\u00e9e",
+            "Title": "SCPA-ETsurG - Type de pr\u00e9cipitation instantan\u00e9e [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_InstantPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Type dominant de pr\u00e9cipitation",
+            "Title": "SCPA-ETsurG - Type dominant de pr\u00e9cipitation [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_DominantPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Visibilit\u00e9 dans le brouillard glac\u00e9 [m]",
+            "Title": "SCPA-ETsurG - Visibilit\u00e9 dans le brouillard glac\u00e9 [m] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_IceFogVisibility",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Visibilit\u00e9 \u00e0 travers le brouillard liquide [m]",
+            "Title": "SCPA-ETsurG - Visibilit\u00e9 \u00e0 travers le brouillard liquide [m] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_LiquidFogVisibility",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SCPA-WEonG - Vitesse du vent [m/s]",
+            "Title": "SCPA-ETsurG - Vitesse du vent [m/s] [exp\u00e9rimental]",
             "Name": "CAPS-WEonG_3km_WindSpeed",
+            "isLeaf": true,
+            "isTemporal": true
+          }
+        ]
+      },
+      {
+        "Title": "SCPA-Oc\u00e9an",
+        "Name": "SCPA-Oc\u00e9an",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "SCPA-Oc\u00e9an - Cisaillement de la glace de mer [%/jour] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceShear",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0001.6m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1.6m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0002.7m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_2.7m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0003.9m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_3.9m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0005.1m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_5.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0006.5m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_6.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0008.1m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_8.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0009.8m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_9.8m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0012m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_12m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0014m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_14m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0017m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_17m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0019m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_19m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0023m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_23m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0027m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_27m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0031m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_31m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0036m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_36m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0041m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_41m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0047m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_47m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0054m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_54m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0061m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_61m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0069m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_69m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0078m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_78m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0087m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_87m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0097m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_97m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0108m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_108m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0120m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0133m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_133m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0147m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_147m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0163m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_163m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0181m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_181m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0200m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_200m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0221m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_221m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0245m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_245m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0271m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_271m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0301m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_301m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0334m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_334m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0371m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_371m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0412m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_412m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0458m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_458m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0509m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_509m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0565m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_565m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0628m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_628m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0697m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_697m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0773m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_773m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0857m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_857m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 0947m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_947m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 1046m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1046m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 1152m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1152m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 1266m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1266m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 1387m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1387m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 1516m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1516m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 1653m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1653m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 1796m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1796m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 1945m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1945m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 2101m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_2101m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 2262m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_2262m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 2429m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_2429m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 2600m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_2600m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 2776m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_2776m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 2956m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_2956m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 3139m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_3139m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 3325m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_3325m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 3513m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_3513m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 3705m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_3705m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 3898m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_3898m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 4093m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_4093m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 4290m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_4290m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 4488m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_4488m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 4688m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_4688m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 4888m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_4888m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 5089m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_5089m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 5292m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_5292m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 5495m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_5495m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 5698m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_5698m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau - 5902m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_5902m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante X de la vitesse de l'eau [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_0.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante x de la vitesse de la glace de mer [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceVelocityX",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0001.6m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1.6m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0002.7m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_2.7m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0003.9m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_3.9m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0005.1m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_5.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0006.5m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_6.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0008.1m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_8.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0009.8m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_9.8m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0012m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_12m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0014m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_14m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0017m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_17m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0019m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_19m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0023m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_23m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0027m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_27m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0031m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_31m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0036m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_36m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0041m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_41m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0047m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_47m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0054m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_54m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0061m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_61m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0069m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_69m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0078m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_78m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0087m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_87m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0097m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_97m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0108m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_108m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0120m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0133m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_133m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0147m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_147m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0163m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_163m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0181m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_181m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0200m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_200m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0221m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_221m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0245m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_245m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0271m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_271m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0301m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_301m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0334m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_334m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0371m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_371m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0412m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_412m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0458m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_458m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0509m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_509m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0565m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_565m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0628m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_628m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0697m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_697m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0773m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_773m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0857m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_857m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 0947m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_947m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 1046m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1046m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 1152m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1152m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 1266m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1266m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 1387m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1387m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 1516m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1516m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 1653m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1653m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 1796m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1796m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 1945m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1945m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 2101m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_2101m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 2262m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_2262m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 2429m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_2429m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 2600m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_2600m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 2776m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_2776m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 2956m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_2956m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 3139m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_3139m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 3325m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_3325m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 3513m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_3513m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 3705m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_3705m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 3898m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_3898m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 4093m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_4093m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 4290m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_4290m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 4488m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_4488m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 4688m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_4688m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 4888m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_4888m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 5089m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_5089m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 5292m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_5292m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 5495m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_5495m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 5698m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_5698m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau - 5902m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_5902m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante Y de la vitesse de l'eau [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_0.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Composante y de la vitesse de la glace de mer [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceVelocityY",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Divergence de la glace de mer [%/jour] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceDivergence",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Fraction de la glace de mer [Fraction] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceFraction",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Hauteur de la surface de la mer par rapport au g\u00e9o\u00efde [m] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaSurfaceHeight",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Pression interne de la glace, int\u00e9gr\u00e9e verticalement [N/m] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceInternalPressure",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Profondeur de la couche de m\u00e9lange d'apr\u00e8s le crit\u00e8re de densit\u00e9 [m] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_MixedLayerThickness",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Profondeur de la turbocline [m] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_TurboclineDepth",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - R\u00e9sistance \u00e0 la compression de la glace, int\u00e9gr\u00e9e verticalement [N/m] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceCompressiveStrength",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0001.6m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1.6m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0002.7m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_2.7m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0003.9m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_3.9m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0005.1m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_5.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0006.5m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_6.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0008.1m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_8.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0009.8m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_9.8m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0012m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_12m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0014m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_14m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0017m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_17m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0019m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_19m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0023m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_23m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0027m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_27m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0031m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_31m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0036m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_36m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0041m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_41m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0047m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_47m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0054m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_54m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0061m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_61m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0069m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_69m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0078m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_78m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0087m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_87m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0097m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_97m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0108m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_108m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0120m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0133m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_133m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0147m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_147m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0163m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_163m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0181m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_181m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0200m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_200m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0221m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_221m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0245m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_245m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0271m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_271m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0301m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_301m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0334m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_334m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0371m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_371m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0412m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_412m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0458m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_458m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0509m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_509m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0565m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_565m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0628m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_628m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0697m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_697m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0773m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_773m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0857m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_857m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 0947m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_947m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 1046m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1046m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 1152m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1152m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 1266m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1266m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 1387m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1387m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 1516m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1516m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 1653m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1653m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 1796m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1796m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 1945m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1945m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 2101m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_2101m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 2262m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_2262m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 2429m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_2429m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 2600m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_2600m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 2776m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_2776m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 2956m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_2956m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 3139m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_3139m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 3325m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_3325m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 3513m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_3513m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 3705m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_3705m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 3898m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_3898m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 4093m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_4093m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 4290m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_4290m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 4488m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_4488m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 4688m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_4688m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 4888m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_4888m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 5089m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_5089m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 5292m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_5292m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 5495m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_5495m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 5698m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_5698m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer - 5902m [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_5902m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Salinit\u00e9 de l'eau de mer [psu] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_0.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature de surface de la neige sur la glace de mer ou la glace de mer nue [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceSnowTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0001.6m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1.6m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0002.7m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_2.7m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0003.9m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_3.9m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0005.1m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_5.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0006.5m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_6.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0008.1m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_8.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0009.8m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_9.8m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0012m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_12m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0014m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_14m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0017m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_17m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0019m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_19m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0023m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_23m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0027m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_27m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0031m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_31m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0036m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_36m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0041m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_41m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0047m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_47m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0054m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_54m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0061m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_61m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0069m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_69m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0078m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_78m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0087m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_87m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0097m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_97m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0108m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_108m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0120m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0133m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_133m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0147m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_147m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0163m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_163m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0181m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_181m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0200m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_200m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0221m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_221m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0245m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_245m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0271m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_271m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0301m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_301m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0334m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_334m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0371m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_371m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0412m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_412m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0458m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_458m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0509m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_509m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0565m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_565m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0628m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_628m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0697m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_697m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0773m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_773m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0857m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_857m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 0947m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_947m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 1046m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1046m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 1152m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1152m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 1266m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1266m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 1387m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1387m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 1516m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1516m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 1653m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1653m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 1796m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1796m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 1945m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1945m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 2101m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_2101m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 2262m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_2262m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 2429m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_2429m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 2600m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_2600m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 2776m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_2776m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 2956m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_2956m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 3139m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_3139m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 3325m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_3325m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 3513m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_3513m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 3705m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_3705m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 3898m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_3898m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 4093m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_4093m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 4290m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_4290m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 4488m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_4488m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 4688m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_4688m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 4888m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_4888m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 5089m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_5089m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 5292m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_5292m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 5495m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_5495m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 5698m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_5698m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer - 5902m [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_5902m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Temp\u00e9rature potentielle de l'eau de mer [K] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_0.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0001.6m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1.6m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0002.7m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_2.7m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0003.9m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_3.9m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0005.1m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_5.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0006.5m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_6.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0008.1m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_8.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0009.8m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_9.8m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0012m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_12m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0014m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_14m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0017m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_17m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0019m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_19m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0023m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_23m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0027m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_27m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0031m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_31m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0036m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_36m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0041m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_41m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0047m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_47m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0054m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_54m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0061m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_61m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0069m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_69m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0078m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_78m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0087m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_87m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0097m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_97m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0108m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_108m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0120m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0133m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_133m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0147m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_147m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0163m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_163m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0181m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_181m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0200m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_200m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0221m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_221m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0245m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_245m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0271m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_271m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0301m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_301m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0334m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_334m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0371m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_371m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0412m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_412m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0458m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_458m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0509m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_509m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0565m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_565m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0628m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_628m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0697m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_697m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0773m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_773m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0857m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_857m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 0947m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_947m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 1046m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1046m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 1152m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1152m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 1266m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1266m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 1387m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1387m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 1516m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1516m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 1653m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1653m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 1796m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1796m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 1945m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1945m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 2101m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_2101m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 2262m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_2262m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 2429m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_2429m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 2600m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_2600m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 2776m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_2776m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 2956m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_2956m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 3139m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_3139m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 3325m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_3325m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 3513m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_3513m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 3705m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_3705m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 3898m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_3898m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 4093m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_4093m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 4290m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_4290m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 4488m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_4488m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 4688m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_4688m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 4888m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_4888m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 5089m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_5089m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 5292m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_5292m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 5495m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_5495m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 5698m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_5698m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Vitesse de l'eau - 5902m [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_5902m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Volume de glace de mer par unit\u00e9 de surface de cellule de grille [m] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceVolume",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - Volume de la neige de mer par unit\u00e9 de surface de cellule de grille [cm] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceSnowVolume",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - V\u00e9locit\u00e9 de l'eau [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_0.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SCPA-Oc\u00e9an - V\u00e9locit\u00e9 de la glace de mer [m/s] [exp\u00e9rimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceVelocity",
             "isLeaf": true,
             "isTemporal": true
           }
@@ -15513,6 +17433,18 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "SPCE - Neige accumul\u00e9e [m]",
+            "Name": "WCPS_1km_Snow-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SPCE - Pluie accumul\u00e9e [m]",
+            "Name": "WCPS_1km_Rain-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "WCPS - Pression interne de la glace, int\u00e9gr\u00e9e verticalement [N/m]",
             "Name": "WCPS_1km_SeaIceInternalPressure",
             "isLeaf": true,
@@ -15531,6 +17463,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "SPCE - Pr\u00e9cipitations accumul\u00e9es [m]",
+            "Name": "WCPS_1km_Precip-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "WCPS - Ruissellement [mm]",
             "Name": "WCPS_1km_Runoff",
             "isLeaf": true,
@@ -15545,6 +17483,12 @@ export default {
           {
             "Title": "WCPS - Salinit\u00e9 de l'eau de mer \u00e0 0.5 m sous la surface [psu]",
             "Name": "WCPS_1km_SeaWaterSalinity_0.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SPCE - Taux de pr\u00e9cipitation instantan\u00e9 [m/s]",
+            "Name": "WCPS_1km_PrecipRate",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -15619,8 +17563,8 @@ export default {
     ]
   },
   {
-    "Title": "Syst\u00e8me de pr\u00e9vision interannuelle et saisonni\u00e8re canadien (SPISCan)",
-    "Name": "Syst\u00e8me de pr\u00e9vision interannuelle et saisonni\u00e8re canadien (SPISCan)",
+    "Title": "Syst\u00e8me de pr\u00e9vision interannuelle et saisonni\u00e8re canadien (SPISCan) [100 km]",
+    "Name": "Syst\u00e8me de pr\u00e9vision interannuelle et saisonni\u00e8re canadien (SPISCan) [100 km]",
     "isLeaf": false,
     "children": [
       {
@@ -15629,8 +17573,8 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "Membres du SPISCan",
-            "Name": "Membres du SPISCan",
+            "Title": "Membres",
+            "Name": "Membres",
             "isLeaf": false,
             "children": [
               {
@@ -17859,369 +19803,421 @@ export default {
             ]
           },
           {
-            "Title": "Produits SPISCan (3 mois)",
-            "Name": "Produits SPISCan (3 mois)",
+            "Title": "Produits",
+            "Name": "Produits",
             "isLeaf": false,
             "children": [
               {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures au dessus la normale - Mois 0-2 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P00M-P02M",
-                "isLeaf": true,
-                "isTemporal": false
+                "Title": "Mensuel",
+                "Name": "Mensuel",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "Produits de probabilit\u00e9 terciles",
+                    "Name": "Produits de probabilit\u00e9 terciles",
+                    "isLeaf": false,
+                    "children": [
+                      {
+                        "Title": "Pr\u00e9cipitation",
+                        "Name": "Pr\u00e9cipitation",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      },
+                      {
+                        "Title": "Temp\u00e9rature de l'air",
+                        "Name": "Temp\u00e9rature de l'air",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures au dessus la normale [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures sous la normale [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures pr\u00e8s de la normale [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "Title": "Produits probabilistes de d\u00e9passement",
+                    "Name": "Produits probabilistes de d\u00e9passement",
+                    "isLeaf": false,
+                    "children": [
+                      {
+                        "Title": "Pr\u00e9cipitation",
+                        "Name": "Pr\u00e9cipitation",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 10e percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT10Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 20e percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT20Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 30e percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT30Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 40e percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT40Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 50e percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT50Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 60e percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT60Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 70e percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT70Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 80e percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT80Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 90e percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT90Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      },
+                      {
+                        "Title": "Temp\u00e9rature de l'air",
+                        "Name": "Temp\u00e9rature de l'air",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 10e percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT10Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 20e percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT20Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 30e percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT30Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 40e percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT40Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 50e percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT50Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 60e percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT60Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 70e percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT70Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 80e percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT80Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 90e percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT90Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               },
               {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures au dessus la normale - Mois 1-3 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P01M-P03M",
+                "Title": "Saisonnier (3 mois)",
+                "Name": "Saisonnier (3 mois)",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "Produits de probabilit\u00e9 terciles",
+                    "Name": "Produits de probabilit\u00e9 terciles",
+                    "isLeaf": false,
+                    "children": [
+                      {
+                        "Title": "Pr\u00e9cipitation",
+                        "Name": "Pr\u00e9cipitation",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      },
+                      {
+                        "Title": "Temp\u00e9rature de l'air",
+                        "Name": "Temp\u00e9rature de l'air",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures au dessus la normale - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures sous la normale - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures pr\u00e8s de la normale - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "Title": "Produits probabilistes de d\u00e9passement",
+                    "Name": "Produits probabilistes de d\u00e9passement",
+                    "isLeaf": false,
+                    "children": [
+                      {
+                        "Title": "Pr\u00e9cipitation",
+                        "Name": "Pr\u00e9cipitation",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 10e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT10Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 20e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT20Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 30e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT30Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 40e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT40Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 50e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT50Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 60e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT60Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 70e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT70Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 80e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT80Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la pr\u00e9cipitation soit sup\u00e9rieure au 90e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT90Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      },
+                      {
+                        "Title": "Temp\u00e9rature de l'air",
+                        "Name": "Temp\u00e9rature de l'air",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 10e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT10Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 20e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT20Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 30e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT30Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 40e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT40Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 50e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT50Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 60e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT60Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 70e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT70Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 80e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT80Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probabilit\u00e9 que la temp\u00e9rature soit sup\u00e9rieure au 90e percentile - aper\u00e7u de 3 mois [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT90Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Title": "V\u00e9rification",
+        "Name": "V\u00e9rification",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "Produits",
+            "Name": "Produits",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "Anomalie de temp\u00e9rature de l'air",
+                "Name": "CanSIPS_100km_AirTempAnomaly-ERA5_2m",
                 "isLeaf": true,
-                "isTemporal": false
+                "isTemporal": true
               },
               {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures au dessus la normale - Mois 2-4 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P02M-P04M",
+                "Title": "Anomalie totale des pr\u00e9cipitations",
+                "Name": "CanSIPS_100km_PrecipAccumAnomaly-ERA5_Sfc",
                 "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures au dessus la normale - Mois 3-5 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P03M-P05M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures au dessus la normale - Mois 4-6 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P04M-P06M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures au dessus la normale - Mois 5-7 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P05M-P07M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures au dessus la normale - Mois 6-8 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P06M-P08M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures au dessus la normale - Mois 7-9 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P07M-P09M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures au dessus la normale - Mois 8-10 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P08M-P10M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures au dessus la normale - Mois 9-11 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P09M-P11M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures sous la normale - Mois 0-2 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P00M-P02M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures sous la normale - Mois 1-3 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P01M-P03M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures sous la normale - Mois 2-4 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P02M-P04M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures sous la normale - Mois 3-5 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P03M-P05M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures sous la normale - Mois 4-6 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P04M-P06M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures sous la normale - Mois 5-7 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P05M-P07M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures sous la normale - Mois 6-8 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P06M-P08M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures sous la normale - Mois 7-9 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P07M-P09M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures sous la normale - Mois 8-10 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P08M-P10M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures sous la normale - Mois 9-11 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P09M-P11M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures pr\u00e8s de la normale - Mois 0-2 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P00M-P02M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures pr\u00e8s de la normale - Mois 1-3 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P01M-P03M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures pr\u00e8s de la normale - Mois 2-4 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P02M-P04M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures pr\u00e8s de la normale - Mois 3-5 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P03M-P05M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures pr\u00e8s de la normale - Mois 4-6 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P04M-P06M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures pr\u00e8s de la normale - Mois 5-7 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P05M-P07M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures pr\u00e8s de la normale - Mois 6-8 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P06M-P08M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures pr\u00e8s de la normale - Mois 7-9 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P07M-P09M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures pr\u00e8s de la normale - Mois 8-10 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P08M-P10M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de temp\u00e9ratures pr\u00e8s de la normale - Mois 9-11 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P09M-P11M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 0-2 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P00M-P02M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 1-3 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P01M-P03M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 2-4 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P02M-P04M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 3-5 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P03M-P05M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 4-6 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P04M-P06M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 5-7 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P05M-P07M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 6-8 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P06M-P08M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 7-9 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P07M-P09M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 8-10 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P08M-P10M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations au dessus la normale - Mois 9-11 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P09M-P11M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - Mois 0-2 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P00M-P02M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - Mois 1-3 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P01M-P03M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - Mois 2-4 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P02M-P04M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - Mois 3-5 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P03M-P05M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - Mois 4-6 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P04M-P06M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - Mois 5-7 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P05M-P07M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - Mois 6-8 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P06M-P08M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - Mois 7-9 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P07M-P09M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - Mois 8-10 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P08M-P10M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations sous la normale - Mois 9-11 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P09M-P11M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - Mois 0-2 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P00M-P02M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - Mois 1-3 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P01M-P03M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - Mois 2-4 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P02M-P04M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - Mois 3-5 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P03M-P05M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - Mois 4-6 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P04M-P06M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - Mois 5-7 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P05M-P07M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - Mois 6-8 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P06M-P08M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - Mois 7-9 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P07M-P09M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - Mois 8-10 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P08M-P10M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probabilit\u00e9s pr\u00e9vues de pr\u00e9cipitations pr\u00e8s de la normale - Mois 9-11 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P09M-P11M",
-                "isLeaf": true,
-                "isTemporal": false
+                "isTemporal": true
               }
             ]
           }
@@ -18272,49 +20268,160 @@ export default {
         "isLeaf": false,
         "children": [
           {
+            "Title": "Cisaillement vertical du vent entre 850 mb et 250 mb",
+            "Name": "Cisaillement vertical du vent entre 850 mb et 250 mb",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SGPE - Cisaillement vertical du vent entre 850 mb et 250 mb [1/s] (0e centile)",
+                "Name": "GEPS.DIAG_VWSH.850-250.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Cisaillement vertical du vent entre 850 mb et 250 mb [1/s] (25e centile)",
+                "Name": "GEPS.DIAG_VWSH.850-250.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Cisaillement vertical du vent entre 850 mb et 250 mb [1/s] (50e centile)",
+                "Name": "GEPS.DIAG_VWSH.850-250.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Cisaillement vertical du vent entre 850 mb et 250 mb [1/s] (75e centile)",
+                "Name": "GEPS.DIAG_VWSH.850-250.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Cisaillement vertical du vent entre 850 mb et 250 mb [1/s] (100e centile)",
+                "Name": "GEPS.DIAG_VWSH.850-250.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "Cisaillement vertical du vent entre 925 mb et 700 mb",
+            "Name": "Cisaillement vertical du vent entre 925 mb et 700 mb",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SGPE - Cisaillement vertical du vent entre 925 mb et 700 mb [1/s] (0e centile)",
+                "Name": "GEPS.DIAG_VWSH.925-700.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Cisaillement vertical du vent entre 925 mb et 700 mb [1/s] (25e centile)",
+                "Name": "GEPS.DIAG_VWSH.925-700.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Cisaillement vertical du vent entre 925 mb et 700 mb [1/s] (50e centile)",
+                "Name": "GEPS.DIAG_VWSH.925-700.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Cisaillement vertical du vent entre 925 mb et 700 mb [1/s] (75e centile)",
+                "Name": "GEPS.DIAG_VWSH.925-700.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Cisaillement vertical du vent entre 925 mb et 700 mb [1/s] (100e centile)",
+                "Name": "GEPS.DIAG_VWSH.925-700.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
             "Title": "Couverture nuageuse totale",
             "Name": "Couverture nuageuse totale",
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Couverture nuageuse totale [%] (0e percentile)",
+                "Title": "SGPE - Couverture nuageuse totale [%] (0e percentile)",
                 "Name": "GEPS.DIAG.3_NT.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Couverture nuageuse totale [%] (10e percentile)",
+                "Title": "SGPE - Couverture nuageuse totale [%] (10e percentile)",
                 "Name": "GEPS.DIAG.3_NT.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Couverture nuageuse totale [%] (25e percentile)",
+                "Title": "SGPE - Couverture nuageuse totale [%] (25e percentile)",
                 "Name": "GEPS.DIAG.3_NT.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Couverture nuageuse totale [%] (50e percentile)",
+                "Title": "SGPE - Couverture nuageuse totale [%] (50e percentile)",
                 "Name": "GEPS.DIAG.3_NT.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Couverture nuageuse totale [%] (75e percentile)",
+                "Title": "SGPE - Couverture nuageuse totale [%] (75e percentile)",
                 "Name": "GEPS.DIAG.3_NT.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Couverture nuageuse totale [%] (90e percentile)",
+                "Title": "SGPE - Couverture nuageuse totale [%] (90e percentile)",
                 "Name": "GEPS.DIAG.3_NT.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Couverture nuageuse totale [%] (100e percentile)",
+                "Title": "SGPE - Couverture nuageuse totale [%] (100e percentile)",
                 "Name": "GEPS.DIAG.3_NT.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "EPCD pour la parcelle la plus instable",
+            "Name": "EPCD pour la parcelle la plus instable",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SGPE - EPCD pour la parcelle la plus instable [J/kg] (0e centile)",
+                "Name": "GEPS.DIAG_MUCAPE.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - EPCD pour la parcelle la plus instable [J/kg] (25e centile)",
+                "Name": "GEPS.DIAG_MUCAPE.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - EPCD pour la parcelle la plus instable [J/kg] (50e centile)",
+                "Name": "GEPS.DIAG_MUCAPE.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - EPCD pour la parcelle la plus instable [J/kg] (75e centile)",
+                "Name": "GEPS.DIAG_MUCAPE.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - EPCD pour la parcelle la plus instable [J/kg] (100e centile)",
+                "Name": "GEPS.DIAG_MUCAPE.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               }
@@ -18326,229 +20433,259 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 12 heures [mm] (0e centile)",
+                "Title": "SGPE - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (0e centile)",
+                "Name": "GEPS.DIAG.6_PEMM.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (25e centile)",
+                "Name": "GEPS.DIAG.6_PEMM.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (50e centile)",
+                "Name": "GEPS.DIAG.6_PEMM.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (75e centile)",
+                "Name": "GEPS.DIAG.6_PEMM.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (100e centile)",
+                "Name": "GEPS.DIAG.6_PEMM.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (0e centile)",
                 "Name": "GEPS.DIAG.12_PEMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 12 heures [mm] (10e centile)",
+                "Title": "SGPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (10e centile)",
                 "Name": "GEPS.DIAG.12_PEMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 12 heures [mm] (25e centile)",
+                "Title": "SGPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (25e centile)",
                 "Name": "GEPS.DIAG.12_PEMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 12 heures [mm] (50e centile)",
+                "Title": "SGPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (50e centile)",
                 "Name": "GEPS.DIAG.12_PEMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 12 heures [mm] (75e centile)",
+                "Title": "SGPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (75e centile)",
                 "Name": "GEPS.DIAG.12_PEMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 12 heures [mm] (90e centile)",
+                "Title": "SGPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (90e centile)",
                 "Name": "GEPS.DIAG.12_PEMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 12 heures [mm] (100e centile)",
+                "Title": "SGPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (100e centile)",
                 "Name": "GEPS.DIAG.12_PEMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 12 heures [mm] (moyenne)",
+                "Title": "SGPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (moyenne)",
                 "Name": "GEPS.DIAG.12_PEMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 12 heures [mm] (\u00e9cart-type)",
+                "Title": "SGPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.12_PEMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 24 heures [mm] (0e centile)",
+                "Title": "SGPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (0e centile)",
                 "Name": "GEPS.DIAG.24_PEMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 24 heures [mm] (10e centile)",
+                "Title": "SGPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (10e centile)",
                 "Name": "GEPS.DIAG.24_PEMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 24 heures [mm] (25e centile)",
+                "Title": "SGPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (25e centile)",
                 "Name": "GEPS.DIAG.24_PEMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 24 heures [mm] (50e centile)",
+                "Title": "SGPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (50e centile)",
                 "Name": "GEPS.DIAG.24_PEMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 24 heures [mm] (75e centile)",
+                "Title": "SGPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (75e centile)",
                 "Name": "GEPS.DIAG.24_PEMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 24 heures [mm] (90e centile)",
+                "Title": "SGPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (90e centile)",
                 "Name": "GEPS.DIAG.24_PEMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 24 heures [mm] (100e centile)",
+                "Title": "SGPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (100e centile)",
                 "Name": "GEPS.DIAG.24_PEMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 24 heures [mm] (moyenne)",
+                "Title": "SGPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (moyenne)",
                 "Name": "GEPS.DIAG.24_PEMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Granules de glace - accumulation sur 24 heures [mm] (\u00e9cart-type)",
+                "Title": "SGPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.24_PEMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 1 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 1 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 2.5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 5 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 10 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 10 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 15 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 15 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 20 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 20 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 25 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 25 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 30 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 30 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 40 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 40 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 50 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 50 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 1 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 1 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 2.5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 5 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 10 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 10 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 15 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 15 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 20 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 20 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 25 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 25 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 30 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 30 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 40 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 40 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 50 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 50 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
@@ -18561,56 +20698,20 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm] (moyenne) (contour) (pr\u00e9vision aux 3 heures)",
-                "Name": "GEPS.DIAG.3_GZ.500.ERMEAN-CONTOUR",
+                "Title": "SGPE - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm] (moyenne)",
+                "Name": "GEPS.DIAG_GZ.500.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm] (moyenne) (contour) (pr\u00e9vision aux 6 heures)",
-                "Name": "GEPS.DIAG.6_GZ.500.ERMEAN-CONTOUR",
+                "Title": "SGPE - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm] (moyenne) (contour)",
+                "Name": "GEPS.DIAG_GZ.500.ERMEAN-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm] (moyenne) (contour) (pr\u00e9vision aux 12 heures)",
-                "Name": "GEPS.DIAG.12_GZ.500.ERMEAN-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm] (moyenne) (pr\u00e9vision aux 3 heures)",
-                "Name": "GEPS.DIAG.3_GZ.500.ERMEAN",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm] (moyenne) (pr\u00e9vision aux 6 heures)",
-                "Name": "GEPS.DIAG.6_GZ.500.ERMEAN",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm] (moyenne) (pr\u00e9vision aux 12 heures)",
-                "Name": "GEPS.DIAG.12_GZ.500.ERMEAN",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm] (\u00e9cart-type) (pr\u00e9vision aux 3 heures)",
-                "Name": "GEPS.DIAG.3_GZ.500.ERSSTD",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm] (\u00e9cart-type) (pr\u00e9vision aux 6 heures)",
-                "Name": "GEPS.DIAG.6_GZ.500.ERSSTD",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm] (\u00e9cart-type) (pr\u00e9vision aux 12 heures)",
-                "Name": "GEPS.DIAG.12_GZ.500.ERSSTD",
+                "Title": "SGPE - Hauteur g\u00e9opotentielle \u00e0 500 mb [gpm] (\u00e9cart-type)",
+                "Name": "GEPS.DIAG_GZ.500.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               }
@@ -18622,145 +20723,145 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (0e centile)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (0e centile)",
                 "Name": "GEPS.DIAG.3_HMX.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (10e centile)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (10e centile)",
                 "Name": "GEPS.DIAG.3_HMX.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (25e centile)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (25e centile)",
                 "Name": "GEPS.DIAG.3_HMX.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (50e centile)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (50e centile)",
                 "Name": "GEPS.DIAG.3_HMX.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (75e centile)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (75e centile)",
                 "Name": "GEPS.DIAG.3_HMX.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (90e centile)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (90e centile)",
                 "Name": "GEPS.DIAG.3_HMX.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (100e centile)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (100e centile)",
                 "Name": "GEPS.DIAG.3_HMX.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (moyenne)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (moyenne)",
                 "Name": "GEPS.DIAG.3_HMX.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (\u00e9cart-type)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol (\u00b0C) (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.3_HMX.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (0e centile)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (0e centile)",
                 "Name": "GEPS.DIAG.24_HMXX.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (10e centile)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (10e centile)",
                 "Name": "GEPS.DIAG.24_HMXX.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (25e centile)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (25e centile)",
                 "Name": "GEPS.DIAG.24_HMXX.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (50e centile)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (50e centile)",
                 "Name": "GEPS.DIAG.24_HMXX.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (75e centile)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (75e centile)",
                 "Name": "GEPS.DIAG.24_HMXX.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (90e centile)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (90e centile)",
                 "Name": "GEPS.DIAG.24_HMXX.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (100e centile)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (100e centile)",
                 "Name": "GEPS.DIAG.24_HMXX.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (moyenne)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (moyenne)",
                 "Name": "GEPS.DIAG.24_HMXX.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (\u00e9cart-type)",
+                "Title": "SGPE - Humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures (\u00b0C) (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.24_HMXX.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 d'humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 25 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 d'humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 25 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_HMXX.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 d'humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 30 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 d'humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 30 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_HMXX.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 d'humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 35 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 d'humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 35 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_HMXX.ERGE35",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 d'humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 38 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 d'humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 38 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_HMXX.ERGE38",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 d'humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 40 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 d'humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 40 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_HMXX.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 d'humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 42 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 d'humidex \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 42 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_HMXX.ERGE42",
                 "isLeaf": true,
                 "isTemporal": true
@@ -18773,175 +20874,175 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (0e percentile)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (0e percentile)",
                 "Name": "GEPS.DIAG.3_WCF.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (10e percentile)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (10e percentile)",
                 "Name": "GEPS.DIAG.3_WCF.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (25e percentile)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (25e percentile)",
                 "Name": "GEPS.DIAG.3_WCF.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (50e percentile)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (50e percentile)",
                 "Name": "GEPS.DIAG.3_WCF.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (75e percentile)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (75e percentile)",
                 "Name": "GEPS.DIAG.3_WCF.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (90e percentile)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (90e percentile)",
                 "Name": "GEPS.DIAG.3_WCF.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (100e percentile)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (100e percentile)",
                 "Name": "GEPS.DIAG.3_WCF.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (moyenne)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (moyenne)",
                 "Name": "GEPS.DIAG.3_WCF.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (\u00e9cart-type)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol (\u00b0C) (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.3_WCF.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (0e centile)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (0e centile)",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (10e centile)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (10e centile)",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (25e centile)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (25e centile)",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (50e centile)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (50e centile)",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (75e centile)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (75e centile)",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (90e centile)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (90e centile)",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (100e centile)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (100e centile)",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (moyenne)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (moyenne)",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (\u00e9cart-type)",
+                "Title": "SGPE - Indice de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures (\u00b0C) (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= 0 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= 0 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERGE0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -5 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -5 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -10 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -10 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -15 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -15 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -20 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -20 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -25 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -25 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -30 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -30 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -35 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -35 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERGE35",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -40 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -40 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -45 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -45 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERGE45",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -50 (\u00b0C) [%]",
+                "Title": "SGPE - Probabilit\u00e9 de refroidissement \u00e9olien \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -50 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_WCFMIN.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
@@ -18954,247 +21055,277 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Neige - accumulation sur 12 heures [mm] (0e centile)",
+                "Title": "SGPE - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (0e centile)",
+                "Name": "GEPS.DIAG.6_SNMM.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (25e centile)",
+                "Name": "GEPS.DIAG.6_SNMM.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (50e centile)",
+                "Name": "GEPS.DIAG.6_SNMM.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (75e centile)",
+                "Name": "GEPS.DIAG.6_SNMM.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (100e centile)",
+                "Name": "GEPS.DIAG.6_SNMM.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (0e centile)",
                 "Name": "GEPS.DIAG.12_SNMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 12 heures [mm] (10e centile)",
+                "Title": "SGPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (10e centile)",
                 "Name": "GEPS.DIAG.12_SNMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 12 heures [mm] (25e centile)",
+                "Title": "SGPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (25e centile)",
                 "Name": "GEPS.DIAG.12_SNMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 12 heures [mm] (50e centile)",
+                "Title": "SGPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (50e centile)",
                 "Name": "GEPS.DIAG.12_SNMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 12 heures [mm] (75e centile)",
+                "Title": "SGPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (75e centile)",
                 "Name": "GEPS.DIAG.12_SNMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 12 heures [mm] (90e centile)",
+                "Title": "SGPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (90e centile)",
                 "Name": "GEPS.DIAG.12_SNMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 12 heures [mm] (100e centile)",
+                "Title": "SGPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (100e centile)",
                 "Name": "GEPS.DIAG.12_SNMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 12 heures [mm] (moyenne)",
+                "Title": "SGPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (moyenne)",
                 "Name": "GEPS.DIAG.12_SNMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 12 heures [mm] (\u00e9cart-type)",
+                "Title": "SGPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.12_SNMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 24 heures [mm] (0e centile)",
+                "Title": "SGPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (0e centile)",
                 "Name": "GEPS.DIAG.24_SNMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 24 heures [mm] (10e centile)",
+                "Title": "SGPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (10e centile)",
                 "Name": "GEPS.DIAG.24_SNMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 24 heures [mm] (25e centile)",
+                "Title": "SGPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (25e centile)",
                 "Name": "GEPS.DIAG.24_SNMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 24 heures [mm] (50e centile)",
+                "Title": "SGPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (50e centile)",
                 "Name": "GEPS.DIAG.24_SNMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 24 heures [mm] (75e centile)",
+                "Title": "SGPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (75e centile)",
                 "Name": "GEPS.DIAG.24_SNMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 24 heures [mm] (90e centile)",
+                "Title": "SGPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (90e centile)",
                 "Name": "GEPS.DIAG.24_SNMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 24 heures [mm] (100e centile)",
+                "Title": "SGPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (100e centile)",
                 "Name": "GEPS.DIAG.24_SNMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 24 heures [mm] (moyenne)",
+                "Title": "SGPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (moyenne)",
                 "Name": "GEPS.DIAG.24_SNMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Neige - accumulation sur 24 heures [mm] (\u00e9cart-type)",
+                "Title": "SGPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.24_SNMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 1 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 1 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 2.5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 5 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 10 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 10 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 15 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 15 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 20 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 20 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 25 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 25 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 30 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 30 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 40 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 40 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 50 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 50 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 75 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 75 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 1 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 1 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 2.5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 5 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 10 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 10 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 15 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 15 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 20 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 20 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 25 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 25 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 30 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 30 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 40 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 40 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 50 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 50 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 75 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 75 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 100 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 100 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19207,265 +21338,265 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Pluie - accumulation sur 12 heures [mm] (0e centile)",
+                "Title": "SGPE - Pluie - accumulation sur 12 heures [mm] (0e centile)",
                 "Name": "GEPS.DIAG.12_RNMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 12 heures [mm] (10e centile)",
+                "Title": "SGPE - Pluie - accumulation sur 12 heures [mm] (10e centile)",
                 "Name": "GEPS.DIAG.12_RNMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 12 heures [mm] (25e centile)",
+                "Title": "SGPE - Pluie - accumulation sur 12 heures [mm] (25e centile)",
                 "Name": "GEPS.DIAG.12_RNMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 12 heures [mm] (50e centile)",
+                "Title": "SGPE - Pluie - accumulation sur 12 heures [mm] (50e centile)",
                 "Name": "GEPS.DIAG.12_RNMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 12 heures [mm] (75e centile)",
+                "Title": "SGPE - Pluie - accumulation sur 12 heures [mm] (75e centile)",
                 "Name": "GEPS.DIAG.12_RNMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 12 heures [mm] (90e centile)",
+                "Title": "SGPE - Pluie - accumulation sur 12 heures [mm] (90e centile)",
                 "Name": "GEPS.DIAG.12_RNMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 12 heures [mm] (100e centile)",
+                "Title": "SGPE - Pluie - accumulation sur 12 heures [mm] (100e centile)",
                 "Name": "GEPS.DIAG.12_RNMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 12 heures [mm] (moyenne)",
+                "Title": "SGPE - Pluie - accumulation sur 12 heures [mm] (moyenne)",
                 "Name": "GEPS.DIAG.12_RNMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 12 heures [mm] (\u00e9cart-type)",
+                "Title": "SGPE - Pluie - accumulation sur 12 heures [mm] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.12_RNMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 24 heures [mm] (0e centile)",
+                "Title": "SGPE - Pluie - accumulation sur 24 heures [mm] (0e centile)",
                 "Name": "GEPS.DIAG.24_RNMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 24 heures [mm] (10e centile)",
+                "Title": "SGPE - Pluie - accumulation sur 24 heures [mm] (10e centile)",
                 "Name": "GEPS.DIAG.24_RNMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 24 heures [mm] (25e centile)",
+                "Title": "SGPE - Pluie - accumulation sur 24 heures [mm] (25e centile)",
                 "Name": "GEPS.DIAG.24_RNMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 24 heures [mm] (50e centile)",
+                "Title": "SGPE - Pluie - accumulation sur 24 heures [mm] (50e centile)",
                 "Name": "GEPS.DIAG.24_RNMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 24 heures [mm] (75e centile)",
+                "Title": "SGPE - Pluie - accumulation sur 24 heures [mm] (75e centile)",
                 "Name": "GEPS.DIAG.24_RNMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 24 heures [mm] (90e centile)",
+                "Title": "SGPE - Pluie - accumulation sur 24 heures [mm] (90e centile)",
                 "Name": "GEPS.DIAG.24_RNMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 24 heures [mm] (100e centile)",
+                "Title": "SGPE - Pluie - accumulation sur 24 heures [mm] (100e centile)",
                 "Name": "GEPS.DIAG.24_RNMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 24 heures [mm] (moyenne)",
+                "Title": "SGPE - Pluie - accumulation sur 24 heures [mm] (moyenne)",
                 "Name": "GEPS.DIAG.24_RNMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie - accumulation sur 24 heures [mm] (\u00e9cart-type)",
+                "Title": "SGPE - Pluie - accumulation sur 24 heures [mm] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.24_RNMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 1 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 1 mm [%]",
                 "Name": "GEPS.DIAG.12_RNMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 2.5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.12_RNMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 5 mm [%]",
                 "Name": "GEPS.DIAG.12_RNMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 10 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 10 mm [%]",
                 "Name": "GEPS.DIAG.12_RNMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 15 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 15 mm [%]",
                 "Name": "GEPS.DIAG.12_RNMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 20 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 20 mm [%]",
                 "Name": "GEPS.DIAG.12_RNMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 25 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 25 mm [%]",
                 "Name": "GEPS.DIAG.12_RNMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 30 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 30 mm [%]",
                 "Name": "GEPS.DIAG.12_RNMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 40 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 40 mm [%]",
                 "Name": "GEPS.DIAG.12_RNMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 50 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 50 mm [%]",
                 "Name": "GEPS.DIAG.12_RNMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 75 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 75 mm [%]",
                 "Name": "GEPS.DIAG.12_RNMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 100 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 100 mm [%]",
                 "Name": "GEPS.DIAG.12_RNMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 150 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 12 heures >= 150 mm [%]",
                 "Name": "GEPS.DIAG.12_RNMM.ERGE150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 1 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 1 mm [%]",
                 "Name": "GEPS.DIAG.24_RNMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 2.5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.24_RNMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 5 mm [%]",
                 "Name": "GEPS.DIAG.24_RNMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 10 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 10 mm [%]",
                 "Name": "GEPS.DIAG.24_RNMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 15 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 15 mm [%]",
                 "Name": "GEPS.DIAG.24_RNMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 20 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 20 mm [%]",
                 "Name": "GEPS.DIAG.24_RNMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 25 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 25 mm [%]",
                 "Name": "GEPS.DIAG.24_RNMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 30 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 30 mm [%]",
                 "Name": "GEPS.DIAG.24_RNMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 40 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 40 mm [%]",
                 "Name": "GEPS.DIAG.24_RNMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 50 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 50 mm [%]",
                 "Name": "GEPS.DIAG.24_RNMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 75 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 75 mm [%]",
                 "Name": "GEPS.DIAG.24_RNMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 100 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 100 mm [%]",
                 "Name": "GEPS.DIAG.24_RNMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 150 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie - accumulation sur 24 heures >= 150 mm [%]",
                 "Name": "GEPS.DIAG.24_RNMM.ERGE150",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19478,229 +21609,229 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (0e centile)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (0e centile)",
                 "Name": "GEPS.DIAG.12_FRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (10e centile)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (10e centile)",
                 "Name": "GEPS.DIAG.12_FRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (25e centile)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (25e centile)",
                 "Name": "GEPS.DIAG.12_FRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (50e centile)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (50e centile)",
                 "Name": "GEPS.DIAG.12_FRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (75e centile)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (75e centile)",
                 "Name": "GEPS.DIAG.12_FRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (90e centile)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (90e centile)",
                 "Name": "GEPS.DIAG.12_FRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (100e centile)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (100e centile)",
                 "Name": "GEPS.DIAG.12_FRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (moyenne)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (moyenne)",
                 "Name": "GEPS.DIAG.12_FRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (\u00e9cart-type)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.12_FRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (0e centile)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (0e centile)",
                 "Name": "GEPS.DIAG.24_FRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (10e centile)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (10e centile)",
                 "Name": "GEPS.DIAG.24_FRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (25e centile)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (25e centile)",
                 "Name": "GEPS.DIAG.24_FRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (50e centile)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (50e centile)",
                 "Name": "GEPS.DIAG.24_FRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (75e centile)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (75e centile)",
                 "Name": "GEPS.DIAG.24_FRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (90e centile)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (90e centile)",
                 "Name": "GEPS.DIAG.24_FRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (100e centile)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (100e centile)",
                 "Name": "GEPS.DIAG.24_FRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (moyenne)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (moyenne)",
                 "Name": "GEPS.DIAG.24_FRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (\u00e9cart-type)",
+                "Title": "SGPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.24_FRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 1 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 1 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 2.5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 5 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 10 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 10 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 15 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 15 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 20 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 20 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 25 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 25 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 30 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 30 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 40 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 40 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 50 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 50 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 1 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 1 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 2.5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 5 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 10 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 10 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 15 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 15 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 20 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 20 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 25 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 25 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 30 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 30 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 40 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 40 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 50 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 50 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
@@ -19713,56 +21844,20 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Pression au niveau de la mer (contour) [Pa] (moyenne) (pr\u00e9vision aux 3 heures)",
-                "Name": "GEPS.DIAG.3_PN.ERMEAN-CONTOUR",
+                "Title": "SGPE - Pression au niveau de la mer (contour) [Pa] (moyenne)",
+                "Name": "GEPS.DIAG_PN.ERMEAN-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pression au niveau de la mer (contour) [Pa] (moyenne) (pr\u00e9vision aux 6 heures)",
-                "Name": "GEPS.DIAG.6_PN.ERMEAN-CONTOUR",
+                "Title": "SGPE - Pression au niveau de la mer [Pa] (moyenne)",
+                "Name": "GEPS.DIAG_PN.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pression au niveau de la mer (contour) [Pa] (moyenne) (pr\u00e9vision aux 12 heures)",
-                "Name": "GEPS.DIAG.12_PN.ERMEAN",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Pression au niveau de la mer [Pa] (moyenne) (pr\u00e9vision aux 3 heures)",
-                "Name": "GEPS.DIAG.3_PN.ERMEAN",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Pression au niveau de la mer [Pa] (moyenne) (pr\u00e9vision aux 6 heures)",
-                "Name": "GEPS.DIAG.6_PN.ERMEAN",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Pression au niveau de la mer [Pa] (moyenne) (pr\u00e9vision aux 12 heures)",
-                "Name": "GEPS.DIAG.12_PN-SLP.ERMEAN",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Pression au niveau de la mer [Pa] (\u00e9cart-type) (pr\u00e9vision aux 3 heures)",
-                "Name": "GEPS.DIAG.3_PN.ERSSTD",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Pression au niveau de la mer [Pa] (\u00e9cart-type) (pr\u00e9vision aux 6 heures)",
-                "Name": "GEPS.DIAG.6_PN.ERSSTD",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Pression au niveau de la mer [Pa] (\u00e9cart-type) (pr\u00e9vision aux 12 heures)",
-                "Name": "GEPS.DIAG.12_PN-SLP.ERSSTD",
+                "Title": "SGPE - Pression au niveau de la mer [Pa] (\u00e9cart-type)",
+                "Name": "GEPS.DIAG_PN.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               }
@@ -19774,823 +21869,889 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 1 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 6 heures >= 1 mm [%]",
+                "Name": "GEPS.DIAG.6_PRMM.ERGE1",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 6 heures >= 5 mm [%]",
+                "Name": "GEPS.DIAG.6_PRMM.ERGE5",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 6 heures >= 10 mm [%]",
+                "Name": "GEPS.DIAG.6_PRMM.ERGE10",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 6 heures >= 25 mm [%]",
+                "Name": "GEPS.DIAG.6_PRMM.ERGE25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 6 heures >= 50 mm [%]",
+                "Name": "GEPS.DIAG.6_PRMM.ERGE50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 6 heures >= 100 mm [%]",
+                "Name": "GEPS.DIAG.6_PRMM.ERGE100",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 1 mm [%]",
                 "Name": "GEPS.DIAG.12_PRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 2.5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.12_PRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 5 mm [%]",
                 "Name": "GEPS.DIAG.12_PRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 10 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 10 mm [%]",
                 "Name": "GEPS.DIAG.12_PRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 15 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 15 mm [%]",
                 "Name": "GEPS.DIAG.12_PRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 20 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 20 mm [%]",
                 "Name": "GEPS.DIAG.12_PRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 25 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 25 mm [%]",
                 "Name": "GEPS.DIAG.12_PRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 30 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 30 mm [%]",
                 "Name": "GEPS.DIAG.12_PRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 40 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 40 mm [%]",
                 "Name": "GEPS.DIAG.12_PRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 50 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 50 mm [%]",
                 "Name": "GEPS.DIAG.12_PRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 75 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 75 mm [%]",
                 "Name": "GEPS.DIAG.12_PRMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 100 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 100 mm [%]",
                 "Name": "GEPS.DIAG.12_PRMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 150 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 12 heures >= 150 mm [%]",
                 "Name": "GEPS.DIAG.12_PRMM.ERGE150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 1 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 1 mm [%]",
                 "Name": "GEPS.DIAG.24_PRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 2.5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.24_PRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 5 mm [%]",
                 "Name": "GEPS.DIAG.24_PRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 10 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 10 mm [%]",
                 "Name": "GEPS.DIAG.24_PRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 15 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 15 mm [%]",
                 "Name": "GEPS.DIAG.24_PRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 20 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 20 mm [%]",
                 "Name": "GEPS.DIAG.24_PRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 25 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 25 mm [%]",
                 "Name": "GEPS.DIAG.24_PRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 30 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 30 mm [%]",
                 "Name": "GEPS.DIAG.24_PRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 40 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 40 mm [%]",
                 "Name": "GEPS.DIAG.24_PRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 50 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 50 mm [%]",
                 "Name": "GEPS.DIAG.24_PRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 75 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 75 mm [%]",
                 "Name": "GEPS.DIAG.24_PRMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 100 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 100 mm [%]",
                 "Name": "GEPS.DIAG.24_PRMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 150 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 150 mm [%]",
                 "Name": "GEPS.DIAG.24_PRMM.ERGE150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 200 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 24 heures >= 200 mm [%]",
                 "Name": "GEPS.DIAG.24_PRMM.ERGE200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 1 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 1 mm [%]",
                 "Name": "GEPS.DIAG.48_PRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 2.5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.48_PRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 5 mm [%]",
                 "Name": "GEPS.DIAG.48_PRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 10 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 10 mm [%]",
                 "Name": "GEPS.DIAG.48_PRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 15 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 15 mm [%]",
                 "Name": "GEPS.DIAG.48_PRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 20 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 20 mm [%]",
                 "Name": "GEPS.DIAG.48_PRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 25 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 25 mm [%]",
                 "Name": "GEPS.DIAG.48_PRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 30 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 30 mm [%]",
                 "Name": "GEPS.DIAG.48_PRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 40 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 40 mm [%]",
                 "Name": "GEPS.DIAG.48_PRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 50 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 50 mm [%]",
                 "Name": "GEPS.DIAG.48_PRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 75 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 75 mm [%]",
                 "Name": "GEPS.DIAG.48_PRMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 100 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 100 mm [%]",
                 "Name": "GEPS.DIAG.48_PRMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 150 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 150 mm [%]",
                 "Name": "GEPS.DIAG.48_PRMM.ERGE150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 200 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 48 heures >= 200 mm [%]",
                 "Name": "GEPS.DIAG.48_PRMM.ERGE200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 1 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 1 mm [%]",
                 "Name": "GEPS.DIAG.72_PRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 2.5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.72_PRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 5 mm [%]",
                 "Name": "GEPS.DIAG.72_PRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 10 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 10 mm [%]",
                 "Name": "GEPS.DIAG.72_PRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 15 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 15 mm [%]",
                 "Name": "GEPS.DIAG.72_PRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 20 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 20 mm [%]",
                 "Name": "GEPS.DIAG.72_PRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 25 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 25 mm [%]",
                 "Name": "GEPS.DIAG.72_PRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 30 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 30 mm [%]",
                 "Name": "GEPS.DIAG.72_PRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 40 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 40 mm [%]",
                 "Name": "GEPS.DIAG.72_PRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 50 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 50 mm [%]",
                 "Name": "GEPS.DIAG.72_PRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 75 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 75 mm [%]",
                 "Name": "GEPS.DIAG.72_PRMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 100 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 100 mm [%]",
                 "Name": "GEPS.DIAG.72_PRMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 150 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 150 mm [%]",
                 "Name": "GEPS.DIAG.72_PRMM.ERGE150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 200 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 72 heures >= 200 mm [%]",
                 "Name": "GEPS.DIAG.72_PRMM.ERGE200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 1 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 1 mm [%]",
                 "Name": "GEPS.DIAG.96_PRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 2.5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.96_PRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 5 mm [%]",
                 "Name": "GEPS.DIAG.96_PRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 10 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 10 mm [%]",
                 "Name": "GEPS.DIAG.96_PRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 15 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 15 mm [%]",
                 "Name": "GEPS.DIAG.96_PRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 20 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 20 mm [%]",
                 "Name": "GEPS.DIAG.96_PRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 25 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 25 mm [%]",
                 "Name": "GEPS.DIAG.96_PRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 30 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 30 mm [%]",
                 "Name": "GEPS.DIAG.96_PRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 40 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 40 mm [%]",
                 "Name": "GEPS.DIAG.96_PRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 50 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 50 mm [%]",
                 "Name": "GEPS.DIAG.96_PRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 75 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 75 mm [%]",
                 "Name": "GEPS.DIAG.96_PRMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 100 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 100 mm [%]",
                 "Name": "GEPS.DIAG.96_PRMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 150 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 150 mm [%]",
                 "Name": "GEPS.DIAG.96_PRMM.ERGE150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 200 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 96 heures >= 200 mm [%]",
                 "Name": "GEPS.DIAG.96_PRMM.ERGE200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 1 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 1 mm [%]",
                 "Name": "GEPS.DIAG.120_PRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 2.5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.120_PRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 5 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 5 mm [%]",
                 "Name": "GEPS.DIAG.120_PRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 10 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 10 mm [%]",
                 "Name": "GEPS.DIAG.120_PRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 15 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 15 mm [%]",
                 "Name": "GEPS.DIAG.120_PRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 20 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 20 mm [%]",
                 "Name": "GEPS.DIAG.120_PRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 25 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 25 mm [%]",
                 "Name": "GEPS.DIAG.120_PRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 30 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 30 mm [%]",
                 "Name": "GEPS.DIAG.120_PRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 40 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 40 mm [%]",
                 "Name": "GEPS.DIAG.120_PRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 50 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 50 mm [%]",
                 "Name": "GEPS.DIAG.120_PRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 75 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 75 mm [%]",
                 "Name": "GEPS.DIAG.120_PRMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 100 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 100 mm [%]",
                 "Name": "GEPS.DIAG.120_PRMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 150 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 150 mm [%]",
                 "Name": "GEPS.DIAG.120_PRMM.ERGE150",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 200 mm [%]",
+                "Title": "SGPE - Probabilit\u00e9 de pr\u00e9cipitations - accumulation sur 120 heures >= 200 mm [%]",
                 "Name": "GEPS.DIAG.120_PRMM.ERGE200",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (0e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 6 heures [mm] (0e centile)",
+                "Name": "GEPS.DIAG.6_PRMM.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 6 heures [mm] (25e centile)",
+                "Name": "GEPS.DIAG.6_PRMM.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 6 heures [mm] (50e centile)",
+                "Name": "GEPS.DIAG.6_PRMM.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 6 heures [mm] (75e centile)",
+                "Name": "GEPS.DIAG.6_PRMM.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 6 heures [mm] (100e centile)",
+                "Name": "GEPS.DIAG.6_PRMM.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (0e centile)",
                 "Name": "GEPS.DIAG.12_PRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (10e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (10e centile)",
                 "Name": "GEPS.DIAG.12_PRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (25e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (25e centile)",
                 "Name": "GEPS.DIAG.12_PRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (50e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (50e centile)",
                 "Name": "GEPS.DIAG.12_PRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (75e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (75e centile)",
                 "Name": "GEPS.DIAG.12_PRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (90e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (90e centile)",
                 "Name": "GEPS.DIAG.12_PRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (100e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (100e centile)",
                 "Name": "GEPS.DIAG.12_PRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (moyenne)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (moyenne)",
                 "Name": "GEPS.DIAG.12_PRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (\u00e9cart-type)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 12 heures [mm] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.12_PRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (0e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (0e centile)",
                 "Name": "GEPS.DIAG.24_PRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (10e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (10e centile)",
                 "Name": "GEPS.DIAG.24_PRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (25e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (25e centile)",
                 "Name": "GEPS.DIAG.24_PRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (50e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (50e centile)",
                 "Name": "GEPS.DIAG.24_PRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (75e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (75e centile)",
                 "Name": "GEPS.DIAG.24_PRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (90e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (90e centile)",
                 "Name": "GEPS.DIAG.24_PRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (100e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (100e centile)",
                 "Name": "GEPS.DIAG.24_PRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (moyenne)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (moyenne)",
                 "Name": "GEPS.DIAG.24_PRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (\u00e9cart-type)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 24 heures [mm] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.24_PRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (0e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (0e centile)",
                 "Name": "GEPS.DIAG.48_PRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (10e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (10e centile)",
                 "Name": "GEPS.DIAG.48_PRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (25e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (25e centile)",
                 "Name": "GEPS.DIAG.48_PRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (50e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (50e centile)",
                 "Name": "GEPS.DIAG.48_PRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (75e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (75e centile)",
                 "Name": "GEPS.DIAG.48_PRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (90e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (90e centile)",
                 "Name": "GEPS.DIAG.48_PRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (100e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (100e centile)",
                 "Name": "GEPS.DIAG.48_PRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (moyenne)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (moyenne)",
                 "Name": "GEPS.DIAG.48_PRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (\u00e9cart-type)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 48 heures [mm] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.48_PRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (0e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (0e centile)",
                 "Name": "GEPS.DIAG.72_PRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (10e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (10e centile)",
                 "Name": "GEPS.DIAG.72_PRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (25e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (25e centile)",
                 "Name": "GEPS.DIAG.72_PRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (50e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (50e centile)",
                 "Name": "GEPS.DIAG.72_PRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (75e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (75e centile)",
                 "Name": "GEPS.DIAG.72_PRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (90e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (90e centile)",
                 "Name": "GEPS.DIAG.72_PRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (100e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (100e centile)",
                 "Name": "GEPS.DIAG.72_PRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (moyenne)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (moyenne)",
                 "Name": "GEPS.DIAG.72_PRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (\u00e9cart-type)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 72 heures [mm] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.72_PRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (0e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (0e centile)",
                 "Name": "GEPS.DIAG.96_PRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (10e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (10e centile)",
                 "Name": "GEPS.DIAG.96_PRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (25e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (25e centile)",
                 "Name": "GEPS.DIAG.96_PRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (50e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (50e centile)",
                 "Name": "GEPS.DIAG.96_PRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (75e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (75e centile)",
                 "Name": "GEPS.DIAG.96_PRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (90e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (90e centile)",
                 "Name": "GEPS.DIAG.96_PRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (100e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (100e centile)",
                 "Name": "GEPS.DIAG.96_PRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (moyenne)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (moyenne)",
                 "Name": "GEPS.DIAG.96_PRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (\u00e9cart-type)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 96 heures [mm] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.96_PRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (0e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (0e centile)",
                 "Name": "GEPS.DIAG.120_PRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (10e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (10e centile)",
                 "Name": "GEPS.DIAG.120_PRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (25e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (25e centile)",
                 "Name": "GEPS.DIAG.120_PRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (50e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (50e centile)",
                 "Name": "GEPS.DIAG.120_PRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (75e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (75e centile)",
                 "Name": "GEPS.DIAG.120_PRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (90e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (90e centile)",
                 "Name": "GEPS.DIAG.120_PRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (100e centile)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (100e centile)",
                 "Name": "GEPS.DIAG.120_PRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (moyenne)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (moyenne)",
                 "Name": "GEPS.DIAG.120_PRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (\u00e9cart-type)",
+                "Title": "SGPE - Pr\u00e9cipitations - accumulation sur 120 heures [mm] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.120_PRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
@@ -20603,20 +22764,116 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Probabilit\u00e9 de rafales de vent \u00e0 10 m au dessus du sol - maximum sur 12 heures >= 10 m/s [%]",
+                "Title": "SGPE - Probabilit\u00e9 de rafales de vent \u00e0 10 m au dessus du sol - maximum sur 3 heures >= 15 m/s [%]",
+                "Name": "GEPS.DIAG.3_GUST-15MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de rafales de vent \u00e0 10 m au dessus du sol - maximum sur 3 heures >= 25 m/s [%]",
+                "Name": "GEPS.DIAG.3_GUST-25MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de rafales de vent \u00e0 10 m au dessus du sol - maximum sur 3 heures >= 35 m/s [%]",
+                "Name": "GEPS.DIAG.3_GUST-35MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de rafales de vent \u00e0 10 m au dessus du sol - maximum sur 6 heures >= 15 m/s [%]",
+                "Name": "GEPS.DIAG.6_GUST-15MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de rafales de vent \u00e0 10 m au dessus du sol - maximum sur 6 heures >= 25 m/s [%]",
+                "Name": "GEPS.DIAG.6_GUST-25MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de rafales de vent \u00e0 10 m au dessus du sol - maximum sur 6 heures >= 35 m/s [%]",
+                "Name": "GEPS.DIAG.6_GUST-35MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de rafales de vent \u00e0 10 m au dessus du sol - maximum sur 12 heures >= 10 m/s [%]",
                 "Name": "GEPS.DIAG.12_GUST-10MS.PROB",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de rafales de vent \u00e0 10 m au dessus du sol - maximum sur 12 heures >= 15 m/s [%]",
+                "Title": "SGPE - Probabilit\u00e9 de rafales de vent \u00e0 10 m au dessus du sol - maximum sur 12 heures >= 15 m/s [%]",
                 "Name": "GEPS.DIAG.12_GUST-15MS.PROB",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de rafales de vent \u00e0 10 m au dessus du sol - maximum sur 12 heures >= 25 m/s [%]",
+                "Title": "SGPE - Probabilit\u00e9 de rafales de vent \u00e0 10 m au dessus du sol - maximum sur 12 heures >= 25 m/s [%]",
                 "Name": "GEPS.DIAG.12_GUST-25MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Rafales de vent \u00e0 10 m au-dessus du sol - maximum sur 3 heures [m/s] (0e centile)",
+                "Name": "GEPS.DIAG.3_GUST.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Rafales de vent \u00e0 10 m au-dessus du sol - maximum sur 3 heures [m/s] (25e centile)",
+                "Name": "GEPS.DIAG.3_GUST.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Rafales de vent \u00e0 10 m au-dessus du sol - maximum sur 3 heures [m/s] (50e centile)",
+                "Name": "GEPS.DIAG.3_GUST.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Rafales de vent \u00e0 10 m au-dessus du sol - maximum sur 3 heures [m/s] (75e centile)",
+                "Name": "GEPS.DIAG.3_GUST.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Rafales de vent \u00e0 10 m au-dessus du sol - maximum sur 3 heures [m/s] (100e centile)",
+                "Name": "GEPS.DIAG.3_GUST.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Rafales de vent \u00e0 10 m au-dessus du sol - maximum sur 6 heures [m/s] (0e centile)",
+                "Name": "GEPS.DIAG.6_GUST.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Rafales de vent \u00e0 10 m au-dessus du sol - maximum sur 6 heures [m/s] (25e centile)",
+                "Name": "GEPS.DIAG.6_GUST.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Rafales de vent \u00e0 10 m au-dessus du sol - maximum sur 6 heures [m/s] (50e centile)",
+                "Name": "GEPS.DIAG.6_GUST.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Rafales de vent \u00e0 10 m au-dessus du sol - maximum sur 6 heures [m/s] (75e centile)",
+                "Name": "GEPS.DIAG.6_GUST.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Rafales de vent \u00e0 10 m au-dessus du sol - maximum sur 6 heures [m/s] (100e centile)",
+                "Name": "GEPS.DIAG.6_GUST.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               }
@@ -20628,338 +22885,375 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 0 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 0 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T8.ERGE0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 5 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 5 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T8.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 10 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 10 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T8.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 15 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 15 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T8.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 20 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 20 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T8.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 25 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 25 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T8.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 30 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 30 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T8.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 35 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 35 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T8.ERGE35",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 40 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= 40 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T8.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= -5 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= -5 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T8.ERGE-5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= -10 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= -10 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T8.ERGE-10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= -15 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= -15 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T8.ERGE-15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= -20 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= -20 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T8.ERGE-20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= -25 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= -25 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T8.ERGE-25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= -30 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - maximum sur 24 heures >= -30 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T8.ERGE-30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= 0 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= 0 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T7.ERLE0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= 5 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= 5 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T7.ERLE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= 10 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= 10 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T7.ERLE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= 15 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= 15 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T7.ERLE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= 20 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= 20 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T7.ERLE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= 25 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= 25 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T7.ERLE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -5 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -5 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T7.ERLE-5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -10 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -10 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T7.ERLE-10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -15 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -15 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T7.ERLE-15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -20 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -20 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T7.ERLE-20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -25 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -25 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T7.ERLE-25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -30 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -30 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T7.ERLE-30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -35 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -35 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T7.ERLE-35",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -40 \u00b0C [%]",
+                "Title": "SGPE - Probabilit\u00e9 de temp\u00e9rature \u00e0 2 m au-dessus du sol - minimum sur 24 heures <= -40 \u00b0C [%]",
                 "Name": "GEPS.DIAG.24_T7.ERLE-40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (0e centile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (0e centile)",
                 "Name": "GEPS.DIAG.24_T8.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (10e centile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (10e centile)",
                 "Name": "GEPS.DIAG.24_T8.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (25e centile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (25e centile)",
                 "Name": "GEPS.DIAG.24_T8.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (50e centile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (50e centile)",
                 "Name": "GEPS.DIAG.24_T8.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (75e centile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (75e centile)",
                 "Name": "GEPS.DIAG.24_T8.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (90e centile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (90e centile)",
                 "Name": "GEPS.DIAG.24_T8.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (100e centile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (100e centile)",
                 "Name": "GEPS.DIAG.24_T8.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (moyenne)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (moyenne)",
                 "Name": "GEPS.DIAG.24_T8.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (\u00e9cart-type)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - maximum sur 24 heures [\u00b0C] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.24_T8.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (0e centile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (0e centile)",
                 "Name": "GEPS.DIAG.24_T7.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (10e centile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (10e centile)",
                 "Name": "GEPS.DIAG.24_T7.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (25e centile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (25e centile)",
                 "Name": "GEPS.DIAG.24_T7.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (50e centile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (50e centile)",
                 "Name": "GEPS.DIAG.24_T7.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (75e centile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (75e centile)",
                 "Name": "GEPS.DIAG.24_T7.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (90e centile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (90e centile)",
                 "Name": "GEPS.DIAG.24_T7.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (100e centile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (100e centile)",
                 "Name": "GEPS.DIAG.24_T7.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (moyenne)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (moyenne)",
                 "Name": "GEPS.DIAG.24_T7.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (\u00e9cart-type)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol - minimum sur 24 heures [\u00b0C] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.24_T7.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (0e percentile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (0e percentile)",
                 "Name": "GEPS.DIAG.3_TT.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (10e percentile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (10e percentile)",
                 "Name": "GEPS.DIAG.3_TT.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (25e percentile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (25e percentile)",
                 "Name": "GEPS.DIAG.3_TT.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (50e percentile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (50e percentile)",
                 "Name": "GEPS.DIAG.3_TT.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (75e percentile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (75e percentile)",
                 "Name": "GEPS.DIAG.3_TT.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (90e percentile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (90e percentile)",
                 "Name": "GEPS.DIAG.3_TT.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (100e percentile)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (100e percentile)",
                 "Name": "GEPS.DIAG.3_TT.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (moyenne)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (moyenne)",
                 "Name": "GEPS.DIAG.3_TT.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (\u00e9cart-type)",
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 2 m au-dessus du sol [\u00b0C] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.3_TT.ERSSTD",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "Temp\u00e9rature de l'air \u00e0 850 mb",
+            "Name": "Temp\u00e9rature de l'air \u00e0 850 mb",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 850 mb [\u00b0C] (0e percentile)",
+                "Name": "GEPS.DIAG_TT_850.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 850 mb [\u00b0C] (25e percentile)",
+                "Name": "GEPS.DIAG_TT_850.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 850 mb [\u00b0C] (50e percentile)",
+                "Name": "GEPS.DIAG_TT_850.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 850 mb [\u00b0C] (75e percentile)",
+                "Name": "GEPS.DIAG_TT_850.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Temp\u00e9rature de l'air \u00e0 850 mb [\u00b0C] (100e percentile)",
+                "Name": "GEPS.DIAG_TT_850.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               }
@@ -20971,175 +23265,241 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 20 km/h [%]",
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 3 heures >= 10 m/s [%]",
+                "Name": "GEPS.DIAG.3_UVMX.ERGE36",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 3 heures >= 15 m/s [%]",
+                "Name": "GEPS.DIAG.3_UVMX.ERGE54",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 3 heures >= 20 m/s [%]",
+                "Name": "GEPS.DIAG.3_UVMX.ERGE72",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 3 heures >= 25 m/s [%]",
+                "Name": "GEPS.DIAG.3_UVMX.ERGE90",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 6 heures >= 10 m/s [%]",
+                "Name": "GEPS.DIAG.6_UVMX.ERGE36",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 6 heures >= 15 m/s [%]",
+                "Name": "GEPS.DIAG.6_UVMX.ERGE54",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 6 heures >= 20 m/s [%]",
+                "Name": "GEPS.DIAG.6_UVMX.ERGE72",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 6 heures >= 25 m/s [%]",
+                "Name": "GEPS.DIAG.6_UVMX.ERGE90",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 5.5556 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 30 km/h [%]",
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 8.3333 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 37 km/h [%]",
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 10 m/s [%]",
+                "Name": "GEPS.DIAG.12_UVMX.ERGE36",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 10.278 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE37",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 40 km/h [%]",
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 11.111 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 50 km/h [%]",
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 13.889 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 62 km/h [%]",
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 15 m/s [%]",
+                "Name": "GEPS.DIAG.12_UVMX.ERGE54",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 17.222 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE62",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 65 km/h [%]",
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 18.056 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE65",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 75 km/h [%]",
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 20.833 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 90 km/h [%]",
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 24.444 m/s [%]",
+                "Name": "GEPS.DIAG.12_UVMX.ERGE88",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 25 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 100 km/h [%]",
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 27.778 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 118 km/h [%]",
+                "Title": "SGPE - Probabilit\u00e9 de vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures >= 32.778 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE118",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (0e centile)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (0e centile)",
                 "Name": "GEPS.DIAG.12_UVMX.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (10e centile)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (10e centile)",
                 "Name": "GEPS.DIAG.12_UVMX.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (25e centile)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (25e centile)",
                 "Name": "GEPS.DIAG.12_UVMX.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (50e centile)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (50e centile)",
                 "Name": "GEPS.DIAG.12_UVMX.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (75e centile)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (75e centile)",
                 "Name": "GEPS.DIAG.12_UVMX.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (90e centile)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (90e centile)",
                 "Name": "GEPS.DIAG.12_UVMX.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (100e centile)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (100e centile)",
                 "Name": "GEPS.DIAG.12_UVMX.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (moyenne)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (moyenne)",
                 "Name": "GEPS.DIAG.12_UVMX.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (\u00e9cart-type)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol - maximum sur 12 heures [m/s] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.12_UVMX.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (0e percentile)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (0e percentile)",
                 "Name": "GEPS.DIAG.3_WSPD.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (10e percentile)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (10e percentile)",
                 "Name": "GEPS.DIAG.3_WSPD.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (25e percentile)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (25e percentile)",
                 "Name": "GEPS.DIAG.3_WSPD.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (50e percentile)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (50e percentile)",
                 "Name": "GEPS.DIAG.3_WSPD.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (75e percentile)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (75e percentile)",
                 "Name": "GEPS.DIAG.3_WSPD.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (90e percentile)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (90e percentile)",
                 "Name": "GEPS.DIAG.3_WSPD.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (100e percentile)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (100e percentile)",
                 "Name": "GEPS.DIAG.3_WSPD.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (moyenne)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (moyenne)",
                 "Name": "GEPS.DIAG.3_WSPD.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (\u00e9cart-type)",
+                "Title": "SGPE - Vitesse du vent \u00e0 10 m au-dessus du sol [m/s] (\u00e9cart-type)",
                 "Name": "GEPS.DIAG.3_WSPD.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21152,26 +23512,44 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 250 mb [m/s] (moyenne) (pr\u00e9vision aux 3 heures)",
-                "Name": "GEPS.DIAG.3_WSPD_250.ERMEAN",
+                "Title": "SGPE - Vitesse du vent \u00e0 250 mb [m/s] (0e percentile)",
+                "Name": "GEPS.DIAG_WSPD_250.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 250 mb [m/s] (moyenne) (pr\u00e9vision aux 6 heures)",
-                "Name": "GEPS.DIAG.6_WSPD_250.ERMEAN",
+                "Title": "SGPE - Vitesse du vent \u00e0 250 mb [m/s] (25e percentile)",
+                "Name": "GEPS.DIAG_WSPD_250.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 250 mb [m/s] (\u00e9cart-type) (pr\u00e9vision aux 3 heures)",
-                "Name": "GEPS.DIAG.3_WSPD_250.ERSSTD",
+                "Title": "SGPE - Vitesse du vent \u00e0 250 mb [m/s] (50e percentile)",
+                "Name": "GEPS.DIAG_WSPD_250.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 250 mb [m/s] (\u00e9cart-type) (pr\u00e9vision aux 6 heures)",
-                "Name": "GEPS.DIAG.6_WSPD_250.ERSSTD",
+                "Title": "SGPE - Vitesse du vent \u00e0 250 mb [m/s] (75e percentile)",
+                "Name": "GEPS.DIAG_WSPD_250.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Vitesse du vent \u00e0 250 mb [m/s] (100e percentile)",
+                "Name": "GEPS.DIAG_WSPD_250.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Vitesse du vent \u00e0 250 mb [m/s] (moyenne)",
+                "Name": "GEPS.DIAG_WSPD_250.ERMEAN",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Vitesse du vent \u00e0 250 mb [m/s] (\u00e9cart-type)",
+                "Name": "GEPS.DIAG_WSPD_250.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               }
@@ -21183,26 +23561,44 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 850 mb [m/s] (moyenne) (pr\u00e9vision aux 3 heures)",
-                "Name": "GEPS.DIAG.3_WSPD_850.ERMEAN",
+                "Title": "SGPE - Vitesse du vent \u00e0 850 mb [m/s] (0e percentile)",
+                "Name": "GEPS.DIAG_WSPD_850.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 850 mb [m/s] (moyenne) (pr\u00e9vision aux 6 heures)",
-                "Name": "GEPS.DIAG.6_WSPD_850.ERMEAN",
+                "Title": "SGPE - Vitesse du vent \u00e0 850 mb [m/s] (25e percentile)",
+                "Name": "GEPS.DIAG_WSPD_850.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 850 mb [m/s] (\u00e9cart-type) (pr\u00e9vision aux 3 heures)",
-                "Name": "GEPS.DIAG.3_WSPD_850.ERSSTD",
+                "Title": "SGPE - Vitesse du vent \u00e0 850 mb [m/s] (50e percentile)",
+                "Name": "GEPS.DIAG_WSPD_850.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Vitesse du vent \u00e0 850 mb [m/s] (\u00e9cart-type) (pr\u00e9vision aux 6 heures)",
-                "Name": "GEPS.DIAG.6_WSPD_850.ERSSTD",
+                "Title": "SGPE - Vitesse du vent \u00e0 850 mb [m/s] (75e percentile)",
+                "Name": "GEPS.DIAG_WSPD_850.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Vitesse du vent \u00e0 850 mb [m/s] (100e percentile)",
+                "Name": "GEPS.DIAG_WSPD_850.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Vitesse du vent \u00e0 850 mb [m/s] (moyenne)",
+                "Name": "GEPS.DIAG_WSPD_850.ERMEAN",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "SGPE - Vitesse du vent \u00e0 850 mb [m/s] (\u00e9cart-type)",
+                "Name": "GEPS.DIAG_WSPD_850.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               }
@@ -22304,61 +24700,61 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "GDPS.DIAG - Granules de glace - accumulation sur 1 heure [mm]",
+            "Title": "GDPS.DIAG - Granules de glace - accumulation sur 1 heure (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.DIAG_PE_PT1H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Granules de glace - accumulation sur 3 heures [mm]",
+            "Title": "GDPS.DIAG - Granules de glace - accumulation sur 3 heures (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.DIAG_PE_PT3H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Granules de glace - accumulation sur 6 heures [mm]",
+            "Title": "GDPS.DIAG - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.DIAG_PE_PT6H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Granules de glace - accumulation sur 12 heures [mm]",
+            "Title": "GDPS.DIAG - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.DIAG_PE_PT12H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Granules de glace - accumulation sur 24 heures [mm]",
+            "Title": "GDPS.DIAG - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.DIAG_PE_PT24H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Neige - accumulation sur 1 heure [mm]",
+            "Title": "GDPS.DIAG - Neige - accumulation sur 1 heure (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.DIAG_SN_PT1H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Neige - accumulation sur 3 heures [mm]",
+            "Title": "GDPS.DIAG - Neige - accumulation sur 3 heures (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.DIAG_SN_PT3H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Neige - accumulation sur 6 heures [mm]",
+            "Title": "GDPS.DIAG - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.DIAG_SN_PT6H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Neige - accumulation sur 12 heures [mm]",
+            "Title": "GDPS.DIAG - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.DIAG_SN_PT12H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Neige - accumulation sur 24 heures [mm]",
+            "Title": "GDPS.DIAG - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.DIAG_SN_PT24H",
             "isLeaf": true,
             "isTemporal": true
@@ -22394,31 +24790,31 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 1 heure [mm]",
+            "Title": "GDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 1 heure (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.DIAG_FR_PT1H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 3 heures [mm]",
+            "Title": "GDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 3 heures (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.DIAG_FR_PT3H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 6 heures [mm]",
+            "Title": "GDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.DIAG_FR_PT6H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm]",
+            "Title": "GDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.DIAG_FR_PT12H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm]",
+            "Title": "GDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.DIAG_FR_PT24H",
             "isLeaf": true,
             "isTemporal": true
@@ -22683,7 +25079,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS.ETA - Granules de glace accumul\u00e9es [mm]",
+            "Title": "GDPS.ETA - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.ETA_PE",
             "isLeaf": true,
             "isTemporal": true
@@ -22803,7 +25199,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS.ETA - Neige accumul\u00e9e [mm]",
+            "Title": "GDPS.ETA - Neige accumul\u00e9e (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.ETA_SN",
             "isLeaf": true,
             "isTemporal": true
@@ -22821,7 +25217,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS.ETA - Pluie vergla\u00e7ante accumul\u00e9e [mm]",
+            "Title": "GDPS.ETA - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) [mm]",
             "Name": "GDPS.ETA_FR",
             "isLeaf": true,
             "isTemporal": true
@@ -22937,6 +25333,12 @@ export default {
           {
             "Title": "GDPS.ETA - Pr\u00e9cipitations convectives accumul\u00e9es [mm]",
             "Name": "GDPS.ETA_PC",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.ETA - Rapport de m\u00e9lange de l'ozone en surface [kg/kg]",
+            "Name": "GDPS.ETA_O3MixingRatio",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -26613,439 +29015,439 @@ export default {
         ]
       },
       {
-        "Title": "SGPD-WEonG [experimental]",
-        "Name": "SGPD-WEonG [experimental]",
+        "Title": "SGPD-ETsurG [experimental]",
+        "Name": "SGPD-ETsurG [experimental]",
         "isLeaf": false,
         "children": [
           {
-            "Title": "GDPS-WEonG - Caract\u00e8re de la pr\u00e9cipitation",
-            "Name": "GDPS-WEonG_15km_PrecipCharacter",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "GDPS-WEonG - Caract\u00e8re de la pr\u00e9cipitation (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Caract\u00e8re de la pr\u00e9cipitation (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_PrecipCharacter.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Deuxi\u00e8me type de pr\u00e9cipitation le plus commun",
-            "Name": "GDPS-WEonG_15km_SecondMostCommonPrecipType",
+            "Title": "SGPD-ETsurG - Caract\u00e8re de la pr\u00e9cipitation [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_PrecipCharacter",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Deuxi\u00e8me type de pr\u00e9cipitation le plus commun (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Deuxi\u00e8me type de pr\u00e9cipitation le plus commun (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_SecondMostCommonPrecipType.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Direction du vent [deg true]",
-            "Name": "GDPS-WEonG_15km_WindDir",
+            "Title": "SGPD-ETsurG - Deuxi\u00e8me type de pr\u00e9cipitation le plus commun [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_SecondMostCommonPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Direction du vent [deg true] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Direction du vent [deg true] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_WindDir.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Etat du ciel jour/nuit (couverture et opacit\u00e9 nuageuse combin\u00e9es)",
-            "Name": "GDPS-WEonG_15km_SkyState",
+            "Title": "SGPD-ETsurG - Direction du vent [deg true] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_WindDir",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Etat du ciel jour/nuit (couverture et opacit\u00e9 nuageuse combin\u00e9es) (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Etat du ciel jour/nuit (couverture et opacit\u00e9 nuageuse combin\u00e9es) (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_SkyState.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Hauteur du niveau de la neige [m]",
-            "Name": "GDPS-WEonG_15km_SnowLevelHeight",
+            "Title": "SGPD-ETsurG - Etat du ciel jour/nuit (couverture et opacit\u00e9 nuageuse combin\u00e9es) [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_SkyState",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Hauteur du niveau de la neige [m] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Hauteur du niveau de la neige [m] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_SnowLevelHeight.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Indice d'intensit\u00e9 des pr\u00e9cipitations totales",
-            "Name": "GDPS-WEonG_15km_TotalPrecipIntensityIndex",
+            "Title": "SGPD-ETsurG - Hauteur du niveau de la neige [m] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_SnowLevelHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Indice d'intensit\u00e9 des pr\u00e9cipitations totales (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Indice d'intensit\u00e9 des pr\u00e9cipitations totales (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_TotalPrecipIntensityIndex.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Orographie du mod\u00e8le [m]",
-            "Name": "GDPS-WEonG_15km_Orography",
+            "Title": "SGPD-ETsurG - Indice d'intensit\u00e9 des pr\u00e9cipitations totales [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_TotalPrecipIntensityIndex",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Orographie du mod\u00e8le [m] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Orographie du mod\u00e8le [m] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_Orography.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 d'occurence d'orage [%]",
-            "Name": "GDPS-WEonG_15km_Thunderstorm-Prob",
+            "Title": "SGPD-ETsurG - Orographie du mod\u00e8le [m] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_Orography",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 d'occurence d'orage [%] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 d'occurence d'orage [%] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_Thunderstorm-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de bourrasque de neige [%]",
-            "Name": "GDPS-WEonG_15km_SnowSqualls-Prob",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 d'occurence d'orage [%] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_Thunderstorm-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de bourrasque de neige [%] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de bourrasque de neige [%] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_SnowSqualls-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de bruine [%]",
-            "Name": "GDPS-WEonG_15km_Drizzle-Prob",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de bourrasque de neige [%] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_SnowSqualls-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de bruine [%] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de bruine [%] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_Drizzle-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de bruine vergla\u00e7ante [%]",
-            "Name": "GDPS-WEonG_15km_FreezingDrizzle-Prob",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de bruine [%] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_Drizzle-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de bruine vergla\u00e7ante [%] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de bruine vergla\u00e7ante [%] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_FreezingDrizzle-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de gr\u00e9sil [%]",
-            "Name": "GDPS-WEonG_15km_IcePellets-Prob",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de bruine vergla\u00e7ante [%] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_FreezingDrizzle-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de gr\u00e9sil [%] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de gr\u00e9sil [%] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_IcePellets-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de neige [%]",
-            "Name": "GDPS-WEonG_15km_Snow-Prob",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de gr\u00e9sil [%] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_IcePellets-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de neige [%] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de neige [%] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_Snow-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de pluie [%]",
-            "Name": "GDPS-WEonG_15km_Rain-Prob",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de neige [%] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_Snow-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de pluie [%] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de pluie [%] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_Rain-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de pluie vergla\u00e7ante [%]",
-            "Name": "GDPS-WEonG_15km_FreezingRain-Prob",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de pluie [%] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_Rain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de pluie vergla\u00e7ante [%] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de pluie vergla\u00e7ante [%] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_FreezingRain-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de poudrerie [%]",
-            "Name": "GDPS-WEonG_15km_BlowingSnow-Prob",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de pluie vergla\u00e7ante [%] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_FreezingRain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de poudrerie [%] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de poudrerie [%] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_BlowingSnow-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de pr\u00e9cipitation [%]",
-            "Name": "GDPS-WEonG_15km_Precip-Prob",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de poudrerie [%] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_BlowingSnow-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de pr\u00e9cipitation [%] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de pr\u00e9cipitation [%] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_Precip-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de pr\u00e9cipitation liquide [%]",
-            "Name": "GDPS-WEonG_15km_LiquidPrecip-Prob",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de pr\u00e9cipitation [%] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_Precip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de pr\u00e9cipitation liquide [%] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de pr\u00e9cipitation liquide [%] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_LiquidPrecip-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de pr\u00e9cipitation vergla\u00e7ante [%]",
-            "Name": "GDPS-WEonG_15km_FreezingPrecip-Prob",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de pr\u00e9cipitation liquide [%] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_LiquidPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probabilit\u00e9 de pr\u00e9cipitation vergla\u00e7ante [%] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de pr\u00e9cipitation vergla\u00e7ante [%] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_FreezingPrecip-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Proportion terre/eau",
-            "Name": "GDPS-WEonG_15km_LandWater-Proportion",
+            "Title": "SGPD-ETsurG - Probabilit\u00e9 de pr\u00e9cipitation vergla\u00e7ante [%] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_FreezingPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Proportion terre/eau (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Proportion terre/eau (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_LandWater-Proportion.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Pr\u00e9sence de poudrerie",
-            "Name": "GDPS-WEonG_15km_BlowingSnowPresence",
+            "Title": "SGPD-ETsurG - Proportion terre/eau [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_LandWater-Proportion",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Pr\u00e9sence de poudrerie (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Pr\u00e9sence de poudrerie (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_BlowingSnowPresence.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Quantit\u00e9 conditionnelle de granul\u00e9s de glace solide [m]",
-            "Name": "GDPS-WEonG_15km_IcePelletsCondAmt",
+            "Title": "SGPD-ETsurG - Pr\u00e9sence de poudrerie [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_BlowingSnowPresence",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Quantit\u00e9 conditionnelle de granul\u00e9s de glace solide [m] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Quantit\u00e9 conditionnelle de granul\u00e9s de glace solide [m] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_IcePelletsCondAmt.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Quantit\u00e9 conditionnelle de neige solide [m]",
-            "Name": "GDPS-WEonG_15km_SolidSnowCondAmt",
+            "Title": "SGPD-ETsurG - Quantit\u00e9 conditionnelle de granul\u00e9s de glace solide [m] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_IcePelletsCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Quantit\u00e9 conditionnelle de neige solide [m] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Quantit\u00e9 conditionnelle de neige solide [m] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_SolidSnowCondAmt.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation [m]",
-            "Name": "GDPS-WEonG_15km_PrecipCondAmt",
+            "Title": "SGPD-ETsurG - Quantit\u00e9 conditionnelle de neige solide [m] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_SolidSnowCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation [m] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation [m] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_PrecipCondAmt.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation liquide [m]",
-            "Name": "GDPS-WEonG_15km_LiquidPrecipCondAmt",
+            "Title": "SGPD-ETsurG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation [m] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_PrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation liquide [m] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation liquide [m] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_LiquidPrecipCondAmt.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Quantit\u00e9 conditionnelle de pr\u00e9cipitations vergla\u00e7antes [mm]",
-            "Name": "GDPS-WEonG_15km_FreezingPrecipCondAmt",
+            "Title": "SGPD-ETsurG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation liquide [m] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_LiquidPrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Quantit\u00e9 conditionnelle de pr\u00e9cipitations vergla\u00e7antes [mm] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Quantit\u00e9 conditionnelle de pr\u00e9cipitations vergla\u00e7antes [mm] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_FreezingPrecipCondAmt.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Rafale de vents [m/s]",
-            "Name": "GDPS-WEonG_15km_WindGust",
+            "Title": "SGPD-ETsurG - Quantit\u00e9 conditionnelle de pr\u00e9cipitations vergla\u00e7antes [mm] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_FreezingPrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Rafale de vents [m/s] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Rafale de vents [m/s] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_WindGust.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Temp\u00e9rature [\u00b0C]",
-            "Name": "GDPS-WEonG_15km_AirTemp",
+            "Title": "SGPD-ETsurG - Rafale de vents [m/s] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_WindGust",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Temp\u00e9rature [\u00b0C] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Temp\u00e9rature [\u00b0C] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_AirTemp.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Temp\u00e9rature du point de ros\u00e9e (contour) [\u00b0C]",
-            "Name": "GDPS-WEonG_15km_DewPointTemp-CONTOUR",
+            "Title": "SGPD-ETsurG - Temp\u00e9rature [\u00b0C] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_AirTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Temp\u00e9rature du point de ros\u00e9e (contour) [\u00b0C] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Temp\u00e9rature du point de ros\u00e9e (contour) [\u00b0C] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_DewPointTemp.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Temp\u00e9rature du point de ros\u00e9e [\u00b0C]",
-            "Name": "GDPS-WEonG_15km_DewPointTemp",
+            "Title": "SGPD-ETsurG - Temp\u00e9rature du point de ros\u00e9e (contour) [\u00b0C] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_DewPointTemp-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Temp\u00e9rature du point de ros\u00e9e [\u00b0C] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Temp\u00e9rature du point de ros\u00e9e [\u00b0C] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_DewPointTemp.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Type de pr\u00e9cipitation instantan\u00e9e",
-            "Name": "GDPS-WEonG_15km_InstantPrecipType",
+            "Title": "SGPD-ETsurG - Temp\u00e9rature du point de ros\u00e9e [\u00b0C] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_DewPointTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Type de pr\u00e9cipitation instantan\u00e9e (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Type de pr\u00e9cipitation instantan\u00e9e (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_InstantPrecipType.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Type dominant de pr\u00e9cipitation",
-            "Name": "GDPS-WEonG_15km_DominantPrecipType",
+            "Title": "SGPD-ETsurG - Type de pr\u00e9cipitation instantan\u00e9e [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_InstantPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Type dominant de pr\u00e9cipitation (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Type dominant de pr\u00e9cipitation (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_DominantPrecipType.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Visibilit\u00e9 dans le brouillard glac\u00e9 [m]",
-            "Name": "GDPS-WEonG_15km_IceFogVisibility",
+            "Title": "SGPD-ETsurG - Type dominant de pr\u00e9cipitation [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_DominantPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Visibilit\u00e9 dans le brouillard glac\u00e9 [m] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Visibilit\u00e9 dans le brouillard glac\u00e9 [m] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_IceFogVisibility.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Visibilit\u00e9 \u00e0 travers le brouillard liquide [m]",
-            "Name": "GDPS-WEonG_15km_LiquidFogVisibility",
+            "Title": "SGPD-ETsurG - Visibilit\u00e9 dans le brouillard glac\u00e9 [m] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_IceFogVisibility",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Visibilit\u00e9 \u00e0 travers le brouillard liquide [m] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Visibilit\u00e9 \u00e0 travers le brouillard liquide [m] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_LiquidFogVisibility.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Vitesse du vent (contour) [m/s]",
-            "Name": "GDPS-WEonG_15km_WindSpeed-Contour",
+            "Title": "SGPD-ETsurG - Visibilit\u00e9 \u00e0 travers le brouillard liquide [m] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_LiquidFogVisibility",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Vitesse du vent (contour) [m/s] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Vitesse du vent (contour) [m/s] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_WindSpeed.3h-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Vitesse du vent [m/s]",
-            "Name": "GDPS-WEonG_15km_WindSpeed",
+            "Title": "SGPD-ETsurG - Vitesse du vent (contour) [m/s] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_WindSpeed-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Vitesse du vent [m/s] (pr\u00e9vision aux 3 heures)",
+            "Title": "SGPD-ETsurG - Vitesse du vent [m/s] (pr\u00e9vision aux 3 heures) [exp\u00e9rimental]",
             "Name": "GDPS-WEonG_15km_WindSpeed.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SGPD-ETsurG - Vitesse du vent [m/s] [exp\u00e9rimental]",
+            "Name": "GDPS-WEonG_15km_WindSpeed",
             "isLeaf": true,
             "isTemporal": true
           }
@@ -27666,37 +30068,37 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Granules de glace - accumulation sur 1 heure [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Granules de glace - accumulation sur 1 heure (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_IcePellets-Accum-1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Granules de glace - accumulation sur 3 heures [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Granules de glace - accumulation sur 3 heures (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_IcePellets-Accum-3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Granules de glace - accumulation sur 6 heures [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_IcePellets-Accum-6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Granules de glace - accumulation sur 12 heures [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_IcePellets-Accum-12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Granules de glace - accumulation sur 24 heures [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_IcePellets-Accum-24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Granules de glace accumul\u00e9es [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_IcePellets-Accum",
             "isLeaf": true,
             "isTemporal": true
@@ -27804,37 +30206,37 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Neige - accumulation sur 1 heure [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Neige - accumulation sur 1 heure (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_Snow-Accum1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Neige - accumulation sur 3 heures [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Neige - accumulation sur 3 heures (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_Snow-Accum3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Neige - accumulation sur 6 heures [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_Snow-Accum6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Neige - accumulation sur 12 heures [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_Snow-Accum12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Neige - accumulation sur 24 heures [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_Snow-Accum24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Neige accumul\u00e9e [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Neige accumul\u00e9e (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_Snow-Accum",
             "isLeaf": true,
             "isTemporal": true
@@ -27882,37 +30284,37 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Pluie vergla\u00e7ante - accumulation sur 1 heure [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Pluie vergla\u00e7ante - accumulation sur 1 heure (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_FreezingRain-Accum-1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Pluie vergla\u00e7ante - accumulation sur 3 heures [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Pluie vergla\u00e7ante - accumulation sur 3 heures (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_FreezingRain-Accum-3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Pluie vergla\u00e7ante - accumulation sur 6 heures [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_FreezingRain-Accum-6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_FreezingRain-Accum-12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_FreezingRain-Accum-24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SGPD - Pluie vergla\u00e7ante accumul\u00e9e [mm] [exp\u00e9rimental]",
+            "Title": "SGPD - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_FreezingRain-Accum",
             "isLeaf": true,
             "isTemporal": true
@@ -28016,6 +30418,12 @@ export default {
           {
             "Title": "SGPD - Pr\u00e9cipitations - accumulation sur 24 heures [mm] [exp\u00e9rimental]",
             "Name": "GDPS_15km_Precip-Accum24h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SGPD - Pr\u00e9cipitations accumul\u00e9es [mm] [exp\u00e9rimental]",
+            "Name": "GDPS_15km_Precip-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -31168,127 +33576,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 1 [mm] [membre de contr\u00f4le]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 1 [mm] [membre de contr\u00f4le]",
                 "Name": "REPS.MEM.ETA_PE.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 2 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 2 [mm]",
                 "Name": "REPS.MEM.ETA_PE.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 3 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 3 [mm]",
                 "Name": "REPS.MEM.ETA_PE.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 4 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 4 [mm]",
                 "Name": "REPS.MEM.ETA_PE.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 5 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 5 [mm]",
                 "Name": "REPS.MEM.ETA_PE.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 6 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 6 [mm]",
                 "Name": "REPS.MEM.ETA_PE.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 7 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 7 [mm]",
                 "Name": "REPS.MEM.ETA_PE.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 8 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 8 [mm]",
                 "Name": "REPS.MEM.ETA_PE.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 9 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 9 [mm]",
                 "Name": "REPS.MEM.ETA_PE.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 10 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 10 [mm]",
                 "Name": "REPS.MEM.ETA_PE.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 11 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 11 [mm]",
                 "Name": "REPS.MEM.ETA_PE.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 12 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 12 [mm]",
                 "Name": "REPS.MEM.ETA_PE.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 13 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 13 [mm]",
                 "Name": "REPS.MEM.ETA_PE.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 14 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 14 [mm]",
                 "Name": "REPS.MEM.ETA_PE.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 15 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 15 [mm]",
                 "Name": "REPS.MEM.ETA_PE.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 16 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 16 [mm]",
                 "Name": "REPS.MEM.ETA_PE.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 17 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 17 [mm]",
                 "Name": "REPS.MEM.ETA_PE.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 18 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 18 [mm]",
                 "Name": "REPS.MEM.ETA_PE.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 19 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 19 [mm]",
                 "Name": "REPS.MEM.ETA_PE.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 20 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 20 [mm]",
                 "Name": "REPS.MEM.ETA_PE.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace accumul\u00e9es - Membre 21 [mm]",
+                "Title": "SRPE - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) - Membre 21 [mm]",
                 "Name": "REPS.MEM.ETA_PE.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -34626,127 +37034,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 1 [mm] [membre de contr\u00f4le]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 1 [mm] [membre de contr\u00f4le]",
                 "Name": "REPS.MEM.ETA_SN.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 2 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 2 [mm]",
                 "Name": "REPS.MEM.ETA_SN.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 3 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 3 [mm]",
                 "Name": "REPS.MEM.ETA_SN.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 4 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 4 [mm]",
                 "Name": "REPS.MEM.ETA_SN.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 5 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 5 [mm]",
                 "Name": "REPS.MEM.ETA_SN.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 6 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 6 [mm]",
                 "Name": "REPS.MEM.ETA_SN.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 7 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 7 [mm]",
                 "Name": "REPS.MEM.ETA_SN.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 8 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 8 [mm]",
                 "Name": "REPS.MEM.ETA_SN.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 9 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 9 [mm]",
                 "Name": "REPS.MEM.ETA_SN.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 10 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 10 [mm]",
                 "Name": "REPS.MEM.ETA_SN.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 11 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 11 [mm]",
                 "Name": "REPS.MEM.ETA_SN.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 12 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 12 [mm]",
                 "Name": "REPS.MEM.ETA_SN.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 13 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 13 [mm]",
                 "Name": "REPS.MEM.ETA_SN.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 14 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 14 [mm]",
                 "Name": "REPS.MEM.ETA_SN.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 15 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 15 [mm]",
                 "Name": "REPS.MEM.ETA_SN.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 16 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 16 [mm]",
                 "Name": "REPS.MEM.ETA_SN.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 17 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 17 [mm]",
                 "Name": "REPS.MEM.ETA_SN.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 18 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 18 [mm]",
                 "Name": "REPS.MEM.ETA_SN.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 19 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 19 [mm]",
                 "Name": "REPS.MEM.ETA_SN.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 20 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 20 [mm]",
                 "Name": "REPS.MEM.ETA_SN.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige accumul\u00e9e - Membre 21 [mm]",
+                "Title": "SRPE - Neige accumul\u00e9e (\u00e9quivalent liquide) - Membre 21 [mm]",
                 "Name": "REPS.MEM.ETA_SN.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -35291,127 +37699,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 1 [mm] [membre de contr\u00f4le]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 1 [mm] [membre de contr\u00f4le]",
                 "Name": "REPS.MEM.ETA_FR.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 2 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 2 [mm]",
                 "Name": "REPS.MEM.ETA_FR.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 3 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 3 [mm]",
                 "Name": "REPS.MEM.ETA_FR.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 4 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 4 [mm]",
                 "Name": "REPS.MEM.ETA_FR.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 5 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 5 [mm]",
                 "Name": "REPS.MEM.ETA_FR.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 6 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 6 [mm]",
                 "Name": "REPS.MEM.ETA_FR.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 7 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 7 [mm]",
                 "Name": "REPS.MEM.ETA_FR.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 8 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 8 [mm]",
                 "Name": "REPS.MEM.ETA_FR.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 9 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 9 [mm]",
                 "Name": "REPS.MEM.ETA_FR.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 10 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 10 [mm]",
                 "Name": "REPS.MEM.ETA_FR.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 11 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 11 [mm]",
                 "Name": "REPS.MEM.ETA_FR.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 12 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 12 [mm]",
                 "Name": "REPS.MEM.ETA_FR.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 13 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 13 [mm]",
                 "Name": "REPS.MEM.ETA_FR.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 14 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 14 [mm]",
                 "Name": "REPS.MEM.ETA_FR.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 15 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 15 [mm]",
                 "Name": "REPS.MEM.ETA_FR.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 16 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 16 [mm]",
                 "Name": "REPS.MEM.ETA_FR.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 17 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 17 [mm]",
                 "Name": "REPS.MEM.ETA_FR.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 18 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 18 [mm]",
                 "Name": "REPS.MEM.ETA_FR.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 19 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 19 [mm]",
                 "Name": "REPS.MEM.ETA_FR.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 20 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 20 [mm]",
                 "Name": "REPS.MEM.ETA_FR.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e - Membre 21 [mm]",
+                "Title": "SRPE - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) - Membre 21 [mm]",
                 "Name": "REPS.MEM.ETA_FR.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -38749,385 +41157,385 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 6 heures [mm] (0e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (0e centile)",
                 "Name": "REPS.DIAG.6_PEMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 6 heures [mm] (10e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (10e centile)",
                 "Name": "REPS.DIAG.6_PEMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 6 heures [mm] (25e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (25e centile)",
                 "Name": "REPS.DIAG.6_PEMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 6 heures [mm] (50e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (50e centile)",
                 "Name": "REPS.DIAG.6_PEMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 6 heures [mm] (75e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (75e centile)",
                 "Name": "REPS.DIAG.6_PEMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 6 heures [mm] (90e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (90e centile)",
                 "Name": "REPS.DIAG.6_PEMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 6 heures [mm] (100e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (100e centile)",
                 "Name": "REPS.DIAG.6_PEMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 6 heures [mm] (moyenne)",
+                "Title": "SRPE - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (moyenne)",
                 "Name": "REPS.DIAG.6_PEMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 6 heures [mm] (\u00e9cart-type)",
+                "Title": "SRPE - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (\u00e9cart-type)",
                 "Name": "REPS.DIAG.6_PEMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 12 heures [mm] (0e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (0e centile)",
                 "Name": "REPS.DIAG.12_PEMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 12 heures [mm] (10e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (10e centile)",
                 "Name": "REPS.DIAG.12_PEMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 12 heures [mm] (25e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (25e centile)",
                 "Name": "REPS.DIAG.12_PEMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 12 heures [mm] (50e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (50e centile)",
                 "Name": "REPS.DIAG.12_PEMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 12 heures [mm] (75e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (75e centile)",
                 "Name": "REPS.DIAG.12_PEMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 12 heures [mm] (90e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (90e centile)",
                 "Name": "REPS.DIAG.12_PEMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 12 heures [mm] (100e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (100e centile)",
                 "Name": "REPS.DIAG.12_PEMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 12 heures [mm] (moyenne)",
+                "Title": "SRPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (moyenne)",
                 "Name": "REPS.DIAG.12_PEMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 12 heures [mm] (\u00e9cart-type)",
+                "Title": "SRPE - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (\u00e9cart-type)",
                 "Name": "REPS.DIAG.12_PEMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 24 heures [mm] (0e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (0e centile)",
                 "Name": "REPS.DIAG.24_PEMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 24 heures [mm] (10e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (10e centile)",
                 "Name": "REPS.DIAG.24_PEMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 24 heures [mm] (25e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (25e centile)",
                 "Name": "REPS.DIAG.24_PEMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 24 heures [mm] (50e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (50e centile)",
                 "Name": "REPS.DIAG.24_PEMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 24 heures [mm] (75e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (75e centile)",
                 "Name": "REPS.DIAG.24_PEMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 24 heures [mm] (90e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (90e centile)",
                 "Name": "REPS.DIAG.24_PEMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 24 heures [mm] (100e centile)",
+                "Title": "SRPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (100e centile)",
                 "Name": "REPS.DIAG.24_PEMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 24 heures [mm] (moyenne)",
+                "Title": "SRPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (moyenne)",
                 "Name": "REPS.DIAG.24_PEMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Granules de glace - accumulation sur 24 heures [mm] (\u00e9cart-type)",
+                "Title": "SRPE - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (\u00e9cart-type)",
                 "Name": "REPS.DIAG.24_PEMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures >= 0.2 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures >= 1 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) >= 1 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures >= 2.5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures >= 5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) >= 5 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures >= 10 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) >= 10 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures >= 15 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) >= 15 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures >= 20 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) >= 20 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures >= 25 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) >= 25 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures >= 30 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) >= 30 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures >= 40 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) >= 40 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures >= 50 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) >= 50 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures >= 75 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) >= 75 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures >= 100 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) >= 100 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 0.2 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 1 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 1 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 2.5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 5 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 10 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 10 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 15 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 15 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 20 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 20 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 25 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 25 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 30 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 30 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 40 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 40 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures >= 50 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) >= 50 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 0.2 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 1 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 1 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 2.5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 5 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 10 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 10 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 15 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 15 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 20 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 20 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 25 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 25 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 30 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 30 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 40 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 40 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 50 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 50 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 75 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 75 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures >= 100 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) >= 100 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
@@ -39472,385 +41880,385 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SRPE - eige - accumulation sur 12 heures [mm] (0e centile)",
+                "Title": "SRPE - eige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (0e centile)",
                 "Name": "REPS.DIAG.12_SNMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 6 heures [mm] (0e centile)",
+                "Title": "SRPE - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (0e centile)",
                 "Name": "REPS.DIAG.6_SNMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 6 heures [mm] (10e centile)",
+                "Title": "SRPE - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (10e centile)",
                 "Name": "REPS.DIAG.6_SNMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 6 heures [mm] (25e centile)",
+                "Title": "SRPE - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (25e centile)",
                 "Name": "REPS.DIAG.6_SNMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 6 heures [mm] (50e centile)",
+                "Title": "SRPE - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (50e centile)",
                 "Name": "REPS.DIAG.6_SNMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 6 heures [mm] (75e centile)",
+                "Title": "SRPE - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (75e centile)",
                 "Name": "REPS.DIAG.6_SNMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 6 heures [mm] (90e centile)",
+                "Title": "SRPE - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (90e centile)",
                 "Name": "REPS.DIAG.6_SNMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 6 heures [mm] (100e centile)",
+                "Title": "SRPE - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (100e centile)",
                 "Name": "REPS.DIAG.6_SNMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 6 heures [mm] (moyenne)",
+                "Title": "SRPE - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (moyenne)",
                 "Name": "REPS.DIAG.6_SNMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 6 heures [mm] (\u00e9cart-type)",
+                "Title": "SRPE - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (\u00e9cart-type)",
                 "Name": "REPS.DIAG.6_SNMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 12 heures [mm] (10e centile)",
+                "Title": "SRPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (10e centile)",
                 "Name": "REPS.DIAG.12_SNMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 12 heures [mm] (25e centile)",
+                "Title": "SRPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (25e centile)",
                 "Name": "REPS.DIAG.12_SNMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 12 heures [mm] (50e centile)",
+                "Title": "SRPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (50e centile)",
                 "Name": "REPS.DIAG.12_SNMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 12 heures [mm] (75e centile)",
+                "Title": "SRPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (75e centile)",
                 "Name": "REPS.DIAG.12_SNMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 12 heures [mm] (90e centile)",
+                "Title": "SRPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (90e centile)",
                 "Name": "REPS.DIAG.12_SNMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 12 heures [mm] (100e centile)",
+                "Title": "SRPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (100e centile)",
                 "Name": "REPS.DIAG.12_SNMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 12 heures [mm] (moyenne)",
+                "Title": "SRPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (moyenne)",
                 "Name": "REPS.DIAG.12_SNMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 12 heures [mm] (\u00e9cart-type)",
+                "Title": "SRPE - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (\u00e9cart-type)",
                 "Name": "REPS.DIAG.12_SNMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 24 heures [mm] (0e centile)",
+                "Title": "SRPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (0e centile)",
                 "Name": "REPS.DIAG.24_SNMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 24 heures [mm] (10e centile)",
+                "Title": "SRPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (10e centile)",
                 "Name": "REPS.DIAG.24_SNMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 24 heures [mm] (25e centile)",
+                "Title": "SRPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (25e centile)",
                 "Name": "REPS.DIAG.24_SNMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 24 heures [mm] (50e centile)",
+                "Title": "SRPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (50e centile)",
                 "Name": "REPS.DIAG.24_SNMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 24 heures [mm] (75e centile)",
+                "Title": "SRPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (75e centile)",
                 "Name": "REPS.DIAG.24_SNMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 24 heures [mm] (90e centile)",
+                "Title": "SRPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (90e centile)",
                 "Name": "REPS.DIAG.24_SNMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 24 heures [mm] (100e centile)",
+                "Title": "SRPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (100e centile)",
                 "Name": "REPS.DIAG.24_SNMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 24 heures [mm] (moyenne)",
+                "Title": "SRPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (moyenne)",
                 "Name": "REPS.DIAG.24_SNMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Neige - accumulation sur 24 heures [mm] (\u00e9cart-type)",
+                "Title": "SRPE - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (\u00e9cart-type)",
                 "Name": "REPS.DIAG.24_SNMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures >= 0.2 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures (\u00e9quivalent liquide) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures >= 1 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures (\u00e9quivalent liquide) >= 1 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures >= 2.5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures (\u00e9quivalent liquide) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures >= 5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures (\u00e9quivalent liquide) >= 5 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures >= 10 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures (\u00e9quivalent liquide) >= 10 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures >= 15 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures (\u00e9quivalent liquide) >= 15 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures >= 20 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures (\u00e9quivalent liquide) >= 20 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures >= 25 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures (\u00e9quivalent liquide) >= 25 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures >= 30 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures (\u00e9quivalent liquide) >= 30 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures >= 40 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures (\u00e9quivalent liquide) >= 40 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures >= 50 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures (\u00e9quivalent liquide) >= 50 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures >= 75 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures (\u00e9quivalent liquide) >= 75 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures >= 100 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 6 heures (\u00e9quivalent liquide) >= 100 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 0.2 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 1 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 1 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 2.5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 5 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 10 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 10 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 15 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 15 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 20 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 20 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 25 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 25 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 30 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 30 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 40 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 40 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures >= 50 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 12 heures (\u00e9quivalent liquide) >= 50 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 0.2 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 1 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 1 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 2.5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 5 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 10 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 10 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 15 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 15 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 20 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 20 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 25 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 25 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 30 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 30 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 40 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 40 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 50 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 50 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 75 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 75 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures >= 100 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de neige - accumulation sur 24 heures (\u00e9quivalent liquide) >= 100 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
@@ -40284,385 +42692,385 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures [mm] (0e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (0e centile)",
                 "Name": "REPS.DIAG.6_FRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures [mm] (10e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (10e centile)",
                 "Name": "REPS.DIAG.6_FRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures [mm] (25e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (25e centile)",
                 "Name": "REPS.DIAG.6_FRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures [mm] (50e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (50e centile)",
                 "Name": "REPS.DIAG.6_FRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures [mm] (75e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (75e centile)",
                 "Name": "REPS.DIAG.6_FRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures [mm] (90e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (90e centile)",
                 "Name": "REPS.DIAG.6_FRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures [mm] (100e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (100e centile)",
                 "Name": "REPS.DIAG.6_FRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures [mm] (moyenne)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (moyenne)",
                 "Name": "REPS.DIAG.6_FRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures [mm] (\u00e9cart-type)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) [mm] (\u00e9cart-type)",
                 "Name": "REPS.DIAG.6_FRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (0e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (0e centile)",
                 "Name": "REPS.DIAG.12_FRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (10e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (10e centile)",
                 "Name": "REPS.DIAG.12_FRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (25e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (25e centile)",
                 "Name": "REPS.DIAG.12_FRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (50e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (50e centile)",
                 "Name": "REPS.DIAG.12_FRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (75e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (75e centile)",
                 "Name": "REPS.DIAG.12_FRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (90e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (90e centile)",
                 "Name": "REPS.DIAG.12_FRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (100e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (100e centile)",
                 "Name": "REPS.DIAG.12_FRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (moyenne)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (moyenne)",
                 "Name": "REPS.DIAG.12_FRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm] (\u00e9cart-type)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm] (\u00e9cart-type)",
                 "Name": "REPS.DIAG.12_FRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (0e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (0e centile)",
                 "Name": "REPS.DIAG.24_FRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (10e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (10e centile)",
                 "Name": "REPS.DIAG.24_FRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (25e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (25e centile)",
                 "Name": "REPS.DIAG.24_FRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (50e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (50e centile)",
                 "Name": "REPS.DIAG.24_FRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (75e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (75e centile)",
                 "Name": "REPS.DIAG.24_FRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (90e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (90e centile)",
                 "Name": "REPS.DIAG.24_FRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (100e centile)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (100e centile)",
                 "Name": "REPS.DIAG.24_FRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (moyenne)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (moyenne)",
                 "Name": "REPS.DIAG.24_FRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm] (\u00e9cart-type)",
+                "Title": "SRPE - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm] (\u00e9cart-type)",
                 "Name": "REPS.DIAG.24_FRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures >= 0.2 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures >= 1 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) >= 1 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures >= 2.5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures >= 5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) >= 5 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures >= 10 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) >= 10 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures >= 15 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) >= 15 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures >= 20 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) >= 20 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures >= 25 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) >= 25 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures >= 30 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) >= 30 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures >= 40 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) >= 40 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures >= 50 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) >= 50 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures >= 75 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) >= 75 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures >= 100 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) >= 100 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 0.2 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 1 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 1 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 2.5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 5 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 10 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 10 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 15 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 15 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 20 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 20 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 25 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 25 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 30 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 30 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 40 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 40 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures >= 50 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) >= 50 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 2.5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 5 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 5 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 10 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 10 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 15 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 15 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 20 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 20 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 25 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 25 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 30 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 30 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 40 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 40 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 50 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 50 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 75 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 75 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 100 mm [%]",
+                "Title": "SRPE - Probabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 100 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - robabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 0.2 mm [%]",
+                "Title": "SRPE - robabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "SRPE - robabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures >= 1 mm [%]",
+                "Title": "SRPE - robabilit\u00e9 de pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) >= 1 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
@@ -42549,78 +44957,6 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Indice de soul\u00e8vement de la surface, au niveau de r\u00e9f\u00e9rence 400 mb",
-            "Name": "RDPS_10km_ML-LI_400mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "SRPD - Indice de soul\u00e8vement de la surface, au niveau de r\u00e9f\u00e9rence 400 mb (contour)",
-            "Name": "RDPS_10km_ML-LI-Contour_400mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "SRPD - Indice de soul\u00e8vement de la surface, au niveau de r\u00e9f\u00e9rence 500 mb",
-            "Name": "RDPS_10km_ML-LI_500mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "SRPD - Indice de soul\u00e8vement de la surface, au niveau de r\u00e9f\u00e9rence 500 mb (contour)",
-            "Name": "RDPS_10km_ML-LI-Contour_500mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "SRPD - Indice de soul\u00e8vement de la surface, au niveau de r\u00e9f\u00e9rence 600 mb",
-            "Name": "RDPS_10km_ML-LI_600mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "SRPD - Indice de soul\u00e8vement de la surface, au niveau de r\u00e9f\u00e9rence 600 mb (contour)",
-            "Name": "RDPS_10km_ML-LI-Contour_600mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "SRPD - Indice de soul\u00e8vement de la surface, au niveau de r\u00e9f\u00e9rence 650 mb",
-            "Name": "RDPS_10km_ML-LI_650mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "SRPD - Indice de soul\u00e8vement de la surface, au niveau de r\u00e9f\u00e9rence 650 mb (contour)",
-            "Name": "RDPS_10km_ML-LI-Contour_650mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "SRPD - Indice de soul\u00e8vement de la surface, au niveau de r\u00e9f\u00e9rence 700 mb",
-            "Name": "RDPS_10km_ML-LI_700mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "SRPD - Indice de soul\u00e8vement de la surface, au niveau de r\u00e9f\u00e9rence 700 mb (contour)",
-            "Name": "RDPS_10km_ML-LI-Contour_700mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "SRPD - Indice de soul\u00e8vement de la surface, au niveau de r\u00e9f\u00e9rence 800 mb",
-            "Name": "RDPS_10km_ML-LI_800mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "SRPD - Indice de soul\u00e8vement de la surface, au niveau de r\u00e9f\u00e9rence 800 mb (contour)",
-            "Name": "RDPS_10km_ML-LI-Contour_800mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
             "Title": "SRPD - Indice de soul\u00e8vement pour la parcelle la plus instable utilisant la correction de la temp\u00e9rature virtuelle, au niveau de r\u00e9f\u00e9rence 500 mb",
             "Name": "RDPS_10km_LiftedIndex-MU-VT_500mb",
             "isLeaf": true,
@@ -42645,6 +44981,78 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle repr\u00e9sentant la moyenne de la couche, au niveau de r\u00e9f\u00e9rence 400 mb",
+            "Name": "RDPS_10km_ML-LI_400mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle repr\u00e9sentant la moyenne de la couche, au niveau de r\u00e9f\u00e9rence 400 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_400mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle repr\u00e9sentant la moyenne de la couche, au niveau de r\u00e9f\u00e9rence 500 mb",
+            "Name": "RDPS_10km_ML-LI_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle repr\u00e9sentant la moyenne de la couche, au niveau de r\u00e9f\u00e9rence 500 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle repr\u00e9sentant la moyenne de la couche, au niveau de r\u00e9f\u00e9rence 600 mb",
+            "Name": "RDPS_10km_ML-LI_600mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle repr\u00e9sentant la moyenne de la couche, au niveau de r\u00e9f\u00e9rence 600 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_600mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle repr\u00e9sentant la moyenne de la couche, au niveau de r\u00e9f\u00e9rence 650 mb",
+            "Name": "RDPS_10km_ML-LI_650mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle repr\u00e9sentant la moyenne de la couche, au niveau de r\u00e9f\u00e9rence 650 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_650mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle repr\u00e9sentant la moyenne de la couche, au niveau de r\u00e9f\u00e9rence 700 mb",
+            "Name": "RDPS_10km_ML-LI_700mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle repr\u00e9sentant la moyenne de la couche, au niveau de r\u00e9f\u00e9rence 700 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_700mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle repr\u00e9sentant la moyenne de la couche, au niveau de r\u00e9f\u00e9rence 800 mb",
+            "Name": "RDPS_10km_ML-LI_800mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle repr\u00e9sentant la moyenne de la couche, au niveau de r\u00e9f\u00e9rence 800 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_800mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle soulev\u00e9e de la surface utilisant la correction de la temp\u00e9rature virtuelle, au niveau de r\u00e9f\u00e9rence 500 mb",
             "Name": "RDPS_10km_SFC-VT-LI_500mb",
             "isLeaf": true,
@@ -42653,6 +45061,18 @@ export default {
           {
             "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle soulev\u00e9e de la surface utilisant la correction de la temp\u00e9rature virtuelle, au niveau de r\u00e9f\u00e9rence 500 mb (contour)",
             "Name": "RDPS_10km_SFC-VT-LI-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle soulev\u00e9e de la surface, au niveau de r\u00e9f\u00e9rence 500 mb",
+            "Name": "RDPS_10km_SFC-LI_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Indice de soul\u00e8vement pour une parcelle soulev\u00e9e de la surface, au niveau de r\u00e9f\u00e9rence 500 mb (contour)",
+            "Name": "RDPS_10km_SFC-LI-Contour_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -43241,73 +45661,73 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "SRPD - Granules de glace - accumulation sur 1 heure [mm]",
+            "Title": "SRPD - Granules de glace - accumulation sur 1 heure (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_IcePellets-Accum-1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Granules de glace - accumulation sur 3 heures [mm]",
+            "Title": "SRPD - Granules de glace - accumulation sur 3 heures (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_IcePellets-Accum-3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Granules de glace - accumulation sur 6 heures [mm]",
+            "Title": "SRPD - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_IcePellets-Accum-6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Granules de glace - accumulation sur 12 heures [mm]",
+            "Title": "SRPD - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_IcePellets-Accum-12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Granules de glace - accumulation sur 24 heures [mm]",
+            "Title": "SRPD - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_IcePellets-Accum-24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Granules de glace accumul\u00e9es [mm]",
+            "Title": "SRPD - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_IcePellets-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Neige - accumulation sur 1 heure [mm]",
+            "Title": "SRPD - Neige - accumulation sur 1 heure (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_Snow-Accum1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Neige - accumulation sur 3 heures [mm]",
+            "Title": "SRPD - Neige - accumulation sur 3 heures (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_Snow-Accum3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Neige - accumulation sur 6 heures [mm]",
+            "Title": "SRPD - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_Snow-Accum6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Neige - accumulation sur 12 heures [mm]",
+            "Title": "SRPD - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_Snow-Accum12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Neige - accumulation sur 24 heures [mm]",
+            "Title": "SRPD - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_Snow-Accum24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Neige accumul\u00e9e [mm]",
+            "Title": "SRPD - Neige accumul\u00e9e (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_Snow-Accum",
             "isLeaf": true,
             "isTemporal": true
@@ -43349,37 +45769,37 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Pluie vergla\u00e7ante - accumulation sur 1 heure [mm]",
+            "Title": "SRPD - Pluie vergla\u00e7ante - accumulation sur 1 heure (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_FreezingRain-Accum-1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Pluie vergla\u00e7ante - accumulation sur 3 heures [mm]",
+            "Title": "SRPD - Pluie vergla\u00e7ante - accumulation sur 3 heures (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_FreezingRain-Accum-3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Pluie vergla\u00e7ante - accumulation sur 6 heures [mm]",
+            "Title": "SRPD - Pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_FreezingRain-Accum-6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm]",
+            "Title": "SRPD - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_FreezingRain-Accum-12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm]",
+            "Title": "SRPD - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_FreezingRain-Accum-24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "SRPD - Pluie vergla\u00e7ante accumul\u00e9e [mm]",
+            "Title": "SRPD - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS_10km_FreezingRain-Accum",
             "isLeaf": true,
             "isTemporal": true
@@ -43469,13 +45889,13 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.DIAG - Gr\u00e9sil accumul\u00e9 sur 1h [mm]",
+                "Title": "RDPS.DIAG - Gr\u00e9sil accumul\u00e9 sur 1h (\u00e9quivalent liquide) [mm]",
                 "Name": "RDPS.DIAG_PE_PT1H",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - Neige accumul\u00e9e sur 1h [mm]",
+                "Title": "RDPS.DIAG - Neige accumul\u00e9e sur 1h (\u00e9quivalent liquide) [mm]",
                 "Name": "RDPS.DIAG_SN_PT1H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -43487,7 +45907,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - Pluie vergla\u00e7ante accumul\u00e9e sur 1h [mm]",
+                "Title": "RDPS.DIAG - Pluie vergla\u00e7ante accumul\u00e9e sur 1h (\u00e9quivalent liquide) [mm]",
                 "Name": "RDPS.DIAG_FR_PT1H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -43506,13 +45926,13 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.DIAG - Gr\u00e9sil accumul\u00e9 sur 3h [mm]",
+                "Title": "RDPS.DIAG - Gr\u00e9sil accumul\u00e9 sur 3h (\u00e9quivalent liquide) [mm]",
                 "Name": "RDPS.DIAG_PE_PT3H",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - Neige accumul\u00e9e sur 3h [mm]",
+                "Title": "RDPS.DIAG - Neige accumul\u00e9e sur 3h (\u00e9quivalent liquide) [mm]",
                 "Name": "RDPS.DIAG_SN_PT3H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -43524,7 +45944,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - Pluie vergla\u00e7ante accumul\u00e9e sur 3h [mm]",
+                "Title": "RDPS.DIAG - Pluie vergla\u00e7ante accumul\u00e9e sur 3h (\u00e9quivalent liquide) [mm]",
                 "Name": "RDPS.DIAG_FR_PT3H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -43543,13 +45963,13 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.DIAG - Gr\u00e9sil accumul\u00e9 sur 6h [mm]",
+                "Title": "RDPS.DIAG - Gr\u00e9sil accumul\u00e9 sur 6h (\u00e9quivalent liquide) [mm]",
                 "Name": "RDPS.DIAG_PE_PT6H",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - Neige accumul\u00e9e sur 6h [mm]",
+                "Title": "RDPS.DIAG - Neige accumul\u00e9e sur 6h (\u00e9quivalent liquide) [mm]",
                 "Name": "RDPS.DIAG_SN_PT6H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -43561,7 +45981,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - Pluie vergla\u00e7ante accumul\u00e9e sur 6h [mm]",
+                "Title": "RDPS.DIAG - Pluie vergla\u00e7ante accumul\u00e9e sur 6h (\u00e9quivalent liquide) [mm]",
                 "Name": "RDPS.DIAG_FR_PT6H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -43580,13 +46000,13 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.DIAG - Gr\u00e9sil accumul\u00e9 sur 12h [mm]",
+                "Title": "RDPS.DIAG - Gr\u00e9sil accumul\u00e9 sur 12h (\u00e9quivalent liquide) [mm]",
                 "Name": "RDPS.DIAG_PE_PT12H",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - Neige accumul\u00e9e sur 12h [mm]",
+                "Title": "RDPS.DIAG - Neige accumul\u00e9e sur 12h (\u00e9quivalent liquide) [mm]",
                 "Name": "RDPS.DIAG_SN_PT12H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -43598,7 +46018,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - Pluie vergla\u00e7ante accumul\u00e9e sur 12h [mm]",
+                "Title": "RDPS.DIAG - Pluie vergla\u00e7ante accumul\u00e9e sur 12h (\u00e9quivalent liquide) [mm]",
                 "Name": "RDPS.DIAG_FR_PT12H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -43617,19 +46037,19 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.DIAG - Gr\u00e9sil accumul\u00e9 sur 24h [mm]",
+                "Title": "RDPS.DIAG - Gr\u00e9sil accumul\u00e9 sur 24h (\u00e9quivalent liquide) [mm]",
                 "Name": "RDPS.DIAG_PE_PT24H",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - Neige accumul\u00e9e sur 24h [mm]",
+                "Title": "RDPS.DIAG - Neige accumul\u00e9e sur 24h (\u00e9quivalent liquide) [mm]",
                 "Name": "RDPS.DIAG_SN_PT24H",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - Pluie vergla\u00e7ante accumul\u00e9e sur 24h [mm]",
+                "Title": "RDPS.DIAG - Pluie vergla\u00e7ante accumul\u00e9e sur 24h (\u00e9quivalent liquide) [mm]",
                 "Name": "RDPS.DIAG_FR_PT24H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -43890,6 +46310,18 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "SRPD - Indice de scintillation",
+            "Name": "RDPS_10km_SeeingIndex",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Indice de transparence",
+            "Name": "RDPS_10km_SkyTransparencyIndex",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "SRPD - Indice du potentiel d'orages George-K",
             "Name": "RDPS_10km_KIndex",
             "isLeaf": true,
@@ -43928,6 +46360,54 @@ export default {
           {
             "Title": "SRPD - Maximum des rafales de vent [m/s]",
             "Name": "RDPS_10km_WindGust-Max_10m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Maximum journalier de l'indice UV (Passe de mod\u00e8le 00Z)",
+            "Name": "RDPS_10km_UVIndex-Max24h_00Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Maximum journalier de l'indice UV (Passe de mod\u00e8le 06Z)",
+            "Name": "RDPS_10km_UVIndex-Max24h_06Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Maximum journalier de l'indice UV (Passe de mod\u00e8le 12Z)",
+            "Name": "RDPS_10km_UVIndex-Max24h_12Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Maximum journalier de l'indice UV (Passe de mod\u00e8le 18Z)",
+            "Name": "RDPS_10km_UVIndex-Max24h_18Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Maximum journalier de l'indice UV pour des conditions de ciel clair (Passe de mod\u00e8le 00Z)",
+            "Name": "RDPS_10km_UVIndex-ClearSky-Max24h_00Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Maximum journalier de l'indice UV pour des conditions de ciel clair (Passe de mod\u00e8le 06Z)",
+            "Name": "RDPS_10km_UVIndex-ClearSky-Max24h_06Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Maximum journalier de l'indice UV pour des conditions de ciel clair (Passe de mod\u00e8le 12Z)",
+            "Name": "RDPS_10km_UVIndex-ClearSky-Max24h_12Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "SRPD - Maximum journalier de l'indice UV pour des conditions de ciel clair (Passe de mod\u00e8le 18Z)",
+            "Name": "RDPS_10km_UVIndex-ClearSky-Max24h_18Z",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -44371,7 +46851,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "RDPS.ETA - Granules de glace accumul\u00e9es [mm]",
+            "Title": "RDPS.ETA - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS.ETA_PE",
             "isLeaf": true,
             "isTemporal": true
@@ -44515,7 +46995,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "RDPS.ETA - Neige accumul\u00e9e [mm]",
+            "Title": "RDPS.ETA - Neige accumul\u00e9e (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS.ETA_SN",
             "isLeaf": true,
             "isTemporal": true
@@ -44527,7 +47007,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "RDPS.ETA -  Pluie vergla\u00e7ante accumul\u00e9e [mm]",
+            "Title": "RDPS.ETA -  Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) [mm]",
             "Name": "RDPS.ETA_FR",
             "isLeaf": true,
             "isTemporal": true
@@ -49667,222 +52147,222 @@ export default {
         ]
       },
       {
-        "Title": "SRPD-WEonG [exp\u00e9rimental]",
-        "Name": "SRPD-WEonG [exp\u00e9rimental]",
+        "Title": "SRPD-ETsurG [exp\u00e9rimental]",
+        "Name": "SRPD-ETsurG [exp\u00e9rimental]",
         "isLeaf": false,
         "children": [
           {
-            "Title": "RDPS-WEonG - Caract\u00e8re de la pr\u00e9cipitation",
+            "Title": "SRPD-ETsurG - Caract\u00e8re de la pr\u00e9cipitation [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_PrecipCharacter",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Deuxi\u00e8me type de pr\u00e9cipitation le plus commun",
+            "Title": "SRPD-ETsurG - Deuxi\u00e8me type de pr\u00e9cipitation le plus commun [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_SecondMostCommonPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Direction du vent [deg true]",
+            "Title": "SRPD-ETsurG - Direction du vent [deg true] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_WindDir",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Etat du ciel jour/nuit (couverture et opacit\u00e9 nuageuse combin\u00e9es)",
+            "Title": "SRPD-ETsurG - Etat du ciel jour/nuit (couverture et opacit\u00e9 nuageuse combin\u00e9es) [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_SkyState",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Hauteur du niveau de la neige [m]",
+            "Title": "SRPD-ETsurG - Hauteur du niveau de la neige [m] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_SnowLevelHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Indice d'intensit\u00e9 des pr\u00e9cipitations totales",
+            "Title": "SRPD-ETsurG - Indice d'intensit\u00e9 des pr\u00e9cipitations totales [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_TotalPrecipIntensityIndex",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Orographie du mod\u00e8le [m]",
+            "Title": "SRPD-ETsurG - Orographie du mod\u00e8le [m] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_Orography",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probabilit\u00e9 d'occurence d'orage [%]",
+            "Title": "SRPD-ETsurG - Probabilit\u00e9 d'occurence d'orage [%] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_Thunderstorm-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probabilit\u00e9 de bourrasque de neige [%]",
+            "Title": "SRPD-ETsurG - Probabilit\u00e9 de bourrasque de neige [%] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_SnowSqualls-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probabilit\u00e9 de bruine [%]",
+            "Title": "SRPD-ETsurG - Probabilit\u00e9 de bruine [%] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_Drizzle-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probabilit\u00e9 de bruine vergla\u00e7ante [%]",
+            "Title": "SRPD-ETsurG - Probabilit\u00e9 de bruine vergla\u00e7ante [%] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_FreezingDrizzle-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probabilit\u00e9 de gr\u00e9sil [%]",
+            "Title": "SRPD-ETsurG - Probabilit\u00e9 de gr\u00e9sil [%] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_IcePellets-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probabilit\u00e9 de neige [%]",
+            "Title": "SRPD-ETsurG - Probabilit\u00e9 de neige [%] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_Snow-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probabilit\u00e9 de pluie [%]",
+            "Title": "SRPD-ETsurG - Probabilit\u00e9 de pluie [%] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_Rain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probabilit\u00e9 de pluie vergla\u00e7ante [%]",
+            "Title": "SRPD-ETsurG - Probabilit\u00e9 de pluie vergla\u00e7ante [%] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_FreezingRain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probabilit\u00e9 de poudrerie [%]",
+            "Title": "SRPD-ETsurG - Probabilit\u00e9 de poudrerie [%] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_BlowingSnow-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probabilit\u00e9 de pr\u00e9cipitation [%]",
+            "Title": "SRPD-ETsurG - Probabilit\u00e9 de pr\u00e9cipitation [%] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_Precip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probabilit\u00e9 de pr\u00e9cipitation liquide [%]",
+            "Title": "SRPD-ETsurG - Probabilit\u00e9 de pr\u00e9cipitation liquide [%] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_LiquidPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probabilit\u00e9 de pr\u00e9cipitation vergla\u00e7ante [%]",
+            "Title": "SRPD-ETsurG - Probabilit\u00e9 de pr\u00e9cipitation vergla\u00e7ante [%] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_FreezingPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Proportion terre/eau",
+            "Title": "SRPD-ETsurG - Proportion terre/eau [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_LandWater-Proportion",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Pr\u00e9sence de poudrerie",
+            "Title": "SRPD-ETsurG - Pr\u00e9sence de poudrerie [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_BlowingSnowPresence",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Quantit\u00e9  conditionnelle de pr\u00e9cipitation [m]",
+            "Title": "SRPD-ETsurG - Quantit\u00e9  conditionnelle de pr\u00e9cipitation [m] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_PrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Quantit\u00e9 conditionnelle de granul\u00e9s de glace solide [m]",
+            "Title": "SRPD-ETsurG - Quantit\u00e9 conditionnelle de granul\u00e9s de glace solide [m] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_IcePelletsCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Quantit\u00e9 conditionnelle de neige solide [m]",
+            "Title": "SRPD-ETsurG - Quantit\u00e9 conditionnelle de neige solide [m] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_SolidSnowCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation liquide [m]",
+            "Title": "SRPD-ETsurG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation liquide [m] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_LiquidPrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Quantit\u00e9 conditionnelle de pr\u00e9cipitations vergla\u00e7antes [mm]",
+            "Title": "SRPD-ETsurG - Quantit\u00e9 conditionnelle de pr\u00e9cipitations vergla\u00e7antes [mm] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_FreezingPrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Rafale de vents [m/s]",
+            "Title": "SRPD-ETsurG - Rafale de vents [m/s] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_WindGust",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Temp\u00e9rature [\u00b0C]",
+            "Title": "SRPD-ETsurG - Temp\u00e9rature [\u00b0C] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_AirTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Temp\u00e9rature du point de ros\u00e9e (contour) [\u00b0C]",
+            "Title": "SRPD-ETsurG - Temp\u00e9rature du point de ros\u00e9e (contour) [\u00b0C] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_DewPointTemp-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Temp\u00e9rature du point de ros\u00e9e [\u00b0C]",
+            "Title": "SRPD-ETsurG - Temp\u00e9rature du point de ros\u00e9e [\u00b0C] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_DewPointTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Type de pr\u00e9cipitation instantan\u00e9e",
+            "Title": "SRPD-ETsurG - Type de pr\u00e9cipitation instantan\u00e9e [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_InstantPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Type dominant de pr\u00e9cipitation",
+            "Title": "SRPD-ETsurG - Type dominant de pr\u00e9cipitation [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_DominantPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Visibilit\u00e9 dans le brouillard glac\u00e9 [m]",
+            "Title": "SRPD-ETsurG - Visibilit\u00e9 dans le brouillard glac\u00e9 [m] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_IceFogVisibility",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Visibilit\u00e9 \u00e0 travers le brouillard liquide [m]",
+            "Title": "SRPD-ETsurG - Visibilit\u00e9 \u00e0 travers le brouillard liquide [m] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_LiquidFogVisibility",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Vitesse du vent (contour) [m/s]",
+            "Title": "SRPD-ETsurG - Vitesse du vent (contour) [m/s] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_WindSpeed-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Vitesse du vent [m/s]",
+            "Title": "SRPD-ETsurG - Vitesse du vent [m/s] [exp\u00e9rimental]",
             "Name": "RDPS-WEonG_10km_WindSpeed",
             "isLeaf": true,
             "isTemporal": true
@@ -50149,61 +52629,61 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "HRDPS.DIAG - Granules de glace - accumulation sur 1 heure [mm]",
+            "Title": "HRDPS.DIAG - Granules de glace - accumulation sur 1 heure (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_PE_PT1H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Granules de glace - accumulation sur 3 heures [mm]",
+            "Title": "HRDPS.DIAG - Granules de glace - accumulation sur 3 heures (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_PE_PT3H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Granules de glace - accumulation sur 6 heures [mm]",
+            "Title": "HRDPS.DIAG - Granules de glace - accumulation sur 6 heures (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_PE_PT6H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Granules de glace - accumulation sur 12 heures [mm]",
+            "Title": "HRDPS.DIAG - Granules de glace - accumulation sur 12 heures (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_PE_PT12H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Granules de glace - accumulation sur 24 heures [mm]",
+            "Title": "HRDPS.DIAG - Granules de glace - accumulation sur 24 heures (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_PE_PT24H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Neige - accumulation sur 1 heure [mm]",
+            "Title": "HRDPS.DIAG - Neige - accumulation sur 1 heure (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_SN_PT1H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Neige - accumulation sur 3 heures [mm]",
+            "Title": "HRDPS.DIAG - Neige - accumulation sur 3 heures (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_SN_PT3H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Neige - accumulation sur 6 heures [mm]",
+            "Title": "HRDPS.DIAG - Neige - accumulation sur 6 heures (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_SN_PT6H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Neige - accumulation sur 12 heures [mm]",
+            "Title": "HRDPS.DIAG - Neige - accumulation sur 12 heures (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_SN_PT12H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Neige - accumulation sur 24 heures [mm]",
+            "Title": "HRDPS.DIAG - Neige - accumulation sur 24 heures (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_SN_PT24H",
             "isLeaf": true,
             "isTemporal": true
@@ -50239,31 +52719,31 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 1 heure [mm]",
+            "Title": "HRDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 1 heure (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_FR_PT1H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 3 heures [mm]",
+            "Title": "HRDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 3 heures (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_FR_PT3H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 6 heures [mm]",
+            "Title": "HRDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 6 heures (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_FR_PT6H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 12 heures [mm]",
+            "Title": "HRDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 12 heures (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_FR_PT12H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 24 heures [mm]",
+            "Title": "HRDPS.DIAG - Pluie vergla\u00e7ante - accumulation sur 24 heures (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_FR_PT24H",
             "isLeaf": true,
             "isTemporal": true
@@ -50468,7 +52948,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.CONTINENTAL - Granules de glace accumul\u00e9es [mm]",
+            "Title": "HRDPS.CONTINENTAL - Granules de glace accumul\u00e9es (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL_PE",
             "isLeaf": true,
             "isTemporal": true
@@ -50648,7 +53128,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.CONTINENTAL - Neige accumul\u00e9e [mm]",
+            "Title": "HRDPS.CONTINENTAL - Neige accumul\u00e9e (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL_SN",
             "isLeaf": true,
             "isTemporal": true
@@ -50660,7 +53140,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.CONTINENTAL - Pluie vergla\u00e7ante accumul\u00e9e [mm]",
+            "Title": "HRDPS.CONTINENTAL - Pluie vergla\u00e7ante accumul\u00e9e (\u00e9quivalent liquide) [mm]",
             "Name": "HRDPS.CONTINENTAL_FR",
             "isLeaf": true,
             "isTemporal": true
@@ -53103,216 +55583,216 @@ export default {
         ]
       },
       {
-        "Title": "SHRPD-WEonG",
-        "Name": "SHRPD-WEonG",
+        "Title": "SHRPD-ETsurG",
+        "Name": "SHRPD-ETsurG",
         "isLeaf": false,
         "children": [
           {
-            "Title": "HRDPS-WEonG - Caract\u00e8re de la pr\u00e9cipitation",
+            "Title": "SHRPD-ETsurG - Caract\u00e8re de la pr\u00e9cipitation",
             "Name": "HRDPS-WEonG_2.5km_PrecipCharacter",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Deuxi\u00e8me type de pr\u00e9cipitation le plus commun",
+            "Title": "SHRPD-ETsurG - Deuxi\u00e8me type de pr\u00e9cipitation le plus commun",
             "Name": "HRDPS-WEonG_2.5km_SecondMostCommonPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Direction du vent [deg true]",
+            "Title": "SHRPD-ETsurG - Direction du vent [deg true]",
             "Name": "HRDPS-WEonG_2.5km_WindDir",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Etat du ciel jour/nuit (couverture et opacit\u00e9 nuageuse combin\u00e9es)",
+            "Title": "SHRPD-ETsurG - Etat du ciel jour/nuit (couverture et opacit\u00e9 nuageuse combin\u00e9es)",
             "Name": "HRDPS-WEonG_2.5km_SkyState",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Hauteur du niveau de la neige [m]",
+            "Title": "SHRPD-ETsurG - Hauteur du niveau de la neige [m]",
             "Name": "HRDPS-WEonG_2.5km_SnowLevelHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Indice d'intensit\u00e9 des pr\u00e9cipitations totales",
+            "Title": "SHRPD-ETsurG - Indice d'intensit\u00e9 des pr\u00e9cipitations totales",
             "Name": "HRDPS-WEonG_2.5km_TotalPrecipIntensityIndex",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Orographie du mod\u00e8le [m]",
+            "Title": "SHRPD-ETsurG - Orographie du mod\u00e8le [m]",
             "Name": "HRDPS-WEonG_2.5km_Orography",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Probabilit\u00e9 d'occurence d'orage [%]",
+            "Title": "SHRPD-ETsurG - Probabilit\u00e9 d'occurence d'orage [%]",
             "Name": "HRDPS-WEonG_2.5km_Thunderstorm-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Probabilit\u00e9 de bourrasque de neige [%]",
+            "Title": "SHRPD-ETsurG - Probabilit\u00e9 de bourrasque de neige [%]",
             "Name": "HRDPS-WEonG_2.5km_SnowSqualls-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Probabilit\u00e9 de bruine [%]",
+            "Title": "SHRPD-ETsurG - Probabilit\u00e9 de bruine [%]",
             "Name": "HRDPS-WEonG_2.5km_Drizzle-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Probabilit\u00e9 de bruine vergla\u00e7ante [%]",
+            "Title": "SHRPD-ETsurG - Probabilit\u00e9 de bruine vergla\u00e7ante [%]",
             "Name": "HRDPS-WEonG_2.5km_FreezingDrizzle-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Probabilit\u00e9 de gr\u00e9sil [%]",
+            "Title": "SHRPD-ETsurG - Probabilit\u00e9 de gr\u00e9sil [%]",
             "Name": "HRDPS-WEonG_2.5km_IcePellets-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Probabilit\u00e9 de neige [%]",
+            "Title": "SHRPD-ETsurG - Probabilit\u00e9 de neige [%]",
             "Name": "HRDPS-WEonG_2.5km_Snow-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Probabilit\u00e9 de pluie [%]",
+            "Title": "SHRPD-ETsurG - Probabilit\u00e9 de pluie [%]",
             "Name": "HRDPS-WEonG_2.5km_Rain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Probabilit\u00e9 de pluie vergla\u00e7ante [%]",
+            "Title": "SHRPD-ETsurG - Probabilit\u00e9 de pluie vergla\u00e7ante [%]",
             "Name": "HRDPS-WEonG_2.5km_FreezingRain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Probabilit\u00e9 de poudrerie [%]",
+            "Title": "SHRPD-ETsurG - Probabilit\u00e9 de poudrerie [%]",
             "Name": "HRDPS-WEonG_2.5km_BlowingSnow-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Probabilit\u00e9 de pr\u00e9cipitation [%]",
+            "Title": "SHRPD-ETsurG - Probabilit\u00e9 de pr\u00e9cipitation [%]",
             "Name": "HRDPS-WEonG_2.5km_Precip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Probabilit\u00e9 de pr\u00e9cipitation liquide [%]",
+            "Title": "SHRPD-ETsurG - Probabilit\u00e9 de pr\u00e9cipitation liquide [%]",
             "Name": "HRDPS-WEonG_2.5km_LiquidPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Probabilit\u00e9 de pr\u00e9cipitation vergla\u00e7ante [%]",
+            "Title": "SHRPD-ETsurG - Probabilit\u00e9 de pr\u00e9cipitation vergla\u00e7ante [%]",
             "Name": "HRDPS-WEonG_2.5km_FreezingPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Proportion terre/eau",
+            "Title": "SHRPD-ETsurG - Proportion terre/eau",
             "Name": "HRDPS-WEonG_2.5km_LandWater-Proportion",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Pr\u00e9sence de poudrerie",
+            "Title": "SHRPD-ETsurG - Pr\u00e9sence de poudrerie",
             "Name": "HRDPS-WEonG_2.5km_BlowingSnowPresence",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Quantit\u00e9 conditionnelle de granul\u00e9s de glace solide [m]",
+            "Title": "SHRPD-ETsurG - Quantit\u00e9 conditionnelle de granul\u00e9s de glace solide [m]",
             "Name": "HRDPS-WEonG_2.5km_IcePelletsCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Quantit\u00e9 conditionnelle de neige solide [m]",
+            "Title": "SHRPD-ETsurG - Quantit\u00e9 conditionnelle de neige solide [m]",
             "Name": "HRDPS-WEonG_2.5km_SolidSnowCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation [m]",
+            "Title": "SHRPD-ETsurG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation [m]",
             "Name": "HRDPS-WEonG_2.5km_PrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation liquide [m]",
+            "Title": "SHRPD-ETsurG - Quantit\u00e9 conditionnelle de pr\u00e9cipitation liquide [m]",
             "Name": "HRDPS-WEonG_2.5km_LiquidPrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Quantit\u00e9 conditionnelle de pr\u00e9cipitations vergla\u00e7antes [mm]",
+            "Title": "SHRPD-ETsurG - Quantit\u00e9 conditionnelle de pr\u00e9cipitations vergla\u00e7antes [mm]",
             "Name": "HRDPS-WEonG_2.5km_FreezingPrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Rafale de vents [m/s]",
+            "Title": "SHRPD-ETsurG - Rafale de vents [m/s]",
             "Name": "HRDPS-WEonG_2.5km_WindGust",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Temp\u00e9rature [\u00b0C]",
+            "Title": "SHRPD-ETsurG - Temp\u00e9rature [\u00b0C]",
             "Name": "HRDPS-WEonG_2.5km_AirTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Temp\u00e9rature du point de ros\u00e9e (contour) [\u00b0C]",
+            "Title": "SHRPD-ETsurG - Temp\u00e9rature du point de ros\u00e9e (contour) [\u00b0C]",
             "Name": "HRDPS-WEonG_2.5km_DewPointTemp-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Temp\u00e9rature du point de ros\u00e9e [\u00b0C]",
+            "Title": "SHRPD-ETsurG - Temp\u00e9rature du point de ros\u00e9e [\u00b0C]",
             "Name": "HRDPS-WEonG_2.5km_DewPointTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Type de pr\u00e9cipitation instantan\u00e9e",
+            "Title": "SHRPD-ETsurG - Type de pr\u00e9cipitation instantan\u00e9e",
             "Name": "HRDPS-WEonG_2.5km_InstantPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Type dominant de pr\u00e9cipitation",
+            "Title": "SHRPD-ETsurG - Type dominant de pr\u00e9cipitation",
             "Name": "HRDPS-WEonG_2.5km_DominantPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Visibilit\u00e9 dans le brouillard glac\u00e9 [m]",
+            "Title": "SHRPD-ETsurG - Visibilit\u00e9 dans le brouillard glac\u00e9 [m]",
             "Name": "HRDPS-WEonG_2.5km_IceFogVisibility",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Visibilit\u00e9 \u00e0 travers le brouillard liquide [m]",
+            "Title": "SHRPD-ETsurG - Visibilit\u00e9 \u00e0 travers le brouillard liquide [m]",
             "Name": "HRDPS-WEonG_2.5km_LiquidFogVisibility",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS-WEonG - Vitesse du vent [m/s]",
+            "Title": "SHRPD-ETsurG - Vitesse du vent [m/s]",
             "Name": "HRDPS-WEonG_2.5km_WindSpeed",
             "isLeaf": true,
             "isTemporal": true

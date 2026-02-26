@@ -154,6 +154,18 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "Daily average concentration associated with forest fire and vegetation plumes: surface PM2.5 [kg/m\u00b3]",
+                "Name": "RAQDPS.Sfc_PM2.5-WildireSmokePlume-DAvg",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "Daily maximum concentration associated with forest fire and vegetation plumes: surface PM2.5 [kg/m\u00b3]",
+                "Name": "RAQDPS.Sfc_PM2.5-WildireSmokePlume-DMax",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "Total concentrations associated with forest fire and vegetation plumes: entire column PM2.5 [kg/m\u00b2]",
                 "Name": "RAQDPS.EAtm_PM2.5-WildfireSmokePlume",
                 "isLeaf": true,
@@ -247,6 +259,30 @@ export default {
                   {
                     "Title": "Wildfire hotspots Cumulative Effects products (2020)",
                     "Name": "RAQDPS-FW.CE_HOTSPOTS.2020",
+                    "isLeaf": true,
+                    "isTemporal": false
+                  },
+                  {
+                    "Title": "Wildfire hotspots Cumulative Effects products (2021)",
+                    "Name": "RAQDPS-FW.CE_HOTSPOTS.2021",
+                    "isLeaf": true,
+                    "isTemporal": false
+                  },
+                  {
+                    "Title": "Wildfire hotspots Cumulative Effects products (2022)",
+                    "Name": "RAQDPS-FW.CE_HOTSPOTS.2022",
+                    "isLeaf": true,
+                    "isTemporal": false
+                  },
+                  {
+                    "Title": "Wildfire hotspots Cumulative Effects products (2023)",
+                    "Name": "RAQDPS-FW.CE_HOTSPOTS.2023",
+                    "isLeaf": true,
+                    "isTemporal": false
+                  },
+                  {
+                    "Title": "Wildfire hotspots Cumulative Effects products (2024)",
+                    "Name": "RAQDPS-FW.CE_HOTSPOTS.2024",
                     "isLeaf": true,
                     "isTemporal": false
                   }
@@ -537,570 +573,570 @@ export default {
     "isLeaf": false,
     "children": [
       {
-        "Title": "CAPS [experimental]",
-        "Name": "CAPS [experimental]",
+        "Title": "CAPS",
+        "Name": "CAPS",
         "isLeaf": false,
         "children": [
           {
-            "Title": "CAPS - Aggregate land surface skin temperature [\u00b0C]",
+            "Title": "CAPS - Aggregate land surface skin temperature [\u00b0C] [experimental]",
             "Name": "CAPS_3km_RadiativeTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Air Density at 40m above ground [kg/m\u00b3]",
+            "Title": "CAPS - Air Density at 40m above ground [kg/m\u00b3] [experimental]",
             "Name": "CAPS_3km_AirDensity_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Air Density at 80m above ground [kg/m\u00b3]",
+            "Title": "CAPS - Air Density at 80m above ground [kg/m\u00b3] [experimental]",
             "Name": "CAPS_3km_AirDensity_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Air Density at 120m above ground [kg/m\u00b3]",
+            "Title": "CAPS - Air Density at 120m above ground [kg/m\u00b3] [experimental]",
             "Name": "CAPS_3km_AirDensity_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Air temperature at 2m above ground (contour) [\u00b0C]",
+            "Title": "CAPS - Air temperature at 2m above ground (contour) [\u00b0C] [experimental]",
             "Name": "CAPS_3km_AirTemp-Contour_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Air temperature at 2m above ground [\u00b0C]",
+            "Title": "CAPS - Air temperature at 2m above ground [\u00b0C] [experimental]",
             "Name": "CAPS_3km_AirTemp_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Air temperature at 40m above ground (contour) [\u00b0C]",
+            "Title": "CAPS - Air temperature at 40m above ground (contour) [\u00b0C] [experimental]",
             "Name": "CAPS_3km_AirTemp-Contour_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Air temperature at 40m above ground [\u00b0C]",
+            "Title": "CAPS - Air temperature at 40m above ground [\u00b0C] [experimental]",
             "Name": "CAPS_3km_AirTemp_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Air temperature at 80m above ground (contour) [\u00b0C]",
+            "Title": "CAPS - Air temperature at 80m above ground (contour) [\u00b0C] [experimental]",
             "Name": "CAPS_3km_AirTemp-Contour_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Air temperature at 80m above ground [\u00b0C]",
+            "Title": "CAPS - Air temperature at 80m above ground [\u00b0C] [experimental]",
             "Name": "CAPS_3km_AirTemp_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Air temperature at 120m above ground (contour) [\u00b0C]",
+            "Title": "CAPS - Air temperature at 120m above ground (contour) [\u00b0C] [experimental]",
             "Name": "CAPS_3km_AirTemp-Contour_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Air temperature at 120m above ground [\u00b0C]",
+            "Title": "CAPS - Air temperature at 120m above ground [\u00b0C] [experimental]",
             "Name": "CAPS_3km_AirTemp_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Cloud water [mm]",
+            "Title": "CAPS - Cloud water [mm] [experimental]",
             "Name": "CAPS_3km_CloudWater",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Convective available potential energy [J/kg]",
+            "Title": "CAPS - Convective available potential energy [J/kg] [experimental]",
             "Name": "CAPS_3km_CAPE",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Convective precipitation accumulation [mm]",
+            "Title": "CAPS - Convective precipitation accumulation [mm] [experimental]",
             "Name": "CAPS_3km_ConvectivePrecip-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Dew point depression at 2m above ground [\u00b0C]",
+            "Title": "CAPS - Dew point depression at 2m above ground [\u00b0C] [experimental]",
             "Name": "CAPS_3km_DewPointDepression_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Dew point depression at 40m above ground [\u00b0C]",
+            "Title": "CAPS - Dew point depression at 40m above ground [\u00b0C] [experimental]",
             "Name": "CAPS_3km_DewPointDepression_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Dew point depression at 80m above ground [\u00b0C]",
+            "Title": "CAPS - Dew point depression at 80m above ground [\u00b0C] [experimental]",
             "Name": "CAPS_3km_DewPointDepression_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Dew point depression at 120m above ground [\u00b0C]",
+            "Title": "CAPS - Dew point depression at 120m above ground [\u00b0C] [experimental]",
             "Name": "CAPS_3km_DewPointDepression_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Dew point temperature at 2m above ground (contour) [\u00b0C]",
+            "Title": "CAPS - Dew point temperature at 2m above ground (contour) [\u00b0C] [experimental]",
             "Name": "CAPS_3km_DewPoint-Contour_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Dew point temperature at 2m above ground [\u00b0C]",
+            "Title": "CAPS - Dew point temperature at 2m above ground [\u00b0C] [experimental]",
             "Name": "CAPS_3km_DewPoint_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Dew point temperature at 40m above ground (contour) [\u00b0C]",
+            "Title": "CAPS - Dew point temperature at 40m above ground (contour) [\u00b0C] [experimental]",
             "Name": "CAPS_3km_DewPoint-Contour_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Dew point temperature at 40m above ground [\u00b0C]",
+            "Title": "CAPS - Dew point temperature at 40m above ground [\u00b0C] [experimental]",
             "Name": "CAPS_3km_DewPoint_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Dew point temperature at 80m above ground (contour) [\u00b0C]",
+            "Title": "CAPS - Dew point temperature at 80m above ground (contour) [\u00b0C] [experimental]",
             "Name": "CAPS_3km_DewPoint-Contour_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Dew point temperature at 80m above ground [\u00b0C]",
+            "Title": "CAPS - Dew point temperature at 80m above ground [\u00b0C] [experimental]",
             "Name": "CAPS_3km_DewPoint_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Dew point temperature at 120m above ground (contour) [\u00b0C]",
+            "Title": "CAPS - Dew point temperature at 120m above ground (contour) [\u00b0C] [experimental]",
             "Name": "CAPS_3km_DewPoint-Contour_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Dew point temperature at 120m above ground [\u00b0C]",
+            "Title": "CAPS - Dew point temperature at 120m above ground [\u00b0C] [experimental]",
             "Name": "CAPS_3km_DewPoint_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Downward longwave accumulated radiation flux at the surface [J/m\u00b2]",
+            "Title": "CAPS - Downward longwave accumulated radiation flux at the surface [J/m\u00b2] [experimental]",
             "Name": "CAPS_3km_DownwardLongwaveRadiationFlux-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Downward shortwave accumulated radiation flux at the surface [J/m\u00b2]",
+            "Title": "CAPS - Downward shortwave accumulated radiation flux at the surface [J/m\u00b2] [experimental]",
             "Name": "CAPS_3km_DownwardShortwaveRadiationFlux-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Freezing rain accumulation [mm]",
+            "Title": "CAPS - Freezing rain accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "CAPS_3km_FreezingRain-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Geopotential height (contour) [gpm]",
+            "Title": "CAPS - Geopotential height (contour) [gpm] [experimental]",
             "Name": "CAPS_3km_GeopotentialHeight-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Geopotential height [gpm]",
+            "Title": "CAPS - Geopotential height [gpm] [experimental]",
             "Name": "CAPS_3km_GeopotentialHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Ice pellets accumulation [mm]",
+            "Title": "CAPS - Ice pellets accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "CAPS_3km_IcePellets-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Incoming visible accumulated flux at the top of atmosphere [J/m\u00b2]",
+            "Title": "CAPS - Incoming visible accumulated flux at the top of atmosphere [J/m\u00b2] [experimental]",
             "Name": "CAPS_3km_DownwardShortwaveRadiationFlux-Accum_NTAtm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Instantaneous precipitation rate [kg/(m\u00b2s)]",
+            "Title": "CAPS - Instantaneous precipitation rate [kg/(m\u00b2s)] [experimental]",
             "Name": "CAPS_3km_PrecipRate",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Land/water proportion",
+            "Title": "CAPS - Land/water proportion [experimental]",
             "Name": "CAPS_3km_LandWater-Proportion",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Latent heat net flux [W/m\u00b2]",
+            "Title": "CAPS - Latent heat net flux [W/m\u00b2] [experimental]",
             "Name": "CAPS_3km_LatentHeatNetFlux",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Net longwave accumulated radiation flux at the surface [J/m\u00b2]",
+            "Title": "CAPS - Net longwave accumulated radiation flux at the surface [J/m\u00b2] [experimental]",
             "Name": "CAPS_3km_NetLongwaveRadiationFlux-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Net shortwave accumulated radiation flux at the surface [J/m\u00b2]",
+            "Title": "CAPS - Net shortwave accumulated radiation flux at the surface [J/m\u00b2] [experimental]",
             "Name": "CAPS_3km_NetShortwaveRadiationFlux-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Planetary boundary layer height [m]",
+            "Title": "CAPS - Planetary boundary layer height [m] [experimental]",
             "Name": "CAPS_3km_PlanetaryBoundaryLayerHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Precipitation accumulation [mm]",
+            "Title": "CAPS - Precipitation accumulation [mm] [experimental]",
             "Name": "CAPS_3km_Precip-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Rain accumulation [mm]",
+            "Title": "CAPS - Rain accumulation [mm] [experimental]",
             "Name": "CAPS_3km_Rain-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Relative humidity at 2m above ground [%]",
+            "Title": "CAPS - Relative humidity at 2m above ground [%] [experimental]",
             "Name": "CAPS_3km_RelativeHumidity_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Relative humidity at 40m above ground [%]",
+            "Title": "CAPS - Relative humidity at 40m above ground [%] [experimental]",
             "Name": "CAPS_3km_RelativeHumidity_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Relative humidity at 80m above ground [%]",
+            "Title": "CAPS - Relative humidity at 80m above ground [%] [experimental]",
             "Name": "CAPS_3km_RelativeHumidity_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Relative humidity at 120m above ground [%]",
+            "Title": "CAPS - Relative humidity at 120m above ground [%] [experimental]",
             "Name": "CAPS_3km_RelativeHumidity_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Sea ice cover [Proportion]",
+            "Title": "CAPS - Sea ice cover [Proportion] [experimental]",
             "Name": "CAPS_3km_SeaIceFraction",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Sea level pressure (contour) [Pa]",
+            "Title": "CAPS - Sea level pressure (contour) [Pa] [experimental]",
             "Name": "CAPS_3km_Pressure_MSL-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Sea level pressure [Pa]",
+            "Title": "CAPS - Sea level pressure [Pa] [experimental]",
             "Name": "CAPS_3km_Pressure_MSL",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Sea water temperature [K]",
+            "Title": "CAPS - Sea water temperature [K] [experimental]",
             "Name": "CAPS_3km_SeaWaterTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Sensible heat net flux [W/m\u00b2]",
+            "Title": "CAPS - Sensible heat net flux [W/m\u00b2] [experimental]",
             "Name": "CAPS_3km_SensibleHeatNetFlux",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Snow accumulation [mm]",
+            "Title": "CAPS - Snow accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "CAPS_3km_Snow-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Snow density [kg/m\u00b3]",
+            "Title": "CAPS - Snow density [kg/m\u00b3] [experimental]",
             "Name": "CAPS_3km_SnowDensity",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Snow depth [m]",
+            "Title": "CAPS - Snow depth [m] [experimental]",
             "Name": "CAPS_3km_SnowDepth",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Snow depth water equivalent [mm]",
+            "Title": "CAPS - Snow depth water equivalent [mm] [experimental]",
             "Name": "CAPS_3km_SnowDepthWaterEquivalent",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Soil temperature near surface (0-10cm) [K]",
+            "Title": "CAPS - Soil temperature near surface (0-10cm) [K] [experimental]",
             "Name": "CAPS_3km_SoilTemp_0-10cm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Soil volumetric ice content at surface [m\u00b3/m\u00b3]",
+            "Title": "CAPS - Soil volumetric ice content at surface [m\u00b3/m\u00b3] [experimental]",
             "Name": "CAPS_3km_SoilVolumetricIceContent",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Soil volumetric water content (0-1cm) [m\u00b3/m\u00b3]",
+            "Title": "CAPS - Soil volumetric water content (0-1cm) [m\u00b3/m\u00b3] [experimental]",
             "Name": "CAPS_3km_SoilVolumetricWaterContent_0-1cm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Soil volumetric water content (0-10cm) [m\u00b3/m\u00b3]",
+            "Title": "CAPS - Soil volumetric water content (0-10cm) [m\u00b3/m\u00b3] [experimental]",
             "Name": "CAPS_3km_SoilVolumetricWaterContent_0-10cm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Specific Humidity at 2m above ground [kg/kg]",
+            "Title": "CAPS - Specific Humidity at 2m above ground [kg/kg] [experimental]",
             "Name": "CAPS_3km_SpecificHumidity_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Specific Humidity at 40m above ground [kg/kg]",
+            "Title": "CAPS - Specific Humidity at 40m above ground [kg/kg] [experimental]",
             "Name": "CAPS_3km_SpecificHumidity_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Specific Humidity at 80m above ground [kg/kg]",
+            "Title": "CAPS - Specific Humidity at 80m above ground [kg/kg] [experimental]",
             "Name": "CAPS_3km_SpecificHumidity_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Specific Humidity at 120m above ground [kg/kg]",
+            "Title": "CAPS - Specific Humidity at 120m above ground [kg/kg] [experimental]",
             "Name": "CAPS_3km_SpecificHumidity_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Specific Humidity at the surface [kg/kg]",
+            "Title": "CAPS - Specific Humidity at the surface [kg/kg] [experimental]",
             "Name": "CAPS_3km_SpecificHumidity",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Storm relative helicity [J/kg]",
+            "Title": "CAPS - Storm relative helicity [J/kg] [experimental]",
             "Name": "CAPS_3km_StormRelativeHelicity",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Surface albedo [%]",
+            "Title": "CAPS - Surface albedo [%] [experimental]",
             "Name": "CAPS_3km_Albedo",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Surface and soil temperatures (Superficial) [K]",
+            "Title": "CAPS - Surface and soil temperatures (Superficial) [K] [experimental]",
             "Name": "CAPS_3km_SoilTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Surface pressure (contour) [Pa]",
+            "Title": "CAPS - Surface pressure (contour) [Pa] [experimental]",
             "Name": "CAPS_3km_Pressure-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Surface pressure [Pa]",
+            "Title": "CAPS - Surface pressure [Pa] [experimental]",
             "Name": "CAPS_3km_Pressure",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Thickness between 1000mb and 500mb (contour) [m]",
+            "Title": "CAPS - Thickness between 1000mb and 500mb (contour) [m] [experimental]",
             "Name": "CAPS_3km_Thickness-Contour_1000to500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Thickness between 1000mb and 500mb [m]",
+            "Title": "CAPS - Thickness between 1000mb and 500mb [m] [experimental]",
             "Name": "CAPS_3km_Thickness_1000to500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Total cloud cover [%]",
+            "Title": "CAPS - Total cloud cover [%] [experimental]",
             "Name": "CAPS_3km_TotalCloudCover",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
+            "Title": "CAPS - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2] [experimental]",
             "Name": "CAPS_3km_UpwardLongwaveRadiationFlux_NTAtm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Upward shortwave radiation flux at the top of atmosphere [W/m\u00b2]",
+            "Title": "CAPS - Upward shortwave radiation flux at the top of atmosphere [W/m\u00b2] [experimental]",
             "Name": "CAPS_3km_UpwardShortwaveRadiationFlux_NTAtm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Water runoff accumulation [mm]",
+            "Title": "CAPS - Water runoff accumulation [mm] [experimental]",
             "Name": "CAPS_3km_Runoff-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Wind direction at 10m above surface [\u00b0]",
+            "Title": "CAPS - Wind direction at 10m above surface [\u00b0] [experimental]",
             "Name": "CAPS_3km_WindDir_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Wind direction at 40m above surface [\u00b0]",
+            "Title": "CAPS - Wind direction at 40m above surface [\u00b0] [experimental]",
             "Name": "CAPS_3km_WindDir_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Wind direction at 80m above surface [\u00b0]",
+            "Title": "CAPS - Wind direction at 80m above surface [\u00b0] [experimental]",
             "Name": "CAPS_3km_WindDir_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Wind direction at 120m above surface [\u00b0]",
+            "Title": "CAPS - Wind direction at 120m above surface [\u00b0] [experimental]",
             "Name": "CAPS_3km_WindDir_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Wind gust estimate at 10m above surface [m/s]",
+            "Title": "CAPS - Wind gust estimate at 10m above surface [m/s] [experimental]",
             "Name": "CAPS_3km_WindGust_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Wind gust maximum [m/s]",
+            "Title": "CAPS - Wind gust maximum [m/s] [experimental]",
             "Name": "CAPS_3km_WindGust-Max_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Wind gust minimum [m/s]",
+            "Title": "CAPS - Wind gust minimum [m/s] [experimental]",
             "Name": "CAPS_3km_WindGust-Min_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Wind speed at 10m above surface (contour) [m/s]",
+            "Title": "CAPS - Wind speed at 10m above surface (contour) [m/s] [experimental]",
             "Name": "CAPS_3km_WindSpeed-Contour_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Wind speed at 10m above surface [m/s]",
+            "Title": "CAPS - Wind speed at 10m above surface [m/s] [experimental]",
             "Name": "CAPS_3km_WindSpeed_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Wind speed at 40m above surface (contour) [m/s]",
+            "Title": "CAPS - Wind speed at 40m above surface (contour) [m/s] [experimental]",
             "Name": "CAPS_3km_WindSpeed-Contour_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Wind speed at 40m above surface [m/s]",
+            "Title": "CAPS - Wind speed at 40m above surface [m/s] [experimental]",
             "Name": "CAPS_3km_WindSpeed_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Wind speed at 80m above surface (contour)[m/s]",
+            "Title": "CAPS - Wind speed at 80m above surface (contour)[m/s] [experimental]",
             "Name": "CAPS_3km_WindSpeed-Contour_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Wind speed at 80m above surface [m/s]",
+            "Title": "CAPS - Wind speed at 80m above surface [m/s] [experimental]",
             "Name": "CAPS_3km_WindSpeed_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Wind speed at 120m above surface (contour) [m/s]",
+            "Title": "CAPS - Wind speed at 120m above surface (contour) [m/s] [experimental]",
             "Name": "CAPS_3km_WindSpeed-Contour_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Wind speed at 120m above surface [m/s]",
+            "Title": "CAPS - Wind speed at 120m above surface [m/s] [experimental]",
             "Name": "CAPS_3km_WindSpeed_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Winds at 10m above surface [m/s]",
+            "Title": "CAPS - Winds at 10m above surface [m/s] [experimental]",
             "Name": "CAPS_3km_Winds_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Winds at 40m above surface [m/s]",
+            "Title": "CAPS - Winds at 40m above surface [m/s] [experimental]",
             "Name": "CAPS_3km_Winds_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Winds at 80m above surface [m/s]",
+            "Title": "CAPS - Winds at 80m above surface [m/s] [experimental]",
             "Name": "CAPS_3km_Winds_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS - Winds at 120m above surface [m/s]",
+            "Title": "CAPS - Winds at 120m above surface [m/s] [experimental]",
             "Name": "CAPS_3km_Winds_120m",
             "isLeaf": true,
             "isTemporal": true
@@ -1108,30 +1144,30 @@ export default {
         ]
       },
       {
-        "Title": "CAPS convective fields [experimental]",
-        "Name": "CAPS convective fields [experimental]",
+        "Title": "CAPS convective fields",
+        "Name": "CAPS convective fields",
         "isLeaf": false,
         "children": [
           {
-            "Title": "CAPS - Lifted index for the most unstable parcel using the virtual temperature correction (contour) [K]",
+            "Title": "CAPS - Lifted index for the most unstable parcel using the virtual temperature correction (contour) [K] [experimental]",
             "Name": "CAPS_3km_LiftedIndex-MU-VT-Contour_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS_conv - Lifted index for the most unstable parcel using the virtual temperature correction [K]",
+            "Title": "CAPS_conv - Lifted index for the most unstable parcel using the virtual temperature correction [K] [experimental]",
             "Name": "CAPS_3km_LiftedIndex-MU-VT_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS_conv - Showalter Index, with reference level 500 mb (contour) [K]",
+            "Title": "CAPS_conv - Showalter Index, with reference level 500 mb (contour) [K] [experimental]",
             "Name": "CAPS_3km_ShowalterIndex-Contour_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS_conv - Showalter Index, with reference level 500 mb [K]",
+            "Title": "CAPS_conv - Showalter Index, with reference level 500 mb [K] [experimental]",
             "Name": "CAPS_3km_ShowalterIndex_500mb",
             "isLeaf": true,
             "isTemporal": true
@@ -1139,12 +1175,12 @@ export default {
         ]
       },
       {
-        "Title": "CAPS diagnostic fields [experimental]",
-        "Name": "CAPS diagnostic fields [experimental]",
+        "Title": "CAPS diagnostic fields",
+        "Name": "CAPS diagnostic fields",
         "isLeaf": false,
         "children": [
           {
-            "Title": "CAPS_diag - Instantaneous precipitation type",
+            "Title": "CAPS_diag - Instantaneous precipitation type [experimental]",
             "Name": "CAPS_3km_PrecipType",
             "isLeaf": true,
             "isTemporal": true
@@ -1152,8 +1188,8 @@ export default {
         ]
       },
       {
-        "Title": "CAPS pressure levels [experimental]",
-        "Name": "CAPS pressure levels [experimental]",
+        "Title": "CAPS pressure levels",
+        "Name": "CAPS pressure levels",
         "isLeaf": false,
         "children": [
           {
@@ -1162,67 +1198,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 50 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 50 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 50 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 50 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 50 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 50 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 50 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 50 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 50 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 50 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 50 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 50 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 50 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 50 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 50 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 50 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 50 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 50 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS - Wind speed at 50 mb [m/s]",
+                "Title": "CAPS - Wind speed at 50 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 50 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 50 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_50mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1235,67 +1271,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 100 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 100 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 100 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 100 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 100 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 100 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 100 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 100 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 100 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 100 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 100 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 100 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 100 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 100 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 100 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 100 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 100 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 100 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 100 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 100 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 100 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 100 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_100mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1308,67 +1344,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 150 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 150 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 150 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 150 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 150 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 150 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 150 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 150 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 150 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 150 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 150 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 150 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 150 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 150 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 150 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 150 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 150 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 150 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 150 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 150 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 150 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 150 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_150mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1381,67 +1417,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 175 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 175 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 175 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 175 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 175 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 175 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 175 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 175 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 175 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 175 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 175 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 175 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 175 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 175 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 175 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 175 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 175 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 175 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 175 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 175 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 175 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 175 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_175mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1454,67 +1490,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 200 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 200 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 200 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 200 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 200 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 200 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 200 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 200 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 200 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 200 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 200 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 200 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 200 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 200 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 200 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 200 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 200 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 200 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 200 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 200 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 200 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 200 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_200mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1527,67 +1563,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 225 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 225 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 225 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 225 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 225 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 225 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 225 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 225 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 225 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 225 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 225 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 225 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 225 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 225 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 225 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 225 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 225 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 225 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 225 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 225 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 225 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 225 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_225mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1600,79 +1636,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Absolute vorticity at 250 mb [s-1]",
+                "Title": "CAPS_IsbL - Absolute vorticity at 250 mb [s-1] [experimental]",
                 "Name": "CAPS_3km_AbsoluteVorticity_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 250 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 250 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 250 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 250 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 250 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 250 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 250 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 250 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 250 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 250 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Isobaric vertical motion at 250 mb [Pa/s]",
+                "Title": "CAPS_IsbL - Isobaric vertical motion at 250 mb [Pa/s] [experimental]",
                 "Name": "CAPS_3km_VerticalVelocity_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 250 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 250 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 250 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 250 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 250 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 250 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 250 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 250 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 250 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 250 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 250 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 250 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_250mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1685,67 +1721,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 275 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 275 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 275 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 275 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 275 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 275 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 275 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 275 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 275 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 275 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 275 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 275 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 275 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 275 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 275 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 275 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 275 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 275 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 275 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 275 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 275 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 275 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_275mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1758,67 +1794,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 300 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 300 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 300 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 300 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 300 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 300 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 300 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 300 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 300 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 300 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 300 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 300 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 300 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 300 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 300 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 300 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 300 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 300 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 300 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 300 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 300 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 300 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_300mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1831,67 +1867,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 350 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 350 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 350 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 350 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 350 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 350 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 350 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 350 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 350 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 350 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 350 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 350 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 350 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 350 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 350 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 350 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 350 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 350 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 350 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 350 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 350 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 350 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_350mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1904,67 +1940,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 400 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 400 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 400 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 400 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 400 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 400 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 400 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 400 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 400 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 400 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "/CAPS_IsbL - Relative humidity at 400 mb [%]",
+                "Title": "/CAPS_IsbL - Relative humidity at 400 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 400 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 400 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 400 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 400 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 400 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 400 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 400 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 400 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 400 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 400 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_400mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1977,67 +2013,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 450 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 450 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 450 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 450 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 450 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 450 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 450 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 450 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 450 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 450 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 450 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 450 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 450 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 450 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 450 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 450 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 450 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 450 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 450 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 450 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 450 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 450 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_450mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2050,79 +2086,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Absolute vorticity at 500 mb [s-1]",
+                "Title": "CAPS_IsbL - Absolute vorticity at 500 mb [s-1] [experimental]",
                 "Name": "CAPS_3km_AbsoluteVorticity_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 500 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 500 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 500 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 500 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 500 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 500 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 500 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 500 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 500 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 500 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Isobaric vertical motion at 500 mb [Pa/s]",
+                "Title": "CAPS_IsbL - Isobaric vertical motion at 500 mb [Pa/s] [experimental]",
                 "Name": "CAPS_3km_VerticalVelocity_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 500 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 500 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 500 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 500 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 500 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 500 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 500 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 500 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 500 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 500 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 500 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 500 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_500mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2135,67 +2171,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 550 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 550 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 550 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 550 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 550 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 550 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 550 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 550 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 550 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 550 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 550 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 550 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 550 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 550 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 550 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 550 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 550 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 550 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 550 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 550 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 550 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 550 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_550mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2208,67 +2244,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 600 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 600 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 600 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 600 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 600 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 600 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 600 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 600 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 600 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 600 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 600 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 600 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 600 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 600 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 600 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 600 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 600 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 600 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 600 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 600 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 600 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 600 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_600mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2281,67 +2317,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 650 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 650 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 650 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 650 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 650 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 650 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 650 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 650 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 650 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 650 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 650 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 650 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 650 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 650 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 650 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 650 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 650 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 650 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 650 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 650 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 650 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 650 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_650mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2354,79 +2390,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Absolute vorticity at 700 mb [s-1]",
+                "Title": "CAPS_IsbL - Absolute vorticity at 700 mb [s-1] [experimental]",
                 "Name": "CAPS_3km_AbsoluteVorticity_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 700 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 700 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 700 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 700 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 700 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 700 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 700 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 700 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 700 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 700 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Isobaric vertical motion at 700 mb [Pa/s]",
+                "Title": "CAPS_IsbL - Isobaric vertical motion at 700 mb [Pa/s] [experimental]",
                 "Name": "CAPS_3km_VerticalVelocity_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 700 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 700 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 700 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 700 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 700 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 700 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 700 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 700 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 700 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 700 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 700 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 700 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_700mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2439,67 +2475,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 750 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 750 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 750 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 750 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 750 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 750 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 750 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 750 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 750 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 750 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 750 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 750 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 750 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 750 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 750 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 750 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 750 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 750 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 750 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 750 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 750 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 750 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_750mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2512,67 +2548,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 800 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 800 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 800 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 800 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 800 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 800 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 800 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 800 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 800 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 800 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 800 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 800 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 800 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 800 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 800 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 800 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 800 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 800 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 800 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 800 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 800 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 800 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_800mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2585,79 +2621,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Absolute vorticity at 850 mb [s-1]",
+                "Title": "CAPS_IsbL - Absolute vorticity at 850 mb [s-1] [experimental]",
                 "Name": "CAPS_3km_AbsoluteVorticity_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 850 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 850 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 850 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 850 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 850 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 850 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 850 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 850 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 850 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 850 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Isobaric vertical motion at 850 mb [Pa/s]",
+                "Title": "CAPS_IsbL - Isobaric vertical motion at 850 mb [Pa/s] [experimental]",
                 "Name": "CAPS_3km_VerticalVelocity_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 850 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 850 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 850 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 850 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 850 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 850 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 850 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 850 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 850 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 850 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 850 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 850 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_850mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2670,67 +2706,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 875 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 875 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 875 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 875 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 875 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 875 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 875 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 875 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 875 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 875 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 875 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 875 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 875 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 875 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 875 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 875 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 875 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 875 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 875 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 875 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 875 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 875 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_875mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2743,67 +2779,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 900 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 900 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 900 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 900 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 900 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 900 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 900 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 900 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 900 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 900 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 900 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 900 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 900 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 900 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 900 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 900 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 900 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 900 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 900 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 900 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 900 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 900 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_900mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2816,67 +2852,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 925 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 925 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 925 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 925 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 925 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 925 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 925 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 925 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 925 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 925 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 925 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 925 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 925 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 925 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 925 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 925 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 925 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 925 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 925 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 925 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 925 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 925 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_925mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2889,67 +2925,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 950 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 950 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 950 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 950 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 950 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 950 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 950 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 950 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 950 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 950 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 950 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 950 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 950 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 950 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 950 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 950 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 950 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 950 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 950 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 950 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 950 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 950 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_950mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -2962,67 +2998,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 970 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 970 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 970 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 970 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 970 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 970 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 970 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 970 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 970 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 970 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 970 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 970 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 970 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 970 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 970 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 970 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 970 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 970 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 970 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 970 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 970 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 970 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_970mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3035,67 +3071,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 985 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 985 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 985 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 985 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 985 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 985 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 985 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 985 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 985 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 985 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 985 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 985 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 985 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 985 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 985 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 985 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 985 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 985 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 985 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 985 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 985 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 985 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_985mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3108,79 +3144,79 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Absolute vorticity at 1000 mb [s-1]",
+                "Title": "CAPS_IsbL - Absolute vorticity at 1000 mb [s-1] [experimental]",
                 "Name": "CAPS_3km_AbsoluteVorticity_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 1000 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 1000 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 1000 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 1000 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 1000 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 1000 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 1000 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 1000 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 1000 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 1000 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Isobaric vertical motion at 1000 mb [Pa/s]",
+                "Title": "CAPS_IsbL - Isobaric vertical motion at 1000 mb [Pa/s] [experimental]",
                 "Name": "CAPS_3km_VerticalVelocity_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 1000 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 1000 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 1000 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 1000 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 1000 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 1000 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 1000 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 1000 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 1000 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 1000 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 1000 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 1000 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3193,67 +3229,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "CAPS_IsbL - Air temperature at 1015 mb (contour) [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 1015 mb (contour) [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp-Contour_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Air temperature at 1015 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Air temperature at 1015 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_AirTemp_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Dew point depression at 1015 mb [\u00b0C]",
+                "Title": "CAPS_IsbL - Dew point depression at 1015 mb [\u00b0C] [experimental]",
                 "Name": "CAPS_3km_DewPointDepression_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 1015 mb (contour) [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 1015 mb (contour) [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight-Contour_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Geopotential height at 1015 mb [gpm]",
+                "Title": "CAPS_IsbL - Geopotential height at 1015 mb [gpm] [experimental]",
                 "Name": "CAPS_3km_GeopotentialHeight_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Relative humidity at 1015 mb [%]",
+                "Title": "CAPS_IsbL - Relative humidity at 1015 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Specific humidity at 1015 mb [kg/kg]",
+                "Title": "CAPS_IsbL - Specific humidity at 1015 mb [kg/kg] [experimental]",
                 "Name": "CAPS_3km_SpecificHumidity_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind direction at 1015 mb [\u00b0]",
+                "Title": "CAPS_IsbL - Wind direction at 1015 mb [\u00b0] [experimental]",
                 "Name": "CAPS_3km_WindDir_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 1015 mb (contour) [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 1015 mb (contour) [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed-Contour_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Wind speed at 1015 mb [m/s]",
+                "Title": "CAPS_IsbL - Wind speed at 1015 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_WindSpeed_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CAPS_IsbL - Winds at 1015 mb [m/s]",
+                "Title": "CAPS_IsbL - Winds at 1015 mb [m/s] [experimental]",
                 "Name": "CAPS_3km_Winds_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -3263,210 +3299,2551 @@ export default {
         ]
       },
       {
-        "Title": "CAPS WEonG [experimental]",
-        "Name": "CAPS WEonG [experimental]",
+        "Title": "CAPS-Ocean",
+        "Name": "CAPS-Ocean",
         "isLeaf": false,
         "children": [
           {
-            "Title": "CAPS-WEonG - Character of precipitation",
+            "Title": "CAPS-Ocean - Depth-integrated compressive sea ice strength [N/m] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceCompressiveStrength",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Depth-integrated internal sea ice pressure [N/m] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceInternalPressure",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Ocean mixed layer depth based on density criterion [m] [experimental]",
+            "Name": "CAPS-Ocean_3km_MixedLayerThickness",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea ice area fraction [Fraction] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceFraction",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea ice divergence [%/day] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceDivergence",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea ice shear [%/day] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceShear",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea ice velocity [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceVelocity",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea ice volume per unit grid cell area [m] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceVolume",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea ice x velocity [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceVelocityX",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea ice y velocity [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceVelocityY",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea surface height above geoid [m] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaSurfaceHeight",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0001.6m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1.6m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0002.7m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_2.7m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0003.9m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_3.9m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0005.1m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_5.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0006.5m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_6.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0008.1m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_8.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0009.8m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_9.8m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0012m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_12m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0014m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_14m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0017m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_17m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0019m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_19m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0023m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_23m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0027m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_27m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0031m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_31m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0036m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_36m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0041m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_41m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0047m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_47m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0054m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_54m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0061m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_61m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0069m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_69m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0078m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_78m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0087m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_87m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0097m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_97m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0108m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_108m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0120m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0133m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_133m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0147m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_147m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0163m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_163m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0181m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_181m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0200m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_200m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0221m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_221m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0245m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_245m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0271m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_271m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0301m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_301m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0334m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_334m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0371m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_371m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0412m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_412m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0458m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_458m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0509m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_509m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0565m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_565m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0628m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_628m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0697m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_697m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0773m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_773m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0857m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_857m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 0947m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_947m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 1046m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1046m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 1152m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1152m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 1266m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1266m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 1387m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1387m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 1516m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1516m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 1653m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1653m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 1796m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1796m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 1945m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_1945m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 2101m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_2101m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 2262m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_2262m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 2429m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_2429m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 2600m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_2600m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 2776m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_2776m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 2956m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_2956m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 3139m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_3139m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 3325m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_3325m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 3513m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_3513m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 3705m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_3705m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 3898m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_3898m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 4093m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_4093m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 4290m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_4290m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 4488m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_4488m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 4688m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_4688m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 4888m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_4888m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 5089m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_5089m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 5292m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_5292m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 5495m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_5495m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 5698m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_5698m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature - 5902m [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_5902m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water potential temperature [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterTemp_0.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0001.6m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1.6m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0002.7m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_2.7m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0003.9m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_3.9m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0005.1m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_5.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0006.5m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_6.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0008.1m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_8.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0009.8m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_9.8m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0012m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_12m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0014m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_14m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0017m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_17m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0019m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_19m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0023m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_23m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0027m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_27m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0031m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_31m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0036m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_36m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0041m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_41m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0047m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_47m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0054m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_54m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0061m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_61m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0069m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_69m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0078m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_78m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0087m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_87m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0097m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_97m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0108m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_108m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0120m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0133m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_133m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0147m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_147m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0163m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_163m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0181m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_181m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0200m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_200m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0221m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_221m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0245m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_245m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0271m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_271m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0301m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_301m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0334m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_334m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0371m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_371m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0412m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_412m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0458m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_458m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0509m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_509m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0565m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_565m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0628m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_628m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0697m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_697m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0773m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_773m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0857m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_857m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 0947m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_947m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 1046m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1046m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 1152m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1152m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 1266m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1266m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 1387m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1387m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 1516m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1516m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 1653m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1653m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 1796m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1796m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 1945m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_1945m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 2101m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_2101m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 2262m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_2262m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 2429m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_2429m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 2600m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_2600m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 2776m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_2776m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 2956m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_2956m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 3139m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_3139m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 3325m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_3325m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 3513m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_3513m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 3705m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_3705m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 3898m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_3898m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 4093m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_4093m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 4290m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_4290m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 4488m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_4488m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 4688m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_4688m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 4888m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_4888m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 5089m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_5089m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 5292m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_5292m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 5495m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_5495m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 5698m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_5698m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity - 5902m [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_5902m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water salinity [psu] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterSalinity_0.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0001.6m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1.6m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0002.7m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_2.7m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0003.9m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_3.9m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0005.1m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_5.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0006.5m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_6.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0008.1m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_8.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0009.8m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_9.8m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0012m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_12m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0014m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_14m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0017m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_17m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0019m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_19m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0023m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_23m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0027m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_27m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0031m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_31m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0036m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_36m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0041m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_41m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0047m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_47m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0054m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_54m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0061m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_61m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0069m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_69m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0078m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_78m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0087m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_87m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0097m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_97m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0108m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_108m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0120m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0133m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_133m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0147m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_147m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0163m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_163m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0181m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_181m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0200m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_200m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0221m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_221m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0245m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_245m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0271m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_271m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0301m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_301m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0334m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_334m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0371m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_371m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0412m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_412m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0458m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_458m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0509m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_509m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0565m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_565m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0628m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_628m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0697m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_697m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0773m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_773m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0857m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_857m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 0947m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_947m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 1046m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1046m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 1152m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1152m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 1266m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1266m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 1387m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1387m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 1516m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1516m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 1653m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1653m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 1796m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1796m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 1945m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_1945m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 2101m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_2101m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 2262m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_2262m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 2429m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_2429m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 2600m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_2600m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 2776m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_2776m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 2956m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_2956m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 3139m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_3139m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 3325m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_3325m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 3513m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_3513m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 3705m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_3705m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 3898m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_3898m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 4093m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_4093m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 4290m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_4290m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 4488m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_4488m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 4688m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_4688m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 4888m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_4888m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 5089m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_5089m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 5292m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_5292m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 5495m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_5495m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 5698m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_5698m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity - 5902m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_5902m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water velocity [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocity_0.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0001.6m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1.6m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0002.7m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_2.7m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0003.9m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_3.9m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0005.1m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_5.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0006.5m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_6.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0008.1m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_8.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0009.8m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_9.8m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0012m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_12m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0014m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_14m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0017m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_17m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0019m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_19m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0023m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_23m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0027m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_27m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0031m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_31m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0036m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_36m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0041m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_41m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0047m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_47m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0054m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_54m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0061m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_61m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0069m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_69m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0078m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_78m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0087m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_87m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0097m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_97m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0108m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_108m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0120m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0133m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_133m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0147m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_147m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0163m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_163m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0181m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_181m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0200m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_200m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0221m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_221m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0245m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_245m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0271m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_271m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0301m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_301m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0334m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_334m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0371m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_371m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0412m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_412m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0458m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_458m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0509m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_509m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0565m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_565m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0628m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_628m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0697m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_697m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0773m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_773m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0857m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_857m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 0947m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_947m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 1046m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1046m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 1152m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1152m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 1266m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1266m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 1387m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1387m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 1516m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1516m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 1653m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1653m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 1796m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1796m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 1945m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_1945m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 2101m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_2101m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 2262m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_2262m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 2429m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_2429m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 2600m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_2600m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 2776m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_2776m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 2956m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_2956m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 3139m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_3139m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 3325m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_3325m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 3513m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_3513m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 3705m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_3705m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 3898m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_3898m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 4093m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_4093m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 4290m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_4290m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 4488m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_4488m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 4688m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_4688m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 4888m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_4888m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 5089m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_5089m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 5292m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_5292m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 5495m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_5495m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 5698m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_5698m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity - 5902m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_5902m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water x velocity [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityX_0.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0001.6m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1.6m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0002.7m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_2.7m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0003.9m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_3.9m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0005.1m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_5.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0006.5m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_6.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0008.1m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_8.1m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0009.8m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_9.8m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0012m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_12m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0014m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_14m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0017m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_17m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0019m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_19m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0023m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_23m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0027m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_27m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0031m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_31m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0036m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_36m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0041m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_41m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0047m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_47m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0054m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_54m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0061m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_61m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0069m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_69m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0078m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_78m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0087m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_87m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0097m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_97m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0108m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_108m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0120m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_120m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0133m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_133m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0147m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_147m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0163m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_163m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0181m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_181m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0200m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_200m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0221m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_221m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0245m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_245m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0271m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_271m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0301m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_301m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0334m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_334m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0371m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_371m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0412m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_412m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0458m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_458m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0509m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_509m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0565m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_565m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0628m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_628m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0697m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_697m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0773m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_773m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0857m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_857m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 0947m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_947m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 1046m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1046m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 1152m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1152m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 1266m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1266m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 1387m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1387m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 1516m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1516m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 1653m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1653m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 1796m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1796m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 1945m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_1945m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 2101m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_2101m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 2262m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_2262m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 2429m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_2429m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 2600m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_2600m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 2776m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_2776m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 2956m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_2956m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 3139m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_3139m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 3325m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_3325m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 3513m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_3513m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 3705m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_3705m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 3898m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_3898m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 4093m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_4093m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 4290m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_4290m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 4488m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_4488m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 4688m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_4688m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 4888m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_4888m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 5089m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_5089m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 5292m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_5292m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 5495m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_5495m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 5698m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_5698m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity - 5902m [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_5902m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Sea water y velocity [m/s] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaWaterVelocityY_0.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Surface temperature of snow over sea ice or bare sea ice [K] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceSnowTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Turbocline depth [m] [experimental]",
+            "Name": "CAPS-Ocean_3km_TurboclineDepth",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "CAPS-Ocean - Volume of snow on sea ice per unit grid cell area [cm] [experimental]",
+            "Name": "CAPS-Ocean_3km_SeaIceSnowVolume",
+            "isLeaf": true,
+            "isTemporal": true
+          }
+        ]
+      },
+      {
+        "Title": "CAPS-WEonG",
+        "Name": "CAPS-WEonG",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "CAPS-WEonG - Character of precipitation [experimental]",
             "Name": "CAPS-WEonG_3km_PrecipCharacter",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Conditional amount of liquid precipitation [m]",
+            "Title": "CAPS-WEonG - Conditional amount of liquid precipitation [m] [experimental]",
             "Name": "CAPS-WEonG_3km_LiquidPrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Conditional amount of precipitation [m]",
+            "Title": "CAPS-WEonG - Conditional amount of precipitation [m] [experimental]",
             "Name": "CAPS-WEonG_3km_PrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Conditional amount of solid ice pellets [m]",
+            "Title": "CAPS-WEonG - Conditional amount of solid ice pellets [m] [experimental]",
             "Name": "CAPS-WEonG_3km_IcePelletsCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Conditional amount of solid snow [m]",
+            "Title": "CAPS-WEonG - Conditional amount of solid snow [m] [experimental]",
             "Name": "CAPS-WEonG_3km_SolidSnowCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Dew point temperature (contour) [\u00b0C]",
+            "Title": "CAPS-WEonG - Dew point temperature (contour) [\u00b0C] [experimental]",
             "Name": "CAPS-WEonG_3km_DewPointTemp-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Dew point temperature [\u00b0C]",
+            "Title": "CAPS-WEonG - Dew point temperature [\u00b0C] [experimental]",
             "Name": "CAPS-WEonG_3km_DewPointTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Dominant precipitation type",
+            "Title": "CAPS-WEonG - Dominant precipitation type [experimental]",
             "Name": "CAPS-WEonG_3km_DominantPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Gust [m/s]",
+            "Title": "CAPS-WEonG - Gust [m/s] [experimental]",
             "Name": "CAPS-WEonG_3km_WindGust",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Height of snow level [m]",
+            "Title": "CAPS-WEonG - Height of snow level [m] [experimental]",
             "Name": "CAPS-WEonG_3km_SnowLevelHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Instantaneous precipitation type",
+            "Title": "CAPS-WEonG - Instantaneous precipitation type [experimental]",
             "Name": "CAPS-WEonG_3km_InstantPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Land/water proportion",
+            "Title": "CAPS-WEonG - Land/water proportion [experimental]",
             "Name": "CAPS-WEonG_3km_LandWater-Proportion",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Model orography [m]",
+            "Title": "CAPS-WEonG - Model orography [m] [experimental]",
             "Name": "CAPS-WEonG_3km_Orography",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Presence of blowing snow",
+            "Title": "CAPS-WEonG - Presence of blowing snow [experimental]",
             "Name": "CAPS-WEonG_3km_BlowingSnowPresence",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Probability of blowing snow [%]",
+            "Title": "CAPS-WEonG - Probability of blowing snow [%] [experimental]",
             "Name": "CAPS-WEonG_3km_BlowingSnow-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Probability of drizzle [%]",
+            "Title": "CAPS-WEonG - Probability of drizzle [%] [experimental]",
             "Name": "CAPS-WEonG_3km_Drizzle-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Probability of freezing drizzle [%]",
+            "Title": "CAPS-WEonG - Probability of freezing drizzle [%] [experimental]",
             "Name": "CAPS-WEonG_3km_FreezingDrizzle-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Probability of freezing precipitation [%]",
+            "Title": "CAPS-WEonG - Probability of freezing precipitation [%] [experimental]",
             "Name": "CAPS-WEonG_3km_FreezingPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Probability of freezing rain [%]",
+            "Title": "CAPS-WEonG - Probability of freezing rain [%] [experimental]",
             "Name": "CAPS-WEonG_3km_FreezingRain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Probability of ice pellets [%]",
+            "Title": "CAPS-WEonG - Probability of ice pellets [%] [experimental]",
             "Name": "CAPS-WEonG_3km_IcePellets-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Probability of liquid precipitation [%]",
+            "Title": "CAPS-WEonG - Probability of liquid precipitation [%] [experimental]",
             "Name": "CAPS-WEonG_3km_LiquidPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Probability of precipitation [%]",
+            "Title": "CAPS-WEonG - Probability of precipitation [%] [experimental]",
             "Name": "CAPS-WEonG_3km_Precip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Probability of rain [%]",
+            "Title": "CAPS-WEonG - Probability of rain [%] [experimental]",
             "Name": "CAPS-WEonG_3km_Rain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Probability of snow [%]",
+            "Title": "CAPS-WEonG - Probability of snow [%] [experimental]",
             "Name": "CAPS-WEonG_3km_Snow-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Probability of snow squalls [%]",
+            "Title": "CAPS-WEonG - Probability of snow squalls [%] [experimental]",
             "Name": "CAPS-WEonG_3km_SnowSqualls-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Probability of thunderstorm occurence [%]",
+            "Title": "CAPS-WEonG - Probability of thunderstorm occurence [%] [experimental]",
             "Name": "CAPS-WEonG_3km_Thunderstorm-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Sky state day/night (combined cloud cover and opacity)",
+            "Title": "CAPS-WEonG - Sky state day/night (combined cloud cover and opacity) [experimental]",
             "Name": "CAPS-WEonG_3km_SkyState",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Temperature [\u00b0C]",
+            "Title": "CAPS-WEonG - Temperature [\u00b0C] [experimental]",
             "Name": "CAPS-WEonG_3km_AirTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - The second most common precipitation type",
+            "Title": "CAPS-WEonG - The second most common precipitation type [experimental]",
             "Name": "CAPS-WEonG_3km_SecondMostCommonPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Total precipitation intensity index",
+            "Title": "CAPS-WEonG - Total precipitation intensity index [experimental]",
             "Name": "CAPS-WEonG_3km_TotalPrecipIntensityIndex",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Visibility through ice fog [m]",
+            "Title": "CAPS-WEonG - Visibility through ice fog [m] [experimental]",
             "Name": "CAPS-WEonG_3km_IceFogVisibility",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Visibility through liquid fog [m]",
+            "Title": "CAPS-WEonG - Visibility through liquid fog [m] [experimental]",
             "Name": "CAPS-WEonG_3km_LiquidFogVisibility",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Wind direction [deg true]",
+            "Title": "CAPS-WEonG - Wind direction [deg true] [experimental]",
             "Name": "CAPS-WEonG_3km_WindDir",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "CAPS-WEonG - Wind speed [m/s]",
+            "Title": "CAPS-WEonG - Wind speed [m/s] [experimental]",
             "Name": "CAPS-WEonG_3km_WindSpeed",
             "isLeaf": true,
             "isTemporal": true
@@ -3504,7 +5881,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "CaLDAS-NSRPS - Snow depth (land) [m]",
+            "Title": "CaLDAS-NSRPS - Snow depth (land surface) [m]",
             "Name": "CaLDAS-NSRPS_2.5km_SnowDepth",
             "isLeaf": true,
             "isTemporal": true
@@ -3568,8 +5945,8 @@ export default {
     ]
   },
   {
-    "Title": "Canadian Seasonal to Inter-annual Prediction System (CanSIPS)",
-    "Name": "Canadian Seasonal to Inter-annual Prediction System (CanSIPS)",
+    "Title": "Canadian Seasonal to Inter-annual Prediction System (CanSIPS) [100 km]",
+    "Name": "Canadian Seasonal to Inter-annual Prediction System (CanSIPS) [100 km]",
     "isLeaf": false,
     "children": [
       {
@@ -3578,8 +5955,8 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "CanSIPS members",
-            "Name": "CanSIPS members",
+            "Title": "Members",
+            "Name": "Members",
             "isLeaf": false,
             "children": [
               {
@@ -5808,369 +8185,421 @@ export default {
             ]
           },
           {
-            "Title": "CanSIPS Products (3-month)",
-            "Name": "CanSIPS Products (3-month)",
+            "Title": "Products",
+            "Name": "Products",
             "isLeaf": false,
             "children": [
               {
-                "Title": "Probability of temperature above normal - Month 0-2 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P00M-P02M",
-                "isLeaf": true,
-                "isTemporal": false
+                "Title": "Monthly",
+                "Name": "Monthly",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "Exceedance probability",
+                    "Name": "Exceedance probability",
+                    "isLeaf": false,
+                    "children": [
+                      {
+                        "Title": "Air temperature",
+                        "Name": "Air temperature",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probability of temperature being above 10 percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT10Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 20 percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT20Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 30 percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT30Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 40 percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT40Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 50 percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT50Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 60 percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT60Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 70 percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT70Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 80 percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT80Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 90 percentile [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT90Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      },
+                      {
+                        "Title": "Precipitation",
+                        "Name": "Precipitation",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probability of precipitation being above 10 percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT10Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 20 percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT20Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 30 percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT30Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 40 percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT40Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 50 percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT50Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 60 percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT60Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 70 percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT70Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 80 percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT80Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 90 percentile [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT90Pct-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "Title": "Tercile probability",
+                    "Name": "Tercile probability",
+                    "isLeaf": false,
+                    "children": [
+                      {
+                        "Title": "Air temperature",
+                        "Name": "Air temperature",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probability of temperature above normal [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature below normal [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature near normal [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      },
+                      {
+                        "Title": "Precipitation",
+                        "Name": "Precipitation",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probability of precipitation above normal [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation below normal [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation near normal [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               },
               {
-                "Title": "Probability of temperature above normal - Months 1-3 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P01M-P03M",
+                "Title": "Seasonal (3 months)",
+                "Name": "Seasonal (3 months)",
+                "isLeaf": false,
+                "children": [
+                  {
+                    "Title": "Exceedance probability",
+                    "Name": "Exceedance probability",
+                    "isLeaf": false,
+                    "children": [
+                      {
+                        "Title": "Air temperature",
+                        "Name": "Air temperature",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probability of temperature being above 10 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT10Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 20 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT20Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 30 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT30Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 40 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT40Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 50 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT50Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 60 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT60Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 70 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT70Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 80 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT80Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature being above 90 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbGT90Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      },
+                      {
+                        "Title": "Precipitation",
+                        "Name": "Precipitation",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probability of precipitation being above 10 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT10Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 20 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT20Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 30 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT30Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 40 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT40Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 50 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT50Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 60 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT60Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 70 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT70Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 80 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT80Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation being above 90 percentile - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbGT90Pct-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "Title": "Tercile probability",
+                    "Name": "Tercile probability",
+                    "isLeaf": false,
+                    "children": [
+                      {
+                        "Title": "Air temperature",
+                        "Name": "Air temperature",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probability of temperature above normal - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature below normal - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of temperature near normal - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      },
+                      {
+                        "Title": "Precipitation",
+                        "Name": "Precipitation",
+                        "isLeaf": false,
+                        "children": [
+                          {
+                            "Title": "Probability of precipitation above normal - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation below normal - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          },
+                          {
+                            "Title": "Probability of precipitation near normal - 3-month outlook [%]",
+                            "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_PT3M",
+                            "isLeaf": true,
+                            "isTemporal": true
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Title": "Verification",
+        "Name": "Verification",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "Products",
+            "Name": "Products",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "Air temperature anomaly",
+                "Name": "CanSIPS_100km_AirTempAnomaly-ERA5_2m",
                 "isLeaf": true,
-                "isTemporal": false
+                "isTemporal": true
               },
               {
-                "Title": "Probability of temperature above normal - Months 2-4 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P02M-P04M",
+                "Title": "Total precipitation anomaly",
+                "Name": "CanSIPS_100km_PrecipAccumAnomaly-ERA5_Sfc",
                 "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature above normal - Months 3-5 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P03M-P05M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature above normal - Months 4-6 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P04M-P06M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature above normal - Months 5-7 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P05M-P07M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature above normal - Months 6-8 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P06M-P08M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature above normal - Months 7-9 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P07M-P09M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature above normal - Months 8-10 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P08M-P10M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature above normal - Months 9-11 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbAboveNormal-2m_P09M-P11M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature below normal - Months 0-2 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P00M-P02M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature below normal - Months 1-3 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P01M-P03M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature below normal - Months 2-4 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P02M-P04M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature below normal - Months 3-5 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P03M-P05M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature below normal - Months 4-6 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P04M-P06M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature below normal - Months 5-7 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P05M-P07M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature below normal - Months 6-8 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P06M-P08M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature below normal - Months 7-9 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P07M-P09M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature below normal - Months 8-10 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P08M-P10M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature below normal - Months 9-11 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbBelowNormal-2m_P09M-P11M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature near normal - Months 0-2 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P00M-P02M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature near normal - Months 1-3 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P01M-P03M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature near normal - Months 2-4 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P02M-P04M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature near normal - Months 3-5 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P03M-P05M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature near normal - Months 4-6 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P04M-P06M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature near normal - Months 5-7 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P05M-P07M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature near normal - Months 6-8 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P06M-P08M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature near normal - Months 7-9 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P07M-P09M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature near normal - Months 8-10 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P08M-P10M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of temperature near normal - Months 9-11 [%]",
-                "Name": "CanSIPS_100km_AirTemp-ProbNearNormal-2m_P09M-P11M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation above normal - Months 0-2 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P00M-P02M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation above normal - Months 1-3 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P01M-P03M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation above normal - Months 2-4 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P02M-P04M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation above normal - Months 3-5 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P03M-P05M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation above normal - Months 4-6 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P04M-P06M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation above normal - Months 5-7 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P05M-P07M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation above normal - Months 6-8 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P06M-P08M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation above normal - Months 7-9 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P07M-P09M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation above normal - Months 8-10 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P08M-P10M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation above normal - Months 9-11 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_P09M-P11M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation below normal - Months 0-2 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P00M-P02M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation below normal - Months 1-3 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P01M-P03M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation below normal - Months 2-4 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P02M-P04M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation below normal - Months 3-5 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P03M-P05M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation below normal - Months 4-6 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P04M-P06M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation below normal - Months 5-7 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P05M-P07M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation below normal - Months 6-8 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P06M-P08M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation below normal - Months 7-9 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P07M-P09M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation below normal - Months 8-10 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P08M-P10M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation below normal - Months 9-11 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_P09M-P11M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation near normal - Months 0-2[%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P00M-P02M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation near normal - Months 1-3 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P01M-P03M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation near normal - Months 2-4 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P02M-P04M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation near normal - Months 3-5 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P03M-P05M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation near normal - Months 4-6 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P04M-P06M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation near normal - Months 5-7 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P05M-P07M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation near normal - Months 6-8 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P06M-P08M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation near normal - Months 7-9 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P07M-P09M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation near normal - Months 8-10 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P08M-P10M",
-                "isLeaf": true,
-                "isTemporal": false
-              },
-              {
-                "Title": "Probability of precipitation near normal - Months 9-11 [%]",
-                "Name": "CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_P09M-P11M",
-                "isLeaf": true,
-                "isTemporal": false
+                "isTemporal": true
               }
             ]
           }
@@ -6223,6 +8652,12 @@ export default {
       {
         "Title": "Current Conditions",
         "Name": "CURRENT_CONDITIONS",
+        "isLeaf": true,
+        "isTemporal": false
+      },
+      {
+        "Title": "Current Weather Alerts",
+        "Name": "Current-Alerts",
         "isLeaf": true,
         "isTemporal": false
       },
@@ -6395,7 +8830,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS.ETA - Freezing rain accumulation [mm]",
+            "Title": "GDPS.ETA - Freezing rain accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.ETA_FR",
             "isLeaf": true,
             "isTemporal": true
@@ -6419,7 +8854,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS.ETA - Ice pellets accumulation [mm]",
+            "Title": "GDPS.ETA - Ice pellets accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.ETA_PE",
             "isLeaf": true,
             "isTemporal": true
@@ -6487,6 +8922,12 @@ export default {
           {
             "Title": "GDPS.ETA - Net shortwave accumulated radiation flux at the surface (6 hourly forecast) [J/m\u00b2]",
             "Name": "GDPS.ETA_AS.6h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS.ETA - Ozone mixing ratio at surface [kg/kg]",
+            "Name": "GDPS.ETA_O3MixingRatio",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -6605,7 +9046,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS.ETA - Snow accumulation [mm]",
+            "Title": "GDPS.ETA - Snow accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.ETA_SN",
             "isLeaf": true,
             "isTemporal": true
@@ -11453,61 +13894,61 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "GDPS.DIAG - Freezing rain - 1-hour accumulation [mm]",
+            "Title": "GDPS.DIAG - Freezing rain - 1-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.DIAG_FR_PT1H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Freezing rain - 3-hour accumulation [mm]",
+            "Title": "GDPS.DIAG - Freezing rain - 3-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.DIAG_FR_PT3H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Freezing rain - 6-hour accumulation [mm]",
+            "Title": "GDPS.DIAG - Freezing rain - 6-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.DIAG_FR_PT6H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Freezing rain - 12-hour accumulation [mm]",
+            "Title": "GDPS.DIAG - Freezing rain - 12-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.DIAG_FR_PT12H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Freezing rain - 24-hour accumulation [mm]",
+            "Title": "GDPS.DIAG - Freezing rain - 24-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.DIAG_FR_PT24H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Ice pellets - 1-hour accumulation [mm]",
+            "Title": "GDPS.DIAG - Ice pellets - 1-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.DIAG_PE_PT1H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Ice pellets - 3-hour accumulation [mm]",
+            "Title": "GDPS.DIAG - Ice pellets - 3-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.DIAG_PE_PT3H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Ice pellets - 6-hour accumulation [mm]",
+            "Title": "GDPS.DIAG - Ice pellets - 6-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.DIAG_PE_PT6H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Ice pellets - 12-hour accumulation [mm]",
+            "Title": "GDPS.DIAG - Ice pellets - 12-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.DIAG_PE_PT12H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Ice pellets - 24-hour accumulation [mm]",
+            "Title": "GDPS.DIAG - Ice pellets - 24-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.DIAG_PE_PT24H",
             "isLeaf": true,
             "isTemporal": true
@@ -11621,31 +14062,31 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Snow - 1-hour accumulation [mm]",
+            "Title": "GDPS.DIAG - Snow - 1-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.DIAG_SN_PT1H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Snow - 3-hour accumulation [mm]",
+            "Title": "GDPS.DIAG - Snow - 3-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.DIAG_SN_PT3H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Snow - 6-hour accumulation [mm]",
+            "Title": "GDPS.DIAG - Snow - 6-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.DIAG_SN_PT6H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Snow - 12-hour accumulation [mm]",
+            "Title": "GDPS.DIAG - Snow - 12-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.DIAG_SN_PT12H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.DIAG - Snow - 24-hour accumulation [mm]",
+            "Title": "GDPS.DIAG - Snow - 24-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS.DIAG_SN_PT24H",
             "isLeaf": true,
             "isTemporal": true
@@ -11658,434 +14099,434 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "GDPS-WEonG - Character of precipitation",
-            "Name": "GDPS-WEonG_15km_PrecipCharacter",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "GDPS-WEonG - Character of precipitation (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Character of precipitation (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_PrecipCharacter.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Conditional amount of freezing precipitation [mm]",
-            "Name": "GDPS-WEonG_15km_FreezingPrecipCondAmt",
+            "Title": "GDPS-WEonG - Character of precipitation [experimental]",
+            "Name": "GDPS-WEonG_15km_PrecipCharacter",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Conditional amount of freezing precipitation [mm] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Conditional amount of freezing precipitation [mm] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_FreezingPrecipCondAmt.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Conditional amount of liquid precipitation [m]",
-            "Name": "GDPS-WEonG_15km_LiquidPrecipCondAmt",
+            "Title": "GDPS-WEonG - Conditional amount of freezing precipitation [mm] [experimental]",
+            "Name": "GDPS-WEonG_15km_FreezingPrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Conditional amount of liquid precipitation [m] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Conditional amount of liquid precipitation [m] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_LiquidPrecipCondAmt.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Conditional amount of precipitation [m]",
-            "Name": "GDPS-WEonG_15km_PrecipCondAmt",
+            "Title": "GDPS-WEonG - Conditional amount of liquid precipitation [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_LiquidPrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Conditional amount of precipitation [m] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Conditional amount of precipitation [m] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_PrecipCondAmt.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Conditional amount of solid ice pellets [m]",
-            "Name": "GDPS-WEonG_15km_IcePelletsCondAmt",
+            "Title": "GDPS-WEonG - Conditional amount of precipitation [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_PrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Conditional amount of solid ice pellets [m] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Conditional amount of solid ice pellets [m] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_IcePelletsCondAmt.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Conditional amount of solid snow [m]",
-            "Name": "GDPS-WEonG_15km_SolidSnowCondAmt",
+            "Title": "GDPS-WEonG - Conditional amount of solid ice pellets [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_IcePelletsCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Conditional amount of solid snow [m] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Conditional amount of solid snow [m] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_SolidSnowCondAmt.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Dew point temperature (contour) [\u00b0C]",
-            "Name": "GDPS-WEonG_15km_DewPointTemp-CONTOUR",
+            "Title": "GDPS-WEonG - Conditional amount of solid snow [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_SolidSnowCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Dew point temperature (contour) [\u00b0C] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Dew point temperature (contour) [\u00b0C] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_DewPointTemp.3h-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Dew point temperature [\u00b0C]",
-            "Name": "GDPS-WEonG_15km_DewPointTemp",
+            "Title": "GDPS-WEonG - Dew point temperature (contour) [\u00b0C] [experimental]",
+            "Name": "GDPS-WEonG_15km_DewPointTemp-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Dew point temperature [\u00b0C] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Dew point temperature [\u00b0C] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_DewPointTemp.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Dominant precipitation type",
-            "Name": "GDPS-WEonG_15km_DominantPrecipType",
+            "Title": "GDPS-WEonG - Dew point temperature [\u00b0C] [experimental]",
+            "Name": "GDPS-WEonG_15km_DewPointTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Dominant precipitation type (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Dominant precipitation type (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_DominantPrecipType.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Gust [m/s]",
-            "Name": "GDPS-WEonG_15km_WindGust",
+            "Title": "GDPS-WEonG - Dominant precipitation type [experimental]",
+            "Name": "GDPS-WEonG_15km_DominantPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Gust [m/s] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Gust [m/s] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_WindGust.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Height of snow level [m]",
-            "Name": "GDPS-WEonG_15km_SnowLevelHeight",
+            "Title": "GDPS-WEonG - Gust [m/s] [experimental]",
+            "Name": "GDPS-WEonG_15km_WindGust",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Height of snow level [m] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Height of snow level [m] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_SnowLevelHeight.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Instantaneous precipitation type",
-            "Name": "GDPS-WEonG_15km_InstantPrecipType",
+            "Title": "GDPS-WEonG - Height of snow level [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_SnowLevelHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Instantaneous precipitation type (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Instantaneous precipitation type (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_InstantPrecipType.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Land/water proportion",
-            "Name": "GDPS-WEonG_15km_LandWater-Proportion",
+            "Title": "GDPS-WEonG - Instantaneous precipitation type [experimental]",
+            "Name": "GDPS-WEonG_15km_InstantPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Land/water proportion (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Land/water proportion (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_LandWater-Proportion.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Model orography [m]",
-            "Name": "GDPS-WEonG_15km_Orography",
+            "Title": "GDPS-WEonG - Land/water proportion [experimental]",
+            "Name": "GDPS-WEonG_15km_LandWater-Proportion",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Model orography [m] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Model orography [m] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_Orography.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Presence of blowing snow",
-            "Name": "GDPS-WEonG_15km_BlowingSnowPresence",
+            "Title": "GDPS-WEonG - Model orography [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_Orography",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Presence of blowing snow (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Presence of blowing snow (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_BlowingSnowPresence.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of blowing snow [%]",
-            "Name": "GDPS-WEonG_15km_BlowingSnow-Prob",
+            "Title": "GDPS-WEonG - Presence of blowing snow [experimental]",
+            "Name": "GDPS-WEonG_15km_BlowingSnowPresence",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of blowing snow [%] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Probability of blowing snow [%] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_BlowingSnow-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of drizzle [%]",
-            "Name": "GDPS-WEonG_15km_Drizzle-Prob",
+            "Title": "GDPS-WEonG - Probability of blowing snow [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_BlowingSnow-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of drizzle [%] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Probability of drizzle [%] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_Drizzle-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of freezing drizzle [%]",
-            "Name": "GDPS-WEonG_15km_FreezingDrizzle-Prob",
+            "Title": "GDPS-WEonG - Probability of drizzle [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_Drizzle-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of freezing drizzle [%] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Probability of freezing drizzle [%] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_FreezingDrizzle-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of freezing precipitation [%]",
-            "Name": "GDPS-WEonG_15km_FreezingPrecip-Prob",
+            "Title": "GDPS-WEonG - Probability of freezing drizzle [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_FreezingDrizzle-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of freezing precipitation [%] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Probability of freezing precipitation [%] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_FreezingPrecip-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of freezing rain [%]",
-            "Name": "GDPS-WEonG_15km_FreezingRain-Prob",
+            "Title": "GDPS-WEonG - Probability of freezing precipitation [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_FreezingPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of freezing rain [%] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Probability of freezing rain [%] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_FreezingRain-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of ice pellets [%]",
-            "Name": "GDPS-WEonG_15km_IcePellets-Prob",
+            "Title": "GDPS-WEonG - Probability of freezing rain [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_FreezingRain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of ice pellets [%] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Probability of ice pellets [%] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_IcePellets-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of liquid precipitation [%]",
-            "Name": "GDPS-WEonG_15km_LiquidPrecip-Prob",
+            "Title": "GDPS-WEonG - Probability of ice pellets [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_IcePellets-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of liquid precipitation [%] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Probability of liquid precipitation [%] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_LiquidPrecip-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of precipitation [%]",
-            "Name": "GDPS-WEonG_15km_Precip-Prob",
+            "Title": "GDPS-WEonG - Probability of liquid precipitation [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_LiquidPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of precipitation [%] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Probability of precipitation [%] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_Precip-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of rain [%]",
-            "Name": "GDPS-WEonG_15km_Rain-Prob",
+            "Title": "GDPS-WEonG - Probability of precipitation [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_Precip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of rain [%] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Probability of rain [%] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_Rain-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of snow [%]",
-            "Name": "GDPS-WEonG_15km_Snow-Prob",
+            "Title": "GDPS-WEonG - Probability of rain [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_Rain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of snow [%] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Probability of snow [%] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_Snow-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of snow squalls [%]",
-            "Name": "GDPS-WEonG_15km_SnowSqualls-Prob",
+            "Title": "GDPS-WEonG - Probability of snow [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_Snow-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of snow squalls [%] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Probability of snow squalls [%] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_SnowSqualls-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of thunderstorm occurence [%]",
-            "Name": "GDPS-WEonG_15km_Thunderstorm-Prob",
+            "Title": "GDPS-WEonG - Probability of snow squalls [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_SnowSqualls-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Probability of thunderstorm occurence [%] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Probability of thunderstorm occurence [%] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_Thunderstorm-Prob.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Sky state day/night (combined cloud cover and opacity)",
-            "Name": "GDPS-WEonG_15km_SkyState",
+            "Title": "GDPS-WEonG - Probability of thunderstorm occurence [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_Thunderstorm-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Sky state day/night (combined cloud cover and opacity) (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Sky state day/night (combined cloud cover and opacity) (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_SkyState.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Temperature [\u00b0C]",
-            "Name": "GDPS-WEonG_15km_AirTemp",
+            "Title": "GDPS-WEonG - Sky state day/night (combined cloud cover and opacity) [experimental]",
+            "Name": "GDPS-WEonG_15km_SkyState",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Temperature [\u00b0C] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Temperature [\u00b0C] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_AirTemp.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - The second most common precipitation type",
-            "Name": "GDPS-WEonG_15km_SecondMostCommonPrecipType",
+            "Title": "GDPS-WEonG - Temperature [\u00b0C] [experimental]",
+            "Name": "GDPS-WEonG_15km_AirTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - The second most common precipitation type (3 hourly forecast)",
+            "Title": "GDPS-WEonG - The second most common precipitation type (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_SecondMostCommonPrecipType.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Total precipitation intensity index",
-            "Name": "GDPS-WEonG_15km_TotalPrecipIntensityIndex",
+            "Title": "GDPS-WEonG - The second most common precipitation type [experimental]",
+            "Name": "GDPS-WEonG_15km_SecondMostCommonPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Total precipitation intensity index (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Total precipitation intensity index (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_TotalPrecipIntensityIndex.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Visibility through ice fog [m]",
-            "Name": "GDPS-WEonG_15km_IceFogVisibility",
+            "Title": "GDPS-WEonG - Total precipitation intensity index [experimental]",
+            "Name": "GDPS-WEonG_15km_TotalPrecipIntensityIndex",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Visibility through ice fog [m] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Visibility through ice fog [m] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_IceFogVisibility.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Visibility through liquid fog [m]",
-            "Name": "GDPS-WEonG_15km_LiquidFogVisibility",
+            "Title": "GDPS-WEonG - Visibility through ice fog [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_IceFogVisibility",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Visibility through liquid fog [m] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Visibility through liquid fog [m] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_LiquidFogVisibility.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Wind direction [deg true]",
-            "Name": "GDPS-WEonG_15km_WindDir",
+            "Title": "GDPS-WEonG - Visibility through liquid fog [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_LiquidFogVisibility",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Wind direction [deg true] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Wind direction [deg true] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_WindDir.3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Wind speed (contour) [m/s]",
-            "Name": "GDPS-WEonG_15km_WindSpeed-Contour",
+            "Title": "GDPS-WEonG - Wind direction [deg true] [experimental]",
+            "Name": "GDPS-WEonG_15km_WindDir",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Wind speed (contour) [m/s] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Wind speed (contour) [m/s] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_WindSpeed.3h-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Wind speed [m/s]",
-            "Name": "GDPS-WEonG_15km_WindSpeed",
+            "Title": "GDPS-WEonG - Wind speed (contour) [m/s] [experimental]",
+            "Name": "GDPS-WEonG_15km_WindSpeed-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-WEonG - Wind speed [m/s] (3 hourly forecast)",
+            "Title": "GDPS-WEonG - Wind speed [m/s] (3 hourly forecast) [experimental]",
             "Name": "GDPS-WEonG_15km_WindSpeed.3h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Wind speed [m/s] [experimental]",
+            "Name": "GDPS-WEonG_15km_WindSpeed",
             "isLeaf": true,
             "isTemporal": true
           }
@@ -12224,37 +14665,37 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Freezing rain - 1-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Freezing rain - 1-hour accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_FreezingRain-Accum-1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Freezing rain - 3-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Freezing rain - 3-hour accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_FreezingRain-Accum-3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Freezing rain - 6-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Freezing rain - 6-hour accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_FreezingRain-Accum-6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Freezing rain - 12-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_FreezingRain-Accum-12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Freezing rain - 24-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_FreezingRain-Accum-24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Freezing rain accumulation [mm] [experimental]",
+            "Title": "GDPS - Freezing rain accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_FreezingRain-Accum",
             "isLeaf": true,
             "isTemporal": true
@@ -12278,37 +14719,37 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Ice pellets - 1-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Ice pellets - 1-hour accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_IcePellets-Accum-1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Ice pellets - 3-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Ice pellets - 3-hour accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_IcePellets-Accum-3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Ice pellets - 6-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_IcePellets-Accum-6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Ice pellets - 12-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_IcePellets-Accum-12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Ice pellets - 24-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_IcePellets-Accum-24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Ice pellets accumulation [mm] [experimental]",
+            "Title": "GDPS - Ice pellets accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_IcePellets-Accum",
             "isLeaf": true,
             "isTemporal": true
@@ -12388,6 +14829,12 @@ export default {
           {
             "Title": "GDPS - Precipitation - 24-hour accumulation [mm] [experimental]",
             "Name": "GDPS_15km_Precip-Accum24h",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS - Precipitation accumulation [mm] [experimental]",
+            "Name": "GDPS_15km_Precip-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -12500,37 +14947,37 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Snow - 1-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Snow - 1-hour accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_Snow-Accum1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Snow - 3-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Snow - 3-hour accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_Snow-Accum3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Snow - 6-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Snow - 6-hour accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_Snow-Accum6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Snow - 12-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Snow - 12-hour accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_Snow-Accum12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Snow - 24-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Snow - 24-hour accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_Snow-Accum24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Snow accumulation [mm] [experimental]",
+            "Title": "GDPS - Snow accumulation (liquid equivalent) [mm] [experimental]",
             "Name": "GDPS_15km_Snow-Accum",
             "isLeaf": true,
             "isTemporal": true
@@ -16147,234 +18594,308 @@ export default {
             ]
           },
           {
+            "Title": "Air temperature at 850 mb",
+            "Name": "Air temperature at 850 mb",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GEPS - Air temperature at 850 mb [\u00b0C] (0th percentile)",
+                "Name": "GEPS.DIAG_TT_850.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Air temperature at 850 mb [\u00b0C] (25th percentile)",
+                "Name": "GEPS.DIAG_TT_850.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Air temperature at 850 mb [\u00b0C] (50th percentile)",
+                "Name": "GEPS.DIAG_TT_850.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Air temperature at 850 mb [\u00b0C] (75th percentile)",
+                "Name": "GEPS.DIAG_TT_850.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Air temperature at 850 mb [\u00b0C] (100th percentile)",
+                "Name": "GEPS.DIAG_TT_850.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "CAPE for the most unstable parcel",
+            "Name": "CAPE for the most unstable parcel",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GEPS - CAPE for the most unstable parcel [J/kg] (0th percentile)",
+                "Name": "GEPS.DIAG_MUCAPE.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - CAPE for the most unstable parcel [J/kg] (25th percentile)",
+                "Name": "GEPS.DIAG_MUCAPE.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - CAPE for the most unstable parcel [J/kg] (50th percentile)",
+                "Name": "GEPS.DIAG_MUCAPE.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - CAPE for the most unstable parcel [J/kg] (75th percentile)",
+                "Name": "GEPS.DIAG_MUCAPE.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - CAPE for the most unstable parcel [J/kg] (100th percentile)",
+                "Name": "GEPS.DIAG_MUCAPE.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
             "Title": "Freezing rain",
             "Name": "Freezing rain",
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Freezing rain - 12-hour accumulation [mm] (0th percentile)",
+                "Title": "GEPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (0th percentile)",
                 "Name": "GEPS.DIAG.12_FRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 12-hour accumulation [mm] (10th percentile)",
+                "Title": "GEPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (10th percentile)",
                 "Name": "GEPS.DIAG.12_FRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 12-hour accumulation [mm] (25th percentile)",
+                "Title": "GEPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (25th percentile)",
                 "Name": "GEPS.DIAG.12_FRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 12-hour accumulation [mm] (50th percentile)",
+                "Title": "GEPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (50th percentile)",
                 "Name": "GEPS.DIAG.12_FRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 12-hour accumulation [mm] (75th percentile)",
+                "Title": "GEPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (75th percentile)",
                 "Name": "GEPS.DIAG.12_FRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 12-hour accumulation [mm] (90th percentile)",
+                "Title": "GEPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (90th percentile)",
                 "Name": "GEPS.DIAG.12_FRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 12-hour accumulation [mm] (100th percentile)",
+                "Title": "GEPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (100th percentile)",
                 "Name": "GEPS.DIAG.12_FRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 12-hour accumulation [mm] (mean)",
+                "Title": "GEPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (mean)",
                 "Name": "GEPS.DIAG.12_FRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 12-hour accumulation [mm] (standard deviation)",
+                "Title": "GEPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (standard deviation)",
                 "Name": "GEPS.DIAG.12_FRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 24-hour accumulation [mm] (0th percentile)",
+                "Title": "GEPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (0th percentile)",
                 "Name": "GEPS.DIAG.24_FRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 24-hour accumulation [mm] (10th percentile)",
+                "Title": "GEPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (10th percentile)",
                 "Name": "GEPS.DIAG.24_FRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 24-hour accumulation [mm] (25th percentile)",
+                "Title": "GEPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (25th percentile)",
                 "Name": "GEPS.DIAG.24_FRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 24-hour accumulation [mm] (50th percentile)",
+                "Title": "GEPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (50th percentile)",
                 "Name": "GEPS.DIAG.24_FRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 24-hour accumulation [mm] (75th percentile)",
+                "Title": "GEPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (75th percentile)",
                 "Name": "GEPS.DIAG.24_FRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 24-hour accumulation [mm] (90th percentile)",
+                "Title": "GEPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (90th percentile)",
                 "Name": "GEPS.DIAG.24_FRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 24-hour accumulation [mm] (100th percentile)",
+                "Title": "GEPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (100th percentile)",
                 "Name": "GEPS.DIAG.24_FRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 24-hour accumulation [mm] (mean)",
+                "Title": "GEPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (mean)",
                 "Name": "GEPS.DIAG.24_FRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Freezing rain - 24-hour accumulation [mm] (standard deviation)",
+                "Title": "GEPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (standard deviation)",
                 "Name": "GEPS.DIAG.24_FRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation >= 1 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 1 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation >= 2.5 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation >= 5 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 5 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation >= 10 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 10 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation >= 15 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 15 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation >= 20 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 20 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation >= 25 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 25 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation >= 30 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 30 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation >= 40 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 40 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation >= 50 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 50 mm [%]",
                 "Name": "GEPS.DIAG.12_FRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation >= 1 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 1 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation >= 2.5 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation >= 5 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 5 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation >= 10 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 10 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation >= 15 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 15 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation >= 20 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 20 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation >= 25 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 25 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation >= 30 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 30 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation >= 40 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 40 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation >= 50 mm [%]",
+                "Title": "GEPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 50 mm [%]",
                 "Name": "GEPS.DIAG.24_FRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
@@ -16387,56 +18908,20 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Geopotential height at 500 mb [gpm] (mean) (3 hourly forecast)",
-                "Name": "GEPS.DIAG.3_GZ.500.ERMEAN",
+                "Title": "GEPS - Geopotential height at 500 mb [gpm] (mean)",
+                "Name": "GEPS.DIAG_GZ.500.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Geopotential height at 500 mb [gpm] (mean) (6 hourly forecast)",
-                "Name": "GEPS.DIAG.6_GZ.500.ERMEAN",
+                "Title": "GEPS - Geopotential height at 500 mb [gpm] (mean) (contour)",
+                "Name": "GEPS.DIAG_GZ.500.ERMEAN-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Geopotential height at 500 mb [gpm] (mean) (12 hourly forecast)",
-                "Name": "GEPS.DIAG.12_GZ.500.ERMEAN",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Geopotential height at 500 mb [gpm] (mean) (contour) (3 hourly forecast)",
-                "Name": "GEPS.DIAG.3_GZ.500.ERMEAN-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Geopotential height at 500 mb [gpm] (mean) (contour) (6 hourly forecast)",
-                "Name": "GEPS.DIAG.6_GZ.500.ERMEAN-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Geopotential height at 500 mb [gpm] (mean) (contour) (12 hourly forecast)",
-                "Name": "GEPS.DIAG.12_GZ.500.ERMEAN-CONTOUR",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Geopotential height at 500 mb [gpm] (standard deviation) (3 hourly forecast)",
-                "Name": "GEPS.DIAG.3_GZ.500.ERSSTD",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Geopotential height at 500 mb [gpm] (standard deviation) (6 hourly forecast)",
-                "Name": "GEPS.DIAG.6_GZ.500.ERSSTD",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Geopotential height at 500 mb [gpm] (standard deviation) (12 hourly forecast)",
-                "Name": "GEPS.DIAG.12_GZ.500.ERSSTD",
+                "Title": "GEPS - Geopotential height at 500 mb [gpm] (standard deviation)",
+                "Name": "GEPS.DIAG_GZ.500.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               }
@@ -16556,37 +19041,37 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilility of humidex at 2 m above ground - maximum over 24-hour >= 25 (\u00b0C) [%]",
+                "Title": "GEPS - Probability of humidex at 2 m above ground - maximum over 24-hour >= 25 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_HMXX.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilility of humidex at 2 m above ground - maximum over 24-hour >= 30 (\u00b0C) [%]",
+                "Title": "GEPS - Probability of humidex at 2 m above ground - maximum over 24-hour >= 30 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_HMXX.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilility of humidex at 2 m above ground - maximum over 24-hour >= 35 (\u00b0C) [%]",
+                "Title": "GEPS - Probability of humidex at 2 m above ground - maximum over 24-hour >= 35 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_HMXX.ERGE35",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilility of humidex at 2 m above ground - maximum over 24-hour >= 38 (\u00b0C) [%]",
+                "Title": "GEPS - Probability of humidex at 2 m above ground - maximum over 24-hour >= 38 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_HMXX.ERGE38",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilility of humidex at 2 m above ground - maximum over 24-hour >= 40 (\u00b0C) [%]",
+                "Title": "GEPS - Probability of humidex at 2 m above ground - maximum over 24-hour >= 40 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_HMXX.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilility of humidex at 2 m above ground - maximum over 24-hour >= 42 (\u00b0C) [%]",
+                "Title": "GEPS - Probability of humidex at 2 m above ground - maximum over 24-hour >= 42 (\u00b0C) [%]",
                 "Name": "GEPS.DIAG.24_HMXX.ERGE42",
                 "isLeaf": true,
                 "isTemporal": true
@@ -16599,229 +19084,259 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Ice pellets - 12-hour accumulation [mm] (0th percentile)",
+                "Title": "GEPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] (0th percentile)",
+                "Name": "GEPS.DIAG.6_PEMM.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] (25th percentile)",
+                "Name": "GEPS.DIAG.6_PEMM.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] (50th percentile)",
+                "Name": "GEPS.DIAG.6_PEMM.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] (75th percentile)",
+                "Name": "GEPS.DIAG.6_PEMM.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] (100th percentile)",
+                "Name": "GEPS.DIAG.6_PEMM.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (0th percentile)",
                 "Name": "GEPS.DIAG.12_PEMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 12-hour accumulation [mm] (10th percentile)",
+                "Title": "GEPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (10th percentile)",
                 "Name": "GEPS.DIAG.12_PEMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 12-hour accumulation [mm] (25th percentile)",
+                "Title": "GEPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (25th percentile)",
                 "Name": "GEPS.DIAG.12_PEMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 12-hour accumulation [mm] (50th percentile)",
+                "Title": "GEPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (50th percentile)",
                 "Name": "GEPS.DIAG.12_PEMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 12-hour accumulation [mm] (75th percentile)",
+                "Title": "GEPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (75th percentile)",
                 "Name": "GEPS.DIAG.12_PEMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 12-hour accumulation [mm] (90th percentile)",
+                "Title": "GEPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (90th percentile)",
                 "Name": "GEPS.DIAG.12_PEMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 12-hour accumulation [mm] (100th percentile)",
+                "Title": "GEPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (100th percentile)",
                 "Name": "GEPS.DIAG.12_PEMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 12-hour accumulation [mm] (mean)",
+                "Title": "GEPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (mean)",
                 "Name": "GEPS.DIAG.12_PEMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 12-hour accumulation [mm] (standard deviation)",
+                "Title": "GEPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (standard deviation)",
                 "Name": "GEPS.DIAG.12_PEMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 24-hour accumulation [mm] (0th percentile)",
+                "Title": "GEPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (0th percentile)",
                 "Name": "GEPS.DIAG.24_PEMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 24-hour accumulation [mm] (10th percentile)",
+                "Title": "GEPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (10th percentile)",
                 "Name": "GEPS.DIAG.24_PEMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 24-hour accumulation [mm] (25th percentile)",
+                "Title": "GEPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (25th percentile)",
                 "Name": "GEPS.DIAG.24_PEMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 24-hour accumulation [mm] (50th percentile)",
+                "Title": "GEPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (50th percentile)",
                 "Name": "GEPS.DIAG.24_PEMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 24-hour accumulation [mm] (75th percentile)",
+                "Title": "GEPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (75th percentile)",
                 "Name": "GEPS.DIAG.24_PEMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 24-hour accumulation [mm] (90th percentile)",
+                "Title": "GEPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (90th percentile)",
                 "Name": "GEPS.DIAG.24_PEMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 24-hour accumulation [mm] (100th percentile)",
+                "Title": "GEPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (100th percentile)",
                 "Name": "GEPS.DIAG.24_PEMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 24-hour accumulation [mm] (mean)",
+                "Title": "GEPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (mean)",
                 "Name": "GEPS.DIAG.24_PEMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Ice pellets - 24-hour accumulation [mm] (standard deviation)",
+                "Title": "GEPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (standard deviation)",
                 "Name": "GEPS.DIAG.24_PEMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation >= 1 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 1 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation >= 2.5 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation >= 5 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 5 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation >= 10 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 10 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation >= 15 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 15 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation >= 20 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 20 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation >= 25 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 25 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation >= 30 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 30 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation >= 40 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 40 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation >= 50 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 50 mm [%]",
                 "Name": "GEPS.DIAG.12_PEMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation >= 1 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 1 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation >= 2.5 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation >= 5 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 5 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation >= 10 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 10 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation >= 15 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 15 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation >= 20 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 20 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation >= 25 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 25 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation >= 30 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 30 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation >= 40 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 40 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation >= 50 mm [%]",
+                "Title": "GEPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 50 mm [%]",
                 "Name": "GEPS.DIAG.24_PEMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
@@ -16833,6 +19348,36 @@ export default {
             "Name": "Precipitation",
             "isLeaf": false,
             "children": [
+              {
+                "Title": "GEPS - Precipitation - 6-hour accumulation [mm] (0th percentile)",
+                "Name": "GEPS.DIAG.6_PRMM.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Precipitation - 6-hour accumulation [mm] (25th percentile)",
+                "Name": "GEPS.DIAG.6_PRMM.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Precipitation - 6-hour accumulation [mm] (50th percentile)",
+                "Name": "GEPS.DIAG.6_PRMM.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Precipitation - 6-hour accumulation [mm] (75th percentile)",
+                "Name": "GEPS.DIAG.6_PRMM.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Precipitation - 6-hour accumulation [mm] (100th percentile)",
+                "Name": "GEPS.DIAG.6_PRMM.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              },
               {
                 "Title": "GEPS - Precipitation - 12-hour accumulation [mm] (0th percentile)",
                 "Name": "GEPS.DIAG.12_PRMM.ERC0",
@@ -17154,6 +19699,42 @@ export default {
               {
                 "Title": "GEPS - Precipitation - 120-hour accumulation [mm] (standard deviation)",
                 "Name": "GEPS.DIAG.120_PRMM.ERSSTD",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of precipitation - 6-hour accumulation >= 1 mm [%]",
+                "Name": "GEPS.DIAG.6_PRMM.ERGE1",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of precipitation - 6-hour accumulation >= 5 mm [%]",
+                "Name": "GEPS.DIAG.6_PRMM.ERGE5",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of precipitation - 6-hour accumulation >= 10 mm [%]",
+                "Name": "GEPS.DIAG.6_PRMM.ERGE10",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of precipitation - 6-hour accumulation >= 25 mm [%]",
+                "Name": "GEPS.DIAG.6_PRMM.ERGE25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of precipitation - 6-hour accumulation >= 50 mm [%]",
+                "Name": "GEPS.DIAG.6_PRMM.ERGE50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of precipitation - 6-hour accumulation >= 100 mm [%]",
+                "Name": "GEPS.DIAG.6_PRMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -17934,56 +20515,20 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Sea level pressure (contour) [Pa] (mean) (3 hourly forecast)",
-                "Name": "GEPS.DIAG.3_PN.ERMEAN-CONTOUR",
+                "Title": "GEPS - Sea level pressure (contour) [Pa] (mean)",
+                "Name": "GEPS.DIAG_PN.ERMEAN-CONTOUR",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Sea level pressure (contour) [Pa] (mean) (6 hourly forecast)",
-                "Name": "GEPS.DIAG.6_PN.ERMEAN-CONTOUR",
+                "Title": "GEPS - Sea level pressure [Pa] (mean)",
+                "Name": "GEPS.DIAG_PN.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Sea level pressure (contour) [Pa] (mean) (12 hourly forecast)",
-                "Name": "GEPS.DIAG.12_PN.ERMEAN",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Sea level pressure [Pa] (mean) (3 hourly forecast)",
-                "Name": "GEPS.DIAG.3_PN.ERMEAN",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Sea level pressure [Pa] (mean) (6 hourly forecast)",
-                "Name": "GEPS.DIAG.6_PN.ERMEAN",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Sea level pressure [Pa] (mean) (12 hourly forecast)",
-                "Name": "GEPS.DIAG.12_PN-SLP.ERMEAN",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Sea level pressure [Pa] (standard deviation) (3 hourly forecast)",
-                "Name": "GEPS.DIAG.3_PN.ERSSTD",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Sea level pressure [Pa] (standard deviation) (6 hourly forecast)",
-                "Name": "GEPS.DIAG.6_PN.ERSSTD",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "GEPS - Sea level pressure [Pa] (standard deviation) (12 hourly forecast)",
-                "Name": "GEPS.DIAG.12_PN-SLP.ERSSTD",
+                "Title": "GEPS - Sea level pressure [Pa] (standard deviation)",
+                "Name": "GEPS.DIAG_PN.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               }
@@ -17995,247 +20540,277 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Probability of snow - 12-hour accumulation >= 1 mm [%]",
+                "Title": "GEPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 1 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 12-hour accumulation >= 2.5 mm [%]",
+                "Title": "GEPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 12-hour accumulation >= 5 mm [%]",
+                "Title": "GEPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 5 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 12-hour accumulation >= 10 mm [%]",
+                "Title": "GEPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 10 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 12-hour accumulation >= 15 mm [%]",
+                "Title": "GEPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 15 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 12-hour accumulation >= 20 mm [%]",
+                "Title": "GEPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 20 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 12-hour accumulation >= 25 mm [%]",
+                "Title": "GEPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 25 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 12-hour accumulation >= 30 mm [%]",
+                "Title": "GEPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 30 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 12-hour accumulation >= 40 mm [%]",
+                "Title": "GEPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 40 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 12-hour accumulation >= 50 mm [%]",
+                "Title": "GEPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 50 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 12-hour accumulation >= 75 mm [%]",
+                "Title": "GEPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 75 mm [%]",
                 "Name": "GEPS.DIAG.12_SNMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 24-hour accumulation >= 1 mm [%]",
+                "Title": "GEPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 1 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 24-hour accumulation >= 2.5 mm [%]",
+                "Title": "GEPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 2.5 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 24-hour accumulation >= 5 mm [%]",
+                "Title": "GEPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 5 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 24-hour accumulation >= 10 mm [%]",
+                "Title": "GEPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 10 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 24-hour accumulation >= 15 mm [%]",
+                "Title": "GEPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 15 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 24-hour accumulation >= 20 mm [%]",
+                "Title": "GEPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 20 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 24-hour accumulation >= 25 mm [%]",
+                "Title": "GEPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 25 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 24-hour accumulation >= 30 mm [%]",
+                "Title": "GEPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 30 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 24-hour accumulation >= 40 mm [%]",
+                "Title": "GEPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 40 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 24-hour accumulation >= 50 mm [%]",
+                "Title": "GEPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 50 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 24-hour accumulation >= 75 mm [%]",
+                "Title": "GEPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 75 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of snow - 24-hour accumulation >= 100 mm [%]",
+                "Title": "GEPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 100 mm [%]",
                 "Name": "GEPS.DIAG.24_SNMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 12-hour accumulation [mm] (0th percentile)",
+                "Title": "GEPS - Snow - 6-hour accumulation (liquid equivalent) [mm] (0th percentile)",
+                "Name": "GEPS.DIAG.6_SNMM.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Snow - 6-hour accumulation (liquid equivalent) [mm] (25th percentile)",
+                "Name": "GEPS.DIAG.6_SNMM.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Snow - 6-hour accumulation (liquid equivalent) [mm] (50th percentile)",
+                "Name": "GEPS.DIAG.6_SNMM.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Snow - 6-hour accumulation (liquid equivalent) [mm] (75th percentile)",
+                "Name": "GEPS.DIAG.6_SNMM.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Snow - 6-hour accumulation (liquid equivalent) [mm] (100th percentile)",
+                "Name": "GEPS.DIAG.6_SNMM.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (0th percentile)",
                 "Name": "GEPS.DIAG.12_SNMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 12-hour accumulation [mm] (10th percentile)",
+                "Title": "GEPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (10th percentile)",
                 "Name": "GEPS.DIAG.12_SNMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 12-hour accumulation [mm] (25th percentile)",
+                "Title": "GEPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (25th percentile)",
                 "Name": "GEPS.DIAG.12_SNMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 12-hour accumulation [mm] (50th percentile)",
+                "Title": "GEPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (50th percentile)",
                 "Name": "GEPS.DIAG.12_SNMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 12-hour accumulation [mm] (75th percentile)",
+                "Title": "GEPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (75th percentile)",
                 "Name": "GEPS.DIAG.12_SNMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 12-hour accumulation [mm] (90th percentile)",
+                "Title": "GEPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (90th percentile)",
                 "Name": "GEPS.DIAG.12_SNMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 12-hour accumulation [mm] (100th percentile)",
+                "Title": "GEPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (100th percentile)",
                 "Name": "GEPS.DIAG.12_SNMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 12-hour accumulation [mm] (mean)",
+                "Title": "GEPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (mean)",
                 "Name": "GEPS.DIAG.12_SNMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 12-hour accumulation [mm] (standard deviation)",
+                "Title": "GEPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (standard deviation)",
                 "Name": "GEPS.DIAG.12_SNMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 24-hour accumulation [mm] (0th percentile)",
+                "Title": "GEPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (0th percentile)",
                 "Name": "GEPS.DIAG.24_SNMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 24-hour accumulation [mm] (10th percentile)",
+                "Title": "GEPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (10th percentile)",
                 "Name": "GEPS.DIAG.24_SNMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 24-hour accumulation [mm] (25th percentile)",
+                "Title": "GEPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (25th percentile)",
                 "Name": "GEPS.DIAG.24_SNMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 24-hour accumulation [mm] (50th percentile)",
+                "Title": "GEPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (50th percentile)",
                 "Name": "GEPS.DIAG.24_SNMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 24-hour accumulation [mm] (75th percentile)",
+                "Title": "GEPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (75th percentile)",
                 "Name": "GEPS.DIAG.24_SNMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 24-hour accumulation [mm] (90th percentile)",
+                "Title": "GEPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (90th percentile)",
                 "Name": "GEPS.DIAG.24_SNMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 24-hour accumulation [mm] (100th percentile)",
+                "Title": "GEPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (100th percentile)",
                 "Name": "GEPS.DIAG.24_SNMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 24-hour accumulation [mm] (mean)",
+                "Title": "GEPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (mean)",
                 "Name": "GEPS.DIAG.24_SNMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Snow - 24-hour accumulation [mm] (standard deviation)",
+                "Title": "GEPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (standard deviation)",
                 "Name": "GEPS.DIAG.24_SNMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
@@ -18286,6 +20861,80 @@ export default {
               {
                 "Title": "GEPS - Total cloud cover [%] (100th percentile)",
                 "Name": "GEPS.DIAG.3_NT.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "Vertical wind shear between 850 mb and 250 mb",
+            "Name": "Vertical wind shear between 850 mb and 250 mb",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GEPS - Vertical wind shear between 850 mb and 250 mb [1/s] (0th percentile)",
+                "Name": "GEPS.DIAG_VWSH.850-250.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Vertical wind shear between 850 mb and 250 mb [1/s] (25th percentile)",
+                "Name": "GEPS.DIAG_VWSH.850-250.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Vertical wind shear between 850 mb and 250 mb [1/s] (50th percentile)",
+                "Name": "GEPS.DIAG_VWSH.850-250.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Vertical wind shear between 850 mb and 250 mb [1/s] (75th percentile)",
+                "Name": "GEPS.DIAG_VWSH.850-250.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Vertical wind shear between 850 mb and 250 mb [1/s] (100th percentile)",
+                "Name": "GEPS.DIAG_VWSH.850-250.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              }
+            ]
+          },
+          {
+            "Title": "Vertical wind shear between 925 mb and 700 mb",
+            "Name": "Vertical wind shear between 925 mb and 700 mb",
+            "isLeaf": false,
+            "children": [
+              {
+                "Title": "GEPS - Vertical wind shear between 925 mb and 700 mb [1/s] (0th percentile)",
+                "Name": "GEPS.DIAG_VWSH.925-700.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Vertical wind shear between 925 mb and 700 mb [1/s] (25th percentile)",
+                "Name": "GEPS.DIAG_VWSH.925-700.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Vertical wind shear between 925 mb and 700 mb [1/s] (50th percentile)",
+                "Name": "GEPS.DIAG_VWSH.925-700.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Vertical wind shear between 925 mb and 700 mb [1/s] (75th percentile)",
+                "Name": "GEPS.DIAG_VWSH.925-700.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Vertical wind shear between 925 mb and 700 mb [1/s] (100th percentile)",
+                "Name": "GEPS.DIAG_VWSH.925-700.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               }
@@ -18478,20 +21127,116 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Probabilility of wind gust at 10 m above ground - maximum over 12-hour >= 10 m/s [%]",
+                "Title": "GEPS - Probability of wind gust at 10 m above ground - maximum over 3-hour >= 15 m/s [%]",
+                "Name": "GEPS.DIAG.3_GUST-15MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind gust at 10 m above ground - maximum over 3-hour >= 25 m/s [%]",
+                "Name": "GEPS.DIAG.3_GUST-25MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind gust at 10 m above ground - maximum over 3-hour >= 35 m/s [%]",
+                "Name": "GEPS.DIAG.3_GUST-35MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind gust at 10 m above ground - maximum over 6-hour >= 15 m/s [%]",
+                "Name": "GEPS.DIAG.6_GUST-15MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind gust at 10 m above ground - maximum over 6-hour >= 25 m/s [%]",
+                "Name": "GEPS.DIAG.6_GUST-25MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind gust at 10 m above ground - maximum over 6-hour >= 35 m/s [%]",
+                "Name": "GEPS.DIAG.6_GUST-35MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind gust at 10 m above ground - maximum over 12-hour >= 10 m/s [%]",
                 "Name": "GEPS.DIAG.12_GUST-10MS.PROB",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilility of wind gust at 10 m above ground - maximum over 12-hour >= 15 m/s [%]",
+                "Title": "GEPS - Probability of wind gust at 10 m above ground - maximum over 12-hour >= 15 m/s [%]",
                 "Name": "GEPS.DIAG.12_GUST-15MS.PROB",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probabilility of wind gust at 10 m above ground - maximum over 12-hour >= 25 m/s [%]",
+                "Title": "GEPS - Probability of wind gust at 10 m above ground - maximum over 12-hour >= 25 m/s [%]",
                 "Name": "GEPS.DIAG.12_GUST-25MS.PROB",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind gust at 10 m above ground - maximum over 3-hour [m/s] (0th percentile)",
+                "Name": "GEPS.DIAG.3_GUST.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind gust at 10 m above ground - maximum over 3-hour [m/s] (25th percentile)",
+                "Name": "GEPS.DIAG.3_GUST.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind gust at 10 m above ground - maximum over 3-hour [m/s] (50th percentile)",
+                "Name": "GEPS.DIAG.3_GUST.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind gust at 10 m above ground - maximum over 3-hour [m/s] (75th percentile)",
+                "Name": "GEPS.DIAG.3_GUST.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind gust at 10 m above ground - maximum over 3-hour [m/s] (100th percentile)",
+                "Name": "GEPS.DIAG.3_GUST.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind gust at 10 m above ground - maximum over 6-hour [m/s] (0th percentile)",
+                "Name": "GEPS.DIAG.6_GUST.ERC0",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind gust at 10 m above ground - maximum over 6-hour [m/s] (25th percentile)",
+                "Name": "GEPS.DIAG.6_GUST.ERC25",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind gust at 10 m above ground - maximum over 6-hour [m/s] (50th percentile)",
+                "Name": "GEPS.DIAG.6_GUST.ERC50",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind gust at 10 m above ground - maximum over 6-hour [m/s] (75th percentile)",
+                "Name": "GEPS.DIAG.6_GUST.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind gust at 10 m above ground - maximum over 6-hour [m/s] (100th percentile)",
+                "Name": "GEPS.DIAG.6_GUST.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               }
@@ -18503,67 +21248,133 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 20 km/h [%]",
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 3-hour >= 10 m/s [%]",
+                "Name": "GEPS.DIAG.3_UVMX.ERGE36",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 3-hour >= 15 m/s [%]",
+                "Name": "GEPS.DIAG.3_UVMX.ERGE54",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 3-hour >= 20 m/s [%]",
+                "Name": "GEPS.DIAG.3_UVMX.ERGE72",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 3-hour >= 25 m/s [%]",
+                "Name": "GEPS.DIAG.3_UVMX.ERGE90",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 6-hour >= 10 m/s [%]",
+                "Name": "GEPS.DIAG.6_UVMX.ERGE36",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 6-hour >= 15 m/s [%]",
+                "Name": "GEPS.DIAG.6_UVMX.ERGE54",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 6-hour >= 20 m/s [%]",
+                "Name": "GEPS.DIAG.6_UVMX.ERGE72",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 6-hour >= 25 m/s [%]",
+                "Name": "GEPS.DIAG.6_UVMX.ERGE90",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 5.5556 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 30 km/h [%]",
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 8.3333 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 37 km/h [%]",
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 10 m/s [%]",
+                "Name": "GEPS.DIAG.12_UVMX.ERGE36",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 10.278 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE37",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 40 km/h [%]",
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 11.111 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 50 km/h [%]",
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 13.889 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 62 km/h [%]",
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 15 m/s [%]",
+                "Name": "GEPS.DIAG.12_UVMX.ERGE54",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 17.222 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE62",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 65 km/h [%]",
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 18.056 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE65",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 75 km/h [%]",
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 20.833 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 90 km/h [%]",
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 24.444 m/s [%]",
+                "Name": "GEPS.DIAG.12_UVMX.ERGE88",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 25 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 100 km/h [%]",
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 27.778 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 118 km/h [%]",
+                "Title": "GEPS - Probability of wind speed at 10 m above ground - maximum over 12-hour >= 32.778 m/s [%]",
                 "Name": "GEPS.DIAG.12_UVMX.ERGE118",
                 "isLeaf": true,
                 "isTemporal": true
@@ -18684,26 +21495,44 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Wind speed at 250 mb [m/s] (mean) (3 hourly forecast)",
-                "Name": "GEPS.DIAG.3_WSPD_250.ERMEAN",
+                "Title": "GEPS - Wind speed at 250 mb [m/s] (0th percentile)",
+                "Name": "GEPS.DIAG_WSPD_250.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Wind speed at 250 mb [m/s] (mean) (6 hourly forecast)",
-                "Name": "GEPS.DIAG.6_WSPD_250.ERMEAN",
+                "Title": "GEPS - Wind speed at 250 mb [m/s] (25th percentile)",
+                "Name": "GEPS.DIAG_WSPD_250.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Wind speed at 250 mb [m/s] (standard deviation) (3 hourly forecast)",
-                "Name": "GEPS.DIAG.3_WSPD_250.ERSSTD",
+                "Title": "GEPS - Wind speed at 250 mb [m/s] (50th percentile)",
+                "Name": "GEPS.DIAG_WSPD_250.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Wind speed at 250 mb [m/s] (standard deviation) (6 hourly forecast)",
-                "Name": "GEPS.DIAG.6_WSPD_250.ERSSTD",
+                "Title": "GEPS - Wind speed at 250 mb [m/s] (75th percentile)",
+                "Name": "GEPS.DIAG_WSPD_250.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind speed at 250 mb [m/s] (100th percentile)",
+                "Name": "GEPS.DIAG_WSPD_250.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind speed at 250 mb [m/s] (mean)",
+                "Name": "GEPS.DIAG_WSPD_250.ERMEAN",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind speed at 250 mb [m/s] (standard deviation)",
+                "Name": "GEPS.DIAG_WSPD_250.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               }
@@ -18715,26 +21544,44 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GEPS - Wind speed at 850 mb [m/s] (mean) (3 hourly forecast)",
-                "Name": "GEPS.DIAG.3_WSPD_850.ERMEAN",
+                "Title": "GEPS - Wind speed at 850 mb [m/s] (0th percentile)",
+                "Name": "GEPS.DIAG_WSPD_850.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Wind speed at 850 mb [m/s] (mean) (6 hourly forecast)",
-                "Name": "GEPS.DIAG.6_WSPD_850.ERMEAN",
+                "Title": "GEPS - Wind speed at 850 mb [m/s] (25th percentile)",
+                "Name": "GEPS.DIAG_WSPD_850.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Wind speed at 850 mb [m/s] (standard deviation) (3 hourly forecast)",
-                "Name": "GEPS.DIAG.3_WSPD_850.ERSSTD",
+                "Title": "GEPS - Wind speed at 850 mb [m/s] (50th percentile)",
+                "Name": "GEPS.DIAG_WSPD_850.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GEPS - Wind speed at 850 mb [m/s] (standard deviation) (6 hourly forecast)",
-                "Name": "GEPS.DIAG.6_WSPD_850.ERSSTD",
+                "Title": "GEPS - Wind speed at 850 mb [m/s] (75th percentile)",
+                "Name": "GEPS.DIAG_WSPD_850.ERC75",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind speed at 850 mb [m/s] (100th percentile)",
+                "Name": "GEPS.DIAG_WSPD_850.ERC100",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind speed at 850 mb [m/s] (mean)",
+                "Name": "GEPS.DIAG_WSPD_850.ERMEAN",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "GEPS - Wind speed at 850 mb [m/s] (standard deviation)",
+                "Name": "GEPS.DIAG_WSPD_850.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               }
@@ -19805,7 +22652,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.CONTINENTAL - Freezing rain accumulation [mm]",
+            "Title": "HRDPS.CONTINENTAL - Freezing rain accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL_FR",
             "isLeaf": true,
             "isTemporal": true
@@ -19835,7 +22682,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.CONTINENTAL - Ice pellets accumulation [mm]",
+            "Title": "HRDPS.CONTINENTAL - Ice pellets accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL_PE",
             "isLeaf": true,
             "isTemporal": true
@@ -19937,7 +22784,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.CONTINENTAL - Snow accumulation [mm]",
+            "Title": "HRDPS.CONTINENTAL - Snow accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL_SN",
             "isLeaf": true,
             "isTemporal": true
@@ -22614,61 +25461,61 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "HRDPS.DIAG - Freezing rain - 1-hour accumulation [mm]",
+            "Title": "HRDPS.DIAG - Freezing rain - 1-hour accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_FR_PT1H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Freezing rain - 3-hour accumulation [mm]",
+            "Title": "HRDPS.DIAG - Freezing rain - 3-hour accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_FR_PT3H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Freezing rain - 6-hour accumulation [mm]",
+            "Title": "HRDPS.DIAG - Freezing rain - 6-hour accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_FR_PT6H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Freezing rain - 12-hour accumulation [mm]",
+            "Title": "HRDPS.DIAG - Freezing rain - 12-hour accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_FR_PT12H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Freezing rain - 24-hour accumulation [mm]",
+            "Title": "HRDPS.DIAG - Freezing rain - 24-hour accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_FR_PT24H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Ice pellets - 1-hour accumulation [mm]",
+            "Title": "HRDPS.DIAG - Ice pellets - 1-hour accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_PE_PT1H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Ice pellets - 3-hour accumulation [mm]",
+            "Title": "HRDPS.DIAG - Ice pellets - 3-hour accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_PE_PT3H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Ice pellets - 6-hour accumulation [mm]",
+            "Title": "HRDPS.DIAG - Ice pellets - 6-hour accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_PE_PT6H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Ice pellets - 12-hour accumulation [mm]",
+            "Title": "HRDPS.DIAG - Ice pellets - 12-hour accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_PE_PT12H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Ice pellets - 24-hour accumulation [mm]",
+            "Title": "HRDPS.DIAG - Ice pellets - 24-hour accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_PE_PT24H",
             "isLeaf": true,
             "isTemporal": true
@@ -22740,31 +25587,31 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Snow - 1-hour accumulation [mm]",
+            "Title": "HRDPS.DIAG - Snow - 1-hour accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_SN_PT1H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Snow - 3-hour accumulation [mm]",
+            "Title": "HRDPS.DIAG - Snow - 3-hour accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_SN_PT3H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Snow - 6-hour accumulation [mm]",
+            "Title": "HRDPS.DIAG - Snow - 6-hour accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_SN_PT6H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Snow - 12-hour accumulation [mm]",
+            "Title": "HRDPS.DIAG - Snow - 12-hour accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_SN_PT12H",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPS.DIAG - Snow - 24-hour accumulation [mm]",
+            "Title": "HRDPS.DIAG - Snow - 24-hour accumulation (liquid equivalent) [mm]",
             "Name": "HRDPS.CONTINENTAL.DIAG_SN_PT24H",
             "isLeaf": true,
             "isTemporal": true
@@ -27904,20 +30751,8 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "RIOPS - Ice velocity [m/s]",
-            "Name": "RIOPS_UUI_SFC",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
             "Title": "RIOPS - Mixed layer depth based on a density criterion [m]",
             "Name": "RIOPS_SOKARAML_SFC",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RIOPS - Ocean current [m/s]",
-            "Name": "RIOPS_UU2W_DBS-0.5m",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -28000,457 +30835,6 @@ export default {
         "Name": "Regional Ice Ocean Prediction System Non Coupled in 3 dimensions (RIOPS.3D) [5 km]",
         "isLeaf": false,
         "children": [
-          {
-            "Title": "Ocean current",
-            "Name": "Ocean current",
-            "isLeaf": false,
-            "children": [
-              {
-                "Title": "RIOPS - Ocean current - 0001.6m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1.6m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0002.7m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-2.7m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0003.9m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-3.9m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0005.1m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-5.1m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0006.5m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-6.5m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0008.1m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-8.1m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0009.8m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-9.8m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0012m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-12m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0014m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-14m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0017m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-17m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0019m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-19m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0023m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-23m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0027m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-27m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0031m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-31m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0036m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-36m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0041m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-41m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0047m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-47m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0054m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-54m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0061m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-61m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0069m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-69m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0078m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-78m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0087m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-87m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0097m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-97m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0108m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-108m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0120m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-120m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0133m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-133m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0147m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-147m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0163m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-163m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0181m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-181m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0200m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-200m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0221m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-221m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0245m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-245m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0271m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-271m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0301m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-301m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0334m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-334m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0371m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-371m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0412m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-412m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0458m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-458m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0509m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-509m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0565m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-565m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0628m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-628m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0697m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-697m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0773m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-773m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0857m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-857m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 0947m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-947m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 1046m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1046m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 1152m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1152m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 1266m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1266m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 1387m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1387m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 1516m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1516m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 1653m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1653m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 1796m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1796m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 1945m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-1945m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 2101m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-2101m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 2262m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-2262m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 2429m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-2429m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 2600m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-2600m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 2776m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-2776m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 2956m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-2956m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 3139m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-3139m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 3325m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-3325m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 3513m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-3513m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 3705m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-3705m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 3898m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-3898m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 4093m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-4093m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 4290m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-4290m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 4488m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-4488m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 4688m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-4688m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 4888m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-4888m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 5089m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-5089m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 5292m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-5292m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 5495m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-5495m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 5698m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-5698m",
-                "isLeaf": true,
-                "isTemporal": true
-              },
-              {
-                "Title": "RIOPS - Ocean current - 5902m [m/s]",
-                "Name": "RIOPS_UU2W_DBS-5902m",
-                "isLeaf": true,
-                "isTemporal": true
-              }
-            ]
-          },
           {
             "Title": "Sea water potential temperature",
             "Name": "Sea water potential temperature",
@@ -29801,6 +32185,54 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS - Daily maximum of the UV Index (00Z model run)",
+            "Name": "RDPS_10km_UVIndex-Max24h_00Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Daily maximum of the UV Index (06Z model run)",
+            "Name": "RDPS_10km_UVIndex-Max24h_06Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Daily maximum of the UV Index (12Z model run)",
+            "Name": "RDPS_10km_UVIndex-Max24h_12Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Daily maximum of the UV Index (18Z model run)",
+            "Name": "RDPS_10km_UVIndex-Max24h_18Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Daily maximum of the UV Index for clear-sky conditions (00Z model run)",
+            "Name": "RDPS_10km_UVIndex-ClearSky-Max24h_00Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Daily maximum of the UV Index for clear-sky conditions (06Z model run)",
+            "Name": "RDPS_10km_UVIndex-ClearSky-Max24h_06Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Daily maximum of the UV Index for clear-sky conditions (12Z model run)",
+            "Name": "RDPS_10km_UVIndex-ClearSky-Max24h_12Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Daily maximum of the UV Index for clear-sky conditions (18Z model run)",
+            "Name": "RDPS_10km_UVIndex-ClearSky-Max24h_18Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS - Dew point (contour) [\u00b0C]",
             "Name": "RDPS_10km_DewPoint-Contour_2m",
             "isLeaf": true,
@@ -29963,8 +32395,20 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS - Seeing index",
+            "Name": "RDPS_10km_SeeingIndex",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS - Sensible heat net flux [W/m\u00b2]",
             "Name": "RDPS_10km_SensibleHeatNetFlux",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Sky transparency index",
+            "Name": "RDPS_10km_SkyTransparencyIndex",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -30402,7 +32846,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "RDPS.ETA - Freezing rain accumulation [mm]",
+            "Title": "RDPS.ETA - Freezing rain accumulation (liquid equivalent) [mm]",
             "Name": "RDPS.ETA_FR",
             "isLeaf": true,
             "isTemporal": true
@@ -30432,7 +32876,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "RDPS.ETA - Ice pellets accumulation [mm]",
+            "Title": "RDPS.ETA - Ice pellets accumulation (liquid equivalent) [mm]",
             "Name": "RDPS.ETA_PE",
             "isLeaf": true,
             "isTemporal": true
@@ -30558,7 +33002,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "RDPS.ETA - Snow accumulation [mm]",
+            "Title": "RDPS.ETA - Snow accumulation (liquid equivalent) [mm]",
             "Name": "RDPS.ETA_SN",
             "isLeaf": true,
             "isTemporal": true
@@ -35961,6 +38405,90 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS - Lifted index for a parcel lifted from the surface, with reference level 500 mb",
+            "Name": "RDPS_10km_SFC-LI_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel lifted from the surface, with reference level 500 mb (contour)",
+            "Name": "RDPS_10km_SFC-LI-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer, with reference level 400 mb",
+            "Name": "RDPS_10km_ML-LI_400mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer, with reference level 400 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_400mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer, with reference level 500 mb",
+            "Name": "RDPS_10km_ML-LI_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer, with reference level 500 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer, with reference level 600 mb",
+            "Name": "RDPS_10km_ML-LI_600mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer, with reference level 600 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_600mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer, with reference level 650 mb",
+            "Name": "RDPS_10km_ML-LI_650mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer, with reference level 650 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_650mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer, with reference level 700 mb",
+            "Name": "RDPS_10km_ML-LI_700mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer, with reference level 700 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_700mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer, with reference level 800 mb",
+            "Name": "RDPS_10km_ML-LI_800mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer, with reference level 800 mb (contour)",
+            "Name": "RDPS_10km_ML-LI-Contour_800mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb",
             "Name": "RDPS_10km_LiftedIndex-MU-VT_500mb",
             "isLeaf": true,
@@ -36011,78 +38539,6 @@ export default {
           {
             "Title": "RDPS - Showalter Index, with reference level 500 mb [K]",
             "Name": "RDPS_10km_ShowalterIndex_500mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPS - Surface lifted index, with reference level 400 mb",
-            "Name": "RDPS_10km_ML-LI_400mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPS - Surface lifted index, with reference level 400 mb (contour)",
-            "Name": "RDPS_10km_ML-LI-Contour_400mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPS - Surface lifted index, with reference level 500 mb",
-            "Name": "RDPS_10km_ML-LI_500mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPS - Surface lifted index, with reference level 500 mb (contour)",
-            "Name": "RDPS_10km_ML-LI-Contour_500mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPS - Surface lifted index, with reference level 600 mb",
-            "Name": "RDPS_10km_ML-LI_600mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPS - Surface lifted index, with reference level 600 mb (contour)",
-            "Name": "RDPS_10km_ML-LI-Contour_600mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPS - Surface lifted index, with reference level 650 mb",
-            "Name": "RDPS_10km_ML-LI_650mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPS - Surface lifted index, with reference level 650 mb (contour)",
-            "Name": "RDPS_10km_ML-LI-Contour_650mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPS - Surface lifted index, with reference level 700 mb",
-            "Name": "RDPS_10km_ML-LI_700mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPS - Surface lifted index, with reference level 700 mb (contour)",
-            "Name": "RDPS_10km_ML-LI-Contour_700mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPS - Surface lifted index, with reference level 800 mb",
-            "Name": "RDPS_10km_ML-LI_800mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPS - Surface lifted index, with reference level 800 mb (contour)",
-            "Name": "RDPS_10km_ML-LI-Contour_800mb",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -36659,73 +39115,73 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "RDPS - Freezing rain - 1-hour accumulation [mm]",
+            "Title": "RDPS - Freezing rain - 1-hour accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_FreezingRain-Accum-1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Freezing rain - 3-hour accumulation [mm]",
+            "Title": "RDPS - Freezing rain - 3-hour accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_FreezingRain-Accum-3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Freezing rain - 6-hour accumulation [mm]",
+            "Title": "RDPS - Freezing rain - 6-hour accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_FreezingRain-Accum-6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Freezing rain - 12-hour accumulation [mm]",
+            "Title": "RDPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_FreezingRain-Accum-12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Freezing rain - 24-hour accumulation [mm]",
+            "Title": "RDPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_FreezingRain-Accum-24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Freezing rain accumulation [mm]",
+            "Title": "RDPS - Freezing rain accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_FreezingRain-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Ice pellets - 1-hour accumulation [mm]",
+            "Title": "RDPS - Ice pellets - 1-hour accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_IcePellets-Accum-1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Ice pellets - 3-hour accumulation [mm]",
+            "Title": "RDPS - Ice pellets - 3-hour accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_IcePellets-Accum-3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Ice pellets - 6-hour accumulation [mm]",
+            "Title": "RDPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_IcePellets-Accum-6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Ice pellets - 12-hour accumulation [mm]",
+            "Title": "RDPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_IcePellets-Accum-12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Ice pellets - 24-hour accumulation [mm]",
+            "Title": "RDPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_IcePellets-Accum-24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Ice pellets accumulation [mm]",
+            "Title": "RDPS - Ice pellets accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_IcePellets-Accum",
             "isLeaf": true,
             "isTemporal": true
@@ -36839,37 +39295,37 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Snow - 1-hour accumulation [mm]",
+            "Title": "RDPS - Snow - 1-hour accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_Snow-Accum1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Snow - 3-hour accumulation [mm]",
+            "Title": "RDPS - Snow - 3-hour accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_Snow-Accum3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Snow - 6-hour accumulation [mm]",
+            "Title": "RDPS - Snow - 6-hour accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_Snow-Accum6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Snow - 12-hour accumulation [mm]",
+            "Title": "RDPS - Snow - 12-hour accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_Snow-Accum12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Snow - 24-hour accumulation [mm]",
+            "Title": "RDPS - Snow - 24-hour accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_Snow-Accum24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS - Snow accumulation [mm]",
+            "Title": "RDPS - Snow accumulation (liquid equivalent) [mm]",
             "Name": "RDPS_10km_Snow-Accum",
             "isLeaf": true,
             "isTemporal": true
@@ -36887,13 +39343,13 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.DIAG - 1h Freezing rain accumulation [mm]",
+                "Title": "RDPS.DIAG - 1h Freezing rain accumulation (liquid equivalent) [mm]",
                 "Name": "RDPS.DIAG_FR_PT1H",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - 1h Ice pellets accumulation [mm]",
+                "Title": "RDPS.DIAG - 1h Ice pellets accumulation (liquid equivalent) [mm]",
                 "Name": "RDPS.DIAG_PE_PT1H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -36911,7 +39367,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - 1h Snow accumulation [mm]",
+                "Title": "RDPS.DIAG - 1h Snow accumulation (liquid equivalent) [mm]",
                 "Name": "RDPS.DIAG_SN_PT1H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -36924,13 +39380,13 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.DIAG - 3h Freezing rain accumulation [mm]",
+                "Title": "RDPS.DIAG - 3h Freezing rain accumulation (liquid equivalent) [mm]",
                 "Name": "RDPS.DIAG_FR_PT3H",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - 3h Ice pellets accumulation [mm]",
+                "Title": "RDPS.DIAG - 3h Ice pellets accumulation (liquid equivalent) [mm]",
                 "Name": "RDPS.DIAG_PE_PT3H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -36948,7 +39404,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - 3h Snow accumulation [mm]",
+                "Title": "RDPS.DIAG - 3h Snow accumulation (liquid equivalent) [mm]",
                 "Name": "RDPS.DIAG_SN_PT3H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -36961,13 +39417,13 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.DIAG - 6h Freezing rain accumulation [mm]",
+                "Title": "RDPS.DIAG - 6h Freezing rain accumulation (liquid equivalent) [mm]",
                 "Name": "RDPS.DIAG_FR_PT6H",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - 6h Ice pellets accumulation [mm]",
+                "Title": "RDPS.DIAG - 6h Ice pellets accumulation (liquid equivalent) [mm]",
                 "Name": "RDPS.DIAG_PE_PT6H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -36985,7 +39441,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - 6h Snow accumulation [mm]",
+                "Title": "RDPS.DIAG - 6h Snow accumulation (liquid equivalent) [mm]",
                 "Name": "RDPS.DIAG_SN_PT6H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -36998,13 +39454,13 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.DIAG - 12h Freezing rain accumulation [mm]",
+                "Title": "RDPS.DIAG - 12h Freezing rain accumulation (liquid equivalent) [mm]",
                 "Name": "RDPS.DIAG_FR_PT12H",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - 12h Ice pellets accumulation [mm]",
+                "Title": "RDPS.DIAG - 12h Ice pellets accumulation (liquid equivalent) [mm]",
                 "Name": "RDPS.DIAG_PE_PT12H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -37022,7 +39478,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - 12h Snow accumulation [mm]",
+                "Title": "RDPS.DIAG - 12h Snow accumulation (liquid equivalent) [mm]",
                 "Name": "RDPS.DIAG_SN_PT12H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -37035,13 +39491,13 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "RDPS.DIAG - 24h Freezing rain accumulation [mm]",
+                "Title": "RDPS.DIAG - 24h Freezing rain accumulation (liquid equivalent) [mm]",
                 "Name": "RDPS.DIAG_FR_PT24H",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - 24h Ice pellets accumulation [mm]",
+                "Title": "RDPS.DIAG - 24h Ice pellets accumulation (liquid equivalent) [mm]",
                 "Name": "RDPS.DIAG_PE_PT24H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -37059,7 +39515,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "RDPS.DIAG - 24h Snow accumulation [mm]",
+                "Title": "RDPS.DIAG - 24h Snow accumulation (liquid equivalent) [mm]",
                 "Name": "RDPS.DIAG_SN_PT24H",
                 "isLeaf": true,
                 "isTemporal": true
@@ -37110,217 +39566,217 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "RDPS-WEonG - Character of precipitation",
+            "Title": "RDPS-WEonG - Character of precipitation [experimental]",
             "Name": "RDPS-WEonG_10km_PrecipCharacter",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Conditional amount of freezing precipitation [mm]",
+            "Title": "RDPS-WEonG - Conditional amount of freezing precipitation [mm] [experimental]",
             "Name": "RDPS-WEonG_10km_FreezingPrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Conditional amount of liquid precipitation [m]",
+            "Title": "RDPS-WEonG - Conditional amount of liquid precipitation [m] [experimental]",
             "Name": "RDPS-WEonG_10km_LiquidPrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Conditional amount of precipitation [m]",
+            "Title": "RDPS-WEonG - Conditional amount of precipitation [m] [experimental]",
             "Name": "RDPS-WEonG_10km_PrecipCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Conditional amount of solid ice pellets [m]",
+            "Title": "RDPS-WEonG - Conditional amount of solid ice pellets [m] [experimental]",
             "Name": "RDPS-WEonG_10km_IcePelletsCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Conditional amount of solid snow [m]",
+            "Title": "RDPS-WEonG - Conditional amount of solid snow [m] [experimental]",
             "Name": "RDPS-WEonG_10km_SolidSnowCondAmt",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Dew point temperature (contour) [\u00b0C]",
+            "Title": "RDPS-WEonG - Dew point temperature (contour) [\u00b0C] [experimental]",
             "Name": "RDPS-WEonG_10km_DewPointTemp-CONTOUR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Dew point temperature [\u00b0C]",
+            "Title": "RDPS-WEonG - Dew point temperature [\u00b0C] [experimental]",
             "Name": "RDPS-WEonG_10km_DewPointTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Dominant precipitation type",
+            "Title": "RDPS-WEonG - Dominant precipitation type [experimental]",
             "Name": "RDPS-WEonG_10km_DominantPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Gust [m/s]",
+            "Title": "RDPS-WEonG - Gust [m/s] [experimental]",
             "Name": "RDPS-WEonG_10km_WindGust",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Height of snow level [m]",
+            "Title": "RDPS-WEonG - Height of snow level [m] [experimental]",
             "Name": "RDPS-WEonG_10km_SnowLevelHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Instantaneous precipitation type",
+            "Title": "RDPS-WEonG - Instantaneous precipitation type [experimental]",
             "Name": "RDPS-WEonG_10km_InstantPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Land/water proportion",
+            "Title": "RDPS-WEonG - Land/water proportion [experimental]",
             "Name": "RDPS-WEonG_10km_LandWater-Proportion",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Model orography [m]",
+            "Title": "RDPS-WEonG - Model orography [m] [experimental]",
             "Name": "RDPS-WEonG_10km_Orography",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Presence of blowing snow",
+            "Title": "RDPS-WEonG - Presence of blowing snow [experimental]",
             "Name": "RDPS-WEonG_10km_BlowingSnowPresence",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probability of blowing snow [%]",
+            "Title": "RDPS-WEonG - Probability of blowing snow [%] [experimental]",
             "Name": "RDPS-WEonG_10km_BlowingSnow-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probability of drizzle [%]",
+            "Title": "RDPS-WEonG - Probability of drizzle [%] [experimental]",
             "Name": "RDPS-WEonG_10km_Drizzle-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probability of freezing drizzle [%]",
+            "Title": "RDPS-WEonG - Probability of freezing drizzle [%] [experimental]",
             "Name": "RDPS-WEonG_10km_FreezingDrizzle-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probability of freezing precipitation [%]",
+            "Title": "RDPS-WEonG - Probability of freezing precipitation [%] [experimental]",
             "Name": "RDPS-WEonG_10km_FreezingPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probability of freezing rain [%]",
+            "Title": "RDPS-WEonG - Probability of freezing rain [%] [experimental]",
             "Name": "RDPS-WEonG_10km_FreezingRain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probability of ice pellets [%]",
+            "Title": "RDPS-WEonG - Probability of ice pellets [%] [experimental]",
             "Name": "RDPS-WEonG_10km_IcePellets-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probability of liquid precipitation [%]",
+            "Title": "RDPS-WEonG - Probability of liquid precipitation [%] [experimental]",
             "Name": "RDPS-WEonG_10km_LiquidPrecip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probability of precipitation [%]",
+            "Title": "RDPS-WEonG - Probability of precipitation [%] [experimental]",
             "Name": "RDPS-WEonG_10km_Precip-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probability of rain [%]",
+            "Title": "RDPS-WEonG - Probability of rain [%] [experimental]",
             "Name": "RDPS-WEonG_10km_Rain-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probability of snow [%]",
+            "Title": "RDPS-WEonG - Probability of snow [%] [experimental]",
             "Name": "RDPS-WEonG_10km_Snow-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probability of snow squalls [%]",
+            "Title": "RDPS-WEonG - Probability of snow squalls [%] [experimental]",
             "Name": "RDPS-WEonG_10km_SnowSqualls-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Probability of thunderstorm occurence [%]",
+            "Title": "RDPS-WEonG - Probability of thunderstorm occurence [%] [experimental]",
             "Name": "RDPS-WEonG_10km_Thunderstorm-Prob",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Sky state day/night (combined cloud cover and opacity)",
+            "Title": "RDPS-WEonG - Sky state day/night (combined cloud cover and opacity) [experimental]",
             "Name": "RDPS-WEonG_10km_SkyState",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Temperature [\u00b0C]",
+            "Title": "RDPS-WEonG - Temperature [\u00b0C] [experimental]",
             "Name": "RDPS-WEonG_10km_AirTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - The second most common precipitation type",
+            "Title": "RDPS-WEonG - The second most common precipitation type [experimental]",
             "Name": "RDPS-WEonG_10km_SecondMostCommonPrecipType",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Total precipitation intensity index",
+            "Title": "RDPS-WEonG - Total precipitation intensity index [experimental]",
             "Name": "RDPS-WEonG_10km_TotalPrecipIntensityIndex",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Visibility through ice fog [m]",
+            "Title": "RDPS-WEonG - Visibility through ice fog [m] [experimental]",
             "Name": "RDPS-WEonG_10km_IceFogVisibility",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Visibility through liquid fog [m]",
+            "Title": "RDPS-WEonG - Visibility through liquid fog [m] [experimental]",
             "Name": "RDPS-WEonG_10km_LiquidFogVisibility",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Wind direction [deg true]",
+            "Title": "RDPS-WEonG - Wind direction [deg true] [experimental]",
             "Name": "RDPS-WEonG_10km_WindDir",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Wind speed (contour) [m/s]",
+            "Title": "RDPS-WEonG - Wind speed (contour) [m/s] [experimental]",
             "Name": "RDPS-WEonG_10km_WindSpeed-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPS-WEonG - Wind speed [m/s]",
+            "Title": "RDPS-WEonG - Wind speed [m/s] [experimental]",
             "Name": "RDPS-WEonG_10km_WindSpeed",
             "isLeaf": true,
             "isTemporal": true
@@ -39479,127 +41935,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS - Freezing rain accumulation - Member 1 [mm] [control member]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 1 [mm] [control member]",
                 "Name": "REPS.MEM.ETA_FR.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 2 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 2 [mm]",
                 "Name": "REPS.MEM.ETA_FR.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 3 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 3 [mm]",
                 "Name": "REPS.MEM.ETA_FR.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 4 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 4 [mm]",
                 "Name": "REPS.MEM.ETA_FR.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 5 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 5 [mm]",
                 "Name": "REPS.MEM.ETA_FR.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 6 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 6 [mm]",
                 "Name": "REPS.MEM.ETA_FR.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 7 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 7 [mm]",
                 "Name": "REPS.MEM.ETA_FR.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 8 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 8 [mm]",
                 "Name": "REPS.MEM.ETA_FR.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 9 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 9 [mm]",
                 "Name": "REPS.MEM.ETA_FR.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 10 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 10 [mm]",
                 "Name": "REPS.MEM.ETA_FR.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 11 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 11 [mm]",
                 "Name": "REPS.MEM.ETA_FR.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 12 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 12 [mm]",
                 "Name": "REPS.MEM.ETA_FR.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 13 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 13 [mm]",
                 "Name": "REPS.MEM.ETA_FR.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 14 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 14 [mm]",
                 "Name": "REPS.MEM.ETA_FR.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 15 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 15 [mm]",
                 "Name": "REPS.MEM.ETA_FR.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 16 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 16 [mm]",
                 "Name": "REPS.MEM.ETA_FR.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 17 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 17 [mm]",
                 "Name": "REPS.MEM.ETA_FR.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 18 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 18 [mm]",
                 "Name": "REPS.MEM.ETA_FR.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 19 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 19 [mm]",
                 "Name": "REPS.MEM.ETA_FR.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 20 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 20 [mm]",
                 "Name": "REPS.MEM.ETA_FR.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain accumulation - Member 21 [mm]",
+                "Title": "REPS - Freezing rain accumulation (liquid equivalent) - Member 21 [mm]",
                 "Name": "REPS.MEM.ETA_FR.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -40942,127 +43398,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS - Ice pellets accumulation - Member 1 [mm] [control member]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 1 [mm] [control member]",
                 "Name": "REPS.MEM.ETA_PE.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 2 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 2 [mm]",
                 "Name": "REPS.MEM.ETA_PE.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 3 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 3 [mm]",
                 "Name": "REPS.MEM.ETA_PE.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 4 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 4 [mm]",
                 "Name": "REPS.MEM.ETA_PE.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 5 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 5 [mm]",
                 "Name": "REPS.MEM.ETA_PE.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 6 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 6 [mm]",
                 "Name": "REPS.MEM.ETA_PE.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 7 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 7 [mm]",
                 "Name": "REPS.MEM.ETA_PE.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 8 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 8 [mm]",
                 "Name": "REPS.MEM.ETA_PE.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 9 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 9 [mm]",
                 "Name": "REPS.MEM.ETA_PE.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 10 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 10 [mm]",
                 "Name": "REPS.MEM.ETA_PE.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 11 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 11 [mm]",
                 "Name": "REPS.MEM.ETA_PE.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 12 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 12 [mm]",
                 "Name": "REPS.MEM.ETA_PE.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 13 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 13 [mm]",
                 "Name": "REPS.MEM.ETA_PE.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 14 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 14 [mm]",
                 "Name": "REPS.MEM.ETA_PE.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 15 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 15 [mm]",
                 "Name": "REPS.MEM.ETA_PE.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 16 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 16 [mm]",
                 "Name": "REPS.MEM.ETA_PE.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 17 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 17 [mm]",
                 "Name": "REPS.MEM.ETA_PE.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 18 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 18 [mm]",
                 "Name": "REPS.MEM.ETA_PE.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 19 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 19 [mm]",
                 "Name": "REPS.MEM.ETA_PE.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 20 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 20 [mm]",
                 "Name": "REPS.MEM.ETA_PE.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets accumulation - Member 21 [mm]",
+                "Title": "REPS - Ice pellets accumulation (liquid equivalent) - Member 21 [mm]",
                 "Name": "REPS.MEM.ETA_PE.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -43196,127 +45652,127 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS - Snow accumulation - Member 1 [mm] [control member]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 1 [mm] [control member]",
                 "Name": "REPS.MEM.ETA_SN.01",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 2 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 2 [mm]",
                 "Name": "REPS.MEM.ETA_SN.02",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 3 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 3 [mm]",
                 "Name": "REPS.MEM.ETA_SN.03",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 4 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 4 [mm]",
                 "Name": "REPS.MEM.ETA_SN.04",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 5 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 5 [mm]",
                 "Name": "REPS.MEM.ETA_SN.05",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 6 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 6 [mm]",
                 "Name": "REPS.MEM.ETA_SN.06",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 7 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 7 [mm]",
                 "Name": "REPS.MEM.ETA_SN.07",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 8 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 8 [mm]",
                 "Name": "REPS.MEM.ETA_SN.08",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 9 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 9 [mm]",
                 "Name": "REPS.MEM.ETA_SN.09",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 10 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 10 [mm]",
                 "Name": "REPS.MEM.ETA_SN.10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 11 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 11 [mm]",
                 "Name": "REPS.MEM.ETA_SN.11",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 12 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 12 [mm]",
                 "Name": "REPS.MEM.ETA_SN.12",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 13 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 13 [mm]",
                 "Name": "REPS.MEM.ETA_SN.13",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 14 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 14 [mm]",
                 "Name": "REPS.MEM.ETA_SN.14",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 15 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 15 [mm]",
                 "Name": "REPS.MEM.ETA_SN.15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 16 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 16 [mm]",
                 "Name": "REPS.MEM.ETA_SN.16",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 17 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 17 [mm]",
                 "Name": "REPS.MEM.ETA_SN.17",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 18 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 18 [mm]",
                 "Name": "REPS.MEM.ETA_SN.18",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 19 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 19 [mm]",
                 "Name": "REPS.MEM.ETA_SN.19",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 20 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 20 [mm]",
                 "Name": "REPS.MEM.ETA_SN.20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow accumulation - Member 21 [mm]",
+                "Title": "REPS - Snow accumulation (liquid equivalent) - Member 21 [mm]",
                 "Name": "REPS.MEM.ETA_SN.21",
                 "isLeaf": true,
                 "isTemporal": true
@@ -45674,385 +48130,385 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS - Freezing rain - 6-hour accumulation [mm] (0th percentile)",
+                "Title": "REPS - Freezing rain - 6-hour accumulation (liquid equivalent) [mm] (0th percentile)",
                 "Name": "REPS.DIAG.6_FRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 6-hour accumulation [mm] (10th percentile)",
+                "Title": "REPS - Freezing rain - 6-hour accumulation (liquid equivalent) [mm] (10th percentile)",
                 "Name": "REPS.DIAG.6_FRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 6-hour accumulation [mm] (25th percentile)",
+                "Title": "REPS - Freezing rain - 6-hour accumulation (liquid equivalent) [mm] (25th percentile)",
                 "Name": "REPS.DIAG.6_FRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 6-hour accumulation [mm] (50th percentile)",
+                "Title": "REPS - Freezing rain - 6-hour accumulation (liquid equivalent) [mm] (50th percentile)",
                 "Name": "REPS.DIAG.6_FRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 6-hour accumulation [mm] (75th percentile)",
+                "Title": "REPS - Freezing rain - 6-hour accumulation (liquid equivalent) [mm] (75th percentile)",
                 "Name": "REPS.DIAG.6_FRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 6-hour accumulation [mm] (90th percentile)",
+                "Title": "REPS - Freezing rain - 6-hour accumulation (liquid equivalent) [mm] (90th percentile)",
                 "Name": "REPS.DIAG.6_FRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 6-hour accumulation [mm] (100th percentile)",
+                "Title": "REPS - Freezing rain - 6-hour accumulation (liquid equivalent) [mm] (100th percentile)",
                 "Name": "REPS.DIAG.6_FRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 6-hour accumulation [mm] (mean)",
+                "Title": "REPS - Freezing rain - 6-hour accumulation (liquid equivalent) [mm] (mean)",
                 "Name": "REPS.DIAG.6_FRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 6-hour accumulation [mm] (standard deviation)",
+                "Title": "REPS - Freezing rain - 6-hour accumulation (liquid equivalent) [mm] (standard deviation)",
                 "Name": "REPS.DIAG.6_FRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 12-hour accumulation [mm] (0th percentile)",
+                "Title": "REPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (0th percentile)",
                 "Name": "REPS.DIAG.12_FRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 12-hour accumulation [mm] (10th percentile)",
+                "Title": "REPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (10th percentile)",
                 "Name": "REPS.DIAG.12_FRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 12-hour accumulation [mm] (25th percentile)",
+                "Title": "REPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (25th percentile)",
                 "Name": "REPS.DIAG.12_FRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 12-hour accumulation [mm] (50th percentile)",
+                "Title": "REPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (50th percentile)",
                 "Name": "REPS.DIAG.12_FRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 12-hour accumulation [mm] (75th percentile)",
+                "Title": "REPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (75th percentile)",
                 "Name": "REPS.DIAG.12_FRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 12-hour accumulation [mm] (90th percentile)",
+                "Title": "REPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (90th percentile)",
                 "Name": "REPS.DIAG.12_FRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 12-hour accumulation [mm] (100th percentile)",
+                "Title": "REPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (100th percentile)",
                 "Name": "REPS.DIAG.12_FRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 12-hour accumulation [mm] (mean)",
+                "Title": "REPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (mean)",
                 "Name": "REPS.DIAG.12_FRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 12-hour accumulation [mm] (standard deviation)",
+                "Title": "REPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] (standard deviation)",
                 "Name": "REPS.DIAG.12_FRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 24-hour accumulation [mm] (0th percentile)",
+                "Title": "REPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (0th percentile)",
                 "Name": "REPS.DIAG.24_FRMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 24-hour accumulation [mm] (10th percentile)",
+                "Title": "REPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (10th percentile)",
                 "Name": "REPS.DIAG.24_FRMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 24-hour accumulation [mm] (25th percentile)",
+                "Title": "REPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (25th percentile)",
                 "Name": "REPS.DIAG.24_FRMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 24-hour accumulation [mm] (50th percentile)",
+                "Title": "REPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (50th percentile)",
                 "Name": "REPS.DIAG.24_FRMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 24-hour accumulation [mm] (75th percentile)",
+                "Title": "REPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (75th percentile)",
                 "Name": "REPS.DIAG.24_FRMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 24-hour accumulation [mm] (90th percentile)",
+                "Title": "REPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (90th percentile)",
                 "Name": "REPS.DIAG.24_FRMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 24-hour accumulation [mm] (100th percentile)",
+                "Title": "REPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (100th percentile)",
                 "Name": "REPS.DIAG.24_FRMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 24-hour accumulation [mm] (mean)",
+                "Title": "REPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (mean)",
                 "Name": "REPS.DIAG.24_FRMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Freezing rain - 24-hour accumulation [mm] (standard deviation)",
+                "Title": "REPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] (standard deviation)",
                 "Name": "REPS.DIAG.24_FRMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 6-hour accumulation >= 0.2 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 6-hour accumulation (liquid equivalent) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 6-hour accumulation >= 1 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 6-hour accumulation (liquid equivalent) >= 1 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 6-hour accumulation >= 2.5 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 6-hour accumulation (liquid equivalent) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 6-hour accumulation >= 5 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 6-hour accumulation (liquid equivalent) >= 5 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 6-hour accumulation >= 10 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 6-hour accumulation (liquid equivalent) >= 10 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 6-hour accumulation >= 15 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 6-hour accumulation (liquid equivalent) >= 15 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 6-hour accumulation >= 20 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 6-hour accumulation (liquid equivalent) >= 20 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 6-hour accumulation >= 25 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 6-hour accumulation (liquid equivalent) >= 25 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 6-hour accumulation >= 30 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 6-hour accumulation (liquid equivalent) >= 30 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 6-hour accumulation >= 40 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 6-hour accumulation (liquid equivalent) >= 40 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 6-hour accumulation >= 50 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 6-hour accumulation (liquid equivalent) >= 50 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 6-hour accumulation >= 75 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 6-hour accumulation (liquid equivalent) >= 75 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 6-hour accumulation >= 100 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 6-hour accumulation (liquid equivalent) >= 100 mm [%]",
                 "Name": "REPS.DIAG.6_FRMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 12-hour accumulation >= 0.2 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 12-hour accumulation >= 1 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 1 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 12-hour accumulation >= 2.5 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 12-hour accumulation >= 5 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 5 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 12-hour accumulation >= 10 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 10 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 12-hour accumulation >= 15 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 15 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 12-hour accumulation >= 20 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 20 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 12-hour accumulation >= 25 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 25 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 12-hour accumulation >= 30 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 30 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 12-hour accumulation >= 40 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 40 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 12-hour accumulation >= 50 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 12-hour accumulation (liquid equivalent) >= 50 mm [%]",
                 "Name": "REPS.DIAG.12_FRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 24-hour accumulation >= 0.2 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 24-hour accumulation >= 1 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 1 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 24-hour accumulation >= 2.5 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 24-hour accumulation >= 5 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 5 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 24-hour accumulation >= 10 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 10 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 24-hour accumulation >= 15 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 15 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 24-hour accumulation >= 20 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 20 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 24-hour accumulation >= 25 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 25 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 24-hour accumulation >= 30 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 30 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 24-hour accumulation >= 40 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 40 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of freezing rain - 24-hour accumulation >= 50 mm [%]",
+                "Title": "REPS - Probability of freezing rain - 24-hour accumulation (liquid equivalent) >= 50 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - robability of freezing rain - 24-hour accumulation >= 75 mm [%]",
+                "Title": "REPS - robability of freezing rain - 24-hour accumulation (liquid equivalent) >= 75 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - robability of freezing rain - 24-hour accumulation >= 100 mm [%]",
+                "Title": "REPS - robability of freezing rain - 24-hour accumulation (liquid equivalent) >= 100 mm [%]",
                 "Name": "REPS.DIAG.24_FRMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
@@ -46173,37 +48629,37 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probabilility of humidex at 2 m above ground - maximum over 24-hour >= 25 (\u00b0C) [%]",
+                "Title": "REPS - Probability of humidex at 2 m above ground - maximum over 24-hour >= 25 (\u00b0C) [%]",
                 "Name": "REPS.DIAG.24_HMXX.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probabilility of humidex at 2 m above ground - maximum over 24-hour >= 30 (\u00b0C) [%]",
+                "Title": "REPS - Probability of humidex at 2 m above ground - maximum over 24-hour >= 30 (\u00b0C) [%]",
                 "Name": "REPS.DIAG.24_HMXX.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probabilility of humidex at 2 m above ground - maximum over 24-hour >= 35 (\u00b0C) [%]",
+                "Title": "REPS - Probability of humidex at 2 m above ground - maximum over 24-hour >= 35 (\u00b0C) [%]",
                 "Name": "REPS.DIAG.24_HMXX.ERGE35",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probabilility of humidex at 2 m above ground - maximum over 24-hour >= 38 (\u00b0C) [%]",
+                "Title": "REPS - Probability of humidex at 2 m above ground - maximum over 24-hour >= 38 (\u00b0C) [%]",
                 "Name": "REPS.DIAG.24_HMXX.ERGE38",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probabilility of humidex at 2 m above ground - maximum over 24-hour >= 40 (\u00b0C) [%]",
+                "Title": "REPS - Probability of humidex at 2 m above ground - maximum over 24-hour >= 40 (\u00b0C) [%]",
                 "Name": "REPS.DIAG.24_HMXX.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probabilility of humidex at 2 m above ground - maximum over 24-hour >= 42 (\u00b0C) [%]",
+                "Title": "REPS - Probability of humidex at 2 m above ground - maximum over 24-hour >= 42 (\u00b0C) [%]",
                 "Name": "REPS.DIAG.24_HMXX.ERGE42",
                 "isLeaf": true,
                 "isTemporal": true
@@ -46216,385 +48672,385 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS - Ice pellets - 6-hour accumulation [mm] (0th percentile)",
+                "Title": "REPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] (0th percentile)",
                 "Name": "REPS.DIAG.6_PEMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 6-hour accumulation [mm] (10th percentile)",
+                "Title": "REPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] (10th percentile)",
                 "Name": "REPS.DIAG.6_PEMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 6-hour accumulation [mm] (25th percentile)",
+                "Title": "REPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] (25th percentile)",
                 "Name": "REPS.DIAG.6_PEMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 6-hour accumulation [mm] (50th percentile)",
+                "Title": "REPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] (50th percentile)",
                 "Name": "REPS.DIAG.6_PEMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 6-hour accumulation [mm] (75th percentile)",
+                "Title": "REPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] (75th percentile)",
                 "Name": "REPS.DIAG.6_PEMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 6-hour accumulation [mm] (90th percentile)",
+                "Title": "REPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] (90th percentile)",
                 "Name": "REPS.DIAG.6_PEMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 6-hour accumulation [mm] (100th percentile)",
+                "Title": "REPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] (100th percentile)",
                 "Name": "REPS.DIAG.6_PEMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 6-hour accumulation [mm] (mean)",
+                "Title": "REPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] (mean)",
                 "Name": "REPS.DIAG.6_PEMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 6-hour accumulation [mm] (standard deviation)",
+                "Title": "REPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] (standard deviation)",
                 "Name": "REPS.DIAG.6_PEMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 12-hour accumulation [mm] (0th percentile)",
+                "Title": "REPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (0th percentile)",
                 "Name": "REPS.DIAG.12_PEMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 12-hour accumulation [mm] (10th percentile)",
+                "Title": "REPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (10th percentile)",
                 "Name": "REPS.DIAG.12_PEMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 12-hour accumulation [mm] (25th percentile)",
+                "Title": "REPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (25th percentile)",
                 "Name": "REPS.DIAG.12_PEMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 12-hour accumulation [mm] (50th percentile)",
+                "Title": "REPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (50th percentile)",
                 "Name": "REPS.DIAG.12_PEMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 12-hour accumulation [mm] (75th percentile)",
+                "Title": "REPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (75th percentile)",
                 "Name": "REPS.DIAG.12_PEMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 12-hour accumulation [mm] (90th percentile)",
+                "Title": "REPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (90th percentile)",
                 "Name": "REPS.DIAG.12_PEMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 12-hour accumulation [mm] (100th percentile)",
+                "Title": "REPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (100th percentile)",
                 "Name": "REPS.DIAG.12_PEMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 12-hour accumulation [mm] (mean)",
+                "Title": "REPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (mean)",
                 "Name": "REPS.DIAG.12_PEMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 12-hour accumulation [mm] (standard deviation)",
+                "Title": "REPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] (standard deviation)",
                 "Name": "REPS.DIAG.12_PEMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 24-hour accumulation [mm] (0th percentile)",
+                "Title": "REPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (0th percentile)",
                 "Name": "REPS.DIAG.24_PEMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 24-hour accumulation [mm] (10th percentile)",
+                "Title": "REPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (10th percentile)",
                 "Name": "REPS.DIAG.24_PEMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 24-hour accumulation [mm] (25th percentile)",
+                "Title": "REPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (25th percentile)",
                 "Name": "REPS.DIAG.24_PEMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 24-hour accumulation [mm] (50th percentile)",
+                "Title": "REPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (50th percentile)",
                 "Name": "REPS.DIAG.24_PEMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 24-hour accumulation [mm] (75th percentile)",
+                "Title": "REPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (75th percentile)",
                 "Name": "REPS.DIAG.24_PEMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 24-hour accumulation [mm] (90th percentile)",
+                "Title": "REPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (90th percentile)",
                 "Name": "REPS.DIAG.24_PEMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 24-hour accumulation [mm] (100th percentile)",
+                "Title": "REPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (100th percentile)",
                 "Name": "REPS.DIAG.24_PEMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 24-hour accumulation [mm] (mean)",
+                "Title": "REPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (mean)",
                 "Name": "REPS.DIAG.24_PEMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Ice pellets - 24-hour accumulation [mm] (standard deviation)",
+                "Title": "REPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] (standard deviation)",
                 "Name": "REPS.DIAG.24_PEMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 6-hour accumulation >= 0.2 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 6-hour accumulation (liquid equivalent) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 6-hour accumulation >= 1 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 6-hour accumulation (liquid equivalent) >= 1 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 6-hour accumulation >= 2.5 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 6-hour accumulation (liquid equivalent) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 6-hour accumulation >= 5 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 6-hour accumulation (liquid equivalent) >= 5 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 6-hour accumulation >= 10 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 6-hour accumulation (liquid equivalent) >= 10 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 6-hour accumulation >= 15 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 6-hour accumulation (liquid equivalent) >= 15 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 6-hour accumulation >= 20 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 6-hour accumulation (liquid equivalent) >= 20 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 6-hour accumulation >= 25 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 6-hour accumulation (liquid equivalent) >= 25 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 6-hour accumulation >= 30 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 6-hour accumulation (liquid equivalent) >= 30 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 6-hour accumulation >= 40 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 6-hour accumulation (liquid equivalent) >= 40 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 6-hour accumulation >= 50 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 6-hour accumulation (liquid equivalent) >= 50 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 6-hour accumulation >= 75 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 6-hour accumulation (liquid equivalent) >= 75 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 6-hour accumulation >= 100 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 6-hour accumulation (liquid equivalent) >= 100 mm [%]",
                 "Name": "REPS.DIAG.6_PEMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 12-hour accumulation >= 0.2 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 12-hour accumulation >= 1 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 1 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 12-hour accumulation >= 2.5 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 12-hour accumulation >= 5 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 5 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 12-hour accumulation >= 10 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 10 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 12-hour accumulation >= 15 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 15 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 12-hour accumulation >= 20 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 20 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 12-hour accumulation >= 25 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 25 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 12-hour accumulation >= 30 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 30 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 12-hour accumulation >= 40 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 40 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 12-hour accumulation >= 50 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 12-hour accumulation (liquid equivalent) >= 50 mm [%]",
                 "Name": "REPS.DIAG.12_PEMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 24-hour accumulation >= 0.2 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 24-hour accumulation >= 1 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 1 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 24-hour accumulation >= 2.5 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 24-hour accumulation >= 5 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 5 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 24-hour accumulation >= 10 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 10 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 24-hour accumulation >= 15 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 15 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 24-hour accumulation >= 20 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 20 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 24-hour accumulation >= 25 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 25 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 24-hour accumulation >= 30 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 30 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 24-hour accumulation >= 40 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 40 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 24-hour accumulation >= 50 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 50 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 24-hour accumulation >= 75 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 75 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of ice pellets - 24-hour accumulation >= 100 mm [%]",
+                "Title": "REPS - Probability of ice pellets - 24-hour accumulation (liquid equivalent) >= 100 mm [%]",
                 "Name": "REPS.DIAG.24_PEMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
@@ -47845,385 +50301,385 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "REPS - Probability of snow - 6-hour accumulation >= 0.2 mm [%]",
+                "Title": "REPS - Probability of snow - 6-hour accumulation (liquid equivalent) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 6-hour accumulation >= 1 mm [%]",
+                "Title": "REPS - Probability of snow - 6-hour accumulation (liquid equivalent) >= 1 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 6-hour accumulation >= 2.5 mm [%]",
+                "Title": "REPS - Probability of snow - 6-hour accumulation (liquid equivalent) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 6-hour accumulation >= 5 mm [%]",
+                "Title": "REPS - Probability of snow - 6-hour accumulation (liquid equivalent) >= 5 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 6-hour accumulation >= 10 mm [%]",
+                "Title": "REPS - Probability of snow - 6-hour accumulation (liquid equivalent) >= 10 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 6-hour accumulation >= 15 mm [%]",
+                "Title": "REPS - Probability of snow - 6-hour accumulation (liquid equivalent) >= 15 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 6-hour accumulation >= 20 mm [%]",
+                "Title": "REPS - Probability of snow - 6-hour accumulation (liquid equivalent) >= 20 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 6-hour accumulation >= 25 mm [%]",
+                "Title": "REPS - Probability of snow - 6-hour accumulation (liquid equivalent) >= 25 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 6-hour accumulation >= 30 mm [%]",
+                "Title": "REPS - Probability of snow - 6-hour accumulation (liquid equivalent) >= 30 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 6-hour accumulation >= 40 mm [%]",
+                "Title": "REPS - Probability of snow - 6-hour accumulation (liquid equivalent) >= 40 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 6-hour accumulation >= 50 mm [%]",
+                "Title": "REPS - Probability of snow - 6-hour accumulation (liquid equivalent) >= 50 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 6-hour accumulation >= 75 mm [%]",
+                "Title": "REPS - Probability of snow - 6-hour accumulation (liquid equivalent) >= 75 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 6-hour accumulation >= 100 mm [%]",
+                "Title": "REPS - Probability of snow - 6-hour accumulation (liquid equivalent) >= 100 mm [%]",
                 "Name": "REPS.DIAG.6_SNMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 12-hour accumulation >= 0.2 mm [%]",
+                "Title": "REPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 12-hour accumulation >= 1 mm [%]",
+                "Title": "REPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 1 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 12-hour accumulation >= 2.5 mm [%]",
+                "Title": "REPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 12-hour accumulation >= 5 mm [%]",
+                "Title": "REPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 5 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 12-hour accumulation >= 10 mm [%]",
+                "Title": "REPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 10 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 12-hour accumulation >= 15 mm [%]",
+                "Title": "REPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 15 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 12-hour accumulation >= 20 mm [%]",
+                "Title": "REPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 20 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 12-hour accumulation >= 25 mm [%]",
+                "Title": "REPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 25 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 12-hour accumulation >= 30 mm [%]",
+                "Title": "REPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 30 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 12-hour accumulation >= 40 mm [%]",
+                "Title": "REPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 40 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 12-hour accumulation >= 50 mm [%]",
+                "Title": "REPS - Probability of snow - 12-hour accumulation (liquid equivalent) >= 50 mm [%]",
                 "Name": "REPS.DIAG.12_SNMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 24-hour accumulation >= 0.2 mm [%]",
+                "Title": "REPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 0.2 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE0.2",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 24-hour accumulation >= 1 mm [%]",
+                "Title": "REPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 1 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE1",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 24-hour accumulation >= 2.5 mm [%]",
+                "Title": "REPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 2.5 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE2.5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 24-hour accumulation >= 5 mm [%]",
+                "Title": "REPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 5 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE5",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 24-hour accumulation >= 10 mm [%]",
+                "Title": "REPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 10 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 24-hour accumulation >= 15 mm [%]",
+                "Title": "REPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 15 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE15",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 24-hour accumulation >= 20 mm [%]",
+                "Title": "REPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 20 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE20",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 24-hour accumulation >= 25 mm [%]",
+                "Title": "REPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 25 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 24-hour accumulation >= 30 mm [%]",
+                "Title": "REPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 30 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE30",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 24-hour accumulation >= 40 mm [%]",
+                "Title": "REPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 40 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE40",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 24-hour accumulation >= 50 mm [%]",
+                "Title": "REPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 50 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 24-hour accumulation >= 75 mm [%]",
+                "Title": "REPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 75 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Probability of snow - 24-hour accumulation >= 100 mm [%]",
+                "Title": "REPS - Probability of snow - 24-hour accumulation (liquid equivalent) >= 100 mm [%]",
                 "Name": "REPS.DIAG.24_SNMM.ERGE100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 6-hour accumulation [mm] (0th percentile)",
+                "Title": "REPS - Snow - 6-hour accumulation (liquid equivalent) [mm] (0th percentile)",
                 "Name": "REPS.DIAG.6_SNMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 6-hour accumulation [mm] (10th percentile)",
+                "Title": "REPS - Snow - 6-hour accumulation (liquid equivalent) [mm] (10th percentile)",
                 "Name": "REPS.DIAG.6_SNMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 6-hour accumulation [mm] (25th percentile)",
+                "Title": "REPS - Snow - 6-hour accumulation (liquid equivalent) [mm] (25th percentile)",
                 "Name": "REPS.DIAG.6_SNMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 6-hour accumulation [mm] (50th percentile)",
+                "Title": "REPS - Snow - 6-hour accumulation (liquid equivalent) [mm] (50th percentile)",
                 "Name": "REPS.DIAG.6_SNMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 6-hour accumulation [mm] (75th percentile)",
+                "Title": "REPS - Snow - 6-hour accumulation (liquid equivalent) [mm] (75th percentile)",
                 "Name": "REPS.DIAG.6_SNMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 6-hour accumulation [mm] (90th percentile)",
+                "Title": "REPS - Snow - 6-hour accumulation (liquid equivalent) [mm] (90th percentile)",
                 "Name": "REPS.DIAG.6_SNMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 6-hour accumulation [mm] (100th percentile)",
+                "Title": "REPS - Snow - 6-hour accumulation (liquid equivalent) [mm] (100th percentile)",
                 "Name": "REPS.DIAG.6_SNMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 6-hour accumulation [mm] (mean)",
+                "Title": "REPS - Snow - 6-hour accumulation (liquid equivalent) [mm] (mean)",
                 "Name": "REPS.DIAG.6_SNMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 6-hour accumulation [mm] (standard deviation)",
+                "Title": "REPS - Snow - 6-hour accumulation (liquid equivalent) [mm] (standard deviation)",
                 "Name": "REPS.DIAG.6_SNMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 12-hour accumulation [mm] (0th percentile)",
+                "Title": "REPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (0th percentile)",
                 "Name": "REPS.DIAG.12_SNMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 12-hour accumulation [mm] (10th percentile)",
+                "Title": "REPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (10th percentile)",
                 "Name": "REPS.DIAG.12_SNMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 12-hour accumulation [mm] (25th percentile)",
+                "Title": "REPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (25th percentile)",
                 "Name": "REPS.DIAG.12_SNMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 12-hour accumulation [mm] (50th percentile)",
+                "Title": "REPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (50th percentile)",
                 "Name": "REPS.DIAG.12_SNMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 12-hour accumulation [mm] (75th percentile)",
+                "Title": "REPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (75th percentile)",
                 "Name": "REPS.DIAG.12_SNMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 12-hour accumulation [mm] (90th percentile)",
+                "Title": "REPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (90th percentile)",
                 "Name": "REPS.DIAG.12_SNMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 12-hour accumulation [mm] (100th percentile)",
+                "Title": "REPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (100th percentile)",
                 "Name": "REPS.DIAG.12_SNMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 12-hour accumulation [mm] (mean)",
+                "Title": "REPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (mean)",
                 "Name": "REPS.DIAG.12_SNMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 12-hour accumulation [mm] (standard deviation)",
+                "Title": "REPS - Snow - 12-hour accumulation (liquid equivalent) [mm] (standard deviation)",
                 "Name": "REPS.DIAG.12_SNMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 24-hour accumulation [mm] (0th percentile)",
+                "Title": "REPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (0th percentile)",
                 "Name": "REPS.DIAG.24_SNMM.ERC0",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 24-hour accumulation [mm] (10th percentile)",
+                "Title": "REPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (10th percentile)",
                 "Name": "REPS.DIAG.24_SNMM.ERC10",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 24-hour accumulation [mm] (25th percentile)",
+                "Title": "REPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (25th percentile)",
                 "Name": "REPS.DIAG.24_SNMM.ERC25",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 24-hour accumulation [mm] (50th percentile)",
+                "Title": "REPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (50th percentile)",
                 "Name": "REPS.DIAG.24_SNMM.ERC50",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 24-hour accumulation [mm] (75th percentile)",
+                "Title": "REPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (75th percentile)",
                 "Name": "REPS.DIAG.24_SNMM.ERC75",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 24-hour accumulation [mm] (90th percentile)",
+                "Title": "REPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (90th percentile)",
                 "Name": "REPS.DIAG.24_SNMM.ERC90",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 24-hour accumulation [mm] (100th percentile)",
+                "Title": "REPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (100th percentile)",
                 "Name": "REPS.DIAG.24_SNMM.ERC100",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 24-hour accumulation [mm] (mean)",
+                "Title": "REPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (mean)",
                 "Name": "REPS.DIAG.24_SNMM.ERMEAN",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "REPS - Snow - 24-hour accumulation [mm] (standard deviation)",
+                "Title": "REPS - Snow - 24-hour accumulation (liquid equivalent) [mm] (standard deviation)",
                 "Name": "REPS.DIAG.24_SNMM.ERSSTD",
                 "isLeaf": true,
                 "isTemporal": true
@@ -49087,8 +51543,26 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "WCPS - Instantaneous precipitation rate [m/s]",
+            "Name": "WCPS_1km_PrecipRate",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "WCPS - Ocean mixed layer depth based on density criterion [m]",
             "Name": "WCPS_1km_MixedLayerThickness",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "WCPS - Precipitation accumulation [m]",
+            "Name": "WCPS_1km_Precip-Accum",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "WCPS - Rain accumulation [m]",
+            "Name": "WCPS_1km_Rain-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -49149,6 +51623,12 @@ export default {
           {
             "Title": "WCPS - Sea water velocity at 0.5 m below the surface [m/s]",
             "Name": "WCPS_1km_SeaWaterVelocity_0.5m",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "WCPS - Snow accumulation [m]",
+            "Name": "WCPS_1km_Snow-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
