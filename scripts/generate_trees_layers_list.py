@@ -33,15 +33,14 @@ import json
 import logging
 import os
 import re
-import requests
-import shutil
-from xml.etree import ElementTree
 
 from owslib.wms import WebMapService
 
 from wms_sources_configs import wms_sources
 
 LOGGER = logging.getLogger(__name__)
+
+GFI_FEATURE_COUNT_LAYERS = {"Current-Alerts", "METNOTES"}
 
 TREE_JS_TEMPLATE = """\
 export default {{
@@ -73,6 +72,14 @@ def generate_layer_dict(list_layer_metadata, source=None):
     return items
 
 
+def apply_gfi_feature_count(layer_tree):
+    for layer in layer_tree:
+        if layer.get("isLeaf") and layer.get("Name") in GFI_FEATURE_COUNT_LAYERS:
+            layer["gfiFeatureCount"] = 10
+        if "children" in layer:
+            apply_gfi_feature_count(layer["children"])
+
+
 def findTopLevel(metadata):
     if metadata.parent == None:
         return metadata.layers
@@ -81,7 +88,7 @@ def findTopLevel(metadata):
 
 
 langs = ["en", "fr"]
-    
+
 trees_files = glob.glob("../src/assets/trees/tree_*.js")
 layers_en_files = glob.glob("../src/locales/en/layers_*.json")
 layers_fr_files = glob.glob("../src/locales/fr/layers_*.json")
@@ -168,31 +175,6 @@ def recursive_sort(layer_tree):
     return layer_tree
 
 
-# Function to extract CRS values from the first Layer
-def extract_wms_crs(url):
-    # Send a GET request to the URL
-    response = requests.get(url)
-
-    # Parse the XML response
-    root = ElementTree.fromstring(response.content)
-
-    # Define the namespace dictionary
-    ns = {'wms': 'http://www.opengis.net/wms'}
-
-    # Find the first Layer element with the correct namespace prefix
-    first_layer = root.find(".//wms:Layer", ns)
-
-    # If a Layer element is found, find all CRS elements within it
-    if first_layer is not None:
-        crs_elements = first_layer.findall("./wms:CRS", ns)
-        # Extract the text of each CRS element and store them in a list
-        crs_list = [element.text for element in crs_elements]
-    else:
-        crs_list = []
-
-    return crs_list
-
-
 sources_to_remove = []
 for name, params in wms_sources.items():
     if not params["display"]:
@@ -227,9 +209,10 @@ for name, params in wms_sources.items():
                     _, metadata = wms.items()[0]
                     top_level_items = findTopLevel(metadata)
 
-                    get_capa_url = f"{base_url}&SERVICE=WMS&VERSION={params['version']}&REQUEST=GetCapabilities"
-                    crs_values = extract_wms_crs(get_capa_url)
-                    for crs in crs_values:
+                    root_layer = metadata
+                    while root_layer.parent is not None:
+                        root_layer = root_layer.parent
+                    for crs in root_layer.crsOptions:
                         if crs not in combined_crs_values:
                             combined_crs_values.append(crs)
 
@@ -268,7 +251,10 @@ for name, params in wms_sources.items():
 
         if name != "Presets":
             name = name.lower()
-            
+
+            if name.startswith("weather"):
+                apply_gfi_feature_count(combined_layers)
+
             sorted_layers = recursive_sort(combined_layers)
             sorted_layers_dict = dict(sorted(combined_layers_dict.items()))
 
