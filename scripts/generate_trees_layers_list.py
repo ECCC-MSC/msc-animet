@@ -40,7 +40,8 @@ from wms_sources_configs import wms_sources
 
 LOGGER = logging.getLogger(__name__)
 
-GFI_FEATURE_COUNT_LAYERS = {"Current-Alerts", "METNOTES"}
+with open('../src/assets/gfi_feature_count_layers.json') as f:
+    GFI_FEATURE_COUNT_LAYERS = set(json.load(f))
 
 TREE_JS_TEMPLATE = """\
 export default {{

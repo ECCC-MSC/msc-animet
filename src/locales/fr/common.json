@@ -38,6 +38,7 @@
   "EPSG4326": "WGS84 (lat/lon)",
   "ExpiredTimesteps": "Certains pas de temps ont expiré. Les informations temporelles ont été mises à jour.",
   "ExtentFullyOOB": "La plage complète des dates sélectionnées n'est plus disponible. La plage des dates sélectionnées a été réinitialisée.",
+  "Feature": "Entité",
   "Fill": "Remplissage",
   "FPS": "IPS",
   "FramesPerSecond": "Images par seconde",
