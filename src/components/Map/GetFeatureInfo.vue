@@ -196,23 +196,28 @@ export default {
       this.setCoordinatesPreference(this.coordinatesSelection)
     },
     changeGFILang() {
-      this.items.forEach((item) => {
-        if (item.children[0].name.includes(':')) {
-          const value = item.children[0].name.split(':')[1]
-          item.children[0].name = `${this.t('Value')}${this.t('Colon')}${value}`
-          if (item.name.includes('/')) {
-            item.children[1].name = `Source${this.t('Colon')} ${item.name.split('/')[1]}`
-
-            if (item.children[2]) {
-              item.children[2].name = this.t('OtherProperties')
-            }
-          } else if (item.children[1]) {
-            item.children[1].name = this.t('OtherProperties')
+      const walk = (nodes) => {
+        nodes.forEach((node) => {
+          if (node.children && node.children.length > 0) {
+            walk(node.children)
           }
-        } else {
-          item.children[0].name = this.t('OtherProperties')
-        }
-      })
+          if (node.type === 'value') {
+            const parts = node.name.split(':')
+            const value = parts.slice(1).join(':').trim()
+            node.name = `${this.t('Value')}${this.t('Colon')}${value}`
+          } else if (node.type === 'source') {
+            const parts = node.name.split(':')
+            const value = parts.slice(1).join(':').trim()
+            node.name = `Source${this.t('Colon')}${value}`
+          } else if (node.type === 'other') {
+            node.name = this.t('OtherProperties')
+          } else if (node.type === 'feature') {
+            const num = node.name.split(' ')[1]
+            node.name = `${this.t('Feature')} ${num}`
+          }
+        })
+      }
+      walk(this.items)
     },
     closeMenu(event) {
       if (
@@ -266,11 +271,15 @@ export default {
             if (layer.get('visible')) {
               const source = layer.getSource()
               if (source && typeof source.getFeatureInfoUrl === 'function') {
+                let count = layer.get('layerGfiFeatureCount')
+                if (!Number.isInteger(count)) {
+                  count = 1
+                }
                 urls[layer.get('layerName')] = source.getFeatureInfoUrl(
                   evt.coordinate,
                   evt.map.getView().getResolution(),
                   evt.map.getView().getProjection().getCode(),
-                  { INFO_FORMAT: 'application/json', FEATURE_COUNT: 1 },
+                  { INFO_FORMAT: 'application/json', FEATURE_COUNT: count },
                 )
               }
             }
@@ -286,48 +295,78 @@ export default {
                     Object.keys(json).length > 0 &&
                     json.features.length !== 0
                   ) {
-                    let feature = []
-                    if (Object.hasOwn(json.features[0].properties, 'value')) {
-                      feature.push({
-                        id: index,
-                        name: `${this.t('Value')}${this.t('Colon')} ${
-                          json.features[0].properties.value
-                        }`,
-                      })
-                      delete json.features[0].properties.value
-                      index++
-                    }
-                    if (name.includes('/')) {
-                      feature.push({
-                        id: index,
-                        name: `Source${this.t('Colon')} ${name.split('/')[1]}`,
-                      })
-                      index++
-                    }
-                    if (Object.keys(json.features[0].properties).length > 0) {
-                      feature.push({
-                        id: index,
-                        name: this.t('OtherProperties'),
-                        children: Object.entries(
-                          json.features[0].properties,
-                        ).map(([key, value], childIndex) => {
-                          return {
-                            id: `${index}-${childIndex}`,
-                            name: `${key}: ${value}`,
-                          }
-                        }),
-                      })
-                    }
-                    index++
-
-                    const item = {
-                      id: index,
+                    const layerNode = {
+                      id: index++,
                       name: name,
-                      children: feature,
+                      children: [],
                       isOpen: true,
                     }
-                    itemsGFI.push(item)
-                    index++
+
+                    const buildFeatureChildren = (feat) => {
+                      const props = { ...feat.properties }
+                      const featureChildren = []
+
+                      if (Object.hasOwn(props, 'value')) {
+                        featureChildren.push({
+                          id: index++,
+                          name: `${this.t('Value')}${this.t('Colon')} ${
+                            props.value
+                          }`,
+                          type: 'value',
+                        })
+                        delete props.value
+                      }
+
+                      if (Object.keys(props).length > 0) {
+                        featureChildren.push({
+                          id: index++,
+                          name: this.t('OtherProperties'),
+                          children: Object.entries(props).map(
+                            ([key, value], childIndex) => ({
+                              id: `${index}-${childIndex}`,
+                              name: `${key}: ${value}`,
+                            }),
+                          ),
+                          type: 'other',
+                        })
+                      }
+
+                      return featureChildren
+                    }
+
+                    // add source at layer level if applicable
+                    if (name.includes('/')) {
+                      layerNode.children.push({
+                        id: index++,
+                        name: `Source${this.t('Colon')} ${name.split('/')[1]}`,
+                        type: 'source',
+                      })
+                    }
+
+                    if (json.features.length === 1) {
+                      const single = json.features[0]
+                      if (single && single.properties) {
+                        const children = buildFeatureChildren(single)
+                        layerNode.children.push(...children)
+                      }
+                    } else {
+                      json.features.forEach((feat, featIdx) => {
+                        if (feat && feat.properties) {
+                          const children = buildFeatureChildren(feat)
+                          layerNode.children.push({
+                            id: index++,
+                            name: `${this.t('Feature')} ${featIdx + 1}`,
+                            children: children,
+                            isOpen: false,
+                            type: 'feature',
+                          })
+                        }
+                      })
+                    }
+
+                    if (layerNode.children.length > 0) {
+                      itemsGFI.push(layerNode)
+                    }
                   }
                 })
             } catch {

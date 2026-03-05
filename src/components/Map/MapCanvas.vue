@@ -464,6 +464,9 @@ export default {
             ? null
             : layerData.Style[0].Name,
         layerDateIndex: 0,
+        layerGfiFeatureCount: Object.hasOwn(layerData, 'gfiFeatureCount')
+          ? layerData.gfiFeatureCount
+          : 1,
         layerIsTemporal: layerData.isTemporal,
         layerName: layerData.Name,
         layerStyles: layerData.Style,

@@ -8,6 +8,7 @@
 
 <script>
 import localeData from '../locales/importLocaleFiles'
+import gfiFeatureCountLayers from '../assets/gfi_feature_count_layers.json'
 import proj4 from 'proj4'
 import { Duration } from 'luxon'
 import { register } from 'ol/proj/proj4'
@@ -214,7 +215,7 @@ export default {
           return
         }
       }
-      const snapped = isSnapped !== '0' ? true : false
+      const snapped = isSnapped === '1' ? true : false
       if (snapped) {
         this.layerSnapped = true
       }
@@ -272,15 +273,22 @@ export default {
       let op = parseFloat(opacity)
       layer.opacity = isNaN(op) || op > 1 || op < 0 ? 0.75 : op
       layer.visible = isVisible === '0' ? false : true
-      layer.legendDisplayed = styleInfo[0] === '1' ? true : false
-      if (styleInfo.length > 1 && styleInfo[1] === '1') {
-        layer.layerInterpolated = true
+      if (styleInfo && styleInfo.length > 0) {
+        layer.legendDisplayed = styleInfo[0] === '1' ? true : false
+        if (styleInfo.length > 1 && styleInfo[1] === '1') {
+          layer.layerInterpolated = true
+        }
+      } else {
+        layer.legendDisplayed = true
       }
-      if (style !== '0') {
+      if (style && style !== '0') {
         layer.currentStyle = style
       }
       if (modelRun !== undefined) {
         layer.currentMR = modelRun
+      }
+      if (gfiFeatureCountLayers.includes(layerName)) {
+        layer.gfiFeatureCount = 10
       }
       const autoPlay = this.play && this.layerCount === 0
       this.emitter.emit('permaLinkLayer', {
