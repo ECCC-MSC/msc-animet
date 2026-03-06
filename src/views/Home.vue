@@ -8,7 +8,6 @@
 
 <script>
 import localeData from '../locales/importLocaleFiles'
-import gfiFeatureCountLayers from '../assets/gfi_feature_count_layers.json'
 import proj4 from 'proj4'
 import { Duration } from 'luxon'
 import { register } from 'ol/proj/proj4'
@@ -286,9 +285,6 @@ export default {
       }
       if (modelRun !== undefined) {
         layer.currentMR = modelRun
-      }
-      if (gfiFeatureCountLayers.includes(layerName)) {
-        layer.gfiFeatureCount = 10
       }
       const autoPlay = this.play && this.layerCount === 0
       this.emitter.emit('permaLinkLayer', {
