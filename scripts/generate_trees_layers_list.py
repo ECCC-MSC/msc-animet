@@ -40,9 +40,6 @@ from wms_sources_configs import wms_sources
 
 LOGGER = logging.getLogger(__name__)
 
-with open('../src/assets/gfi_feature_count_layers.json') as f:
-    GFI_FEATURE_COUNT_LAYERS = set(json.load(f))
-
 TREE_JS_TEMPLATE = """\
 export default {{
   '{}' : {},
@@ -71,14 +68,6 @@ def generate_layer_dict(list_layer_metadata, source=None):
                 layer_dict["isTemporal"] = False
         items.append(layer_dict)
     return items
-
-
-def apply_gfi_feature_count(layer_tree):
-    for layer in layer_tree:
-        if layer.get("isLeaf") and layer.get("Name") in GFI_FEATURE_COUNT_LAYERS:
-            layer["gfiFeatureCount"] = 10
-        if "children" in layer:
-            apply_gfi_feature_count(layer["children"])
 
 
 def findTopLevel(metadata):
@@ -252,9 +241,6 @@ for name, params in wms_sources.items():
 
         if name != "Presets":
             name = name.lower()
-
-            if name.startswith("weather"):
-                apply_gfi_feature_count(combined_layers)
 
             sorted_layers = recursive_sort(combined_layers)
             sorted_layers_dict = dict(sorted(combined_layers_dict.items()))
