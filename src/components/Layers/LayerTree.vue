@@ -125,6 +125,7 @@
 
 <script>
 import axios from '../../utils/AxiosConfig.js'
+import gfiFeatureCountLayers from '../../assets/gfi_feature_count_layers.json'
 
 import { debounce } from 'lodash'
 
@@ -325,6 +326,9 @@ export default {
                 throw new Error(`Query for ${layer.Name} failed`)
               }
             })
+            if (gfiFeatureCountLayers.includes(layer.Name.split('/')[0])) {
+              layer.gfiFeatureCount = 10
+            }
             layerData = { ...layerData, ...layer }
             layerData.isTemporal = layerData.Dimension.Dimension_time !== ''
             this.emitter.emit('buildLayer', {
