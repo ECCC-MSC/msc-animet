@@ -94,7 +94,14 @@ export default {
       const worldExtent = this.crsList[this.currentCRS]
       newProjection.setWorldExtent(worldExtent)
       const projExtent = applyTransform(worldExtent, fromLonLat, undefined, 8)
-      newProjection.setExtent(projExtent)
+      if (this.currentCRS === 'EPSG:3857') {
+        newProjection.setExtent([
+          -20037508.342789244, -20037508.342789244, 20037508.342789244,
+          20037508.342789244,
+        ])
+      } else {
+        newProjection.setExtent(projExtent)
+      }
 
       this.$animationCanvas.mapObj = new Map({
         target: this.$refs['animation-canvas'],
