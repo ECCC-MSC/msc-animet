@@ -262,7 +262,6 @@ export default {
               )
 
               this.$animationCanvas.mapObj.once('rendercomplete', resolve)
-              this.emitter.on('noChange', resolve)
             }).catch(() => {
               console.error('Animation creation cancelled')
             })

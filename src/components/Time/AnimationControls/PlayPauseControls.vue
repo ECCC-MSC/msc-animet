@@ -184,12 +184,17 @@ export default {
           }
           // Count time it takes to finish render for play button,
           // if less than 1sec wait until it's been a second
-          r = await this.measurePromise(
-            () =>
-              new Promise((resolve) =>
-                this.$mapCanvas.mapObj.once('rendercomplete', resolve),
-              ),
+          const layersVisible = this.$mapLayers.arr.filter(
+            (layer) => layer.get('layerIsTemporal') && layer.get('visible'),
           )
+          if (layersVisible.length > 0) {
+            r = await this.measurePromise(
+              () =>
+                new Promise((resolve) =>
+                  this.$mapCanvas.mapObj.once('rendercomplete', resolve),
+                ),
+            )
+          }
         }
         if (!this.pendingErrorResolution && this.playState === 'play') {
           const minDelay = this.currentSpeed

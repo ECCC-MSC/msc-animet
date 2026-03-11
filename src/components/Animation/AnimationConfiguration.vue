@@ -188,9 +188,13 @@ export default {
               layer.get('layerIsTemporal') &&
               layer.get('layerTimeStep') === this.mapTimeSettings.Step
             ) {
-              this.store.setAnimationTitle(
-                this.t(layer.get('layerName').split('/')[0]),
-              )
+              if (layer.get('layerVisibilityOn')) {
+                this.store.setAnimationTitle(
+                  this.t(layer.get('layerName').split('/')[0]),
+                )
+              } else {
+                this.store.setAnimationTitle('')
+              }
               break
             }
           }
