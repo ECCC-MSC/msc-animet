@@ -177,27 +177,36 @@ export default {
       if (this.animationTitle !== '' && this.animationTitle !== null) {
         this.store.setAnimationTitle(this.animationTitle)
       } else {
-        if (this.mapTimeSettings.SnappedLayer !== null) {
+        if (
+          this.mapTimeSettings.SnappedLayer !== null &&
+          this.$mapLayers.arr
+            .find(
+              (layer) =>
+                layer.get('layerName') === this.mapTimeSettings.SnappedLayer,
+            )
+            .get('layerVisibilityOn')
+        ) {
           this.store.setAnimationTitle(
             this.t(this.mapTimeSettings.SnappedLayer.split('/')[0]),
           )
         } else if (this.mapTimeSettings.Step !== null) {
+          let animationTitle = ''
+          let firstMatch = ''
           for (let i = this.$mapLayers.arr.length - 1; i >= 0; i--) {
             const layer = this.$mapLayers.arr[i]
             if (
               layer.get('layerIsTemporal') &&
-              layer.get('layerTimeStep') === this.mapTimeSettings.Step
+              layer.get('layerVisibilityOn')
             ) {
-              if (layer.get('layerVisibilityOn')) {
-                this.store.setAnimationTitle(
-                  this.t(layer.get('layerName').split('/')[0]),
-                )
-              } else {
-                this.store.setAnimationTitle('')
+              const title = this.t(layer.get('layerName').split('/')[0])
+              if (layer.get('layerTimeStep') === this.mapTimeSettings.Step) {
+                animationTitle = title
+                break
               }
-              break
+              if (!firstMatch) firstMatch = title
             }
           }
+          this.store.setAnimationTitle(animationTitle || firstMatch)
         } else {
           const firstLayerTitle = this.t(
             this.$mapLayers.arr[this.$mapLayers.arr.length - 1]

@@ -246,7 +246,7 @@ export default {
           if (this.mapTimeSettings.DateIndex !== null) {
             this.store.setMapTimeIndex(i)
           }
-          if (i === this.datetimeRangeSlider[0]) {
+          if (i === this.datetimeRangeSlider[0] || this.MP4Length === 1) {
             this.animationController = new AbortController()
             let animationRendered = new Promise((resolve, reject) => {
               const abortListener = ({ target }) => {
