@@ -1,5 +1,19 @@
 # Release Notes
 
+## Version 2.5.1 (2026-03-12)
+
+### Bug Fixes
+
+- GetFeatureInfo can now contain multiple features for Current-Alerts and METNOTES
+- Minor fix to permalink when only a layer name is given
+- Fixed slight offset for OpenStreetMap basemap in EPSG:3857
+- Fixed an issue with WMS layers disappearing in other projections when zoomed in extensively
+- Fixed the animation title being assigned to an invisible layer in certain cases
+- Fixed an animation canvas rendering issue where non time-enabled layers or basemaps were not done rendering yet
+- Fixed the default animation title being chosen in a more logical order depending on layers
+- Fixed a freeze issue during an animation creation due to an out of bounds check of visible layers
+
+
 ## Version 2.5.0 (2026-02-26)
 
 ### New Features
