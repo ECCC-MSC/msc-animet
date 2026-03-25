@@ -335,10 +335,10 @@ export default {
           ],
         },
         {
-          Title_en: 'GOES-W Day Visibility/Night IR',
-          Title_fr: 'GOES-O Visibilité de jour/IR de nuit',
-          Name: 'GOES-West Day Visibility Night IR',
-          Img: 'GOES-West Day Visibility Night IR',
+          Title_en: 'GOES-W Day Visible/Night IR',
+          Title_fr: 'GOES-O Visible de jour/IR de nuit',
+          Name: 'GOES-West Day Visible Night IR',
+          Img: 'GOES-West Day Visible Night IR',
           isLeaf: false,
           children: [
             {
