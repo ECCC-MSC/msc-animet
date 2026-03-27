@@ -311,7 +311,8 @@ export default {
           )
         } else if (
           'code' in attrs &&
-          attrs['code'].nodeValue === 'InvalidSRS'
+          (attrs['code'].nodeValue === 'InvalidSRS' ||
+            attrs['code'].nodeValue === 'InvalidCRS')
         ) {
           this.emitter.emit('removeLayer', layer)
           this.expiredSnackBarMessage = this.t('InvalidSRS', {
