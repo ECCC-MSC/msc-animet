@@ -1,67 +1,67 @@
 export default {
   'proj_weather' : [
-  "EPSG:26913",
-  "EPSG:26707",
-  "EPSG:4326",
-  "EPSG:3575",
-  "EPSG:26714",
-  "EPSG:26907",
-  "EPSG:26720",
-  "EPSG:3410",
-  "EPSG:3005",
-  "EPSG:900913",
-  "EPSG:3573",
-  "EPSG:26717",
-  "EPSG:26722",
-  "EPSG:32187",
-  "EPSG:3576",
-  "EPSG:3857",
-  "EPSG:26919",
-  "EPSG:2294",
-  "EPSG:26920",
-  "EPSG:26715",
-  "EPSG:3408",
-  "EPSG:2295",
-  "EPSG:26922",
-  "EPSG:3978",
-  "EPSG:26719",
-  "EPSG:26912",
-  "EPSG:26708",
-  "AUTO2:42003",
-  "EPSG:26921",
-  "EPSG:3995",
-  "EPSG:4267",
-  "EPSG:26910",
-  "EPSG:102100",
-  "EPSG:32661",
-  "EPSG:42304",
-  "EPSG:102185",
   "EPSG:26721",
-  "EPSG:26916",
-  "EPSG:42101",
-  "EPSG:26713",
-  "EPSG:26911",
-  "EPSG:3776",
   "EPSG:2950",
-  "EPSG:26710",
-  "EPSG:26908",
+  "EPSG:26913",
+  "EPSG:4326",
   "EPSG:4269",
-  "EPSG:3572",
-  "EPSG:3571",
-  "EPSG:26914",
-  "EPSG:3574",
-  "EPSG:26915",
+  "EPSG:32661",
+  "EPSG:3408",
+  "EPSG:26710",
+  "EPSG:3576",
   "EPSG:26711",
-  "EPSG:26718",
-  "EPSG:26909",
+  "EPSG:26910",
+  "EPSG:26707",
+  "EPSG:26708",
+  "EPSG:3572",
+  "EPSG:26717",
+  "EPSG:26908",
+  "EPSG:3410",
+  "EPSG:3574",
+  "EPSG:32187",
+  "EPSG:42304",
+  "EPSG:2294",
+  "EPSG:26713",
+  "EPSG:102185",
+  "EPSG:26914",
+  "EPSG:26722",
+  "EPSG:26916",
+  "EPSG:3776",
+  "EPSG:26911",
+  "EPSG:900913",
+  "EPSG:3005",
+  "EPSG:42101",
+  "EPSG:32198",
+  "EPSG:3995",
+  "EPSG:26915",
+  "EPSG:3573",
+  "AUTO2:42003",
+  "EPSG:26709",
+  "EPSG:26715",
   "EPSG:26716",
   "EPSG:42102",
-  "EPSG:26918",
+  "EPSG:102100",
   "EPSG:26917",
-  "EPSG:26712",
-  "EPSG:26709",
+  "EPSG:3571",
+  "EPSG:26714",
+  "EPSG:3857",
+  "EPSG:26909",
+  "EPSG:3575",
+  "EPSG:26920",
   "EPSG:32188",
-  "EPSG:32198"
+  "EPSG:26712",
+  "EPSG:26921",
+  "EPSG:26720",
+  "EPSG:26922",
+  "EPSG:26907",
+  "EPSG:26919",
+  "EPSG:3978",
+  "EPSG:2295",
+  "EPSG:26719",
+  "EPSG:26918",
+  "EPSG:26912",
+  "EPSG:26718",
+  "EPSG:4267"
 ],
   'tree_fr_weather' : [
   {
@@ -389,19 +389,6 @@ export default {
             "isTemporal": true
           }
         ]
-      }
-    ]
-  },
-  {
-    "Title": "Autres donn\u00e9es m\u00e9t\u00e9o",
-    "Name": "Autres donn\u00e9es m\u00e9t\u00e9o",
-    "isLeaf": false,
-    "children": [
-      {
-        "Title": "Couverture du r\u00e9seau Radiom\u00e9t\u00e9o canadien",
-        "Name": "WEATHERADIO",
-        "isLeaf": true,
-        "isTemporal": false
       }
     ]
   },
@@ -1249,7 +1236,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GOES-Est D\u00e9tection de feux de jour /SWIR [1 km]",
+                "Title": "GOES-Est D\u00e9tection de feux de jour/SWIR [1 km]",
                 "Name": "GOES-East_1km_DayLandCloudFire-SWIR",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1309,13 +1296,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GOES-Est Visibilit\u00e9 de jour / Convection nuageuse de jour [1 km]",
+                "Title": "GOES-Est Visible de jour/Convection nuageuse de jour [1 km]",
                 "Name": "GOES-East_1km_DayVis",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GOES-Est Visibilit\u00e9 de jour/IR de nuit [1 km]",
+                "Title": "GOES-Est Visible de jour/IR de nuit [1 km]",
                 "Name": "GOES-East_1km_DayVis-NightIR",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1340,7 +1327,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GOES-Ouest D\u00e9tection de feux de jour /SWIR [1 km]",
+                "Title": "GOES-Ouest D\u00e9tection de feux de jour/SWIR [1 km]",
                 "Name": "GOES-West_1km_DayLandCloudFire-SWIR",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1400,13 +1387,13 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "GOES-Ouest Visibilit\u00e9 de jour / Convection nuageuse de jour [1 km]",
+                "Title": "GOES-Ouest Visible de jour/Convection nuageuse de jour [1 km]",
                 "Name": "GOES-West_1km_DayVis",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GOES-Ouest Visibilit\u00e9 de jour/IR de nuit [1 km]",
+                "Title": "GOES-Ouest Visible de jour/IR de nuit [1 km]",
                 "Name": "GOES-West_1km_DayVis-NightIR",
                 "isLeaf": true,
                 "isTemporal": true
@@ -1448,13 +1435,13 @@ export default {
         ]
       },
       {
-        "Title": "Alertes m\u00e9t\u00e9o [exp\u00e9rimental]",
+        "Title": "Alertes m\u00e9t\u00e9o [obsol\u00e8te]",
         "Name": "ALERTS",
         "isLeaf": true,
         "isTemporal": false
       },
       {
-        "Title": "Alertes m\u00e9t\u00e9o en cours",
+        "Title": "Alertes m\u00e9t\u00e9o en cours [exp\u00e9rimental]",
         "Name": "Current-Alerts",
         "isLeaf": true,
         "isTemporal": false

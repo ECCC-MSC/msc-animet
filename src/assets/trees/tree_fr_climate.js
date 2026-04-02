@@ -1,9 +1,9 @@
 export default {
   'proj_climate' : [
-  "EPSG:3857",
   "EPSG:4326",
   "EPSG:102100",
   "EPSG:3978",
+  "EPSG:3857",
   "EPSG:3995"
 ],
   'tree_fr_climate' : [
