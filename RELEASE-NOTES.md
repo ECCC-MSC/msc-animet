@@ -1,5 +1,13 @@
 # Release Notes
 
+## Version 2.5.2 (2026-04-02)
+
+### Bug Fixes
+
+- Fixed GOES-W Visible naming
+- Fixed ECMWF wrong projection error message
+- Updated layer tree to reflect latest changes from GeoMet-weather and GeoMet-climate
+
 ## Version 2.5.1 (2026-03-12)
 
 ### Bug Fixes
