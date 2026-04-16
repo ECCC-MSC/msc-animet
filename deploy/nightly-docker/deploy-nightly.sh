@@ -56,7 +56,7 @@ mkdir $NIGHTLYDIR && cd $NIGHTLYDIR
 git clone $GITREPO . -b main --depth=1
 
 # Certificate file needed for generate_trees_layers_list.py when building container
-CERT_FILE=/usr/local/share/ca-certificates/_ICM_Root.crt
+CERT_FILE=/usr/local/share/ca-certificates/ICM_Root.crt
 CERT_DEST_FILE=$(basename "$CERT_FILE")
 
 cp "$CERT_FILE" ./ || { echo "Failed to copy $CERT_FILE"; exit 1; }

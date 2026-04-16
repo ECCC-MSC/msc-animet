@@ -9,9 +9,9 @@ COPY . .
 FROM develop-stage AS build-stage
 WORKDIR /app/scripts
 ## cert must be copied over to app repo first
-ARG CERT_FILE=_ICM_Root.crt
+ARG CERT_FILE=ICM_Root.crt
 COPY $CERT_FILE /usr/local/share/ca-certificates/
-RUN ln -sf /usr/local/share/ca-certificates/_ICM_Root.crt /etc/ssl/certs/_ICM_Root.pem && \
+RUN ln -sf /usr/local/share/ca-certificates/ICM_Root.crt /etc/ssl/certs/ICM_Root.pem && \
     update-ca-certificates
 ## ENV variables from host server
 ARG ANIMET_NIGHTLY GEOMET_CLIMATE_NIGHTLY_URL GEOMET_WEATHER_NIGHTLY_URL GEOMET_CLIMATE_DEV_URL GEOMET_CLIMATE_STAGE_URL GEOMET_WEATHER_DEV_URL GEOMET_WEATHER_STAGE_URL GEOMET_MAPPROXY_NIGHTLY_URL VITE_SIMPLIFIED_BOUNDARIES VITE_PLACE_NAMES
