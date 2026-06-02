@@ -1,5 +1,10 @@
 # Release Notes
 
+## Version 2.5.3 (2026-06-02)
+
+### Bug Fixes
+- Update GDPS (operationalization of GDPS-SN) presets
+
 ## Version 2.5.2 (2026-04-02)
 
 ### Bug Fixes
