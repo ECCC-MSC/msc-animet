@@ -386,8 +386,8 @@ export default {
           children: [
             {
               Title:
-                'GDPS.PRES - Wind speed at 250 mb (3 hourly forecast) [m/s]',
-              Name: 'GDPS.PRES_WSPD.250.3h',
+                'GDPS - Wind speed at 250 mb [m/s] [experimental]',
+              Name: 'GDPS_15km_WindSpeed_250mb',
               isLeaf: true,
               isTemporal: true,
               isSnapped: true,
@@ -397,8 +397,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'GDPS.PRES - Winds at 250 mb (3 hourly forecast) [m/s]',
-              Name: 'GDPS.PRES_UU.250.3h',
+              Title: 'GDPS - Winds at 250 mb [m/s] [experimental]',
+              Name: 'GDPS_15km_Winds_250mb',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -407,8 +407,8 @@ export default {
             },
             {
               Title:
-                'GDPS.PRES - Geopotential height at 250 mb (3 hourly forecast) (contour) [gpm]',
-              Name: 'GDPS.PRES_GZ.250.3h-CONTOUR',
+                'GDPS - Geopotential height at 250 mb (contour) [gpm] [experimental]',
+              Name: 'GDPS_15km_GeopotentialHeight-Contour_250mb',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -426,8 +426,8 @@ export default {
           children: [
             {
               Title:
-                'GDPS.PRES - Absolute vorticity at 500 mb (3 hourly forecast) [s-1]',
-              Name: 'GDPS.PRES_QQ.500.3h',
+                'GDPS - Absolute vorticity at 500 mb [s-1] [experimental]',
+              Name: 'GDPS_15km_AbsoluteVorticity_500mb',
               isLeaf: true,
               isTemporal: true,
               isSnapped: true,
@@ -438,8 +438,8 @@ export default {
             },
             {
               Title:
-                'GDPS.PRES - Geopotential height at 500 mb (contour) [gpm]',
-              Name: 'GDPS.PRES_GZ.500-CONTOUR',
+                'GDPS - Geopotential height at 500 mb (contour) [gpm] [experimental]',
+              Name: 'GDPS_15km_GeopotentialHeight-Contour_500mb',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -447,8 +447,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'GDPS.PRES - Winds at 500 mb [m/s]',
-              Name: 'GDPS.PRES_UU.500',
+              Title: 'GDPS - Winds at 500 mb [m/s] [experimental]',
+              Name: 'GDPS_15km_Winds_500mb',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -466,8 +466,8 @@ export default {
           children: [
             {
               Title:
-                'GDPS.PRES - Relative humidity at 700 mb (3 hourly forecast) [%]',
-              Name: 'GDPS.PRES_HR.700.3h',
+                'GDPS - Relative humidity at 700 mb [%] [experimental]',
+              Name: 'GDPS_15km_RelativeHumidity_700mb',
               isLeaf: true,
               isTemporal: true,
               isSnapped: true,
@@ -477,8 +477,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'GDPS.PRES - Winds at 700 mb [m/s]',
-              Name: 'GDPS.PRES_UU.700',
+              Title: 'GDPS - Winds at 700 mb [m/s] [experimental]',
+              Name: 'GDPS_15km_Winds_700mb',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -487,8 +487,8 @@ export default {
             },
             {
               Title:
-                'GDPS.PRES - Geopotential height at 700 mb (contour) [gpm]',
-              Name: 'GDPS.PRES_GZ.700-CONTOUR',
+                'GDPS - Geopotential height at 700 mb (contour) [gpm] [experimental]',
+              Name: 'GDPS_15km_GeopotentialHeight-Contour_700mb',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -505,8 +505,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'GDPS.PRES - Isobaric vertical motion at 700 mb [Pa/s]',
-              Name: 'GDPS.PRES_WP.700',
+              Title: 'GDPS - Isobaric vertical motion at 700 mb [Pa/s] [experimental]',
+              Name: 'GDPS_15km_VerticalVelocity_700mb',
               isLeaf: true,
               isTemporal: true,
               layerInterpolated: true,
@@ -515,8 +515,8 @@ export default {
               opacity: 1,
             },
             {
-              Title: 'GDPS.PRES - Winds at 700 mb [m/s]',
-              Name: 'GDPS.PRES_UU.700',
+              Title: 'GDPS - Winds at 700 mb [m/s] [experimental]',
+              Name: 'GDPS_15km_Winds_700mb',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -525,8 +525,8 @@ export default {
             },
             {
               Title:
-                'GDPS.PRES - Geopotential height at 700 mb (contour) [gpm]',
-              Name: 'GDPS.PRES_GZ.700-CONTOUR',
+                'GDPS - Geopotential height at 700 mb (contour) [gpm] [experimental]',
+              Name: 'GDPS_15km_GeopotentialHeight-Contour_700mb',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -543,8 +543,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'GDPS.PRES - Air temperature at 850 mb [°C]',
-              Name: 'GDPS.PRES_TT.850',
+              Title: 'GDPS - Air temperature at 850 mb [°C] [experimental]',
+              Name: 'GDPS_15km_AirTemp_850mb',
               isLeaf: true,
               isTemporal: true,
               layerInterpolated: true,
@@ -553,8 +553,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'GDPS.PRES - Winds at 850 mb [m/s]',
-              Name: 'GDPS.PRES_UU.850',
+              Title: 'GDPS - Winds at 850 mb [m/s] [experimental]',
+              Name: 'GDPS_15km_Winds_850mb',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -563,8 +563,8 @@ export default {
             },
             {
               Title:
-                'GDPS.PRES - Geopotential height at 850 mb (contour) [gpm]',
-              Name: 'GDPS.PRES_GZ.850-CONTOUR',
+                'GDPS - Geopotential height at 850 mb (contour) [gpm] [experimental]',
+              Name: 'GDPS_15km_GeopotentialHeight-Contour_850mb',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -581,8 +581,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'GDPS.ETA - Thickness between 1000mb and 500mb [m]',
-              Name: 'GDPS.ETA_DZ',
+              Title: 'GDPS - Thickness between 1000mb and 500mb [m] [experimental]',
+              Name: 'GDPS_15km_Thickness_1000to500mb',
               isLeaf: true,
               isTemporal: true,
               layerInterpolated: true,
@@ -592,16 +592,16 @@ export default {
             },
             {
               Title:
-                'GDPS.ETA - Thickness between 1000mb and 500mb (contour) [m]',
-              Name: 'GDPS.ETA_DZ-CONTOUR',
+                'GDPS - Thickness between 1000mb and 500mb (contour) [m] [experimental]',
+              Name: 'GDPS_15km_Thickness-Contour_1000to500mb',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
               opacity: 0.75,
             },
             {
-              Title: 'GDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'GDPS.ETA_PN',
+              Title: 'GDPS - Sea level pressure (contour) [Pa] [experimental]',
+              Name: 'GDPS_15km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -618,8 +618,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'GDPS.DIAG - Precipitation - 3-hour accumulation [mm]',
-              Name: 'GDPS.DIAG_PR_PT3H',
+              Title: 'GDPS - Precipitation - 3-hour accumulation [mm] [experimental]',
+              Name: 'GDPS_15km_Precip-Accum3h',
               isLeaf: true,
               isTemporal: true,
               isSnapped: true,
@@ -629,8 +629,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'GDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'GDPS.ETA_PN',
+              Title: 'GDPS - Sea level pressure (contour) [Pa] [experimental]',
+              Name: 'GDPS_15km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -639,8 +639,8 @@ export default {
             },
             {
               Title:
-                'GDPS.ETA - Thickness between 1000mb and 500mb (contour) [m]',
-              Name: 'GDPS.ETA_DZ-CONTOUR',
+                'GDPS - Thickness between 1000mb and 500mb (contour) [m] [experimental]',
+              Name: 'GDPS_15km_Thickness-Contour_1000to500mb',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -656,8 +656,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'GDPS.ETA - Precipitation accumulation [mm]',
-              Name: 'GDPS.ETA_PR',
+              Title: 'GDPS - Precipitation accumulation [mm] [experimental]',
+              Name: 'GDPS_15km_Precip-Accum',
               isLeaf: true,
               isTemporal: true,
               isSnapped: true,
@@ -667,8 +667,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'GDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'GDPS.ETA_PN',
+              Title: 'GDPS - Sea level pressure (contour) [Pa] [experimental]',
+              Name: 'GDPS_15km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -677,8 +677,8 @@ export default {
             },
             {
               Title:
-                'GDPS.ETA - Thickness between 1000mb and 500mb (contour) [m]',
-              Name: 'GDPS.ETA_DZ-CONTOUR',
+                'GDPS - Thickness between 1000mb and 500mb (contour) [m] [experimental]',
+              Name: 'GDPS_15km_Thickness-Contour_1000to500mb',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -694,8 +694,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'GDPS.ETA - Air temperature at 2m above ground [°C]',
-              Name: 'GDPS.ETA_TT',
+              Title: 'GDPS - Air temperature at 2m above ground [°C] [experimental]',
+              Name: 'GDPS_15km_AirTemp_2m',
               isLeaf: true,
               isTemporal: true,
               layerInterpolated: true,
@@ -703,8 +703,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'GDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'GDPS.ETA_PN',
+              Title: 'GDPS - Sea level pressure (contour) [Pa] [experimental]',
+              Name: 'GDPS_15km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -721,8 +721,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'GDPS.ETA - Dew point temperature [°C]',
-              Name: 'GDPS.ETA_TD',
+              Title: 'GDPS - Dew point [°C] [experimental]',
+              Name: 'GDPS_15km_DewPoint_2m',
               isLeaf: true,
               isTemporal: true,
               layerInterpolated: true,
@@ -731,8 +731,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'GDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'GDPS.ETA_PN',
+              Title: 'GDPS - Sea level pressure (contour) [Pa] [experimental]',
+              Name: 'GDPS_15km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -740,8 +740,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'GDPS.ETA - Winds at 10m above surface [m/s]',
-              Name: 'GDPS.ETA_UU',
+              Title: 'GDPS - Winds at 10m above surface [m/s] [experimental]',
+              Name: 'GDPS_15km_Winds_10m',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -758,8 +758,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'GDPS.ETA - Total cloud cover [%]',
-              Name: 'GDPS.ETA_NT',
+              Title: 'GDPS - Total cloud cover [%] [experimental]',
+              Name: 'GDPS_15km_TotalCloudCover',
               isLeaf: true,
               isTemporal: true,
               layerInterpolated: true,
@@ -767,8 +767,8 @@ export default {
               opacity: 0.75,
             },
             {
-              Title: 'GDPS.ETA - Sea level pressure (contour) [Pa]',
-              Name: 'GDPS.ETA_PN',
+              Title: 'GDPS - Sea level pressure (contour) [Pa] [experimental]',
+              Name: 'GDPS_15km_Pressure_MSL-Contour',
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
@@ -865,7 +865,7 @@ export default {
               isSnapped: true,
               layerInterpolated: true,
               legendDisplayed: true,
-              currentStyle: 'SnowAccum_Dis',
+              currentStyle: 'Snow-Accum_0to100cm_GreyRed_Dis',
               opacity: 0.75,
             },
             {
