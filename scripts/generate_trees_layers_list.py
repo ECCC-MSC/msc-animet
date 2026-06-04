@@ -53,7 +53,7 @@ def generate_layer_dict(list_layer_metadata, source=None):
     for layer_metadata in list_layer_metadata:
         layer_dict = {
             "Title": layer_metadata.title,
-            "Name": layer_metadata.name,
+            "Name": layer_metadata.name or layer_metadata.title,
         }
         if source:
             layer_dict["wmsSource"] = source
