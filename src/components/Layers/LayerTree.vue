@@ -182,8 +182,15 @@ export default {
     removeLayer(layerName) {
       this.addedLayers = this.addedLayers.filter((added) => added !== layerName)
     },
-    replaceQueryPattern(source, layerName) {
-      let pattern = source['query_pattern']
+    replaceQueryPattern(source, layerName, sourceUrl) {
+      const patterns = source['query_pattern']
+      const urls = source['urls']
+
+      const urlIndex = urls.indexOf(sourceUrl)
+      const pattern = Array.isArray(patterns)
+        ? patterns[urlIndex !== -1 ? urlIndex : 0]
+        : patterns
+
       const querySplits = layerName.split(':')
       let layerPattern = ''
       for (let j = 0; j < querySplits.length; j++) {
@@ -206,7 +213,10 @@ export default {
         const sources = Object.keys(this.wmsSources)
         layer.wmsIndex = sources.findIndex(
           (key) =>
-            key !== 'Presets' && this.wmsSources[key]['urls'].includes(source),
+            key !== 'Presets' &&
+            (this.wmsSources[key]['urls'].includes(source) ||
+              (Object.hasOwn(this.wmsSources[key], 'urls_fr') &&
+                this.wmsSources[key]['urls_fr'].includes(source))),
         )
         if (layer.wmsIndex === -1) {
           for (let i = 0; i < sources.length; i++) {
@@ -214,6 +224,7 @@ export default {
               const [queryUrl] = this.replaceQueryPattern(
                 this.wmsSources[sources[i]],
                 layer.Name,
+                layer.wmsSource,
               )
               if (queryUrl === layer.wmsSource) {
                 layer.wmsIndex = i
@@ -231,6 +242,7 @@ export default {
             ;[source, layer.xmlName] = this.replaceQueryPattern(
               sourceValues,
               layer.Name,
+              source,
             )
           } else {
             layer.xmlName = layer.Name

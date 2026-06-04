@@ -69,21 +69,26 @@ wms_sources = {
         "version": "1.3.0",
         "display": True,
     },
-    "NOAA - nowCOAST": {
-        "urls": ["https://nowcoast.noaa.gov/geoserver/ows"],
+    "NOAA": {
+        "urls": [
+            "https://nowcoast.noaa.gov/geoserver/ows",
+            "https://opengeo.ncep.noaa.gov/geoserver/ows",
+        ],
         "version": "1.3.0",
-        "query_pattern": "https://nowcoast.noaa.gov/geoserver{LAYER}/ows",
-        "no_translations": True,
-        "display": True,
-    },
-    "NOAA - NCEP": {
-        "urls": ["https://opengeo.ncep.noaa.gov/geoserver/ows"],
+        "query_pattern": [
+            "https://nowcoast.noaa.gov/geoserver{LAYER}/ows",
+            "https://opengeo.ncep.noaa.gov/geoserver{LAYER}/ows",
+        ],
         "names": {
-            "fr": ["Centres nationaux de prédiction environnementale (NCEP)"],
-            "en": ["National Centers for Environmental Prediction (NCEP)"],
+            "en": [
+                "nowCOAST (NOAA)",
+                "National Centers for Environmental Prediction (NCEP)",
+            ],
+            "fr": [
+                "nowCOAST (NOAA)",
+                "Centres nationaux de prédiction environnementale (NCEP)",
+            ],
         },
-        "version": "1.3.0",
-        "query_pattern": "https://opengeo.ncep.noaa.gov/geoserver{LAYER}/ows",
         "no_translations": True,
         "display": True,
     },
@@ -93,26 +98,47 @@ wms_sources = {
         "display": True,
     },
     "NRCan": {
-        "urls": ["https://maps.geogratis.gc.ca/wms/canvec_en"],
-        "urls_fr": ["https://maps.geogratis.gc.ca/wms/canvec_fr"],
+        "urls": [
+            "https://maps-cartes.services.geo.ca/server_serveur/services/TC/canadian_airports_w_air_navigation_services_en/MapServer/WMSServer",
+            "https://maps.geogratis.gc.ca/wms/canvec_en",
+            "https://datacube.services.geo.ca/wrapper/ogc/elevation-hrdem-mosaic",
+            "https://maps.geogratis.gc.ca/wms/hydro_network_en",
+        ],
+        "urls_fr": [
+            "https://maps-cartes.services.geo.ca/server_serveur/services/TC/canadian_airports_w_air_navigation_services_fr/MapServer/WMSServer",
+            "https://maps.geogratis.gc.ca/wms/canvec_fr",
+            "https://datacube.services.geo.ca/wrapper/ogc/elevation-hrdem-mosaic",
+            "https://maps.geogratis.gc.ca/wms/hydro_network_fr",
+        ],
+        "names": {
+            "en": [
+                "Canadian Airports",
+                "CanVec",
+                "Medium Resolution Digital Elevation Model (MRDEM) - CanElevation Series",
+                "National Hydro Network",
+            ],
+            "fr": [
+                "Aéroports canadiens",
+                "CanVec",
+                "Modèle numérique d'élévation de moyenne résolution (MNEMR) - Série CanÉlévation",
+                "Réseau hydrographique national",
+            ]
+        },
         "version": "1.3.0",
         "display": True,
     },
     "Others": {
         "urls": [
-            "https://maps-cartes.services.geo.ca/server_serveur/services/TC/canadian_airports_w_air_navigation_services_en/MapServer/WMSServer",
-            "https://datacube.services.geo.ca/wrapper/ogc/elevation-hrdem-mosaic",
-            "https://servicescarto.mern.gouv.qc.ca/pes/services/Territoire/SDA_WMS/MapServer/WmsServer"
+            "https://servicescarto.mern.gouv.qc.ca/pes/services/Territoire/SDA_WMS/MapServer/WmsServer",
+        ],
+        "urls_fr": [
+            "https://servicescarto.mern.gouv.qc.ca/pes/services/Territoire/SDA_WMS/MapServer/WmsServer",
         ],
         "names": {
-            "fr": [
-                "Aéroports canadiens (NRCan)",
-                "Modèle numérique d'élévation de moyenne résolution (MNEMR) - Série CanÉlévation",
+            "en": [
                 "QC MRNF - Territory",
             ],
-            "en": [
-                "Canadian Airports (NRCan)",
-                "Medium Resolution Digital Elevation Model (MRDEM) - CanElevation Series",
+            "fr": [
                 "QC MRNF - Territoire",
             ]
         },
