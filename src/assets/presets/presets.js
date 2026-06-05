@@ -403,7 +403,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'WindBarbs_knots',
-              opacity: 0.5,
+              opacity: 0.75,
             },
             {
               Title:
@@ -413,6 +413,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'GeopotentialHeight_0to2100dam_12dam-Lines',
+              opacity: 0.75,
+            },
+            {
+              Title:
+                'GDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'GDPS_15km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -453,7 +462,16 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'WindBarbs_knots',
-              opacity: 0.5,
+              opacity: 0.75,
+            },
+            {
+              Title:
+                'GDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'GDPS_15km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
+              opacity: 0.75,
             },
           ],
         },
@@ -483,7 +501,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'WindBarbs_knots',
-              opacity: 0.5,
+              opacity: 0.75,
             },
             {
               Title:
@@ -493,6 +511,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'Geopotential-Height_Contour_0-10080',
+              opacity: 0.75,
+            },
+            {
+              Title:
+                'GDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'GDPS_15km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -521,7 +548,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'WindBarbs_knots',
-              opacity: 0.5,
+              opacity: 0.75,
             },
             {
               Title:
@@ -531,6 +558,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'Geopotential-Height_Contour_0-10080',
+              opacity: 0.75,
+            },
+            {
+              Title:
+                'GDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'GDPS_15km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -559,7 +595,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'WindBarbs_knots',
-              opacity: 0.5,
+              opacity: 0.75,
             },
             {
               Title:
@@ -569,6 +605,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'Geopotential-Height_Contour_0-10080',
+              opacity: 0.75,
+            },
+            {
+              Title:
+                'GDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'GDPS_15km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -606,6 +651,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
+            },
+            {
+              Title:
+                'GDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'GDPS_15km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -634,8 +688,8 @@ export default {
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
-              currentStyle: 'SeaLevelPressure_4mb',
-              opacity: 0.5,
+              currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
             },
             {
               Title:
@@ -644,7 +698,16 @@ export default {
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
-              opacity: 0.5,
+              opacity: 0.75,
+            },
+            {
+              Title:
+                'GDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'GDPS_15km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
+              opacity: 0.75,
             },
           ],
         },
@@ -672,8 +735,8 @@ export default {
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
-              currentStyle: 'SeaLevelPressure_4mb',
-              opacity: 0.5,
+              currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
             },
             {
               Title:
@@ -682,7 +745,16 @@ export default {
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
-              opacity: 0.5,
+              opacity: 0.75,
+            },
+            {
+              Title:
+                'GDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'GDPS_15km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
+              opacity: 0.75,
             },
           ],
         },
@@ -709,6 +781,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
+            },
+            {
+              Title:
+                'GDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'GDPS_15km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -737,7 +818,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.75,
+              opacity: 0.50,
             },
             {
               Title: 'GDPS - Winds at 10m above surface [m/s] [experimental]',
@@ -746,6 +827,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'WindBarbs_knots',
+              opacity: 0.75,
+            },
+            {
+              Title:
+                'GDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'GDPS_15km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -773,6 +863,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
+            },
+            {
+              Title:
+                'GDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'GDPS_15km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -810,6 +909,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
+            },
+            {
+              Title:
+                'RDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'RDPS_10km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -837,8 +945,8 @@ export default {
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
-              currentStyle: 'SeaLevelPressure_4mb',
-              opacity: 0.5,
+              currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
             },
             {
               Title: 'RDPS - Thickness between 1000mb and 500mb (contour) [m]',
@@ -846,7 +954,16 @@ export default {
               isLeaf: true,
               isTemporal: true,
               legendDisplayed: false,
-              opacity: 0.5,
+              opacity: 0.75,
+            },
+            {
+              Title:
+                'RDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'RDPS_10km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
+              opacity: 0.75,
             },
           ],
         },
@@ -875,6 +992,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
+            },
+            {
+              Title:
+                'RDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'RDPS_10km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -903,6 +1029,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
+            },
+            {
+              Title:
+                'RDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'RDPS_10km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -941,6 +1076,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
+            },
+            {
+              Title:
+                'RDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'RDPS_10km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -968,6 +1112,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
+            },
+            {
+              Title:
+                'RDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'RDPS_10km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -995,6 +1148,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
+            },
+            {
+              Title:
+                'RDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'RDPS_10km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -1023,6 +1185,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
+            },
+            {
+              Title:
+                'RDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'RDPS_10km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -1080,6 +1251,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
+            },
+            {
+              Title:
+                'RDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'RDPS_10km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
             {
@@ -1118,6 +1298,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
+            },
+            {
+              Title:
+                'RDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'RDPS_10km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
             {
@@ -1155,6 +1344,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
+            },
+            {
+              Title:
+                'RDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'RDPS_10km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
@@ -1184,6 +1382,15 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.50,
+            },
+            {
+              Title:
+                'RDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'RDPS_10km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
               opacity: 0.75,
             },
           ],
