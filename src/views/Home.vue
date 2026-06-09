@@ -220,11 +220,7 @@ export default {
       }
       let rangeValues
       if (this.layerCount === 0) {
-        if (this.play) {
-          this.emitter.emit('changeTab')
-        } else {
-          this.emitter.emit('collapseMenu', true)
-        }
+        this.emitter.emit('changeTab', true)
         if (this.range !== undefined && !this.layerSnapped) {
           let [range, current, last, step] = this.range.split(',')
           step = step.trim()
