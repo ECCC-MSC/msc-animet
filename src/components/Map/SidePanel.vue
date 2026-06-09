@@ -160,22 +160,13 @@ export default {
         }, 250)
       }
     },
-    onChangeTab() {
-      if (this.tab === 0 && this.$mapLayers.arr.length !== 0) this.tab = 1
+    onChangeTab(force = false) {
+      if (force) {
+        this.tab = 1
+      } else if (this.tab === 0 && this.$mapLayers.arr.length !== 0)
+        this.tab = 1
     },
-    onCollapseMenu(permalinkSetup) {
-      if (permalinkSetup) {
-        var unwatch = this.$watch(
-          'layersLength',
-          (_, oldVal) => {
-            if (oldVal !== undefined) {
-              this.tab = 1
-              unwatch()
-            }
-          },
-          { immediate: true },
-        )
-      }
+    onCollapseMenu() {
       if (!this.buttonShown) {
         this.buttonShown = true
         this.menuOpen = false
