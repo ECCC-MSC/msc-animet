@@ -132,7 +132,7 @@ export default {
             },
             {
               Title: 'Hurricane Track Forecast Error',
-              Name: 'HURRICANE_ERR',
+              Name: 'Hurricane-ErrorCone',
               isLeaf: true,
               isTemporal: true,
               opacity: 1,
@@ -140,7 +140,7 @@ export default {
             },
             {
               Title: 'Hurricane Wind Forecast Wind Radii',
-              Name: 'HURRICANE_RAD',
+              Name: 'Hurricane-WindRadii',
               isLeaf: true,
               isTemporal: true,
               opacity: 1,
@@ -148,7 +148,7 @@ export default {
             },
             {
               Title: 'Hurricane Line Segments',
-              Name: 'HURRICANE_LINE',
+              Name: 'Hurricane-Tracks',
               isLeaf: true,
               isTemporal: true,
               opacity: 1,
@@ -156,7 +156,7 @@ export default {
             },
             {
               Title: 'Hurricane Forecast Location',
-              Name: 'HURRICANE_CENTRE',
+              Name: 'Hurricane-Cyclones',
               isLeaf: true,
               isTemporal: true,
               opacity: 1,
