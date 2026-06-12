@@ -56,6 +56,12 @@
 
 <script>
 import { isDarkTheme } from '@/components/Composables/isDarkTheme'
+import {
+  getLegendScaleFactor,
+  BASE62,
+  POS_STEPS,
+  W_STEPS,
+} from '@/utils/legendScale'
 import { useRouter, useRoute } from 'vue-router'
 import OLImage from 'ol/layer/Image'
 
@@ -162,6 +168,53 @@ export default {
               const isInterpolated = layer.getSource().getParams().INTERPOLATION
               if (isInterpolated) {
                 styleInfo += '1'
+              }
+
+              const legendEl = document
+                .getElementById(layerName)
+                ?.closest('.draggable-container')
+              if (legendEl && this.activeLegends.includes(layerName)) {
+                const vw = window.innerWidth
+                const vh = window.innerHeight
+                const img = legendEl.querySelector('img')
+                const naturalWidth = img?.naturalWidth
+                const naturalRatio = img?.naturalWidth / img?.naturalHeight
+                const scaleFactor = getLegendScaleFactor(naturalRatio)
+
+                // Center of the legend as % of viewport
+                const cx = Math.max(
+                  0,
+                  Math.min(
+                    100,
+                    Math.round(
+                      ((legendEl.offsetLeft + legendEl.offsetWidth / 2) / vw) *
+                        10000,
+                    ) / 100,
+                  ),
+                )
+                const cy = Math.max(
+                  0,
+                  Math.min(
+                    100,
+                    Math.round(
+                      ((legendEl.offsetTop + legendEl.offsetHeight / 2) / vh) *
+                        10000,
+                    ) / 100,
+                  ),
+                )
+                const w =
+                  naturalWidth > 0
+                    ? Math.min(
+                        500,
+                        Math.round(
+                          (legendEl.offsetWidth / naturalWidth / scaleFactor) *
+                            10000,
+                        ) / 100,
+                      )
+                    : 0
+                if (w > 0) {
+                  styleInfo += '_' + this.encodePos(cx, cy, w)
+                }
               }
 
               const [name, source] = layerName.split('/')
@@ -271,6 +324,18 @@ export default {
 
         return permalinktemp
       }
+    },
+    encodePos(x, y, w) {
+      const xi = Math.round(x * 100)
+      const yi = Math.round(y * 100)
+      const wi = Math.round(w * 100)
+      let n = xi * POS_STEPS * W_STEPS + yi * W_STEPS + wi
+      let result = ''
+      while (n > 0) {
+        result = BASE62[n % 62] + result
+        n = Math.floor(n / 62)
+      }
+      return result.padStart(8, '0')
     },
     prefixLink() {
       return window.location.origin + window.location.pathname

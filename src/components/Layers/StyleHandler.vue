@@ -131,6 +131,11 @@ export default {
       this.emitter.emit('updatePermalink')
     },
   },
+  watch: {
+    menuVisible(newVal) {
+      this.store.setMenusOpen(newVal)
+    },
+  },
   computed: {
     activeLegends() {
       return this.store.getActiveLegends

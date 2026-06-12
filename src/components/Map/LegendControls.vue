@@ -5,6 +5,7 @@
     :preventDefault="true"
     resizeDirection="horizontal"
     @checkIntersect="checkIntersect"
+    @updatePermalink="emitter.emit('updatePermalink')"
     @dblclick="emitter.emit('openPanel')"
     @click="emit('legend-click', name)"
   >
@@ -33,6 +34,8 @@ import { computed, onMounted, onBeforeUnmount } from 'vue'
 import { getCurrentInstance } from 'vue'
 import { useI18n } from 'vue-i18n'
 
+import { getLegendScaleFactor } from '@/utils/legendScale'
+
 const { proxy } = getCurrentInstance()
 
 const props = defineProps(['name'])
@@ -47,22 +50,55 @@ const legendIndex = computed(() => store.getLegendIndex)
 
 const checkResize = (event) => {
   const img = event.target
+  const naturalRatio = img.naturalWidth / img.naturalHeight
 
-  const isMobile = window.innerWidth <= 768
+  const vw = window.innerWidth
+  const vh = window.innerHeight
+  const topSafeZone = vw < 960 ? 84 : 40
 
-  let maxWidth = isMobile ? window.innerWidth * 0.25 : window.innerWidth * 0.35
-  let maxHeight = window.innerHeight * 0.7
+  const scaleFactor = getLegendScaleFactor(naturalRatio)
 
+  const maxWidth = vw * 0.9
+  const maxHeight = vh * 0.85
+
+  const layer = proxy.$mapLayers.arr.find(
+    (l) => l.get('layerName') === img.getAttribute('name'),
+  )
+  const savedPos = layer?.get('legendPosition')
   const container = img.closest('.draggable-container')
-  if (container) {
+  if (!container) return
+
+  if (savedPos && savedPos.w > 0) {
+    const targetWidth = (savedPos.w / 100) * img.naturalWidth * scaleFactor
+
     const excessRatio = Math.max(
-      img.naturalWidth / maxWidth,
-      img.naturalHeight / maxHeight,
+      targetWidth / maxWidth,
+      targetWidth / naturalRatio / maxHeight,
     )
-    if (excessRatio > 1) {
-      container.style.width = img.naturalWidth / excessRatio + 'px'
-    }
+    const finalWidth = excessRatio > 1 ? targetWidth / excessRatio : targetWidth
+    container.style.width = `${finalWidth}px`
+
+    const finalHeight = container.offsetHeight
+
+    const left = Math.max(
+      0,
+      Math.min(vw - finalWidth, (savedPos.cx / 100) * vw - finalWidth / 2),
+    )
+    const top = Math.max(
+      topSafeZone,
+      Math.min(vh - finalHeight, (savedPos.cy / 100) * vh - finalHeight / 2),
+    )
+    container.style.left = `${left}px`
+    container.style.top = `${top}px`
+    return
   }
+
+  const scaledWidth = img.naturalWidth * scaleFactor
+  const scaledHeight = img.naturalHeight * scaleFactor
+
+  const excessRatio = Math.max(scaledWidth / maxWidth, scaledHeight / maxHeight)
+  container.style.width =
+    excessRatio > 1 ? `${scaledWidth / excessRatio}px` : `${scaledWidth}px`
 }
 
 const getLegendHidden = computed(() => {
@@ -108,14 +144,22 @@ const getLegendStyle = () => {
 }
 
 const initialPosStyle = () => {
-  const initialX = 8
-  let initialY
-  if (window.innerWidth < 960) {
-    initialY = 100
-  } else {
-    initialY = 50
-  }
   const offset = legendIndex.value.getItemInteger(props.name) * 10
+
+  const layer = proxy.$mapLayers.arr.find(
+    (l) => l.get('layerName') === props.name,
+  )
+  const savedPos = layer?.get('legendPosition')
+
+  if (savedPos && savedPos.w > 5) {
+    return {
+      top: '0px',
+      left: '0px',
+    }
+  }
+
+  const initialX = 8
+  const initialY = window.innerWidth < 960 ? 100 : 50
   return {
     top: `${initialY + offset}px`,
     left: `${initialX + offset}px`,

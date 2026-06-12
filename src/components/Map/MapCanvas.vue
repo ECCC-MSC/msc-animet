@@ -535,6 +535,11 @@ export default {
       } else if (imageLayer.get('layerStyles').length !== 0) {
         this.store.addActiveLegend(imageLayer.get('layerName'))
       }
+      if (Object.hasOwn(layerData, 'legendPosition')) {
+        imageLayer.setProperties({
+          legendPosition: layerData.legendPosition,
+        })
+      }
       if (imageLayer.get('layerIsTemporal')) {
         this.emitter.emit('addTemporalLayer', {
           imageLayer,
