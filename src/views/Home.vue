@@ -9,6 +9,7 @@
 <script>
 import localeData from '../locales/importLocaleFiles'
 import proj4 from 'proj4'
+import { BASE62, POS_STEPS, W_STEPS } from '@/utils/legendScale'
 import { Duration } from 'luxon'
 import { register } from 'ol/proj/proj4'
 
@@ -221,6 +222,9 @@ export default {
       let rangeValues
       if (this.layerCount === 0) {
         this.emitter.emit('changeTab', true)
+        if (window.innerWidth < 960) {
+          this.emitter.emit('collapseMenu')
+        }
         if (this.range !== undefined && !this.layerSnapped) {
           let [range, current, last, step] = this.range.split(',')
           step = step.trim()
@@ -269,9 +273,14 @@ export default {
       layer.opacity = isNaN(op) || op > 1 || op < 0 ? 0.75 : op
       layer.visible = isVisible === '0' ? false : true
       if (styleInfo && styleInfo.length > 0) {
-        layer.legendDisplayed = styleInfo[0] === '1' ? true : false
-        if (styleInfo.length > 1 && styleInfo[1] === '1') {
+        const [flags, posToken] = styleInfo.split('_')
+        layer.legendDisplayed = flags[0] === '1'
+        if (flags.length > 1 && flags[1] === '1') {
           layer.layerInterpolated = true
+        }
+        if (posToken) {
+          const { x: cx, y: cy, w } = this.decodePos(posToken)
+          layer.legendPosition = { cx, cy, w }
         }
       } else {
         layer.legendDisplayed = true
@@ -288,6 +297,16 @@ export default {
         autoPlay,
         rangeValues,
       })
+    },
+    decodePos(s) {
+      let n = 0
+      for (const c of s) n = n * 62 + BASE62.indexOf(c)
+      const w = (n % W_STEPS) / 100
+      n = Math.floor(n / W_STEPS)
+      const y = (n % POS_STEPS) / 100
+      n = Math.floor(n / POS_STEPS)
+      const x = n / 100
+      return { x, y, w }
     },
     findInTree(items, key) {
       for (const item of items) {

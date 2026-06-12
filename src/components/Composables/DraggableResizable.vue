@@ -10,19 +10,19 @@
 </template>
 
 <script setup>
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 
 const props = defineProps([
   'initialPosition',
   'resizeDirection',
   'preventDefault',
 ])
-const emit = defineEmits(['checkIntersect'])
+const emit = defineEmits(['checkIntersect', 'updatePermalink'])
 
 const store = inject('store')
 const isAnimating = computed(() => store.getIsAnimating)
 const playState = computed(() => store.getPlayState)
-
+let resizeObserver = null
 const draggableContainer = ref(null)
 
 const positions = ref({
@@ -210,6 +210,7 @@ const closePinchElement = () => {
   ) {
     emit('checkIntersect')
   }
+  emit('updatePermalink')
 }
 
 const closeDragElement = () => {
@@ -223,18 +224,31 @@ const closeDragElement = () => {
   ) {
     emit('checkIntersect')
   }
-}
-
-const onResizeEnd = () => {
-  document.removeEventListener('mouseup', onResizeEnd)
-  emit('checkIntersect')
+  emit('updatePermalink')
 }
 
 onMounted(() => {
   if (props.initialPosition) {
     draggableContainer.value.style.top = props.initialPosition.top
     draggableContainer.value.style.left = props.initialPosition.left
+    if (props.initialPosition.width) {
+      draggableContainer.value.style.width = props.initialPosition.width
+    }
   }
+
+  resizeObserver = new ResizeObserver(() => {
+    if (
+      document.getElementById('animation-rect')?.style.visibility === 'visible'
+    ) {
+      emit('checkIntersect')
+    }
+    emit('updatePermalink')
+  })
+  resizeObserver.observe(draggableContainer.value)
+})
+
+onUnmounted(() => {
+  resizeObserver?.disconnect()
 })
 </script>
 
