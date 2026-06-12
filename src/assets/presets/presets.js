@@ -385,8 +385,7 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title:
-                'GDPS - Wind speed at 250 mb [m/s] [experimental]',
+              Title: 'GDPS - Wind speed at 250 mb [m/s] [experimental]',
               Name: 'GDPS_15km_WindSpeed_250mb',
               isLeaf: true,
               isTemporal: true,
@@ -434,8 +433,7 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title:
-                'GDPS - Absolute vorticity at 500 mb [s-1] [experimental]',
+              Title: 'GDPS - Absolute vorticity at 500 mb [s-1] [experimental]',
               Name: 'GDPS_15km_AbsoluteVorticity_500mb',
               isLeaf: true,
               isTemporal: true,
@@ -483,8 +481,7 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title:
-                'GDPS - Relative humidity at 700 mb [%] [experimental]',
+              Title: 'GDPS - Relative humidity at 700 mb [%] [experimental]',
               Name: 'GDPS_15km_RelativeHumidity_700mb',
               isLeaf: true,
               isTemporal: true,
@@ -532,7 +529,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'GDPS - Isobaric vertical motion at 700 mb [Pa/s] [experimental]',
+              Title:
+                'GDPS - Isobaric vertical motion at 700 mb [Pa/s] [experimental]',
               Name: 'GDPS_15km_VerticalVelocity_700mb',
               isLeaf: true,
               isTemporal: true,
@@ -626,7 +624,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'GDPS - Thickness between 1000mb and 500mb [m] [experimental]',
+              Title:
+                'GDPS - Thickness between 1000mb and 500mb [m] [experimental]',
               Name: 'GDPS_15km_Thickness_1000to500mb',
               isLeaf: true,
               isTemporal: true,
@@ -651,7 +650,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
@@ -672,7 +671,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'GDPS - Precipitation - 3-hour accumulation [mm] [experimental]',
+              Title:
+                'GDPS - Precipitation - 3-hour accumulation [mm] [experimental]',
               Name: 'GDPS_15km_Precip-Accum3h',
               isLeaf: true,
               isTemporal: true,
@@ -689,7 +689,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
@@ -736,7 +736,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
@@ -766,7 +766,8 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'GDPS - Air temperature at 2m above ground [°C] [experimental]',
+              Title:
+                'GDPS - Air temperature at 2m above ground [°C] [experimental]',
               Name: 'GDPS_15km_AirTemp_2m',
               isLeaf: true,
               isTemporal: true,
@@ -781,7 +782,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
@@ -818,7 +819,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title: 'GDPS - Winds at 10m above surface [m/s] [experimental]',
@@ -863,7 +864,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
@@ -909,7 +910,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
@@ -946,7 +947,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title: 'RDPS - Thickness between 1000mb and 500mb (contour) [m]',
@@ -992,7 +993,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
@@ -1029,7 +1030,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
@@ -1076,7 +1077,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
@@ -1112,7 +1113,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
@@ -1148,7 +1149,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
@@ -1185,7 +1186,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
@@ -1216,34 +1217,40 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'Probability of temperature near normal - 3-month outlook [%]',
+              Title:
+                'Probability of temperature near normal - 3-month outlook [%]',
               Name: 'CanSIPS_100km_AirTemp-ProbNearNormal-2m_PT3M',
               isLeaf: true,
               isTemporal: true,
               layerInterpolated: true,
               legendDisplayed: true,
+              legendPosition: { cx: 15.13, cy: 22.61, w: 62.83 },
               currentStyle: 'AirTemp-ProbNearNormal_Seasonal_40-100Pct_Dis',
-              opacity: 1.00,
+              opacity: 1.0,
             },
             {
-              Title: 'Probability of temperature below normal - 3-month outlook [%]',
+              Title:
+                'Probability of temperature below normal - 3-month outlook [%]',
               Name: 'CanSIPS_100km_AirTemp-ProbBelowNormal-2m_PT3M',
               isLeaf: true,
               isTemporal: true,
               layerInterpolated: true,
               legendDisplayed: true,
+              legendPosition: { cx: 8.85, cy: 22.67, w: 65.49 },
               currentStyle: 'AirTemp-ProbBelowNormal_Seasonal_40-100Pct_Dis',
-              opacity: 1.00,
+              opacity: 1.0,
             },
             {
-              Title: 'Probability of temperature above normal - 3-month outlook [%]',
+              Title:
+                'Probability of temperature above normal - 3-month outlook [%]',
               Name: 'CanSIPS_100km_AirTemp-ProbAboveNormal-2m_PT3M',
               isLeaf: true,
               isTemporal: true,
               layerInterpolated: true,
               legendDisplayed: true,
+              legendPosition: { cx: 2.66, cy: 22.67, w: 58.41 },
               currentStyle: 'AirTemp-ProbAboveNormal_Seasonal_40-100Pct_Dis',
-              opacity: 1.00,
+              opacity: 1.0,
             },
           ],
         },
@@ -1255,34 +1262,42 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'Probability of precipitation near normal - 3-month outlook [%]',
+              Title:
+                'Probability of precipitation near normal - 3-month outlook [%]',
               Name: 'CanSIPS_100km_PrecipAccum-ProbNearNormal-2m_PT3M',
               isLeaf: true,
               isTemporal: true,
               layerInterpolated: true,
               legendDisplayed: true,
+              legendPosition: { cx: 15.13, cy: 22.61, w: 62.83 },
               currentStyle: 'PrecipAccum-ProbNearNormal_Seasonal_40-100Pct_Dis',
-              opacity: 1.00,
+              opacity: 1.0,
             },
             {
-              Title: 'Probability of precipitation below normal - 3-month outlook [%]',
+              Title:
+                'Probability of precipitation below normal - 3-month outlook [%]',
               Name: 'CanSIPS_100km_PrecipAccum-ProbBelowNormal-2m_PT3M',
               isLeaf: true,
               isTemporal: true,
               layerInterpolated: true,
               legendDisplayed: true,
-              currentStyle: 'PrecipAccum-ProbBelowNormal_Seasonal_40-100Pct_Dis',
-              opacity: 1.00,
+              legendPosition: { cx: 8.85, cy: 22.67, w: 65.49 },
+              currentStyle:
+                'PrecipAccum-ProbBelowNormal_Seasonal_40-100Pct_Dis',
+              opacity: 1.0,
             },
             {
-              Title: 'Probability of precipitation above normal - 3-month outlook [%]',
+              Title:
+                'Probability of precipitation above normal - 3-month outlook [%]',
               Name: 'CanSIPS_100km_PrecipAccum-ProbAboveNormal-2m_PT3M',
               isLeaf: true,
               isTemporal: true,
               layerInterpolated: true,
               legendDisplayed: true,
-              currentStyle: 'PrecipAccum-ProbAboveNormal_Seasonal_40-100Pct_Dis',
-              opacity: 1.00,
+              legendPosition: { cx: 2.66, cy: 22.67, w: 58.41 },
+              currentStyle:
+                'PrecipAccum-ProbAboveNormal_Seasonal_40-100Pct_Dis',
+              opacity: 1.0,
             },
           ],
         },
@@ -1294,14 +1309,15 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'Probability of temperature being above 90 percentile - 3-month outlook [%]',
+              Title:
+                'Probability of temperature being above 90 percentile - 3-month outlook [%]',
               Name: 'CanSIPS_100km_AirTemp-ProbGT90Pct-2m_PT3M',
               isLeaf: true,
               isTemporal: true,
               layerInterpolated: true,
               legendDisplayed: true,
               currentStyle: 'AirTemp-ProbAboveThreshold_Seasonal_40-100Pct_Dis',
-              opacity: 1.00,
+              opacity: 1.0,
             },
           ],
         },
@@ -1313,14 +1329,16 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'Probability of precipitation being above 90 percentile - 3-month outlook [%]',
+              Title:
+                'Probability of precipitation being above 90 percentile - 3-month outlook [%]',
               Name: 'CanSIPS_100km_PrecipAccum-ProbGT90Pct-2m_PT3M',
               isLeaf: true,
               isTemporal: true,
               layerInterpolated: true,
               legendDisplayed: true,
-              currentStyle: 'Precip-Accum-ProbAboveThreshold_Seasonal_40-100Pct_Dis',
-              opacity: 1.00,
+              currentStyle:
+                'Precip-Accum-ProbAboveThreshold_Seasonal_40-100Pct_Dis',
+              opacity: 1.0,
             },
           ],
         },
@@ -1338,8 +1356,9 @@ export default {
               isTemporal: true,
               layerInterpolated: true,
               legendDisplayed: true,
+              legendPosition: { cx: 15.57, cy: 22.78, w: 65.49 },
               currentStyle: 'AirTemp-ProbNearNormal_Monthly_40-100Pct_Dis',
-              opacity: 1.00,
+              opacity: 1.0,
             },
             {
               Title: 'Probability of temperature below normal [%]',
@@ -1348,8 +1367,9 @@ export default {
               isTemporal: true,
               layerInterpolated: true,
               legendDisplayed: true,
+              legendPosition: { cx: 9.06, cy: 22.67, w: 65.49 },
               currentStyle: 'AirTemp-ProbBelowNormal_Monthly_40-100Pct_Dis',
-              opacity: 1.00,
+              opacity: 1.0,
             },
             {
               Title: 'Probability of temperature above normal [%]',
@@ -1358,8 +1378,9 @@ export default {
               isTemporal: true,
               layerInterpolated: true,
               legendDisplayed: true,
+              legendPosition: { cx: 2.71, cy: 22.67, w: 65.49 },
               currentStyle: 'AirTemp-ProbAboveNormal_Monthly_40-100Pct_Dis',
-              opacity: 1.00,
+              opacity: 1.0,
             },
           ],
         },
@@ -1377,8 +1398,9 @@ export default {
               isTemporal: true,
               layerInterpolated: true,
               legendDisplayed: true,
+              legendPosition: { cx: 15.57, cy: 22.78, w: 65.49 },
               currentStyle: 'PrecipAccum-ProbNearNormal_Monthly_40-100Pct_Dis',
-              opacity: 1.00,
+              opacity: 1.0,
             },
             {
               Title: 'Probability of precipitation below normal [%]',
@@ -1387,8 +1409,9 @@ export default {
               isTemporal: true,
               layerInterpolated: true,
               legendDisplayed: true,
+              legendPosition: { cx: 9.06, cy: 22.67, w: 65.49 },
               currentStyle: 'PrecipAccum-ProbBelowNormal_Monthly_40-100Pct_Dis',
-              opacity: 1.00,
+              opacity: 1.0,
             },
             {
               Title: 'Probability of precipitation above normal [%]',
@@ -1397,8 +1420,9 @@ export default {
               isTemporal: true,
               layerInterpolated: true,
               legendDisplayed: true,
+              legendPosition: { cx: 2.71, cy: 22.67, w: 65.49 },
               currentStyle: 'PrecipAccum-ProbAboveNormal_Monthly_40-100Pct_Dis',
-              opacity: 1.00,
+              opacity: 1.0,
             },
           ],
         },
@@ -1417,7 +1441,7 @@ export default {
               layerInterpolated: true,
               legendDisplayed: true,
               currentStyle: 'AirTemp-ProbAboveThreshold_Monthly_40-100Pct_Dis',
-              opacity: 1.00,
+              opacity: 1.0,
             },
           ],
         },
@@ -1429,14 +1453,16 @@ export default {
           isLeaf: false,
           children: [
             {
-              Title: 'Probability of precipitation being above 90 percentile [%]',
+              Title:
+                'Probability of precipitation being above 90 percentile [%]',
               Name: 'CanSIPS_100km_PrecipAccum-ProbGT90Pct-2m',
               isLeaf: true,
               isTemporal: true,
               layerInterpolated: true,
               legendDisplayed: true,
-              currentStyle: 'Precip-Accum-ProbAboveThreshold_Monthly_40-100Pct_Dis',
-              opacity: 1.00,
+              currentStyle:
+                'Precip-Accum-ProbAboveThreshold_Monthly_40-100Pct_Dis',
+              opacity: 1.0,
             },
           ],
         },
@@ -1493,7 +1519,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
@@ -1540,7 +1566,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
@@ -1586,7 +1612,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
@@ -1624,7 +1650,7 @@ export default {
               isTemporal: true,
               legendDisplayed: false,
               currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
-              opacity: 0.50,
+              opacity: 0.5,
             },
             {
               Title:
