@@ -425,6 +425,9 @@ export default {
     selectImage(layerName) {
       this.selectedLegendLayerName = layerName
     },
+    getLegendPositionBreakpoint() {
+      return this.$vuetify?.display?.name || 'md'
+    },
     setLayerZIndex(layer) {
       if (!Number.isInteger(layer.get('zIndex'))) {
         layer.setZIndex(this.$mapLayers.arr.length)
@@ -536,8 +539,11 @@ export default {
         this.store.addActiveLegend(imageLayer.get('layerName'))
       }
       if (Object.hasOwn(layerData, 'legendPosition')) {
+        const legendPosition = layerData.legendPosition
+        const breakpoint = this.getLegendPositionBreakpoint()
+
         imageLayer.setProperties({
-          legendPosition: layerData.legendPosition,
+          legendPosition: legendPosition[breakpoint] ?? legendPosition,
         })
       }
       if (imageLayer.get('layerIsTemporal')) {
