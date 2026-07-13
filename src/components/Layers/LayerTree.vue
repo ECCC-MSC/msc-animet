@@ -334,7 +334,7 @@ export default {
                   })
                 }
               } else {
-                this.emitter.emit('layerQueryFailure')
+                this.emitter.emit('layerQueryFailure', layer.Name)
                 throw new Error(`Query for ${layer.Name} failed`)
               }
             })

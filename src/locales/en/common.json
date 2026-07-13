@@ -15,7 +15,7 @@
   "Base": "Base",
   "Black": "Black",
   "Boundaries": "Boundaries",
-  "BrokenLayer": "Currently unable to load layer.",
+  "BrokenLayer": "Currently unable to load layer {LAYER}.",
   "CBMT": "NRCan CBMT",
   "Climate": "GeoMet-Climate",
   "ClimateDev": "GeoMet-Climate Dev",

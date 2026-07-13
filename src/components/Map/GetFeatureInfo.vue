@@ -3,6 +3,7 @@
     id="popupGFI"
     ref="popupGFI"
     class="ol-popup bg-surface"
+    :class="{ 'popup-flip': openDownward }"
     :style="popupStyle"
     v-show="items.length !== 0"
   >
@@ -98,6 +99,7 @@ export default {
       items: [],
       locked: false,
       overlay: null,
+      openDownward: false,
       t: useI18n().t,
     }
   },
@@ -399,9 +401,10 @@ export default {
           }
           this.items = itemsGFI
           if (this.items.length !== 0 && pan) {
-            this.popupFocus()
+            await this.applyOrientation(evt)
             overlay.setPosition(evt.coordinate)
             this.setMapCoordinates(evt.coordinate)
+            this.adjustPopupPosition()
           } else if (this.items.length === 0 && !pan) {
             this.closePopup()
           } else {
@@ -414,50 +417,73 @@ export default {
         }
       }
     },
+    async applyOrientation(evt) {
+      await this.$nextTick()
+
+      const rect = this.$refs.popupGFI.getBoundingClientRect()
+      let clickY = rect.top + rect.height
+      if (evt && evt.map && evt.coordinate) {
+        const pixel = evt.map.getPixelFromCoordinate(evt.coordinate)
+        const mapRect = evt.map.getTargetElement().getBoundingClientRect()
+        if (pixel) {
+          clickY = mapRect.top + pixel[1]
+        }
+      }
+      const arrowAndGap = 22
+      const wouldBeTopIfNormal = clickY - rect.height - arrowAndGap
+      const shouldFlip = wouldBeTopIfNormal - 50 < 0
+
+      if (shouldFlip !== this.openDownward) {
+        this.openDownward = shouldFlip
+        await this.$nextTick()
+      }
+    },
     popupFocus() {
       this.$nextTick(() => {
         if (this.overlay !== null) {
-          const overlayRect = this.$refs.popupGFI.getBoundingClientRect()
-          const isOffScreen =
-            overlayRect.right + 64 > window.innerWidth ||
-            overlayRect.top - 50 < 0 ||
-            overlayRect.bottom + 144 > window.innerHeight
-          if (isOffScreen) {
-            const currentCenter = this.$mapCanvas.mapObj.getView().getCenter()
-            let newCenter = currentCenter
-            if (overlayRect.right + 64 > window.innerWidth) {
-              const rightPixel =
-                this.$mapCanvas.mapObj.getPixelFromCoordinate(currentCenter)
-              newCenter[0] = this.$mapCanvas.mapObj.getCoordinateFromPixel([
-                rightPixel[0] + (overlayRect.right - window.innerWidth) + 64,
-                rightPixel[1],
-              ])[0]
-            }
-            if (overlayRect.bottom + 144 > window.innerHeight) {
-              const bottomPixel =
-                this.$mapCanvas.mapObj.getPixelFromCoordinate(currentCenter)
-              newCenter[1] = this.$mapCanvas.mapObj.getCoordinateFromPixel([
-                bottomPixel[0],
-                bottomPixel[1] +
-                  (overlayRect.bottom + 144 - window.innerHeight),
-              ])[1]
-            }
-            if (overlayRect.top - 50 < 0) {
-              const topPixel =
-                this.$mapCanvas.mapObj.getPixelFromCoordinate(currentCenter)
-              newCenter[1] = this.$mapCanvas.mapObj.getCoordinateFromPixel([
-                topPixel[0],
-                topPixel[1] - Math.abs(overlayRect.top) - 50,
-              ])[1]
-            }
-            const view = this.$mapCanvas.mapObj.getView()
-            view.animate({
-              center: newCenter,
-              duration: 250,
-            })
-          }
+          this.adjustPopupPosition()
         }
       })
+    },
+    adjustPopupPosition() {
+      const overlayRect = this.$refs.popupGFI.getBoundingClientRect()
+      const isOffScreen =
+        overlayRect.right + 64 > window.innerWidth ||
+        (!this.openDownward && overlayRect.top - 50 < 0) ||
+        overlayRect.bottom + 144 > window.innerHeight
+      if (isOffScreen) {
+        const currentCenter = this.$mapCanvas.mapObj.getView().getCenter()
+        let newCenter = currentCenter
+        if (overlayRect.right + 64 > window.innerWidth) {
+          const rightPixel =
+            this.$mapCanvas.mapObj.getPixelFromCoordinate(currentCenter)
+          newCenter[0] = this.$mapCanvas.mapObj.getCoordinateFromPixel([
+            rightPixel[0] + (overlayRect.right - window.innerWidth) + 64,
+            rightPixel[1],
+          ])[0]
+        }
+        if (overlayRect.bottom + 144 > window.innerHeight) {
+          const bottomPixel =
+            this.$mapCanvas.mapObj.getPixelFromCoordinate(currentCenter)
+          newCenter[1] = this.$mapCanvas.mapObj.getCoordinateFromPixel([
+            bottomPixel[0],
+            bottomPixel[1] + (overlayRect.bottom + 144 - window.innerHeight),
+          ])[1]
+        }
+        if (!this.openDownward && overlayRect.top - 50 < 0) {
+          const topPixel =
+            this.$mapCanvas.mapObj.getPixelFromCoordinate(currentCenter)
+          newCenter[1] = this.$mapCanvas.mapObj.getCoordinateFromPixel([
+            topPixel[0],
+            topPixel[1] - Math.abs(overlayRect.top) - 50,
+          ])[1]
+        }
+        const view = this.$mapCanvas.mapObj.getView()
+        view.animate({
+          center: newCenter,
+          duration: 250,
+        })
+      }
     },
     setCoordinatesPreference(newSelection) {
       localStorage.setItem('coordinates-preference', newSelection)
@@ -476,6 +502,7 @@ export default {
       this.eventGFI = null
       this.locked = false
       this.items = []
+      this.openDownward = false
       return false
     },
   },
@@ -556,6 +583,25 @@ export default {
   left: 48px;
   margin-left: -11px;
   margin-top: 1px;
+}
+.ol-popup.popup-flip {
+  bottom: auto;
+  top: 12px;
+}
+.ol-popup.popup-flip:after,
+.ol-popup.popup-flip:before {
+  top: auto;
+  bottom: 100%;
+}
+.ol-popup.popup-flip:after {
+  border-top-color: transparent;
+  border-bottom-color: var(--popup-gfi-arrow-color);
+}
+.ol-popup.popup-flip:before {
+  border-top-color: transparent;
+  border-bottom-color: #cccccc;
+  margin-top: 0;
+  margin-bottom: 1px;
 }
 .ol-popup-closer {
   text-decoration: none;
