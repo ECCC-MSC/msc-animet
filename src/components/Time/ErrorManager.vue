@@ -228,7 +228,9 @@ export default {
                 throw new Error("All of the layer's timesteps are broken")
               } else {
                 this.emitter.emit('removeLayer', layer)
-                this.expiredSnackBarMessage = this.t('BrokenLayer')
+                this.expiredSnackBarMessage = this.t('BrokenLayer', {
+                  LAYER: layer.get('layerName'),
+                })
                 this.timeoutDuration = 12000
                 this.errorLayersList.splice(
                   this.errorLayersList.indexOf(layer.get('layerName')),
@@ -397,8 +399,10 @@ export default {
       this.timeoutDuration = 12000
       this.notifyExtentRebuilt = true
     },
-    onLayerQueryFailure() {
-      this.expiredSnackBarMessage = this.t('BrokenLayer')
+    onLayerQueryFailure(layerName) {
+      this.expiredSnackBarMessage = this.t('BrokenLayer', {
+        LAYER: layerName,
+      })
       this.timeoutDuration = 12000
       this.notifyExtentRebuilt = true
     },

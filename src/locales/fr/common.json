@@ -15,7 +15,7 @@
   "Base": "Originale",
   "Black": "Noire",
   "Boundaries": "Frontières",
-  "BrokenLayer": "La couche ne peut présentement pas être chargée.",
+  "BrokenLayer": "La couche {LAYER} ne peut présentement pas être chargée.",
   "CBMT": "RNCan CBCT",
   "Climate": "GeoMet-Climat",
   "ClimateDev": "GeoMet-Climat Dev",
