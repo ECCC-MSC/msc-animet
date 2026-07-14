@@ -439,8 +439,11 @@ export default {
       }
     },
     popupFocus() {
-      this.$nextTick(() => {
+      this.$nextTick(async () => {
         if (this.overlay !== null) {
+          if (this.eventGFI) {
+            await this.applyOrientation(this.eventGFI.event)
+          }
           this.adjustPopupPosition()
         }
       })
