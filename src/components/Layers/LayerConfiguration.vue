@@ -84,7 +84,7 @@
                 <interpolation-handler
                   v-if="
                     Object.values(wmsSources)[item.get('layerWmsIndex')]
-                      .hasInterpolation
+                      ?.hasInterpolation
                   "
                   :item="item"
                   :color="isSnapped(item.get('layerName'))"
