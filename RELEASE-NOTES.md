@@ -1,5 +1,33 @@
 # Release Notes
 
+## Version 2.6.0 (2026-07-31)
+
+### New Features
+
+- Added high and low pressure symbol layers to relevant existing presets
+- Added new CanSIPS presets
+- Added adaptive legend positioning based on screen size in presets
+
+### Enhancements
+
+- Added new NRCan source and regrouped sources NOAA and NRCan
+- Updated layer config panel to open on permalink load
+- Updated preset for Hurricane Tracks in GeoJSON
+- Added legend placement and dimensions for Cansips
+- Improved permalinks to remember legend position and size
+- Added error message containing name of layer for the message, `Currently unable to load layer`
+- Updated layer tree based off GeoMet-Weather v2.40.3
+- Other minor quality of life improvements
+
+### Bug Fixes
+
+- Fixed ECMWF caching
+- Fixed GFI popup displaying off screen at the top of the map
+- Fixed Drag and Drop failing due to a layer interpolation check
+- Fixed handling of layers that contains multiple intervals (PT1H and PT3H)
+- Fixed a custom animation title being overwritten by the name of a hidden layer
+- Fixed OSM basemap being slightly off-centered when using EPSG:3857
+
 ## Version 2.5.3 (2026-06-02)
 
 ### Bug Fixes
