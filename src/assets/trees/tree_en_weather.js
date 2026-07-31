@@ -1,67 +1,67 @@
 export default {
   'proj_weather' : [
-  "EPSG:26713",
-  "EPSG:3575",
-  "EPSG:26920",
-  "EPSG:26714",
-  "EPSG:102185",
+  "EPSG:4326",
+  "EPSG:26914",
+  "EPSG:42102",
+  "EPSG:3776",
+  "EPSG:3857",
+  "EPSG:26722",
+  "EPSG:4267",
+  "EPSG:26910",
+  "EPSG:26915",
+  "EPSG:26709",
+  "AUTO2:42003",
   "EPSG:3573",
-  "EPSG:26922",
-  "EPSG:3576",
+  "EPSG:3005",
+  "EPSG:26714",
+  "EPSG:26918",
+  "EPSG:42101",
+  "EPSG:26717",
+  "EPSG:3572",
+  "EPSG:26907",
+  "EPSG:2294",
+  "EPSG:26916",
+  "EPSG:26917",
+  "EPSG:900913",
+  "EPSG:3410",
+  "EPSG:26711",
+  "EPSG:32188",
+  "EPSG:26712",
+  "EPSG:26710",
   "EPSG:26720",
   "EPSG:26708",
-  "EPSG:26913",
-  "EPSG:4269",
-  "EPSG:3776",
-  "EPSG:26707",
-  "EPSG:42102",
-  "EPSG:26921",
-  "EPSG:26711",
-  "EPSG:26719",
-  "EPSG:26910",
-  "EPSG:26715",
-  "EPSG:26718",
-  "EPSG:26915",
-  "EPSG:102100",
-  "EPSG:26722",
-  "EPSG:2294",
-  "EPSG:3408",
-  "EPSG:26709",
-  "EPSG:26710",
-  "EPSG:2295",
-  "EPSG:42304",
-  "EPSG:26914",
-  "EPSG:32198",
-  "EPSG:26917",
-  "EPSG:26912",
-  "EPSG:26918",
-  "EPSG:3572",
-  "EPSG:2950",
-  "EPSG:4267",
-  "EPSG:3410",
-  "EPSG:26919",
-  "EPSG:3995",
-  "EPSG:32661",
-  "EPSG:26716",
-  "EPSG:3978",
-  "EPSG:26721",
-  "EPSG:26907",
-  "EPSG:32187",
-  "EPSG:3574",
-  "EPSG:42101",
-  "AUTO2:42003",
-  "EPSG:26909",
+  "EPSG:3575",
   "EPSG:26911",
-  "EPSG:32188",
-  "EPSG:26717",
-  "EPSG:900913",
+  "EPSG:26922",
+  "EPSG:3408",
+  "EPSG:4269",
   "EPSG:26908",
-  "EPSG:3005",
-  "EPSG:4326",
-  "EPSG:26916",
-  "EPSG:26712",
-  "EPSG:3857",
-  "EPSG:3571"
+  "EPSG:26909",
+  "EPSG:26715",
+  "EPSG:26719",
+  "EPSG:26919",
+  "EPSG:26920",
+  "EPSG:3576",
+  "EPSG:2950",
+  "EPSG:26713",
+  "EPSG:2295",
+  "EPSG:26716",
+  "EPSG:26721",
+  "EPSG:3571",
+  "EPSG:32198",
+  "EPSG:3995",
+  "EPSG:42304",
+  "EPSG:102185",
+  "EPSG:3574",
+  "EPSG:32187",
+  "EPSG:3978",
+  "EPSG:26912",
+  "EPSG:26921",
+  "EPSG:26718",
+  "EPSG:26913",
+  "EPSG:26707",
+  "EPSG:102100",
+  "EPSG:32661"
 ],
   'tree_en_weather' : [
   {
@@ -313,12 +313,6 @@ export default {
                 "isTemporal": true
               }
             ]
-          },
-          {
-            "Title": "RAQDPS-FW footprint",
-            "Name": "RAQDPS-FW_Footprint",
-            "isLeaf": true,
-            "isTemporal": false
           },
           {
             "Title": "RAQDPS-FW footprint (Cumulative Effects)",
@@ -1970,7 +1964,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "/CAPS_IsbL - Relative humidity at 400 mb [%] [experimental]",
+                "Title": "CAPS_IsbL - Relative humidity at 400 mb [%] [experimental]",
                 "Name": "CAPS_3km_RelativeHumidity_400mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -8644,8 +8638,51 @@ export default {
         ]
       },
       {
+        "Title": "Thunderstorm Outlook [experimental]",
+        "Name": "Thunderstorm Outlook [experimental]",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "Thunderstorm Outlook - Atlantic [experimental]",
+            "Name": "Thunderstorm-Outlook_Atlantic",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "Thunderstorm Outlook - British Columbia/Yukon [experimental]",
+            "Name": "Thunderstorm-Outlook_BC-YT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "Thunderstorm Outlook - Northwest Territories [experimental]",
+            "Name": "Thunderstorm-Outlook_NWT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "Thunderstorm Outlook - Ontario [experimental]",
+            "Name": "Thunderstorm-Outlook_ON",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "Thunderstorm Outlook - Prairies [experimental]",
+            "Name": "Thunderstorm-Outlook_Prairies",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "Thunderstorm Outlook - Quebec [experimental]",
+            "Name": "Thunderstorm-Outlook_QC",
+            "isLeaf": true,
+            "isTemporal": true
+          }
+        ]
+      },
+      {
         "Title": "Coastal Flooding Risk Index",
-        "Name": "CoastalFloodRiskIndex",
+        "Name": "CoastalFloodingRiskIndex",
         "isLeaf": true,
         "isTemporal": false
       },
@@ -8684,12 +8721,6 @@ export default {
         "Name": "Public-Standard-Forecast-Zones",
         "isLeaf": true,
         "isTemporal": false
-      },
-      {
-        "Title": "Weather Alerts [deprecated]",
-        "Name": "ALERTS",
-        "isLeaf": true,
-        "isTemporal": false
       }
     ]
   },
@@ -8699,739 +8730,726 @@ export default {
     "isLeaf": false,
     "children": [
       {
-        "Title": "GDPS footprint",
-        "Name": "GDPS_Footprint",
-        "isLeaf": true,
-        "isTemporal": false
-      },
-      {
-        "Title": "GDPS-WEonG footprint",
-        "Name": "GDPS-WEonG_Footprint",
-        "isLeaf": true,
-        "isTemporal": false
-      }
-    ]
-  },
-  {
-    "Title": "Global Deterministic Prediction System (GDPS) [15 km] [experimental]",
-    "Name": "Global Deterministic Prediction System (GDPS) [15 km] [experimental]",
-    "isLeaf": false,
-    "children": [
-      {
         "Title": "GDPS",
         "Name": "GDPS",
         "isLeaf": false,
         "children": [
           {
-            "Title": "GDPS - Aggregate surface radiative temperature [\u00b0C] [experimental]",
+            "Title": "GDPS - Aggregate surface radiative temperature [\u00b0C]",
             "Name": "GDPS_15km_RadiativeTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Air temperature at 2m above ground (contour) [\u00b0C] [experimental]",
+            "Title": "GDPS - Air temperature at 2m above ground (contour) [\u00b0C]",
             "Name": "GDPS_15km_AirTemp-Contour_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Air temperature at 2m above ground [\u00b0C] [experimental]",
+            "Title": "GDPS - Air temperature at 2m above ground [\u00b0C]",
             "Name": "GDPS_15km_AirTemp_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Air temperature at 40m above ground (contour) [\u00b0C] [experimental]",
+            "Title": "GDPS - Air temperature at 40m above ground (contour) [\u00b0C]",
             "Name": "GDPS_15km_AirTemp-Contour_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Air temperature at 40m above ground [\u00b0C] [experimental]",
+            "Title": "GDPS - Air temperature at 40m above ground [\u00b0C]",
             "Name": "GDPS_15km_AirTemp_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Air temperature at 80m above ground (contour) [\u00b0C] [experimental]",
+            "Title": "GDPS - Air temperature at 80m above ground (contour) [\u00b0C]",
             "Name": "GDPS_15km_AirTemp-Contour_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Air temperature at 80m above ground [\u00b0C] [experimental]",
+            "Title": "GDPS - Air temperature at 80m above ground [\u00b0C]",
             "Name": "GDPS_15km_AirTemp_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Air temperature at 120m above ground (contour) [\u00b0C] [experimental]",
+            "Title": "GDPS - Air temperature at 120m above ground (contour) [\u00b0C]",
             "Name": "GDPS_15km_AirTemp-Contour_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Air temperature at 120m above ground [\u00b0C] [experimental]",
+            "Title": "GDPS - Air temperature at 120m above ground [\u00b0C]",
             "Name": "GDPS_15km_AirTemp_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Cloud water [mm] [experimental]",
+            "Title": "GDPS - Cloud water [mm]",
             "Name": "GDPS_15km_CloudWater_EAtm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Convective precipitation accumulation [mm] [experimental]",
+            "Title": "GDPS - Convective precipitation accumulation [mm]",
             "Name": "GDPS_15km_ConvectivePrecip-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Daily maximum of the UV Index [experimental]",
+            "Title": "GDPS - Daily maximum of the UV Index",
             "Name": "GDPS_15km_UVIndex-Max24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Daily maximum of the UV Index for clear-sky conditions [experimental]",
+            "Title": "GDPS - Daily maximum of the UV Index for clear-sky conditions",
             "Name": "GDPS_15km_UVIndex-ClearSky-Max24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Dew point (contour) [\u00b0C] [experimental]",
+            "Title": "GDPS - Dew point (contour) [\u00b0C]",
             "Name": "GDPS_15km_DewPoint-Contour_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Dew point [\u00b0C] [experimental]",
+            "Title": "GDPS - Dew point [\u00b0C]",
             "Name": "GDPS_15km_DewPoint_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Dew point depression [\u00b0C] [experimental]",
+            "Title": "GDPS - Dew point depression [\u00b0C]",
             "Name": "GDPS_15km_DewPointDepression_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Downward longwave accumulated radiation flux at the surface [J/m\u00b2] [experimental]",
+            "Title": "GDPS - Downward longwave accumulated radiation flux at the surface [J/m\u00b2]",
             "Name": "GDPS_15km_DownwardLongwaveRadiationFlux-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Downward shortwave accumulated radiation flux at the surface [J/m\u00b2] [experimental]",
+            "Title": "GDPS - Downward shortwave accumulated radiation flux at the surface [J/m\u00b2]",
             "Name": "GDPS_15km_DownwardShortwaveRadiationFlux-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Freezing rain - 1-hour accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Freezing rain - 1-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_FreezingRain-Accum-1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Freezing rain - 3-hour accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Freezing rain - 3-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_FreezingRain-Accum-3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Freezing rain - 6-hour accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Freezing rain - 6-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_FreezingRain-Accum-6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Freezing rain - 12-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_FreezingRain-Accum-12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Freezing rain - 24-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_FreezingRain-Accum-24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Freezing rain accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Freezing rain accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_FreezingRain-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Geopotential Height (contour) [gpm] [experimental]",
+            "Title": "GDPS - Geopotential Height (contour) [gpm]",
             "Name": "GDPS_15km_GeopotentialHeight-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Geopotential Height [gpm] [experimental]",
+            "Title": "GDPS - Geopotential Height [gpm]",
             "Name": "GDPS_15km_GeopotentialHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Humidex at 2 m above ground [experimental]",
+            "Title": "GDPS - High and low pressure systems at mean sea level [hPa]",
+            "Name": "GDPS_15km_HighLowPressure_MSL",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS - Humidex at 2 m above ground",
             "Name": "GDPS_15km_Humidex",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Ice pellets - 1-hour accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Ice pellets - 1-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_IcePellets-Accum-1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Ice pellets - 3-hour accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Ice pellets - 3-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_IcePellets-Accum-3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Ice pellets - 6-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_IcePellets-Accum-6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Ice pellets - 12-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_IcePellets-Accum-12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Ice pellets - 24-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_IcePellets-Accum-24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Ice pellets accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Ice pellets accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_IcePellets-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Incoming visible accumulated flux at the top of atmosphere [J/m\u00b2] [experimental]",
+            "Title": "GDPS - Incoming visible accumulated flux at the top of atmosphere [J/m\u00b2]",
             "Name": "GDPS_15km_DownwardShortwaveRadiationFlux-Accum_NTAtm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Instantaneous precipitation rate [kg/(m\u00b2s)] [experimental]",
+            "Title": "GDPS - Instantaneous precipitation rate [kg/(m\u00b2s)]",
             "Name": "GDPS_15km_PrecipRate",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Latent heat net flux [W/m\u00b2] [experimental]",
+            "Title": "GDPS - Latent heat net flux [W/m\u00b2]",
             "Name": "GDPS_15km_LatentHeatNetFlux",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Maximum air temperature at 2m above ground  [\u00b0C] [experimental]",
+            "Title": "GDPS - Maximum air temperature at 2m above ground [\u00b0C]",
             "Name": "GDPS_15km_AirTemp-Max_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Minimum air temperature at 2m above ground minimum [\u00b0C] [experimental]",
+            "Title": "GDPS - Minimum air temperature at 2m above ground minimum [\u00b0C]",
             "Name": "GDPS_15km_AirTemp-Min_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Net longwave accumulated radiation flux at the surface [J/m\u00b2] [experimental]",
+            "Title": "GDPS - Net longwave accumulated radiation flux at the surface [J/m\u00b2]",
             "Name": "GDPS_15km_NetLongwaveRadiationFlux-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Net shortwave accumulated radiation flux at the surface [J/m\u00b2] [experimental]",
+            "Title": "GDPS - Net shortwave accumulated radiation flux at the surface [J/m\u00b2]",
             "Name": "GDPS_15km_NetShortwaveRadiationFlux-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS.ETA - Ozone mixing ratio at surface [kg/kg]",
+            "Title": "GDPS - Ozone mixing ratio at surface [kg/kg]",
             "Name": "GDPS_15km_O3MixingRatio",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Planetary boundary layer height [m] [experimental]",
+            "Title": "GDPS - Planetary boundary layer height [m]",
             "Name": "GDPS_15km_PlanetaryBoundaryLayerHeight",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Precipitation - 1-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Precipitation - 1-hour accumulation [mm]",
             "Name": "GDPS_15km_Precip-Accum1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Precipitation - 3-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Precipitation - 3-hour accumulation [mm]",
             "Name": "GDPS_15km_Precip-Accum3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Precipitation - 6-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Precipitation - 6-hour accumulation [mm]",
             "Name": "GDPS_15km_Precip-Accum6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Precipitation - 12-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Precipitation - 12-hour accumulation [mm]",
             "Name": "GDPS_15km_Precip-Accum12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Precipitation - 24-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Precipitation - 24-hour accumulation [mm]",
             "Name": "GDPS_15km_Precip-Accum24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Precipitation accumulation [mm] [experimental]",
+            "Title": "GDPS - Precipitation accumulation [mm]",
             "Name": "GDPS_15km_Precip-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Pressure at 1 Potential Vorticity Unit (PVU) (contour) [Pa] [experimental]",
+            "Title": "GDPS - Pressure at 1 Potential Vorticity Unit (PVU) (contour) [Pa]",
             "Name": "GDPS_15km_Pressure-PVU-1-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Pressure at 1 Potential Vorticity Unit (PVU) [Pa] [experimental]",
+            "Title": "GDPS - Pressure at 1 Potential Vorticity Unit (PVU) [Pa]",
             "Name": "GDPS_15km_Pressure-PVU-1",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Pressure at 1.5 Potential Vorticity Unit (PVU) (contour) [Pa] [experimental]",
+            "Title": "GDPS - Pressure at 1.5 Potential Vorticity Unit (PVU) (contour) [Pa]",
             "Name": "GDPS_15km_Pressure-PVU-1.5-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Pressure at 1.5 Potential Vorticity Unit (PVU) [Pa] [experimental]",
+            "Title": "GDPS - Pressure at 1.5 Potential Vorticity Unit (PVU) [Pa]",
             "Name": "GDPS_15km_Pressure-PVU-1.5",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Pressure at 2 Potential Vorticity Unit (PVU) (contour) [Pa] [experimental]",
+            "Title": "GDPS - Pressure at 2 Potential Vorticity Unit (PVU) (contour) [Pa]",
             "Name": "GDPS_15km_Pressure-PVU-2-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Pressure at 2 Potential Vorticity Unit (PVU) [Pa] [experimental]",
+            "Title": "GDPS - Pressure at 2 Potential Vorticity Unit (PVU) [Pa]",
             "Name": "GDPS_15km_Pressure-PVU-2",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Rain - 1-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Rain - 1-hour accumulation [mm]",
             "Name": "GDPS_15km_Rain-Accum1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Rain - 3-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Rain - 3-hour accumulation [mm]",
             "Name": "GDPS_15km_Rain-Accum3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Rain - 6-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Rain - 6-hour accumulation [mm]",
             "Name": "GDPS_15km_Rain-Accum6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Rain - 12-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Rain - 12-hour accumulation [mm]",
             "Name": "GDPS_15km_Rain-Accum12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Rain - 24-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Rain - 24-hour accumulation [mm]",
             "Name": "GDPS_15km_Rain-Accum24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Rain accumulation [mm] [experimental]",
+            "Title": "GDPS - Rain accumulation [mm]",
             "Name": "GDPS_15km_Rain-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Relative humidity [%] [experimental]",
+            "Title": "GDPS - Relative humidity [%]",
             "Name": "GDPS_15km_RelativeHumidity_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Sea ice fraction [experimental]",
+            "Title": "GDPS - Sea ice fraction",
             "Name": "GDPS_15km_SeaIceFraction",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Sea level pressure (contour) [Pa] [experimental]",
+            "Title": "GDPS - Sea level pressure (contour) [Pa]",
             "Name": "GDPS_15km_Pressure_MSL-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Sea level pressure [Pa] [experimental]",
+            "Title": "GDPS - Sea level pressure [Pa]",
             "Name": "GDPS_15km_Pressure_MSL",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Sea water potential temperature at surface [K] [experimental]",
+            "Title": "GDPS - Sea water potential temperature at surface [K]",
             "Name": "GDPS_15km_SeaWaterTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Sensible heat net flux [W/m\u00b2] [experimental]",
+            "Title": "GDPS - Sensible heat net flux [W/m\u00b2]",
             "Name": "GDPS_15km_SensibleHeatNetFlux",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Snow - 1-hour accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Snow - 1-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_Snow-Accum1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Snow - 3-hour accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Snow - 3-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_Snow-Accum3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Snow - 6-hour accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Snow - 6-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_Snow-Accum6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Snow - 12-hour accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Snow - 12-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_Snow-Accum12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Snow - 24-hour accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Snow - 24-hour accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_Snow-Accum24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Snow accumulation (liquid equivalent) [mm] [experimental]",
+            "Title": "GDPS - Snow accumulation (liquid equivalent) [mm]",
             "Name": "GDPS_15km_Snow-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Snow density [kg/m\u00b3] [experimental]",
+            "Title": "GDPS - Snow density [kg/m\u00b3]",
             "Name": "GDPS_15km_SnowDensity",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Snow depth [m] [experimental]",
+            "Title": "GDPS - Snow depth [m]",
             "Name": "GDPS_15km_SnowDepth",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Soil temperature near surface (0-10cm) [K] [experimental]",
+            "Title": "GDPS - Soil temperature near surface (0-10cm) [K]",
             "Name": "GDPS_15km_SoilTemp_0-10cm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Soil volumetric ice content at surface [m\u00b3/m\u00b3] [experimental]",
+            "Title": "GDPS - Soil volumetric ice content at surface [m\u00b3/m\u00b3]",
             "Name": "GDPS_15km_SoilVolumetricIceContent",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Soil volumetric water content (0-1cm) [m\u00b3/m\u00b3] [experimental]",
+            "Title": "GDPS - Soil volumetric water content (0-1cm) [m\u00b3/m\u00b3]",
             "Name": "GDPS_15km_SoilVolumetricWaterContent_0-1cm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Soil volumetric water content (0-10cm) [m\u00b3/m\u00b3] [experimental]",
+            "Title": "GDPS - Soil volumetric water content (0-10cm) [m\u00b3/m\u00b3]",
             "Name": "GDPS_15km_SoilVolumetricWaterContent_0-10cm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Specific Humidity at 2m above ground [kg/kg] [experimental]",
+            "Title": "GDPS - Specific Humidity at 2m above ground [kg/kg]",
             "Name": "GDPS_15km_SpecificHumidity_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Specific Humidity at 40m above ground [kg/kg] [experimental]",
+            "Title": "GDPS - Specific Humidity at 40m above ground [kg/kg]",
             "Name": "GDPS_15km_SpecificHumidity_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Specific Humidity at 80m above ground [kg/kg] [experimental]",
+            "Title": "GDPS - Specific Humidity at 80m above ground [kg/kg]",
             "Name": "GDPS_15km_SpecificHumidity_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Specific Humidity at 120m above ground [kg/kg] [experimental]",
+            "Title": "GDPS - Specific Humidity at 120m above ground [kg/kg]",
             "Name": "GDPS_15km_SpecificHumidity_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Specific humidity at the surface [kg/kg] [experimental]",
+            "Title": "GDPS - Specific humidity at the surface [kg/kg]",
             "Name": "GDPS_15km_SpecificHumidity",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Surface albedo [%] [experimental]",
+            "Title": "GDPS - Surface albedo [%]",
             "Name": "GDPS_15km_Albedo",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Surface and soil temperatures (Superficial) [K] [experimental]",
+            "Title": "GDPS - Surface and soil temperatures (Superficial) [K]",
             "Name": "GDPS_15km_SoilTemp",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Surface pressure (contour) [Pa] [experimental]",
+            "Title": "GDPS - Surface pressure (contour) [Pa]",
             "Name": "GDPS_15km_Pressure-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Surface pressure [Pa] [experimental]",
+            "Title": "GDPS - Surface pressure [Pa]",
             "Name": "GDPS_15km_Pressure",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Thickness between 850mb and 700mb (contour) [m] [experimental]",
+            "Title": "GDPS - Thickness between 850mb and 700mb (contour) [m]",
             "Name": "GDPS_15km_Thickness-Contour_850to700mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Thickness between 850mb and 700mb [m] [experimental]",
+            "Title": "GDPS - Thickness between 850mb and 700mb [m]",
             "Name": "GDPS_15km_Thickness_850to700mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Thickness between 1000mb and 500mb (contour) [m] [experimental]",
+            "Title": "GDPS - Thickness between 1000mb and 500mb (contour) [m]",
             "Name": "GDPS_15km_Thickness-Contour_1000to500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Thickness between 1000mb and 500mb [m] [experimental]",
+            "Title": "GDPS - Thickness between 1000mb and 500mb [m]",
             "Name": "GDPS_15km_Thickness_1000to500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Thickness between 1000mb and 850mb (contour) [m] [experimental]",
+            "Title": "GDPS - Thickness between 1000mb and 850mb (contour) [m]",
             "Name": "GDPS_15km_Thickness-Contour_1000to850mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Thickness between 1000mb and 850mb [m] [experimental]",
+            "Title": "GDPS - Thickness between 1000mb and 850mb [m]",
             "Name": "GDPS_15km_Thickness_1000to850mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Total cloud cover [%] [experimental]",
+            "Title": "GDPS - Total cloud cover [%]",
             "Name": "GDPS_15km_TotalCloudCover",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Total column integrated ozone [DU] [experimental]",
+            "Title": "GDPS - Total column integrated ozone [DU]",
             "Name": "GDPS_15km_O3_EAtm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2] [experimental]",
+            "Title": "GDPS - Upward longwave radiation flux at the top of atmosphere [W/m\u00b2]",
             "Name": "GDPS_15km_UpwardLongwaveRadiationFlux_NTAtm",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - UV index [experimental]",
+            "Title": "GDPS - UV index",
             "Name": "GDPS_15km_UVIndex",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - UV Index for clear-sky conditions [experimental]",
+            "Title": "GDPS - UV Index for clear-sky conditions",
             "Name": "GDPS_15km_UVIndex-ClearSky",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Water runoff accumulation [mm] [experimental]",
+            "Title": "GDPS - Water runoff accumulation [mm]",
             "Name": "GDPS_15km_Runoff-Accum",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind chill factor at surface [\u00b0C] [experimental]",
+            "Title": "GDPS - Wind chill factor at surface [\u00b0C]",
             "Name": "GDPS_15km_WindChill",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind direction at 10m above surface [deg true] [experimental]",
+            "Title": "GDPS - Wind direction at 10m above surface [deg true]",
             "Name": "GDPS_15km_WindDir_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind direction at 40m above surface [deg true] [experimental]",
+            "Title": "GDPS - Wind direction at 40m above surface [deg true]",
             "Name": "GDPS_15km_WindDir_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind direction at 80m above surface [deg true] [experimental]",
+            "Title": "GDPS - Wind direction at 80m above surface [deg true]",
             "Name": "GDPS_15km_WindDir_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind direction at 120m above surface [deg true] [experimental]",
+            "Title": "GDPS - Wind direction at 120m above surface [deg true]",
             "Name": "GDPS_15km_WindDir_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind gust estimate at 10m above surface [m/s] [experimental]",
+            "Title": "GDPS - Wind gust estimate at 10m above surface [m/s]",
             "Name": "GDPS_15km_WindGust_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind gust maximum [m/s] [experimental]",
+            "Title": "GDPS - Wind gust maximum [m/s]",
             "Name": "GDPS_15km_WindGust-Max_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind gust minimum [m/s] [experimental]",
+            "Title": "GDPS - Wind gust minimum [m/s]",
             "Name": "GDPS_15km_WindGust-Min_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind speed at 10m above surface (contour) [m/s] [experimental]",
+            "Title": "GDPS - Wind speed at 10m above surface (contour) [m/s]",
             "Name": "GDPS_15km_WindSpeed-Contour_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind speed at 10m above surface [m/s] [experimental]",
+            "Title": "GDPS - Wind speed at 10m above surface [m/s]",
             "Name": "GDPS_15km_WindSpeed_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind speed at 40m above surface (contour) [m/s] [experimental]",
+            "Title": "GDPS - Wind speed at 40m above surface (contour) [m/s]",
             "Name": "GDPS_15km_WindSpeed-Contour_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind speed at 40m above surface [m/s] [experimental]",
+            "Title": "GDPS - Wind speed at 40m above surface [m/s]",
             "Name": "GDPS_15km_WindSpeed_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind speed at 80m above surface (contour) [m/s] [experimental]",
+            "Title": "GDPS - Wind speed at 80m above surface (contour) [m/s]",
             "Name": "GDPS_15km_WindSpeed-Contour_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind speed at 80m above surface [m/s] [experimental]",
+            "Title": "GDPS - Wind speed at 80m above surface [m/s]",
             "Name": "GDPS_15km_WindSpeed_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind speed at 120m above surface (contour) [m/s] [experimental]",
+            "Title": "GDPS - Wind speed at 120m above surface (contour) [m/s]",
             "Name": "GDPS_15km_WindSpeed-Contour_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Wind speed at 120m above surface [m/s] [experimental]",
+            "Title": "GDPS - Wind speed at 120m above surface [m/s]",
             "Name": "GDPS_15km_WindSpeed_120m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Winds at 10m above surface [m/s] [experimental]",
+            "Title": "GDPS - Winds at 10m above surface [m/s]",
             "Name": "GDPS_15km_Winds_10m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Winds at 40m above surface [m/s] [experimental]",
+            "Title": "GDPS - Winds at 40m above surface [m/s]",
             "Name": "GDPS_15km_Winds_40m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Winds at 80m above surface [m/s] [experimental]",
+            "Title": "GDPS - Winds at 80m above surface [m/s]",
             "Name": "GDPS_15km_Winds_80m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Winds at 120m above surface [m/s] [experimental]",
+            "Title": "GDPS - Winds at 120m above surface [m/s]",
             "Name": "GDPS_15km_Winds_120m",
             "isLeaf": true,
             "isTemporal": true
@@ -9449,55 +9467,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 1 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 1 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_1mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 1 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 1 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_1mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 1 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 1 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_1mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 1 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 1 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_1mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 1 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 1 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_1mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 1 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 1 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_1mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 1 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 1 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_1mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 1 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 1 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_1mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 1 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 1 mb [m/s]",
                 "Name": "GDPS_15km_Winds_1mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9510,55 +9528,55 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 5 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 5 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_5mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 5 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 5 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_5mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 5 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 5 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_5mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 5 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 5 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_5mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 5 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 5 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_5mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 5 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 5 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_5mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 5 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 5 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_5mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 5 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 5 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_5mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 5 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 5 mb [m/s]",
                 "Name": "GDPS_15km_Winds_5mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9571,67 +9589,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 10 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 10 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_10mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 10 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 10 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_10mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 10 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 10 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_10mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 10 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 10 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_10mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 10 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 10 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_10mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 10 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 10 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_10mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 10 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 10 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_10mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 10 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 10 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_10mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 10 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 10 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_10mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 10 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 10 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_10mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 10 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 10 mb [m/s]",
                 "Name": "GDPS_15km_Winds_10mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9644,67 +9662,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 20 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 20 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_20mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 20 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 20 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_20mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 20 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 20 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_20mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 20 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 20 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_20mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 20 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 20 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_20mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 20 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 20 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_20mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 20 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 20 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_20mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 20 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 20 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_20mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 20 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 20 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_20mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 20 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 20 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_20mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 20 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 20 mb [m/s]",
                 "Name": "GDPS_15km_Winds_20mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9717,67 +9735,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 30 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 30 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_30mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 30 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 30 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_30mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 30 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 30 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_30mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 30 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 30 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_30mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 30 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 30 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_30mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 30 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 30 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_30mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 30 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 30 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_30mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 30 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 30 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_30mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 30 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 30 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_30mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 30 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 30 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_30mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 30 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 30 mb [m/s]",
                 "Name": "GDPS_15km_Winds_30mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9790,67 +9808,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 50 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 50 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 50 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 50 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 50 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 50 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 50 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 50 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 50 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 50 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 50 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 50 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 50 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 50 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 50 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 50 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 50 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 50 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 50 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 50 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 50 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 50 mb [m/s]",
                 "Name": "GDPS_15km_Winds_50mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9863,67 +9881,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 100 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 100 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 100 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 100 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 100 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 100 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 100 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 100 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 100 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 100 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 100 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 100 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 100 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 100 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 100 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 100 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 100 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 100 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 100 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 100 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 100 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 100 mb [m/s]",
                 "Name": "GDPS_15km_Winds_100mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -9936,67 +9954,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 150 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 150 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 150 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 150 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 150 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 150 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 150 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 150 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 150 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 150 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 150 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 150 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 150 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 150 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 150 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 150 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 150 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 150 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 150 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 150 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 150 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 150 mb [m/s]",
                 "Name": "GDPS_15km_Winds_150mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10009,67 +10027,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 175 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 175 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 175 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 175 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 175 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 175 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 175 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 175 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 175 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 175 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 175 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 175 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 175 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 175 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 175 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 175 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 175 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 175 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 175 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 175 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_175mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 175 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 175 mb [m/s]",
                 "Name": "GDPS_15km_Winds_175mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10082,85 +10100,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Absolute vorticity at 200 mb [s-1] [experimental]",
+                "Title": "GDPS - Absolute vorticity at 200 mb [s-1]",
                 "Name": "GDPS_15km_AbsoluteVorticity_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 200 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 200 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 200 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 200 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 200 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 200 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 200 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 200 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 200 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 200 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Isobaric vertical motion at 200 mb [Pa/s] [experimental]",
+                "Title": "GDPS - Isobaric vertical motion at 200 mb [Pa/s]",
                 "Name": "GDPS_15km_VerticalVelocity_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 200 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 200 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative vorticity at 200 mb [s-1] [experimental]",
+                "Title": "GDPS - Relative vorticity at 200 mb [s-1]",
                 "Name": "GDPS_15km_RelativeVorticity_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 200 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 200 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 200 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 200 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 200 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 200 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 200 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 200 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 200 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 200 mb [m/s]",
                 "Name": "GDPS_15km_Winds_200mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10173,67 +10191,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 225 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 225 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 225 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 225 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 225 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 225 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 225 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 225 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 225 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 225 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 225 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 225 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 225 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 225 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 225 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 225 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 225 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 225 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 225 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 225 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_225mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 225 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 225 mb [m/s]",
                 "Name": "GDPS_15km_Winds_225mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10246,85 +10264,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Absolute vorticity at 250 mb [s-1] [experimental]",
+                "Title": "GDPS - Absolute vorticity at 250 mb [s-1]",
                 "Name": "GDPS_15km_AbsoluteVorticity_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 250 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 250 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 250 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 250 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 250 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 250 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 250 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 250 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 250 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 250 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Isobaric vertical motion at 250 mb [Pa/s] [experimental]",
+                "Title": "GDPS - Isobaric vertical motion at 250 mb [Pa/s]",
                 "Name": "GDPS_15km_VerticalVelocity_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 250 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 250 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative vorticity at 250 mb [s-1] [experimental]",
+                "Title": "GDPS - Relative vorticity at 250 mb [s-1]",
                 "Name": "GDPS_15km_RelativeVorticity_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 250 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 250 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 250 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 250 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 250 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 250 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 250 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 250 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 250 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 250 mb [m/s]",
                 "Name": "GDPS_15km_Winds_250mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10337,67 +10355,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 275 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 275 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 275 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 275 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 275 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 275 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 275 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 275 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 275 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 275 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 275 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 275 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 275 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 275 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 275 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 275 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 275 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 275 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 275 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 275 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_275mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 275 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 275 mb [m/s]",
                 "Name": "GDPS_15km_Winds_275mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10410,67 +10428,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 300 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 300 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 300 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 300 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 300 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 300 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 300 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 300 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 300 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 300 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 300 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 300 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 300 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 300 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 300 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 300 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 300 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 300 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 300 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 300 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 300 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 300 mb [m/s]",
                 "Name": "GDPS_15km_Winds_300mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10483,67 +10501,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 350 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 350 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 350 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 350 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 350 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 350 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 350 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 350 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 350 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 350 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 350 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 350 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 350 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 350 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 350 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 350 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 350 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 350 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 350 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 350 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_350mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 350 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 350 mb [m/s]",
                 "Name": "GDPS_15km_Winds_350mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10556,67 +10574,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 400 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 400 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 400 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 400 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 400 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 400 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 400 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 400 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 400 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 400 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 400 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 400 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 400 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 400 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 400 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 400 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 400 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 400 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 400 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 400 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 400 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 400 mb [m/s]",
                 "Name": "GDPS_15km_Winds_400mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10629,61 +10647,61 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 450 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 450 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 450 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 450 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 450 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 450 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 450 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 450 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 450 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 450 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 450 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 450 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 450 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 450 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 450 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 450 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 450 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 450 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 450 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 450 mb [m/s]",
                 "Name": "GDPS_15km_Winds_450mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10696,85 +10714,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Absolute vorticity at 500 mb [s-1] [experimental]",
+                "Title": "GDPS - Absolute vorticity at 500 mb [s-1]",
                 "Name": "GDPS_15km_AbsoluteVorticity_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 500 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 500 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 500 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 500 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 500 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 500 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 500 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 500 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 500 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 500 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Isobaric vertical motion at 500 mb [Pa/s] [experimental]",
+                "Title": "GDPS - Isobaric vertical motion at 500 mb [Pa/s]",
                 "Name": "GDPS_15km_VerticalVelocity_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 500 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 500 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative vorticity at 500 mb [s-1] [experimental]",
+                "Title": "GDPS - Relative vorticity at 500 mb [s-1]",
                 "Name": "GDPS_15km_RelativeVorticity_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 500 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 500 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 500 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 500 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 500 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 500 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 500 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 500 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 500 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 500 mb [m/s]",
                 "Name": "GDPS_15km_Winds_500mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10787,67 +10805,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 550 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 550 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 550 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 550 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 550 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 550 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 550 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 550 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 550 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 550 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 550 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 550 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 550 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 550 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 550 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 550 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 550 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 550 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 550 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 550 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_550mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 550 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 550 mb [m/s]",
                 "Name": "GDPS_15km_Winds_550mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10860,73 +10878,73 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 600 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 600 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 600 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 600 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 600 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 600 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 600 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 600 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 600 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 600 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Isobaric vertical motion at 600 mb [Pa/s] [experimental]",
+                "Title": "GDPS - Isobaric vertical motion at 600 mb [Pa/s]",
                 "Name": "GDPS_15km_VerticalVelocity_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 600 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 600 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 600 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 600 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 600 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 600 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 600 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 600 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 600 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 600 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 600 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 600 mb [m/s]",
                 "Name": "GDPS_15km_Winds_600mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -10939,67 +10957,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 650 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 650 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 650 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 650 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 650 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 650 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 650 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 650 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 650 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 650 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 650 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 650 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 650 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 650 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 650 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 650 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 650 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 650 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 650 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 650 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_650mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 650 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 650 mb [m/s]",
                 "Name": "GDPS_15km_Winds_650mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11012,85 +11030,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Absolute vorticity at 700 mb [s-1] [experimental]",
+                "Title": "GDPS - Absolute vorticity at 700 mb [s-1]",
                 "Name": "GDPS_15km_AbsoluteVorticity_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 700 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 700 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 700 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 700 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 700 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 700 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 700 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 700 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 700 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 700 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Isobaric vertical motion at 700 mb [Pa/s] [experimental]",
+                "Title": "GDPS - Isobaric vertical motion at 700 mb [Pa/s]",
                 "Name": "GDPS_15km_VerticalVelocity_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 700 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 700 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative vorticity at 700 mb [s-1] [experimental]",
+                "Title": "GDPS - Relative vorticity at 700 mb [s-1]",
                 "Name": "GDPS_15km_RelativeVorticity_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 700 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 700 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 700 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 700 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 700 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 700 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 700 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 700 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 700 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 700 mb [m/s]",
                 "Name": "GDPS_15km_Winds_700mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11103,67 +11121,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 750 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 750 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 750 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 750 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 750 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 750 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 750 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 750 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 750 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 750 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 750 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 750 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 750 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 750 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 750 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 750 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 750 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 750 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 750 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 750 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_750mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 750 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 750 mb [m/s]",
                 "Name": "GDPS_15km_Winds_750mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11176,67 +11194,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 800 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 800 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 800 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 800 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 800 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 800 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 800 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 800 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 800 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 800 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 800 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 800 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 800 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 800 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 800 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 800 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 800 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 800 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 800 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 800 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_800mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 800 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 800 mb [m/s]",
                 "Name": "GDPS_15km_Winds_800mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11249,85 +11267,85 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Absolute vorticity at 850 mb [s-1] [experimental]",
+                "Title": "GDPS - Absolute vorticity at 850 mb [s-1]",
                 "Name": "GDPS_15km_AbsoluteVorticity_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 850 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 850 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 850 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 850 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 850 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 850 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 850 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 850 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 850 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 850 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Isobaric vertical motion at 850 mb [Pa/s] [experimental]",
+                "Title": "GDPS - Isobaric vertical motion at 850 mb [Pa/s]",
                 "Name": "GDPS_15km_VerticalVelocity_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 850 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 850 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative vorticity at 850 mb [s-1] [experimental]",
+                "Title": "GDPS - Relative vorticity at 850 mb [s-1]",
                 "Name": "GDPS_15km_RelativeVorticity_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 850 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 850 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 850 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 850 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 850 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 850 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 850 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 850 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 850 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 850 mb [m/s]",
                 "Name": "GDPS_15km_Winds_850mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11340,67 +11358,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 875 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 875 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 875 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 875 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 875 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 875 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 875 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 875 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 875 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 875 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 875 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 875 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 875 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 875 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 875 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 875 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 875 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 875 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 875 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 875 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_875mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 875 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 875 mb [m/s]",
                 "Name": "GDPS_15km_Winds_875mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11413,67 +11431,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 900 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 900 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 900 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 900 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 900 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 900 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 900 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 900 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 900 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 900 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 900 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 900 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 900 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 900 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 900 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 900 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 900 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 900 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 900 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 900 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_900mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 900 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 900 mb [m/s]",
                 "Name": "GDPS_15km_Winds_900mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11486,67 +11504,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 925 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 925 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 925 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 925 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 925 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 925 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 925 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 925 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 925 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 925 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 925 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 925 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 925 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 925 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 925 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 925 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 925 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 925 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 925 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 925 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 925 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 925 mb [m/s]",
                 "Name": "GDPS_15km_Winds_925mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11559,67 +11577,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 950 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 950 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 950 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 950 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 950 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 950 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 950 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 950 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 950 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 950 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 950 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 950 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 950 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 950 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 950 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 950 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 950 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 950 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 950 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 950 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_950mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 950 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 950 mb [m/s]",
                 "Name": "GDPS_15km_Winds_950mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11632,67 +11650,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 970 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 970 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 970 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 970 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 970 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 970 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 970 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 970 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 970 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 970 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 970 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 970 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 970 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 970 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 970 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 970 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 970 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 970 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 970 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 970 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_970mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 970 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 970 mb [m/s]",
                 "Name": "GDPS_15km_Winds_970mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11705,67 +11723,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 985 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 985 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 985 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 985 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 985 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 985 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 985 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 985 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 985 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 985 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 985 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 985 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 985 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 985 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 985 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 985 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 985 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 985 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 985 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 985 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_985mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 985 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 985 mb [m/s]",
                 "Name": "GDPS_15km_Winds_985mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11778,67 +11796,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 1000 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 1000 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 1000 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 1000 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 1000 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 1000 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 1000 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 1000 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 1000 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 1000 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 1000 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 1000 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 1000 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 1000 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 1000 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 1000 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 1000 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 1000 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 1000 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 1000 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 1000 mb [m/s]",
                 "Name": "GDPS_15km_Winds_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11851,67 +11869,67 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS - Air temperature at 1015 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 1015 mb (contour) [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp-Contour_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Air temperature at 1015 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Air temperature at 1015 mb [\u00b0C]",
                 "Name": "GDPS_15km_AirTemp_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Dew point depression at 1015 mb [\u00b0C] [experimental]",
+                "Title": "GDPS - Dew point depression at 1015 mb [\u00b0C]",
                 "Name": "GDPS_15km_DewPointDepression_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 1015 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 1015 mb (contour) [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight-Contour_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Geopotential height at 1015 mb [gpm] [experimental]",
+                "Title": "GDPS - Geopotential height at 1015 mb [gpm]",
                 "Name": "GDPS_15km_GeopotentialHeight_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Relative humidity at 1015 mb [%] [experimental]",
+                "Title": "GDPS - Relative humidity at 1015 mb [%]",
                 "Name": "GDPS_15km_RelativeHumidity_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Specific humidity at 1015 mb [kg/kg] [experimental]",
+                "Title": "GDPS - Specific humidity at 1015 mb [kg/kg]",
                 "Name": "GDPS_15km_SpecificHumidity_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind direction at 1015 mb [\u00b0] [experimental]",
+                "Title": "GDPS - Wind direction at 1015 mb [\u00b0]",
                 "Name": "GDPS_15km_WindDir_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 1015 mb (contour) [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 1015 mb (contour) [m/s]",
                 "Name": "GDPS_15km_WindSpeed-Contour_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Wind speed at 1015 mb [m/s] [experimental]",
+                "Title": "GDPS - Wind speed at 1015 mb [m/s]",
                 "Name": "GDPS_15km_WindSpeed_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS - Winds at 1015 mb [m/s] [experimental]",
+                "Title": "GDPS - Winds at 1015 mb [m/s]",
                 "Name": "GDPS_15km_Winds_1015mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -11926,404 +11944,404 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "GDPS - CAPE for a parcel representing the mean of a layer (contour) [J/kg] [experimental]",
+            "Title": "GDPS - CAPE for a parcel representing the mean of a layer (contour) [J/kg]",
             "Name": "GDPS_15km_ML-CAPE-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - CAPE for a parcel representing the mean of a layer [J/kg] [experimental]",
+            "Title": "GDPS - CAPE for a parcel representing the mean of a layer [J/kg]",
             "Name": "GDPS_15km_ML-CAPE",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - CAPE for a surface based parcel (contour) [J/kg] [experimental]",
+            "Title": "GDPS - CAPE for a surface based parcel (contour) [J/kg]",
             "Name": "GDPS_15km_CAPE-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - CAPE for a surface based parcel [J/kg] [experimental]",
+            "Title": "GDPS - CAPE for a surface based parcel [J/kg]",
             "Name": "GDPS_15km_CAPE",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - CAPE for the most unstable parcel (contour) [J/kg] [experimental]",
+            "Title": "GDPS - CAPE for the most unstable parcel (contour) [J/kg]",
             "Name": "GDPS_15km_MU-CAPE-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - CAPE for the most unstable parcel [J/kg] [experimental]",
+            "Title": "GDPS - CAPE for the most unstable parcel [J/kg]",
             "Name": "GDPS_15km_MU-CAPE",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - CAPE for the most unstable parcel using the virtual temperature correction (contour) [J/kg] [experimental]",
+            "Title": "GDPS - CAPE for the most unstable parcel using the virtual temperature correction (contour) [J/kg]",
             "Name": "GDPS_15km_MU-VT-CAPE-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - CAPE for the most unstable parcel using the virtual temperature correction [J/kg] [experimental]",
+            "Title": "GDPS - CAPE for the most unstable parcel using the virtual temperature correction [J/kg]",
             "Name": "GDPS_15km_MU-VT-CAPE",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - CAPE using the virtual temperature correction for parcel lifted from the surface (contour) [J/kg] [experimental]",
+            "Title": "GDPS - CAPE using the virtual temperature correction for parcel lifted from the surface (contour) [J/kg]",
             "Name": "GDPS_15km_SFC-VT-CAPE-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - CAPE using the virtual temperature correction for parcel lifted from the surface [J/kg] [experimental]",
+            "Title": "GDPS - CAPE using the virtual temperature correction for parcel lifted from the surface [J/kg]",
             "Name": "GDPS_15km_SFC-VT-CAPE",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - CIN for a parcel representing the mean of a layer [J/kg] [experimental]",
+            "Title": "GDPS - CIN for a parcel representing the mean of a layer [J/kg]",
             "Name": "GDPS_15km_ML-CIN",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - CIN for a surface based parcel [J/kg] [experimental]",
+            "Title": "GDPS - CIN for a surface based parcel [J/kg]",
             "Name": "GDPS_15km_CIN",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - CIN for the most unstable parcel [J/kg] [experimental]",
+            "Title": "GDPS - CIN for the most unstable parcel [J/kg]",
             "Name": "GDPS_15km_MU-CIN",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - CIN for the most unstable parcel using the virtual temperature correction [J/kg] [experimental]",
+            "Title": "GDPS - CIN for the most unstable parcel using the virtual temperature correction [J/kg]",
             "Name": "GDPS_15km_MU-VT-CIN",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - CIN using the virtual temperature correction for parcel lifted from the surface [J/kg] [experimental]",
+            "Title": "GDPS - CIN using the virtual temperature correction for parcel lifted from the surface [J/kg]",
             "Name": "GDPS_15km_SFC-VT-CIN",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Dew point temperature of the most unstable parcel [\u00b0C] [experimental]",
+            "Title": "GDPS - Dew point temperature of the most unstable parcel [\u00b0C]",
             "Name": "GDPS_15km_MU-PRC-DPT",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the equilibrium level for a parcel lifted from the surface [m AGL] [experimental]",
+            "Title": "GDPS - Height of the equilibrium level for a parcel lifted from the surface [m AGL]",
             "Name": "GDPS_15km_SFC-EL-HGT",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the equilibrium level for a parcel representing the mean of a layer [m AGL] [experimental]",
+            "Title": "GDPS - Height of the equilibrium level for a parcel representing the mean of a layer [m AGL]",
             "Name": "GDPS_15km_ML-EL_HGT",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the equilibrium level for the most unstable parcel [m AGL] [experimental]",
+            "Title": "GDPS - Height of the equilibrium level for the most unstable parcel [m AGL]",
             "Name": "GDPS_15km_MU-EL",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the equilibrium level for the most unstable parcel using the virtual temperature correction [m AGL] [experimental]",
+            "Title": "GDPS - Height of the equilibrium level for the most unstable parcel using the virtual temperature correction [m AGL]",
             "Name": "GDPS_15km_MU-VT-EL-HGT",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the equilibrium level using the virtual temperature correction for a parcel lifted from the surface [m AGL] [experimental]",
+            "Title": "GDPS - Height of the equilibrium level using the virtual temperature correction for a parcel lifted from the surface [m AGL]",
             "Name": "GDPS_15km_SFC-VT-EL-HGT",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the LCL for a parcel lifted from the surface (contour) [m AGL] [experimental]",
+            "Title": "GDPS - Height of the LCL for a parcel lifted from the surface (contour) [m AGL]",
             "Name": "GDPS_15km_SFC-LCL-HGT-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the LCL for a parcel lifted from the surface [m AGL] [experimental]",
+            "Title": "GDPS - Height of the LCL for a parcel lifted from the surface [m AGL]",
             "Name": "GDPS_15km_SFC-LCL-HGT",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the LCL for a parcel representing the mean of a layer (contour) [m AGL] [experimental]",
+            "Title": "GDPS - Height of the LCL for a parcel representing the mean of a layer (contour) [m AGL]",
             "Name": "GDPS_15km_ML-LCL_HGT-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the LCL for a parcel representing the mean of a layer [m AGL] [experimental]",
+            "Title": "GDPS - Height of the LCL for a parcel representing the mean of a layer [m AGL]",
             "Name": "GDPS_15km_ML-LCL_HGT",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the LCL for the most unstable parcel (contour) [m AGL] [experimental]",
+            "Title": "GDPS - Height of the LCL for the most unstable parcel (contour) [m AGL]",
             "Name": "GDPS_15km_MU-LCL-HGT-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the LCL for the most unstable parcel [m AGL] [experimental]",
+            "Title": "GDPS - Height of the LCL for the most unstable parcel [m AGL]",
             "Name": "GDPS_15km_MU-LCL-HGT",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the level of free convection for a parcel lifted from the surface (contour) [m AGL] [experimental]",
+            "Title": "GDPS - Height of the level of free convection for a parcel lifted from the surface (contour) [m AGL]",
             "Name": "GDPS_15km_SFC-LFC-HGT-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the level of free convection for a parcel lifted from the surface [m AGL] [experimental]",
+            "Title": "GDPS - Height of the level of free convection for a parcel lifted from the surface [m AGL]",
             "Name": "GDPS_15km_SFC-LFC-HGT",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the level of free convection for a parcel representing the mean of a layer (contour) [m AGL] [experimental]",
+            "Title": "GDPS - Height of the level of free convection for a parcel representing the mean of a layer (contour) [m AGL]",
             "Name": "GDPS_15km_ML-LFC_HGT-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the level of free convection for a parcel representing the mean of a layer [m AGL] [experimental]",
+            "Title": "GDPS - Height of the level of free convection for a parcel representing the mean of a layer [m AGL]",
             "Name": "GDPS_15km_ML-LFC_HGT",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the level of free convection for the most unstable parcel (contour) [m AGL] [experimental]",
+            "Title": "GDPS - Height of the level of free convection for the most unstable parcel (contour) [m AGL]",
             "Name": "GDPS_15km_MU-LFC-HGT-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the level of free convection for the most unstable parcel [m AGL] [experimental]",
+            "Title": "GDPS - Height of the level of free convection for the most unstable parcel [m AGL]",
             "Name": "GDPS_15km_MU-LFC-HGT",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the level of free convection for the most unstable parcel using the virtual temperature correction (contour) [m AGL] [experimental]",
+            "Title": "GDPS - Height of the level of free convection for the most unstable parcel using the virtual temperature correction (contour) [m AGL]",
             "Name": "GDPS_15km_MU-VT-LFC-HGT-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the level of free convection for the most unstable parcel using the virtual temperature correction [m AGL] [experimental]",
+            "Title": "GDPS - Height of the level of free convection for the most unstable parcel using the virtual temperature correction [m AGL]",
             "Name": "GDPS_15km_MU-VT-LFC-HGT",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the level of free convection using the virtual temperature correction for a parcel lifted from the surface (contour) [m AGL] [experimental]",
+            "Title": "GDPS - Height of the level of free convection using the virtual temperature correction for a parcel lifted from the surface (contour) [m AGL]",
             "Name": "GDPS_15km_SFC-VT-LFC-HGT-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the level of free convection using the virtual temperature correction for a parcel lifted from the surface [m AGL] [experimental]",
+            "Title": "GDPS - Height of the level of free convection using the virtual temperature correction for a parcel lifted from the surface [m AGL]",
             "Name": "GDPS_15km_SFC-VT-LFC-HGT",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the most unstable parcel (contour) [m AGL] [experimental]",
+            "Title": "GDPS - Height of the most unstable parcel (contour) [m AGL]",
             "Name": "GDPS_15km_MU-PRC-HGT-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Height of the most unstable parcel [m AGL] [experimental]",
+            "Title": "GDPS - Height of the most unstable parcel [m AGL]",
             "Name": "GDPS_15km_MU-PRC-HGT",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500 mb (contour) [experimental]",
-            "Name": "GDPS_15km_SFC-VT-LI-Contour_500mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "GDPS - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500 mb [experimental]",
+            "Title": "GDPS - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500 mb",
             "Name": "GDPS_15km_SFC-VT-LI_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb (contour) [experimental]",
-            "Name": "GDPS_15km_LiftedIndex-MU-VT-Contour_500mb",
+            "Title": "GDPS - Lifted index for a parcel lifted from the surface using the virtual temperature correction, with reference level 500 mb (contour)",
+            "Name": "GDPS_15km_SFC-VT-LI-Contour_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb [experimental]",
+            "Title": "GDPS - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb",
             "Name": "GDPS_15km_LiftedIndex-MU-VT_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Lifted index for the most unstable parcel, with reference level 500 mb (contour) [experimental]",
-            "Name": "GDPS_15km_MU-LI-Contour_500mb",
+            "Title": "GDPS - Lifted index for the most unstable parcel using the virtual temperature correction, with reference level 500 mb (contour)",
+            "Name": "GDPS_15km_LiftedIndex-MU-VT-Contour_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Lifted index for the most unstable parcel, with reference level 500 mb [experimental]",
+            "Title": "GDPS - Lifted index for the most unstable parcel, with reference level 500 mb",
             "Name": "GDPS_15km_MU-LI_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Pressure of the most unstable parcel [hPa] [experimental]",
+            "Title": "GDPS - Lifted index for the most unstable parcel, with reference level 500 mb (contour)",
+            "Name": "GDPS_15km_MU-LI-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS - Pressure of the most unstable parcel [hPa]",
             "Name": "GDPS_15km_MU-PRC-PRES",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Showalter Index using the virtual temperature correction, with reference level 500 mb (contour) [experimental]",
-            "Name": "GDPS_15km_VT-SHWINX-Contour_500mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "GDPS - Showalter Index using the virtual temperature correction, with reference level 500 mb [experimental]",
+            "Title": "GDPS - Showalter Index using the virtual temperature correction, with reference level 500 mb",
             "Name": "GDPS_15km_VT-SHWINX_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Showalter Index, with reference level 500 mb (contour) [K] [experimental]",
+            "Title": "GDPS - Showalter Index using the virtual temperature correction, with reference level 500 mb (contour)",
+            "Name": "GDPS_15km_VT-SHWINX-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS - Showalter Index, with reference level 500 mb (contour) [K]",
             "Name": "GDPS_15km_ShowalterIndex-Contour_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Showalter Index, with reference level 500 mb [K] [experimental]",
+            "Title": "GDPS - Showalter Index, with reference level 500 mb [K]",
             "Name": "GDPS_15km_ShowalterIndex_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Surface lifted index, with reference level 400 mb (contour) [experimental]",
-            "Name": "GDPS_15km_ML-LI-Contour_400mb",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "GDPS - Surface lifted index, with reference level 400 mb [experimental]",
+            "Title": "GDPS - Surface lifted index, with reference level 400 mb",
             "Name": "GDPS_15km_ML-LI_400mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Surface lifted index, with reference level 500 mb (contour) [experimental]",
-            "Name": "GDPS_15km_ML-LI-Contour_500mb",
+            "Title": "GDPS - Surface lifted index, with reference level 400 mb (contour)",
+            "Name": "GDPS_15km_ML-LI-Contour_400mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Surface lifted index, with reference level 500 mb [experimental]",
+            "Title": "GDPS - Surface lifted index, with reference level 500 mb",
             "Name": "GDPS_15km_ML-LI_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Surface lifted index, with reference level 600 mb (contour) [experimental]",
-            "Name": "GDPS_15km_ML-LI-Contour_600mb",
+            "Title": "GDPS - Surface lifted index, with reference level 500 mb (contour)",
+            "Name": "GDPS_15km_ML-LI-Contour_500mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Surface lifted index, with reference level 600 mb [experimental]",
+            "Title": "GDPS - Surface lifted index, with reference level 600 mb",
             "Name": "GDPS_15km_ML-LI_600mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Surface lifted index, with reference level 650 mb (contour) [experimental]",
-            "Name": "GDPS_15km_ML-LI-Contour_650mb",
+            "Title": "GDPS - Surface lifted index, with reference level 600 mb (contour)",
+            "Name": "GDPS_15km_ML-LI-Contour_600mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Surface lifted index, with reference level 650 mb [experimental]",
+            "Title": "GDPS - Surface lifted index, with reference level 650 mb",
             "Name": "GDPS_15km_ML-LI_650mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Surface lifted index, with reference level 700 mb (contour) [experimental]",
-            "Name": "GDPS_15km_ML-LI-Contour_700mb",
+            "Title": "GDPS - Surface lifted index, with reference level 650 mb (contour)",
+            "Name": "GDPS_15km_ML-LI-Contour_650mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Surface lifted index, with reference level 700 mb [experimental]",
+            "Title": "GDPS - Surface lifted index, with reference level 700 mb",
             "Name": "GDPS_15km_ML-LI_700mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Surface lifted index, with reference level 800 mb (contour) [experimental]",
-            "Name": "GDPS_15km_ML-LI-Contour_800mb",
+            "Title": "GDPS - Surface lifted index, with reference level 700 mb (contour)",
+            "Name": "GDPS_15km_ML-LI-Contour_700mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Surface lifted index, with reference level 800 mb [experimental]",
+            "Title": "GDPS - Surface lifted index, with reference level 800 mb",
             "Name": "GDPS_15km_ML-LI_800mb",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Temperature of the most unstable parcel [\u00b0C] [experimental]",
+            "Title": "GDPS - Surface lifted index, with reference level 800 mb (contour)",
+            "Name": "GDPS_15km_ML-LI-Contour_800mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS - Temperature of the most unstable parcel [\u00b0C]",
             "Name": "GDPS_15km_MU-PRC-TMP",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Thunderstorm potential index George K (contour) [experimental]",
-            "Name": "GDPS_15km_KIndex-Contour",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "GDPS - Thunderstorm potential index George K [experimental]",
+            "Title": "GDPS - Thunderstorm potential index George K",
             "Name": "GDPS_15km_KIndex",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Thunderstorm potential index total totals (contour) [experimental]",
-            "Name": "GDPS_15km_TotalTotalsIndex-Contour",
+            "Title": "GDPS - Thunderstorm potential index George K (contour)",
+            "Name": "GDPS_15km_KIndex-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Thunderstorm potential index total totals [experimental]",
+            "Title": "GDPS - Thunderstorm potential index total totals",
             "Name": "GDPS_15km_TotalTotalsIndex",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS - Thunderstorm potential index total totals (contour)",
+            "Name": "GDPS_15km_TotalTotalsIndex-Contour",
             "isLeaf": true,
             "isTemporal": true
           }
@@ -12335,48 +12353,283 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "GDPS - Instantaneous precipitation type [experimental]",
+            "Title": "GDPS - Instantaneous precipitation type",
             "Name": "GDPS_15km_PrecipType-Instant",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Significant type of precipitation - 1-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Significant type of precipitation - 1-hour accumulation [mm]",
             "Name": "GDPS_15km_PrecipType-Significant1h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Significant type of precipitation - 3-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Significant type of precipitation - 3-hour accumulation [mm]",
             "Name": "GDPS_15km_PrecipType-Significant3h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Significant type of precipitation - 6-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Significant type of precipitation - 6-hour accumulation [mm]",
             "Name": "GDPS_15km_PrecipType-Significant6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Significant type of precipitation - 12-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Significant type of precipitation - 12-hour accumulation [mm]",
             "Name": "GDPS_15km_PrecipType-Significant12h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Significant type of precipitation - 24-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Significant type of precipitation - 24-hour accumulation [mm]",
             "Name": "GDPS_15km_PrecipType-Significant24h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS - Significant type of precipitation - 120-hour accumulation [mm] [experimental]",
+            "Title": "GDPS - Significant type of precipitation - 120-hour accumulation [mm]",
             "Name": "GDPS_15km_PrecipType-Significant120h",
             "isLeaf": true,
             "isTemporal": true
           }
         ]
+      },
+      {
+        "Title": "GDPS-WEonG [experimental]",
+        "Name": "GDPS-WEonG [experimental]",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "GDPS-WEonG - Character of precipitation [experimental]",
+            "Name": "GDPS-WEonG_15km_PrecipCharacter",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Conditional amount of freezing precipitation [mm] [experimental]",
+            "Name": "GDPS-WEonG_15km_FreezingPrecipCondAmt",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Conditional amount of liquid precipitation [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_LiquidPrecipCondAmt",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Conditional amount of precipitation [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_PrecipCondAmt",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Conditional amount of solid ice pellets [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_IcePelletsCondAmt",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Conditional amount of solid snow [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_SolidSnowCondAmt",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Dew point temperature (contour) [\u00b0C] [experimental]",
+            "Name": "GDPS-WEonG_15km_DewPointTemp-CONTOUR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Dew point temperature [\u00b0C] [experimental]",
+            "Name": "GDPS-WEonG_15km_DewPointTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Dominant precipitation type [experimental]",
+            "Name": "GDPS-WEonG_15km_DominantPrecipType",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Gust [m/s] [experimental]",
+            "Name": "GDPS-WEonG_15km_WindGust",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Height of snow level [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_SnowLevelHeight",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Instantaneous precipitation type [experimental]",
+            "Name": "GDPS-WEonG_15km_InstantPrecipType",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Land/water proportion [experimental]",
+            "Name": "GDPS-WEonG_15km_LandWater-Proportion",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Model orography [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_Orography",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Presence of blowing snow [experimental]",
+            "Name": "GDPS-WEonG_15km_BlowingSnowPresence",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of blowing snow [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_BlowingSnow-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of drizzle [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_Drizzle-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of freezing drizzle [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_FreezingDrizzle-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of freezing precipitation [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_FreezingPrecip-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of freezing rain [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_FreezingRain-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of ice pellets [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_IcePellets-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of liquid precipitation [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_LiquidPrecip-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of precipitation [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_Precip-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of rain [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_Rain-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of snow [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_Snow-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of snow squalls [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_SnowSqualls-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Probability of thunderstorm occurence [%] [experimental]",
+            "Name": "GDPS-WEonG_15km_Thunderstorm-Prob",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Sky state day/night (combined cloud cover and opacity) [experimental]",
+            "Name": "GDPS-WEonG_15km_SkyState",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Temperature [\u00b0C] [experimental]",
+            "Name": "GDPS-WEonG_15km_AirTemp",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - The second most common precipitation type [experimental]",
+            "Name": "GDPS-WEonG_15km_SecondMostCommonPrecipType",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Total precipitation intensity index [experimental]",
+            "Name": "GDPS-WEonG_15km_TotalPrecipIntensityIndex",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Visibility through ice fog [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_IceFogVisibility",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Visibility through liquid fog [m] [experimental]",
+            "Name": "GDPS-WEonG_15km_LiquidFogVisibility",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Wind direction [deg true] [experimental]",
+            "Name": "GDPS-WEonG_15km_WindDir",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Wind speed (contour) [m/s] [experimental]",
+            "Name": "GDPS-WEonG_15km_WindSpeed-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDPS-WEonG - Wind speed [m/s] [experimental]",
+            "Name": "GDPS-WEonG_15km_WindSpeed",
+            "isLeaf": true,
+            "isTemporal": true
+          }
+        ]
+      },
+      {
+        "Title": "GDPS footprint",
+        "Name": "GDPS_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
+      },
+      {
+        "Title": "GDPS-WEonG footprint",
+        "Name": "GDPS-WEonG_Footprint",
+        "isLeaf": true,
+        "isTemporal": false
       }
     ]
   },
@@ -12413,8 +12666,8 @@ export default {
     ]
   },
   {
-    "Title": "Global Ensemble Prediction System (GEPS) [50 km]",
-    "Name": "Global Ensemble Prediction System (GEPS) [50 km]",
+    "Title": "Global Ensemble Prediction System (GEPS) [39 km]",
+    "Name": "Global Ensemble Prediction System (GEPS) [39 km]",
     "isLeaf": false,
     "children": [
       {
@@ -15770,8 +16023,8 @@ export default {
     ]
   },
   {
-    "Title": "Global Environmental eMuLator (GDPS-GEML) [25 km] [experimental]",
-    "Name": "Global Environmental eMuLator (GDPS-GEML) [25 km] [experimental]",
+    "Title": "Global Environmental eMuLator (GDPS-GEML) [25 km]",
+    "Name": "Global Environmental eMuLator (GDPS-GEML) [25 km]",
     "isLeaf": false,
     "children": [
       {
@@ -15780,31 +16033,31 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "GDPS-GEML - Air temperature at 2m above ground (contour) [\u00b0C] [experimental]",
+            "Title": "GDPS-GEML - Air temperature at 2m above ground (contour) [\u00b0C]",
             "Name": "GDPS-GEML_25km_AirTemp-Contour_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-GEML - Air temperature at 2m above ground [\u00b0C] [experimental]",
+            "Title": "GDPS-GEML - Air temperature at 2m above ground [\u00b0C]",
             "Name": "GDPS-GEML_25km_AirTemp_2m",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-GEML - Sea level pressure (contour) [Pa] [experimental]",
+            "Title": "GDPS-GEML - Sea level pressure (contour) [Pa]",
             "Name": "GDPS-GEML_25km_Pressure_MSL-Contour",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-GEML - Sea level pressure [Pa] [experimental]",
+            "Title": "GDPS-GEML - Sea level pressure [Pa]",
             "Name": "GDPS-GEML_25km_Pressure_MSL",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "GDPS-GEML - Winds at 10m above surface [m/s] [experimental]",
+            "Title": "GDPS-GEML - Winds at 10m above surface [m/s]",
             "Name": "GDPS-GEML_25km_Winds_10m",
             "isLeaf": true,
             "isTemporal": true
@@ -15822,43 +16075,43 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS-GEML - Air temperature at 50 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 50 mb (contour) [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp-Contour_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Air temperature at 50 mb [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 50 mb [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 50 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 50 mb (contour) [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential-Contour_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential height at 50 mb [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential height at 50 mb [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Specific humidity at 50 mb [kg/kg] [experimental]",
+                "Title": "GDPS-GEML - Specific humidity at 50 mb [kg/kg]",
                 "Name": "GDPS-GEML_25km_SpecificHumidity_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Vertical velocity at 50mb [Pa/s] [experimental]",
+                "Title": "GDPS-GEML - Vertical velocity at 50mb [Pa/s]",
                 "Name": "GDPS-GEML_25km_VerticalVelocity_50mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Winds at 50 mb [m/s] [experimental]",
+                "Title": "GDPS-GEML - Winds at 50 mb [m/s]",
                 "Name": "GDPS-GEML_25km_Winds_50mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -15871,43 +16124,43 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS-GEML - Air temperature at 100 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 100 mb (contour) [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp-Contour_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Air temperature at 100 mb [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 100 mb [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 100 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 100 mb (contour) [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential-Contour_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 100 mb [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 100 mb [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Specific humidity at 100 mb [kg/kg] [experimental]",
+                "Title": "GDPS-GEML - Specific humidity at 100 mb [kg/kg]",
                 "Name": "GDPS-GEML_25km_SpecificHumidity_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Vertical velocity at 100mb [Pa/s] [experimental]",
+                "Title": "GDPS-GEML - Vertical velocity at 100mb [Pa/s]",
                 "Name": "GDPS-GEML_25km_VerticalVelocity_100mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Winds at 100 mb [m/s] [experimental]",
+                "Title": "GDPS-GEML - Winds at 100 mb [m/s]",
                 "Name": "GDPS-GEML_25km_Winds_100mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -15920,43 +16173,43 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS-GEML - Air temperature at 150 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 150 mb (contour) [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp-Contour_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Air temperature at 150 mb [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 150 mb [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 150 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 150 mb (contour) [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential-Contour_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 150 mb [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 150 mb [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Specific humidity at 150 mb [kg/kg] [experimental]",
+                "Title": "GDPS-GEML - Specific humidity at 150 mb [kg/kg]",
                 "Name": "GDPS-GEML_25km_SpecificHumidity_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Vertical velocity at 150mb [Pa/s] [experimental]",
+                "Title": "GDPS-GEML - Vertical velocity at 150mb [Pa/s]",
                 "Name": "GDPS-GEML_25km_VerticalVelocity_150mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Winds at 150 mb [m/s] [experimental]",
+                "Title": "GDPS-GEML - Winds at 150 mb [m/s]",
                 "Name": "GDPS-GEML_25km_Winds_150mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -15969,43 +16222,43 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS-GEML - Air temperature at 200 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 200 mb (contour) [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp-Contour_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Air temperature at 200 mb [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 200 mb [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 200 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 200 mb (contour) [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential-Contour_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 200 mb [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 200 mb [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Specific humidity at 200 mb [kg/kg] [experimental]",
+                "Title": "GDPS-GEML - Specific humidity at 200 mb [kg/kg]",
                 "Name": "GDPS-GEML_25km_SpecificHumidity_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Vertical velocity at 200mb [Pa/s] [experimental]",
+                "Title": "GDPS-GEML - Vertical velocity at 200mb [Pa/s]",
                 "Name": "GDPS-GEML_25km_VerticalVelocity_200mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Winds at 200 mb [m/s] [experimental]",
+                "Title": "GDPS-GEML - Winds at 200 mb [m/s]",
                 "Name": "GDPS-GEML_25km_Winds_200mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -16018,43 +16271,43 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS-GEML - Air temperature at 250 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 250 mb (contour) [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp-Contour_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Air temperature at 250 mb [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 250 mb [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 250 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 250 mb (contour) [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential-Contour_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 250 mb [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 250 mb [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Specific humidity at 250 mb [kg/kg] [experimental]",
+                "Title": "GDPS-GEML - Specific humidity at 250 mb [kg/kg]",
                 "Name": "GDPS-GEML_25km_SpecificHumidity_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Vertical velocity at 250mb [Pa/s] [experimental]",
+                "Title": "GDPS-GEML - Vertical velocity at 250mb [Pa/s]",
                 "Name": "GDPS-GEML_25km_VerticalVelocity_250mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Winds at 250 mb [m/s] [experimental]",
+                "Title": "GDPS-GEML - Winds at 250 mb [m/s]",
                 "Name": "GDPS-GEML_25km_Winds_250mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -16067,43 +16320,43 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS-GEML - Air temperature at 300 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 300 mb (contour) [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp-Contour_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Air temperature at 300 mb [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 300 mb [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 300 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 300 mb (contour) [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential-Contour_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 300 mb [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 300 mb [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Specific humidity at 300 mb [kg/kg] [experimental]",
+                "Title": "GDPS-GEML - Specific humidity at 300 mb [kg/kg]",
                 "Name": "GDPS-GEML_25km_SpecificHumidity_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Vertical velocity at 300mb [Pa/s] [experimental]",
+                "Title": "GDPS-GEML - Vertical velocity at 300mb [Pa/s]",
                 "Name": "GDPS-GEML_25km_VerticalVelocity_300mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Winds at 300 mb [m/s] [experimental]",
+                "Title": "GDPS-GEML - Winds at 300 mb [m/s]",
                 "Name": "GDPS-GEML_25km_Winds_300mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -16116,43 +16369,43 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS-GEML - Air temperature at 400 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 400 mb (contour) [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp-Contour_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Air temperature at 400 mb [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 400 mb [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 400 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 400 mb (contour) [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential-Contour_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 400 mb [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 400 mb [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Specific humidity at 400 mb [kg/kg] [experimental]",
+                "Title": "GDPS-GEML - Specific humidity at 400 mb [kg/kg]",
                 "Name": "GDPS-GEML_25km_SpecificHumidity_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Vertical velocity at 400mb [Pa/s] [experimental]",
+                "Title": "GDPS-GEML - Vertical velocity at 400mb [Pa/s]",
                 "Name": "GDPS-GEML_25km_VerticalVelocity_400mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Winds at 400 mb [m/s] [experimental]",
+                "Title": "GDPS-GEML - Winds at 400 mb [m/s]",
                 "Name": "GDPS-GEML_25km_Winds_400mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -16165,43 +16418,43 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS-GEML - Air temperature at 500 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 500 mb (contour) [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp-Contour_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Air temperature at 500 mb [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 500 mb [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 500 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 500 mb (contour) [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential-Contour_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 500 mb [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 500 mb [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Specific humidity at 500 mb [kg/kg] [experimental]",
+                "Title": "GDPS-GEML - Specific humidity at 500 mb [kg/kg]",
                 "Name": "GDPS-GEML_25km_SpecificHumidity_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Vertical velocity at 500mb [Pa/s] [experimental]",
+                "Title": "GDPS-GEML - Vertical velocity at 500mb [Pa/s]",
                 "Name": "GDPS-GEML_25km_VerticalVelocity_500mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Winds at 500 mb [m/s] [experimental]",
+                "Title": "GDPS-GEML - Winds at 500 mb [m/s]",
                 "Name": "GDPS-GEML_25km_Winds_500mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -16214,43 +16467,43 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS-GEML - Air temperature at 600 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 600 mb (contour) [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp-Contour_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Air temperature at 600 mb [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 600 mb [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 600 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 600 mb (contour) [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential-Contour_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 600 mb [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 600 mb [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Specific humidity at 600 mb [kg/kg] [experimental]",
+                "Title": "GDPS-GEML - Specific humidity at 600 mb [kg/kg]",
                 "Name": "GDPS-GEML_25km_SpecificHumidity_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Vertical velocity at 600mb [Pa/s] [experimental]",
+                "Title": "GDPS-GEML - Vertical velocity at 600mb [Pa/s]",
                 "Name": "GDPS-GEML_25km_VerticalVelocity_600mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Winds at 600 mb [m/s] [experimental]",
+                "Title": "GDPS-GEML - Winds at 600 mb [m/s]",
                 "Name": "GDPS-GEML_25km_Winds_600mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -16263,43 +16516,43 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS-GEML - Air temperature at 700 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 700 mb (contour) [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp-Contour_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Air temperature at 700 mb [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 700 mb [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 700 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 700 mb (contour) [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential-Contour_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 700 mb [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 700 mb [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Specific humidity at 700 mb [kg/kg] [experimental]",
+                "Title": "GDPS-GEML - Specific humidity at 700 mb [kg/kg]",
                 "Name": "GDPS-GEML_25km_SpecificHumidity_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Vertical velocity at 700mb [Pa/s] [experimental]",
+                "Title": "GDPS-GEML - Vertical velocity at 700mb [Pa/s]",
                 "Name": "GDPS-GEML_25km_VerticalVelocity_700mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Winds at 700 mb [m/s] [experimental]",
+                "Title": "GDPS-GEML - Winds at 700 mb [m/s]",
                 "Name": "GDPS-GEML_25km_Winds_700mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -16312,43 +16565,43 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS-GEML - Air temperature at 850 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 850 mb (contour) [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp-Contour_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Air temperature at 850 mb [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 850 mb [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 850 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 850 mb (contour) [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential-Contour_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 850 mb [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 850 mb [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Specific humidity at 850 mb [kg/kg] [experimental]",
+                "Title": "GDPS-GEML - Specific humidity at 850 mb [kg/kg]",
                 "Name": "GDPS-GEML_25km_SpecificHumidity_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Vertical velocity at 850mb [Pa/s] [experimental]",
+                "Title": "GDPS-GEML - Vertical velocity at 850mb [Pa/s]",
                 "Name": "GDPS-GEML_25km_VerticalVelocity_850mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Winds at 850 mb [m/s] [experimental]",
+                "Title": "GDPS-GEML - Winds at 850 mb [m/s]",
                 "Name": "GDPS-GEML_25km_Winds_850mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -16361,43 +16614,43 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS-GEML - Air temperature at 925 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 925 mb (contour) [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp-Contour_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Air temperature at 925 mb [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 925 mb [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 925 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 925 mb (contour) [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential-Contour_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 925 mb [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 925 mb [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Specific humidity at 925 mb [kg/kg] [experimental]",
+                "Title": "GDPS-GEML - Specific humidity at 925 mb [kg/kg]",
                 "Name": "GDPS-GEML_25km_SpecificHumidity_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Vertical velocity at 925mb [Pa/s] [experimental]",
+                "Title": "GDPS-GEML - Vertical velocity at 925mb [Pa/s]",
                 "Name": "GDPS-GEML_25km_VerticalVelocity_925mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Winds at 925 mb [m/s] [experimental]",
+                "Title": "GDPS-GEML - Winds at 925 mb [m/s]",
                 "Name": "GDPS-GEML_25km_Winds_925mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -16410,43 +16663,43 @@ export default {
             "isLeaf": false,
             "children": [
               {
-                "Title": "GDPS-GEML - Air temperature at 1000 mb (contour) [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 1000 mb (contour) [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp-Contour_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Air temperature at 1000 mb [\u00b0C] [experimental]",
+                "Title": "GDPS-GEML - Air temperature at 1000 mb [\u00b0C]",
                 "Name": "GDPS-GEML_25km_AirTemp_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 1000 mb (contour) [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 1000 mb (contour) [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential-Contour_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Geopotential at 1000 mb [gpm] [experimental]",
+                "Title": "GDPS-GEML - Geopotential at 1000 mb [gpm]",
                 "Name": "GDPS-GEML_25km_Geopotential_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Specific humidity at 1000 mb [kg/kg] [experimental]",
+                "Title": "GDPS-GEML - Specific humidity at 1000 mb [kg/kg]",
                 "Name": "GDPS-GEML_25km_SpecificHumidity_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Vertical velocity at 1000mb [Pa/s] [experimental]",
+                "Title": "GDPS-GEML - Vertical velocity at 1000mb [Pa/s]",
                 "Name": "GDPS-GEML_25km_VerticalVelocity_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "GDPS-GEML - Winds at 1000 mb [m/s] [experimental]",
+                "Title": "GDPS-GEML - Winds at 1000 mb [m/s]",
                 "Name": "GDPS-GEML_25km_Winds_1000mb",
                 "isLeaf": true,
                 "isTemporal": true
@@ -16838,6 +17091,12 @@ export default {
           {
             "Title": "HRDPS.CONTINENTAL - Geopotential height [gpm]",
             "Name": "HRDPS.CONTINENTAL_GZ",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPS.CONTINENTAL - High and low pressure systems at mean sea level [hPa]",
+            "Name": "HRDPS.CONTINENTAL_HighLowPressure_MSL",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -20033,24 +20292,48 @@ export default {
         "children": [
           {
             "Title": "Hurricane Forecast Location",
+            "Name": "Hurricane-Cyclones",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Hurricane Forecast Location [deprecated]",
             "Name": "HURRICANE_CENTRE",
             "isLeaf": true,
             "isTemporal": false
           },
           {
             "Title": "Hurricane Line Segments",
+            "Name": "Hurricane-Tracks",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Hurricane Line Segments [deprecated]",
             "Name": "HURRICANE_LINE",
             "isLeaf": true,
             "isTemporal": false
           },
           {
             "Title": "Hurricane Track Forecast Error",
+            "Name": "Hurricane-ErrorCone",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Hurricane Track Forecast Error [deprecated]",
             "Name": "HURRICANE_ERR",
             "isLeaf": true,
             "isTemporal": false
           },
           {
             "Title": "Hurricane Wind Forecast Wind Radii",
+            "Name": "Hurricane-WindRadii",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "Hurricane Wind Forecast Wind Radii [deprecated]",
             "Name": "HURRICANE_RAD",
             "isLeaf": true,
             "isTemporal": false
@@ -25950,70 +26233,70 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "HDRPA.06P - Average watershed precipitation (preliminary) [mm]",
-            "Name": "HRDPA.06P_WATERSHED",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "HRDPA.24P - Average watershed precipitation (preliminary) [mm]",
-            "Name": "HRDPA.24P_WATERSHED",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "HRDPA.06F - Average watershed precipitation [mm]",
-            "Name": "HRDPA.06F_WATERSHED",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "HRDPA.24F - Average watershed precipitation [mm]",
-            "Name": "HRDPA.24F_WATERSHED",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
             "Title": "HRDPA footprint",
             "Name": "HRDPA_Footprint",
             "isLeaf": true,
             "isTemporal": false
           },
           {
-            "Title": "HRDPA-Prelim.24 - Quantity of precipitation (preliminary) - T06Z [mm]",
-            "Name": "HRDPA-Prelim_2.5km_Precip-Accum24h-T06Z",
+            "Title": "HRDPA - Precipitation - 6-hour accumulation [mm]",
+            "Name": "HRDPA_2.5km_Precip-Accum6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPA-Prelim.24 - Quantity of precipitation (preliminary) - T12Z [mm]",
-            "Name": "HRDPA-Prelim_2.5km_Precip-Accum24h-T12Z",
+            "Title": "HRDPA Watershed - Precipitation - 6-hour accumulation [mm]",
+            "Name": "HRDPA.06F_WATERSHED",
             "isLeaf": true,
-            "isTemporal": true
+            "isTemporal": false
           },
           {
-            "Title": "HRDPA-Prelim.06 - Quantity of precipitation (preliminary) [mm]",
+            "Title": "HRDPA - Precipitation - 6-hour accumulation [mm] (preliminary)",
             "Name": "HRDPA-Prelim_2.5km_Precip-Accum6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPA.24 - Quantity of precipitation - T06Z [mm]",
+            "Title": "HRDPA Watershed - Precipitation - 6-hour accumulation [mm] (preliminary)",
+            "Name": "HRDPA.06P_WATERSHED",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "HRDPA T06Z - Precipitation - 24-hour accumulation [mm]",
             "Name": "HRDPA_2.5km_Precip-Accum24h-T06Z",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPA.24 - Quantity of precipitation - T12Z [mm]",
+            "Title": "HRDPA T12Z - Precipitation - 24-hour accumulation [mm]",
             "Name": "HRDPA_2.5km_Precip-Accum24h-T12Z",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "HRDPA.06 - Quantity of precipitation [mm]",
-            "Name": "HRDPA_2.5km_Precip-Accum6h",
+            "Title": "HRDPA Watershed - Precipitation - 24-hour accumulation [mm]",
+            "Name": "HRDPA.24F_WATERSHED",
+            "isLeaf": true,
+            "isTemporal": false
+          },
+          {
+            "Title": "HRDPA T06Z - Precipitation - 24-hour accumulation [mm] (preliminary)",
+            "Name": "HRDPA-Prelim_2.5km_Precip-Accum24h-T06Z",
             "isLeaf": true,
             "isTemporal": true
+          },
+          {
+            "Title": "HRDPA T12Z - Precipitation - 24-hour accumulation [mm] (preliminary)",
+            "Name": "HRDPA-Prelim_2.5km_Precip-Accum24h-T12Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "HRDPA Watershed - Precipitation - 24-hour accumulation [mm] (preliminary)",
+            "Name": "HRDPA.24P_WATERSHED",
+            "isLeaf": true,
+            "isTemporal": false
           }
         ]
       },
@@ -26192,74 +26475,74 @@ export default {
         "isLeaf": false,
         "children": [
           {
-            "Title": "RDPA.6P - Quantity of precipitation (preliminary) [mm] [10 km] (archive)",
-            "Name": "RDPA.6P_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPA.24P - Quantity of precipitation (preliminary) [mm] [10 km] (archive)",
-            "Name": "RDPA.24P_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPA.6F - Quantity of precipitation [mm] [10 km] (archive)",
+            "Title": "RDPA - Precipitation - 6-hour accumulation [mm] (archive)",
             "Name": "RDPA.6F_PR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPA.24F - Quantity of precipitation [mm] [10 km] (archive)",
-            "Name": "RDPA.24F_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPA.ARC_15km.6F - Quantity of precipitation [mm] [15 km] (archive)",
-            "Name": "RDPA.ARC_15km.6F_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPA.ARC_15km.24F - Quantity of precipitation [mm] [15 km] (archive)",
-            "Name": "RDPA.ARC_15km.24F_PR",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPA-Prelim_Accum6h - Quantity of precipitation over a 6h hour interval (preliminary) [mm] [10 km]",
-            "Name": "RDPA-Prelim_10km_Precip-Accum6h",
-            "isLeaf": true,
-            "isTemporal": true
-          },
-          {
-            "Title": "RDPA_Accum6h - Quantity of precipitation over a 6h hour interval [mm] [10 km] (archive)",
+            "Title": "RDPA - Precipitation - 6-hour accumulation [mm] (archive)",
             "Name": "RDPA_10km_Precip-Accum6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPA-Prelim_Accum24h - Quantity of precipitation over a 24h hour interval (preliminary) - T06Z [mm] [10 km]",
-            "Name": "RDPA-Prelim_10km_Precip-Accum24h-T06Z",
+            "Title": "RDPA - Precipitation - 6-hour accumulation [mm] (archive) [15 km]",
+            "Name": "RDPA.ARC_15km.6F_PR",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPA-Prelim_Accum24h - Quantity of precipitation over a 24h hour interval (preliminary) - T12Z [mm] [10 km]",
-            "Name": "RDPA-Prelim_10km_Precip-Accum24h-T12Z",
+            "Title": "RDPA - Precipitation - 6-hour accumulation [mm] (preliminary)",
+            "Name": "RDPA-Prelim_10km_Precip-Accum6h",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPA_Accum24h - Quantity of precipitation over a 24h hour interval [mm] - T06Z [10 km] (archive)",
+            "Title": "RDPA - Precipitation - 6-hour accumulation [mm] (preliminary)",
+            "Name": "RDPA.6P_PR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPA - Precipitation - 24-hour accumulation [mm] (archive)",
+            "Name": "RDPA.24F_PR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPA T06Z - Precipitation - 24-hour accumulation [mm] (archive)",
             "Name": "RDPA_10km_Precip-Accum24h-T06Z",
             "isLeaf": true,
             "isTemporal": true
           },
           {
-            "Title": "RDPA_Accum24h - Quantity of precipitation over a 24h hour interval [mm] - T12Z [10 km] (archive)",
+            "Title": "RDPA T12Z - Precipitation - 24-hour accumulation [mm] (archive)",
             "Name": "RDPA_10km_Precip-Accum24h-T12Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPA - Precipitation - 24-hour accumulation [mm] (archive) [15 km]",
+            "Name": "RDPA.ARC_15km.24F_PR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPA - Precipitation - 24-hour accumulation [mm] (preliminary)",
+            "Name": "RDPA.24P_PR",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPA T06Z - Precipitation - 24-hour accumulation [mm] (preliminary)",
+            "Name": "RDPA-Prelim_10km_Precip-Accum24h-T06Z",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPA T12Z - Precipitation - 24-hour accumulation [mm] (preliminary)",
+            "Name": "RDPA-Prelim_10km_Precip-Accum24h-T12Z",
             "isLeaf": true,
             "isTemporal": true
           }
@@ -26434,6 +26717,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS - High and low pressure systems at mean sea level [hPa]",
+            "Name": "RDPS_10km_HighLowPressure_MSL",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS - Humidex at 2 m above ground",
             "Name": "RDPS_10km_Humidex",
             "isLeaf": true,
@@ -26566,6 +26855,18 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS - Severe storm index",
+            "Name": "RDPS_10km_StormSeverityIndex",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Severe weather threat index",
+            "Name": "RDPS_10km_SWEATIndex",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS - Sky transparency index",
             "Name": "RDPS_10km_SkyTransparencyIndex",
             "isLeaf": true,
@@ -26634,6 +26935,12 @@ export default {
           {
             "Title": "RDPS - Specific humidity at the surface [kg/kg]",
             "Name": "RDPS_10km_SpecificHumidity",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Storm relative helicity [J/kg]",
+            "Name": "RDPS_10km_StormRelativeHelicity",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -26734,6 +27041,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS - Upward shortwave radiation flux at the top of atmosphere [W/m\u00b2]",
+            "Name": "RDPS_10km_UpwardShortwaveRadiationFlux_NTAtm",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS - UV index",
             "Name": "RDPS_10km_UVIndex",
             "isLeaf": true,
@@ -26742,6 +27055,12 @@ export default {
           {
             "Title": "RDPS - UV Index for clear-sky conditions",
             "Name": "RDPS_10km_UVIndex-ClearSky",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Vertical wind shear below 650 mb [1/s]",
+            "Name": "RDPS_10km_VerticalWindShear_0to6500m",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -26896,6 +27215,12 @@ export default {
                 "isTemporal": true
               },
               {
+                "Title": "RDPS - Dew point depression at 1 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_1mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
                 "Title": "RDPS - Geopotential height at 1 mb (contour) [gpm]",
                 "Name": "RDPS_10km_GeopotentialHeight-Contour_1mb",
                 "isLeaf": true,
@@ -26953,6 +27278,12 @@ export default {
               {
                 "Title": "RDPS - Air temperature at 5 mb [\u00b0C]",
                 "Name": "RDPS_10km_AirTemp_5mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 5 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_5mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -28048,6 +28379,12 @@ export default {
               {
                 "Title": "RDPS - Air temperature at 450 mb [\u00b0C]",
                 "Name": "RDPS_10km_AirTemp_450mb",
+                "isLeaf": true,
+                "isTemporal": true
+              },
+              {
+                "Title": "RDPS - Dew point depression at 450 mb [\u00b0C]",
+                "Name": "RDPS_10km_DewPointDepression_450mb",
                 "isLeaf": true,
                 "isTemporal": true
               },
@@ -29325,6 +29662,18 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS - CAPE for a parcel representing the mean of a layer using the virtual temperature correction (contour) [J/kg]",
+            "Name": "RDPS_10km_ML-VT-CAPE-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - CAPE for a parcel representing the mean of a layer using the virtual temperature correction [J/kg]",
+            "Name": "RDPS_10km_ML-VT-CAPE",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS - CAPE for a surface based parcel (contour) [J/kg]",
             "Name": "RDPS_10km_CAPE-Contour",
             "isLeaf": true,
@@ -29379,6 +29728,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS - CIN for a parcel representing the mean of a layer using the virtual temperature correction [J/kg]",
+            "Name": "RDPS_10km_ML-VT-CIN",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS - CIN for a surface based parcel [J/kg]",
             "Name": "RDPS_10km_CIN",
             "isLeaf": true,
@@ -29403,6 +29758,12 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS - Dew point temperature for a parcel representing the mean of a layer [\u00b0C]",
+            "Name": "RDPS_10km_ML-PRC-DPT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS - Dew point temperature of the most unstable parcel [\u00b0C]",
             "Name": "RDPS_10km_MU-PRC-DPT",
             "isLeaf": true,
@@ -29417,6 +29778,12 @@ export default {
           {
             "Title": "RDPS - Height of the equilibrium level for a parcel representing the mean of a layer [m AGL]",
             "Name": "RDPS_10km_ML-EL_HGT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the equilibrium level for a parcel representing the mean of a layer using the virtual temperature correction [m AGL]",
+            "Name": "RDPS_10km_ML-VT-EL-HGT",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -29499,6 +29866,18 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "RDPS - Height of the level of free convection for a parcel representing the mean of a layer using the virtual temperature correction (contour) [m AGL]",
+            "Name": "RDPS_10km_ML-VT-LFC-HGT-Contour",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Height of the level of free convection for a parcel representing the mean of a layer using the virtual temperature correction [m AGL]",
+            "Name": "RDPS_10km_ML-VT-LFC-HGT",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "RDPS - Height of the level of free convection for the most unstable parcel (contour) [m AGL]",
             "Name": "RDPS_10km_MU-LFC-HGT-Contour",
             "isLeaf": true,
@@ -29567,6 +29946,78 @@ export default {
           {
             "Title": "RDPS - Lifted index for a parcel lifted from the surface, with reference level 500 mb (contour)",
             "Name": "RDPS_10km_SFC-LI-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400 mb",
+            "Name": "RDPS_10km_ML-VT-LI_400mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 400 mb (contour)",
+            "Name": "RDPS_10km_ML-VT-LI-Contour_400mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500 mb",
+            "Name": "RDPS_10km_ML-VT-LI_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 500 mb (contour)",
+            "Name": "RDPS_10km_ML-VT-LI-Contour_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600 mb",
+            "Name": "RDPS_10km_ML-VT-LI_600mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 600 mb (contour)",
+            "Name": "RDPS_10km_ML-VT-LI-Contour_600mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650 mb",
+            "Name": "RDPS_10km_ML-VT-LI_650mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 650 mb (contour)",
+            "Name": "RDPS_10km_ML-VT-LI-Contour_650mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700 mb",
+            "Name": "RDPS_10km_ML-VT-LI_700mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 700 mb (contour)",
+            "Name": "RDPS_10km_ML-VT-LI-Contour_700mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800 mb",
+            "Name": "RDPS_10km_ML-VT-LI_800mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Lifted index for a parcel representing the mean of a layer using the virtual temperature correction, with reference level 800 mb (contour)",
+            "Name": "RDPS_10km_ML-VT-LI-Contour_800mb",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -29693,6 +30144,12 @@ export default {
           {
             "Title": "RDPS - Showalter Index, with reference level 500 mb [K]",
             "Name": "RDPS_10km_ShowalterIndex_500mb",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDPS - Temperature for a parcel representing the mean of a layer [\u00b0C]",
+            "Name": "RDPS_10km_ML-PRC-TMP",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -41884,6 +42341,55 @@ export default {
             ]
           }
         ]
+      },
+      {
+        "Title": "Himawari-North",
+        "Name": "Himawari-North",
+        "isLeaf": false,
+        "children": [
+          {
+            "Title": "Himawari-North Ash [2 km]",
+            "Name": "Himawari-North_2km_Ash",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "Himawari-North Channel 3 [2 km]",
+            "Name": "Himawari-North_2km_Channel03",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "Himawari-North Channel 13 [2 km]",
+            "Name": "Himawari-North_2km_Channel13",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "Himawari-North Channel 15 [2 km]",
+            "Name": "Himawari-North_2km_Channel15",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "Himawari-North Dust [2 km]",
+            "Name": "Himawari-North_2km_Dust",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "Himawari-North Natural Color [2 km]",
+            "Name": "Himawari-North_2km_NaturalColor",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "Himawari-North SO2 [2 km]",
+            "Name": "Himawari-North_2km_SO2",
+            "isLeaf": true,
+            "isTemporal": true
+          }
+        ]
       }
     ]
   },
@@ -42092,6 +42598,18 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GDWPS - Mean wave direction (3 hourly forecast) [\u00b0]",
+            "Name": "GDWPS_25km_WWSDIR_PT3H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDWPS - Mean wave direction (hourly forecast) [\u00b0]",
+            "Name": "GDWPS_25km_WWSDIR_PT1H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GDWPS - Mean wave direction of first swell partition (3 hourly forecast) [\u00b0]",
             "Name": "GDWPS_25km_MWDFSWEL_PT3H",
             "isLeaf": true,
@@ -42232,6 +42750,18 @@ export default {
           {
             "Title": "GDWPS - Significant wave height of second swell partition (hourly forecast) [m]",
             "Name": "GDWPS_25km_SWHSSWEL_PT1H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDWPS - Stokes drift at the surface (3 hourly forecast) [m/s]",
+            "Name": "GDWPS_25km_StokesDrift_Sfc_PT3H",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GDWPS - Stokes drift at the surface (hourly forecast) [m/s]",
+            "Name": "GDWPS_25km_StokesDrift_Sfc_PT1H",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -42635,6 +43165,132 @@ export default {
           {
             "Title": "GEWPS_25km_FirstSwellSignificantWaveHeight_21 - Significant wave height of first swell partition [m]",
             "Name": "GEWPS_25km_FirstSwellSignificantWaveHeight_21",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_01 - Mean wave direction [\u00b0] [control member]",
+            "Name": "GEWPS_25km_MeanWaveDir_01",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_02 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_02",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_03 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_03",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_04 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_04",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_05 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_05",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_06 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_06",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_07 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_07",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_08 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_08",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_09 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_09",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_10 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_10",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_11 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_11",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_12 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_12",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_13 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_13",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_14 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_14",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_15 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_15",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_16 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_16",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_17 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_17",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_18 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_18",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_19 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_19",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_20 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_20",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_MeanWaveDir_21 - Mean wave direction [\u00b0]",
+            "Name": "GEWPS_25km_MeanWaveDir_21",
             "isLeaf": true,
             "isTemporal": true
           },
@@ -43521,6 +44177,132 @@ export default {
             "isTemporal": true
           },
           {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_01 - Stokes drift at the surface [m/s] [control member]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_01",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_02 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_02",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_03 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_03",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_04 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_04",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_05 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_05",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_06 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_06",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_07 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_07",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_08 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_08",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_09 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_09",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_10 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_10",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_11 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_11",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_12 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_12",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_13 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_13",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_14 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_14",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_15 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_15",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_16 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_16",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_17 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_17",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_18 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_18",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_18 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_19",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_20 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_20",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "GEWPS_25km_StokesDrift_Sfc_21 - Stokes drift at the surface [m/s]",
+            "Name": "GEWPS_25km_StokesDrift_Sfc_21",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
             "Title": "GEWPS_25km_WindWavesDir_01 - Direction of wind waves [\u00b0] [control member]",
             "Name": "GEWPS_25km_WindWavesDir_01",
             "isLeaf": true,
@@ -43928,6 +44710,12 @@ export default {
                     "isTemporal": true
                   },
                   {
+                    "Title": "RDWPS - Mean wave direction [\u00b0]",
+                    "Name": "RDWPS-Lake-Erie_1km_WWSDIR",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
                     "Title": "RDWPS - Mean wave direction of first swell partition [\u00b0]",
                     "Name": "RDWPS-Lake-Erie_1km_MWDFSWEL",
                     "isLeaf": true,
@@ -44015,6 +44803,12 @@ export default {
                   {
                     "Title": "RDWPS - Ice fraction",
                     "Name": "RDWPS-Lake-Huron-Michigan_1km_ICEC",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "RDWPS - Mean wave direction [\u00b0]",
+                    "Name": "RDWPS-Lake-Huron-Michigan_1km_WWSDIR",
                     "isLeaf": true,
                     "isTemporal": true
                   },
@@ -44110,6 +44904,12 @@ export default {
                     "isTemporal": true
                   },
                   {
+                    "Title": "RDWPS - Mean wave direction [\u00b0]",
+                    "Name": "RDWPS-Lake-Ontario_1km_WWSDIR",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
                     "Title": "RDWPS - Mean wave direction of first swell partition [\u00b0]",
                     "Name": "RDWPS-Lake-Ontario_1km_MWDFSWEL",
                     "isLeaf": true,
@@ -44197,6 +44997,12 @@ export default {
                   {
                     "Title": "RDWPS - Ice fraction",
                     "Name": "RDWPS-Lake-Superior_1km_ICEC",
+                    "isLeaf": true,
+                    "isTemporal": true
+                  },
+                  {
+                    "Title": "RDWPS - Mean wave direction [\u00b0]",
+                    "Name": "RDWPS-Lake-Superior_1km_WWSDIR",
                     "isLeaf": true,
                     "isTemporal": true
                   },
@@ -44322,6 +45128,12 @@ export default {
           {
             "Title": "RDWPS - Ice fraction (hourly forecast)",
             "Name": "RDWPS_2.5km_IceFraction",
+            "isLeaf": true,
+            "isTemporal": true
+          },
+          {
+            "Title": "RDWPS - Mean wave direction [\u00b0]",
+            "Name": "RDWPS_2.5km_MeanWaveDir",
             "isLeaf": true,
             "isTemporal": true
           },
