@@ -61,6 +61,7 @@ export const useStore = defineStore('store', {
     intersectDict: {},
     isAnimating: false,
     isAnimationReversed: false,
+    isGeneratingAnimation: false,
     isFullSize: false,
     isLooping: true,
     isReversed: false,
@@ -223,6 +224,7 @@ export const useStore = defineStore('store', {
     getIntersectMessageDisplayed: (state) => state.intersectDict,
     getIsAnimating: (state) => state.isAnimating,
     getIsAnimationReversed: (state) => state.isAnimationReversed,
+    getIsGeneratingAnimation: (state) => state.isGeneratingAnimation,
     getIsReversed: (state) => state.isReversed,
     getLegendIndex: (state) => state.legendIndex,
     getMapTimeSettings: (state) => state.mapTimeSettings,
@@ -333,6 +335,9 @@ export const useStore = defineStore('store', {
     },
     setIsAnimating(newStatus) {
       this.isAnimating = newStatus
+    },
+    setIsGeneratingAnimation(newStatus) {
+      this.isGeneratingAnimation = newStatus
     },
     setIsAnimationReversed(isReversed) {
       this.isAnimationReversed = isReversed
