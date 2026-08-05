@@ -451,6 +451,9 @@ export default {
     },
     async buildLayer(eventData) {
       const { layerData, source: wmsSource, autoPlay, rangeValues } = eventData
+      const sourceKey = Object.keys(this.wmsSources)[layerData.wmsIndex]
+      const refreshLayers = this.wmsSources[sourceKey]?.['refresh_layers'] ?? []
+      const needsRefresh = refreshLayers.includes(layerData.Name.split('/')[0])
       let imageLayer = null
       imageLayer = new OLImage({
         source: new ImageWMS({
@@ -477,6 +480,7 @@ export default {
           : 1,
         layerIsTemporal: layerData.isTemporal,
         layerName: layerData.Name,
+        layerNeedsRefresh: needsRefresh,
         layerStyles: layerData.Style,
         layerVisibilityOn: Object.hasOwn(layerData, 'visible')
           ? layerData.visible
@@ -497,9 +501,15 @@ export default {
       this.setLayerZIndex(imageLayer)
 
       imageLayer.getSource().on('imageloadstart', () => {
-        this.loading += 1
+        const silent = imageLayer.get('layerSilentRefresh') === true
+        imageLayer.setProperties({
+          layerSilentRefresh: false,
+          layerSilentLoad: silent,
+        })
+        if (!silent) this.loading += 1
       })
       imageLayer.getSource().on(['imageloadend', 'imageloaderror'], () => {
+        if (imageLayer.get('layerSilentLoad')) return
         this.loading -= 1
       })
 

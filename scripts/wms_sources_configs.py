@@ -1,5 +1,10 @@
 import os
 
+# Non-time-enabled layers whose underlying data changes frequently. Animet forces
+# a GetMap re-request for these once a minute so the map doesn't go stale; time
+# enabled layers are ignored since they already refresh via their time dimension.
+GEOMET_WEATHER_REFRESH_LAYERS = ["Current-Alerts"]
+
 wms_sources = {
     "Presets": {
         "urls": [os.environ.get("GEOMET_WEATHER_NIGHTLY_URL", default="https://geo.weather.gc.ca/geomet")],
@@ -12,6 +17,7 @@ wms_sources = {
         "version": "1.3.0",
         "display": True,
         "hasInterpolation": True,
+        "refresh_layers": GEOMET_WEATHER_REFRESH_LAYERS,
     },
     "Climate": {
         "urls": ["https://geo.weather.gc.ca/geomet-climate"],
@@ -24,6 +30,7 @@ wms_sources = {
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
         "source_validation": True,
         "hasInterpolation": True,
+        "refresh_layers": GEOMET_WEATHER_REFRESH_LAYERS,
     },
     "ClimateNightly": {
         "urls": [os.environ.get("GEOMET_CLIMATE_NIGHTLY_URL", default="")],
@@ -37,6 +44,7 @@ wms_sources = {
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
         "source_validation": True,
         "hasInterpolation": True,
+        "refresh_layers": GEOMET_WEATHER_REFRESH_LAYERS,
     },
     "ClimateDev": {
         "urls": [os.environ.get("GEOMET_CLIMATE_DEV_URL", default="")],
@@ -50,6 +58,7 @@ wms_sources = {
         "display": os.environ.get("ANIMET_NIGHTLY", default=False),
         "source_validation": True,
         "hasInterpolation": True,
+        "refresh_layers": GEOMET_WEATHER_REFRESH_LAYERS,
     },
     "ClimateStage": {
         "urls": [os.environ.get("GEOMET_CLIMATE_STAGE_URL", default="")],
