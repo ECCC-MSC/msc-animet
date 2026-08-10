@@ -3,7 +3,12 @@ import os
 # Non-time-enabled layers whose underlying data changes frequently. Animet forces
 # a GetMap re-request for these once a minute so the map doesn't go stale; time
 # enabled layers are ignored since they already refresh via their time dimension.
-GEOMET_WEATHER_REFRESH_LAYERS = ["Current-Alerts"]
+GEOMET_WEATHER_REFRESH_LAYERS = [
+    "Current-Alerts",
+    "Current-Alerts-Alpha",
+    "Current-Alerts-Dev",
+    "Current-Alerts-Stage"
+]
 
 wms_sources = {
     "Presets": {
