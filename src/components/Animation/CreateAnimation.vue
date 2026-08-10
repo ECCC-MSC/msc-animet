@@ -170,6 +170,7 @@ export default {
       this.store.setMP4URL(null)
       this.store.setImgURL(null)
       this.store.setIsAnimating(true)
+      this.store.setIsGeneratingAnimation(true)
       this.generating = true
       this.$mapCanvas.mapObj.updateSize()
 
@@ -335,6 +336,7 @@ export default {
           }
           if (this.pendingErrorResolution) {
             this.generating = false
+            this.store.setIsGeneratingAnimation(false)
             return
           }
           await this.composeCanvas(
@@ -373,6 +375,7 @@ export default {
       this.encoder.finalize()
 
       this.store.setIsAnimating(false)
+      this.store.setIsGeneratingAnimation(false)
       if (this.generating) {
         if (this.MP4Length === 1) {
           const binaryData = atob(this.imgURL.split(',')[1])

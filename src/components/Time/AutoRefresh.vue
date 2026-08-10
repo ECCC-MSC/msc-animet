@@ -9,6 +9,7 @@ export default {
   data() {
     return {
       interval: setInterval(this.fetchLayerData, 90000),
+      refreshInterval: setInterval(this.refreshMarkedLayers, 60000),
       iterationCounter: 0,
       layers: [],
     }
@@ -43,7 +44,11 @@ export default {
         this.iterationCounter = 0
         if (this.isAnimating && this.playState !== 'play') return
         this.$mapLayers.arr.forEach((layer) => {
-          if (layer instanceof OLImage && !layer.get('layerIsTemporal')) {
+          if (
+            layer instanceof OLImage &&
+            !layer.get('layerIsTemporal') &&
+            !layer.get('layerNeedsRefresh')
+          ) {
             layer.getSource().updateParams({
               t: new Date().getTime(),
             })
@@ -136,13 +141,32 @@ export default {
     onTimeLayerRemoved(layer) {
       this.layers = this.layers.filter((l) => l !== layer.get('layerName'))
     },
+    refreshMarkedLayers() {
+      if (this.isGeneratingAnimation) return
+      this.$mapLayers.arr.forEach((layer) => {
+        if (
+          !layer.get('layerNeedsRefresh') ||
+          layer.get('layerIsTemporal') ||
+          !layer.getVisible()
+        )
+          return
+        layer.set('layerSilentRefresh', true)
+        layer.getSource().updateParams({
+          t: new Date().getTime(),
+        })
+      })
+    },
     stopPolling() {
       clearInterval(this.interval)
+      clearInterval(this.refreshInterval)
     },
   },
   computed: {
     isAnimating() {
       return this.store.getIsAnimating
+    },
+    isGeneratingAnimation() {
+      return this.store.getIsGeneratingAnimation
     },
     playState() {
       return this.store.getPlayState
