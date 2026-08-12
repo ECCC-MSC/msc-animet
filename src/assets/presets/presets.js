@@ -664,6 +664,54 @@ export default {
           ],
         },
         {
+          Title_en: 'Precipitation Rate',
+          Title_fr: 'Taux de précipitation',
+          Name: 'Precip rate',
+          Img: 'Precip rate',
+          isLeaf: false,
+          children: [
+            {
+              Title:
+                'GDPS - Instantaneous precipitation rate [kg/(m²s)]',
+              Name: 'GDPS_15km_PrecipRate',
+              isLeaf: true,
+              isTemporal: true,
+              isSnapped: true,
+              layerInterpolated: true,
+              legendDisplayed: true,
+              currentStyle: 'PRECIPPRTMMH',
+              opacity: 0.75,
+            },
+            {
+              Title: 'GDPS - Sea level pressure (contour) [Pa]',
+              Name: 'GDPS_15km_Pressure_MSL-Contour',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
+              currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.5,
+            },
+            {
+              Title:
+                'GDPS - Thickness between 1000mb and 500mb (contour) [m]',
+              Name: 'GDPS_15km_Thickness-Contour_1000to500mb',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
+              opacity: 0.75,
+            },
+            {
+              Title:
+                'GDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'GDPS_15km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
+              opacity: 0.75,
+            },
+          ],
+        },
+        {
           Title_en: 'Precipitation - 3h acc.',
           Title_fr: 'Précipitations - Acc. 3h',
           Name: 'Precip 3h acc',
@@ -1053,6 +1101,53 @@ export default {
       isOpen: isNodeOpen('Summer weather'),
       isPreset: true,
       children: [
+        {
+          Title_en: 'Precipitation - 1h acc.',
+          Title_fr: 'Précipitations - Acc. 1h',
+          Name: 'Precip 1h acc',
+          Img: 'Precip 1h acc',
+          isLeaf: false,
+          children: [
+            {
+              Title:
+                'RDPS - Precipitation - 1-hour accumulation [mm]',
+              Name: 'RDPS_10km_Precip-Accum1h',
+              isLeaf: true,
+              isTemporal: true,
+              isSnapped: true,
+              layerInterpolated: true,
+              legendDisplayed: true,
+              currentStyle: 'RDPA-WXO',
+              opacity: 0.75,
+            },
+            {
+              Title: 'RDPS - Sea level pressure (contour) [Pa]',
+              Name: 'RDPS_10km_Pressure_MSL-Contour',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
+              currentStyle: 'SeaLevelPressure_940to1076mb-Int4mb-BoldLine24mb',
+              opacity: 0.5,
+            },
+            {
+              Title: 'RDPS - Thickness between 1000mb and 500mb (contour) [m]',
+              Name: 'RDPS_10km_Thickness-Contour_1000to500mb',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
+              opacity: 0.75,
+            },
+            {
+              Title:
+                'RDPS - High and low pressure systems at mean sea level [hPa]',
+              Name: 'RDPS_10km_HighLowPressure_MSL',
+              isLeaf: true,
+              isTemporal: true,
+              legendDisplayed: false,
+              opacity: 0.75,
+            },
+          ],
+        },
         {
           Title_en: 'Humidex 2m',
           Title_fr: 'Humidex 2m',
