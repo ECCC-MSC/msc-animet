@@ -1,5 +1,10 @@
 # Release Notes
 
+## Version 2.6.1 (2026-08-14)
+
+### Bug Fixes
+- Fixed automatic refresh rate for non time-enabled layers (ie. Current Alerts)
+
 ## Version 2.6.0 (2026-07-31)
 
 ### New Features
