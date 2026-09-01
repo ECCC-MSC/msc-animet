@@ -178,9 +178,12 @@ export default {
       end = searchEnd
       while (start <= end) {
         const mid = Math.floor((start + end) / 2)
-        const ceiling = parseDuration(
-          activeStep === 'PT0H' ? 'PT1H' : activeStep,
-        ).add(layerDateArr[mid])
+        const ceiling =
+          mid + 1 < layerDateArr.length
+            ? layerDateArr[mid + 1]
+            : parseDuration(activeStep === 'PT0H' ? 'PT1H' : activeStep).add(
+                layerDateArr[mid],
+              )
         if (date >= layerDateArr[mid] && date < ceiling) return mid
         else if (date >= ceiling) start = mid + 1
         else end = mid - 1
