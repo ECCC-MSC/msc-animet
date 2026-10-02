@@ -1,67 +1,67 @@
 export default {
   'proj_weather' : [
+  "EPSG:4269",
+  "EPSG:26916",
+  "EPSG:3408",
+  "EPSG:26715",
+  "EPSG:900913",
+  "EPSG:102100",
+  "EPSG:26713",
+  "EPSG:2294",
+  "EPSG:102185",
+  "EPSG:3573",
+  "EPSG:42101",
+  "EPSG:26714",
+  "EPSG:3571",
   "EPSG:4326",
-  "EPSG:26914",
-  "EPSG:42102",
-  "EPSG:3776",
+  "EPSG:3978",
   "EPSG:3857",
+  "EPSG:2295",
+  "EPSG:2950",
+  "EPSG:32661",
+  "EPSG:26711",
+  "EPSG:26718",
+  "EPSG:26907",
+  "EPSG:3574",
+  "EPSG:26908",
+  "EPSG:26710",
+  "EPSG:26911",
+  "EPSG:26712",
+  "EPSG:26917",
+  "EPSG:26918",
   "EPSG:26722",
-  "EPSG:4267",
+  "EPSG:26707",
+  "EPSG:26921",
+  "EPSG:26716",
+  "EPSG:32187",
+  "EPSG:26721",
+  "EPSG:42102",
+  "EPSG:3410",
+  "EPSG:26919",
+  "EPSG:3005",
+  "EPSG:26708",
+  "EPSG:26914",
+  "EPSG:26920",
   "EPSG:26910",
+  "EPSG:26717",
+  "EPSG:26720",
+  "EPSG:26913",
+  "EPSG:32188",
+  "EPSG:3776",
+  "EPSG:4267",
+  "EPSG:42304",
+  "EPSG:3995",
+  "EPSG:26912",
+  "EPSG:3575",
+  "EPSG:26922",
+  "EPSG:32198",
+  "AUTO2:42003",
+  "EPSG:26909",
+  "EPSG:26719",
   "EPSG:26915",
   "EPSG:26709",
-  "AUTO2:42003",
-  "EPSG:3573",
-  "EPSG:3005",
-  "EPSG:26714",
-  "EPSG:26918",
-  "EPSG:42101",
-  "EPSG:26717",
-  "EPSG:3572",
-  "EPSG:26907",
-  "EPSG:2294",
-  "EPSG:26916",
-  "EPSG:26917",
-  "EPSG:900913",
-  "EPSG:3410",
-  "EPSG:26711",
-  "EPSG:32188",
-  "EPSG:26712",
-  "EPSG:26710",
-  "EPSG:26720",
-  "EPSG:26708",
-  "EPSG:3575",
-  "EPSG:26911",
-  "EPSG:26922",
-  "EPSG:3408",
-  "EPSG:4269",
-  "EPSG:26908",
-  "EPSG:26909",
-  "EPSG:26715",
-  "EPSG:26719",
-  "EPSG:26919",
-  "EPSG:26920",
   "EPSG:3576",
-  "EPSG:2950",
-  "EPSG:26713",
-  "EPSG:2295",
-  "EPSG:26716",
-  "EPSG:26721",
-  "EPSG:3571",
-  "EPSG:32198",
-  "EPSG:3995",
-  "EPSG:42304",
-  "EPSG:102185",
-  "EPSG:3574",
-  "EPSG:32187",
-  "EPSG:3978",
-  "EPSG:26912",
-  "EPSG:26921",
-  "EPSG:26718",
-  "EPSG:26913",
-  "EPSG:26707",
-  "EPSG:102100",
-  "EPSG:32661"
+  "EPSG:3572"
 ],
   'tree_en_weather' : [
   {
@@ -8646,19 +8646,19 @@ export default {
             "Title": "Thunderstorm Outlook - Atlantic [experimental]",
             "Name": "Thunderstorm-Outlook_Atlantic",
             "isLeaf": true,
-            "isTemporal": true
+            "isTemporal": false
           },
           {
             "Title": "Thunderstorm Outlook - British Columbia/Yukon [experimental]",
             "Name": "Thunderstorm-Outlook_BC-YT",
             "isLeaf": true,
-            "isTemporal": true
+            "isTemporal": false
           },
           {
             "Title": "Thunderstorm Outlook - Northwest Territories [experimental]",
             "Name": "Thunderstorm-Outlook_NWT",
             "isLeaf": true,
-            "isTemporal": true
+            "isTemporal": false
           },
           {
             "Title": "Thunderstorm Outlook - Ontario [experimental]",
@@ -8670,7 +8670,7 @@ export default {
             "Title": "Thunderstorm Outlook - Prairies [experimental]",
             "Name": "Thunderstorm-Outlook_Prairies",
             "isLeaf": true,
-            "isTemporal": true
+            "isTemporal": false
           },
           {
             "Title": "Thunderstorm Outlook - Quebec [experimental]",
@@ -12659,7 +12659,7 @@ export default {
       },
       {
         "Title": "GDSPS footprint",
-        "Name": "GDPSP_Footprint",
+        "Name": "GDSPS_Footprint",
         "isLeaf": true,
         "isTemporal": false
       }
@@ -20472,7 +20472,7 @@ export default {
                 "isTemporal": true
               },
               {
-                "Title": "CIOPS-East - Volume of snow on sea ice per unit grid cell area [m]",
+                "Title": "CIOPS-East - Volume of snow on sea ice per unit grid cell area [cm]",
                 "Name": "CIOPS-East_2km_SeaIceSnowVol",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21670,59 +21670,59 @@ export default {
         ]
       },
       {
-        "Title": "Coastal Ice Ocean Prediction System for the Salish Sea region (CIOPS-SalishSea) [0.5 km]",
-        "Name": "Coastal Ice Ocean Prediction System for the Salish Sea region (CIOPS-SalishSea) [0.5 km]",
+        "Title": "Coastal Ice Ocean Prediction System for the Salish Sea region (CIOPS-SalishSea) [0.5 km] [experimental]",
+        "Name": "Coastal Ice Ocean Prediction System for the Salish Sea region (CIOPS-SalishSea) [0.5 km] [experimental]",
         "isLeaf": false,
         "children": [
           {
-            "Title": "CIOPS-SalishSea in 2 dimensions",
-            "Name": "CIOPS-SalishSea in 2 dimensions",
+            "Title": "CIOPS-SalishSea in 2 dimensions [experimental]",
+            "Name": "CIOPS-SalishSea in 2 dimensions [experimental]",
             "isLeaf": false,
             "children": [
               {
-                "Title": "CIOPS-SalishSea - Ocean mixed layer depth based on density criterion [m]",
+                "Title": "CIOPS-SalishSea - Ocean mixed layer depth based on density criterion [m] [experimental]",
                 "Name": "CIOPS-SalishSea_500m_MixedLayerThickness",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CIOPS-SalishSea - Sea surface height above geoid [m]",
+                "Title": "CIOPS-SalishSea - Sea surface height above geoid [m] [experimental]",
                 "Name": "CIOPS-SalishSea_500m_SeaSfcHeight",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CIOPS-SalishSea - Sea water potential temperature [K]",
+                "Title": "CIOPS-SalishSea - Sea water potential temperature [K] [experimental]",
                 "Name": "CIOPS-SalishSea_500m_SeaWaterPotentialTemp_0.5m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CIOPS-SalishSea - Sea water salinity [psu]",
+                "Title": "CIOPS-SalishSea - Sea water salinity [psu] [experimental]",
                 "Name": "CIOPS-SalishSea_500m_SeaWaterSalinity_0.5m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CIOPS-SalishSea - Sea water velocity [m/s]",
+                "Title": "CIOPS-SalishSea - Sea water velocity [m/s] [experimental]",
                 "Name": "CIOPS-SalishSea_500m_SeaWaterVelocity_0.5m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CIOPS-SalishSea - Sea water velocity X vector [m/s]",
+                "Title": "CIOPS-SalishSea - Sea water velocity X vector [m/s] [experimental]",
                 "Name": "CIOPS-SalishSea_500m_SeaWaterVelocityX_0.5m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CIOPS-SalishSea - Sea water velocity Y vector [m/s]",
+                "Title": "CIOPS-SalishSea - Sea water velocity Y vector [m/s] [experimental]",
                 "Name": "CIOPS-SalishSea_500m_SeaWaterVelocityY_0.5m",
                 "isLeaf": true,
                 "isTemporal": true
               },
               {
-                "Title": "CIOPS-SalishSea - Turbocline depth [m]",
+                "Title": "CIOPS-SalishSea - Turbocline depth [m] [experimental]",
                 "Name": "CIOPS-SalishSea_500m_TurboclineDepth",
                 "isLeaf": true,
                 "isTemporal": true
@@ -21730,8 +21730,8 @@ export default {
             ]
           },
           {
-            "Title": "CIOPS-SalishSea in 3 dimensions",
-            "Name": "CIOPS-SalishSea in 3 dimensions",
+            "Title": "CIOPS-SalishSea in 3 dimensions [experimental]",
+            "Name": "CIOPS-SalishSea in 3 dimensions [experimental]",
             "isLeaf": false,
             "children": [
               {
@@ -21740,229 +21740,229 @@ export default {
                 "isLeaf": false,
                 "children": [
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0001.5m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0001.5m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_1.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0002.5m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0002.5m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_2.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0003.5m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0003.5m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_3.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0004.5m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0004.5m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_4.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0005.5m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0005.5m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_5.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0006.5m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0006.5m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_6.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0007.5m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0007.5m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_7.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0008.5m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0008.5m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_8.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0009.5m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0009.5m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_9.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0011m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0011m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_11m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0012m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0012m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_12m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0013m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0013m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_13m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0014m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0014m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_14m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0015m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0015m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_15m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0016m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0016m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_16m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0017m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0017m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_17m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0018m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0018m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_18m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0020m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0020m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_20m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0021m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0021m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_21m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0024m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0024m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_24m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0028m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0028m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_28m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0035m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0035m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_35m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0045m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0045m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_45m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0059m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0059m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_59m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0077m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0077m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_77m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0098m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0098m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_98m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0122m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0122m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_122m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0147m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0147m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_147m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0173m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0173m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_173m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0200m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0200m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_200m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0226m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0226m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_226m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0253m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0253m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_253m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0280m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0280m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_280m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0307m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0307m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_307m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0334m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0334m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_334m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0361m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0361m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_361m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0388m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0388m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_388m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0415m [K]",
+                    "Title": "CIOPS-SalishSea - Sea water potential temperature - 0415m [K] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterPotentialTemp_415m",
                     "isLeaf": true,
                     "isTemporal": true
@@ -21975,229 +21975,229 @@ export default {
                 "isLeaf": false,
                 "children": [
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0001.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0001.5m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_1.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0002.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0002.5m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_2.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0003.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0003.5m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_3.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0004.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0004.5m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_4.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0005.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0005.5m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_5.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0006.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0006.5m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_6.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0007.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0007.5m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_7.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0008.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0008.5m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_8.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0009.5m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0009.5m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_9.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0011m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0011m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_11m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0012m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0012m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_12m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0013m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0013m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_13m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0014m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0014m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_14m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0015m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0015m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_15m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0016m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0016m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_16m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0017m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0017m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_17m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0018m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0018m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_18m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0020m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0020m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_20m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0021m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0021m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_21m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0024m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0024m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_24m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0028m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0028m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_28m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0035m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0035m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_35m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0045m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0045m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_45m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0059m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0059m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_59m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0077m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0077m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_77m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0098m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0098m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_98m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0122m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0122m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_122m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0147m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0147m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_147m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0173m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0173m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_173m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0200m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0200m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_200m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0226m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0226m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_226m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0253m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0253m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_253m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0280m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0280m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_280m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0307m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0307m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_307m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0334m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0334m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_334m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0361m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0361m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_361m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0388m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0388m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_388m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water salinity - 0415m [psu]",
+                    "Title": "CIOPS-SalishSea - Sea water salinity - 0415m [psu] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterSalinity_415m",
                     "isLeaf": true,
                     "isTemporal": true
@@ -22210,229 +22210,229 @@ export default {
                 "isLeaf": false,
                 "children": [
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0001.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0001.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_1.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0002.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0002.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_2.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0003.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0003.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_3.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0004.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0004.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_4.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0005.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0005.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_5.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0006.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0006.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_6.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0007.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0007.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_7.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0008.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0008.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_8.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0009.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0009.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_9.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0011m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0011m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_11m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0012m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0012m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_12m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0013m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0013m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_13m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0014m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0014m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_14m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0015m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0015m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_15m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0016m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0016m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_16m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0017m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0017m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_17m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0018m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0018m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_18m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0020m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0020m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_20m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0021m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0021m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_21m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0024m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0024m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_24m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0028m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0028m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_28m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0035m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0035m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_35m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0045m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0045m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_45m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0059m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0059m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_59m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0077m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0077m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_77m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0098m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0098m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_98m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0122m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0122m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_122m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0147m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0147m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_147m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0173m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0173m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_173m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0200m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0200m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_200m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0226m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0226m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_226m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0253m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0253m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_253m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0280m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0280m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_280m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0307m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0307m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_307m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0334m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0334m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_334m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0361m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0361m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_361m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0388m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0388m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_388m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity - 0415m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity - 0415m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocity_415m",
                     "isLeaf": true,
                     "isTemporal": true
@@ -22445,229 +22445,229 @@ export default {
                 "isLeaf": false,
                 "children": [
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0001.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0001.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_1.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0002.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0002.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_2.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0003.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0003.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_3.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0004.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0004.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_4.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0005.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0005.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_5.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0006.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0006.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_6.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0007.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0007.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_7.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0008.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0008.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_8.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0009.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0009.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_9.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0011m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0011m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_11m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0012m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0012m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_12m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0013m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0013m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_13m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0014m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0014m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_14m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0015m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0015m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_15m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0016m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0016m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_16m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0017m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0017m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_17m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0018m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0018m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_18m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0020m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0020m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_20m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0021m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0021m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_21m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0024m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0024m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_24m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0028m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0028m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_28m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0035m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0035m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_35m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0045m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0045m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_45m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0059m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0059m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_59m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0077m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0077m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_77m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0098m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0098m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_98m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0122m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0122m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_122m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0147m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0147m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_147m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0173m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0173m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_173m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0200m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0200m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_200m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0226m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0226m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_226m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0253m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0253m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_253m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0280m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0280m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_280m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0307m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0307m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_307m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0334m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0334m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_334m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0361m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0361m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_361m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0388m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0388m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_388m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0415m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (X vector) - 0415m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityX_415m",
                     "isLeaf": true,
                     "isTemporal": true
@@ -22680,229 +22680,229 @@ export default {
                 "isLeaf": false,
                 "children": [
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0001.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0001.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_1.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0002.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0002.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_2.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0003.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0003.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_3.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0004.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0004.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_4.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0005.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0005.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_5.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0006.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0006.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_6.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0007.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0007.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_7.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0008.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0008.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_8.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0009.5m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0009.5m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_9.5m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0011m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0011m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_11m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0012m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0012m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_12m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0013m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0013m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_13m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0014m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0014m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_14m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0015m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0015m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_15m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0016m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0016m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_16m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0017m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0017m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_17m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0018m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0018m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_18m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0020m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0020m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_20m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0021m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0021m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_21m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0024m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0024m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_24m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0028m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0028m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_28m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0035m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0035m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_35m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0045m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0045m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_45m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0059m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0059m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_59m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0077m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0077m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_77m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0098m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0098m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_98m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0122m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0122m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_122m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0147m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0147m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_147m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0173m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0173m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_173m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0200m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0200m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_200m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0226m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0226m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_226m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0253m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0253m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_253m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0280m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0280m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_280m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0307m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0307m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_307m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0334m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0334m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_334m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0361m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0361m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_361m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0388m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0388m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_388m",
                     "isLeaf": true,
                     "isTemporal": true
                   },
                   {
-                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0415m [m/s]",
+                    "Title": "CIOPS-SalishSea - Sea water velocity (Y vector) - 0415m [m/s] [experimental]",
                     "Name": "CIOPS-SalishSea_SeaWaterVelocityY_415m",
                     "isLeaf": true,
                     "isTemporal": true
@@ -22912,14 +22912,8 @@ export default {
             ]
           },
           {
-            "Title": "CIOPS-SalishSea footprint",
+            "Title": "CIOPS-SalishSea footprint [experimental]",
             "Name": "CIOPS-SalishSea_Footprint",
-            "isLeaf": true,
-            "isTemporal": false
-          },
-          {
-            "Title": "CIOPS-West footprint",
-            "Name": "CIOPS-West_Footprint",
             "isLeaf": true,
             "isTemporal": false
           }
@@ -24166,6 +24160,12 @@ export default {
                 ]
               }
             ]
+          },
+          {
+            "Title": "CIOPS-West footprint",
+            "Name": "CIOPS-West_Footprint",
+            "isLeaf": true,
+            "isTemporal": false
           }
         ]
       },
@@ -42542,7 +42542,7 @@ export default {
             "isTemporal": true
           },
           {
-            "Title": "WCPS - Volume of snow on sea ice per unit grid cell area [m]",
+            "Title": "WCPS - Volume of snow on sea ice per unit grid cell area [cm]",
             "Name": "WCPS_1km_SeaIceSnowVol",
             "isLeaf": true,
             "isTemporal": true
