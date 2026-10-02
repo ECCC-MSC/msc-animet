@@ -38,8 +38,10 @@
         :node="child"
         :key-prop="keyProp"
         :title-prop="titleProp"
+        :leaf-action="leafAction"
         @node-toggled="bubbleNodeToggled"
         @request="bubbleNodeRequest"
+        @leaf-copy="bubbleLeafCopy"
       >
         <template v-for="(_, slotName) in $slots" #[slotName]="slotProps">
           <slot :name="slotName" v-bind="slotProps"></slot>
@@ -72,6 +74,11 @@ const props = defineProps({
     type: String,
     default: 'name',
   },
+  // 'request' adds the layer (layer tree), 'copy' copies the leaf (GFI popup)
+  leafAction: {
+    type: String,
+    default: 'request',
+  },
 })
 
 const isOpen = ref(props.node.isOpen || false)
@@ -100,10 +107,11 @@ const img = computed(() => {
   ).href
 })
 
-const emit = defineEmits(['nodeToggled', 'request'])
+const emit = defineEmits(['nodeToggled', 'request', 'leafCopy'])
 
 const handleClick = (node) => {
   if (node.children) toggle()
+  else if (props.leafAction === 'copy') emit('leafCopy', node)
   else request(node)
 }
 
@@ -234,6 +242,9 @@ const bubbleNodeToggled = (nodeName, isOpen) => {
 const bubbleNodeRequest = (node) => {
   if (isAnimating.value && playState.value !== 'play') return
   emit('request', node)
+}
+const bubbleLeafCopy = (node) => {
+  emit('leafCopy', node)
 }
 </script>
 
