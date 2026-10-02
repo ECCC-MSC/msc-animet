@@ -1,5 +1,11 @@
 # Release Notes
 
+## Version 2.6.2 (2026-10-02)
+
+### Bug Fixes
+- Updated layer tree to reflect latest changes from GeoMet-weather
+- Fixed layer index for non-uniform layer spacing
+
 ## Version 2.6.1 (2026-08-14)
 
 ### Bug Fixes
