@@ -122,6 +122,7 @@
 <script>
 import { DateTime } from 'luxon'
 import OLImage from 'ol/layer/Image'
+import { compareVersions } from 'ol/string.js'
 
 import datetimeManipulations from '../../mixins/datetimeManipulations'
 import WMSTileCache from '@/utils/WMSTileCache'
@@ -553,12 +554,13 @@ export default {
               .map((coord) => Math.round(coord * 1e6) / 1e6)
             const [width, height] = this.$mapCanvas.mapObj.getSize()
             const currentStyle = layer.get('layerCurrentStyle')
-
             // Destructured like this to keep exact parameter order for caching
             let urlParams = {
               REQUEST: 'GetMap',
               SERVICE: 'WMS',
-              VERSION: '1.3.0',
+              VERSION:
+                this.wmsSources[Object.keys(this.wmsSources)[layer.get('layerWmsIndex')]]
+                  .version,
               FORMAT: 'image/png',
             }
             if (currentStyle !== null) {
@@ -586,8 +588,16 @@ export default {
             }
             urlParams.WIDTH = width
             urlParams.HEIGHT = height
-            urlParams.CRS = view.getProjection().getCode()
-            urlParams.BBOX = extent.join(',')
+            // OpenLayers puts SRS for 1.1.1 and CRS for 1.3.0
+            const v13 = compareVersions(urlParams.VERSION, '1.3') >= 0
+            urlParams[v13 ? 'CRS' : 'SRS'] = view.getProjection().getCode()
+            // WMS 1.3.0 requires BBOX in the CRS axis order (EPSG:4326 is swapped)
+            const axisOrientation = view.getProjection().getAxisOrientation()
+            const bbox =
+              v13 && axisOrientation.startsWith('ne')
+                ? [extent[1], extent[0], extent[3], extent[2]]
+                : extent
+            urlParams.BBOX = bbox.join(',')
 
             const indicesToCache = []
             if (this.playState === 'play') {
@@ -888,6 +898,9 @@ export default {
     },
     uniqueTimestepsList() {
       return this.store.getUniqueTimestepsList
+    },
+    wmsSources() {
+      return this.store.getWmsSources
     },
     dateIndex() {
       return [this.mapTimeSettings.DateIndex, this.mapTimeSettings.Extent]

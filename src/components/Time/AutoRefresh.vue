@@ -3,6 +3,7 @@
 <script>
 import axios from '../../utils/AxiosConfig.js'
 import OLImage from 'ol/layer/Image'
+import collectTimeElements from '../../utils/wmsTimeDimension.js'
 
 export default {
   inject: ['store'],
@@ -69,7 +70,9 @@ export default {
               baseURL: layer.get('source')['url_'],
               params: {
                 SERVICE: 'WMS',
-                VERSION: '1.3.0',
+                VERSION:
+                  this.wmsSources[Object.keys(this.wmsSources)[layer.get('layerWmsIndex')]]
+                    .version,
                 REQUEST: 'GetCapabilities',
                 LAYERS: layerName.split('/')[0],
                 t: new Date().getTime(),
@@ -81,18 +84,11 @@ export default {
                 'text/xml',
               )
               const layerName = layer.get('layerXmlName').split('/')[0]
-              const xpathExpression = `//wms:Layer[not(.//wms:Layer) and wms:Name='${layerName}']`
-              function nsResolver(prefix) {
-                const ns = {
-                  wms: 'http://www.opengis.net/wms',
-                  xlink: 'http://www.w3.org/1999/xlink',
-                }
-                return ns[prefix] || null
-              }
+              const xpathExpression = `//*[local-name()='Layer' and not(.//*[local-name()='Layer']) and *[local-name()='Name' and text()='${layerName}']]`
               const xpathResult = xmlDoc.evaluate(
                 xpathExpression,
                 xmlDoc,
-                nsResolver,
+                null,
                 XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
                 null,
               )
@@ -104,14 +100,17 @@ export default {
                   Dimension_time_default: '',
                   Dimension_ref_time: '',
                 }
-                const timeDimension = node.getElementsByTagName('Dimension')
+                const timeDimension = collectTimeElements(node)
                 for (let i = 0; i < timeDimension.length; i++) {
                   const dim = timeDimension[i]
-                  if (dim.getAttribute('name') === 'time') {
+                  if (dim.getAttribute('name') === 'time' && dim.textContent) {
                     dimension.Dimension_time = dim.textContent
                     dimension.Dimension_time_default =
                       dim.getAttribute('default')
-                  } else if (dim.getAttribute('name') === 'reference_time') {
+                  } else if (
+                    dim.getAttribute('name') === 'reference_time' &&
+                    dim.textContent
+                  ) {
                     if (layer.get('layerIsRefTimeOnly')) {
                       dimension.Dimension_time = dim.textContent
                       dimension.Dimension_time_default =
@@ -170,6 +169,9 @@ export default {
     },
     playState() {
       return this.store.getPlayState
+    },
+    wmsSources() {
+      return this.store.getWmsSources
     },
   },
 }
