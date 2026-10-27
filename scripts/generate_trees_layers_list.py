@@ -240,22 +240,22 @@ for name, params in wms_sources.items():
             break
 
         if name != "Presets":
-            name = name.lower()
+            source_name = name.lower()
 
             sorted_layers = recursive_sort(combined_layers)
             sorted_layers_dict = dict(sorted(combined_layers_dict.items()))
 
-            with open(f"../src/assets/trees/tree_{lang}_{name}.js", "w+") as f:
+            with open(f"../src/assets/trees/tree_{lang}_{source_name}.js", "w+") as f:
                 f.write(
                     TREE_JS_TEMPLATE.format(
-                        f"proj_{name}",
+                        f"proj_{source_name}",
                         json.dumps(combined_crs_values, indent=2),
-                        f"tree_{lang}_{name}",
+                        f"tree_{lang}_{source_name}",
                         json.dumps(sorted_layers, indent=2),
                     )
                 )
 
-            with open(f"../src/locales/{lang}/layers_{name}.json", "w", encoding="utf-8") as f:
+            with open(f"../src/locales/{lang}/layers_{source_name}.json", "w", encoding="utf-8") as f:
                 # write layers_dict_sorted to json file
                 f.write(
                     json.dumps(sorted_layers_dict, indent=2, ensure_ascii=False)
