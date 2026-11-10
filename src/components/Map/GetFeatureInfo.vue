@@ -373,6 +373,34 @@ export default {
       if (this.overlay !== null && this.eventGFI !== null)
         this.onSingleClick(this.eventGFI, false)
     },
+    parseTextPlainFeatureInfo(text) {
+      const features = []
+      let current = null
+      for (const rawLine of text.split(/\r?\n/)) {
+        const line = rawLine.trim()
+        // Separator lines (----) or "Feature N" headers start a new feature
+        if (/^-{3,}$/.test(line) || /^Feature\s+\d+/i.test(line)) {
+          current = null
+          continue
+        }
+        let idx = line.indexOf('=')
+        if (idx === -1) idx = line.indexOf(':')
+        if (idx === -1) continue
+        const key = line.slice(0, idx).trim()
+        const value = line
+          .slice(idx + 1)
+          .trim()
+          .replace(/\s+/g, ' ')
+        // Skips headers like "Results for FeatureType 'x':"
+        if (key === '' || value === '') continue
+        if (current === null) {
+          current = {}
+          features.push({ properties: current })
+        }
+        current[key] = value
+      }
+      return { features }
+    },
     async onSingleClick(eventGFI, pan = true) {
       if (!this.locked) {
         this.locked = true
@@ -393,21 +421,40 @@ export default {
                 if (!Number.isInteger(count)) {
                   count = 1
                 }
-                urls[layer.get('layerName')] = source.getFeatureInfoUrl(
-                  evt.coordinate,
-                  evt.map.getView().getResolution(),
-                  evt.map.getView().getProjection().getCode(),
-                  { INFO_FORMAT: 'application/json', FEATURE_COUNT: count },
-                )
+                // WMS 1.1.1 has no application/json INFO_FORMAT, use text/plain
+                const version = source.getParams?.().VERSION
+                const format =
+                  version && !version.startsWith('1.3')
+                    ? 'text/plain'
+                    : 'application/json'
+                urls[layer.get('layerName')] = {
+                  format,
+                  url: source.getFeatureInfoUrl(
+                    evt.coordinate,
+                    evt.map.getView().getResolution(),
+                    evt.map.getView().getProjection().getCode(),
+                    { INFO_FORMAT: format, FEATURE_COUNT: count },
+                  ),
+                }
               }
             }
           })
           this.overlay = overlay
           let index = 0
-          for (const [name, url] of Object.entries(urls)) {
+          for (const [name, { url, format }] of Object.entries(urls)) {
             try {
               await fetch(url)
-                .then((response) => response.json())
+                .then((response) =>
+                  format === 'text/plain'
+                    ? response
+                        .arrayBuffer()
+                        .then((buf) =>
+                          this.parseTextPlainFeatureInfo(
+                            new TextDecoder('utf-8').decode(buf),
+                          ),
+                        )
+                    : response.json(),
+                )
                 .then((json) => {
                   if (
                     Object.keys(json).length > 0 &&
